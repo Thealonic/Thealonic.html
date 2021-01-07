@@ -1,4 +1,5 @@
 
+
             <!--
             ░░░░██╗░░░░██╗██╗░░░██╗███████╗██████╗░██╗░░░██╗██╗░░░██╗██╗░░██╗███████╗██████╗░░██████╗████████╗██╗░░░██╗
             ░░░██╔╝░░░██╔╝██║░░░██║██╔════╝██╔══██╗╚██╗░██╔╝██║░░░██║██║░░██║██╔════╝██╔══██╗██╔════╝╚══██╔══╝╚██╗░██╔╝
@@ -381,33 +382,36 @@
         <!-- desktop handling                                                                                                              -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
             
-        </div>
+        <script>
+            var currentno = 5
+            var pyrotabs = 2
+        </script>
         
         <div class="wrapper" onclick="pyroinactive(); catinactive()">
             <!-- Sidebar icons coloumn 1 -->
             <div class="icons" style= "z-index: 1; margin-top:18px">
                 <!-- Button one -->
                 <a href="https://thealonic.tumblr.com/" class="pages" style="cursor: pointer;">
-                    <div class="thealonic"></div>
+                    <div class="thealonic" id="thealonic"></div>
                     <div class="icon_label"><span>
                         <label>Thealonic
                 </label></span></div> </a>
                 <!-- Button Two -->
                 <a href="https://veryvhersty.tumblr.com/" class="pages" style="cursor: pointer;" target="_blank">
-                    <div class="veryvhersty"></div>
+                    <div class="veryvhersty" id="veryverstyicon"></div>
                     <div class="icon_label"><span>
                         <label> Very.Vhersty
                 </label></span></div> </a>
                 <!-- Button Three -->
                 <a href="https://twitter.com/VeryVhersty" class="pages" style="cursor: pointer;" target="_blank">
-                    <div class="twitter"></div>
+                    <div class="twitter" id="twittericon"></div>
                     <div class="icon_label"><span>
                         <label> Art Posting
                 </label></span></div> </a>
                 <!-- Button Four -->
                 {block:AskEnabled}
                 <a href="/ask" class="ask" style="cursor: pointer;" target="_blank">
-                    <div class="askicon"></div>
+                    <div class="askicon" id="askicon"></div>
                     <div class="icon_label"><span>
                         <label>Ask Mommy
                 </label></span></div> </a>
@@ -415,20 +419,20 @@
                 <!-- Button Five -->
                 {block:SubmitEnabled}
                 <a href="/submit" class="Submit" style="cursor: pointer;" target="_blank">
-                    <div class="submiticon"></div>
+                    <div class="submiticon" id="submiticon"></div>
                     <div class="icon_label"><span>
                         <label>Submissions
                 </label></span></div> </a>
                 {/block:SubmitEnabled}
                 <!-- Button Six -->
                 <a href="https://discord.gg/KDQcXs7" class="archive" style="cursor: pointer;" target="_blank">
-                    <div class="discordlink"></div>
+                    <div class="discordlink" id="discordicon"></div>
                     <div class="icon_label"><span>
                         <label>Self-Governed</label> <label>Shitposters
                 </label></span></div> </a>
                 <!-- Button Seven -->
                 <a href="https://www.youtube.com/playlist?list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU" class="ovffvp" style="cursor: pointer;" target="_blank">
-                    <div class="officialfunny"></div>
+                    <div class="officialfunny" id="officialfunnyicon"></div>
                     <div class="icon_label"><span>
                         <label>The Official Very</label> <label>Funny Video Playlist
                 </label></span></div> </a>
@@ -468,50 +472,48 @@
         <!-- VUNNY message box rendering                                                                                                   -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         
-        <div class="win98post" style="z-index: 6; height: 246px; width:194px; position: fixed; top: 68%; left: 4%; position: absolute" 
-             onclick="inactiveall(); catactive();" id="cat">
-                    <div class="title-bar-small" id="catbox"> <div class="container" style="padding:2px">🙀 cat 
+        <div class="win98post" style="z-index: 4; height: 246px; width:194px; position: fixed; top: 68%; left: 4%; position: absolute" 
+             onmousedown="inactiveall(); catactive();" id="cat">
+                    <div class="title-bar-small" id="catwindow"> <div class="container" style="padding:2px">🙀 cat 
                         <div class="win98titlebarbutton"  style="margin-left: 2px" onclick="catclose(); setTimeout(vunnyinactive, 50);"><div class="close"></div></div>
                             <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU">
                                 <div class="win98titlebarbutton" style=""> <div class="help"></div> </div> </a> 
                     </div></div>
-                    <div class="messageboxbody" style="margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: -2px">
+                    <div class="messagewindowbody" style="margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: -2px">
                             <div class="trash3"></div>
                         <div class="filler"></div>
-                        <div class="messageboxbutton" style="margin-left:55px; margin-top: 3px; margin-bottom: -2px;">
+                        <div class="messagewindowbutton" style="margin-left:55px; margin-top: 3px; margin-bottom: -2px;">
                             <button disabled>OK</button>
         </div></div></div>
             
         <script>
-            function catactive() { tumblrButtonOpen = false; 
-                document.getElementById("catbox").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289642578214912/title-bar_gradientopen.png')";
+            function catactive() { tumblrButtonOpen = false; logoffButtonOpen = false; document.getElementById("cat").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
+                document.getElementById("catwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289642578214912/title-bar_gradientopen.png')";
                 document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";
-                document.getElementById("cat").style.zIndex = "100"; document.getElementById("pyro").style.zIndex = "3"; pyroButtonOpen = !pyroButtonOpen;} 
-            function catclose() { tumblrButtonOpen = false;
-                document.getElementById("cat").style.marginLeft = "-20000px";}
+                pyroButtonOpen = !pyroButtonOpen;} 
+            function catclose() { document.getElementById("cat").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1}
         </script>
             
-        <div class="win98post" style="z-index: 6; height: 246px; width:194px; position: fixed; top: 58%; left: 13%;position: absolute" 
-            onclick="inactiveall(); pyroactive();" id="pyro">
-            <div class="title-bar-small" id="pyrobox"> <div class="container" style="padding:2px">💯 bloody ell' chums 
+        <div class="win98post" style="z-index: 5; height: 246px; width:194px; position: fixed; top: 58%; left: 13%;position: absolute" 
+            onmousedown="inactiveall(); pyroactive();" id="pyro">
+            <div class="title-bar-small" id="pyrowindow"> <div class="container" style="padding:2px">💯 bloody ell' chums 
                 <div class="win98titlebarbutton"  style="margin-left: 2px" onclick="pyroclose(); setTimeout(vunnyinactive, 50);"><div class="close"></div></div>
                     <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU">
                         <div class="win98titlebarbutton" style=""> <div class="help"></div> </div> </a> 
             </div></div>
-            <div class="messageboxbody" style="margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px">
+            <div class="messagewindowbody" style="margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px">
                 <div class="trash4"></div>
                 <div class="filler"></div>
-                <div class="messageboxbutton" style="margin-left:38px; margin-top: 3px;">
+                <div class="messagewindowbutton" style="margin-left:38px; margin-top: 3px;">
                     <button style="cursor: pointer;" onclick="pyroclose(); setTimeout(vunnyinactive, 50);">Fuck the pain away</button>
         </div></div></div>
 
         <script> 
-            function pyroactive() { tumblrButtonOpen = false;
-                document.getElementById("pyrobox").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289642578214912/title-bar_gradientopen.png')";
+            function pyroactive() { tumblrButtonOpen = false; document.getElementById("pyro").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
+                document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289642578214912/title-bar_gradientopen.png')";
                 document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";
-                document.getElementById("pyro").style.zIndex = "100"; document.getElementById("cat").style.zIndex = "3"; pyroButtonOpen = !pyroButtonOpen; } 
-            function pyroclose() { tumblrButtonOpen = false;
-                document.getElementById("pyro").style.marginLeft = "-20000px";}
+                pyroButtonOpen = !pyroButtonOpen; } 
+            function pyroclose() { document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1;}
         </script>                
                             
         <!-- add more junk here -->
@@ -519,9 +521,9 @@
         <!-- add more junk here -->
         
         <script>         
-            function vunnyinactive() { 
-                document.getElementById("catbox").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png')";
-                document.getElementById("pyrobox").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png')";
+            function vunnyinactive() {  
+                document.getElementById("catwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png')";
+                document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png')";
                 //dump anything here from the "vunny" list
                 document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}
         </script>
@@ -532,8 +534,8 @@
 
         <!-- message box rendering -->
         <div class="win98post" style="height:  50px; width:306px; position: fixed; top: 63%; right:  8%; font-family:Arial; position: absolute; z-index:10" 
-             onclick="inactiveall(); messageactive();" id="message">
-            <div class="title-bar-98" id="messagebox" style="width: 306px"> <div class="container" style="padding:2px">🧮 brain go brrrrr
+             onmousedown="inactiveall(); messageactive();" id="message">
+            <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="container" style="padding:2px">🧮 brain go brrrrr
             <div class="win98titlebarbutton"  style="margin-left: 2px"><div class="close"></div></div>
                 <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU">
                     <div class="win98titlebarbutton" style=""> <div class="help"></div> </div> </a> 
@@ -544,10 +546,11 @@
         
         <!-- message box functions -->
         <script> 
-            function messageactive() { tumblrButtonOpen = false;
-                document.getElementById("messagebox").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791303194356482048/title-bar_diskmanagement_gradientopen.png')";} 
+            function messageactive() { pyroButtonOpen = false; tumblrButtonOpen = false;
+                document.getElementById("message").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
+                document.getElementById("messagewindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791303194356482048/title-bar_diskmanagement_gradientopen.png')";} 
             function messageinactive() { 
-                document.getElementById("messagebox").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791305961670836224/title-bar_diskmanagement_gradient.png')";} 
+                document.getElementById("messagewindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791305961670836224/title-bar_diskmanagement_gradient.png')";} 
         </script>
         
         <!-- add more junk here -->
@@ -556,7 +559,7 @@
         
         <!-- display settings container -->
         <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; right:  3%; position: absolute"
-             onclick=" " id="disk">
+             onmousedownk=" " id="disk">
             <div class="title-bar-98" id="diskwindow"> <div class="container" style="padding:2px; width: 398px;">📺 Display Properties
                 <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:4px" title="close"><div class="close"></div></div>
                 <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="" title="help"> <div class="help"></div></div></a> 
@@ -601,39 +604,13 @@
             <button style="cursor: pointer; margin-right:6px; width:71px; margin-top: 395px; float: right;">Okay</button>
         <!-- display settings container end -->
         </div>
-            
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- message box inactive toggle                                                                                                   -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        
-        <script>    
-            function inactiveall() { 
-            //complete toggle script, insert ids here
-                document.getElementById("pyrobox").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png')";
-                document.getElementById("catbox").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png')";
-                document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";
-                
-                document.getElementById("messagebox").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
-                document.getElementById("message").style.zIndex = "3";
-                
-                document.getElementById("diskwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
-                document.getElementById("disk").style.zIndex = "3";
-                document.getElementById("taskapp3").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";
-                
-                document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
-                document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";
-                
-                document.getElementById("logoffwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
-                document.getElementById("shutdownwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
-            }
-        </script>
         
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <!-- Window box handling                                                                                                           -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         
         <!-- Log off window -->
-        <div class="win98post" style="z-index: 1; margin-left: 200000px; height: 119px; width: 284px; top: 40%; left:  40%; position: fixed;" id="logoff" onclick="inactiveall(); logonactive();">
+        <div class="win98post" style="z-index: 10; margin-left: 200000px; height: 119px; width: 284px; top: 40%; left:  40%; position: fixed;" id="logoff" onmousedown="inactiveall(); logonactive();">
             <div class="title-bar-98" id="logoffwindow" style="width:284px"> <div class="container" style="padding:2px">Log off Windows
                 <div class="win98titlebarbutton" style="margin-left: 2px" title="close"><div class="close" title="Close" onclick="logoffno()"></div></div>
                 <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="" title="help"> <div class="help"></div></div></a> 
@@ -649,13 +626,13 @@
         </div></div></div>
         
         <script>
-            function logonactive(){ pyroButtonOpen = false; tumblrButtonOpen = false;
+            function logonactive(){ pyroButtonOpen = false; tumblrButtonOpen = false; document.getElementById("logoff").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
                 document.getElementById("logoffwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')" }
         </script>
         
 
         <!-- shut down window -->
-        <div class="win98post" style="z-index: 1; margin-left: 200000px; height: 165px; width: 304px; top: 40%; left:  40%; position: fixed;" id="shutdown" onclick="inactiveall(); shutdownactive();">
+        <div class="win98post" style="z-index: 10; margin-left: 200000px; height: 165px; width: 304px; top: 40%; left:  40%; position: fixed;" id="shutdown" onmousedown="inactiveall(); shutdownactive();">
             <div class="title-bar-98" id="shutdownwindow" style="width:304px"> <div class="container" style="padding:2px">Shut down Windows
                 <div class="win98titlebarbutton" style="margin-left: 2px" title="close"><div class="close" title="Close" onclick="shutdownno()"></div></div>
                 <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="" title="help"> <div class="help"></div></div></a> 
@@ -683,8 +660,34 @@
         </div></div></div></div>
 
         <script>
-            function shutdownactive(){ pyroButtonOpen = false; tumblrButtonOpen = false;
+            function shutdownactive(){ pyroButtonOpen = false; tumblrButtonOpen = false; document.getElementById("shutdown").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
                 document.getElementById("shutdownwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')" }
+        </script>
+
+        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+        <!-- message box inactive toggle                                                                                                   -->
+        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+        
+        <script>    
+            
+            function inactiveall() { 
+            //complete toggle script, insert ids here
+                document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png')";
+                document.getElementById("catwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png')";
+                document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";
+                
+                document.getElementById("messagewindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
+                
+                document.getElementById("diskwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
+                document.getElementById("taskapp3").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";
+                
+                document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
+                document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";
+                
+                document.getElementById("logoffwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
+                document.getElementById("shutdownwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
+            }
+            
         </script>
 
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -705,14 +708,14 @@
         
         <script>
             let tumblrButtonOpen = true
-            function tumblractive() { tumblrButtonOpen = !tumblrButtonOpen; pyroButtonOpen = false;
+            function tumblractive() { tumblrButtonOpen = !tumblrButtonOpen; pyroButtonOpen = false; document.getElementById("post").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
                 document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')"; 
                 document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";}
         </script>
         
         <div id="desktop" class="container" id="desktop" onclick="inactiveall(); tumblractive();">
             {block:Posts}
-                <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-left: 20px; position: absolute;">
+                <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-left: 20px; position: absolute;" id="post">
     
                     <div class="title-bar-posts" id="postwindow"> <div class="container" style="padding:2px">🍭 very.vunnies
                         <div class="win98titlebarbutton" style="margin-left: 2px" title="close"><div class="close"></div></div>
@@ -848,7 +851,8 @@
                                     {/block:Video}
                                     <!-- Video audio -->
                                     {block:Audio}
-                                        <div class="audioContainer" style= "margin-top:0px;"> {block:AudioEmbed}{AudioEmbed color="white"}{/block:AudioEmbed} </div> <!-- Audio container --> 
+                                        <div class="container" style="height:1px"></div>
+                                        <div class="audioContainer"> {block:AudioEmbed}{AudioEmbed color="white"}{/block:AudioEmbed} </div> <!-- Audio container --> 
                                         {block:Caption}
                                             <div class="content caption" style="margin-top:-30px"> {Caption} </div> <!-- image caption -->
                                         {/block:Caption}
@@ -1057,24 +1061,24 @@
                         <!-- Help -->     
                         <label> <!--needed for 32x32-->
                             <a href="https://raw.githubusercontent.com/Thealonic/Thealonic.html/main/040121"><div class="submenu36" style="width: 142px;" >
-                                <div class="menuhelp"></div>
+                                <div class="menuhelp"></div> <!-- https://github.com/Thealonic/Thealonic.html -->
                                 <label style="margin-left: 2px; height:36px"> Open-Source </label></div></a></label>
                         <!-- Run -->
                         <label> <!--needed for 32x32-->
                             <a href="https://paypal.me/TheaVanherst"><div class="submenu36" style="width: 142px;" >
                                 <div class="menurun"></div>
-                                <label style="margin-left: 2px; height:36px"> Fund development... </label></div></a></label>   
+                                <label style="margin-left: 2px; height:36px"> Support development </label></div></a></label>   
                         
                         <!-- SPLITTER -->
                         <div class="menuapplicationsplit" style="margin-left: 2px; margin-top: 3px; margin-bottom: 4px"> </div>
                         
                         <!--Log off submenu -->
-                        <label onclick="shutdownno; logoff(); inactiveall(); logonactive();"> <!--needed for 32x32-->
+                        <label onclick="logoff(); inactiveall(); logonactive();"> <!--needed for 32x32-->
                             <div class="submenu36" style="width: 141px;" >
                                 <div class="menulogoff"></div>
                                 <label style="margin-left: 2px; height:36px"> Log off </label></div></label>  
                         <!--Log off submenu -->
-                        <label onclick="logoffno; shutdown(); inactiveall(); shutdownactive();"> <!--needed for 32x32-->
+                        <label onclick="shutdown(); inactiveall(); shutdownactive();"> <!--needed for 32x32-->
                             <div class="submenu36" style="width: 141px;" >
                                 <div class="menushutdown"></div>
                                 <label style="margin-left: 2px; height:36px"> Shutdown </label></div></label>
@@ -1538,9 +1542,9 @@
                                     <div class="menudocumentssound"></div>
                                     <label style="margin-left: 8px; margin-top: 3px"> OurHeartlessMaster.wav </label></div>
                                 <!-- Document files -->
-                                <div class="submenu20">
+                                <a href="https://raw.githubusercontent.com/Thealonic/Thealonic.html/main/040121"><div class="submenu20">
                                     <div class="menudocumentsdoc"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px"> Thealonic.doc </label></div>
+                                    <label style="margin-left: 8px; margin-top: 3px"> Thealonic.doc </label></div></a>
                             <!--Documents submenu END --> 
                             </div>
                      
@@ -1642,19 +1646,17 @@
                     <div class="title-bar-text" style="margin-top:3px; margin-left:5px; color:black;"><label style="color:black; font-size: 11px; cursor:pointer; margin-left:1px">📺 Display Properties</label></div></div>
             
             <script>
-                let logoffButtonOpen = false;
-                let pyroButtonOpen = false;
-                
-                function pyrotoggle() { pyroButtonOpen = !pyroButtonOpen;
+            
+                function pyrotoggle() {
                     if (document.getElementById("taskapp2").style.backgroundImage !== "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')") { 
-                        document.getElementById("pyrobox").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png')";
-                        document.getElementById("catbox").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png')";
+                        document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png')";  
+                        document.getElementById("catwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png')";
                         document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}}
                     
                 //start button pressed // start menu window
-                function pyrotoggle1(){
-                    if (pyroButtonOpen) { tumblrButtonOpen = false
-                        document.getElementById("pyrobox").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289642578214912/title-bar_gradientopen.png')";
+                function pyrotoggle1(){ pyroButtonOpen = !pyroButtonOpen;
+                    if (pyroButtonOpen) { tumblrButtonOpen = false;  
+                        document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289642578214912/title-bar_gradientopen.png')";
                         document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";
                         document.getElementById("pyro").style.zIndex = "100"; document.getElementById("cat").style.zIndex = "3"; }}
             
@@ -1914,18 +1916,23 @@
             // ----------------------------------------------------------------------------------------------------------------------------- -->
             
             //drag element id grabber
-            //dragElement(document.getElementById("logoff"));
-            //grab element
-            //function dragElement(elmnt) { //position storage and setting it to window
-            //    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-            //    if (document.getElementById(elmnt.id + "titlebar")) { document.getElementById(elmnt.id + "titlebar").onmousedown = dragMouseDown; } else { elmnt.onmousedown = dragMouseDown; }
-            //    function dragMouseDown(e) { //mouse moment grabbing
-            //        e = e || window.event; e.preventDefault(); pos3 = e.clientX; pos4 = e.clientY;
-            //        document.onmouseup = closeDragElement; document.onmousemove = elementDrag; }
-            //    function elementDrag(e) { e = e || window.event;  e.preventDefault();
-            //       pos1 = pos3 - e.clientX; pos2 = pos4 - e.clientY; pos3 = e.clientX; pos4 = e.clientY;
-            //        elmnt.style.top = (elmnt.offsetTop - pos2) + "px"; elmnt.style.left = (elmnt.offsetLeft - pos1) + "px"; }
-            //    function closeDragElement() { document.onmouseup = null; document.onmousemove = null; }}
+            dragElement(document.getElementById("cat"));
+            dragElement(document.getElementById("pyro"));
+            dragElement(document.getElementById("message"));
+            dragElement(document.getElementById("logoff"));
+            dragElement(document.getElementById("shutdown"));
+            
+            //grab element for windows
+            function dragElement(elmnt) { //position storage and setting it to window
+                var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                if (document.getElementById(elmnt.id + "window")) { document.getElementById(elmnt.id + "window").onmousedown = dragMouseDown; } else { elmnt.onmousedown = dragMouseDown; }
+                function dragMouseDown(e) { //mouse moment grabbing
+                    e = e || window.event; e.preventDefault(); pos3 = e.clientX; pos4 = e.clientY;
+                    document.onmouseup = closeDragElement; document.onmousemove = elementDrag; }
+                function elementDrag(e) { e = e || window.event;  e.preventDefault();
+                   pos1 = pos3 - e.clientX; pos2 = pos4 - e.clientY; pos3 = e.clientX; pos4 = e.clientY;
+                    elmnt.style.top = (elmnt.offsetTop - pos2) + "px"; elmnt.style.left = (elmnt.offsetLeft - pos1) + "px"; }
+                function closeDragElement() { document.onmouseup = null; document.onmousemove = null; }}
 
         </script>
         
