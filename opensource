@@ -1,5 +1,4 @@
 
-
             <!--
             ░░░░██╗░░░░██╗██╗░░░██╗███████╗██████╗░██╗░░░██╗██╗░░░██╗██╗░░██╗███████╗██████╗░░██████╗████████╗██╗░░░██╗
             ░░░██╔╝░░░██╔╝██║░░░██║██╔════╝██╔══██╗╚██╗░██╔╝██║░░░██║██║░░██║██╔════╝██╔══██╗██╔════╝╚══██╔══╝╚██╗░██╔╝
@@ -37,25 +36,6 @@
         <meta name="color:Icon Links Color" content="#ffffff" />
         <meta name="font:Font" content="'Helvetica Neue', Helvetica, Arial, sans-serif" />
         
-        <!-- Tumblr settings -->
-        <meta name="if:Two Column" content="1" />
-        <meta name="if:Custom Icons" content="0" />
-        <meta name="if:Custom Cursor" content="0" />
-        <meta name="if:Background Image Cover" content="1" />
-        <meta name="if:Tags on Index" content="1" />
-        <meta name="if:View High Resolution Button" content="1" />
-        <meta name="if:Display Photo Captions" content="1" />
-        <meta name="if:Display Description" content="1" />
-        <meta name="if:Display Home Icon" content="1" />
-        <meta name="if:Display Ask Icon" content="1" />
-        <meta name="if:Display Submit Icon" content="1" />
-        <meta name="if:Display VeryVhersty Icon" content="1" />
-        <meta name="if:Display Pages Icon" content="1" />
-        <meta name="if:Display Archive Icon" content="1" />
-        <meta name="if:Reblog Link" content="0" />
-        <meta name="if:Fade on Hover" content="0" />
-        <meta name="if:Enable Infinite Scrolling" content="1" />
-        
         <!-- refs -->
         <link rel="stylesheet" href="https://unpkg.com/98.css" />
         <link rel="stylesheet" href="https://static.tumblr.com/fpdiq1j/N3Zmkjmqn/theme_generic.css" />
@@ -65,6 +45,7 @@
         <script src="//static.tumblr.com/fpdiq1j/GV9n0wdlc/jquery.infinitescroll.min.js"></script>
         <script src="//static.tumblr.com/fpdiq1j/x8Nn0wiyd/jquery.masonry.min.js"></script>
         <script src="//static.tumblr.com/fpdiq1j/jpPn0wdlf/jquery.photosetgrid.min.js"></script>
+        
             
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <!-- CSS Scripts                                                                                                                   -->
@@ -73,9 +54,12 @@
         <!-- Setup -->
         <style type="text/css">
         
+            :root { --spritesheet: url('https://cdn.discordapp.com/attachments/630047188520665121/796998999583490058/spritesheet.png'); }
+        
             /* addresses */
             body { background: url('https://cdn.discordapp.com/attachments/630047188520665121/786208918119514112/wallpaper32.png') repeat fixed; 
                    background-size: cover; margin: 0; font: normal 13px/1.3 {font:Font}; padding: auto auto auto auto }
+            html, body { max-width: 100%; overflow-x: hidden; }
             a { color: #000000; text-decoration: none; }
             a:hover { text-decoration: underline; color: #ffffff; }
             span { background-color: #008383; }
@@ -97,87 +81,35 @@
             .notes { margin-top:0px; text-align:left; }
             ol.notes {max-height: 216px; width:461px; overflow:auto; margin-top:-6px; }
 
-            /* Post settings */
-            .body img, .caption img { max-width: 100%; overflow: hidden; }
-            img.full_image {width: 443px;} /* bottlenecks images */
-            .middle img { max-width: 459px; width: 100%; height: 100%; display: block; }
+            /* text Post settings */
             .quote .dash { float: left; padding: 0 4px 0 4px; }
             .quote .source { float: left; }
             .chat .line:last-of-type { margin-bottom: 0; }
+            
+            /* image Post settings */
+            .body img, .caption img { max-width: 100%; overflow: hidden; }
+            img.full_image {width: 443px;} /* bottlenecks images */
+            .middle img { max-width: 459px; width: 100%; height: 100%; display: block; }
             .photoset .wrapper {width: 100%; max-width: 459px},
+            
+            /* video Post settings */
             .video .video_player { height: 100%; width: 100%; max-width: 459px; display: block; margin: 0; }
+            
+            /* audio Post settings */
             .audio { padding: 0; }
             .audio_container { overflow: hidden; position: relative; width: 100px; }
             .soundcloud_audio_player { width: 100%; }
             .tumblr_audio_player { width: 100%; }
             .spotify_audio_player { height: 80px !important; width:100%; }
-    
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
-        /* Window bar handling */
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
-    
-            /* custom css for post windows apposed to the default win98 css */
-            .win98container{     box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
-            /*startmenu*/        font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute; font-size: 11px }
             
-            .win98post{          box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #dfdfdf,inset -2px -2px grey,inset 2px 2px #fff;background:silver;padding:3px;
-            /*randomimagesmenu*/ font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
-            .title-bar-posts{    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px;
-                                 background:url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png'); height: 18px; width: 475px;}
-            .title-bar-small{      font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px;
-                                 background: url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png'); height: 18px; width:194px;}
-            .title-bar-98{       font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px;
-                                 background: url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png');}
-
-            /* window  post handling */
-            .window{             box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #dfdfdf,inset -2px -2px grey,inset 2px 2px #fff;background:silver;padding:3px; z-index:2;
-            /*tumblrpostwindow*/ font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
-            /*.title-bar{          background: url('https://cdn.discordapp.com/attachments/630047188520665121/791289642578214912/title-bar_gradientopen.png'); height: 18px; width:194px;}*/
-            /*title-bar.inactive{  background: url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png'); height: 18px; width:194px;}*/
-            .title-bar-text{     font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color:#fff; letter-spacing:0; margin-right:24px}
-            
-            /* window title bar button handling */
-            .win98titlebarbutton{ width:10px; height: 8px; float:right; box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
-                            font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px;}
-            .win98titlebarbutton:active{ width:10px; height: 8px; float:right; box-shadow:inset 1px 1px #0a0a0a,  inset -1px -1px #fff, inset -2px -2px #dfdfdf, inset 2px 2px grey; background:silver; padding:3px; 
-                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: -1px; margin-left: -1px; }
-            .help { background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/791284145435181056/title-bar_help.png'); width:12px; height:10px; margin-top: -1px; margin-left: -1px; }
-            .minimize { background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/791284144197074944/titlebar_minimize.png'); width:12px; height:10px; margin-top: -1px; margin-left: -1px; }
-            .maximize { background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/791284148412350484/title-bar_maximize.png'); width:12px; height:10px; margin-top: -1px; margin-left: -1px; }
-            .close { background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/791284146987204618/title-bar_close.png'); width:12px; height:10px; margin-top: -1px; margin-left: -1px; }
-              
-            /* General button handling */
-            .win98button{   box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
-                            font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
-            .win98button:active{    box-shadow:inset 1px 1px #0a0a0a,  inset -1px -1px #fff, inset -2px -2px #dfdfdf, inset 2px 2px grey; background:silver; padding:3px; 
-                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
-
-            .start_bar .tray {float: right; border-top: 1px solid rgb(128,128,128); border-left: 1px solid rgb(128,128,128);border-bottom: 1px solid rgb(255,255,255); border-right: 1px solid rgb(255,255,255);
-                height: 18px; width: 79px; margin-right: 5px; margin-top: 2px; }
-            
-            /* tumblr post container things */
-            .sidescrollbarmiddletop {    display: block; height:  2px; width:16px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/788263927007281162/scrollbarsidescrolltop.png'); float: right;}
-            .sidescrollbarmiddlemiddle { display: block; height:  1px; width:467px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/787882766057603102/window_width.png'); background-repeat: repeat-y;}
-            .sidescrollbarmiddlebottom { display: block; height:  2px; width:16px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/788263930036092959/scrollbarsidescrollbottom.png'); float: right;}
-            /* this is still needed as a post container and needs patching out */
-            
-            .scrollup { height: 16px; width: 16px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/790166767397109760/scrollbarup.png');}
-            .scrollright { height: 16px; width: 16px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/790166763579899944/scrollbarright.png');}
-            .scrolldown { height: 16px; width: 16px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/790166761252716544/scrollbardown.png');}
-            .scrollleft { height: 16px; width: 16px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/790166763735744542/scrollbarleft.png');}
-            .scrollbarcontainer { width:16px; height:16px; background:silver; position: right; position: absolute; padding:0px; }
-            .cornerpeice { height: 20px; width: 20px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/784836050731794452/unknown.png');}  
-            
-            .notestopbar { background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/786639077117657168/boarder.png'); width:477px; height: 8px;}
-
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
-        /* Desktop setup css */
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
-
             /* gap maker */
             .filler { height: 2px; } 
             .filler2 { height: 10px; } 
             .filler3 { height: 400px; }
+    
+        /* ----------------------------------------------------------------------------------------------------------------------------- */
+        /* Desktop setup css */
+        /* ----------------------------------------------------------------------------------------------------------------------------- */
 
             /* taskbar icon setup */
             .icons { margin: 0 0 0 0; padding: -10px; width: 100px; float: left; position: fixed; z-index: 1; font-size: 12px }
@@ -186,57 +118,126 @@
             .thealonic { height: 72px; width: 100px; background-position: 14px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/677255444682506240/774189990380044288/master_sprite10.png');}
             
             /* sidebar */
-            .veryvhersty { height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/677255444682506240/774191126655270932/master_sprite11.png'); }
-            .twitter { height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/677255444682506240/783331524069031996/master_sprite8.png'); }
-            .askicon { height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/677255444682506240/783331523625615370/master_sprite7.png'); }
-            .discordlink { height: 72px; width: 100px; background-position: -8px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/677255444682506240/784092631831019550/master_sprite9.png'); }
-            .officialfunny { height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/785283246124564520/master_sprite14.png');}
-            .rct2 { height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/784843863814176779/master_sprite12.png'); }
-            .simcity { height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/785265020115877898/master_sprite13.png'); }
-            .ovffvp { height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/785265020115877898/master_sprite13.png'); }
+            .veryvhersty {      height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/677255444682506240/774191126655270932/master_sprite11.png'); }
+            .twitter {          height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/677255444682506240/783331524069031996/master_sprite8.png'); }
+            .askicon {          height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/677255444682506240/783331523625615370/master_sprite7.png'); }
+            .discordlink {      height: 72px; width: 100px; background-position:  -8px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/677255444682506240/784092631831019550/master_sprite9.png'); }
+            .officialfunny {    height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/785283246124564520/master_sprite14.png');}
+            .rct2 {             height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/784843863814176779/master_sprite12.png'); }
+            .simcity {          height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/785265020115877898/master_sprite13.png'); }
+            .ovffvp {           height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/785265020115877898/master_sprite13.png'); }
 
-            .displayboxdisplay { width:184px; height:169px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/793562429425844234/display_window.png');}
-            .displaycolour { width:155px; height: 15px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/793567960446664714/unknown.png');}
+            .displayboxdisplay {    width:184px; height:169px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/793562429425844234/display_window.png');}
+            .displaycolour {        width:155px; height: 15px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/793567960446664714/unknown.png');}
+    
+        /* ----------------------------------------------------------------------------------------------------------------------------- */
+        /* Window bar handling */
+        /* ----------------------------------------------------------------------------------------------------------------------------- */
+    
+            /* custom css for post windows apposed to the default win98 css */
+            .win98container{        box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
+            /*startmenu*/           font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute; font-size: 11px }
+            
+            .win98post{             box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #dfdfdf,inset -2px -2px grey,inset 2px 2px #fff;background:silver;padding:3px;
+            /*randomimagesmenu*/    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
+            .title-bar-posts{       font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px;
+                                    background:url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png'); height: 18px; width: 475px;}
+            .title-bar-small{       font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px;
+                                    background: url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png'); height: 18px; width:194px;}
+            .title-bar-98{          font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px;
+                                    background: url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png');}
+
+            /* window  post handling */
+            .window{                box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #dfdfdf,inset -2px -2px grey,inset 2px 2px #fff;background:silver;padding:3px; z-index:2;
+                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
+            /*.title-bar{           background: url('https://cdn.discordapp.com/attachments/630047188520665121/791289642578214912/title-bar_gradientopen.png'); height: 18px; width:194px;}*/
+            /*title-bar.inactive{   background: url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png'); height: 18px; width:194px;}*/
+            .title-bar-text{        font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color:#fff; letter-spacing:0; margin-right:24px}
+            
+            /* window title bar button handling */
+            .win98titlebarbutton{   width:10px; height: 8px; float:right; box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
+                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px;}
+            .win98titlebarbutton:active{ width:10px; height: 8px; float:right; box-shadow:inset 1px 1px #0a0a0a,  inset -1px -1px #fff, inset -2px -2px #dfdfdf, inset 2px 2px grey; background:silver; padding:3px; 
+                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: -1px; margin-left: -1px; }
+              
+            /* General button handling */
+            .win98button{           box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
+                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
+            .win98button:active{    box-shadow:inset 1px 1px #0a0a0a,  inset -1px -1px #fff, inset -2px -2px #dfdfdf, inset 2px 2px grey; background:silver; padding:3px; 
+                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
+                                    
+        /* ----------------------------------------------------------------------------------------------------------------------------- */
+        /* Window icon handling */
+        /* ----------------------------------------------------------------------------------------------------------------------------- */
+            
+            .help, .minimize, .maximize, .close 
+            { background-image: var(--spritesheet); width:12px; height:10px; margin-top: -1px; margin-left: -1px; }
+            
+            .help {     background-position:  -66px -214px;} /* help */
+            .minimize { background-position:  -82px -214px;} /* minimize */
+            .maximize { background-position:  -98px -214px;} /* maximize */
+            .close {    background-position: -114px -214px;} /* close */
+            
+            /* tumblr post post icons */
+            .scrollup, .scrollright, .scrolldown, .scrollleft, .cornerpeice
+            { background-image: var(--spritesheet); height: 16px; width: 16px; margin-top: -1px; margin-left: -1px; }
+
+            .scrolldown {   background-position:    0px -211px; }
+            .scrollleft {   background-position:  -16px -211px; }
+            .scrollup {     background-position:  -32px -211px; }
+            .scrollright {  background-position:  -48px -211px; }
+            .cornerpeice {  background-position: -192px -211px; height: 16px; width: 16px; }
+
+            /* tumblr post container things */
+            .sidescrollbarmiddletop {    display: block; height:  2px; width:16px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/788263927007281162/scrollbarsidescrolltop.png'); float: right;}
+            .sidescrollbarmiddlemiddle { display: block; height:  1px; width:467px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/787882766057603102/window_width.png'); background-repeat: repeat-y;}
+            .sidescrollbarmiddlebottom { display: block; height:  2px; width:16px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/788263930036092959/scrollbarsidescrollbottom.png'); float: right;}
+            .scrollbarcontainer { width:16px; height:16px; background:silver; position: right; position: absolute; padding:0px; }
+            
+            /* tumblr post note container */
+            .notestopbar { background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/786639077117657168/boarder.png'); width:477px; height: 8px;}
             
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* Start bar handling */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
-            
-            /* icon settings */
 
             /* Post settings */
-            .start_bar { position: fixed; background-color: rgb(192,192,192); bottom: 0; height: 28px; width: 100%; z-index: 3; font-family:sans-serif; font-size: 12px;}
-                .start_bar .top_border { border-bottom: 1px solid rgb(255,255,255); border-top: 1px solid rgb(223,223,223); }
-                .start_bar .big_seperator { float: left; border-left: 1px solid rgb(128,128,128); border-right: 1px solid rgb(255,255,255); height: 22px; margin-top: 2px; margin-left: 2px; }
-                .start_bar .small_seperator { float: left;  border-left: 1px solid rgb(255,255,255); border-top: 1px solid rgb(255,255,255); margin-top: 4px; margin-left: 2px;
-                                              border-right: 1px solid rgb(128,128,128); border-bottom: 1px solid rgb(128,128,128); background-color: rgb(192,192,192); width: 1px; height: 16px; }
+            .start_bar {       position: fixed; background-color: rgb(192,192,192); bottom: 0; height: 28px; width: 100%; z-index: 3; font-family:sans-serif; font-size: 12px;}
+                .start_bar .top_border {        border-bottom: 1px solid rgb(255,255,255); border-top: 1px solid rgb(223,223,223); }
+                .start_bar .big_seperator {     float: left; border-left: 1px solid rgb(128,128,128); border-right: 1px solid rgb(255,255,255); height: 22px; margin-top: 2px; margin-left: 2px; }
+                .start_bar .small_seperator {   float: left;  border-left: 1px solid rgb(255,255,255); border-top: 1px solid rgb(255,255,255); margin-top: 4px; margin-left: 2px;
+                                                border-right: 1px solid rgb(128,128,128); border-bottom: 1px solid rgb(128,128,128); background-color: rgb(192,192,192); width: 1px; height: 16px; }
                 
             /* tray config */
-            .start_bar .time {  line-height: 18px; float: right; font-size: 10px; margin-right: 10px; }
-            .start_bar .calendar { float: left; margin-top: 1px; margin-left: 3px; }
-            .taskbaricons { float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px; }
+            .start_bar .time {      line-height: 18px; float: right; font-size: 10px; margin-right: 10px; }
+            .taskbaricons {         float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px; }
             
-            /* Start button // menu config */
-            .startbutton { float: left; height: 22px; width: 54px; margin-left: 2px; margin-top: 2px;background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/785903172115234846/unknown.png');}
-            .startmenustartbutton { float: left; height: 22px; width: 54px; margin-left: 2px; margin-top: 2px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/785903300292902982/unknown.png');}
-            .startmenu { float: left; float: bottom; height: 383px; width: 168px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/787509592325095485/Start_menu_empty.png');}
+            .start_bar .tray {      border-top: 1px solid rgb(128,128,128); border-left: 1px solid rgb(128,128,128);border-bottom: 1px solid rgb(255,255,255); border-right: 1px solid rgb(255,255,255);
+                                    height: 18px; width: 79px; margin-right: 5px; margin-top: 2px; float: right; } 
+            
+            /* start menu button toggle */
+            .startbutton, .startmenustartbutton { background-image: var(--spritesheet); height: 22px; width: 54px; margin-left: 2px; margin-top: 2px; }
                 
+            .startbutton {          background-position: -306px -189px;}
+            .startmenustartbutton { background-position: -306px -167px;}
+
             /* start menu application icon config */
-            .submenu20 { height: 20px; background-color:#c0c0c0; color: black; width:100%; }
-            .submenu20:hover { height: 20px; background-color:#00207c; color: white; width:100%; }
-            .submenu36 { height: 36px; background-color:#c0c0c0; color: black; width:100%; }
-            .submenu36:hover { height: 36px; background-color:#00207c; color: white; width:100%; }
-            /* start menu misc */
- 
-            .submenuarrow1 {       float: right; height: 7px; width: 4px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/788945376258293760/arrow_right0.png');}
-            .menuarrow1 {       float: right; height: 7px; width: 4px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/788945376258293760/arrow_right0.png');}
-            .menuapplicationsplit {     float: left; height: 2px; width: 137px; margin-left: 2px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/786667475839877150/Start_menu_border.png');}
-            .windowsstartmenubar { float: left; height: 377px; width: 21px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/790186754048131143/windowsstartmenubar.png');}
+            .submenu20 {        height: 20px; background-color:#c0c0c0; color: black; width:100%; }
+            .submenu20:hover {  height: 20px; background-color:#00207c; color: white; width:100%; }
+            .submenu36 {        height: 36px; background-color:#c0c0c0; color: black; width:100%; }
+            .submenu36:hover {  height: 36px; background-color:#00207c; color: white; width:100%; }
             
+            .menuarrow1 {           background-image: var(--spritesheet); margin: auto; float: right; }
+            .menuarrow1 {           height:   7px; width:   4px; background-position: -150px -215px;} /* Patchnotes */
+            
+            /* start menu misc */
+            .menuapplicationsplit { float: left; height: 2px; width: 137px; margin-left: 2px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/786667475839877150/Start_menu_border.png');}
+            .windowsstartmenubar {  float: left; height: 377px; width: 21px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/790186754048131143/windowsstartmenubar.png');}
+            
+            /* start menu icon references */
             .patchnotes,    .menuprograms,  .menudocuments, .menufavourites, .menushutdown, .logofficon,
             .menusettings,  .menufind,      .menuhelp,      .menurun,        .menulogoff,   .shutdownicon
-            
-            { background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/796231401635840030/Startmenu.png'); margin: auto; float: left; height: 36px; width: 36px; }
+            { background-image: var(--spritesheet); margin: auto; float: left; height: 36px; width: 36px; }
                 
             .patchnotes {       background-position:    0px   0px;} /* Patchnotes */
             .menuprograms {     background-position:  -36px   0px;} /* Programs */
@@ -251,7 +252,7 @@
             .logofficon {       background-position: -288px -36px;} /* Log Off */
             .shutdownicon {     background-position: -324px -36px;} /* Shut Down */
             
-            
+            /* start menu submenu icon references */
             .menuprograms123,   .menuapplications7,     .menucommunications1,   .menusystemtools1,
             .menuprograms4,     .menuapplications8,     .menucommunications2,   .menusystemtools2,
             .menuprograms5,     .menuapplications9,     .menucommunications3,   .menusystemtools3,
@@ -268,60 +269,52 @@
             .menugames3,        .menusettings4,         .menuentertainment4,    
             .menugames4,        .menusettings5,         .menuentertainment5,    .taskbaricon1,
                                 .menusettings6,                                 .taskbaricon2,
-            .menudocuments1,                            .menufavouritesfolder,  .taskbaricon3,
-            .menudocumentssound,                        .menufavouriteslink,    .taskbaricon4,
-            .menudocumentssound,
-            .menudocumentsdoc 
-                                                        
-            { background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/796231401635840030/Startmenu.png'); margin: auto; float: left; height: 20px; width: 20px; }
-            
-            .menuprograms123 {  background-position: 0px -72px;} /* folder icon */
-            .menuprograms4 {    background-position: -140px -132px;} /* internet explorer */
-            .menuprograms5 {    background-position: -160px -132px;} /* MSDOS */
-            .menuprograms6 {    background-position: -180px -132px;} /* Outlook Express */
-            .menuprograms7 {    background-position: -200px -132px;} /* Windows Explorer */
-            
-                .menuapplications7 {    background-position:  -20px  -92px;} /* calc */             .menuapplications12 {   background-position:    0px -112px;} /* ask */
-                .menuapplications8 {    background-position:  -40px  -92px;} /* img */              .menuapplications13 {   background-position:  -20px -112px;} /* yahoo */
-                .menuapplications9 {    background-position:  -60px  -92px;} /* wordpad */          .menuapplications14 {   background-position:  -40px -112px;} /* msn */
-                .menuapplications10 {   background-position:  -80px  -92px;} /* paint */            .menuapplications15 {   background-position:  -60px -112px;} /* prodigy */
-                .menuapplications11 {   background-position: -100px  -92px;} /* notepad */
+            .menudocumentssound,                        .menufavouritesfolder,  .taskbaricon3,
+            .menudocuments1,                            .menufavouriteslink,    .taskbaricon4,
+            .menudocumentsdoc,  
+            .menudocumentssound,                                                .calendar
+            { background-image: var(--spritesheet); margin: auto; float: left; height: 20px; width: 20px; }
+
+            .menuapplications7 {    background-position:  -20px  -92px;} /* calc */             .menuapplications12 {   background-position:    0px -112px;} /* ask */
+            .menuapplications8 {    background-position:  -40px  -92px;} /* img */              .menuapplications13 {   background-position:  -20px -112px;} /* yahoo */
+            .menuapplications9 {    background-position:  -60px  -92px;} /* wordpad */          .menuapplications14 {   background-position:  -40px -112px;} /* msn */
+            .menuapplications10 {   background-position:  -80px  -92px;} /* paint */            .menuapplications15 {   background-position:  -60px -112px;} /* prodigy */
+            .menuapplications11 {   background-position: -100px  -92px;} /* notepad */
                     
-                .menucommunications1 {  background-position:    0px -132px;} /* Dial Up */          .menuentertainment1 {   background-position:    0px -152px;} /* Cd player */
-                .menucommunications2 {  background-position:  -20px -132px;} /* Hyper terminal */   .menuentertainment2 {   background-position:  -20px -152px;} /* Cd Burner */
-                .menucommunications3 {  background-position:  -40px -132px;} /* Configurations */   .menuentertainment3 {   background-position:  -40px -152px;} /* Cd Recorder */
-                .menucommunications4 {  background-position:  -60px -132px;} /* Phone Dialup */     .menuentertainment4 {   background-position:  -60px -152px;} /* Volume Player */
-                                                                                                    .menuentertainment5 {   background-position:  -80px -152px;} /* Media Player */
-                .menugames1 {           background-position:    0px -172px;} /* Freecell */         .menuinternettools1 {   background-position: -140px  -72px;} /* Internet wizard */
-                .menugames2 {           background-position:  -20px -172px;} /* Hearts */           .menuinternettools2 {   background-position: -160px  -72px;} /* Microsoft chat */
-                .menugames3 {           background-position:  -40px -172px;} /* Minesweeper */      .menuinternettools3 {   background-position: -180px  -72px;} /* Net meeting */
-                .menugames4 {           background-position:  -60px -172px;} /* Solitar */          .menuinternettools4 {   background-position: -200px  -72px;} /* Personal Webserver */
+            .menucommunications1 {  background-position:    0px -132px;} /* Dial Up */          .menuentertainment1 {   background-position:    0px -152px;} /* Cd player */
+            .menucommunications2 {  background-position:  -20px -132px;} /* Hyper terminal */   .menuentertainment2 {   background-position:  -20px -152px;} /* Cd Burner */
+            .menucommunications3 {  background-position:  -40px -132px;} /* Configurations */   .menuentertainment3 {   background-position:  -40px -152px;} /* Cd Recorder */
+            .menucommunications4 {  background-position:  -60px -132px;} /* Phone Dialup */     .menuentertainment4 {   background-position:  -60px -152px;} /* Volume Player */
+                                                                                                .menuentertainment5 {   background-position:  -80px -152px;} /* Media Player */
+            .menugames1 {           background-position:    0px -172px;} /* Freecell */         .menuinternettools1 {   background-position: -140px  -72px;} /* Internet wizard */
+            .menugames2 {           background-position:  -20px -172px;} /* Hearts */           .menuinternettools2 {   background-position: -160px  -72px;} /* Microsoft chat */
+            .menugames3 {           background-position:  -40px -172px;} /* Minesweeper */      .menuinternettools3 {   background-position: -180px  -72px;} /* Net meeting */
+            .menugames4 {           background-position:  -60px -172px;} /* Solitar */          .menuinternettools4 {   background-position: -200px  -72px;} /* Personal Webserver */
 
-                .menusystemtools1 {     background-position: -140px  -92px;} /* character map */    .menusystemtools11 {    background-position: -140px -112px;} /* systeminfo */
-                .menusystemtools2 {     background-position: -160px  -92px;} /* clipboard viewer */ .menusystemtools12 {    background-position: -160px -112px;} /* systemmonitor */
-                .menusystemtools3 {     background-position: -180px  -92px;} /* disk cleanup */     .menusystemtools13 {    background-position: -180px -112px;} /* welcometowindows */
-                .menusystemtools4 {     background-position: -200px  -92px;} /* disk defrag */
-                .menusystemtools5 {     background-position: -220px  -92px;} /* drive converter */
-                .menusystemtools6 {     background-position: -240px  -92px;} /* maintain wizard */
-                .menusystemtools7 {     background-position: -260px  -92px;} /* net watcher */
-                .menusystemtools8 {     background-position: -280px  -92px;} /* resource meter */
-                .menusystemtools9 {     background-position: -300px  -92px;} /* scandisk */
-                .menusystemtools10 {    background-position: -320px  -92px;} /* schedualed tasks */
+            .menusystemtools1 {     background-position: -140px  -92px;} /* character map */    .menusystemtools11 {    background-position: -140px -112px;} /* systeminfo */
+            .menusystemtools2 {     background-position: -160px  -92px;} /* clipboard viewer */ .menusystemtools12 {    background-position: -160px -112px;} /* systemmonitor */
+            .menusystemtools3 {     background-position: -180px  -92px;} /* disk cleanup */     .menusystemtools13 {    background-position: -180px -112px;} /* welcometowindows */
+            .menusystemtools4 {     background-position: -200px  -92px;} /* disk defrag */
+            .menusystemtools5 {     background-position: -220px  -92px;} /* drive converter */  .menuprograms123 {      background-position: 0px -72px;} /* folder icon */
+            .menusystemtools6 {     background-position: -240px  -92px;} /* maintain wizard */  .menuprograms4 {        background-position: -140px -132px;} /* internet explorer */
+            .menusystemtools7 {     background-position: -260px  -92px;} /* net watcher */      .menuprograms5 {        background-position: -160px -132px;} /* MSDOS */
+            .menusystemtools8 {     background-position: -280px  -92px;} /* resource meter */   .menuprograms6 {        background-position: -180px -132px;} /* Outlook Express */
+            .menusystemtools9 {     background-position: -300px  -92px;} /* scandisk */         .menuprograms7 {        background-position: -200px -132px;} /* Windows Explorer */
+            .menusystemtools10 {    background-position: -320px  -92px;} /* schedualed tasks */
+                                                                                                .menusettings1 {        background-position: -140px -172px;} /* control panel */
+            .menudocuments1 {       background-position: -140px -152px;} /* my documents */     .menusettings2 {        background-position: -160px -172px;} /* printers */
+            .menudocumentssound {   background-position: -160px -152px;} /* sound files */      .menusettings3 {        background-position: -180px -172px;} /* taskbar */
+            .menudocumentsfolder {  background-position: -180px -152px;} /* document file */    .menusettings4 {        background-position: -200px -172px;} /* folder options */
+            .menudocumentsdoc {     background-position: -220px -152px;} /* document file */    .menusettings5 {        background-position: -220px -172px;} /* Active desktop */
+            .menufavouriteslink {   background-position: -200px -152px;} /* favourates link */  .menusettings6 {        background-position: -240px -172px;} /* windows update */
+            .menufavouritesfolder { background-position: -180px -152px;} /* favourite folder */ 
+                                                                                                .taskbaricon1 {         background-position:    0px -192px; } 
+            .menufind1 {            background-position: -140px -192px;} /* files or folders */ .taskbaricon2 {         background-position:  -20px -192px; margin-left: 2px;} 
+            .menufind2 {            background-position: -160px -192px;} /* computer */         .taskbaricon3 {         background-position:  -40px -192px; margin-left: 2px;} 
+            .menufind3 {            background-position: -180px -192px;} /* on the internet */  .taskbaricon4 {         background-position:  -60px -192px; margin-left: 2px;}
+            .menufind4 {            background-position: -200px -192px;} /* people */           .calendar {             background-position:  -82px -194px; margin-left: 2px; height: 16px; width: 16px;}
             
-                .menudocuments1 {       background-position: -140px -152px;} /* my documents */     .menusettings1 {        background-position: -140px -172px;} /* control panel */
-                .menudocumentssound {   background-position: -160px -152px;} /* sound files */      .menusettings2 {        background-position: -160px -172px;} /* printers */
-                .menudocumentsfolder {  background-position: -180px -152px;} /* document file */    .menusettings3 {        background-position: -180px -172px;} /* taskbar */
-                .menudocumentsdoc {     background-position: -220px -152px;} /* document file */    .menusettings4 {        background-position: -200px -172px;} /* folder options */
-                .menufavouriteslink {   background-position: -200px -152px;} /* favourates link */  .menusettings5 {        background-position: -220px -172px;} /* Active desktop */
-                .menufavouritesfolder { background-position: -180px -152px;} /* favourite folder */ .menusettings6 {        background-position: -240px -172px;} /* windows update */
-
-                .menufind1 {            background-position: -140px -192px;} /* files or folders */ .taskbaricon1 {         background-position:    0px -192px; } 
-                .menufind2 {            background-position: -160px -192px;} /* computer */         .taskbaricon2 {         background-position:  -20px -192px; margin-left: 2px;} 
-                .menufind3 {            background-position: -180px -192px;} /* on the internet */  .taskbaricon3 {         background-position:  -40px -192px; margin-left: 2px;} 
-                .menufind4 {            background-position: -200px -192px;} /* people */           .taskbaricon4 {         background-position:  -60px -192px; margin-left: 2px;} 
-            
-            .calendar { height: 16px; width: 16px; background-position: -632px -87px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/785901522721833050/master_sprite.png'); }
-            .start_menu { height: 383px; width: 168px; background-position: 0px 0px; background-image: url('https://cdn.discordapp.com/attachments/629307562885644308/783282098646810644/master_spritedis.png'); }
+            .start_menu { height: 383px; width: 168px; background-position: 0px 0px; background-image: url('https://cdn.discordapp.com/attachments/629307562885644308/783282098646810644/master_spritedis.png');}
 
             .taskbarapp1 
                 { background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png '); float: left; width: 160px; height: 22px; margin-top: 2px; margin-left: 4px;} /*tumblrposts*/
@@ -339,14 +332,19 @@
             .trash5 { height: 398px; width: 398px; background-position: 0px -20px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/789831202181873678/colour_window.png');}
                 
             /* Message box position handling */
-            .discord {  position: fixed; top:  7%; right: 3%; z-index: 3; max-width:480px; }
-            .kofi {     position: fixed; top: 50%; right: 5%; z-index: 3; max-width:480px; }
+            .discord {  position: fixed; top:  7%; right: 3%; z-index: 3; max-width:480px;}
+            .kofi {     position: fixed; top: 50%; right: 5%; z-index: 3; max-width:480px;}
 
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* General formatting */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
 
-            h3 { font-size: 2rem}
+            h3 { font-size: 2rem;}
+
+            .start_bar .time {  line-height: 18px; float: right; font-size: 10px; margin-right: 10px; }
+            .start_bar .calendar { float: left; margin-top: 1px; margin-left: 3px; }
+            .taskbaricons { float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px; }
+
 
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* Additional HTML handle rendering                                                                                              */
@@ -365,7 +363,7 @@
             .media embed { position: absolute; width: 443px; }
             .video {width: 459px!important;}
             .video iframe {width: 459px!important;}
-
+            
             /* black bars at the side */
             /*.media { position: relative;}
             .media iframe, .media object, 
@@ -381,12 +379,7 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <!-- desktop handling                                                                                                              -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-            
-        <script>
-            var currentno = 5
-            var pyrotabs = 2
-        </script>
-        
+
         <div class="wrapper" onclick="pyroinactive(); catinactive()">
             <!-- Sidebar icons coloumn 1 -->
             <div class="icons" style= "z-index: 1; margin-top:18px">
@@ -460,6 +453,10 @@
     {block:PermalinkPage}permalink_page{/block:PermalinkPage} 
     two_column masonry_enabled">
         
+        <script>
+            var currentno = 5
+        </script>
+        
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <!-- Tumblr + embedding handling                                                                                                   -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -472,9 +469,13 @@
         <!-- VUNNY message box rendering                                                                                                   -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         
+        <script>
+            var pyrotabs = 2
+        </script>
+        
         <div class="win98post" style="z-index: 4; height: 246px; width:194px; position: fixed; top: 68%; left: 4%; position: absolute" 
              onmousedown="inactiveall(); catactive();" id="cat">
-                    <div class="title-bar-small" id="catwindow"> <div class="container" style="padding:2px">🙀 cat 
+                    <div class="title-bar-small" id="catwindow"> <div class="container" style="padding:2px; cursor: default;">🙀 cat 
                         <div class="win98titlebarbutton"  style="margin-left: 2px" onclick="catclose(); setTimeout(vunnyinactive, 50);"><div class="close"></div></div>
                             <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU">
                                 <div class="win98titlebarbutton" style=""> <div class="help"></div> </div> </a> 
@@ -487,7 +488,8 @@
         </div></div></div>
             
         <script>
-            function catactive() { tumblrButtonOpen = false; logoffButtonOpen = false; document.getElementById("cat").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
+            function catactive() { tumblrButtonOpen = false; logoffButtonOpen = false; 
+                document.getElementById("cat").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
                 document.getElementById("catwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289642578214912/title-bar_gradientopen.png')";
                 document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";
                 pyroButtonOpen = !pyroButtonOpen;} 
@@ -496,7 +498,7 @@
             
         <div class="win98post" style="z-index: 5; height: 246px; width:194px; position: fixed; top: 58%; left: 13%;position: absolute" 
             onmousedown="inactiveall(); pyroactive();" id="pyro">
-            <div class="title-bar-small" id="pyrowindow"> <div class="container" style="padding:2px">💯 bloody ell' chums 
+            <div class="title-bar-small" id="pyrowindow"> <div class="container" style="padding:2px; cursor: default;">💯 bloody ell' chums 
                 <div class="win98titlebarbutton"  style="margin-left: 2px" onclick="pyroclose(); setTimeout(vunnyinactive, 50);"><div class="close"></div></div>
                     <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU">
                         <div class="win98titlebarbutton" style=""> <div class="help"></div> </div> </a> 
@@ -509,7 +511,8 @@
         </div></div></div>
 
         <script> 
-            function pyroactive() { tumblrButtonOpen = false; document.getElementById("pyro").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
+            function pyroactive() { tumblrButtonOpen = false; 
+                document.getElementById("pyro").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
                 document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289642578214912/title-bar_gradientopen.png')";
                 document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";
                 pyroButtonOpen = !pyroButtonOpen; } 
@@ -535,13 +538,13 @@
         <!-- message box rendering -->
         <div class="win98post" style="height:  50px; width:306px; position: fixed; top: 63%; right:  8%; font-family:Arial; position: absolute; z-index:10" 
              onmousedown="inactiveall(); messageactive();" id="message">
-            <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="container" style="padding:2px">🧮 brain go brrrrr
+            <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="container" style="padding:2px; cursor: default;">🧮 brain go brrrrr
             <div class="win98titlebarbutton"  style="margin-left: 2px"><div class="close"></div></div>
                 <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU">
                     <div class="win98titlebarbutton" style=""> <div class="help"></div> </div> </a> 
             </div></div>
             <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
-                <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>6:19am on January 6th, 2021. [GMT]</label></p>
+                <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>6:57am on January 7th, 2021. [GMT]</label></p>
         </div></div>
         
         <!-- message box functions -->
@@ -560,7 +563,7 @@
         <!-- display settings container -->
         <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; right:  3%; position: absolute"
              onmousedownk=" " id="disk">
-            <div class="title-bar-98" id="diskwindow"> <div class="container" style="padding:2px; width: 398px;">📺 Display Properties
+            <div class="title-bar-98" id="diskwindow"> <div class="container" style="padding:2px; width: 398px; cursor: default;">📺 Display Properties
                 <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:4px" title="close"><div class="close"></div></div>
                 <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="" title="help"> <div class="help"></div></div></a> 
                 </div>
@@ -626,10 +629,12 @@
         </div></div></div>
         
         <script>
-            function logonactive(){ pyroButtonOpen = false; tumblrButtonOpen = false; document.getElementById("logoff").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
+            function logonactive(){ pyroButtonOpen = false; tumblrButtonOpen = false; 
+                document.getElementById("logoff").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
                 document.getElementById("logoffwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')" }
+            function logoff() {     document.getElementById("logoff").style.marginLeft = "0px"; document.getElementById("logoff").style.zIndex = "100"; }
+            function logoffno() {   document.getElementById("logoff").style.marginLeft = "200000px"; document.getElementById("logoff").style.zIndex = "1"; }
         </script>
-        
 
         <!-- shut down window -->
         <div class="win98post" style="z-index: 10; margin-left: 200000px; height: 165px; width: 304px; top: 40%; left:  40%; position: fixed;" id="shutdown" onmousedown="inactiveall(); shutdownactive();">
@@ -660,8 +665,11 @@
         </div></div></div></div>
 
         <script>
-            function shutdownactive(){ pyroButtonOpen = false; tumblrButtonOpen = false; document.getElementById("shutdown").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
+            function shutdownactive(){ pyroButtonOpen = false; tumblrButtonOpen = false; 
+                document.getElementById("shutdown").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
                 document.getElementById("shutdownwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')" }
+            function shutdown() {   document.getElementById("shutdown").style.marginLeft = "0px"; document.getElementById("shutdown").style.zIndex = "100"; }
+            function shutdownno() { document.getElementById("shutdown").style.marginLeft = "200000px"; document.getElementById("shutdown").style.zIndex = "1"; }
         </script>
 
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -707,15 +715,15 @@
         {/block:Pagination}
         
         <script>
-            let tumblrButtonOpen = true
-            function tumblractive() { tumblrButtonOpen = !tumblrButtonOpen; pyroButtonOpen = false; document.getElementById("post").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
+            function tumblractive() { tumblrButtonOpen = !tumblrButtonOpen; pyroButtonOpen = false; 
+                document.getElementById("post").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
                 document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')"; 
                 document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";}
         </script>
         
-        <div id="desktop" class="container" id="desktop" onclick="inactiveall(); tumblractive();">
+        <div id="desktop" class="container" id="desktop" onclick="inactiveall(); tumblractive();" style="">
             {block:Posts}
-                <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-left: 20px; position: absolute;" id="post">
+                <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-left: 20px; position: absolute; cursor: default" id="post">
     
                     <div class="title-bar-posts" id="postwindow"> <div class="container" style="padding:2px">🍭 very.vunnies
                         <div class="win98titlebarbutton" style="margin-left: 2px" title="close"><div class="close"></div></div>
@@ -852,7 +860,7 @@
                                     <!-- Video audio -->
                                     {block:Audio}
                                         <div class="container" style="height:1px"></div>
-                                        <div class="audioContainer"> {block:AudioEmbed}{AudioEmbed color="white"}{/block:AudioEmbed} </div> <!-- Audio container --> 
+                                        <div class="audioContainer" style="width: 443px"> {block:AudioEmbed}{AudioEmbed color="white"}{/block:AudioEmbed} </div> <!-- Audio container --> 
                                         {block:Caption}
                                             <div class="content caption" style="margin-top:-30px"> {Caption} </div> <!-- image caption -->
                                         {/block:Caption}
@@ -979,7 +987,7 @@
                                     </fieldset>
                                 </div>
                                 
-                                <div class="cornerpeice" style="margin-left: 454px; margin-top:-1px; cursor:se-resize">  </div>
+                                <div class="cornerpeice" style="margin-left: 457px; margin-top:2px; cursor:se-resize">  </div>
                                 
                             </div>
                         </div>
@@ -1001,16 +1009,18 @@
         <!-- Additional Page Rendering                                                                                                     -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <!-- Start bar rendering -->
-        <div class="start_bar" id="start" style= "z-index:5">
+        <div class="start_bar" id="start" style= "z-index:10000000000000">
             <div class="top_border"></div> <!-- top line render-->
             
             <!-- Start button toggle -->
             <div class="startbutton" id="startbutton" onclick="startpress2(); startpress()"; > </div> 
+            
                 <!-- Start menu closed -->
             <div class="container" style="position: fixed; bottom: 0%; bottom: 24px; left: 2px;" onmouseleave="menuclosed(this)">
                 <div class="win98container" id="startmenu" style="width:163px; height: 377px; margin-top:-383px ;margin-left: 200000px" onmousedown="startpressdelay()"> 
                     <div class="container" style="margin-left: 20px; margin-top: -3px">
-                    
+                        
+                        <!-- windows gradient bar -->
                         <div class="windowsstartmenubar" style="width:21px height:377px; margin-left:-20px; margin-top:3px"></div>
                         
                         <!-- Patchnotes -->
@@ -1084,60 +1094,51 @@
                                 <label style="margin-left: 2px; height:36px"> Shutdown </label></div></label>
                         
                         <!-- Startbutton script placement holder -->
-                        <div class="startmenustartbutton" style="margin-left: -24px; margin-top: 3px" onclick="startpress2()";></div>
+                        <div class="startmenustartbutton" style="margin-left: -23px; margin-top: 3px" onclick="startpress2()";></div>
                     </div>
             
-            <script>       
-                //start button / menu addressing
-                var x = document.getElementById("startbutton"); let startButtonOpen = false;
-                var y = document.getElementById("startmenu");
-                //start button default // no start menu window
-                function startpress2() {
-                    if (x.style.backgroundImage !== "url('https://cdn.discordapp.com/attachments/630047188520665121/785903172115234846/unknown.png')") {
-                        x.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/785903172115234846/unknown.png')";
-                        y.style.marginLeft = "200000px"; 
-                        document.getElementById("start").style.zIndex = "4"; }}
-                //start button pressed // start menu window
-                function startpress() {
-                    startButtonOpen = !startButtonOpen;
-                    if (startButtonOpen) {
-                        x.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/785903300292902982/unknown.png')";
-                        y.style.marginLeft = "0px"; document.getElementById("start").style.zIndex = "100"; }}
-                function startpressdelay(){
-                    setTimeout(function(){
-                        x.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/785903172115234846/unknown.png')";
-                        y.style.marginLeft = "200000px"; document.getElementById("start").style.zIndex = "4"; }, 200)};
-                        
-                function menuclosed() { 
-                    x.style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/785903172115234846/unknown.png')";
-                    y.style.marginLeft = "200000px"; document.getElementById("start").style.zIndex = "4"; 
-                    if( startButtonOpen = false) { startButtonOpen = !startButtonOpen; }}
-            </script> 
+                    <script>   
+                        //start button / menu addressing
+                        let startButtonOpen = false; var y = document.getElementById("startmenu");
+                        //start button default // no start menu window
+                        function startpress2() { if (y.style.marginLeft !== "200000px") { y.style.marginLeft = "200000px"; 
+                                                 document.getElementById("start").style.zIndex = "4"; }}
+                                
+                        //start button pressed // start menu window
+                        function startpress() { startButtonOpen = !startButtonOpen;
+                            if (startButtonOpen) { 
+                                y.style.marginLeft = "0px"; document.getElementById("start").style.zIndex = "10000000"; }}
+                        function menuclosed() { 
+                                y.style.marginLeft = "200000px"; document.getElementById("start").style.zIndex = "4"; 
+                                if( startButtonOpen = false) { startButtonOpen = !startButtonOpen; }}
+                        function startpressdelay(){ setTimeout(function(){
+                                y.style.marginLeft = "200000px"; document.getElementById("start").style.zIndex = "4"; }, 200)};
+                    </script> 
                         
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <!-- Programs menu rendering                                                                                                       -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
                         
-                    <div class="win98container" style="margin-left: 20000px; margin-top: -336px; width: 133px; height: 140px" id="programsmenu" 
+                    <div class="win98container" style="margin-left: 20000px; margin-top: -360px; width: 133px; height: 140px" id="programsmenu" 
                         onmouseover="programsopen()" onmouseout="programsclosed()"> 
                         <!-- Accessories -->
                         <div class="submenu20" id="accessories"
                             onmouseover="accessoriesopen()" onmouseout="accessoriesclose()">
                             <div class="menuprograms123"></div> 
                             <label style="margin-left: 8px; margin-top: 3px"> Accessories  </label>
-                            <div class="submenuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow2"></div></div>
+                            <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow2"></div></div>
                         <!-- Online Services -->
                         <div class="submenu20" id="onlineservices"
                             onmouseover="onlineservicesopen()" onmouseout="onlineservicesclose()"> 
                             <div class="menuprograms123" id="onlineservices"></div>
                             <label style="margin-left: 8px; margin-top: 3px"> Online Services </label>
-                            <div class="submenuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow3"></div></div>
+                            <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow3"></div></div>
                         <!-- Startup -->
                         <div class="submenu20" id="startup"
                              onmouseover="startupopen()" onmouseout="startupclose()">
                             <div class="menuprograms123"></div>
                             <label style="margin-left: 8px; margin-top: 3px"> Startup </label>
-                            <div class="submenuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow4"></div></div>
+                            <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow4"></div></div>
                         <!-- Internet Explorer -->
                         <div class="submenu20"><div class="menuprograms4"></div>
                             <label style="margin-left: 8px; margin-top: 3px"> Internet Explorer </label></div>
@@ -1161,31 +1162,31 @@
                                      onmouseover="communicationsopen()" onmouseout="communicationsclose()">
                                     <div class="menuprograms123"></div>
                                     <label style="margin-left: 8px; margin-top: 3px"> Communication </label>
-                                        <div class="submenuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow12"></div></div>
+                                        <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="menuarrow12"></div></div>
                                 <!-- Entertainment -->
                                 <div class="submenu20" id="entertainment"
                                      onmouseover="entertainmentopen()" onmouseout="entertainmentclose()">
                                     <div class="menuprograms123"></div>
                                     <label style="margin-left: 8px; margin-top: 3px"> Entertainment </label>
-                                        <div class="submenuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow13"></div></div>
+                                        <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="menuarrow13"></div></div>
                                 <!-- Games -->
                                 <div class="submenu20" id="games"
                                      onmouseover="gamesopen()" onmouseout="gamesclose()">
                                     <div class="menuprograms123"></div>
                                     <label style="margin-left: 8px; margin-top: 3px"> Games </label>
-                                    <div class="submenuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow14"></div></div>
+                                    <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="menuarrow14"></div></div>
                                 <!-- Internet Tools -->
                                 <div class="submenu20" id="internettools"
                                      onmouseover="internettoolsopen()" onmouseout="internettoolsclose()">
                                     <div class="menuprograms123"></div>
                                     <label style="margin-left: 8px; margin-top: 3px"> Internet Tools </label>
-                                        <div class="submenuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow15"></div></div>
+                                        <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="menuarrow15"></div></div>
                                 <!-- System Tools -->
                                 <div class="submenu20" id="systemtools"
                                      onmouseover="systemtoolsopen()" onmouseout="systemtoolsclose()">
                                     <div class="menuprograms123"></div>
                                     <label style="margin-left: 8px; margin-top: 3px"> System Tools </label>
-                                        <div class="submenuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow16"></div></div>
+                                        <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="menuarrow16"></div></div>
                                 <!-- Address book -->
                                 <div class="submenu20">
                                     <div class="menufind4"></div>
@@ -1386,24 +1387,24 @@
         <!-- Favourites menu rendering                                                                                                      -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
                         
-                            <div class="win98container" style="margin-left: 20000px; margin-top: -300px; width: 149px; height:100px" id="favouritesmenu" 
+                            <div class="win98container" style="margin-left: 20000px; margin-top: -324px; width: 149px; height:100px" id="favouritesmenu" 
                                  onmouseover="favouritesopen()" onmouseout="favouritesclosed()"> 
                                 
                                 <!-- Channels -->
                                 <div class="submenu20" onmouseover="channelsopen()" onmouseout="channelsclose()" id="channels">
                                     <div class="menufavouritesfolder"></div>
                                     <label style="margin-left: 8px; margin-top: 3px"> Channels </label>
-                                        <div class="submenuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow21"></div></div>
+                                        <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow21"></div></div>
                                 <!-- Links -->
                                 <div class="submenu20" onmouseover="linksopen()" onmouseout="linksclose()" id="links">
                                     <div class="menufavouritesfolder"></div>
                                     <label style="margin-left: 8px; margin-top: 3px"> Links </label>
-                                        <div class="submenuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow22"></div></div>
+                                        <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow22"></div></div>
                                 <!-- Media -->
                                 <div class="submenu20" onmouseover="mediaopen()" onmouseout="mediaclose()" id="media">
                                     <div class="menufavouritesfolder"></div>
                                     <label style="margin-left: 8px; margin-top: 3px"> Media </label>
-                                        <div class="submenuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow23"></div></div>
+                                        <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow23"></div></div>
                                 <!-- Random links -->
                                 <a href="https://veryvhersty.tumblr.com/" target="_blank"> <div class="submenu20">
                                     <div class="menufavouriteslink"></div>
@@ -1521,7 +1522,7 @@
         <!-- Documents menu rendering                                                                                                      -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
                         
-                            <div class="win98container" style="margin-left: 20000px; margin-top: -264px; width: 160px; height:108px" id="documentsmenu" 
+                            <div class="win98container" style="margin-left: 20000px; margin-top: -288px; width: 160px; height:108px" id="documentsmenu" 
                                  onmouseover="documentsopen()" onmouseout="documentsclosed()"> 
                                 
                                 <!-- My Documents -->
@@ -1552,7 +1553,7 @@
         <!-- Settings menu rendering                                                                                                       -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
                         
-                            <div class="win98container" style="margin-left: 200000px; margin-top: -228px; width: 160px; height:128px" id="settingsmenu" 
+                            <div class="win98container" style="margin-left: 200000px; margin-top: -252px; width: 160px; height:128px" id="settingsmenu" 
                                  onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
                                 
                                 <!-- Control panel -->
@@ -1575,7 +1576,7 @@
                                 <div class="submenu20" onmouseover="settingsactivedesktopopen();" onmouseout="settingsactivedesktopclose();" id="activedesktop">
                                     <div class="menusettings5"></div> 
                                     <label style="margin-left: 8px; margin-top: 3px"> Active desktop </label> 
-                                        <div class="submenuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow31"></div></div>
+                                        <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow31"></div></div>
                                 <!-- SPLITTER -->
                                 <div class="menuapplicationsplit" style="width: 156px; margin-left: 2px; margin-top:3px; margin-bottom:2px"></div>
                                 <!--Folder options -->
@@ -1604,7 +1605,7 @@
         <!-- Find menu rendering                                                                                                           -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
                                 
-                            <div class="win98container" style="margin-left: 20000px; margin-top: -194px" id="findmenu"
+                            <div class="win98container" style="margin-left: 20000px; margin-top: -218px" id="findmenu"
                                  onmouseover="findopen()"onmouseout="findclosed()";>
                                 <!--Buttons 1-4 -->
                                 <label style="width: 118px;"><div class="submenu20" style="width: 116px; height:20px">
@@ -1624,59 +1625,60 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <!-- Taskbar Rendering                                                                                                             -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-            
-            <!-- taskbar application icons -->
-            <taskbar class="big_seperator"> </taskbar>
-            <taskbar class="small_seperator" style="cursor:e-resize"> </taskbar>
-            <div class="taskbaricons">
-                <a href="https://cdn.discordapp.com/attachments/659821308191965205/773393178509180968/BShBG2k281osP4uO.mp4">    <div class="taskbaricon1"></div></a>
-                <a href="https://cdn.discordapp.com/attachments/707763189017870446/747795799991386253/ICTaGqnodsCFlZ0y.mp4">    <div class="taskbaricon2"></div></a>
-                <a href="https://cdn.discordapp.com/attachments/658659262976884737/664730736737255426/04rees-mogg2-jumbo.jpg">  <div class="taskbaricon3"></div></a>
-                <a href="https://cdn.discordapp.com/attachments/707763189017870446/738633290247962644/maxresdefault.png">       <div class="taskbaricon4"></div></a> </div>
-            <taskbar class="big_seperator"> </taskbar>
-            <taskbar class="small_seperator" style="cursor:e-resize"> </taskbar>
-            
-            <div class="taskbarapp1" style="cursor:pointer" onmousedown="inactiveall(); tumblrtoggle(); tumblrtoggle1();" id="taskapp1"> 
-                    <div class="title-bar-text" style="margin-top:3px; margin-left:5px; color:black;"><label style="color:black; font-size: 11px; cursor:pointer; margin-left:1px">🍭 very.vunnies</label></div></div>
+            <div class="container" style="margin-top: -24px">
+                <!-- taskbar application icons -->
+                <taskbar class="big_seperator" style="margin-left:58px"> </taskbar>
+                <taskbar class="small_seperator" style="cursor:e-resize"> </taskbar>
+                <div class="taskbaricons">
+                    <a href="https://cdn.discordapp.com/attachments/659821308191965205/773393178509180968/BShBG2k281osP4uO.mp4">    <div class="taskbaricon1"></div></a>
+                    <a href="https://cdn.discordapp.com/attachments/707763189017870446/747795799991386253/ICTaGqnodsCFlZ0y.mp4">    <div class="taskbaricon2"></div></a>
+                    <a href="https://cdn.discordapp.com/attachments/658659262976884737/664730736737255426/04rees-mogg2-jumbo.jpg">  <div class="taskbaricon3"></div></a>
+                    <a href="https://cdn.discordapp.com/attachments/707763189017870446/738633290247962644/maxresdefault.png">       <div class="taskbaricon4"></div></a> </div>
+                <taskbar class="big_seperator"> </taskbar>
+                <taskbar class="small_seperator" style="cursor:e-resize"> </taskbar>
+                
+                <div class="taskbarapp1" style="cursor:pointer" onmousedown="inactiveall(); tumblrtoggle(); tumblrtoggle1();" id="taskapp1"> 
+                        <div class="title-bar-text" style="margin-top:3px; margin-left:5px; color:black;"><label style="color:black; font-size: 11px; cursor:pointer; margin-left:1px">🍭 very.vunnies</label></div></div>
+                        
+                <div class="taskbarapp2" style="cursor:pointer;" onmousedown="inactiveall(); pyrotoggle(); pyrotoggle1();" id="taskapp2"> 
+                        <div class="title-bar-text" style="margin-top:3px; margin-left:5px; color:black;"><label style="color:black; font-size: 11px; cursor:pointer; margin-left:1px">👿 very.unvunny</label></div></div>
+                        
+                <div class="taskbarapp3" style="cursor:pointer;" onmousedown="inactiveall(); disktoggle(); disktoggle1();" id="taskapp3"> 
+                        <div class="title-bar-text" style="margin-top:3px; margin-left:5px; color:black;"><label style="color:black; font-size: 11px; cursor:pointer; margin-left:1px">📺 Display Properties</label></div></div>
+                
+                <script>
+                    function pyrotoggle() {
+                        if (document.getElementById("taskapp2").style.backgroundImage !== "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')") { 
+                            document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png')";  
+                            document.getElementById("catwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png')";
+                            document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}}
+                        
+                    //start button pressed // start menu window
+                    function pyrotoggle1(){ pyroButtonOpen = !pyroButtonOpen;
+                        if (pyroButtonOpen) { tumblrButtonOpen = false;  
+                            document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289642578214912/title-bar_gradientopen.png')";
+                            document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";}
+                
+                    let tumblrButtonOpen = true
                     
-            <div class="taskbarapp2" style="cursor:pointer;" onmousedown="inactiveall(); pyrotoggle(); pyrotoggle1();" id="taskapp2"> 
-                    <div class="title-bar-text" style="margin-top:3px; margin-left:5px; color:black;"><label style="color:black; font-size: 11px; cursor:pointer; margin-left:1px">👿 very.unvunny</label></div></div>
-                    
-            <div class="taskbarapp3" style="cursor:pointer;" onmousedown="inactiveall(); disktoggle(); disktoggle1();" id="taskapp3"> 
-                    <div class="title-bar-text" style="margin-top:3px; margin-left:5px; color:black;"><label style="color:black; font-size: 11px; cursor:pointer; margin-left:1px">📺 Display Properties</label></div></div>
+                    function tumblrtoggle() { 
+                    if (document.getElementById("postwindow").style.backgroundImage !== "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')") {
+                        document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
+                        document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}}
+                    //start button pressed // start menu window
+                    function tumblrtoggle1(){
+                        tumblrButtonOpen = !tumblrButtonOpen;
+                        if (tumblrButtonOpen) { pyroButtonOpen = false;
+                            document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')";
+                            document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";}}
+                </script>
+                 
+                <div class="tray">
+                    <taskbar class="calendar"> </taskbar>
+                    <label class="time" style="font-size:11px" id="showClock"> 00:00 am </label>
+                </div>
             
-            <script>
-            
-                function pyrotoggle() {
-                    if (document.getElementById("taskapp2").style.backgroundImage !== "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')") { 
-                        document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png')";  
-                        document.getElementById("catwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png')";
-                        document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}}
-                    
-                //start button pressed // start menu window
-                function pyrotoggle1(){ pyroButtonOpen = !pyroButtonOpen;
-                    if (pyroButtonOpen) { tumblrButtonOpen = false;  
-                        document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289642578214912/title-bar_gradientopen.png')";
-                        document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";
-                        document.getElementById("pyro").style.zIndex = "100"; document.getElementById("cat").style.zIndex = "3"; }}
-            
-                function tumblrtoggle() { 
-                if (document.getElementById("postwindow").style.backgroundImage !== "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')") {
-                    document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
-                    document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}}
-                //start button pressed // start menu window
-                function tumblrtoggle1(){
-                    tumblrButtonOpen = !tumblrButtonOpen;
-                    if (tumblrButtonOpen) { pyroButtonOpen = false;
-                        document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')";
-                        document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";}}
-            </script>
-             
-            <div class="tray">
-                <taskbar class="calendar"> </taskbar>
-                <label class="time" style="font-size:11px" id="showClock"> 00:00 am </label>
             </div>
-             
             <!-- Startbar additional rendering -->
                 
         </div>
@@ -1716,214 +1718,20 @@
                 window.setInterval(updateClock, 6000);
                 updateClock();
                 appended_update()});
-        
+            
         // ----------------------------------------------------------------------------------------------------------------------------- -->
-        // Start Menu Handling                                                                                                           -->
+        // Drag element scripts                                                                                                          -->
         // ----------------------------------------------------------------------------------------------------------------------------- -->
-                               
-            function programsopen() { 
-                document.getElementById("programsmenu").style.marginLeft = "163px"; 
-                document.getElementById("menuprograms").style.backgroundColor = "#00207c";
-                document.getElementById("menuprograms").style.color = "#ffffff"; 
-                document.getElementById("menuarrow1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945375217582090/arrow_right.png')";}
-            function programsclosed() { 
-                document.getElementById("programsmenu").style.marginLeft = "200000px"; 
-                document.getElementById("menuprograms").style.backgroundColor = "#c0c0c0";
-                document.getElementById("menuprograms").style.color = "#000000"; 
-                document.getElementById("menuarrow1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945376258293760/arrow_right0.png')";}
-                function internetexplorer() { window.open("https://www.google.co.uk/", "_blank", "width=700, height=700")} 
-                function accessoriesopen() { 
-                    document.getElementById("menuaccessoriessubmenu").style.marginLeft = "133px"; 
-                    document.getElementById("accessories").style.backgroundColor = "#00207c";
-                    document.getElementById("accessories").style.color = "#ffffff";
-                    document.getElementById("submenuarrow2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945375217582090/arrow_right.png')";}
-                function accessoriesclose() { 
-                    document.getElementById("menuaccessoriessubmenu").style.marginLeft = "200000px"; 
-                    document.getElementById("accessories").style.backgroundColor = "#c0c0c0";
-                    document.getElementById("accessories").style.color = "#000000";
-                    document.getElementById("submenuarrow2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945376258293760/arrow_right0.png')";}
-                    function communicationsopen() { 
-                        document.getElementById("menucommunicationssubmenu").style.marginLeft = "130px"; 
-                        document.getElementById("communications").style.backgroundColor = "#00207c";
-                        document.getElementById("communications").style.color = "#ffffff";
-                        document.getElementById("submenuarrow12").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945375217582090/arrow_right.png')";}
-                    function communicationsclose() { 
-                        document.getElementById("menucommunicationssubmenu").style.marginLeft = "200000px"; 
-                        document.getElementById("communications").style.backgroundColor = "#c0c0c0";
-                        document.getElementById("communications").style.color = "#000000";
-                        document.getElementById("submenuarrow12").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945376258293760/arrow_right0.png')";}   
-                    function entertainmentopen() { 
-                        document.getElementById("menuentertainmentsubmenu").style.marginLeft = "130px"; 
-                        document.getElementById("entertainment").style.backgroundColor = "#00207c";
-                        document.getElementById("entertainment").style.color = "#ffffff";
-                        document.getElementById("submenuarrow13").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945375217582090/arrow_right.png')";}
-                    function entertainmentclose() { 
-                        document.getElementById("menuentertainmentsubmenu").style.marginLeft = "200000px"; 
-                        document.getElementById("entertainment").style.backgroundColor = "#c0c0c0";
-                        document.getElementById("entertainment").style.color = "#000000";
-                        document.getElementById("submenuarrow13").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945376258293760/arrow_right0.png')";}   
-                    function gamesopen() { 
-                        document.getElementById("menugamessubmenu").style.marginLeft = "130px"; 
-                        document.getElementById("games").style.backgroundColor = "#00207c";
-                        document.getElementById("games").style.color = "#ffffff";
-                        document.getElementById("submenuarrow14").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945375217582090/arrow_right.png')";}
-                    function gamesclose() { 
-                        document.getElementById("menugamessubmenu").style.marginLeft = "200000px"; 
-                        document.getElementById("games").style.backgroundColor = "#c0c0c0";
-                        document.getElementById("games").style.color = "#000000";
-                        document.getElementById("submenuarrow14").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945376258293760/arrow_right0.png')";} 
-                    function internettoolsopen() { 
-                        document.getElementById("menuinternettoolssubmenu").style.marginLeft = "130px"; 
-                        document.getElementById("internettools").style.backgroundColor = "#00207c";
-                        document.getElementById("internettools").style.color = "#ffffff";
-                        document.getElementById("submenuarrow15").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945375217582090/arrow_right.png')";}
-                    function internettoolsclose() { 
-                        document.getElementById("menuinternettoolssubmenu").style.marginLeft = "200000px"; 
-                        document.getElementById("internettools").style.backgroundColor = "#c0c0c0";
-                        document.getElementById("internettools").style.color = "#000000";
-                        document.getElementById("submenuarrow15").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945376258293760/arrow_right0.png')";} 
-                    function systemtoolsopen() { 
-                        document.getElementById("menusystemtoolssubmenu").style.marginLeft = "130px"; 
-                        document.getElementById("systemtools").style.backgroundColor = "#00207c";
-                        document.getElementById("systemtools").style.color = "#ffffff";
-                        document.getElementById("submenuarrow16").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945375217582090/arrow_right.png')";}
-                    function systemtoolsclose() { 
-                        document.getElementById("menusystemtoolssubmenu").style.marginLeft = "200000px"; 
-                        document.getElementById("systemtools").style.backgroundColor = "#c0c0c0";
-                        document.getElementById("systemtools").style.color = "#000000";
-                        document.getElementById("submenuarrow16").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945376258293760/arrow_right0.png')";} 
-                        
-                    
-                function onlineservicesopen() { 
-                    document.getElementById("onlineservicessubmenu").style.marginLeft = "133px"; 
-                    document.getElementById("onlineservices").style.backgroundColor = "#00207c";
-                    document.getElementById("onlineservices").style.color = "#ffffff";
-                    document.getElementById("submenuarrow3").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945375217582090/arrow_right.png')";}
-                function onlineservicesclose() { 
-                    document.getElementById("onlineservicessubmenu").style.marginLeft = "200000px"; 
-                    document.getElementById("onlineservices").style.backgroundColor = "#c0c0c0";
-                    document.getElementById("onlineservices").style.color = "#000000";
-                    document.getElementById("submenuarrow3").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945376258293760/arrow_right0.png')";}
-                function startupopen() { 
-                    document.getElementById("startupsubmenu").style.marginLeft = "133px"; 
-                    document.getElementById("startup").style.backgroundColor = "#00207c";
-                    document.getElementById("startup").style.color = "#ffffff";
-                    document.getElementById("submenuarrow4").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945375217582090/arrow_right.png')";}
-                function startupclose() { 
-                    document.getElementById("startupsubmenu").style.marginLeft = "200000px"; 
-                    document.getElementById("startup").style.backgroundColor = "#c0c0c0";
-                    document.getElementById("startup").style.color = "#000000";
-                    document.getElementById("submenuarrow4").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945376258293760/arrow_right0.png')";}
             
-            function favouritesopen() { 
-                document.getElementById("favouritesmenu").style.marginLeft = "163px"; 
-                document.getElementById("menufavourites").style.backgroundColor = "#00207c";
-                document.getElementById("menufavourites").style.color = "#ffffff"; 
-                document.getElementById("menuarrow2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945375217582090/arrow_right.png')";}
-            function favouritesclosed() { 
-                document.getElementById("favouritesmenu").style.marginLeft = "200000px"; 
-                document.getElementById("menufavourites").style.backgroundColor = "#c0c0c0";
-                document.getElementById("menufavourites").style.color = "#000000"; 
-                document.getElementById("menuarrow2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945376258293760/arrow_right0.png')";} 
-                function channelsopen() { 
-                    document.getElementById("channelssubmenu").style.marginLeft = "148px"; 
-                    document.getElementById("channels").style.backgroundColor = "#00207c";
-                    document.getElementById("channels").style.color = "#ffffff";
-                    document.getElementById("submenuarrow21").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945375217582090/arrow_right.png')";}
-                function channelsclose() { 
-                    document.getElementById("channelssubmenu").style.marginLeft = "200000px"; 
-                    document.getElementById("channels").style.backgroundColor = "#c0c0c0";
-                    document.getElementById("channels").style.color = "#000000";
-                    document.getElementById("submenuarrow21").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945376258293760/arrow_right0.png')";}
-                function linksopen() { 
-                    document.getElementById("linkssubmenu").style.marginLeft = "148px"; 
-                    document.getElementById("links").style.backgroundColor = "#00207c";
-                    document.getElementById("links").style.color = "#ffffff";
-                    document.getElementById("submenuarrow22").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945375217582090/arrow_right.png')";}
-                function linksclose() { 
-                    document.getElementById("linkssubmenu").style.marginLeft = "200000px"; 
-                    document.getElementById("links").style.backgroundColor = "#c0c0c0";
-                    document.getElementById("links").style.color = "#000000";
-                    document.getElementById("submenuarrow22").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945376258293760/arrow_right0.png')";}
-                function mediaopen() { 
-                    document.getElementById("mediasubmenu").style.marginLeft = "148px"; 
-                    document.getElementById("media").style.backgroundColor = "#00207c";
-                    document.getElementById("media").style.color = "#ffffff";
-                    document.getElementById("submenuarrow23").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945375217582090/arrow_right.png')";}
-                function mediaclose() { 
-                    document.getElementById("mediasubmenu").style.marginLeft = "200000px"; 
-                    document.getElementById("media").style.backgroundColor = "#c0c0c0";
-                    document.getElementById("media").style.color = "#000000";
-                    document.getElementById("submenuarrow23").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945376258293760/arrow_right0.png')";}
-            
-            function documentsopen() { 
-                document.getElementById("documentsmenu").style.marginLeft = "163px"; 
-                document.getElementById("menudocuments").style.backgroundColor = "#00207c";
-                document.getElementById("menudocuments").style.color = "#ffffff"; 
-                document.getElementById("menuarrow3").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945375217582090/arrow_right.png')";}
-            function documentsclosed() { 
-                document.getElementById("documentsmenu").style.marginLeft = "200000px"; 
-                document.getElementById("menudocuments").style.backgroundColor = "#c0c0c0";
-                document.getElementById("menudocuments").style.color = "#000000"; 
-                document.getElementById("menuarrow3").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945376258293760/arrow_right0.png')";} 
-                                    
-            //start menu button hover script
-            function settingsopen() { 
-                document.getElementById("settingsmenu").style.marginLeft = "163px"; 
-                document.getElementById("menusettings").style.backgroundColor = "#00207c";
-                document.getElementById("menusettings").style.color = "#ffffff"; 
-                document.getElementById("menuarrow4").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945375217582090/arrow_right.png')";}
-            function settingsclosed() { 
-                document.getElementById("settingsmenu").style.marginLeft = "200000px"; 
-                document.getElementById("menusettings").style.backgroundColor = "#c0c0c0";
-                document.getElementById("menusettings").style.color = "#000000"; 
-                document.getElementById("menuarrow4").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945376258293760/arrow_right0.png')";}
-                function settingsactivedesktopopen() { 
-                    document.getElementById("menuactivedesktopsubmenu").style.marginLeft = "159px"; 
-                    document.getElementById("activedesktop").style.backgroundColor = "#00207c";
-                    document.getElementById("activedesktop").style.color = "#ffffff";
-                    document.getElementById("submenuarrow31").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945375217582090/arrow_right.png')";}
-                function settingsactivedesktopclose() { 
-                    document.getElementById("menuactivedesktopsubmenu").style.marginLeft = "200000px"; 
-                    document.getElementById("activedesktop").style.backgroundColor = "#c0c0c0";
-                    document.getElementById("activedesktop").style.color = "#000000";
-                    document.getElementById("submenuarrow31").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945376258293760/arrow_right0.png')";}
-            
-            function findopen() { 
-                document.getElementById("findmenu").style.marginLeft = "163px"; 
-                document.getElementById("menufind").style.backgroundColor = "#00207c";
-                document.getElementById("menufind").style.color = "#ffffff";
-                document.getElementById("menuarrow5").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945375217582090/arrow_right.png')";}
-            function findclosed() { 
-                document.getElementById("findmenu").style.marginLeft = "200000px"; 
-                document.getElementById("menufind").style.backgroundColor = "#c0c0c0";
-                document.getElementById("menufind").style.color = "#000000";
-                document.getElementById("menuarrow5").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/788945376258293760/arrow_right0.png')";}
-            
-            // ----------------------------------------------------------------------------------------------------------------------------- -->
-            // Start Menu menu boxes Handling                                                                                                -->
-            // ----------------------------------------------------------------------------------------------------------------------------- -->
-            
-            //windows log off
-            function logoff() { document.getElementById("logoff").style.marginLeft = "0px"; document.getElementById("logoff").style.zIndex = "100"; }
-            function logoffno() { document.getElementById("logoff").style.marginLeft = "200000px"; document.getElementById("logoff").style.zIndex = "1"; }
-            //windows shut down
-            function shutdown() { document.getElementById("shutdown").style.marginLeft = "0px"; document.getElementById("shutdown").style.zIndex = "100"; }
-            function shutdownno() { document.getElementById("shutdown").style.marginLeft = "200000px"; document.getElementById("shutdown").style.zIndex = "1"; }
-            
-            // ----------------------------------------------------------------------------------------------------------------------------- -->
-            // Drag element scripts                                                                                                          -->
-            // ----------------------------------------------------------------------------------------------------------------------------- -->
-            
-            //drag element id grabber
-            dragElement(document.getElementById("cat"));
-            dragElement(document.getElementById("pyro"));
-            dragElement(document.getElementById("message"));
-            dragElement(document.getElementById("logoff"));
-            dragElement(document.getElementById("shutdown"));
-            
-            //grab element for windows
-            function dragElement(elmnt) { //position storage and setting it to window
+                //drag element id grabber
+                dragElement(document.getElementById("cat"));
+                dragElement(document.getElementById("pyro"));
+                dragElement(document.getElementById("message"));
+                dragElement(document.getElementById("logoff"));
+                dragElement(document.getElementById("shutdown"));
+                
+                //grab element for windows
+                function dragElement(elmnt) { //position storage and setting it to window
                 var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
                 if (document.getElementById(elmnt.id + "window")) { document.getElementById(elmnt.id + "window").onmousedown = dragMouseDown; } else { elmnt.onmousedown = dragMouseDown; }
                 function dragMouseDown(e) { //mouse moment grabbing
@@ -1933,6 +1741,189 @@
                    pos1 = pos3 - e.clientX; pos2 = pos4 - e.clientY; pos3 = e.clientX; pos4 = e.clientY;
                     elmnt.style.top = (elmnt.offsetTop - pos2) + "px"; elmnt.style.left = (elmnt.offsetLeft - pos1) + "px"; }
                 function closeDragElement() { document.onmouseup = null; document.onmousemove = null; }}
+        
+        // ----------------------------------------------------------------------------------------------------------------------------- -->
+        // Start Menu Handling                                                                                                           -->
+        // ----------------------------------------------------------------------------------------------------------------------------- -->
+                             
+            function programsopen() { 
+                document.getElementById("programsmenu").style.marginLeft = "163px"; 
+                document.getElementById("menuprograms").style.backgroundColor = "#00207c";
+                document.getElementById("menuprograms").style.color = "#ffffff"; 
+                document.getElementById("menuarrow1").style.backgroundPosition = "-134px -215px";}
+            function programsclosed() { 
+                document.getElementById("programsmenu").style.marginLeft = "200000px"; 
+                document.getElementById("menuprograms").style.backgroundColor = "#c0c0c0";
+                document.getElementById("menuprograms").style.color = "#000000"; 
+                document.getElementById("menuarrow1").style.backgroundPosition = "-150px -215px";}
+                function internetexplorer() { window.open("https://www.google.co.uk/", "_blank", "width=700, height=700")} 
+                function accessoriesopen() { 
+                    document.getElementById("menuaccessoriessubmenu").style.marginLeft = "133px"; 
+                    document.getElementById("accessories").style.backgroundColor = "#00207c";
+                    document.getElementById("accessories").style.color = "#ffffff";
+                    document.getElementById("submenuarrow2").style.backgroundPosition = "-134px -215px";}
+                function accessoriesclose() { 
+                    document.getElementById("menuaccessoriessubmenu").style.marginLeft = "200000px"; 
+                    document.getElementById("accessories").style.backgroundColor = "#c0c0c0";
+                    document.getElementById("accessories").style.color = "#000000";
+                    document.getElementById("submenuarrow2").style.backgroundPosition = "-150px -215px";}
+                    function communicationsopen() { 
+                        document.getElementById("menucommunicationssubmenu").style.marginLeft = "130px"; 
+                        document.getElementById("communications").style.backgroundColor = "#00207c";
+                        document.getElementById("communications").style.color = "#ffffff";
+                        document.getElementById("menuarrow12").style.backgroundPosition = "-134px -215px";}
+                    function communicationsclose() { 
+                        document.getElementById("menucommunicationssubmenu").style.marginLeft = "200000px"; 
+                        document.getElementById("communications").style.backgroundColor = "#c0c0c0";
+                        document.getElementById("communications").style.color = "#000000";
+                        document.getElementById("menuarrow12").style.backgroundPosition = "-150px -215px";}
+                    function entertainmentopen() { 
+                        document.getElementById("menuentertainmentsubmenu").style.marginLeft = "130px"; 
+                        document.getElementById("entertainment").style.backgroundColor = "#00207c";
+                        document.getElementById("entertainment").style.color = "#ffffff";
+                        document.getElementById("menuarrow13").style.backgroundPosition = "-134px -215px";}
+                    function entertainmentclose() { 
+                        document.getElementById("menuentertainmentsubmenu").style.marginLeft = "200000px"; 
+                        document.getElementById("entertainment").style.backgroundColor = "#c0c0c0";
+                        document.getElementById("entertainment").style.color = "#000000";
+                        document.getElementById("menuarrow13").style.backgroundPosition = "-150px -215px";}
+                    function gamesopen() { 
+                        document.getElementById("menugamessubmenu").style.marginLeft = "130px"; 
+                        document.getElementById("games").style.backgroundColor = "#00207c";
+                        document.getElementById("games").style.color = "#ffffff";
+                        document.getElementById("menuarrow14").style.backgroundPosition = "-134px -215px";}
+                    function gamesclose() { 
+                        document.getElementById("menugamessubmenu").style.marginLeft = "200000px"; 
+                        document.getElementById("games").style.backgroundColor = "#c0c0c0";
+                        document.getElementById("games").style.color = "#000000";
+                        document.getElementById("menuarrow14").style.backgroundPosition = "-150px -215px";}
+                    function internettoolsopen() { 
+                        document.getElementById("menuinternettoolssubmenu").style.marginLeft = "130px"; 
+                        document.getElementById("internettools").style.backgroundColor = "#00207c";
+                        document.getElementById("internettools").style.color = "#ffffff";
+                        document.getElementById("menuarrow15").style.backgroundPosition = "-134px -215px";}
+                    function internettoolsclose() { 
+                        document.getElementById("menuinternettoolssubmenu").style.marginLeft = "200000px"; 
+                        document.getElementById("internettools").style.backgroundColor = "#c0c0c0";
+                        document.getElementById("internettools").style.color = "#000000";
+                        document.getElementById("menuarrow15").style.backgroundPosition = "-150px -215px";}
+                    function systemtoolsopen() { 
+                        document.getElementById("menusystemtoolssubmenu").style.marginLeft = "130px"; 
+                        document.getElementById("systemtools").style.backgroundColor = "#00207c";
+                        document.getElementById("systemtools").style.color = "#ffffff";
+                        document.getElementById("menuarrow16").style.backgroundPosition = "-134px -215px";}
+                    function systemtoolsclose() { 
+                        document.getElementById("menusystemtoolssubmenu").style.marginLeft = "200000px"; 
+                        document.getElementById("systemtools").style.backgroundColor = "#c0c0c0";
+                        document.getElementById("systemtools").style.color = "#000000";
+                        document.getElementById("menuarrow16").style.backgroundPosition = "-150px -215px";}
+                        
+                    
+                function onlineservicesopen() { 
+                    document.getElementById("onlineservicessubmenu").style.marginLeft = "133px"; 
+                    document.getElementById("onlineservices").style.backgroundColor = "#00207c";
+                    document.getElementById("onlineservices").style.color = "#ffffff";
+                    document.getElementById("submenuarrow3").style.backgroundPosition = "-134px -215px";}
+                function onlineservicesclose() { 
+                    document.getElementById("onlineservicessubmenu").style.marginLeft = "200000px"; 
+                    document.getElementById("onlineservices").style.backgroundColor = "#c0c0c0";
+                    document.getElementById("onlineservices").style.color = "#000000";
+                    document.getElementById("submenuarrow3").style.backgroundPosition = "-150px -215px";}
+                function startupopen() { 
+                    document.getElementById("startupsubmenu").style.marginLeft = "133px"; 
+                    document.getElementById("startup").style.backgroundColor = "#00207c";
+                    document.getElementById("startup").style.color = "#ffffff";
+                    document.getElementById("submenuarrow4").style.backgroundPosition = "-134px -215px";}
+                function startupclose() { 
+                    document.getElementById("startupsubmenu").style.marginLeft = "200000px"; 
+                    document.getElementById("startup").style.backgroundColor = "#c0c0c0";
+                    document.getElementById("startup").style.color = "#000000";
+                    document.getElementById("submenuarrow4").style.backgroundPosition = "-150px -215px";}
+            
+            function favouritesopen() { 
+                document.getElementById("favouritesmenu").style.marginLeft = "163px"; 
+                document.getElementById("menufavourites").style.backgroundColor = "#00207c";
+                document.getElementById("menufavourites").style.color = "#ffffff"; 
+                document.getElementById("menuarrow2").style.backgroundPosition = "-134px -215px";}
+            function favouritesclosed() { 
+                document.getElementById("favouritesmenu").style.marginLeft = "200000px"; 
+                document.getElementById("menufavourites").style.backgroundColor = "#c0c0c0";
+                document.getElementById("menufavourites").style.color = "#000000"; 
+                document.getElementById("menuarrow2").style.backgroundPosition = "-150px -215px";}
+                function channelsopen() { 
+                    document.getElementById("channelssubmenu").style.marginLeft = "148px"; 
+                    document.getElementById("channels").style.backgroundColor = "#00207c";
+                    document.getElementById("channels").style.color = "#ffffff";
+                    document.getElementById("submenuarrow21").style.backgroundPosition = "-134px -215px";}
+                function channelsclose() { 
+                    document.getElementById("channelssubmenu").style.marginLeft = "200000px"; 
+                    document.getElementById("channels").style.backgroundColor = "#c0c0c0";
+                    document.getElementById("channels").style.color = "#000000";
+                    document.getElementById("submenuarrow21").style.backgroundPosition = "-150px -215px";}
+                function linksopen() { 
+                    document.getElementById("linkssubmenu").style.marginLeft = "148px"; 
+                    document.getElementById("links").style.backgroundColor = "#00207c";
+                    document.getElementById("links").style.color = "#ffffff";
+                    document.getElementById("submenuarrow22").style.backgroundPosition = "-134px -215px";}
+                function linksclose() { 
+                    document.getElementById("linkssubmenu").style.marginLeft = "200000px"; 
+                    document.getElementById("links").style.backgroundColor = "#c0c0c0";
+                    document.getElementById("links").style.color = "#000000";
+                    document.getElementById("submenuarrow22").style.backgroundPosition = "-150px -215px";}
+                function mediaopen() { 
+                    document.getElementById("mediasubmenu").style.marginLeft = "148px"; 
+                    document.getElementById("media").style.backgroundColor = "#00207c";
+                    document.getElementById("media").style.color = "#ffffff";
+                    document.getElementById("submenuarrow23").style.backgroundPosition = "-134px -215px";}
+                function mediaclose() { 
+                    document.getElementById("mediasubmenu").style.marginLeft = "200000px"; 
+                    document.getElementById("media").style.backgroundColor = "#c0c0c0";
+                    document.getElementById("media").style.color = "#000000";
+                    document.getElementById("submenuarrow23").style.backgroundPosition = "-150px -215px";}
+            
+            function documentsopen() { 
+                document.getElementById("documentsmenu").style.marginLeft = "163px"; 
+                document.getElementById("menudocuments").style.backgroundColor = "#00207c";
+                document.getElementById("menudocuments").style.color = "#ffffff"; 
+                document.getElementById("menuarrow3").style.backgroundPosition = "-134px -215px";}
+            function documentsclosed() { 
+                document.getElementById("documentsmenu").style.marginLeft = "200000px"; 
+                document.getElementById("menudocuments").style.backgroundColor = "#c0c0c0";
+                document.getElementById("menudocuments").style.color = "#000000"; 
+                document.getElementById("menuarrow3").style.backgroundPosition = "-150px -215px";}
+                                    
+            //start menu button hover script
+            function settingsopen() { 
+                document.getElementById("settingsmenu").style.marginLeft = "163px"; 
+                document.getElementById("menusettings").style.backgroundColor = "#00207c";
+                document.getElementById("menusettings").style.color = "#ffffff"; 
+                document.getElementById("menuarrow4").style.backgroundPosition = "-134px -215px";}
+            function settingsclosed() { 
+                document.getElementById("settingsmenu").style.marginLeft = "200000px"; 
+                document.getElementById("menusettings").style.backgroundColor = "#c0c0c0";
+                document.getElementById("menusettings").style.color = "#000000"; 
+                document.getElementById("menuarrow4").style.backgroundPosition = "-150px -215px";}
+                function settingsactivedesktopopen() { 
+                    document.getElementById("menuactivedesktopsubmenu").style.marginLeft = "159px"; 
+                    document.getElementById("activedesktop").style.backgroundColor = "#00207c";
+                    document.getElementById("activedesktop").style.color = "#ffffff";
+                    document.getElementById("submenuarrow31").style.backgroundPosition = "-134px -215px";}
+                function settingsactivedesktopclose() { 
+                    document.getElementById("menuactivedesktopsubmenu").style.marginLeft = "200000px"; 
+                    document.getElementById("activedesktop").style.backgroundColor = "#c0c0c0";
+                    document.getElementById("activedesktop").style.color = "#000000";
+                    document.getElementById("submenuarrow31").style.backgroundPosition = "-150px -215px";}
+            
+            function findopen() { 
+                document.getElementById("findmenu").style.marginLeft = "163px"; 
+                document.getElementById("menufind").style.backgroundColor = "#00207c";
+                document.getElementById("menufind").style.color = "#ffffff";
+                document.getElementById("menuarrow5").style.backgroundPosition = "-134px -215px";}
+            function findclosed() { 
+                document.getElementById("findmenu").style.marginLeft = "200000px"; 
+                document.getElementById("menufind").style.backgroundColor = "#c0c0c0";
+                document.getElementById("menufind").style.color = "#000000";
+                document.getElementById("menuarrow5").style.backgroundPosition = "-150px -215px";}
 
         </script>
         
