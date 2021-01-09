@@ -54,7 +54,9 @@
         <!-- Setup -->
         <style type="text/css">
         
-            :root { --spritesheet: url('https://cdn.discordapp.com/attachments/630047188520665121/796998999583490058/spritesheet.png'); }
+            :root { --spritesheet: url('https://cdn.discordapp.com/attachments/630047188520665121/796998999583490058/spritesheet.png'); 
+                    --inactive: url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png');
+                    --active: url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png');}
         
             /* addresses */
             body { background: url('https://cdn.discordapp.com/attachments/630047188520665121/786208918119514112/wallpaper32.png') repeat fixed; 
@@ -126,9 +128,6 @@
             .rct2 {             height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/784843863814176779/master_sprite12.png'); }
             .simcity {          height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/785265020115877898/master_sprite13.png'); }
             .ovffvp {           height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/785265020115877898/master_sprite13.png'); }
-
-            .displayboxdisplay {    width:184px; height:169px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/793562429425844234/display_window.png');}
-            .displaycolour {        width:155px; height: 15px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/793567960446664714/unknown.png');}
     
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* Window bar handling */
@@ -140,31 +139,28 @@
             
             .win98post{             box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #dfdfdf,inset -2px -2px grey,inset 2px 2px #fff;background:silver;padding:3px;
             /*randomimagesmenu*/    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
-            .title-bar-posts{       font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px;
-                                    background:url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png'); height: 18px; width: 475px;}
-            .title-bar-small{       font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px;
-                                    background: url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png'); height: 18px; width:194px;}
-            .title-bar-98{          font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px;
-                                    background: url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png');}
+            .title-bar-posts{       font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px; background-image: var(--active); height: 18px; width: 475px;}
+            .title-bar-small{       font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px; background-image: var(--inactive);}
+            .title-bar-98{          font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px; background-image: var(--inactive);}
 
             /* window  post handling */
             .window{                box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #dfdfdf,inset -2px -2px grey,inset 2px 2px #fff;background:silver;padding:3px; z-index:2;
                                     font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
             /*.title-bar{           background: url('https://cdn.discordapp.com/attachments/630047188520665121/791289642578214912/title-bar_gradientopen.png'); height: 18px; width:194px;}*/
-            /*title-bar.inactive{   background: url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png'); height: 18px; width:194px;}*/
+            /*title-bar.inactive{   background: url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png'); height: 18px; width:194px;}*/
             .title-bar-text{        font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color:#fff; letter-spacing:0; margin-right:24px}
             
             /* window title bar button handling */
             .win98titlebarbutton{   width:10px; height: 8px; float:right; box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
                                     font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px;}
             .win98titlebarbutton:active{ width:10px; height: 8px; float:right; box-shadow:inset 1px 1px #0a0a0a,  inset -1px -1px #fff, inset -2px -2px #dfdfdf, inset 2px 2px grey; background:silver; padding:3px; 
-                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: -1px; margin-left: -1px; }
+                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: -1px; margin-left: -1px; transition: width 0.1s;}
               
             /* General button handling */
             .win98button{           box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
                                     font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
             .win98button:active{    box-shadow:inset 1px 1px #0a0a0a,  inset -1px -1px #fff, inset -2px -2px #dfdfdf, inset 2px 2px grey; background:silver; padding:3px; 
-                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
+                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute; transition: width 0.1s;}
                                     
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* Window icon handling */
@@ -215,17 +211,17 @@
             .start_bar .tray {      border-top: 1px solid rgb(128,128,128); border-left: 1px solid rgb(128,128,128);border-bottom: 1px solid rgb(255,255,255); border-right: 1px solid rgb(255,255,255);
                                     height: 18px; width: 79px; margin-right: 5px; margin-top: 2px; float: right; } 
             
-            /* start menu button toggle */
-            .startbutton, .startmenustartbutton { background-image: var(--spritesheet); height: 22px; width: 54px; margin-left: 2px; margin-top: 2px; }
-                
-            .startbutton {          background-position: -306px -189px;}
-            .startmenustartbutton { background-position: -306px -167px;}
-
             /* start menu application icon config */
             .submenu20 {        height: 20px; background-color:#c0c0c0; color: black; width:100%; }
             .submenu20:hover {  height: 20px; background-color:#00207c; color: white; width:100%; }
             .submenu36 {        height: 36px; background-color:#c0c0c0; color: black; width:100%; }
             .submenu36:hover {  height: 36px; background-color:#00207c; color: white; width:100%; }
+            
+            /* start menu button toggle */
+            .startbutton, .startmenustartbutton { background-image: var(--spritesheet); height: 22px; width: 54px; margin-left: 2px; margin-top: 2px; }
+                
+            .startbutton {          background-position: -306px -189px;}
+            .startmenustartbutton { background-position: -306px -167px;}
             
             .menuarrow1 {           background-image: var(--spritesheet); margin: auto; float: right; }
             .menuarrow1 {           height:   7px; width:   4px; background-position: -150px -215px;} /* Patchnotes */
@@ -334,6 +330,15 @@
             /* Message box position handling */
             .discord {  position: fixed; top:  7%; right: 3%; z-index: 3; max-width:480px;}
             .kofi {     position: fixed; top: 50%; right: 5%; z-index: 3; max-width:480px;}
+
+        /* ----------------------------------------------------------------------------------------------------------------------------- */
+        /* box references */
+        /* ----------------------------------------------------------------------------------------------------------------------------- */
+        
+            .displayboxdisplay {    width:184px; height:169px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/793562429425844234/display_window.png');}
+            .displaycolour {        width:155px; height: 15px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/793567960446664714/unknown.png');}
+
+
 
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* General formatting */
@@ -475,10 +480,9 @@
         
         <div class="win98post" style="z-index: 4; height: 246px; width:194px; position: fixed; top: 68%; left: 4%; position: absolute" 
              onmousedown="inactiveall(); catactive();" id="cat">
-                    <div class="title-bar-small" id="catwindow"> <div class="container" style="padding:2px; cursor: default;">🙀 cat 
-                        <div class="win98titlebarbutton"  style="margin-left: 2px" onclick="catclose(); setTimeout(vunnyinactive, 50);"><div class="close"></div></div>
-                            <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU">
-                                <div class="win98titlebarbutton" style=""> <div class="help"></div> </div> </a> 
+                    <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="catclose(); setTimeout(vunnyinactive, 50);"><div class="close"></div></div>
+                        <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
+                    <div class="title-bar-small" id="catwindow" style="width:194px;"> <div class="container" style="padding:2px; cursor: default;">🙀 cat 
                     </div></div>
                     <div class="messagewindowbody" style="margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: -2px">
                             <div class="trash3"></div>
@@ -489,19 +493,18 @@
             
         <script>
             function catactive() { tumblrButtonOpen = false; logoffButtonOpen = false; 
-                document.getElementById("cat").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
-                document.getElementById("catwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289642578214912/title-bar_gradientopen.png')";
-                document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";
-                pyroButtonOpen = !pyroButtonOpen;} 
-            function catclose() { document.getElementById("cat").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1}
+                document.getElementById("cat").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; tumblrButtonOpen = !tumblrButtonOpen;
+                document.getElementById("catwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')";
+                document.getElementById("catwindow").style.backgroundPosition = "-150px";
+                document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";} 
+            function catclose() { document.getElementById("cat").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1;}
         </script>
             
         <div class="win98post" style="z-index: 5; height: 246px; width:194px; position: fixed; top: 58%; left: 13%;position: absolute" 
             onmousedown="inactiveall(); pyroactive();" id="pyro">
-            <div class="title-bar-small" id="pyrowindow"> <div class="container" style="padding:2px; cursor: default;">💯 bloody ell' chums 
-                <div class="win98titlebarbutton"  style="margin-left: 2px" onclick="pyroclose(); setTimeout(vunnyinactive, 50);"><div class="close"></div></div>
-                    <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU">
-                        <div class="win98titlebarbutton" style=""> <div class="help"></div> </div> </a> 
+            <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="pyroclose(); setTimeout(vunnyinactive, 50);"><div class="close"></div></div>
+                <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
+            <div class="title-bar-small" id="pyrowindow" style="width:194px;"> <div class="container" style="padding:2px; cursor: default;">💯 bloody ell' chums 
             </div></div>
             <div class="messagewindowbody" style="margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px">
                 <div class="trash4"></div>
@@ -511,11 +514,11 @@
         </div></div></div>
 
         <script> 
-            function pyroactive() { tumblrButtonOpen = false; 
-                document.getElementById("pyro").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
-                document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289642578214912/title-bar_gradientopen.png')";
-                document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";
-                pyroButtonOpen = !pyroButtonOpen; } 
+            function pyroactive() { tumblrButtonOpen = false; logoffButtonOpen = false;
+                document.getElementById("pyro").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; tumblrButtonOpen = !tumblrButtonOpen;
+                document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')";
+                document.getElementById("pyrowindow").style.backgroundPosition = "-150px";
+                document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";} 
             function pyroclose() { document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1;}
         </script>                
                             
@@ -525,8 +528,8 @@
         
         <script>         
             function vunnyinactive() {  
-                document.getElementById("catwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png')";
-                document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png')";
+                document.getElementById("catwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
+                document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
                 //dump anything here from the "vunny" list
                 document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}
         </script>
@@ -553,7 +556,7 @@
                 document.getElementById("message").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
                 document.getElementById("messagewindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791303194356482048/title-bar_diskmanagement_gradientopen.png')";} 
             function messageinactive() { 
-                document.getElementById("messagewindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791305961670836224/title-bar_diskmanagement_gradient.png')";} 
+                document.getElementById("messagewindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";} 
         </script>
         
         <!-- add more junk here -->
@@ -680,8 +683,8 @@
             
             function inactiveall() { 
             //complete toggle script, insert ids here
-                document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png')";
-                document.getElementById("catwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png')";
+                document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
+                document.getElementById("catwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
                 document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";
                 
                 document.getElementById("messagewindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
@@ -1516,8 +1519,6 @@
                                         
                             </div>
         
-        
-        
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <!-- Documents menu rendering                                                                                                      -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -1637,40 +1638,48 @@
                 <taskbar class="big_seperator"> </taskbar>
                 <taskbar class="small_seperator" style="cursor:e-resize"> </taskbar>
                 
-                <div class="taskbarapp1" style="cursor:pointer" onmousedown="inactiveall(); tumblrtoggle(); tumblrtoggle1();" id="taskapp1"> 
+                <div class="taskbarapp1" style="cursor:pointer" onmousedown="inactiveall(); tumblrtoggle();" id="taskapp1"> 
                         <div class="title-bar-text" style="margin-top:3px; margin-left:5px; color:black;"><label style="color:black; font-size: 11px; cursor:pointer; margin-left:1px">🍭 very.vunnies</label></div></div>
                         
-                <div class="taskbarapp2" style="cursor:pointer;" onmousedown="inactiveall(); pyrotoggle(); pyrotoggle1();" id="taskapp2"> 
+                <div class="taskbarapp2" style="cursor:pointer;" onmousedown="inactiveall(); pyrotoggle();" id="taskapp2"> 
                         <div class="title-bar-text" style="margin-top:3px; margin-left:5px; color:black;"><label style="color:black; font-size: 11px; cursor:pointer; margin-left:1px">👿 very.unvunny</label></div></div>
                         
-                <div class="taskbarapp3" style="cursor:pointer;" onmousedown="inactiveall(); disktoggle(); disktoggle1();" id="taskapp3"> 
+                <div class="taskbarapp3" style="cursor:pointer;" onmousedown="inactiveall(); disktoggle();" id="taskapp3"> 
                         <div class="title-bar-text" style="margin-top:3px; margin-left:5px; color:black;"><label style="color:black; font-size: 11px; cursor:pointer; margin-left:1px">📺 Display Properties</label></div></div>
                 
                 <script>
-                    function pyrotoggle() {
-                        if (document.getElementById("taskapp2").style.backgroundImage !== "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')") { 
-                            document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png')";  
-                            document.getElementById("catwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289646813806602/title-bar_gradient.png')";
-                            document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}}
-                        
-                    //start button pressed // start menu window
-                    function pyrotoggle1(){ pyroButtonOpen = !pyroButtonOpen;
-                        if (pyroButtonOpen) { tumblrButtonOpen = false;  
-                            document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791289642578214912/title-bar_gradientopen.png')";
+                    let pyroButtonOpen = true
+                    function pyrotoggle() { 
+                        if (document.getElementById("taskapp2").style.backgroundImage !== "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')") { 
+                            document.getElementById("pyro").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; pyroButtonOpen = !pyroButtonOpen; 
+                            document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')";  
                             document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";}
-                
-                    let tumblrButtonOpen = true
-                    
+                        if (pyroButtonOpen) { tumblrButtonOpen = false; pyroButtonOpen = true;  tumblrButtonOpen = !tumblrButtonOpen;
+                            document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
+                            document.getElementById("catwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
+                            document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}
+                    }
+
                     function tumblrtoggle() { 
-                    if (document.getElementById("postwindow").style.backgroundImage !== "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')") {
-                        document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
-                        document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}}
-                    //start button pressed // start menu window
-                    function tumblrtoggle1(){
-                        tumblrButtonOpen = !tumblrButtonOpen;
+                        if (document.getElementById("postwindow").style.backgroundImage !== "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')") {
+                            document.getElementById("post").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; tumblrButtonOpen = !tumblrButtonOpen;
+                            document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
+                            document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}
                         if (tumblrButtonOpen) { pyroButtonOpen = false;
                             document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')";
-                            document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";}}
+                            document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";}
+                    }
+
+                    function disktoggle() { 
+                        if (document.getElementById("postwindow").style.backgroundImage !== "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')") {
+                            document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
+                            document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}
+                        if (diskbuttonOpen) { diskButtonOpen = false;
+                            document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')";
+                            document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";}
+                        diskButtonOpen = !diskButtonOpen;
+                    }
+
                 </script>
                  
                 <div class="tray">
