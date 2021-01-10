@@ -54,7 +54,7 @@
         <!-- Setup -->
         <style type="text/css">
         
-            :root { --spritesheet: url('https://cdn.discordapp.com/attachments/630047188520665121/796998999583490058/spritesheet.png'); 
+            :root { --spritesheet: url('https://cdn.discordapp.com/attachments/630047188520665121/797711616383647794/spritesheet.png'); 
                     --inactive: url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png');
                     --active: url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png');}
         
@@ -203,7 +203,10 @@
                 .start_bar .big_seperator {     float: left; border-left: 1px solid rgb(128,128,128); border-right: 1px solid rgb(255,255,255); height: 22px; margin-top: 2px; margin-left: 2px; }
                 .start_bar .small_seperator {   float: left;  border-left: 1px solid rgb(255,255,255); border-top: 1px solid rgb(255,255,255); margin-top: 4px; margin-left: 2px;
                                                 border-right: 1px solid rgb(128,128,128); border-bottom: 1px solid rgb(128,128,128); background-color: rgb(192,192,192); width: 1px; height: 16px; }
-                
+            .splitt
+            { background-image: var(--spritesheet); height: 16px; width: 2px; }
+            .splitt {    background-position:  -208px  -211px;}
+            
             /* tray config */
             .start_bar .time {      line-height: 18px; float: right; font-size: 10px; margin-right: 10px; }
             .taskbaricons {         float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px; }
@@ -350,7 +353,6 @@
             .start_bar .calendar { float: left; margin-top: 1px; margin-left: 3px; }
             .taskbaricons { float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px; }
 
-
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* Additional HTML handle rendering                                                                                              */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
@@ -373,6 +375,12 @@
             /*.media { position: relative;}
             .media iframe, .media object, 
             .media embed { position: relative; max-width: 460px; width: 114.8%;}*/
+            
+            .like-b { position:relative; display:inline-block; height:1em; line-height:1em;}
+            .like-b .like_button iframe { position:absolute; opacity:0; }
+            .like-b .liked + .b { color:inherit; }
+            .like-b .liked + .b:after { content:'d';}
+            .like-b .b:after { colour: green }
             
             /* infinate scroll script + */
 
@@ -728,7 +736,7 @@
             {block:Posts}
                 <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-left: 20px; position: absolute; cursor: default" id="post">
     
-                    <div class="title-bar-posts" id="postwindow"> <div class="container" style="padding:2px">🍭 very.vunnies
+                    <div class="title-bar-posts" id="postwindow"> <div class="container" style="padding:2px;">🍭 very.vunnies
                         <div class="win98titlebarbutton" style="margin-left: 2px" title="close"><div class="close"></div></div>
                         <a href="{Permalink}"><div class="win98titlebarbutton" title="maximize"><div class="maximize"></div></div></a> 
                         <a href="https://thealonic.tumblr.com/"><div class="win98titlebarbutton" title="minimize"><div class="minimize"></div></div></a> 
@@ -957,7 +965,19 @@
             <!-- Bottom post handling                                                                                                          -->
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
             
-                        <div class="container" style="max-width:500px; margin-top: -16px">
+                        <div class="container" style="margin-right: -5px;">
+                            <a class="like-b" href="{ReblogURL}" target="_blank" style="float:right; margin-top:-23px; margin-right:1px">reblog</a>
+                            <div class="splitt" style="float: right; margin-left: 3px; margin-right: 3px; margin-top:-25px; margin-right:33px"></div>
+                            <a class="like-b" href="#" style="float:right; margin-top:-23px; margin-right:38px;">{LikeButton}<div class="b">like</div></a>
+                        </div>
+                        
+                        <script>
+                            function( newElements ) {
+                                var $newElems = $(newElements); var $newElemsIDs = $newElems.map(function(){ eturn this.id; }).get();
+                                Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);});
+                        </script>
+                        
+                        <div class="container" style="max-width:500px;">
                             <div class="filler"></div><div class="filler"></div><div class="filler"></div><div class="filler"></div>
                             
                             <!-- blogger container + recolour -->
@@ -974,23 +994,23 @@
                                     </fieldset> 
                                 </div>
                                 
-                                <div class="container" style="width: 36px; height: 2px; margin-left: 270px; display: block; margin-top: -19px; cursor:default;" title="Post type">
+                                <div class="container" style="width: 36px; height: 2px; margin-left: 269px; display: block; margin-top: -19px; cursor:default;" title="Post type">
                                     <fieldset style="width:100%; height:1px;">
-                                        <div class="content" style="-ms-transform: translateY(-50%); transform: translateY(-50%); margin-top:2px; margin-left:-3px">
+                                        <div class="content" style="-ms-transform: translateY(-50%); transform: translateY(-50%); margin-top:2px; margin-left:-2px">
                                             {PostType}
                                         </div>
                                     </fieldset>
                                 </div>
                                 
-                                <div class="container" style="width: 34px; height: 2px; margin-left: 330px; margin-top: -2px; display: block; cursor:default;" title="Post ID">
+                                <div class="container" style="width: 34px; height: 2px; margin-left: 328px; margin-top: -2px; display: block; cursor:default;" title="Post ID">
                                     <fieldset style="width:100%; height:1px;">
-                                        <div class="content" style="-ms-transform: translateY(-50%); transform: translateY(-50%); margin-top:2px; margin-left:-3px">
+                                        <div class="content" style="-ms-transform: translateY(-50%); transform: translateY(-50%); margin-top:2px; margin-left:-3px; width:126px">
                                             {PostID}
                                         </div>
                                     </fieldset>
                                 </div>
                                 
-                                <div class="cornerpeice" style="margin-left: 457px; margin-top:2px; cursor:se-resize">  </div>
+                                <div class="cornerpeice" style="margin-left: 455px; margin-top:1px; cursor:se-resize">  </div>
                                 
                             </div>
                         </div>
@@ -1657,8 +1677,7 @@
                         if (pyroButtonOpen) { tumblrButtonOpen = false; pyroButtonOpen = true;  tumblrButtonOpen = !tumblrButtonOpen;
                             document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
                             document.getElementById("catwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
-                            document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}
-                    }
+                            document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}}
 
                     function tumblrtoggle() { 
                         if (document.getElementById("postwindow").style.backgroundImage !== "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')") {
@@ -1667,8 +1686,7 @@
                             document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}
                         if (tumblrButtonOpen) { pyroButtonOpen = false;
                             document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')";
-                            document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";}
-                    }
+                            document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";}}
 
                     function disktoggle() { 
                         if (document.getElementById("postwindow").style.backgroundImage !== "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')") {
@@ -1677,9 +1695,7 @@
                         if (diskbuttonOpen) { diskButtonOpen = false;
                             document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')";
                             document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";}
-                        diskButtonOpen = !diskButtonOpen;
-                    }
-
+                        diskButtonOpen = !diskButtonOpen;}
                 </script>
                  
                 <div class="tray">
