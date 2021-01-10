@@ -61,7 +61,7 @@
             /* addresses */
             body { background: url('https://cdn.discordapp.com/attachments/630047188520665121/786208918119514112/wallpaper32.png') repeat fixed; 
                    background-size: cover; margin: 0; font: normal 13px/1.3 {font:Font}; padding: auto auto auto auto }
-            html, body { max-width: 100%; overflow-x: hidden; }
+            html{ max-width: 100%; overflow-x: hidden;}
             a { color: #000000; text-decoration: none; }
             a:hover { text-decoration: underline; color: #ffffff; }
             span { background-color: #008383; }
@@ -554,7 +554,7 @@
                     <div class="win98titlebarbutton" style=""> <div class="help"></div> </div> </a> 
             </div></div>
             <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
-                <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>8:34am on January 8th, 2021. [GMT]</label></p>
+                <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>6:44am on January 10th, 2021. [GMT]</label></p>
         </div></div>
         
         <!-- message box functions -->
@@ -731,7 +731,7 @@
                 document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";}
         </script>
         
-        <div id="desktop" class="container" id="desktop" onclick="inactiveall(); tumblractive();" style="">
+        <div id="desktop" class="container" id="desktop" onclick="inactiveall(); tumblractive();" style="width:1200px; overflow-x: hidden; left:60px">
             {block:Posts}
                 <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-left: 20px; position: absolute; cursor: default" id="post">
     
@@ -1667,23 +1667,23 @@
                         <div class="title-bar-text" style="margin-top:3px; margin-left:5px; color:black;"><label style="color:black; font-size: 11px; cursor:pointer; margin-left:1px">📺 Display Properties</label></div></div>
                 
                 <script>
-                    let pyroButtonOpen = true
-                    function pyrotoggle() { 
+                pyroButtonOpen = true; 
+                    function pyrotoggle() {  pyroButtonOpen = !pyroButtonOpen; 
                         if (document.getElementById("taskapp2").style.backgroundImage !== "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')") { 
-                            document.getElementById("pyro").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; pyroButtonOpen = !pyroButtonOpen; 
+                            document.getElementById("pyro").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; 
                             document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')";  
                             document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";}
-                        if (pyroButtonOpen) { tumblrButtonOpen = false; pyroButtonOpen = true;  tumblrButtonOpen = !tumblrButtonOpen;
+                        if (pyroButtonOpen) { tumblrButtonOpen = false; pyroButtonOpen = true;
                             document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
                             document.getElementById("catwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
                             document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}}
 
-                    function tumblrtoggle() { 
+                    function tumblrtoggle() { tumblrButtonOpen = !tumblrButtonOpen;
                         if (document.getElementById("postwindow").style.backgroundImage !== "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')") {
-                            document.getElementById("post").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; tumblrButtonOpen = !tumblrButtonOpen;
+                            document.getElementById("post").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
                             document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
                             document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}
-                        if (tumblrButtonOpen) { pyroButtonOpen = false;
+                        if (tumblrButtonOpen) { pyroButtonOpen = false; pyroButtonOpen = !pyroButtonOpen; 
                             document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')";
                             document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";}}
 
@@ -1722,14 +1722,22 @@
                 if( infScr && twoCol ){
                     $container.imagesLoaded(function(){ $container.masonry({ itemSelector: '.window'}) });
                     $container.infinitescroll({ itemSelector: '.window'},
-                    function( newElements ) {
-                        var $newElems = $( newElements ).css({ opacity: 0 });
-                        $newElems.imagesLoaded(function(){
-                            $newElems.animate({ opacity: 1 }); $container.masonry( 'appended', $newElems, true ); })});
+                        function( newElements ) {
+                            var $newElems = $(newElements).css({ opacity: 0 });
+                            var $newElemsIDs = $newElems.map(function(){
+                                return this.id;
+                            }).get();
+                            Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
+                            $newElems.imagesLoaded(
+                            function(){
+                                $newElems.animate({ opacity: 1 }); 
+                                $container.masonry( 'appended', $newElems, true ); })
+                        }
+                    );
                                 
                 } else if( !infScr && twoCol){
                     $container.imagesLoaded(function(){ $container.masonry({ itemSelector: '.window' })})}
-                        
+                
                 //taskbar clock functions
                 function updateClock(){
                     var date = new Date();
