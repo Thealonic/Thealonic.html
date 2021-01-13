@@ -38,10 +38,9 @@
         
         <!-- refs -->
         <link rel="stylesheet" href="https://unpkg.com/98.css" />
-        <link rel="stylesheet" href="https://static.tumblr.com/fpdiq1j/N3Zmkjmqn/theme_generic.css" />
         
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script src="//static.tumblr.com/fpdiq1j/Ieqn0wdlb/jquery.imagesloaded.min.js"></script>
+        
         <script src="//static.tumblr.com/fpdiq1j/GV9n0wdlc/jquery.infinitescroll.min.js"></script>
         <script src="//static.tumblr.com/fpdiq1j/x8Nn0wiyd/jquery.masonry.min.js"></script>
         <script src="//static.tumblr.com/fpdiq1j/jpPn0wdlf/jquery.photosetgrid.min.js"></script>
@@ -54,7 +53,7 @@
         <!-- Setup -->
         <style type="text/css">
         
-            :root { --spritesheet: url('https://cdn.discordapp.com/attachments/630047188520665121/797711616383647794/spritesheet.png'); 
+            :root { --spritesheet: url('https://cdn.discordapp.com/attachments/630047188520665121/797786901057896458/spritesheet.png'); 
                     --inactive: url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png');
                     --active: url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png');}
         
@@ -77,37 +76,6 @@
             body.permalink_page #desktop, 
             body.permalink_page .navigation { width: 480px; }
             body.infinite_scrolling .navigation, .inf_scr { display: none; }
-            
-            /* post window config */
-            .tagged { font-size: 9px; opacity: 0.5; }
-            .notes { margin-top:0px; text-align:left; }
-            ol.notes {max-height: 216px; width:461px; overflow:auto; margin-top:-6px; }
-
-            /* text Post settings */
-            .quote .dash { float: left; padding: 0 4px 0 4px; }
-            .quote .source { float: left; }
-            .chat .line:last-of-type { margin-bottom: 0; }
-            
-            /* image Post settings */
-            .body img, .caption img { max-width: 100%; overflow: hidden; }
-            img.full_image {width: 443px;} /* bottlenecks images */
-            .middle img { max-width: 459px; width: 100%; height: 100%; display: block; }
-            .photoset .wrapper {width: 100%; max-width: 459px},
-            
-            /* video Post settings */
-            .video .video_player { height: 100%; width: 100%; max-width: 459px; display: block; margin: 0; }
-            
-            /* audio Post settings */
-            .audio { padding: 0; }
-            .audio_container { overflow: hidden; position: relative; width: 100px; }
-            .soundcloud_audio_player { width: 100%; }
-            .tumblr_audio_player { width: 100%; }
-            .spotify_audio_player { height: 80px !important; width:100%; }
-            
-            /* gap maker */
-            .filler { height: 2px; } 
-            .filler2 { height: 10px; } 
-            .filler3 { height: 400px; }
     
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* Desktop setup css */
@@ -169,20 +137,20 @@
             .help, .minimize, .maximize, .close 
             { background-image: var(--spritesheet); width:12px; height:10px; margin-top: -1px; margin-left: -1px; }
             
-            .help {     background-position:  -66px -214px;} /* help */
-            .minimize { background-position:  -82px -214px;} /* minimize */
-            .maximize { background-position:  -98px -214px;} /* maximize */
-            .close {    background-position: -114px -214px;} /* close */
+            .help {     background-position:  -66px -215px;} /* help */
+            .minimize { background-position:  -82px -215px;} /* minimize */
+            .maximize { background-position:  -98px -215px;} /* maximize */
+            .close {    background-position: -114px -215px;} /* close */
             
             /* tumblr post post icons */
             .scrollup, .scrollright, .scrolldown, .scrollleft, .cornerpeice
             { background-image: var(--spritesheet); height: 16px; width: 16px; margin-top: -1px; margin-left: -1px; }
 
-            .scrolldown {   background-position:    0px -211px; }
-            .scrollleft {   background-position:  -16px -211px; }
-            .scrollup {     background-position:  -32px -211px; }
-            .scrollright {  background-position:  -48px -211px; }
-            .cornerpeice {  background-position: -192px -211px; height: 16px; width: 16px; }
+            .scrolldown {   background-position:    0px -212px; }
+            .scrollleft {   background-position:  -16px -212px; }
+            .scrollup {     background-position:  -32px -212px; }
+            .scrollright {  background-position:  -48px -212px; }
+            .cornerpeice {  background-position: -192px -212px; height: 16px; width: 16px; }
 
             /* tumblr post container things */
             .sidescrollbarmiddletop {    display: block; height:  2px; width:16px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/788263927007281162/scrollbarsidescrolltop.png'); float: right;}
@@ -227,7 +195,7 @@
             .startmenustartbutton { background-position: -306px -167px;}
             
             .menuarrow1 {           background-image: var(--spritesheet); margin: auto; float: right; }
-            .menuarrow1 {           height:   7px; width:   4px; background-position: -150px -215px;} /* Patchnotes */
+            .menuarrow1 {           height:   7px; width:   4px; background-position: -150px -216px;} /* Patchnotes */
             
             /* start menu misc */
             .menuapplicationsplit { float: left; height: 2px; width: 137px; margin-left: 2px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/786667475839877150/Start_menu_border.png');}
@@ -356,25 +324,46 @@
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* Additional HTML handle rendering                                                                                              */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
+
+            .posts .photo img.image, .posts .audio img.artwork, .posts .html_photoset { display: block; width: 100%;}
+            .posts .with_caption {margin-bottom: 1em;}
+            .posts .photoset, .posts .audio .audio_player embed { display: block;}
+            .posts p:empty, .posts div:empty, body.permalink_page .posts .controls, .hide_if_last:last-child { display: none; }
             
-            ol.notes { padding: 3px; margin: 5px 0px; list-style-type: none; }
-            ol.notes li.note img.avatar { vertical-align: -4px; margin-right: 4px; width: 16px; height: 16px; }
-            ol.notes li.note .answer_content { font-weight: normal; }
-            ol.notes li.note blockquote { padding: 4px 10px; margin: 10px 0px 0px 25px; }
-            ol.notes li.note blockquote a { text-decoration: none; }
+            .content p > img { max-width: 100%; border-radius: 0;}
+            .content p, blockquote, ul, ol  {margin: 0 0 0.8em 0;}
+            .meta div {margin: 0 0 0.4em 0 !important;}
+            .meta div a {text-decoration: none;}
+            .content p:last-child, .content blockquote:last-child, .meta div:last-child { margin-bottom: 0 !important;} /* bottom of posts before footer */
+            
+            /* text Post settings */
+            blockquote { padding-left: 5px; border-left: 2px solid #ABABAB; border-left: 2px solid rgba(0,0,0,0.33); } /* lines at the side of posts */
+            .quote .dash { float: left; padding: 0 2px 0 2px; }
+            .quote .source { float: left; }
+            .chat .line:last-of-type { margin-bottom: 0; }
+            .chat ul, .chat ol { padding: 0; list-style: none;}
+            
+            /* image Post settings */
+            .body img, .caption img { max-width: 100%; overflow: hidden; }
+            img.full_image {width: 443px;} /* bottlenecks images */
+            .middle img { max-width: 459px; width: 100%; height: 100%; display: block; }
+            .photoset .wrapper {width: 100%; max-width: 459px};
+            a img { border: 0; };
+            
+            /* video Post settings */
+            .video .video_player { height: 100%; width: 100%; max-width: 459px; display: block; margin: 0; }
+            
+            /* audio Post settings */
+            .audio { padding: 0; }
+            .audio_container { overflow: hidden; position: relative; width: 100px; }
+            .soundcloud_audio_player { width: 100%; }
+            .tumblr_audio_player { width: 100%; }
+            .spotify_audio_player { height: 80px !important; width:100%; }
 
             /* media resizer patch */
-            /* black bars at the top */
             .media { position: relative; padding-bottom: auto; margin: auto auto auto auto; overflow: hidden; height: auto;}
             .media iframe, .media object, 
             .media embed { position: absolute; width: 443px; }
-            .video {width: 459px!important;}
-            .video iframe {width: 459px!important;}
-            
-            /* black bars at the side */
-            /*.media { position: relative;}
-            .media iframe, .media object, 
-            .media embed { position: relative; max-width: 460px; width: 114.8%;}*/
             
             .like-b { position:relative; display:inline-block; height:1em; line-height:1em;}
             .like-b .like_button iframe { position:absolute; opacity:0; }
@@ -383,10 +372,32 @@
             
             /* infinate scroll script + */
 
-            #windowtitlebar { cursor: move; z-index: 10; }
+            ul, ol { padding: 0 0 0 18px;}
+
+            .tagged { font-size: 9px; opacity: 0.5; }
+            .notes { margin-top:0px; text-align:left; }
+            ol.notes { padding: 3px; margin: 5px 0px; list-style-type: none; max-height: 216px; width:461px; overflow:auto; margin-top:-6px; }
+            ol.notes li.note img.avatar { vertical-align: -4px; margin-right: 4px; width: 16px; height: 16px; }
+            ol.notes li.note .answer_content { font-weight: normal; }
+            ol.notes li.note blockquote { padding: 4px 10px; margin: 10px 0px 0px 25px; }
+            ol.notes li.note blockquote a { text-decoration: none; }
+
+            .cf:before,.cf:after{content:" ";display:table}.cf:after{clear:both}.cf{*zoom:1}
+            
+             /* gap maker */
+            .filler { height: 2px; } 
+            .filler2 { height: 10px; } 
+            .filler3 { height: 400px; }
             
             {CustomCSS}
+            
         </style>
+        
+        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+        <!-- Random image generation                                                                                                       -->
+        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+        
+        
         
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <!-- desktop handling                                                                                                              -->
@@ -467,6 +478,8 @@
         
         <script>
             var currentno = 5
+            
+            var window1 = true; var window2 = true;
         </script>
         
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -476,71 +489,133 @@
         <!--<a href='https://ko-fi.com/A4662M6H' target='_blank'>
             <img height='36' style='position: fixed; float: right; height:36px; right: 10px; bottom: 40px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=0' 
             border='0' alt='Buy Me a Coffee at ko-fi.com' /> </a>
-        
+
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <!-- VUNNY message box rendering                                                                                                   -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         
         <script>
-            var pyrotabs = 2
+            var pyrotabs = 2;
+            
+            function pyrowindow(){ if(pyrotabs == 0){ document.getElementById("taskapp2").style.marginLeft = "-20000px" }}
+            
+                var myPix = new Array(
+                "url('https://cdn.discordapp.com/attachments/672475563952439326/798493963824529418/unknown.png')",              // fleur de lis with water 0
+                "url('https://cdn.discordapp.com/attachments/630047188520665121/798499968289603604/unknown.png')",              // 1
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/783315603115999282/ezgif-7-c9e84b5f07f6.gif')", //pyro 2
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798502538710089738/unknown.png')",              //dog dressed as chicken. 3
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798506381481213962/unknown.png')",              //cat with head in cup. 4 
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798506706274615296/unknown.png')",              // putin next to walrus. 5
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798507986195578890/unknown.png')",              // cat in jar 6
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798509320584691732/unknown.png')",              // who shot hannibal 7
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798509675238785074/unknown.png')",              // cat drinking 8
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798509990620954654/unknown.png')",              // bananana 9
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798528719010005002/unknown.png')",              // tank eater 10
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798513603384180746/unknown.png')",              // cat in fridge 11
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798513784686772254/unknown.png')",              // cat snake 12
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798514201449988106/unknown.png')",              // spring cat 13
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798514567441285160/unknown.png')",              // muscle cat 14
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798514809716998144/unknown.png')",              // Pussy Fuckers 15
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798515890425561098/unknown.png')",              // dancing cats with dears 16
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798525792257835028/unknown.png')",              // Brain the dog drinking 17
+                "url('https://cdn.discordapp.com/attachments/363043993069682699/798527303532806165/unknown.png')",              // wallace tank 18
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798527551290867712/unknown.png')",              // joker chair 19
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798813870168473620/unknown.png')",              // yeah I like ass 20
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798815059274498108/unknown.png')",              // charge 50 bucks to piss 21
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798815239029653514/unknown.png')",              // bort 22
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798815499361320970/unknown.png')",              // bowsette smithers 23
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798816411837399050/unknown.png')",              // free sex 24
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798840038443712562/unknown.png')",              // silence confederate 25
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798840513200783380/unknown.png')",              // connect 4 26
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798845223588331530/unknown.png')",              // I want to play ball 27
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798816411837399050/unknown.png')",              // dog with teeth 28
+                "url('https://cdn.discordapp.com/attachments/677255444682506240/798845723617263616/unknown.png')"               // screaming cat 29
+                );
+                
+            var r_text = new Array (); 
+                r_text[0] = "Hi-dilly-ho, neighborinos!";   r_text[1] = "hand the purse over.";         r_text[2] = "bloody ell' chums ";           r_text[3] = "help";                         r_text[4] = "قطة غبية سخيف ، كريستوفر أبون ل"; 
+                r_text[5] = "let me hold you, darling.";    r_text[6] = "Spongbob Squarepants";         r_text[7] = "Who shot hannibal?";           r_text[8] = "(the cat is preggers)";        r_text[9] = "I'm a slut for a banana"; 
+                r_text[10] = "Tank Eater~";                 r_text[11] = "Fat cat with fat snax";       r_text[12] = "I'm a butterfly daddy!";      r_text[13] = "Blongongongongong";           r_text[14] = "I did it, I shot hannibal.";
+                r_text[15] = "Pussy fuckers";               r_text[16] = "gangnam style";               r_text[17] = "It seems today-";             r_text[18] = "piekreig";                    r_text[19] = "no one card who I was until I sat in the gamer seat.";
+                r_text[20] = "Ass Eater~";                  r_text[21] = "rct2.exe";                    r_text[22] = "bort.png";                    r_text[23] = "i'm gay, miss.";              r_text[24] = "SEX AT SEX.COM";
+                r_text[25] = "'Silence in  the library'";   r_text[26] = "Neon Genesis Evanjollion";    r_text[27] = "Space Jam";                   r_text[28] = "My mom's crown jewels";       r_text[29] = "PWEASE MWISTER, DON'T PUT ME IN THE CUM JAR";
+
         </script>
         
-        <div class="win98post" style="z-index: 4; height: 246px; width:194px; position: fixed; top: 68%; left: 4%; position: absolute" 
-             onmousedown="inactiveall(); catactive();" id="cat">
-                    <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="catclose(); setTimeout(vunnyinactive, 50);"><div class="close"></div></div>
+        <div class="win98post" style="z-index: 5; height: 246px; width:194px; position: fixed; top: 68%; left: 4%; position: absolute" onmousedown="inactiveall(); catactive();" id="cat">
+                    <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="catclose(); pyrowindow();"><div class="close"></div></div>
                         <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
                     <div class="title-bar-small" id="catwindow" style="width:194px;"> <div class="container" style="padding:2px; cursor: default;">🙀 cat 
                     </div></div>
                     <div class="messagewindowbody" style="margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: -2px">
                             <div class="trash3"></div>
+                            
+                            <script>
+                                var tick = 3;
+                                var randomNum = Math.floor(Math.random() * myPix.length);
+                                document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum];
+                                document.getElementById("pyrotext").textContent= r_text[randomNum]; 
+                                        
+                                function pyroshuffle(){ 
+                                    if (tick !== 0){ 
+                                        var randomNum2 = Math.floor(Math.random() * myPix.length);
+                                        if(randomNum2 !== randomNum){
+                                            document.getElementById("pyrotext").textContent= r_text[randomNum]; 
+                                            document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum]; randomNum = randomNum2;
+                                        } else { randomNum2 = Math.floor(Math.random() * myPix.length);
+                                            document.getElementById("pyrotext").textContent= r_text[randomNum]; 
+                                            document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum]; randomNum = randomNum2;
+                                        }
+                                        if(tick == 3){ document.getElementById("pyrobutton").textContent="Probably!";}
+                                        if(tick == 2){ document.getElementById("pyrobutton").textContent="Maybe?";}
+                                        if(tick == 1){ document.getElementById("pyrobutton").textContent="No.";}
+                                        tick = tick - 1;
+                                    } else { document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; pyrowindow();
+                                }}
+                            </script>
+                            
                         <div class="filler"></div>
                         <div class="messagewindowbutton" style="margin-left:55px; margin-top: 3px; margin-bottom: -2px;">
                             <button disabled>OK</button>
         </div></div></div>
             
         <script>
-            function catactive() { tumblrButtonOpen = false; logoffButtonOpen = false; 
-                document.getElementById("cat").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; tumblrButtonOpen = !tumblrButtonOpen;
+            function catactive() {
+                document.getElementById("cat").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; pyroButtonOpen = false;
                 document.getElementById("catwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')";
                 document.getElementById("catwindow").style.backgroundPosition = "-150px";
                 document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";} 
-            function catclose() { document.getElementById("cat").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1;}
+            function catclose() { document.getElementById("cat").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; pyroButtonOpen = true; window2 = false;
+                document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}
         </script>
             
-        <div class="win98post" style="z-index: 5; height: 246px; width:194px; position: fixed; top: 58%; left: 13%;position: absolute" 
-            onmousedown="inactiveall(); pyroactive();" id="pyro">
-            <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="pyroclose(); setTimeout(vunnyinactive, 50);"><div class="close"></div></div>
+        <div class="win98post" style="z-index: 5; width:194px; position: fixed; top: 58%; left: 13%;position: absolute" onmousedown="inactiveall(); pyroactive();" id="pyro">
+            <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="pyroclose(); pyrowindow();"><div class="close"></div></div>
                 <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
-            <div class="title-bar-small" id="pyrowindow" style="width:194px;"> <div class="container" style="padding:2px; cursor: default;">💯 bloody ell' chums 
+            <div class="title-bar-small" id="pyrowindow" style="width:194px;"> <div class="container" style="padding:2px; cursor: default;" id="pyrotext">💯 bloody ell' chums 
             </div></div>
             <div class="messagewindowbody" style="margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px">
-                <div class="trash4"></div>
-                <div class="filler"></div>
-                <div class="messagewindowbutton" style="margin-left:38px; margin-top: 3px;">
-                    <button style="cursor: pointer;" onclick="pyroclose(); setTimeout(vunnyinactive, 50);">Fuck the pain away</button>
+                
+                <div class="trash4" id="pyroimage"></div>
+                
+                <div class="messagewindowbutton" style="margin-left:58px; margin-top: 5px;" onclick="pyroshuffle();">
+                            <button id="pyrobutton">Definately.</button>
         </div></div></div>
 
         <script> 
-            function pyroactive() { tumblrButtonOpen = false; logoffButtonOpen = false;
-                document.getElementById("pyro").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; tumblrButtonOpen = !tumblrButtonOpen;
+            function pyroactive() {
+                document.getElementById("pyro").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; pyroButtonOpen = false;
                 document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')";
                 document.getElementById("pyrowindow").style.backgroundPosition = "-150px";
                 document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";} 
-            function pyroclose() { document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1;}
+            function pyroclose() { document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; pyroButtonOpen = true; window1 = false;
+                document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}
         </script>                
                             
         <!-- add more junk here -->
         <!-- add more junk here -->
         <!-- add more junk here -->
-        
-        <script>         
-            function vunnyinactive() {  
-                document.getElementById("catwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
-                document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
-                //dump anything here from the "vunny" list
-                document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}
-        </script>
-         
+
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <!-- regular message box rendering                                                                                                 -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -554,12 +629,12 @@
                     <div class="win98titlebarbutton" style=""> <div class="help"></div> </div> </a> 
             </div></div>
             <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
-                <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>6:44am on January 10th, 2021. [GMT]</label></p>
+                <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>10:22am on January 13th, 2021. [GMT]</label></p>
         </div></div>
         
         <!-- message box functions -->
         <script> 
-            function messageactive() { pyroButtonOpen = false; tumblrButtonOpen = false;
+            function messageactive() {
                 document.getElementById("message").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
                 document.getElementById("messagewindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791303194356482048/title-bar_diskmanagement_gradientopen.png')";} 
             function messageinactive() { 
@@ -570,9 +645,13 @@
         <!-- add more junk here -->
         <!-- add more junk here -->
         
+        <!--
+        <div class="container" style="top: 12%; right: 5%; z-index:2; position: absolute; float: right">
+        <iframe src="https://discord.com/widget?id=228593075008569344&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" 
+                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe></div>
+        
         <!-- display settings container -->
-        <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; right:  3%; position: absolute"
-             onmousedownk=" " id="disk">
+        <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; right:  3%; position: absolute" onmousedownk=" " id="disk">
             <div class="title-bar-98" id="diskwindow"> <div class="container" style="padding:2px; width: 398px; cursor: default;">📺 Display Properties
                 <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:4px" title="close"><div class="close"></div></div>
                 <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="" title="help"> <div class="help"></div></div></a> 
@@ -596,8 +675,8 @@
                     <fieldset style="width:136px; height:39px; margin-right: 10px">
                         <div class="field-row" style="width: 77px">
                           <label for="range22">Less</label>
-                          <input id="range22" type="range" min="1" max="5" value="3"></input>
-                          <label for="range23">More</label>
+                          <input id="range22" type="range" min="1" max="5" value="3" style="width:77px"></input>
+                          <label for="range23" style="float:right; margin-right: 5px">More</label>
                         </div>
                         <center><p> 1920 by 1080 pixels</p></center>
                     </fieldset></div>
@@ -639,7 +718,7 @@
         </div></div></div>
         
         <script>
-            function logonactive(){ pyroButtonOpen = false; tumblrButtonOpen = false; 
+            function logonactive(){
                 document.getElementById("logoff").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
                 document.getElementById("logoffwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')" }
             function logoff() {     document.getElementById("logoff").style.marginLeft = "0px"; document.getElementById("logoff").style.zIndex = "100"; }
@@ -675,7 +754,7 @@
         </div></div></div></div>
 
         <script>
-            function shutdownactive(){ pyroButtonOpen = false; tumblrButtonOpen = false; 
+            function shutdownactive(){
                 document.getElementById("shutdown").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
                 document.getElementById("shutdownwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')" }
             function shutdown() {   document.getElementById("shutdown").style.marginLeft = "0px"; document.getElementById("shutdown").style.zIndex = "100"; }
@@ -690,6 +769,7 @@
             
             function inactiveall() { 
             //complete toggle script, insert ids here
+                pyroButtonOpen = true; tumblrButtonOpen = true;
                 document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
                 document.getElementById("catwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
                 document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";
@@ -725,7 +805,7 @@
         {/block:Pagination}
         
         <script>
-            function tumblractive() { tumblrButtonOpen = !tumblrButtonOpen; pyroButtonOpen = false; 
+            function tumblractive() { tumblrButtonOpen = false;
                 document.getElementById("post").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
                 document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')"; 
                 document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";}
@@ -771,7 +851,7 @@
                             <div class="win98button" style="float: right; margin-left: 447px; margin-top: -4px; margin-bottom: 10px; width:10px; height:10px;"> 
                                 <div class="scrollup" style="margin-top:-3px; margin-left:-3px"></div>
                             </div>
-                            <div class="sidescrollbarmiddlemiddle" style="margin-left: -4px; margin-top: 14px; height: 100%; margin-bottom: 14px;" onmousedown="foo(this);" onmouseup="who(this);" onmouseleave="mew(this);">
+                            <div class="sidescrollbarmiddlemiddle" style="margin-left: -4px; margin-top: 14px; height: 100%; margin-bottom: 14px;" onmousedown="foo(this);" onmouseup="who(this);">
                             <div class="sidescrollbarmiddletop" style="margin-right: -0px; margin-top: 13px; margin-bottom: 10px"> </div>
                             
                                  <!-- Normalised post container --> 
@@ -860,7 +940,7 @@
                                     <!-- Video posts -->
                                     {block:Video}
                                         <div class="content body" style="width: 443px">
-                                            <div class="media">{Video-400}</div>
+                                            <div class="media"  data-from-page="{CurrentPage}">{Video-400}</div>
                                         </div>
                                         <div class="filler"></div><div class="filler"></div>
                                         {block:Caption}
@@ -965,16 +1045,10 @@
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
             
                         <div class="container" style="margin-right: -5px;">
-                            <a class="like-b" href="{ReblogURL}" target="_blank" style="float:right; margin-top:-23px; margin-right:1px">reblog</a>
-                            <div class="splitt" style="float: right; margin-left: 3px; margin-right: 3px; margin-top:-25px; margin-right:33px"></div>
+                            <a class="like-b" href="{ReblogURL}" target="_blank" style="float:right; margin-top:-23px; margin-right:1px;">reblog</a>
+                            <div class="splitt" style="float: right; margin-left: 3px; margin-right: 3px; margin-top:-25px; margin-right:34px"></div>
                             <a class="like-b" href="#" style="float:right; margin-top:-23px; margin-right:38px;">{LikeButton}<div class="b">like</div></a>
                         </div>
-                        
-                        <script>
-                            function( newElements ) {
-                                var $newElems = $(newElements); var $newElemsIDs = $newElems.map(function(){ eturn this.id; }).get();
-                                Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);});
-                        </script>
                         
                         <div class="container" style="max-width:500px;">
                             <div class="filler"></div><div class="filler"></div><div class="filler"></div><div class="filler"></div>
@@ -1657,44 +1731,43 @@
                 <taskbar class="big_seperator"> </taskbar>
                 <taskbar class="small_seperator" style="cursor:e-resize"> </taskbar>
                 
-                <div class="taskbarapp1" style="cursor:pointer" onmousedown="inactiveall(); tumblrtoggle();" id="taskapp1"> 
+                <div class="taskbarapp1" style="cursor:pointer" onmousedown="tumblrtoggle();" id="taskapp1"> 
                         <div class="title-bar-text" style="margin-top:3px; margin-left:5px; color:black;"><label style="color:black; font-size: 11px; cursor:pointer; margin-left:1px">🍭 very.vunnies</label></div></div>
                         
-                <div class="taskbarapp2" style="cursor:pointer;" onmousedown="inactiveall(); pyrotoggle();" id="taskapp2"> 
+                <div class="taskbarapp2" style="cursor:pointer;" onmousedown="pyrotoggle();" id="taskapp2"> 
                         <div class="title-bar-text" style="margin-top:3px; margin-left:5px; color:black;"><label style="color:black; font-size: 11px; cursor:pointer; margin-left:1px">👿 very.unvunny</label></div></div>
                         
-                <div class="taskbarapp3" style="cursor:pointer;" onmousedown="inactiveall(); disktoggle();" id="taskapp3"> 
+                <div class="taskbarapp3" style="cursor:pointer;" onmousedown="disktoggle();" id="taskapp3"> 
                         <div class="title-bar-text" style="margin-top:3px; margin-left:5px; color:black;"><label style="color:black; font-size: 11px; cursor:pointer; margin-left:1px">📺 Display Properties</label></div></div>
                 
                 <script>
-                pyroButtonOpen = true; 
-                    function pyrotoggle() {  pyroButtonOpen = !pyroButtonOpen; 
-                        if (document.getElementById("taskapp2").style.backgroundImage !== "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')") { 
-                            document.getElementById("pyro").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; 
-                            document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')";  
-                            document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";}
-                        if (pyroButtonOpen) { tumblrButtonOpen = false; pyroButtonOpen = true;
+                let tumblrButtonOpen = false
+                let pyroButtonOpen = false; 
+                    function pyrotoggle() { tumblrButtonOpen = true;
+                        if (pyroButtonOpen == false) { pyroButtonOpen = true;
                             document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
                             document.getElementById("catwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
-                            document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}}
+                            document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";
+                        } else if (pyroButtonOpen == true){
+                            inactiveall();
+                            pyroButtonOpen = false; 
+                            if (window1 = true){ 
+                                document.getElementById("pyro").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
+                                document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')";  
+                                document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')"; 
+                            } else if (window2 = true){ 
+                                document.getElementById("cat").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
+                                document.getElementById("catwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')";  
+                                document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";}}}
 
-                    function tumblrtoggle() { tumblrButtonOpen = !tumblrButtonOpen;
-                        if (document.getElementById("postwindow").style.backgroundImage !== "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')") {
-                            document.getElementById("post").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
+                    function tumblrtoggle() { pyroButtonOpen = true; 
+                        if (tumblrButtonOpen == false) { inactiveall(); tumblrButtonOpen = true;
                             document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
-                            document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}
-                        if (tumblrButtonOpen) { pyroButtonOpen = false; pyroButtonOpen = !pyroButtonOpen; 
+                            document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";
+                        } else if (pyroButtonOpen == true){ inactiveall(); tumblrButtonOpen = false;
+                            document.getElementById("post").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
                             document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')";
                             document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";}}
-
-                    function disktoggle() { 
-                        if (document.getElementById("postwindow").style.backgroundImage !== "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')") {
-                            document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
-                            document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";}
-                        if (diskbuttonOpen) { diskButtonOpen = false;
-                            document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')";
-                            document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";}
-                        diskButtonOpen = !diskButtonOpen;}
                 </script>
                  
                 <div class="tray">
@@ -1712,7 +1785,7 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         
         <script>
-        
+
             $(document).ready(function(){
                 var infScr = $('body').hasClass('infinite_scrolling');
                 var twoCol = $('body').hasClass('two_column');
@@ -1721,9 +1794,10 @@
                 //two coloumn loading 
                 if( infScr && twoCol ){
                     $container.imagesLoaded(function(){ $container.masonry({ itemSelector: '.window'}) });
-                    $container.infinitescroll({ itemSelector: '.window'},
+                    $container.infinitescroll({ 
+                            itemSelector: '.window'},
                         function( newElements ) {
-                            var $newElems = $(newElements).css({ opacity: 0 });
+                            var $newElems = $(newElements);
                             var $newElemsIDs = $newElems.map(function(){
                                 return this.id;
                             }).get();
@@ -1734,9 +1808,9 @@
                                 $container.masonry( 'appended', $newElems, true ); })
                         }
                     );
-                                
                 } else if( !infScr && twoCol){
                     $container.imagesLoaded(function(){ $container.masonry({ itemSelector: '.window' })})}
+            
                 
                 //taskbar clock functions
                 function updateClock(){
@@ -1748,8 +1822,11 @@
                     var currentTime = hrs + ":" + mins + " " + ext;
                     $('#showClock').html(currentTime); }
                 window.setInterval(updateClock, 6000);
-                updateClock();
-                appended_update()});
+                
+            updateClock();
+            appended_update()});
+            
+            
             
         // ----------------------------------------------------------------------------------------------------------------------------- -->
         // Drag element scripts                                                                                                          -->
@@ -1782,180 +1859,180 @@
                 document.getElementById("programsmenu").style.marginLeft = "163px"; 
                 document.getElementById("menuprograms").style.backgroundColor = "#00207c";
                 document.getElementById("menuprograms").style.color = "#ffffff"; 
-                document.getElementById("menuarrow1").style.backgroundPosition = "-134px -215px";}
+                document.getElementById("menuarrow1").style.backgroundPosition = "-134px -216px";}
             function programsclosed() { 
                 document.getElementById("programsmenu").style.marginLeft = "200000px"; 
                 document.getElementById("menuprograms").style.backgroundColor = "#c0c0c0";
                 document.getElementById("menuprograms").style.color = "#000000"; 
-                document.getElementById("menuarrow1").style.backgroundPosition = "-150px -215px";}
+                document.getElementById("menuarrow1").style.backgroundPosition = "-150px -216px";}
                 function internetexplorer() { window.open("https://www.google.co.uk/", "_blank", "width=700, height=700")} 
                 function accessoriesopen() { 
                     document.getElementById("menuaccessoriessubmenu").style.marginLeft = "133px"; 
                     document.getElementById("accessories").style.backgroundColor = "#00207c";
                     document.getElementById("accessories").style.color = "#ffffff";
-                    document.getElementById("submenuarrow2").style.backgroundPosition = "-134px -215px";}
+                    document.getElementById("submenuarrow2").style.backgroundPosition = "-134px -216px";}
                 function accessoriesclose() { 
                     document.getElementById("menuaccessoriessubmenu").style.marginLeft = "200000px"; 
                     document.getElementById("accessories").style.backgroundColor = "#c0c0c0";
                     document.getElementById("accessories").style.color = "#000000";
-                    document.getElementById("submenuarrow2").style.backgroundPosition = "-150px -215px";}
+                    document.getElementById("submenuarrow2").style.backgroundPosition = "-150px -216px";}
                     function communicationsopen() { 
                         document.getElementById("menucommunicationssubmenu").style.marginLeft = "130px"; 
                         document.getElementById("communications").style.backgroundColor = "#00207c";
                         document.getElementById("communications").style.color = "#ffffff";
-                        document.getElementById("menuarrow12").style.backgroundPosition = "-134px -215px";}
+                        document.getElementById("menuarrow12").style.backgroundPosition = "-134px -216px";}
                     function communicationsclose() { 
                         document.getElementById("menucommunicationssubmenu").style.marginLeft = "200000px"; 
                         document.getElementById("communications").style.backgroundColor = "#c0c0c0";
                         document.getElementById("communications").style.color = "#000000";
-                        document.getElementById("menuarrow12").style.backgroundPosition = "-150px -215px";}
+                        document.getElementById("menuarrow12").style.backgroundPosition = "-150px -216px";}
                     function entertainmentopen() { 
                         document.getElementById("menuentertainmentsubmenu").style.marginLeft = "130px"; 
                         document.getElementById("entertainment").style.backgroundColor = "#00207c";
                         document.getElementById("entertainment").style.color = "#ffffff";
-                        document.getElementById("menuarrow13").style.backgroundPosition = "-134px -215px";}
+                        document.getElementById("menuarrow13").style.backgroundPosition = "-134px -216px";}
                     function entertainmentclose() { 
                         document.getElementById("menuentertainmentsubmenu").style.marginLeft = "200000px"; 
                         document.getElementById("entertainment").style.backgroundColor = "#c0c0c0";
                         document.getElementById("entertainment").style.color = "#000000";
-                        document.getElementById("menuarrow13").style.backgroundPosition = "-150px -215px";}
+                        document.getElementById("menuarrow13").style.backgroundPosition = "-150px -216px";}
                     function gamesopen() { 
                         document.getElementById("menugamessubmenu").style.marginLeft = "130px"; 
                         document.getElementById("games").style.backgroundColor = "#00207c";
                         document.getElementById("games").style.color = "#ffffff";
-                        document.getElementById("menuarrow14").style.backgroundPosition = "-134px -215px";}
+                        document.getElementById("menuarrow14").style.backgroundPosition = "-134px -216px";}
                     function gamesclose() { 
                         document.getElementById("menugamessubmenu").style.marginLeft = "200000px"; 
                         document.getElementById("games").style.backgroundColor = "#c0c0c0";
                         document.getElementById("games").style.color = "#000000";
-                        document.getElementById("menuarrow14").style.backgroundPosition = "-150px -215px";}
+                        document.getElementById("menuarrow14").style.backgroundPosition = "-150px -216px";}
                     function internettoolsopen() { 
                         document.getElementById("menuinternettoolssubmenu").style.marginLeft = "130px"; 
                         document.getElementById("internettools").style.backgroundColor = "#00207c";
                         document.getElementById("internettools").style.color = "#ffffff";
-                        document.getElementById("menuarrow15").style.backgroundPosition = "-134px -215px";}
+                        document.getElementById("menuarrow15").style.backgroundPosition = "-134px -216px";}
                     function internettoolsclose() { 
                         document.getElementById("menuinternettoolssubmenu").style.marginLeft = "200000px"; 
                         document.getElementById("internettools").style.backgroundColor = "#c0c0c0";
                         document.getElementById("internettools").style.color = "#000000";
-                        document.getElementById("menuarrow15").style.backgroundPosition = "-150px -215px";}
+                        document.getElementById("menuarrow15").style.backgroundPosition = "-150px -216px";}
                     function systemtoolsopen() { 
                         document.getElementById("menusystemtoolssubmenu").style.marginLeft = "130px"; 
                         document.getElementById("systemtools").style.backgroundColor = "#00207c";
                         document.getElementById("systemtools").style.color = "#ffffff";
-                        document.getElementById("menuarrow16").style.backgroundPosition = "-134px -215px";}
+                        document.getElementById("menuarrow16").style.backgroundPosition = "-134px -216px";}
                     function systemtoolsclose() { 
                         document.getElementById("menusystemtoolssubmenu").style.marginLeft = "200000px"; 
                         document.getElementById("systemtools").style.backgroundColor = "#c0c0c0";
                         document.getElementById("systemtools").style.color = "#000000";
-                        document.getElementById("menuarrow16").style.backgroundPosition = "-150px -215px";}
+                        document.getElementById("menuarrow16").style.backgroundPosition = "-150px -216px";}
                         
                     
                 function onlineservicesopen() { 
                     document.getElementById("onlineservicessubmenu").style.marginLeft = "133px"; 
                     document.getElementById("onlineservices").style.backgroundColor = "#00207c";
                     document.getElementById("onlineservices").style.color = "#ffffff";
-                    document.getElementById("submenuarrow3").style.backgroundPosition = "-134px -215px";}
+                    document.getElementById("submenuarrow3").style.backgroundPosition = "-134px -216px";}
                 function onlineservicesclose() { 
                     document.getElementById("onlineservicessubmenu").style.marginLeft = "200000px"; 
                     document.getElementById("onlineservices").style.backgroundColor = "#c0c0c0";
                     document.getElementById("onlineservices").style.color = "#000000";
-                    document.getElementById("submenuarrow3").style.backgroundPosition = "-150px -215px";}
+                    document.getElementById("submenuarrow3").style.backgroundPosition = "-150px -216px";}
                 function startupopen() { 
                     document.getElementById("startupsubmenu").style.marginLeft = "133px"; 
                     document.getElementById("startup").style.backgroundColor = "#00207c";
                     document.getElementById("startup").style.color = "#ffffff";
-                    document.getElementById("submenuarrow4").style.backgroundPosition = "-134px -215px";}
+                    document.getElementById("submenuarrow4").style.backgroundPosition = "-134px -216px";}
                 function startupclose() { 
                     document.getElementById("startupsubmenu").style.marginLeft = "200000px"; 
                     document.getElementById("startup").style.backgroundColor = "#c0c0c0";
                     document.getElementById("startup").style.color = "#000000";
-                    document.getElementById("submenuarrow4").style.backgroundPosition = "-150px -215px";}
+                    document.getElementById("submenuarrow4").style.backgroundPosition = "-150px -216px";}
             
             function favouritesopen() { 
                 document.getElementById("favouritesmenu").style.marginLeft = "163px"; 
                 document.getElementById("menufavourites").style.backgroundColor = "#00207c";
                 document.getElementById("menufavourites").style.color = "#ffffff"; 
-                document.getElementById("menuarrow2").style.backgroundPosition = "-134px -215px";}
+                document.getElementById("menuarrow2").style.backgroundPosition = "-134px -216px";}
             function favouritesclosed() { 
                 document.getElementById("favouritesmenu").style.marginLeft = "200000px"; 
                 document.getElementById("menufavourites").style.backgroundColor = "#c0c0c0";
                 document.getElementById("menufavourites").style.color = "#000000"; 
-                document.getElementById("menuarrow2").style.backgroundPosition = "-150px -215px";}
+                document.getElementById("menuarrow2").style.backgroundPosition = "-150px -216px";}
                 function channelsopen() { 
                     document.getElementById("channelssubmenu").style.marginLeft = "148px"; 
                     document.getElementById("channels").style.backgroundColor = "#00207c";
                     document.getElementById("channels").style.color = "#ffffff";
-                    document.getElementById("submenuarrow21").style.backgroundPosition = "-134px -215px";}
+                    document.getElementById("submenuarrow21").style.backgroundPosition = "-134px -216px";}
                 function channelsclose() { 
                     document.getElementById("channelssubmenu").style.marginLeft = "200000px"; 
                     document.getElementById("channels").style.backgroundColor = "#c0c0c0";
                     document.getElementById("channels").style.color = "#000000";
-                    document.getElementById("submenuarrow21").style.backgroundPosition = "-150px -215px";}
+                    document.getElementById("submenuarrow21").style.backgroundPosition = "-150px -216px";}
                 function linksopen() { 
                     document.getElementById("linkssubmenu").style.marginLeft = "148px"; 
                     document.getElementById("links").style.backgroundColor = "#00207c";
                     document.getElementById("links").style.color = "#ffffff";
-                    document.getElementById("submenuarrow22").style.backgroundPosition = "-134px -215px";}
+                    document.getElementById("submenuarrow22").style.backgroundPosition = "-134px -216px";}
                 function linksclose() { 
                     document.getElementById("linkssubmenu").style.marginLeft = "200000px"; 
                     document.getElementById("links").style.backgroundColor = "#c0c0c0";
                     document.getElementById("links").style.color = "#000000";
-                    document.getElementById("submenuarrow22").style.backgroundPosition = "-150px -215px";}
+                    document.getElementById("submenuarrow22").style.backgroundPosition = "-150px -216px";}
                 function mediaopen() { 
                     document.getElementById("mediasubmenu").style.marginLeft = "148px"; 
                     document.getElementById("media").style.backgroundColor = "#00207c";
                     document.getElementById("media").style.color = "#ffffff";
-                    document.getElementById("submenuarrow23").style.backgroundPosition = "-134px -215px";}
+                    document.getElementById("submenuarrow23").style.backgroundPosition = "-134px -216px";}
                 function mediaclose() { 
                     document.getElementById("mediasubmenu").style.marginLeft = "200000px"; 
                     document.getElementById("media").style.backgroundColor = "#c0c0c0";
                     document.getElementById("media").style.color = "#000000";
-                    document.getElementById("submenuarrow23").style.backgroundPosition = "-150px -215px";}
+                    document.getElementById("submenuarrow23").style.backgroundPosition = "-150px -216px";}
             
             function documentsopen() { 
                 document.getElementById("documentsmenu").style.marginLeft = "163px"; 
                 document.getElementById("menudocuments").style.backgroundColor = "#00207c";
                 document.getElementById("menudocuments").style.color = "#ffffff"; 
-                document.getElementById("menuarrow3").style.backgroundPosition = "-134px -215px";}
+                document.getElementById("menuarrow3").style.backgroundPosition = "-134px -216px";}
             function documentsclosed() { 
                 document.getElementById("documentsmenu").style.marginLeft = "200000px"; 
                 document.getElementById("menudocuments").style.backgroundColor = "#c0c0c0";
                 document.getElementById("menudocuments").style.color = "#000000"; 
-                document.getElementById("menuarrow3").style.backgroundPosition = "-150px -215px";}
+                document.getElementById("menuarrow3").style.backgroundPosition = "-150px -216px";}
                                     
             //start menu button hover script
             function settingsopen() { 
                 document.getElementById("settingsmenu").style.marginLeft = "163px"; 
                 document.getElementById("menusettings").style.backgroundColor = "#00207c";
                 document.getElementById("menusettings").style.color = "#ffffff"; 
-                document.getElementById("menuarrow4").style.backgroundPosition = "-134px -215px";}
+                document.getElementById("menuarrow4").style.backgroundPosition = "-134px -216px";}
             function settingsclosed() { 
                 document.getElementById("settingsmenu").style.marginLeft = "200000px"; 
                 document.getElementById("menusettings").style.backgroundColor = "#c0c0c0";
                 document.getElementById("menusettings").style.color = "#000000"; 
-                document.getElementById("menuarrow4").style.backgroundPosition = "-150px -215px";}
+                document.getElementById("menuarrow4").style.backgroundPosition = "-150px -216px";}
                 function settingsactivedesktopopen() { 
                     document.getElementById("menuactivedesktopsubmenu").style.marginLeft = "159px"; 
                     document.getElementById("activedesktop").style.backgroundColor = "#00207c";
                     document.getElementById("activedesktop").style.color = "#ffffff";
-                    document.getElementById("submenuarrow31").style.backgroundPosition = "-134px -215px";}
+                    document.getElementById("submenuarrow31").style.backgroundPosition = "-134px -216px";}
                 function settingsactivedesktopclose() { 
                     document.getElementById("menuactivedesktopsubmenu").style.marginLeft = "200000px"; 
                     document.getElementById("activedesktop").style.backgroundColor = "#c0c0c0";
                     document.getElementById("activedesktop").style.color = "#000000";
-                    document.getElementById("submenuarrow31").style.backgroundPosition = "-150px -215px";}
+                    document.getElementById("submenuarrow31").style.backgroundPosition = "-150px -216px";}
             
             function findopen() { 
                 document.getElementById("findmenu").style.marginLeft = "163px"; 
                 document.getElementById("menufind").style.backgroundColor = "#00207c";
                 document.getElementById("menufind").style.color = "#ffffff";
-                document.getElementById("menuarrow5").style.backgroundPosition = "-134px -215px";}
+                document.getElementById("menuarrow5").style.backgroundPosition = "-134px -216px";}
             function findclosed() { 
                 document.getElementById("findmenu").style.marginLeft = "200000px"; 
                 document.getElementById("menufind").style.backgroundColor = "#c0c0c0";
                 document.getElementById("menufind").style.color = "#000000";
-                document.getElementById("menuarrow5").style.backgroundPosition = "-150px -215px";}
+                document.getElementById("menuarrow5").style.backgroundPosition = "-150px -216px";}
 
         </script>
         
