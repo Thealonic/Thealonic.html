@@ -1,0 +1,561 @@
+<div class="container" style="margin-left: -10px;">
+<ul>
+<li><strong>2021 January 13th (210113) </strong><em>- "The alt-tab" update.</em><br />
+<ul>
+<li><strong>Major Taskbar tasks overhaul</strong>
+<ul>
+<li>tabbing backend has been completely redone and resolved all taskbar based alt-tabbing issues.</li>
+<li>Post taskbar back end has been redone.</li>
+<li>"Very Unvunny" taskbar back end has been redone.</li>
+<li>Clicking on "Very.Unvunny" on the taskbar when the task is inactive, now goes through a set of order prioritisation to determine the window that should be focused.</li>
+</ul>
+</li>
+<li>"Bloody ell' chums" window adjustments<br />
+<ul>
+<li>Added more images to the image pool.</li>
+<li>The button in "Bloody Ell' Chums" now cycles through 4 sets of text.</li>
+<li>The window now has a default image when refreshing the page, clicking on the button still results in a random image.</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>- Fixed a bug where you could tab to currently closed windows through the taskbar.</li>
+<li>- Fixed all Taskbar task related bugs.</li>
+<li>- Fixed a layering bug with Tumblr posts which would add 1 to the Z index when the post is clicked off of instead of during, which would result in buggy layering with other windows.</li>
+</ol></li>
+<li><strong>2021 January 12th (210112)</strong><br />
+<ul>
+<li>Adjusted Tumblr CSS to present threads between users closer together, taking up less horizontal room as a result.</li>
+<li>Message Box Changes</li>
+<ul>
+<li>&ldquo;Bloody Ell&rsquo; Chums&rdquo; now generates a random image on page load with designated text.</li>
+<li>Pressing on &ldquo;Bloody Ell&rsquo; Chums&rdquo;&rsquo;s button will result in selecting a random image a total of 4 times, and will close the message box on the 5th press.</li>
+<li>The button in "Bloody Ell' Chums" now cycles through 4 sets of text.</li>
+<li>Closing all tabs under &ldquo;very.unvunny&rdquo; on the taskbar, will as a result, remove the task from the taskbar.</li>
+</ul>
+<li>Removed &ldquo;basic&rdquo; Tumblr theme css.</li>
+</ul>
+<ol>
+<li>- Fixed all Patch Note related formatting issues.</li>
+<li>- Fixed Patch note dates from being the incorrect format.</li>
+</ol></li>
+<li><strong>2021 January 10th (210110)<br /></strong>
+<ul>
+<li>Added Like and reblog buttons on posts. <em>(but currently only functions with the first 15 posts loaded on the page)</em></li>
+<li>Adjusted the bottom right hand corner &ldquo;window resizer&rdquo; of each post to be more representative of windows 98 by being transparent and covering the bottom footer correctly.</li>
+<li>Adjusted footer gaps between post information.</li>
+<li>Posts no longer appear bunched up while the page is loading and instead load all at once.</li>
+<li>Posts are now in the center of the page instead of 60 pixels to the left.</li>
+<li>Posts are now loaded in from left to right rather than being in relation to the center, resulting in post redirects are now to the left hand side of the page.</li>
+<li>Bug fixes no longer are included as a &ldquo;feature&rdquo; of each update, but rather the footer of said update and the list will remain composed of features of adjustments. (previous days have also been changed with this update.)</li>
+</ul>
+<ol>
+<li>- Fixed a bug where posts would only load within a 500x500 dimention when loading.</li>
+<li>- Fixed a few graphical bugs in the Start Menu due to issues with the sprite sheet.</li>
+<li>- Fixed a bug in Chrome where the Display Properties slider is horizontally smaller.</li>
+</ol></li>
+<li><strong>2021 January 9th (210109)<br /></strong>
+<ul>
+<li>Message title bar buttons now register their animation when clicked.</li>
+<li><strong>Titlebar buttons no longer include drag functionality.</strong></li>
+<li>Holding on titlebar buttons and moving away nolonger leave the press down animation stuck, leaving the button remain held down until clicked again.</li>
+<li>Simplified the way how tabs refer to image URLs.</li>
+<li>All windows now refer to the same image URL for the titlebar apposed to using different sizes, it uses background location.</li>
+</ul>
+</li>
+<li><strong>2021 January 8th (210108)<br /></strong>
+<ul>
+<li>Start Menu Changes</li>
+<ul>
+<li>Start menu submenu arrows are using the spritesheet as a reference point.</li>
+<li>Start menu button is now using the spritesheet as a reference point.</li>
+</ul>
+<li>Changed the Z-index of the taskbar to always be on the highest layer.</li>
+<li>Titlebar functions are now using the spritesheet as a reference point.</li>
+<li>Loading optimisations.</li>
+</ul>
+<ol>
+<li>- Fixed &ldquo;open source&rdquo; page error.</li>
+</ol></li>
+<li><strong>2021 January 7th (210107)</strong><em> - &ldquo;The Alt-Tab" update</em><br />
+<ul>
+<li><strong>Added window drag functionality to selected windows.</strong></li>
+<li><strong>Added proper tabbing functionality so windows will remember what layer is on in comparrision to other windows.</strong></li>
+<li>Pressing on a window now focuses the window instead of previously requiring a whole click. (To prevent posts from not tabbing when drag clicking)</li>
+<li>Cat and Bloody ell&rsquo; chums have been layered lower in the Z-index.</li>
+</ul>
+<ol>
+<li>- Window title-bars cursors have been changed to the default cursor when hovering.</li>
+<li>- Fixed a bug in which you could expand the desktop on the X axis infinitely to the right.</li>
+<li>- Fixed placements of the Shut Down and Log off menus to be not based on the same location.</li>
+<li>- Fixed audio posts padding inconsistancy.</li>
+</ol></li>
+<li><strong>2021 January 6th (210106)</strong><br />
+<ul>
+<li>Spritesheet changes.</li>
+<ul>
+<li><strong>Spritesheet is now a global reference on the page.</strong></li>
+<li>Added Start Menu submenus icons to the sprite sheet.</li>
+<li>Added all taskbar icons to the sprite sheet.</li>
+</ul>
+<li>Major Log out and shut down menu changes</li>
+<ul>
+<li>Log out menu has been updated with latest CSS styles for optimisation purposes.</li>
+<li>Shut down menu has been updated with latest CSS styles for optimisation purposes.</li>
+<li>Clicking Logout now or Shut Down unfocuses all other windows</li>
+<li>Logout and Shut Down menus now have tabability.</li>
+</ul>
+<li>Posts by Thealonic now have unique headers; &ldquo;[Posted by Thealonic, [time ago]&rdquo; aposed to &ldquo;[Posted by [Reblogged from] at [time] on [day]&rdquo; to prevent broken headers on page redirects.</li>
+</ul>
+</li>
+<li><strong>2021 January 5th (210105)<em><br /></em></strong>
+<ul>
+<li><strong>Replaced the main Start Menu icons with a sprite sheet </strong>so icons will all load at the same time and will be easier to refer to.</li>
+<li>Adjusted source credits in the footer of posts to be more distinguishable.</li>
+<li>Titles are now bold and larger in scale to seperate titles to regular fonts.</li>
+<li>Slight padding adjustments to posts to accustom titles and post tags.</li>
+</ul>
+<ol>
+<li>- Fixed a bug where closing a message box would require to double click on the taskbar.</li>
+<li>- Fixed tags in which the background of commas inbetween tags would be blue.</li>
+</ol></li>
+<li><strong>2021 January 4th (210104)<em><br /></em></strong>
+<ul>
+<li>Start menu Changes</li>
+<ul>
+<li>Replaced &ldquo;Help&rdquo; button with &ldquo;Source Code&rdquo; where you can view the current version of the mark-up that runs the blog. (This will be updated every few days)</li>
+<li>Replaced a &ldquo;Run&rdquo; with a &ldquo;Donation&rdquo; button to support Thealonic page development.</li>
+</ul>
+<li>Changed &ldquo;Posted on (date) at (time)&rdquo; for posts created by Thealonic to &ldquo;Posted by Thealonic (time ago).&rdquo; to be more adaptable to page redirects.</li>
+<li>&ldquo;Changed default spacing to the top of posts to be -15px unless the post containers images or videos, to which the spacing is -14px to fix text post spacing.</li>
+</ul>
+<ol>
+<li>-Fixed anti-aliasing appearing on fonts that caused blurryness in post footer.</li>
+<li>-Fixed anti-aliasing on post titlebars by adjusting the centerpoint of posts.</li>
+<li>-Fixed text spacing issues at the footer of posts.</li>
+<li>-Fixed early Patch Notes having listing bugs</li>
+</ol></li>
+<li><strong>2021 January 3rd (210103)</strong><br />
+<ul>
+<li>Embedded post changes</li>
+<ul>
+<li>Fake scrollbar has been visually patched on posts.</li>
+<li>&ldquo;Notes&rdquo; spacing has been patched.</li>
+<li>Other visual fixes.</li>
+</ul>
+<li>Audio posts spacing has been patched</li>
+</ul>
+</li>
+<li><strong>2020 december 29th (201229) </strong><em>&ndash; &ldquo;The Taskbar&rdquo; </em><em>update</em>
+<ul>
+<li>Redesigned the Display Properties window alongside additional functionality. <em>(to be finished at a later date.)</em></li>
+</ul>
+<ol>
+<li>- Fixed a graphical bug with the Last Updated message box when it becomes unfocused after clicking on the titlebox once.</li>
+<li>- Fixed taskbar double clicking issues.</li>
+</ol></li>
+<li><strong>2020 december 28th (201228) </strong><em>&ndash; &ldquo;Message box&rdquo; Update<strong><strong><br /></strong></strong></em>
+<ul>
+<li>Added a close ability to &ldquo;cat&rdquo; message box</li>
+<li><strong>Optimised window order loading </strong>depending on which window is in focus, resulting in whichever window you last selected will always be the top window other than the current active window.</li>
+<li>Reworked window focusing.</li>
+<li>Moved the &ldquo;cat&rdquo; message box slightly to the right to show off window layering more.</li>
+</ul>
+<ol>
+<li>- Fixed bug with notes overlaying the &ldquo;breaker&rdquo; bar between posts and notes.</li>
+<li>- Fixed a bug where clicking on the &ldquo;last update&rdquo; box wouldn&rsquo;t make the &ldquo;Very.Unvunny&rdquo; tabs inactive.</li>
+<li>- Fixed incorrect dates in the patch notes.</li>
+</ol></li>
+<li><strong>2020 december 23rd (231220)</strong><em> &ndash; &ldquo;The postponed update&rdquo;<strong><strong><br /></strong></strong></em>
+<ul>
+<li><strong>Major title bar rework</strong></li>
+<ul>
+<li>Redesigned titlebars completely to be more accurate to windows 98.</li>
+<li>Clicking from one window to another now changes the titlebar from being inactive to active depending on the window you&rsquo;re clicking on or off.</li>
+<li>New help, minimize, maximize and close buttons on the titlebar.</li>
+<li>Selecting on a window will now effect the taskbar state.</li>
+<li>Clicking on a post will now ensure it overlays any other post infront of it.</li>
+</ul>
+<li>&ldquo;Bloody ell&rsquo; chums&rdquo; and &ldquo;Cat&rdquo; window now has a close function.</li>
+<li>Buttons on the taskbar will now effect titlebar and windows states.</li>
+</ul>
+<ol>
+<li>- Fixed page redirects in the start menu to not create a new window.</li>
+</ol></li>
+<li><strong>2020 december 22nd (201222) </strong><em>&ndash; &ldquo;Start menu&rdquo; Update<strong><strong><br /></strong></strong></em>
+<ul>
+<li>Start Menu updates</li>
+<ul>
+<li>Added &ldquo;Communications&rdquo; submenu.</li>
+<li>Added &ldquo;Entertainment&rdquo; submenu.</li>
+<li>Added &ldquo;Games&rdquo; submenu.</li>
+<li>Added &ldquo;Internet Tools&rdquo; submenu.</li>
+<li>Added &ldquo;System Tools&rdquo; submenu.</li>
+</ul>
+</ul>
+<ul>
+<li>Added new links in the &ldquo;Media&rdquo; tab.</li>
+</ul>
+<ol>
+<li>- Fixed a bug where the tags of a post would misalign the scrollbars and buttons.</li>
+</ol></li>
+<li><strong>2020 december 21st (201221)<strong><br /></strong></strong>
+<ul>
+<li>Major Start Menu updates</li>
+<ul>
+<li>Added &ldquo;Channels&rdquo; submenu.</li>
+<li>Added &ldquo;Links&rdquo; submenu.</li>
+<li>Added &ldquo;Media&rdquo; submenu.</li>
+</ul>
+<li>Desktop icons now stay behind all windows, including posts. (This will mainly be a visual fix for issues on mobile or lower resolutions)</li>
+</ul>
+</li>
+<li><strong>2020 december 20th (201220)</strong> <em>&ndash; &ldquo;The Container&rdquo; Update</em><strong><br /></strong>
+<ul>
+<li><strong>&nbsp;Major Start Menu updates</strong></li>
+<ul>
+<li>Added &ldquo;Documents&rdquo; submenu.</li>
+<li>Added &ldquo;Favourites&rdquo; submenu.</li>
+<li>Removed the Start Menu timer for when the start menu is clicked, which would result in closing the start menu.</li>
+<li>Startmenu framework has been reworked for better loading times and to fix bugs to do with conflicting containers.</li>
+<li>The startmenu no longer relies on a url reference in order to summon the menu, only the sidebar gradient.</li>
+</ul>
+<li><strong>Post container overhaul</strong></li>
+<ul>
+<li>Completely reworked CSS for post scroll bars.</li>
+<li>Post containers now have functioning buttons for the scroll bar.</li>
+<li>Scrollbars no longer rely on url references to be loaded in.</li>
+</ul>
+<li>Replaced and fixed problems with infinate page loading.</li>
+<li>Decreased post loading times on page refresh.</li>
+<li>Url links now create a new tab rather than a new window, including desktop icons and links in the start menu.</li>
+<li>Tons of script adjustments for better loading</li>
+</ul>
+<ol>
+<li>- Fixed some post-based loading issues.</li>
+</ol></li>
+<li><strong>2020 december 19th (201219) </strong><br />
+<ul>
+<li><strong>Major Start Menu overhaul</strong></li>
+<ul>
+<li>Start Menu containers no longer rely on URL references to generate a backdrop for each menu and / or submenu.</li>
+<li>Start Menu has been adjusted on the back end to make loading more efficent and page size down.</li>
+<li>Added &ldquo;Online Services&rdquo; submenu under &ldquo;applications&rdquo;.</li>
+<li>Added &ldquo;Start Up&rdquo; submenu under &ldquo;applications&rdquo;.</li>
+<li>Removed uneeded containers for the start menu for better page loading and start menu loading.</li>
+<li>Fixed a couple of conflicting css issues in the start menu.</li>
+<li>Fixed some Start Menu Labeling.</li>
+<li>Fixed missing pointer styles.</li>
+<li>Fixed containers of Start Menu button links to no longer overlap the side gradient of the Start Menu.</li>
+</ul>
+<li>Message boxes no longer rely on URL references to generate the container.</li>
+<li>New CSS for message boxes to fix consistancy problems.</li>
+<li>Fixed a bug where Audio post captions would clip through the post container.</li>
+</ul>
+<ol>
+<li>- Fixed a bunch of post and window container issues.</li>
+<li>- Fixed a bug where the page would load both coloumns, and adjust the second coloumn after loading in.</li>
+<li>- Fully added a non-antialiased font type rather than relying on external css references.</li>
+</ol></li>
+<li><strong>2020 december 18th (201218)</strong>
+<ul>
+<li>Added a loading screen inbetween the logged out screen and the homepage.</li>
+<li>More additions to the Start Menu</li>
+<ul>
+<li>Added &ldquo;Programs&rdquo; submenu.</li>
+<li>Start menu now changes cursor to &ldquo;pointer&rdquo; when hovered.</li>
+<li>Added &ldquo;Applications&rdquo; submenu.</li>
+<li>Start menu has more points where the cursor will change to the &ldquo;pointer&rdquo; when hovered over.</li>
+</ul>
+<li>Logout menu, Shut down menu and taskbar buttons now changes cursor to &ldquo;pointer&rdquo; when hovered.</li>
+<li>All post titles no longer how the &ldquo;text&rdquo; cursor when hovering.</li>
+<li>Post buttons now have the &ldquo;pointer&rdquo; cursor when hovered.</li>
+<li>Changed posts per page to 15, apposed to 5.</li>
+<li>Added more titles when hovering over objects.</li>
+<li><strong>Added programs on the taskbar</strong></li>
+<li>Changed desktop icons back to retaining their location reletive to the position you are on page, rather than being stuck at the top.</li>
+<li>Adjusted &ldquo;The Official Very Funny Videos&rdquo; desktop icon to load the page at 1200px wide rather than 700px.</li>
+</ul>
+<ol>
+<li>- Fixed some font issues in message boxes</li>
+</ol></li>
+<li><strong>2020 december 17th (201217)</strong>
+<ul>
+<li><strong>Major Start Menu overhaul</strong></li>
+<ul>
+<li>Added &ldquo;Active desktop" submenu.</li>
+<li>Going into submenus now activates the button that keeps the submenu open, this also includes submenus.</li>
+<li>Start menu buttons have better configured CSS.</li>
+<li>More efficent backend hover effect has been added.</li>
+<li>More efficent backend button setup has been added.</li>
+<li>Start menu buttons no longer rely on entire HTML references to load in buttons along with hover animations.</li>
+<li>Start button icons are now just the icons themselves instead of being loaded into the button alongside the hover effect.</li>
+<li>&ldquo;Find&rdquo; submenu completely re-written.</li>
+<li>&ldquo;Settings&rdquo; submenu completely re-written.</li>
+<li>&ldquo;Taskbar&rdquo; menu completely re-written.</li>
+</ul>
+<li>Discord embedded sidebar re-added.</li>
+<li><strong>Backend organisation ovehaul.</strong></li>
+<li>Adjustments to previous patch notes</li>
+</ul>
+</li>
+<li><strong>2020 </strong><strong>december 16th (201216)</strong>
+<ul>
+<li><strong>Major &ldquo;Start Menu&rdquo; additions</strong></li>
+<ul>
+<li>&ldquo;Run&rdquo; button added.</li>
+<li>&ldquo;Find&rdquo; button added alongside a new submenu.</li>
+<li>&ldquo;Documents&rdquo; button added.</li>
+<li>&ldquo;Shut Down&rdquo; button added.</li>
+<li>Scrollbar vertical hight issues fixed.</li>
+<li>&ldquo;Programs&rdquo; button added with a placement holder submenu.</li>
+</ul>
+<li>Changed bottom scrollbar to include the bottom right corner, aposed to the side scrollbar.</li>
+<li><strong>Logout menu adjustments</strong></li>
+<ul>
+<li>&ldquo;Logout&rdquo; screen has been replaced with the &ldquo;Shut down&rdquo; menu.</li>
+<li>&ldquo;Shut Down&rdquo; button added.</li>
+<li>&ldquo;Logout&rdquo; menu redirects have been changed to the Logout screen.</li>
+<li>&ldquo;Shut down&rdquo; menu added along with redirects.</li>
+<li>Login screen added.</li>
+<li>Added login screen functionality and redirects.</li>
+</ul>
+<li>Removed anti-aliasing from desktop icons.</li>
+<li>Removed anti-aliasing from message boxes.</li>
+<li>Changed vertical margin offsets for anything meant to be unviewable</li>
+</ul>
+<ol>
+<li><em>- Fixed desktop icon redirect issues.</em></li>
+</ol></li>
+<li><strong>2020 december 15th (201215)</strong>
+<ul>
+<li><strong>Complete Scrollbar Revamp</strong></li>
+<ul>
+<li>The scrollbar has now been broken down into 11 sections, opposed to the previous 7 sections for easier compatibility for clicking.</li>
+<li>Horizontal and vertical scroll bar now has 6 parts each, 3 between them including; top / left side, middle, bottom / right side.</li>
+<li>Scrollbars now have simpler assets.</li>
+<li>Post scrollbars no longer determine the visual appearance of the left and bottom of the posts due to being made more self contained.</li>
+<li>Scrollbar vertical hight issues fixed.</li>
+<li>Scrollbar containment adjustments.</li>
+</ul>
+<li>Added &ldquo;hover&rdquo; effect to pressable buttons, such as the Titlebar maximize shows &ldquo;maximize&rdquo; when hovered over.</li>
+<li><strong>Major Start Menu addtions &amp; adjustments.</strong></li>
+<ul>
+<li>Added &ldquo;Log off&rdquo; button which creates a &ldquo;log off&rdquo; menu.</li>
+<li>Horizontal and vertical scroll bar now has 6 parts each, 3 between them including; top / left side, middle, bottom / right side.</li>
+<li>Fixed a bug where message boxes were unclickable due to start menu stacking.</li>
+</ul>
+<li>Added &ldquo;log off&rdquo; menu with functioning buttons and redirects.</li>
+<li>Added draggable window ability in the backend to be added at a later date.</li>
+<li>Readded the &ldquo;Official Very Funny Video Playlist&rdquo; desktop icon.</li>
+<li>General post containment adjustments.</li>
+<li>Locked desktop icons to the top of the page.</li>
+<li>Locked message boxes relative to the top of the page.</li>
+<li>Removed Discord overlay.</li>
+</ul>
+</li>
+<li><strong>2020 december 14th (201214)</strong>
+<ul>
+<li><strong>Post window rework</strong></li>
+<ul>
+<li>Complete rehaul of how posts are contained and displayed.</li>
+<li>Vertical scroll bar has been added.</li>
+<li>Bottom scroll bar backend overhall.</li>
+<li>&ldquo;functional&rdquo; buttons have been added, and currently only work on the first post of the page.</li>
+<li>Post size alterations.</li>
+<li>Padding adjustments around posts.</li>
+<li>Spacing around the bottom of posts has been made more consistant.</li>
+</ul>
+<li>Video padding has been adjusted &hellip;again.</li>
+<li>Desktop buttons now create a new window when clicked, instead of redirecting.</li>
+<li>Added &ldquo;Help&rdquo; button within the start menu.</li>
+<li>Start Menu now closes when clicked.</li>
+</ul>
+</li>
+<li><strong>2020 december 12th (201212)</strong>
+<ul>
+<li><strong>Major Start Menu changes</strong></li>
+<ul>
+<li>Button hover effect added.</li>
+<li>Start menu now has the ability to have submenus.</li>
+<li>Added &ldquo;settings&rdquo; submenu.</li>
+<li>Added &ldquo;Active desktop&rdquo; additional submenu, under &ldquo;Settings&rdquo;.</li>
+<li>Multiple container adjustments and patches.</li>
+<li>Start menu now closes when cursor is moved off the menu, including the start menu button itself.</li>
+<li>Startmenu is now nolonger hidden by removing the image refferal addresses from buttons / start menus.</li>
+<li>Fixed a start menu button glitch appearing, regardless of the menu not being there due to previous hover effect.</li>
+</ul>
+<li><strong>Video post changes<br /></strong></li>
+<ul>
+<li>Video margin adjusted from vertical to horizontal to take up less space.</li>
+<li>Videos now overflow outside of the message box to fix black bars.</li>
+</ul>
+<li>Previous missing patch notes have been added.</li>
+</ul>
+</li>
+<li><strong>2020 december 10th </strong><strong>(201210)</strong>
+<ul>
+<li>Message boxes now have an easier to add backend</li>
+<ul>
+<li>&ldquo;Last updated&rdquo; box re-added.</li>
+<li>&ldquo;bloody ell&rsquo; chums&rdquo; message box re-added.</li>
+<li>&ldquo;disk properties&rdquo; has been replaced with &ldquo;display properties&rdquo;.</li>
+<li>Adjustments to message box placements since removal</li>
+</ul>
+<li>Unique post page redirects have been finished.</li>
+<li>Patch notes added</li>
+<ul>
+<li>&nbsp;Patch notes updated from Dec 1st to Dec 10th.</li>
+</ul>
+<li>Start menu adjustments.</li>
+<ul>
+<li>Start menu buttons added.</li>
+<li>Start menu buttons are now individual assets.</li>
+<li>&ldquo;Patch notes&rdquo; button added.</li>
+<li>Placement holders added.</li>
+</ul>
+<li>Redesigned the &ldquo;notes&rdquo; section of posts + padding.</li>
+<li>Bottom Scrollbar of posts has been adjusted.</li>
+<li>Desktop icons gapping tweaked.</li>
+</ul>
+</li>
+<li><strong>2020 december 9th </strong><strong>(201209)</strong>
+<ul>
+<li>Start button script handling is finished.</li>
+<li><strong>Start menu has been added.</strong></li>
+<li>Taskbar now has individually clickable icons.</li>
+<li>Bottom task bar applications are now individual buttons.</li>
+<li>Post boxes have been adjusted</li>
+<ul>
+<li>Photoset handling has been patched.</li>
+<li>Each post has now got the type of post it is at the bottom of said post.</li>
+<li>Other small tweaks.</li>
+</ul>
+<li>Message boxes re-added, but currently have containing window.</li>
+<li>Blog background has been adjusted to 32-bit.</li>
+<li>&ldquo;Notes&rdquo; padding tweaked.</li>
+<li>Footer now includes post type.</li>
+<li>Several easter eggs added.</li>
+</ul>
+</li>
+<li><strong>2020 december 8th </strong><strong>(201208)</strong>
+<ul>
+<li>Message boxes removed</li>
+<li>Start button added, but current script for functionability is not finished</li>
+<li>Start button + menu assets adjusted to be more accurate to windows 98.</li>
+<li>&ldquo;The Official Very Funny Video Playlist&rdquo; desktop icon removed.</li>
+<li>Adjusted the &ldquo;rebloged from&rdquo; section to include colours.</li>
+<li>Added &ldquo;Maximise&rdquo; button functionality.</li>
+<li>Added &ldquo;Minimise&rdquo; button functionality.</li>
+<li>Ko-fi button removed.</li>
+<li>Taskbar patched.</li>
+<li>Easter eggs added.</li>
+</ul>
+</li>
+<li><strong>2020 december 7th </strong><strong>(201207)</strong>
+<ul>
+<li><strong>Source posts have been patched</strong></li>
+<ul>
+<li>Question posts patched &amp; adjusted.</li>
+<li>Video posts have new backend containers for proper scaling.</li>
+<li>Videos have scaling issues and blocks volume settings.</li>
+</ul>
+<li>General Video posts width adjusted.</li>
+<li>Height has been adjusted at the bottom of each page to help loading.</li>
+<li>Pages have been adjusted to hold 5 posts instead of 15.</li>
+<li>Desktop icons adjusted to have 2 rows, apposed to 1.</li>
+<li>Footer now includes post ID.</li>
+<li>Post padding fixed to be more consistant.</li>
+</ul>
+</li>
+<li><strong>2020 december 6th </strong><strong>(201206)</strong>
+<ul>
+<li>Discord embeded window has been removed to just be the base discord embed.</li>
+<li>Multiple desktop icons adjustments</li>
+<ul>
+<li>&ldquo;SimCity 4&rdquo; icon added.</li>
+<li>&ldquo;Roller Coaster Tycoon 2&rdquo; icon adjusted.</li>
+<li>Spacing adjustments.</li>
+<li>Redirects fixed.</li>
+</ul>
+<li>Post re-directing patched and changed to the titlebar.</li>
+<li>General title bar adjustments.</li>
+<li>Footer adjusted to include where the post is reblogged from</li>
+<li>Message box adjustments.</li>
+<li><strong>Post footer adjustments.</strong></li>
+</ul>
+<ol>
+<li>- Fixed link embedding on all posts.</li>
+</ol></li>
+<li><strong>2020 december 5th </strong><strong>(201205)</strong>
+<ul>
+<li>New desktop icons added</li>
+<ul>
+<li>&ldquo;Roller Coaster Tycoon 2&rdquo; icon added.</li>
+<li>&ldquo;Red Alert 2&rdquo; icon Added.</li>
+<li>&nbsp;Direct link to the Discord server.</li>
+</ul>
+<li>Blog resizing adjusted and patched.</li>
+<li>Text based posts adjusted to suit the rest of the Win98 theme.</li>
+<li>Post footers added based around Win98 notepad</li>
+<ul>
+<li>&nbsp;Footer info added.</li>
+<li>&ldquo;resize&rdquo; icon added.</li>
+</ul>
+<li>Window scroll bars added at the bottom of posts.</li>
+<li>Windows 98 wallpaper added.</li>
+<li>Message box adjustments.</li>
+</ul>
+<ol>
+<li>- Fixed issues with backend image resizing.</li>
+<li>- Fixed a bunch of post loading issues.</li>
+</ol></li>
+<li><strong>2020 december 4th </strong><strong>(201204)</strong>
+<ul>
+<li><strong>Major taskbar adjustments</strong></li>
+<ul>
+<li>Titlebars now have clickable functions.</li>
+<li>Nameplates have been reworked.</li>
+<li>Titlebars now have classic windows 98 gradient.</li>
+<li>Name plates have been renamed.</li>
+</ul>
+<li>All posts are now embedded with a treeview, representative of win98.</li>
+<li>Message boxes use new framework</li>
+<ul>
+<li>Videos have tons of scaling issues.</li>
+<li>Images don&rsquo;t embed properly.</li>
+<li>Buttons no longer work until new scripts.</li>
+</ul>
+<li>Current bugs with how message boxes are displayed with posts.</li>
+<li>Backend adjustments and rework</li>
+<ul>
+<li>Removed tons of conflicting CSS styles.</li>
+<li>Removed a bunch of old scripts.</li>
+</ul>
+<li><strong>Added win98.</strong></li>
+</ul>
+</li>
+<li><strong>2020 december 3rd </strong><strong>(201203)</strong>
+<ul>
+<li><strong>backend adjustments and rework</strong>
+<ul>
+<li>Backend code has been sorted and organised</li>
+<li>General script organisation and refrence links</li>
+<li>removed unessecary HTML &amp; CSS</li>
+</ul>
+</li>
+<li>Merged a load of image references.</li>
+<li>Added a new message boxes.</li>
+</ul>
+<ol>
+<li>- Fixed a few loading issues.</li>
+</ol></li>
+<li><strong>2020 december 1st (Win98 development begins)<br /></strong>
+<ul>
+<li>Added new desktop message boxes.</li>
+<li>Redesigned desktop icons.</li>
+<li>Removed &ldquo;Snake&rdquo; message box.</li>
+</ul>
+</li>
+</ul>
+</div>
