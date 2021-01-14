@@ -71,7 +71,7 @@
         /* ----------------------------------------------------------------------------------------------------------------------------- */
             
             /* desktop config settings */
-            #desktop, .navigation { margin: 10px auto 0px auto; position: relative; width: 1081px;} /* whole thing */
+            #desktop, .navigation { margin: 10px auto 0px auto; position: relative; width: 1010px;} /* whole thing */
             body.permalink_page #desktop, 
             body.permalink_page .navigation { width: 480px; }
             body.infinite_scrolling .navigation, .inf_scr { display: none; }
@@ -631,7 +631,6 @@
         <!-- add more junk here -->
         <!-- add more junk here -->
 
-        
         <script> 
             function vunnyopen(){
                 idleactive(); inactiveall();
@@ -644,7 +643,7 @@
                 document.getElementById("pyro").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; 
                 document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')";
                 document.getElementById("pyrowindow").style.backgroundPosition = "-150px";
-                document.getElementById("taskapp2").style.marginLeft = "0px";
+                document.getElementById("taskapp2").style.marginLeft = "4px";
                 document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";
             } 
         </script> 
@@ -676,7 +675,7 @@
                 document.getElementById("message").style.right = "-100%";
                 document.getElementById("message").style.marginLeft = "-20000px"
                 idleactive(); inactiveall();}
-            function messageon() {
+            function messageopen() {
                 idleactive(); inactiveall();
                 document.getElementById("message").style.right = "8%";
                 document.getElementById("message").style.marginLeft = "0px"
@@ -758,10 +757,22 @@
                 document.getElementById("taskapp3").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";} 
                 
             function diskclose() { 
-                diskButtonOpen = true; windowstotal = windowstotal - 1;
                 document.getElementById("disk").style.marginLeft = "-20000px";
+                document.getElementById("disk").style.right = "-100%";
+                document.getElementById("taskapp3").style.marginLeft = "-20000px";
                 document.getElementById("taskapp3").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";
-                idleactive(); inactiveall();}
+                idleactive(); inactiveall();
+                diskButtonOpen = true;}
+            
+            function diskopen() { 
+                idleactive(); inactiveall(); diskButtonOpen = false;
+                document.getElementById("disk").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; 
+                document.getElementById("disk").style.marginLeft = "0px";
+                document.getElementById("disk").style.right = "3%";
+                document.getElementById("diskwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')";
+                document.getElementById("taskapp3").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";
+                document.getElementById("taskapp3").style.marginLeft = "4px";}
+                
         </script> 
         
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -879,7 +890,7 @@
                 document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";}
         </script>
         
-        <div id="desktop" class="container" id="desktop" style="width:1010px; left:-25px; overflow-x: hidden;">
+        <div id="desktop" class="container" id="desktop" style="width:1010px; left:-25px; overflow-x: hidden; margin-bottom:50px">
             {block:Posts}
                 <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-left: 20px; position: absolute; cursor: default" id="post">
     
@@ -1724,7 +1735,7 @@
                                 <!-- Printers -->
                                 <div class="submenu20">
                                     <div class="menusettings2"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px"> Display Properties </label></div>
+                                    <label style="margin-left: 8px; margin-top: 3px" onclick="diskopen()"> Display Properties </label></div>
                                 <!-- Taskbar & Start menu -->
                                 <div class="submenu20">
                                     <div class="menusettings3"></div>
@@ -1751,7 +1762,7 @@
                                     
                                         <!--Buttons 1-3 -->
                                         <div class="submenu20" style="cursor: pointer;"> 
-                                            <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="messageon();"> 🧮 brain go brrrrr </label></div>
+                                            <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="messageopen()();"> 🧮 brain go brrrrr </label></div>
                                         <div class="submenu20" style="cursor: pointer;"> 
                                             <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="vunnyopen();"> 👿 very.unvunny </label></div>
                                             
@@ -1791,7 +1802,7 @@
                 <div class="taskbaricons">
                     <div class="taskbaricon1"></div>
                     <div class="taskbaricon2"></div>
-                    <div class="taskbaricon3" style="cursor:pointer;" onclick="messageon();"></div> <!-- active desktop icon -->
+                    <div class="taskbaricon3" style="cursor:pointer;" onclick="messageopen()();"></div> <!-- active desktop icon -->
                     <div class="taskbaricon4"></div> 
                 </div>
                 <taskbar class="big_seperator"> </taskbar>
