@@ -1,19 +1,48 @@
 <div class="container" style="margin-left: -10px;">
 <ul>
-<li><strong>2021 January 13th (210113) </strong><em>- "The alt-tab" update.</em><br />
+<li><strong>2021 January 14th (210114)<br /></strong>
+<ul>
+<li>Display properties window updates<strong><br /></strong>
+<ul>
+<li>The window is now clickable and dragable.</li>
+<li>Now has a functioning task on the taskbar, allowing proper tabbing between tasks.</li>
+<li>Clicking on the window now activates the window.</li>
+</ul>
+</li>
+<li>Active Desktop has been changed around to contain default windows that can be brought back up.</li>
+<li>Post headers are now slimmer.</li>
+<li>Window logistic updates
+<ul>
+<li>&ldquo;Brain go brr&rdquo; and &ldquo;Very.unvunny&rdquo; can be found under &ldquo;active desktop&rdquo; or through the &ldquo;active desktop&rdquo; icon on the taskbar, if the window is closed it can be brought back to the desktop there, otherwise will become the active task.</li>
+<li>&ldquo;Brain go brr&rdquo; can now be closed through the titlebar.</li>
+</ul>
+</li>
+<li>Display Properties now has tabs, but to be finalised at a later date.</li>
+<li>Message box containing the most recent update date is now closable.</li>
+<li>When tabbing between windows, all other windows will be checked to remain inactive on everyclick.</li>
+<li>Removed a bunch of unnecessary cursor hover effects.</li>
+</ul>
+<ol>
+<li>- Fixed a bug where post titlebar titles were a pixel too low.</li>
+<li>- Fixed some issues with out-dated button css for various windows.</li>
+<li>- Fixed some window order prioritising.</li>
+<li>- Fixed buttons in the log out screen which didn't have a click animation.</li>
+<li>Fixed some z-index related bugs with Display Properties and "brain go brr"</li>
+</ol></li>
+<li><strong>2021 January 13th (210113) </strong><em>- &ldquo;The alt-tab&rdquo; update.</em><br />
 <ul>
 <li><strong>Major Taskbar tasks overhaul</strong>
 <ul>
 <li>tabbing backend has been completely redone and resolved all taskbar based alt-tabbing issues.</li>
 <li>Post taskbar back end has been redone.</li>
-<li>"Very Unvunny" taskbar back end has been redone.</li>
-<li>Clicking on "Very.Unvunny" on the taskbar when the task is inactive, now goes through a set of order prioritisation to determine the window that should be focused.</li>
+<li>&ldquo;Very Unvunny&rdquo; taskbar back end has been redone.</li>
+<li>Clicking on &ldquo;Very.Unvunny&rdquo; on the taskbar when the task is inactive, now goes through a set of order prioritisation to determine the window that should be focused.</li>
 </ul>
 </li>
-<li>"Bloody ell' chums" window adjustments<br />
+<li>&ldquo;Bloody ell&rsquo; chums&rdquo; window adjustments<br />
 <ul>
 <li>Added more images to the image pool.</li>
-<li>The button in "Bloody Ell' Chums" now cycles through 4 sets of text.</li>
+<li>The button in &ldquo;Bloody Ell&rsquo; Chums&rdquo; now cycles through 4 sets of text.</li>
 <li>The window now has a default image when refreshing the page, clicking on the button still results in a random image.</li>
 </ul>
 </li>
@@ -22,6 +51,7 @@
 <li>- Fixed a bug where you could tab to currently closed windows through the taskbar.</li>
 <li>- Fixed all Taskbar task related bugs.</li>
 <li>- Fixed a layering bug with Tumblr posts which would add 1 to the Z index when the post is clicked off of instead of during, which would result in buggy layering with other windows.</li>
+<li>- Fixed Start Button graphical bug</li>
 </ol></li>
 <li><strong>2021 January 12th (210112)</strong><br />
 <ul>
@@ -30,7 +60,7 @@
 <ul>
 <li>&ldquo;Bloody Ell&rsquo; Chums&rdquo; now generates a random image on page load with designated text.</li>
 <li>Pressing on &ldquo;Bloody Ell&rsquo; Chums&rdquo;&rsquo;s button will result in selecting a random image a total of 4 times, and will close the message box on the 5th press.</li>
-<li>The button in "Bloody Ell' Chums" now cycles through 4 sets of text.</li>
+<li>The button in &ldquo;Bloody Ell&rsquo; Chums&rdquo; now cycles through 4 sets of text.</li>
 <li>Closing all tabs under &ldquo;very.unvunny&rdquo; on the taskbar, will as a result, remove the task from the taskbar.</li>
 </ul>
 <li>Removed &ldquo;basic&rdquo; Tumblr theme css.</li>
@@ -558,4 +588,3 @@
 </ul>
 </li>
 </ul>
-</div>
