@@ -1,6 +1,27 @@
 <div class="container" style="margin-left: -10px;">
 <ul>
-<li><strong>2021 January 14th (210114)<br /></strong>
+<li><strong>2021 January 15th (210115)<br /></strong>
+<ul>
+<li><strong>Display properties window updates<br /></strong>
+<ul>
+<li>Tabs are now fully functionable</li>
+<li>Added the &ldquo;Backgrounds&rdquo; tab</li>
+<li>Added the &ldquo;Screensaver&rdquo; tab</li>
+<li>Added the &ldquo;Appearance&rdquo; tab with limited functionality.</li>
+<li>Added the &ldquo;Effects&rdquo; tab with limited functionality.</li>
+<li>The "background" tab is now the default tab.</li>
+</ul>
+</li>
+<li>Notes are now in the footer of posts, instead of at the bottom of the post embed.</li>
+<li>Added more images to the image pool.</li>
+<li>Random Images in &ldquo;bloody ell&rsquo; chums&rdquo; can now generate special button text.</li>
+</ul>
+<ol>
+<li>- Fixed some graphical desktop bugs such as stray pixels.</li>
+<li>- Optimised random image scripts.</li>
+<li>- Fixed some potential window toggling issues.</li>
+</ol></li>
+<li><strong>2021 January 14th (210114)</strong> <em>- The &ldquo;Ease of use&rdquo; update.</em>
 <ul>
 <li>Display properties window updates<strong><br /></strong>
 <ul>
@@ -14,7 +35,7 @@
 <li>Post headers are now slimmer.</li>
 <li>Window logistic updates
 <ul>
-<li>&ldquo;Brain go brr&rdquo; and &ldquo;Very.unvunny&rdquo; can be found under &ldquo;active desktop&rdquo; or through the &ldquo;active desktop&rdquo; icon on the taskbar, if the window is closed it can be brought back to the desktop there, otherwise will become the active task.</li>
+<li>&ldquo;Brain go brr&rdquo; and &ldquo;Very.unvunny&rdquo; can be found under &ldquo;active desktop&rdquo; or through the &ldquo;active desktop&rdquo; icon on the taskbar, if the window is closed it can be brought back to the desktop there, otherwise will become the active task. (Settings &gt; Active desktop)</li>
 <li>&ldquo;Brain go brr&rdquo; can now be closed through the titlebar.</li>
 </ul>
 </li>
@@ -27,10 +48,15 @@
 <li>- Fixed a bug where post titlebar titles were a pixel too low.</li>
 <li>- Fixed some issues with out-dated button css for various windows.</li>
 <li>- Fixed some window order prioritising.</li>
-<li>- Fixed buttons in the log out screen which didn't have a click animation.</li>
-<li>- Fixed some z-index related bugs with Display Properties and "brain go brr"</li>
+<li>- Fixed buttons in the log out screen which didn&rsquo;t have a click animation.</li>
+<li>- Fixed some z-index related bugs with Display Properties and &ldquo;brain go brr&rdquo;</li>
 <li>- Fixed post redirects to have more room underneath the footer.</li>
 <li>- Fixed tumblr post container to not overflow the area that containers windows to prevent clipping issues with other windows.</li>
+<li>- Fixed a bug where clicking on the container that contains ALL the posts would be considered as clicking a post, fixed by moving the function to the posts themselves.</li>
+<li>- Fixed a visual bug on video posts where the top of the scrollbar was 1px lower for some reason.</li>
+<li>- Fixed a bug where post notes were vertically misaligned.</li>
+<li>- Fixed the scrollbars on focused posts.</li>
+<li>- Fixed a bug where the footer of posts were too close to image post captions.</li>
 </ol></li>
 <li><strong>2021 January 13th (210113) </strong><em>- &ldquo;The alt-tab&rdquo; update.</em><br />
 <ul>
