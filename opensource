@@ -52,7 +52,7 @@
         <!-- Setup -->
         <style type="text/css">
         
-            :root { --spritesheet: url('https://cdn.discordapp.com/attachments/630047188520665121/799219757441613824/spritesheet.png'); 
+            :root { --spritesheet: url('https://cdn.discordapp.com/attachments/630047188520665121/799688478907826186/spritesheet.png'); 
                     --inactive: url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png');
                     --active: url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png');}
         
@@ -125,6 +125,8 @@
                                     font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px;}
             .win98titlebarbutton:active{ width:10px; height: 8px; float:right; box-shadow:inset 1px 1px #0a0a0a,  inset -1px -1px #fff, inset -2px -2px #dfdfdf, inset 2px 2px grey; background:silver; padding:3px; 
                                     font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: -1px; margin-left: -1px; transition: width 0.1s;}
+            .win98titlebarinactive{   width:10px; height: 8px; float:right; box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
+                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px;}                        
               
             /* General button handling */
             .win98button{           box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
@@ -132,7 +134,7 @@
             .win98button:active{    box-shadow:inset 1px 1px #0a0a0a,  inset -1px -1px #fff, inset -2px -2px #dfdfdf, inset 2px 2px grey; background:silver; padding:3px; 
                                     font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute; transition: width 0.1s;}
                                     
-            .win98tab{              box-shadow:inset -1px 0 #0a0a0a, inset 1px 1px #dfdfdf, inset -2px 0 grey, inset 2px 2px #fff ; background:silver; padding:3px; border-radius: 2px;
+            .win98tab{              box-shadow:inset -1px 0px #0a0a0a,inset 1px 1px #fff,inset -2px 0px grey,inset 2px 2px #dfdfdf;background:silver;padding:3px; border-radius: 2px;
                                     font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute; z-index; 100}
                                     
         /* ----------------------------------------------------------------------------------------------------------------------------- */
@@ -148,7 +150,7 @@
             .close {    background-position: -114px -215px;} /* close */
             
             /* tumblr post post icons */
-            .scrollup, .scrollright, .scrolldown, .scrollleft, .cornerpeice
+            .scrollup, .scrollright, .scrolldown, .scrollleft, .cornerpeice, .smallscrollup ,.smallscrolldown
             { background-image: var(--spritesheet); height: 16px; width: 16px; margin-top: -1px; margin-left: -1px; }
 
             .scrolldown {   background-position:    0px -212px; }
@@ -156,7 +158,10 @@
             .scrollup {     background-position:  -32px -212px; }
             .scrollright {  background-position:  -48px -212px; }
             .cornerpeice {  background-position: -192px -212px; height: 16px; width: 16px; }
-
+            
+            .smallscrollup {    background-position: -211px -220px; height:3px; width:3px;}
+            .smallscrolldown {  background-position: -211px -224px; height:3px; width:3px;}
+            
             /* tumblr post container things */
             .sidescrollbarmiddletop {    display: block; height:  2px; width:16px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/788263927007281162/scrollbarsidescrolltop.png'); float: right;}
             .sidescrollbarmiddlemiddle { display: block; height:  1px; width:467px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/787882766057603102/window_width.png'); background-repeat: repeat-y;}
@@ -176,8 +181,12 @@
                 .start_bar .big_seperator {     float: left; border-left: 1px solid rgb(128,128,128); border-right: 1px solid rgb(255,255,255); height: 22px; margin-top: 2px; margin-left: 2px; }
                 .start_bar .small_seperator {   float: left;  border-left: 1px solid rgb(255,255,255); border-top: 1px solid rgb(255,255,255); margin-top: 4px; margin-left: 2px;
                                                 border-right: 1px solid rgb(128,128,128); border-bottom: 1px solid rgb(128,128,128); background-color: rgb(192,192,192); width: 1px; height: 16px; }
-            .splitt { background-image: var(--spritesheet); height: 16px; width: 2px; }
-            .splitt {    background-position:  -208px  -211px;}
+                                                
+            .splitt {   background-image: var(--spritesheet); height: 16px; width: 2px;}
+            .splitt {   background-position:  -208px  -211px;}
+            
+            .fadeout {  background-image: var(--spritesheet); width: 32px; height: 16px;}
+            .fadeout {  background-position: -216px -212px;}
             
             /* tray config */
             .start_bar .time {      line-height: 18px; float: right; font-size: 10px; margin-right: 10px; }
@@ -187,13 +196,14 @@
                                     height: 18px; width: 79px; margin-right: 5px; margin-top: 2px; float: right; } 
             
             /* start menu application icon config */
+            .submenu18 {        height: 18px; background-color:white;   color: black; width:100%; }
             .submenu20 {        height: 20px; background-color:#c0c0c0; color: black; width:100%; }
             .submenu20:hover {  height: 20px; background-color:#00207c; color: white; width:100%; }
             .submenu36 {        height: 36px; background-color:#c0c0c0; color: black; width:100%; }
             .submenu36:hover {  height: 36px; background-color:#00207c; color: white; width:100%; }
             
             /* start menu button toggle */
-            .startbutton, .startmenustartbutton { background-image: var(--spritesheet); height: 22px; width: 54px; margin-left: 2px; margin-top: 2px; }
+            .startbutton, .startmenustartbutton{ background-image: var(--spritesheet); height: 22px; width: 54px; margin-left: 2px; margin-top: 2px; }
                 
             .startbutton {          background-position: -306px -190px;}
             .startmenustartbutton { background-position: -306px -168px;}
@@ -243,7 +253,7 @@
             .menudocumentssound,                        .menufavouritesfolder,  .taskbaricon3,
             .menudocuments1,                            .menufavouriteslink,    .taskbaricon4,
             .menudocumentsdoc,  
-            .menudocumentssound,                                                .calendar
+            .menudocumentssound,                        .none,                  .calendar
             { background-image: var(--spritesheet); margin: auto; float: left; height: 20px; width: 20px; }
 
             .menuapplications7 {    background-position:  -20px  -92px;} /* calc */             .menuapplications12 {   background-position:    0px -112px;} /* ask */
@@ -284,6 +294,7 @@
             .menufind2 {            background-position: -160px -192px;} /* computer */         .taskbaricon3 {         background-position:  -40px -192px; margin-left: 2px;} 
             .menufind3 {            background-position: -180px -192px;} /* on the internet */  .taskbaricon4 {         background-position:  -60px -192px; margin-left: 2px;}
             .menufind4 {            background-position: -200px -192px;} /* people */           .calendar {             background-position:  -82px -194px; margin-left: 2px; height: 16px; width: 16px;}
+                                                                                                .none {                 background-position: -100px -192px; height:18px; width:18px;}
             
             .start_menu { height: 383px; width: 168px; background-position: 0px 0px; background-image: url('https://cdn.discordapp.com/attachments/629307562885644308/783282098646810644/master_spritedis.png');}
 
@@ -312,6 +323,7 @@
         
             .displayboxdisplay {    width:184px; height:169px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/793562429425844234/display_window.png');}
             .displaycolour {        width:155px; height: 15px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/793567960446664714/unknown.png');}
+            .energysaving {         width: 71px; height: 42px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/799657061062279208/energy.png');}
 
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* General formatting */
@@ -336,6 +348,7 @@
             .content p, blockquote, ul, ol  {margin: 0 0 0.8em 0;}
             .meta div {margin: 0 0 0.4em 0 !important;}
             .meta div a {text-decoration: none;}
+            #content #posts #tags .comma:last-child { display: none; }
             .content p:last-child, .content blockquote:last-child, .meta div:last-child { margin-bottom: 0 !important;} /* bottom of posts before footer */
             
             /* text Post settings */
@@ -455,7 +468,6 @@
                         <label>The Official Very</label> <label>Funny Video Playlist
                 </label></span></div> </a>
             </div>
-            .
             <!-- Sidebar icons coloumn 2 -->
             <div class="icons2" style="z-index: 1; margin-top: -10px margin-left: 85px;" >
                 <!-- Button one -->
@@ -500,48 +512,70 @@
             var pyrotabs = 2;
             var windowstotal = 3;
             
+            var discord = "url('https://cdn.discordapp.com/attachments/";
             function pyrowindow(){ if(pyrotabs == 0){ document.getElementById("taskapp2").style.marginLeft = "-20000px"; windowstotal = windowstotal - 1}}
-            
+
                 var myPix = new Array(
-                "url('https://cdn.discordapp.com/attachments/672475563952439326/798493963824529418/unknown.png')",              // fleur de lis with water 0
-                "url('https://cdn.discordapp.com/attachments/630047188520665121/798499968289603604/unknown.png')",              // 1
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/783315603115999282/ezgif-7-c9e84b5f07f6.gif')", //pyro 2
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798502538710089738/unknown.png')",              //dog dressed as chicken. 3
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798506381481213962/unknown.png')",              //cat with head in cup. 4 
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798506706274615296/unknown.png')",              // putin next to walrus. 5
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798507986195578890/unknown.png')",              // cat in jar 6
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798509320584691732/unknown.png')",              // who shot hannibal 7
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798509675238785074/unknown.png')",              // cat drinking 8
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798509990620954654/unknown.png')",              // bananana 9
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798528719010005002/unknown.png')",              // tank eater 10
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798513603384180746/unknown.png')",              // cat in fridge 11
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798513784686772254/unknown.png')",              // cat snake 12
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798514201449988106/unknown.png')",              // spring cat 13
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798514567441285160/unknown.png')",              // muscle cat 14
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798514809716998144/unknown.png')",              // Pussy Fuckers 15
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798515890425561098/unknown.png')",              // dancing cats with dears 16
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798525792257835028/unknown.png')",              // Brain the dog drinking 17
-                "url('https://cdn.discordapp.com/attachments/363043993069682699/798527303532806165/unknown.png')",              // wallace tank 18
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798527551290867712/unknown.png')",              // joker chair 19
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798813870168473620/unknown.png')",              // yeah I like ass 20
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798815059274498108/unknown.png')",              // charge 50 bucks to piss 21
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798815239029653514/unknown.png')",              // bort 22
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798815499361320970/unknown.png')",              // bowsette smithers 23
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798816411837399050/unknown.png')",              // free sex 24
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798840038443712562/unknown.png')",              // silence confederate 25
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798840513200783380/unknown.png')",              // connect 4 26
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798845223588331530/unknown.png')",              // I want to play ball 27
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798816411837399050/unknown.png')",              // dog with teeth 28
-                "url('https://cdn.discordapp.com/attachments/677255444682506240/798845723617263616/unknown.png')"               // screaming cat 29
-                );
+                discord + "672475563952439326/798493963824529418/unknown.png')",                discord + "630047188520665121/798499968289603604/unknown.png')", // fluer + trans gun 0-1
+                discord + "677255444682506240/783315603115999282/ezgif-7-c9e84b5f07f6.gif')",   discord + "677255444682506240/798502538710089738/unknown.png')", // pyro + dog dressed as chicken. 2 3
+                discord + "677255444682506240/798506381481213962/unknown.png')",                discord + "677255444682506240/798506706274615296/unknown.png')", // cat in cup + putin next to walrus. 4 5
+                discord + "677255444682506240/798507986195578890/unknown.png')",                discord + "677255444682506240/798509320584691732/unknown.png')", // cat in jar + who shot hannibal 6 7
+                discord + "677255444682506240/798509675238785074/unknown.png')",                discord + "677255444682506240/798509990620954654/unknown.png')", // cat drinking + bananana 8 9
+                discord + "677255444682506240/798528719010005002/unknown.png')",                discord + "677255444682506240/798513603384180746/unknown.png')", // tank eater cat in fridge 10 11
+                discord + "677255444682506240/798513784686772254/unknown.png')",                discord + "677255444682506240/798514201449988106/unknown.png')", // cat snake + spring cat 12
+                discord + "677255444682506240/798514567441285160/unknown.png')",                discord + "677255444682506240/798514809716998144/unknown.png')", // muscle cat + Pussy Fuckers 14
+                discord + "677255444682506240/798515890425561098/unknown.png')",                discord + "677255444682506240/798525792257835028/unknown.png')", // dancing cat with bear + Brain the dog drinking 16
+                discord + "363043993069682699/798527303532806165/unknown.png')",                discord + "677255444682506240/798527551290867712/unknown.png')", // wallace tank - joker chair 18
+                discord + "677255444682506240/798813870168473620/unknown.png')",                discord + "677255444682506240/798815059274498108/unknown.png')", // I like ass - charge 50 bucks to piss 20
+                discord + "677255444682506240/798815239029653514/unknown.png')",                discord + "677255444682506240/798815499361320970/unknown.png')", // bort - bowsette smithers 22
+                discord + "677255444682506240/798816411837399050/unknown.png')",                discord + "677255444682506240/798840038443712562/unknown.png')", // free sex - silence confederate 24
+                discord + "677255444682506240/798840513200783380/unknown.png')",                discord + "677255444682506240/798845223588331530/unknown.png')", // connect 4 + I want to play ball 26
+                discord + "677255444682506240/798816411837399050/unknown.png')",                discord + "677255444682506240/798845723617263616/unknown.png')", // freesex + screaming cat 28
+                discord + "677255444682506240/799296225861566484/unknown.png')",                discord + "677255444682506240/799322617114656817/unknown.png')", // shiji emo + doge bed 30
+                discord + "677255444682506240/799324405855551508/unknown.png')",                discord + "677255444682506240/799325063291600956/unknown.png')", // rlm + airhorn tolet 32
+                discord + "677255444682506240/799327404904415302/unknown.png')",                discord + "677255444682506240/799328383078236160/unknown.png')"  // to paris + kermit
+                )
                 
             var r_text = new Array (); 
                 r_text[0] = "Hi-dilly-ho, neighborinos!";   r_text[1] = "hand the purse over.";         r_text[2] = "bloody ell' chums ";           r_text[3] = "help";                         r_text[4] = "قطة غبية سخيف ، كريستوفر أبون ل"; 
                 r_text[5] = "let me hold you, darling.";    r_text[6] = "Spongbob Squarepants";         r_text[7] = "Who shot hannibal?";           r_text[8] = "(the cat is preggers)";        r_text[9] = "I'm a slut for a banana"; 
                 r_text[10] = "Tank Eater~";                 r_text[11] = "Fat cat with fat snax";       r_text[12] = "I'm a butterfly daddy!";      r_text[13] = "Blongongongongong";           r_text[14] = "I did it, I shot hannibal.";
-                r_text[15] = "Pussy fuckers";               r_text[16] = "gangnam style";               r_text[17] = "It seems today-";             r_text[18] = "piekreig";                    r_text[19] = "no one card who I was until I sat in the gamer seat.";
+                r_text[15] = "Pussy fuckers";               r_text[16] = "gangnam style";               r_text[17] = "It seems today-";             r_text[18] = "piekreig";                    r_text[19] = "No one cared who until I sat";
                 r_text[20] = "Ass Eater~";                  r_text[21] = "rct2.exe";                    r_text[22] = "bort.png";                    r_text[23] = "i'm gay, miss.";              r_text[24] = "SEX AT SEX.COM";
-                r_text[25] = "'Silence in  the library'";   r_text[26] = "Neon Genesis Evanjollion";    r_text[27] = "Space Jam";                   r_text[28] = "My mom's crown jewels";       r_text[29] = "PWEASE MWISTER, DON'T PUT ME IN THE CUM JAR";
+                r_text[25] = "'Silence in  the library'";   r_text[26] = "Neon Genesis Evanjollion";    r_text[27] = "Space Jam";                   r_text[28] = "My mom's crown jewels";       r_text[29] = "NOT THE CUM JAR";
+                r_text[30] = "Get out the phase, shinji";   r_text[31] = "doge bed";                    r_text[32] = "on";                          r_text[33] = "round the outside";           r_text[34] = "⠀";
+                r_text[35] = "Mmmhhjmmm... Homiee";         r_text[36] = "Neon Genesis Evanjollion";    r_text[37] = "Space Jam";                   r_text[38] = "My mom's crown jewels";       r_text[39] = "PWEASE MWISTER, DON'T PUT ME IN THE CUM JAR";
+
+            var tick = 3;
+            var randomNum = Math.floor(Math.random() * myPix.length);
+            document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum];
+            document.getElementById("pyrotext").textContent= r_text[randomNum]; 
+                                        
+            function pyroshuffle(){ 
+                if (tick !== 0){ 
+                    var randomNum2 = Math.floor(Math.random() * myPix.length);
+                    if(randomNum2 !== randomNum){
+                        randomNum = randomNum2
+                        document.getElementById("pyrotext").textContent= r_text[randomNum]; 
+                        document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum]; randomNum = randomNum2;
+                    } else { randomNum2 = Math.floor(Math.random() * myPix.length);
+                        randomNum = randomNum2
+                        document.getElementById("pyrotext").textContent= r_text[randomNum]; 
+                        document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum]; randomNum = randomNum2;
+                    }
+                    if(tick == 4){ document.getElementById("pyrobutton").textContent="Definately";}
+                    if(tick == 3){ document.getElementById("pyrobutton").textContent="Probably!";}
+                    if(tick == 2){ document.getElementById("pyrobutton").textContent="Maybe?";}
+                    if(tick == 1){ document.getElementById("pyrobutton").textContent="No.";}
+                    
+                    if(randomNum == 30){ document.getElementById("pyrobutton").textContent="Nuzzles"; }
+                    
+                    tick = tick - 1;
+                } else { 
+                    document.getElementById("pyro").style.marginLeft = "-20000px"; pyrowindow(); 
+                    tick = 3; document.getElementById("pyrobutton").textContent="Definately"; document.getElementById("pyrotext").textContent = "💯 bloody ell' chums" ;
+                    document.getElementById("pyroimage").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/677255444682506240/783315603115999282/ezgif-7-c9e84b5f07f6.gif')"
+            }}
 
         </script>
         
@@ -551,32 +585,9 @@
                     <div class="title-bar-small" id="catwindow" style="width:194px;"> <div class="container" style="padding:2px; cursor: default;">🙀 cat 
                     </div></div>
                     <div class="messagewindowbody" style="margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: -2px">
+                            
                             <div class="trash3"></div>
-                            
-                            <script>
-                                var tick = 3;
-                                var randomNum = Math.floor(Math.random() * myPix.length);
-                                document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum];
-                                document.getElementById("pyrotext").textContent= r_text[randomNum]; 
-                                        
-                                function pyroshuffle(){ 
-                                    if (tick !== 0){ 
-                                        var randomNum2 = Math.floor(Math.random() * myPix.length);
-                                        if(randomNum2 !== randomNum){
-                                            document.getElementById("pyrotext").textContent= r_text[randomNum]; 
-                                            document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum]; randomNum = randomNum2;
-                                        } else { randomNum2 = Math.floor(Math.random() * myPix.length);
-                                            document.getElementById("pyrotext").textContent= r_text[randomNum]; 
-                                            document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum]; randomNum = randomNum2;
-                                        }
-                                        if(tick == 3){ document.getElementById("pyrobutton").textContent="Probably!";}
-                                        if(tick == 2){ document.getElementById("pyrobutton").textContent="Maybe?";}
-                                        if(tick == 1){ document.getElementById("pyrobutton").textContent="No.";}
-                                        tick = tick - 1;
-                                    } else { document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; pyrowindow();
-                                }}
-                            </script>
-                            
+                        
                         <div class="filler"></div>
                         <div class="messagewindowbutton" style="margin-left:55px; margin-top: 3px; margin-bottom: -2px;">
                             <button disabled>OK</button>
@@ -683,65 +694,202 @@
                 document.getElementById("messagewindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791303194356482048/title-bar_diskmanagement_gradientopen.png')";}
         </script>
         
+        <!-- add more junk here -->
+        <!-- add more junk here -->
+        <!-- add more junk here -->
+        
         <!--
         <div class="container" style="top: 12%; right: 5%; z-index:2; position: absolute; float: right">
         <iframe src="https://discord.com/widget?id=228593075008569344&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" 
                 sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe></div>
-                
+        
+        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+        <!-- Display properties rendering                                                                                                  -->
+        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+            
         <!-- display settings container -->
-        <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; right:  3%; z-index:5" onmousedown="diskactive()" id="disk">
+        <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; right:  3%; z-index:5; position: absolute" onmousedown="diskactive()" id="disk">
             <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:2px; margin-top:2px; cursor: pointer;" title="close" onclick="diskclose()"><div class="close"></div></div>
             <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="margin-top:2px" title="help"> <div class="help"></div></div></a> 
             <div class="title-bar-98" id="diskwindow"> <div class="container" style="padding:2px; width: 398px; cursor: default;">📺 Display Properties
-                </div>
-            </div>
+            </div></div>
             
             <!--container for the setting window -->
-            <div class="win98tab" style="width:63px; height:16px; margin-top:6px; margin-left:11px;"> <label style="margin-top:1px; margin-left:4px">Background</label> </div>
-            <div class="win98tab" style="width:68px; height:16px; margin-top:6px; margin-left:80px;"> <label style="margin-top:1px; margin-left:4px">Screen Saver</label> </div>
-            <div class="win98tab" style="width:65px; height:16px; margin-top:6px; margin-left:154px;"> <label style="margin-top:1px; margin-left:4px">Appearance</label> </div>
-            <div class="win98tab" style="width:38px; height:16px; margin-top:6px; margin-left:225px;"> <label style="margin-top:1px; margin-left:4px">Effects</label> </div>
-            <div class="win98tab" style="width:32px; height:16px; margin-top:6px; margin-left:269px;"> <label style="margin-top:1px; margin-left:4px">Web</label> </div>
-            <div class="win98tab" style="width:45px; height:16px; margin-top:6px; margin-left:307px; z-index:100"> <label style="margin-top:1px; margin-left:4px">Settings</label> </div>
+            <div class="win98tab" style="width:70px; height:17px; margin-top:5px; margin-left:  6px; z-index:10" onclick="tabreset(); backgroundtab();" id="backgroundtab"><center><label style="margin-top:1px;">Background</label></center></div>
+            <div class="win98tab" style="width:68px; height:16px; margin-top:6px; margin-left: 80px; z-index: 1"  onclick="tabreset(); screensavertab();" id="screenSavertab"><center><label style="margin-top:1px;">Screen Saver</label></center></div>
+            <div class="win98tab" style="width:65px; height:16px; margin-top:6px; margin-left:154px; z-index: 1"  onclick="tabreset();appearancetab();" id="appearancetab"><center><label style="margin-top:1px;">Appearance</label></center></div>
+            <div class="win98tab" style="width:38px; height:16px; margin-top:6px; margin-left:225px; z-index: 1"  onclick="tabreset(); effectstab();" id="effectstab"><center><label style="margin-top:1px;">Effects</label></center></div>
+            <div class="win98tab" style="width:45px; height:16px; margin-top:6px; margin-left:269px; z-index: 1"  onclick="tabreset(); settingstab();" id="settingstab"><center><label style="margin-top:1px;">Settings</label></center></div>
             
-            <div class="container"> 
-                <!-- inner container -->
-                <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; ">
-                    <center style="margin-top:25px"><div class="displayboxdisplay"></div></center>
-                    <p style="margin-left:14px" > Display: <br> Default Monitor on DisplayPort - Standard PCI Graphics Adapter (XGA) </p>
+            <script>
+            var a = document.getElementById("backgroundtab"); var b = document.getElementById("screenSavertab"); var c = document.getElementById("appearancetab"); 
+            var d = document.getElementById("effectstab"); var e = document.getElementById("settingstab");
+            
+                function tabreset(){
+                    document.getElementById("background").style.zIndex = 2; document.getElementById("screensaver").style.zIndex = 2; document.getElementById("appearance").style.zIndex = 2; 
+                    document.getElementById("effects").style.zIndex = 2; document.getElementById("settings").style.zIndex = 2;
+                    a.style.width = "63px"; a.style.height = "16px"; a.style.marginTop = "6px"; a.style.marginLeft = " 11px"; a.style.zIndex = 1; // first tab // aa
+                    b.style.width = "68px"; b.style.height = "16px"; b.style.marginTop = "6px"; b.style.marginLeft = " 80px"; b.style.zIndex = 1; // second tab // bb
+                    c.style.width = "65px"; c.style.height = "16px"; c.style.marginTop = "6px"; c.style.marginLeft = "154px"; c.style.zIndex = 1; // third tab // cc
+                    d.style.width = "38px"; d.style.height = "16px"; d.style.marginTop = "6px"; d.style.marginLeft = "225px"; d.style.zIndex = 1; // fourth tab // dd 
+                    e.style.width = "45px"; e.style.height = "16px"; e.style.marginTop = "6px"; e.style.marginLeft = "269px"; e.style.zIndex = 1;}// fifth tab // ee
+            
+                function backgroundtab(){ document.getElementById("background").style.zIndex = 9; // first tab
+                    a.style.zIndex = 10; a.style.width = "70px"; a.style.marginLeft = "6px"; a.style.marginTop = "5px"; a.style.height = "17px"; amenu.style.zIndex = 9;}
+                function screensavertab(){ document.getElementById("screensaver").style.zIndex = 9; // first tab
+                    b.style.zIndex = 10; b.style.width = "72px"; b.style.marginLeft = "78px"; b.style.marginTop = "5px"; b.style.height = "17px"; bmenu.style.zIndex = 9;}
+                function appearancetab(){ document.getElementById("appearance").style.zIndex = 9; // first tab
+                    c.style.zIndex = 10; c.style.width = "69px"; c.style.marginLeft = "152px"; c.style.marginTop = "5px"; c.style.height = "17px"; cmenu.style.zIndex = 9;}
+                function effectstab(){ document.getElementById("effects").style.zIndex = 9;// first tab
+                    d.style.zIndex = 10; d.style.width = "42px"; d.style.marginLeft = "223px"; d.style.marginTop = "5px"; d.style.height = "17px"; dmenu.style.zIndex = 9;}
+                function settingstab(){ document.getElementById("settings").style.zIndex = 9; // fifth tab
+                    e.style.zIndex = 10; e.style.width = "50px"; e.style.marginLeft = "267px"; e.style.marginTop = "5px"; e.style.height = "17px"; emenu.style.zIndex = 9;}
+            </script>
+            
+            <!-- --------------------------------------- background tab --------------------------------------- -->
+            <!-- background inner container -->
+            <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:9" id="background">
+                <center style="margin-top:12px"><div class="displayboxdisplay"></div></center>
                     
                     <!-- display container settings -->
-                    <div class="container" style="float: left; margin-top: 12px">
-                        <fieldset style="width:136px; height:39px; margin-left: 12px">
-                            <select style="width:155px; margin-left: -2px">
-                              <option selected>High Colour (16-bit)</option>
-                            </select>
-                            <div class="displaycolour" style="margin-top:5px; margin-left: -2px"></div>
-                        </fieldset></div>
-                    <div class="container" style="float: right; margin-top: 12px">
-                        <fieldset style="width:136px; height:39px; margin-right: 10px">
-                            <div class="field-row" style="width: 77px">
-                              <label for="range22">Less</label>
-                              <input id="range22" type="range" min="1" max="5" value="3" style="width:77px"></input>
-                              <label for="range23" style="float:right; margin-right: 5px">More</label>
-                            </div>
-                            <center><p> 1920 by 1080 pixels</p></center>
-                        </fieldset></div>
-                    <!-- additional settings -->
-                    <div class="field-row" style="width: 100%; margin-left: 12px;">
-                        <input checked disabled type="checkbox">
-                        <label for="example4" style="margin-top:14px;">Extend my Windows desktop onto this monitor</label>
-                        <div class="container" style="margin-top: 10px"> 
-                            <button disabled style="cursor: pointer; margin-left:42px">Advanced...</button>
-                        </div>
+                <fieldset style="width:336px; height:125px; margin-left: 12px; margin-top: 18px;">
+                    <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: silver; width:52px; padding: 0px 0px 3px 3px; margin-left:-3px"> Wallpaper </label>
+                    <label style="margin-top:8px; color: black">Select a HTML document or picture:</label>
+                    
+                    <div class="container" style="position: absolute; margin-left:267px; margin-top: 2px; width:60px;">
+                    
+                        <div class="win98button" style="position: absolute; width:60px; height:16px; cursor:pointer"> 
+                            <label style="margin-top: 1px; margin-left:11px; cursor:pointer"> Browse... </label> </div> 
+                        <div class="win98button" style="position: absolute;margin-top: 27px; width:60px; height:16px; cursor:pointer"> 
+                            <label style="margin-top: 1px; margin-left:11px; cursor:pointer"> Pattern </label> </div> 
+                        <label style="position: absolute;margin-top: 60px;">Display</label>
+                        <select style="width:67px; margin-top:75px; padding:2px 3px 1px 1px">
+                          <option selected>Center</option><option>Span</option><option>Stretch</option></select>
                     </div>
-                <!-- inner container end -->
-                </div>
+                
+                    <ul class="tree-view" style="width:240px; height:84px; margin-top: 2px; margin-left:4px">
+                        <div class="container" style="position: absolute; margin-top:-3px; margin-left:-3px">
+                            
+                            <div class="submenu18" style="width:230px; position: absolute; cursor:pointer">
+                                    <div class="none" style="margin-top:-1px;"></div>
+                                    <label style="margin-left: 4px; margin-top: 2px; cursor:pointer"> None </label></div>
+                            <div class="submenu18" style="width:230px; position: absolute; margin-top:18px; cursor:pointer">
+                                    <div class="menuapplications10" style="margin-top:-1px"></div>
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Clouds </label></div>
+                            <div class="submenu18" style="width:230px; position: absolute; margin-top:36px; cursor:pointer">
+                                    <div class="menuapplications10" style="margin-top:-1px"></div>
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Tokyo </label></div>
+                            <div class="submenu18" style="width:230px; position: absolute; margin-top:54px; cursor:pointer">
+                                    <div class="menuapplications10" style="margin-top:-1px"></div>
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Pone </label></div>
+                            <div class="submenu18" style="width:230px; position: absolute; margin-top:72px; cursor:pointer">
+                                    <div class="menuapplications10" style="margin-top:-1px"></div>
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Bat Pony </label></div>
+                        </div>
+    
+                        <div class="container" style="position: absolute; width:10px; height: 100%; margin-left:228px; margin-top:-4px; ">
+                            <div class="win98button" style="width:10px; height:10px;"> 
+                                <div class="scrollup" style="margin-top:-3px; margin-left:-3px"></div>
+                            </div>
+                            <div class="win98button" style="width:10px; height:54px; margin-top:16px"> </div>
+                            <div class="win98button" style="width:10px; height:10px; margin-top:76px"> 
+                                <div class="scrolldown" style="margin-top:-3px; margin-left:-3px"></div>
+                        </div></div>
+                    </ul>
+                    
+                    
+                </fieldset>
+            <!-- inner container end -->
             </div>
             
+            <!-- --------------------------------------- screensaver tab --------------------------------------- -->
+            <!-- background inner container -->
+            <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="screensaver">
+                <center style="margin-top:12px"><div class="displayboxdisplay"></div></center>
+                    
+                    <fieldset style="width:336px; height:50px; margin-left: 12px; margin-top: 18px;">
+                        <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: silver; width:64px; padding: 0px 0px 3px 3px; margin-left:-3px"> Screen Saver </label>
+                        
+                        <select style="position: absolute; width:168px; margin-top:3px; padding:2px 3px 1px 1px"><option selected>(None)</option></select>
+                        <button disabled style="position: absolute; margin-left:175px; margin-top: 2px; cursor: pointer;">Settings</button>
+                        <button disabled style="position: absolute; margin-left:260px; margin-top: 2px; cursor: pointer;">Preview</button>
+                        
+                        <div class="field-row" style="margin-top:35px"><input disabled type="checkbox" id="passwordprotected"><label for="passwordprotected">Password protected</label></div>
+                        <button disabled style="position: absolute; margin-left:125px; margin-top: -18px; cursor: pointer;">Change...</button>
+                        
+                        <label style="position:absolute; margin-left:209px; margin-top:-14px">Wait:⠀ ⠀ ⠀ ⠀ ⠀ ⠀ ⠀minutes</label>
+                        <ul class="tree-view" style="position:absolute; width:41px; height:8px; margin-top: -16px; margin-left:239px; background-color:silver">
+                            <div class="container" style="margin-top: -4px; margin-left:28px">
+                                    <label style="position:absolute; margin-left: -14px; margin-top: 1px; color:gray;"> 14 </label>
+                                <div class="win98titlebarinactive" style="position:absolute; width:11px; height:2px;"><div class="smallscrollup" style="margin-left:4px"></div></div>
+                                <div class="win98titlebarinactive" style="position:absolute; margin-top:8px; width:11px; height:2px;"><div class="smallscrolldown"  style="margin-left:4px"></div></div>
+                        </div></ul></fieldset>
+                    
+                    <fieldset style="width:336px; height:48px; margin-left: 12px; margin-top: 12px;">
+                        <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: silver; width:154px; padding: 0px 0px 3px 3px; margin-left:-3px"> Energy saving features of monitor </label>
+                        <div class="energysaving" style="position: absolute; margin-left:24px; margin-top:5px"></div>
+                        <label style="width:210px; position: absolute; margin-left: 122px; margin-top: 5px"> To adjust the power settings of your monitor, click settings.</label>
+                        <button disabled style="margin-left:255px; margin-top: 24px; cursor: pointer;">Settings</button>
+                    </fieldset>
+
+            <!-- inner container end -->
+            </div>
+            
+            <!-- --------------------------------------- appearance tab --------------------------------------- -->
+            <!-- background inner container -->
+            <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="appearance">
+                <center style="margin-top:25px"><div class="displayboxdisplay"></div></center>
+                    
+
+            <!-- inner container end -->
+            </div>
+            
+            <!-- --------------------------------------- Effects tab --------------------------------------- -->
+            <!-- background inner container -->
+            <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="effects">
+                <center style="margin-top:25px"><div class="displayboxdisplay"></div></center>
+                    
+
+            <!-- inner container end -->
+            </div>
+            
+            <!-- --------------------------------------- settings tab --------------------------------------- -->
+            <!-- inner container -->
+            <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="settings">
+                <center style="margin-top:25px"><div class="displayboxdisplay"></div></center>
+                <p style="margin-left:14px" > Display: <br> Default Monitor on DisplayPort - Standard PCI Graphics Adapter (XGA) </p>
+                
+                <!-- display container settings -->
+                <div class="container" style="float: left; margin-top: 12px">
+                    <fieldset style="width:136px; height:39px; margin-left: 12px">
+                        <select style="width:155px; margin-left: -2px">
+                          <option selected>High Colour (16-bit)</option>
+                        </select>
+                        <div class="displaycolour" style="margin-top:5px; margin-left: -2px"></div>
+                    </fieldset></div>
+                <div class="container" style="float: right; margin-top: 12px">
+                    <fieldset style="width:136px; height:39px; margin-right: 10px">
+                        <div class="field-row" style="width: 77px">
+                          <label for="range22">Less</label>
+                          <input id="range22" type="range" min="1" max="5" value="3" style="width:77px"></input>
+                          <label for="range23" style="float:right; margin-right: 5px">More</label>
+                        </div>
+                        <center><p> 1920 by 1080 pixels</p></center>
+                    </fieldset></div>
+                <!-- additional settings -->
+                <div class="field-row" style="width: 100%; margin-left: 12px;">
+                    <input checked disabled type="checkbox">
+                    <label for="example4" style="margin-top:14px;">Extend my Windows desktop onto this monitor</label>
+                    <div class="container" style="margin-top: 10px"> 
+                        <button disabled style="cursor: pointer; margin-left:42px">Advanced...</button>
+                    </div>
+                </div>
+                <!-- inner container end -->
+            </div>
+            <!-- settings container end -->
             
             
-            
+            <!-- --------------------------------------- footer --------------------------------------- -->
             <!-- display settings buttons -->
             <button disabled style="margin-right:6px; width:71px; margin-top: 395px; float: right;">Apply</button>
             <button style="cursor: pointer; margin-right:6px; width:71px; margin-top: 395px; float: right;" onclick="diskclose()">Cancel</button>
@@ -756,13 +904,12 @@
                 document.getElementById("diskwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')";
                 document.getElementById("taskapp3").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";} 
                 
-            function diskclose() { 
+            function diskclose() { diskButtonOpen = true;
                 document.getElementById("disk").style.marginLeft = "-20000px";
                 document.getElementById("disk").style.right = "-100%";
                 document.getElementById("taskapp3").style.marginLeft = "-20000px";
                 document.getElementById("taskapp3").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";
-                idleactive(); inactiveall();
-                diskButtonOpen = true;}
+                idleactive(); inactiveall();}
             
             function diskopen() { 
                 idleactive(); inactiveall(); diskButtonOpen = false;
@@ -885,14 +1032,15 @@
         
         <script>
             function tumblractive() { tumblrButtonOpen = false;
+                idleactive(); inactiveall();
                 document.getElementById("post").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
                 document.getElementById("postwindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')"; 
                 document.getElementById("taskapp1").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";}
         </script>
         
-        <div id="desktop" class="container" id="desktop" style="width:1010px; left:-25px; overflow-x: hidden; margin-bottom:50px">
+        <div id="desktop" class="container" id="desktop" style="width:1010px; left:-25px; overflow: hidden; margin-bottom:30px;">
             {block:Posts}
-                <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-left: 20px; position: absolute; cursor: default" id="post">
+                <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-left: 20px; position: absolute; cursor: default" onmousedown="tumblractive()" id="post">
     
                     <div class="title-bar-posts" id="postwindow"> <div class="container" style="padding:2px;">🍭 very.vunnies
                         <div class="win98titlebarbutton" style="margin-left: 2px" title="close"><div class="close"></div></div>
@@ -953,7 +1101,7 @@
                                         </div>
                                         <!-- Image caption -->
                                         {block:Caption} 
-                                            <div class="content caption"> {Caption} </div> <!-- content -->
+                                            <div class="content caption" style="margin-bottom:2px"> {Caption} </div> <!-- content -->
                                         {/block:Caption}
                                     {/block:Photo}
                                         
@@ -1046,19 +1194,6 @@
                                         </div>
                                     {/block:Answer}
                                                 
-                                    <!-- tags -->
-                                    {block:IfTagsOnIndex}
-                                        {block:HasTags}
-                                            <label style="font: normal 13px/1.3"><div class="tagged">
-                                                {lang:Tagged}:
-                                                {block:Tags}
-                                                    <a href="{TagURL}">#{Tag}, </a>
-                                                {/block:Tags}
-                                            </div></label>
-                                        <div class="filler" margin-left:"-3px"></div>
-                                        {/block:HasTags}
-                                    {/block:IfTagsOnIndex}
-                                                
                                     <!-- Page Redirects -->
                                     {block:PermalinkPage}
                                         {block:ContentSource}
@@ -1075,8 +1210,8 @@
                                         <!-- People who also rebloged / liked -->
                                         <div class="notes" style="margin-left: -2px;">
                                             {block:PostNotes}
-                                                <div class="notestopbar" style="margin-left: -7px"></div>
-                                                <div class="content caption" style="margin-top: -5px; height:227px; width:400px; overflow: hidden;"> 
+                                                <div class="notestopbar" style="margin-left: -7px; z-index:2000000"></div>
+                                                <div class="content caption" style="height:216px; width:400px; overflow: hidden;"> 
                                                     {PostNotes}
                                                 </div> <!-- content -->
                                             {/block:PostNotes}
@@ -1091,14 +1226,14 @@
                 
                             <div class="sidescrollbarmiddlebottom" style="margin-top: -18px; float: right; width:16px;">
                                 {block:PostNotes}
-                                    <div class="sidescrollbarmiddlebottom" style="margin-top: -230px; float: right; width:16px;"></div>
-                                    <div class="win98button" style=" margin-top: -228px;width:10px; height:10px;"> 
+                                    <div class="sidescrollbarmiddlebottom" style="margin-top: -224px; float: right; width:16px;"></div>
+                                    <div class="win98button" style=" margin-top: -222px;width:10px; height:10px;"> 
                                         <div class="scrolldown" style="margin-top:-3px; margin-left:-3px"></div>
                                     </div>
-                                    <div class="win98button" style="margin-top: -204px; width:10px; height:10px;"> 
+                                    <div class="win98button" style="margin-top: -198px; width:10px; height:10px;"> 
                                         <div class="scrollup" style="margin-top:-3px; margin-left:-3px"></div>
                                     </div>
-                                    <div class="sidescrollbarmiddletop" style="margin-top: -188px; width:16px; height:2px; float:right;"> </div>
+                                    <div class="sidescrollbarmiddletop" style="margin-top: -182px; width:16px; height:2px; float:right;"> </div>
                                 {/block:PostNotes}
                                 <div class="win98button" style=" margin-top: 2px;width:10px; height:10px;"> 
                                     <div class="scrolldown" style="margin-top:-3px; margin-left:-3px"></div>
@@ -1121,11 +1256,16 @@
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
             <!-- Bottom post handling                                                                                                          -->
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-            
-                        <div class="container" style="margin-right: -5px;">
-                            <a class="like-b" href="{ReblogURL}" target="_blank" style="float:right; margin-top:-23px; margin-right:1px;">reblog</a>
+
+                        {block:HasTags}
+                            <label style="position:absolute; height: 16px; max-width:410px; margin-top:-24px; margin-left:-2px; overflow:hidden; color: gray">
+                                {block:Tags}<a href="{TagURL}" style="color: grey; white-space: nowrap;">{Tag}</a><div class="comma">, </div>{/block:Tags}
+                            </label>
+                        {/block:HasTags}
+                        <div class="container" style="z-index:100; width:100px; float:right; margin-right:-5px;">
+                            <a class="like-b" href="{ReblogURL}" target="_blank" style="float:right; margin-top:-22px; margin-right:1px;">reblog</a>
                             <div class="splitt" style="float: right; margin-left: 3px; margin-right: 3px; margin-top:-25px; margin-right:34px"></div>
-                            <a class="like-b" href="#" style="float:right; margin-top:-23px; margin-right:38px;">{LikeButton}<div class="b">like</div></a>
+                            <a class="like-b" href="#" style="float:right; margin-top:-22px; margin-right:38px;">{LikeButton}<div class="b" style="background-color: silver; padding: 0px 2px 2px 7px; margin-left:-4px">like</div></a>
                         </div>
                         
                         <div class="container" style="max-width:500px;">
