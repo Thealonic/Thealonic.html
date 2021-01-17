@@ -1,5 +1,22 @@
 <div class="container" style="margin-left: -10px;">
 <ul>
+<li><strong>2021 January 17th (210117)</strong><br />
+<ul>
+<li>Removed bottom scrollbar of posts.</li>
+<li>Removed vertical scrollbar functionability.</li>
+<li>Replaced vertical scrollbar visuals with new disabled ones.</li>
+<li>Major adjustments and streamlining of CSS on posts.</li>
+<li>Changed threaded posts to be more compact. (From 3px to 2px)</li>
+<li>Removed more uneeded asset references and added them to the sprite sheet.</li>
+</ul>
+<ol>
+<li>- Fixed Log out menu titlebar styling with new CSS.</li>
+<li>- Fixed Shut down menu titlebar styling with new CSS.</li>
+<li>- Fixed Tumblr post titlebar styling with new CSS.</li>
+<li>- Fixed Shut down and Log out menus from being dragged down when the page is scrolled down, and is now moved based on relation to the entire page.</li>
+<li>- Fixed taskbar CSS and jank task CSS.</li>
+<li>- Fixed a bug on footers of permalinked posts</li>
+</ol></li>
 <li><strong>2021 January 16th (210116)<strong><br /></strong></strong>
 <ul>
 <li>Display properties window updates<strong><br /></strong>
@@ -8,7 +25,7 @@
 </ul>
 </li>
 <li>Scroll bar CSS has been reworked and is now more optimised.</li>
-<li><strong>Reworked how posts are handled and displayed, removing </strong><strong><span><span data-dobid="hdw">unnecessary</span></span> padding.</strong> (Such as video posts, image posts and audio posts)</li>
+<li><strong>Reworked how posts are handled and displayed, removing </strong><strong><span data-dobid="hdw">unnecessary</span> padding.</strong> (Such as video posts, image posts and audio posts)</li>
 <li>Titlebar buttons CSS has been adjusted and is now more optimised.</li>
 <li>The start menu no longer automatically closes every time you click, and instead closes when the button can call a function. (If the button works, the menu will automatically close a result.)</li>
 </ul>
