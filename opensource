@@ -52,7 +52,7 @@
         <!-- Setup -->
         <style type="text/css">
         
-            :root { --spritesheet: url('https://cdn.discordapp.com/attachments/630047188520665121/800394504959295488/spritesheet.png'); 
+            :root { --spritesheet: url('https://cdn.discordapp.com/attachments/630047188520665121/800775512573083688/spritesheet.png'); 
                     --inactive: url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png');
                     --active: url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png');}
         
@@ -165,15 +165,15 @@
             .cornerpeice {      background-position: -192px -212px; height: 16px; width: 16px; }
             .smallscrollup {    background-position: -211px -220px; height:  3px; width:  3px;}
             .smallscrolldown {  background-position: -211px -224px; height:  3px; width:  3px;}
+
+            .tinyarrowdisableddown {    background-image: var(--spritesheet); height:  3px; width:  4px; background-position: -165px -220px;}
+            .smallarrowdisableddown {   background-image: var(--spritesheet); height:  4px; width:  6px; background-position: -164px -219px;}
+            .arrowdisableddown {        background-image: var(--spritesheet); height: 16px; width: 16px; background-position: -158px -212px; margin-top:-3px; margin-left:-3px}
+            .tinyarrowdisabledup {      background-image: var(--spritesheet); height:  3px; width:  4px; background-position: -211px -212px;}
+            .arrowdisableup {           background-image: var(--spritesheet); height: 16px; width: 16px; background-position: -175px -212px; margin-top:-3px; margin-left:-3px}
+            .menuarrow1 {               background-image: var(--spritesheet); height:  7px; width:  4px; background-position: -150px -216px; margin: auto; float: right; }
             
-            .tinyarrowdisabledup, .smallarrowdisabledup, .arrowdisabledup, .tinyarrowdisableddown, .smallarrowdisableddown, .arrowdisableddown, .arrowdisableup, .menuarrow1 { 
-                background-image: var(--spritesheet); }
-            .tinyarrowdisableddown {    height:  3px; width:  4px; background-position: -165px -220px;}
-            .smallarrowdisableddown {   height:  4px; width:  6px; background-position: -164px -219px;}
-            .arrowdisableddown {        height: 16px; width: 16px; background-position: -158px -212px; margin-top:-3px; margin-left:-3px}
-            .tinyarrowdisabledup {      height:  3px; width:  4px; background-position: -211px -212px;}
-            .arrowdisableup {           height: 16px; width: 16px; background-position: -175px -212px; margin-top:-3px; margin-left:-3px}
-            .menuarrow1 {               height:  7px; width:  4px; background-position: -150px -216px; margin: auto; float: right; }
+            .explorerlinks { background-image: var(--spritesheet); height:  5px; width:  4px; background-position: -211px  -222px;}
             
             /* tumblr post container things */
             .sidescrollbarmiddlemiddle {    height:  2px; width:467px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/800356725827698728/window_width.png'); background-repeat: repeat-y; overflow:hidden;}
@@ -191,7 +191,7 @@
             .start_bar .small_seperator {   float: left;  border-left: 1px solid rgb(255,255,255); border-top: 1px solid rgb(255,255,255); margin-top: 4px; margin-left: 2px;
                                             border-right: 1px solid rgb(128,128,128); border-bottom: 1px solid rgb(128,128,128); background-color: rgb(192,192,192); width: 1px; height: 16px; }
                                                 
-            .splitt {   background-image: var(--spritesheet); height: 16px; width: 2px; background-position:  -208px  -211px;}
+            .verticalsplitter {   background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/800753200377495602/vertical_splitter.png'); height: 16px; width: 2px; background-repeat: repeat-y;}
 
             /* tray config */
             .start_bar .time {      line-height: 18px; float: right; font-size: 10px; margin-right: 10px; }
@@ -209,12 +209,15 @@
             .submenu36:hover {  height: 36px; background-color:#00207c; color: white; width:100%; }
             
             /* start menu button toggle */
-            .startbutton {          background-image: var(--spritesheet); height: 22px; width: 54px; margin-left: 2px; margin-top: 2px; background-position: -54px -36px;}
-            .startmenustartbutton { background-image: var(--spritesheet); height: 22px; width: 54px; margin-left: 2px; margin-top: 2px; background-position:  -0px -36px;}
+            .startbutton {          background-image: var(--spritesheet); height: 22px; width: 54px; margin-left: 2px; margin-top: 2px; background-position:  -54px -36px;}
+            .startmenustartbutton { background-image: var(--spritesheet); height: 22px; width: 54px; margin-left: 2px; margin-top: 2px; background-position:   -0px -36px;}
+            .windowsexplorerlogo {  background-image: var(--spritesheet); height: 21px; width: 38px; background-position: -115px -37px; float:right;}
+
             
             /* start menu misc */
+            .verticaltasksplitter {   background-image: var(--spritesheet); height:  18px; width:   3px; background-position: -110px -38px; position:absolute; margin-left: 1px; margin-top: 1px;}
             .menuapplicationsplit { background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/800392317906452510/unknown.png'); height: 2px; width: 1px;background-repeat: repeat-x;}
-            .windowsstartmenubar {  float: left; position:absolute; height: 159px; width:  21px; background-image: var(--spritesheet); background-position: -339px  -72px;}
+            .windowsstartmenubar {  background-image: var(--spritesheet); height: 159px; width:  21px; background-position: -339px -72px; position:absolute; float: left;}
 
             /* start menu icon references */
             .patchnotes,    .menuprograms,  .menudocuments, .menufavourites, .menushutdown, .logofficon,
@@ -252,9 +255,9 @@
             .menugames4,        .menusettings5,         .menuentertainment5,    .taskbaricon1,
                                 .menusettings6,                                 .taskbaricon2,
             .menudocumentssound,                        .menufavouritesfolder,  .taskbaricon3,
-            .menudocuments1,                            .menufavouriteslink,    .taskbaricon4,
-            .menudocumentsdoc,  
-            .menudocumentssound,                        .none,                  .calendar
+            .menudocuments1,    .none,                  .menufavouriteslink,    .taskbaricon4,
+            .menudocumentsdoc,                          .explorergo,
+            .menudocumentssound,                        .explorerback,          .calendar
             { background-image: var(--spritesheet); margin: auto; float: left; height: 20px; width: 20px; }
 
             .menuapplications7 {    background-position:  -20px  -92px;} /* calc */             .menuapplications12 {   background-position:    0px -112px;} /* ask */
@@ -295,7 +298,10 @@
             .menufind2 {            background-position: -160px -192px;} /* computer */         .taskbaricon3 {         background-position:  -40px -192px; margin-left: 2px;} 
             .menufind3 {            background-position: -180px -192px;} /* on the internet */  .taskbaricon4 {         background-position:  -60px -192px; margin-left: 2px;}
             .menufind4 {            background-position: -200px -192px;} /* people */           .calendar {             background-position:  -82px -194px; margin-left: 2px; height: 16px; width: 16px;}
-                                                                                                .none {                 background-position: -100px -192px;                   height: 18px; width: 18px;}
+            
+            .explorergo {           background-position: -101px  -72px;}                        .none {                 background-position: -100px -192px;                   height: 18px; width: 18px;}
+            .explorerback {         background-position: -121px  -72px;}
+            
             .taskbarapp1 
                 { background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png '); float: left; width: 160px; height: 22px; margin-top: 2px; margin-left: 4px;} /*tumblrposts*/
             .taskbarapp2, .taskbarapp3, .taskbarapp4 
@@ -539,7 +545,7 @@
                 r_text[20] = "Ass Eater~";                  r_text[21] = "rct2.exe";                    r_text[22] = "bort.png";                    r_text[23] = "i'm gay, miss.";              r_text[24] = "SEX AT SEX.COM";
                 r_text[25] = "'Silence in  the library'";   r_text[26] = "Neon Genesis Evanjollion";    r_text[27] = "Space Jam";                   r_text[28] = "My mom's crown jewels";       r_text[29] = "NOT THE CUM JAR";
                 r_text[30] = "Get out the phase, shinji";   r_text[31] = "doge bed";                    r_text[32] = "on";                          r_text[33] = "round the outside";           r_text[34] = "⠀";
-                r_text[35] = "Mmmhhjmmm... Homiee";         r_text[36] = "Neon Genesis Evanjollion";    r_text[37] = "Space Jam";                   r_text[38] = "My mom's crown jewels";       r_text[39] = "PWEASE MWISTER, DON'T PUT ME IN THE CUM JAR";
+                r_text[35] = "Mmmhhjmmm... Homiee";         r_text[36] = "Neon Genesis Evanjollion";    r_text[37] = "Space Jam";                   r_text[38] = "My mom's crown jewels";       r_text[39] = "PWEASE MWISTER, DON'T PUT ME IN THE JAR";
 
             var tick = 3;
             var randomNum = Math.floor(Math.random() * myPix.length);
@@ -660,7 +666,7 @@
             <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="container" style="padding:2px; cursor: default;">🧮 brain go brrrrr
             </div></div>
             <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
-                <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>16:21pm on January 17th, 2021. [GMT]</label></p>
+                <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>18:00pm on January 18th, 2021. [GMT]</label></p>
         </div></div>
         
         <!-- message box functions -->
@@ -879,12 +885,12 @@
                         </div></ul>
                         
                         <div class="win98buttontitlebarinactive" style="position: absolute; margin-left:261px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
-                            <div class="splitt" style="position: absolute; height: 14px; margin-left: 28px"></div>
+                            <div class="verticalsplitter" style="position: absolute; height: 14px; margin-left: 28px"></div>
                             <div class="smallarrowdisableddown" style="margin-left: 31px; margin-top:7px"></div>
                             <div class="container" style="width:20px; height:11px; margin-top: -9px; margin-left: 3px; border:1px solid #000000; background-color: #008080;"></div>
                         </div> 
                         <div class="win98buttontitlebarinactive" style="position: absolute; margin-left:312px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
-                            <div class="splitt" style="position: absolute; height: 14px; margin-left: 28px"></div>
+                            <div class="verticalsplitter" style="position: absolute; height: 14px; margin-left: 28px"></div>
                             <div class="smallarrowdisableddown" style="margin-left: 31px; margin-top:7px"></div>
                         </div><br><br>
                         
@@ -896,12 +902,12 @@
                         <label style="position:absolute; margin-left:241px; margin-top: 0px; color:gray;"> Colour </label><br>
                         
                         <ul class="tree-view"  style="position: absolute; width:170px; height: 1px; background-color: silver; padding:10px">
-                            <div class="win98buttontitlebarinactive" style="position:absolute; margin-top: -8px; margin-left:162px; width:10px; height:11px;"><div class="arrowdisableddown" style="margin-left:1px; margin-top:3px"></div></div></ul>
+                            <div class="win98buttontitlebarinactive" style="position:absolute; margin-top: -8px; margin-left:162px; width:10px; height:11px;"><div class="arrowdisableddown" style="margin-left:-4px;"></div></div></ul>
                         <ul class="tree-view" style="position:absolute; width:41px; height:9px; margin-left:199px; background-color:silver">
-                                <div class="win98buttontitlebarinactive" style="position:absolute; margin-top: -4px; margin-left:29px; width:10px; height:11px;"><div class="arrowdisableddown" style="margin-left:1px; margin-top:3px"></div></div></ul>
+                                <div class="win98buttontitlebarinactive" style="position:absolute; margin-top: -4px; margin-left:29px; width:10px; height:11px;"><div class="arrowdisableddown" style="margin-left:-4px;"></div></div></ul>
                         
                         <div class="win98buttontitlebarinactive" style="position: absolute; margin-left:262px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
-                            <div class="splitt" style="position: absolute; height: 14px; margin-left: 28px"></div>
+                            <div class="verticalsplitter" style="position: absolute; height: 14px; margin-left: 28px"></div>
                             <div class="smallarrowdisableddown" style="margin-left: 31px; margin-top:7px"></div></div> 
                         
                         <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:0px; width:15px; height:15px; margin-left:312px;">
@@ -1113,32 +1119,60 @@
                     <a href="{Permalink}"><div class="win98titlebarbutton" title="Maximize"> <div class="maximize"></div></div></a> 
                     <a href="https://thealonic.tumblr.com/"><div class="win98titlebarbutton" title="Minimize"> <div class="minimize"></div></div></a> 
                     <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" title="Help"> <div class="help"></div></div></a> 
-                    <div class="title-bar-98" id="postwindow"> <div class="container" style="padding:2px;">🍭 very.vunnies
-                    </div></div>
+                    <div class="title-bar-98" id="postwindow" style="background-image:url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')"> 
+                        <div class="container" style="padding:2px;">🍭 very.vunnies - Windows Explorer</div></div>
+                                
+                    <div class="window-body">
+                    
+            <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+            <!-- Post headers body                                                                                                             -->
+            <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+
+                        <div class="container" style="height: 46px; margin-top:-6px;">
+                            <fieldset style="position:absolute; height: 44px; width: 467px; margin-left:-6px; padding:2px;"> 
+                                <div class="verticaltasksplitter" style="margin-top:2px;"></div>
+                                <div class="windowsexplorerlogo"></div>
+                                <div class="verticalsplitter" style="float:right; height:21px;"></div>
+                                {block:NoteCount} 
+                                <div class="container" style="float:right; margin-top:4px; margin-right:3.5px;">{NoteCountWithLabel}</div>
+                                <div class="verticalsplitter" style="float:right; margin-right:5px; height:21px;"></div>
+                                {/block:NoteCount}
+                                
+                                <a href="https://thealonic.tumblr.com/"><div class="container" style="position: absolute; margin-left:2px; height:22px; width:49px;">
+                                    <div class="explorerback" style="margin-left:4.5px;"></div> <div class="container" style="margin-top:4px;">Back</div></div></a>
+                                <div class="verticalsplitter" style="position: absolute; margin-left:55px; height:21px;"></div> 
+                                <div class="container" style="margin-left:63.5px; margin-top:4px; width:400px;">
+                                    {block:RebloggedFrom} 
+                                    Posted on <strong style="color: blue; cursor:default; margin-right:-1px" title="Day of posting">{ShortMonth} {DayOfMonth}{DayOfMonthSuffix} </strong>
+                                    at: <strong style="color: blue; cursor:default;" title="Time of posting"> {12Hour}:{Minutes} {CapitalAmPm}</strong>, {Year}
+                                    {/block:RebloggedFrom} 
+                                    {block:NotReblog} 
+                                        <label>Posted by</label> 
+                                        <strong style="color: blue; cursor:default;" title="Day of posting">Thealonic</strong>
+                                        <label style="margin-left:2px;">{TimeAgo}</label>.
+                                    {/block:NotReblog}</div>
+                                   
+                                <div class="menuapplicationsplit" style="width:468px; margin-left:-1px; margin-top: 3px; margin-bottom: 0px"> </div>
+                                
+                                <div class="verticaltasksplitter" style="margin-top:2px;"></div>
+                                <div class="container" style="position:absolute; margin-left:12.5px; margin-top:4px; width:400px;">Address</div>
+                                <ul class="tree-view" style="position:absolute; width:300px; height:9px; margin-left:55.5px; overflow:hidden;">
+                                    <div class="win98buttontitlebarinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px; width:10px; height:11px;">
+                                        <div class="arrowdisableddown" style="margin-left:-4px;"></div></div>
+                                    <div class="container" style="margin-top:-2px">https://thealonic.tumblr.com/post/{PostID}</div></ul>
+                                
+                                <a href="{Permalink}"><div class="container" style="position: absolute; margin-left:368px; height:22px; width:49px;">
+                                    <div class="explorergo" style="margin-left:5.5px;"></div> <div class="container" style="margin-top:4px;">Go</div></div></a>
+                                <div class="verticalsplitter" style="position;absolute; height:22px;margin-left:417px;"></div>
+                                <div class="verticaltasksplitter" style="margin-left:421px; margin-top:-20px;"></div>
+                                <div class="container" style="position: absolute; margin-left:419px; margin-top:-22px; height:22px; width:49px;">
+                                    <div class="container" style="position: absolute; margin-left:12.5px; margin-top:4px;">Links</div>
+                                    <div class="explorerlinks" style="position: absolute; margin-left:39px; margin-top:2px;"></div>
+                                    <div class="explorerlinks" style="position: absolute; margin-left:42px; margin-top:2px;"></div></div>
+                        </fieldset></div>
                                 
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
             <!-- Post window body                                                                                                              -->
-            <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-                                
-                    <div class="window-body" style="margin-top: 5px;">
-                    
-                        {block:RebloggedFrom} 
-                            Posted on <strong style="color: blue; cursor:default; margin-left:0.5px; margin-right:-1px" title="Day of posting">{ShortMonth} {DayOfMonth}{DayOfMonthSuffix} </strong>
-                            at: <strong style="color: blue; cursor:default;" title="Time of posting"> {12Hour}:{Minutes} {CapitalAmPm}</strong>, {Year}
-                        {/block:RebloggedFrom} 
-                        {block:NotReblog} 
-                            <label style="margin-left:0.5px;">Posted by</label> 
-                            <strong style="color: blue; cursor:default;" title="Day of posting">Thealonic</strong>
-                            <label style="margin-left:2px;">{TimeAgo}</label>.
-                        {/block:NotReblog}
-                            
-                        <div class="right" style="margin-top: -3px; margin-right: -6px; float: right">
-                            <fieldset>  <div class="content caption" style="color: black margin-left: -8px; margin-right: -5px; margin-top: -7px; margin-bottom: -5px; height:9px; width:100px; padding:2px">
-                                <div class="right" style="margin-bottom: -8px; float: right; cursor:default;"> {block:NoteCount}{NoteCountWithLabel}{/block:NoteCount} </div></div> 
-                        </fieldset> </div>
-                                
-            <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-            <!-- Post window internal                                                                                                          -->
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
                                 
                         <div class="filler"></div><div class="filler"></div>
@@ -1259,6 +1293,7 @@
                                                 
                                     <!-- Page Redirects -->
                                     {block:PermalinkPage}
+                                    
                                         {block:ContentSource}
                                             <div class="attribution" style="margin-left:4px;">({lang:Source}: 
                                                 <!-- Bottom post -->
@@ -1269,16 +1304,17 @@
             
                                         <!-- People who also rebloged / liked -->
                                         {block:PostNotes}
-                                        <div class="notes" style="margin-left: -2px; margin-bottom:-7px; margin-top:10px">
+                                            <div class="notes" style="margin-left: -2px; margin-bottom:-7px; margin-top:10px">
                                                 <div class="content caption" style="height:220px; width:400px; padding:3px;"> 
                                                     {PostNotes}
                                                 </div> <!-- content -->
+                                            </div>
                                             {/block:PostNotes}
-                                        </div>
                                         {/block:PermalinkPage}
+                                        
                                     {/block:PermalinkPage}
+                                    <div class="win98buttoninactive" style="margin-top:-16px; margin-left:451px"><div class="arrowdisableddown" style="margin-top:-3px; margin-left:-3px"></div></div>
                                 </div>
-                                <div class="win98buttoninactive" style="margin-top:-16px; margin-left:451px"><div class="arrowdisableddown" style="margin-top:-3px; margin-left:-3px"></div></div>
         
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
             <!-- Scrollbar handling                                                                                                            -->
@@ -1304,7 +1340,7 @@
                         {/block:HasTags}
                         <div class="container" style="z-index:100; width:100px; float:right; margin-right:-5px;">
                             <a class="like-b" href="{ReblogURL}" target="_blank" style="float:right; margin-top:-22px; margin-right:1.5px;">reblog</a>
-                            <div class="splitt" style="float: right; margin-left: 3px; margin-right: 3px; margin-top:-25px; margin-right:34px"></div>
+                            <div class="verticalsplitter" style="float: right; margin-left: 3px; margin-right: 3px; margin-top:-25px; margin-right:34px; height:17px;"></div>
                             <a class="like-b" href="#" style="float:right; margin-top:-22px; margin-right:38.5px;">{LikeButton}<div class="b" style="background-color: silver; padding: 0px 2px 2px 6px; margin-left:-4px">like</div></a>
                         </div>
                         
@@ -1331,7 +1367,7 @@
                             <div class="container" style="width: 34px; height: 2px; margin-left: 328px; margin-top: -2px; display: block; cursor:default;" title="Post ID">
                                 <fieldset style="width:100%; height:1px;">
                                     <div class="content" style="-ms-transform: translateY(-50%); transform: translateY(-50%); margin-top:2px; margin-left:-3px; width:126px">
-                                        {PostID}
+                                        
                             </div></fieldset></div>
                                 
                             <div class="cornerpeice" style="margin-left: 455px; margin-top:1px; cursor:se-resize">  </div>
@@ -1380,7 +1416,7 @@
                                 <label style="margin-left: 2px; height: 36px"> Update log </label>
                         </div></label></a>
                         
-                        <!-- SPLITTER -->
+                        <!-- verticalsplitterER -->
                         <div class="menuapplicationsplit" style="width:139px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px"> </div>
                         
                         <!-- Programs -->
@@ -1429,7 +1465,7 @@
                                 <div class="menurun"></div>
                                 <label style="margin-left: 2px; height:36px"> Support development </label></div></a></label>   
                         
-                        <!-- SPLITTER -->
+                        <!-- verticalsplitterER -->
                         <div class="menuapplicationsplit" style="width:139px; margin-left: 2px; margin-top: 3px; margin-bottom: 4px"> </div>
                         
                         <!--Log off submenu -->
@@ -1925,7 +1961,7 @@
                                     <div class="menusettings5"></div> 
                                     <label style="margin-left: 8px; margin-top: 3px"> Active desktop </label> 
                                         <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow31"></div></div>
-                                <!-- SPLITTER -->
+                                <!-- verticalsplitterER -->
                                 <div class="menuapplicationsplit" style="width: 156px; margin-left: 2px; margin-top:3px; margin-bottom:2px"></div>
                                 <!--Folder options -->
                                 <div class="submenu20" style="margin-top: 3px">
