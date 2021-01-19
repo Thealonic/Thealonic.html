@@ -53,18 +53,20 @@
         <style type="text/css">
         
             :root { --spritesheet: url('https://cdn.discordapp.com/attachments/630047188520665121/800775512573083688/spritesheet.png'); 
+                    
+                    --defaultcat: url('https://cdn.discordapp.com/attachments/677255444682506240/783314809914392576/unknown.png');
+                    --defaultpyro: url('https://cdn.discordapp.com/attachments/662595661233127434/800859226875494400/ezgif-2-c475330a8091.gif');
+                    --defaultpyrotext: Wubba lubba dub dub!;
+                    
                     --inactive: url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png');
-                    --active: url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png');}
+                    --active: url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png');
+                    --inactivetask: url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png');
+                    --activetask: url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png');
+            }
         
             /* addresses */
-            body {      background: url('https://cdn.discordapp.com/attachments/630047188520665121/786208918119514112/wallpaper32.png') repeat fixed; 
-                        background-size: cover; margin: 0; font: normal 13px/1.3 {font:Font}; padding: auto auto auto auto }
+            body {      background: url('https://cdn.discordapp.com/attachments/630047188520665121/786208918119514112/wallpaper32.png') repeat fixed; background-size: cover; margin: 0px; padding: auto auto auto auto;}
             html{       max-width: 100%; overflow-x: hidden;}
-            
-            a {         color: #000000; text-decoration: none; }
-            a:hover {   text-decoration: underline; color: #ffffff; }
-            span {      background-color: #008383; }
-            taskbar {   background-color: #c0c0c0; font: normal; color: black }
             
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* Tumblr post handling */
@@ -73,17 +75,17 @@
             /* desktop config settings */
             #desktop, .navigation { margin: 10px auto 0px auto; position: relative; width: 1010px;} /* whole thing */
             body.permalink_page #desktop, 
-            body.permalink_page .navigation { width: 480px; }
-            body.infinite_scrolling .navigation, .inf_scr { display: none; }
+            body.permalink_page .navigation { width: 480px;}
+            body.infinite_scrolling .navigation, .inf_scr { display: none;}
     
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* Desktop setup css */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
 
             /* taskbar icon setup */
-            .icons {        margin: 0 0 0 0; padding: -10px; width: 100px; float: left; position: fixed; z-index: 1; font-size: 12px }
-            .icons2 {       margin: 0 0 0 80px; padding: -10px; width: 100px; float: left; position: fixed; z-index: 1; font-size: 12px }
-            .icon_label {   padding-top: 6px; padding-bottom: 10px; color: {color:Icon Links Color}; text-align: center; font-family:Arial; } /* Icon gaps */
+            .icons {        margin: 0 0 0 0; padding: -10px; width: 100px; float: left; position: fixed; z-index: 1; font-size: 12px;}
+            .icons2 {       margin: 0 0 0 80px; padding: -10px; width: 100px; float: left; position: fixed; z-index: 1; font-size: 12px;}
+            .icon_label {   padding-top: 6px; padding-bottom: 10px; color: {color:Icon Links Color}; text-align: center; font-family:Arial;} /* Icon gaps */
             .thealonic {    height: 72px; width: 100px; background-position: 14px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/677255444682506240/774189990380044288/master_sprite10.png');}
             
             /* sidebar */
@@ -99,24 +101,27 @@
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* Window bar handling */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
-    
+            
+            .filler {   height: 2px; }
+            
             /* custom css for post windows apposed to the default win98 css */
             .win98container{        box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
-            /*startmenu*/           font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute; font-size: 11px }
+            /*startmenu*/           font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute; font-size: 11px;}
+            .window-body{           margin:8px;}
             
             .win98post{             box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #dfdfdf,inset -2px -2px grey,inset 2px 2px #fff;background:silver;padding:3px;
             /*randomimagesmenu*/    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
             .title-bar-posts{       font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px; background-image: var(--active); height: 18px; width: 100%}
             .title-bar-small{       font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px; background-image: var(--inactive); height: 18px; width: 100%}
-            .title-bar-98{          font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px; background-image: var(--inactive); height: 18px; width: 100%}
+            .title-bar-98{         font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px; background-image: var(--inactive); height: 18px; width: 100%}
 
             /* window  post handling */
             .window{                box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #dfdfdf,inset -2px -2px grey,inset 2px 2px #fff;background:silver;padding:3px; z-index:2;
                                     font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
             /*.title-bar{           background: url('https://cdn.discordapp.com/attachments/630047188520665121/791289642578214912/title-bar_gradientopen.png'); height: 18px; width:194px;}*/
             /*title-bar.inactive{   background: url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png'); height: 18px; width:194px;}*/
-            .title-bar-text{        font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color:#fff; letter-spacing:0; margin-right:24px; padding:2px 4px 2px 4px;}
-            .titletext {            padding:2px 4px 2px 4px; } /*backup css*/
+            .title-bar-text{        font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color:#fff; letter-spacing:0; margin-right:24px; padding:1px 4px 2px 4px; cursor: context-menu;}
+            .titletext {            padding:2px 4px 2px 4px; cursor: context-menu; } /*backup css*/
             
             .win98innerbox{         box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #fff,inset -2px -2px grey,inset 2px 2px #dfdfdf;background:silver;padding:3px;
             /*randomimagesmenu*/    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
@@ -124,19 +129,23 @@
             /* window title bar button handling */
             .win98titlebarbutton{           width:10px; height: 8px; float:right; box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
                                             font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top:2px;}
-            .win98titlebarbutton:active{    width:10px; height: 8px; float:right; box-shadow:inset 1px 1px #0a0a0a,  inset -1px -1px #fff, inset -2px -2px #dfdfdf, inset 2px 2px grey; background:silver; padding:3px; 
+            .win98titlebarbutton:active{    width:11px; height: 8px; float:right; box-shadow:inset 1px 1px #0a0a0a,  inset -1px -1px #fff, inset -2px -2px #dfdfdf, inset 2px 2px grey; background:silver; padding:3px; 
                                             font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top:2px; margin-left: -1px; transition: width 0.1s;}
             .win98buttontitlebarinactive{   width:10px; height: 8px; float:right; box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
                                             font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-left: 1px; margin-right:1px; margin-top:2px; position: absolute;}
-            .win98buttoninactive{           width:10px; height: 10px; float:right; box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
+            .win98buttonscrollinactive{           width:10px; height: 10px; float:right; box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
                                             font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-left: 1px; position: absolute;}                 
               
             /* General button handling */
             .win98button{           box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
-                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute; height:16px; cursor:pointer}
+                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; height:16px; cursor:pointer;}
             .win98button:active{    box-shadow:inset 1px 1px #0a0a0a,  inset -1px -1px #fff, inset -2px -2px #dfdfdf, inset 2px 2px grey; background:silver; padding:3px; 
-                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute; transition: width 0.1s; height:16px; cursor:pointer}
-                                    
+                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; transition: width 0.1s; height:16px; cursor:pointer;}
+            .win98buttoninactive{   box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; margin-bottom: 4px;
+                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; height:16px; cursor:pointer;}
+            
+            .buttontext{            display:inline-flex; align-items:center; }
+                       
             .win98scroll{           width:10px; height: 10px; float:right; box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
                                     font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
             .win98scroll:active{    width:10px; height: 10px; float:right; box-shadow:inset 1px 1px #0a0a0a,  inset -1px -1px #fff, inset -2px -2px #dfdfdf, inset 2px 2px grey; background:silver; padding:3px; 
@@ -145,39 +154,41 @@
                                     font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
                                     
             .win98tab{              box-shadow:inset -1px 0px #0a0a0a,inset 1px 1px #fff,inset -2px 0px grey,inset 2px 2px #dfdfdf;background:silver;padding:3px; border-radius: 2px;
-                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute; z-index; 100}
+                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute; z-index; 100;}
+            
+            .disabledfont{          font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; color:grey; text-shadow:1px 1px 0 #fff;}
                               
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* Window icon handling */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
             
             .help, .minimize, .maximize, .close { 
-                background-image: var(--spritesheet); width:12px; height:10px; margin-top: -1px; margin-left: -1px; }
+                background-image: var(--spritesheet); width:12px; height:10px; margin-top: -1px; margin-left: -1px;}
             .help {     background-position:  -66px -215px;} /* help */         .minimize { background-position:  -82px -215px;} /* minimize */
             .maximize { background-position:  -98px -215px;} /* maximize */     .close {    background-position: -114px -215px;} /* close */
             
             /* tumblr post post icons */
             .scrollup, .scrollright, .scrolldown, .scrollleft, .cornerpeice, .smallscrollup, .smallscrolldown { 
-                background-image: var(--spritesheet); height: 16px; width: 16px; margin-top: -3px; margin-left: -3px; }
-            .scrolldown {   background-position:    0px -212px; }       .scrollleft {   background-position:  -16px -212px; }
-            .scrollup {     background-position:  -32px -212px; }       .scrollright {  background-position:  -48px -212px; }
+                background-image: var(--spritesheet); height: 16px; width: 16px; margin-top: -3px; margin-left: -3px;}
+            .scrolldown {   background-position:    0px -212px; }       .scrollleft {   background-position:  -16px -212px;}
+            .scrollup {     background-position:  -32px -212px; }       .scrollright {  background-position:  -48px -212px;}
             
-            .cornerpeice {      background-position: -192px -212px; height: 16px; width: 16px; }
+            .cornerpeice {      background-position: -192px -212px; height: 16px; width: 16px;}
             .smallscrollup {    background-position: -211px -220px; height:  3px; width:  3px;}
             .smallscrolldown {  background-position: -211px -224px; height:  3px; width:  3px;}
 
             .tinyarrowdisableddown {    background-image: var(--spritesheet); height:  3px; width:  4px; background-position: -165px -220px;}
             .smallarrowdisableddown {   background-image: var(--spritesheet); height:  4px; width:  6px; background-position: -164px -219px;}
-            .arrowdisableddown {        background-image: var(--spritesheet); height: 16px; width: 16px; background-position: -158px -212px; margin-top:-3px; margin-left:-3px}
+            .arrowdisableddown {        background-image: var(--spritesheet); height: 16px; width: 16px; background-position: -158px -212px; margin-top:-3px; margin-left:-3px;}
             .tinyarrowdisabledup {      background-image: var(--spritesheet); height:  3px; width:  4px; background-position: -211px -212px;}
-            .arrowdisableup {           background-image: var(--spritesheet); height: 16px; width: 16px; background-position: -175px -212px; margin-top:-3px; margin-left:-3px}
-            .menuarrow1 {               background-image: var(--spritesheet); height:  7px; width:  4px; background-position: -150px -216px; margin: auto; float: right; }
+            .arrowdisableup {           background-image: var(--spritesheet); height: 16px; width: 16px; background-position: -175px -212px; margin-top:-3px; margin-left:-3px;}
+            .menuarrow1 {               background-image: var(--spritesheet); height:  7px; width:  4px; background-position: -150px -216px; margin: auto; float: right;}
             
             .explorerlinks { background-image: var(--spritesheet); height:  5px; width:  4px; background-position: -211px  -222px;}
             
             /* tumblr post container things */
             .sidescrollbarmiddlemiddle {    height:  2px; width:467px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/800356725827698728/window_width.png'); background-repeat: repeat-y; overflow:hidden;}
-            .scrollbarcontainer {           width:16px; height:16px; background:silver; position: right; position: absolute; padding:0px; }
+            .scrollbarcontainer {           width:16px; height:16px; background:silver; position: right; position: absolute; padding:0px;}
             .notestopbar {                  background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/786639077117657168/boarder.png'); width:477px; height: 8px;}
             
         /* ----------------------------------------------------------------------------------------------------------------------------- */
@@ -186,27 +197,27 @@
 
             /* Post settings */
             .start_bar {                    position: fixed; background-color: rgb(192,192,192); bottom: 0; height: 28px; width: 100%; z-index: 3; font-family:sans-serif; font-size: 12px;}
-            .start_bar .top_border {        border-bottom: 1px solid rgb(255,255,255); border-top: 1px solid rgb(223,223,223); }
-            .start_bar .big_seperator {     float: left; border-left: 1px solid rgb(128,128,128); border-right: 1px solid rgb(255,255,255); height: 22px; margin-top: 2px; margin-left: 2px; }
+            .start_bar .top_border {        border-bottom: 1px solid rgb(255,255,255); border-top: 1px solid rgb(223,223,223);}
+            .start_bar .big_seperator {     float: left; border-left: 1px solid rgb(128,128,128); border-right: 1px solid rgb(255,255,255); height: 22px; margin-top: 2px; margin-left: 2px;}
             .start_bar .small_seperator {   float: left;  border-left: 1px solid rgb(255,255,255); border-top: 1px solid rgb(255,255,255); margin-top: 4px; margin-left: 2px;
-                                            border-right: 1px solid rgb(128,128,128); border-bottom: 1px solid rgb(128,128,128); background-color: rgb(192,192,192); width: 1px; height: 16px; }
+                                            border-right: 1px solid rgb(128,128,128); border-bottom: 1px solid rgb(128,128,128); background-color: rgb(192,192,192); width: 1px; height: 16px;}
                                                 
             .verticalsplitter {   background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/800753200377495602/vertical_splitter.png'); height: 16px; width: 2px; background-repeat: repeat-y;}
 
             /* tray config */
-            .start_bar .time {      line-height: 18px; float: right; font-size: 10px; margin-right: 10px; }
-            .taskbaricons {         float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px; }
+            .start_bar .time {      line-height: 18px; float: right; font-size: 10px; margin-right: 10px;}
+            .taskbaricons {         float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px;}
             
             .start_bar .tray {      border-top: 1px solid rgb(128,128,128); border-left: 1px solid rgb(128,128,128);border-bottom: 1px solid rgb(255,255,255); border-right: 1px solid rgb(255,255,255);
-                                    height: 18px; width: 79px; margin-right: 5px; margin-top: 2px; float: right; } 
+                                    height: 18px; width: 79px; margin-right: 5px; margin-top: 2px; float: right;} 
             
             /* start menu application icon config */
-            .submenu18 {        height: 18px; background-color:white;   color: black; width:100%; }
+            .submenu18 {        height: 18px; background-color:white;   color: black; width:100%;}
             
-            .submenu20 {        height: 20px; background-color:#c0c0c0; color: black; width:100%; }
-            .submenu20:hover {  height: 20px; background-color:#00207c; color: white; width:100%; }
-            .submenu36 {        height: 36px; background-color:#c0c0c0; color: black; width:100%; }
-            .submenu36:hover {  height: 36px; background-color:#00207c; color: white; width:100%; }
+            .submenu20 {        height: 20px; background-color:#c0c0c0; color: black; width:100%;}
+            .submenu20:hover {  height: 20px; background-color:#00207c; color: white; width:100%;}
+            .submenu36 {        height: 36px; background-color:#c0c0c0; color: black; width:100%;}
+            .submenu36:hover {  height: 36px; background-color:#00207c; color: white; width:100%;}
             
             /* start menu button toggle */
             .startbutton {          background-image: var(--spritesheet); height: 22px; width: 54px; margin-left: 2px; margin-top: 2px; background-position:  -54px -36px;}
@@ -222,7 +233,7 @@
             /* start menu icon references */
             .patchnotes,    .menuprograms,  .menudocuments, .menufavourites, .menushutdown, .logofficon,
             .menusettings,  .menufind,      .menuhelp,      .menurun,        .menulogoff,   .shutdownicon
-            { background-image: var(--spritesheet); margin: auto; float: left; height: 36px; width: 36px; }
+            { background-image: var(--spritesheet); margin: auto; float: left; height: 36px; width: 36px;}
                 
             .patchnotes {       background-position:    0px   0px;} /* Patchnotes */
             .menuprograms {     background-position:  -36px   0px;} /* Programs */
@@ -258,7 +269,7 @@
             .menudocuments1,    .none,                  .menufavouriteslink,    .taskbaricon4,
             .menudocumentsdoc,                          .explorergo,
             .menudocumentssound,                        .explorerback,          .calendar
-            { background-image: var(--spritesheet); margin: auto; float: left; height: 20px; width: 20px; }
+            { background-image: var(--spritesheet); margin: auto; float: left; height: 20px; width: 20px;}
 
             .menuapplications7 {    background-position:  -20px  -92px;} /* calc */             .menuapplications12 {   background-position:    0px -112px;} /* ask */
             .menuapplications8 {    background-position:  -40px  -92px;} /* img */              .menuapplications13 {   background-position:  -20px -112px;} /* yahoo */
@@ -293,7 +304,7 @@
             .menudocumentsdoc {     background-position: -220px -152px;} /* document file */    .menusettings5 {        background-position: -220px -172px;} /* Active desktop */
             .menufavouriteslink {   background-position: -200px -152px;} /* favourates link */  .menusettings6 {        background-position: -240px -172px;} /* windows update */
             .menufavouritesfolder { background-position: -180px -152px;} /* favourite folder */ 
-                                                                                                .taskbaricon1 {         background-position:    0px -192px; } 
+                                                                                                .taskbaricon1 {         background-position:    0px -192px;} 
             .menufind1 {            background-position: -140px -192px;} /* files or folders */ .taskbaricon2 {         background-position:  -20px -192px; margin-left: 2px;} 
             .menufind2 {            background-position: -160px -192px;} /* computer */         .taskbaricon3 {         background-position:  -40px -192px; margin-left: 2px;} 
             .menufind3 {            background-position: -180px -192px;} /* on the internet */  .taskbaricon4 {         background-position:  -60px -192px; margin-left: 2px;}
@@ -302,10 +313,13 @@
             .explorergo {           background-position: -101px  -72px;}                        .none {                 background-position: -100px -192px;                   height: 18px; width: 18px;}
             .explorerback {         background-position: -121px  -72px;}
             
-            .taskbarapp1 
-                { background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png '); float: left; width: 160px; height: 22px; margin-top: 2px; margin-left: 4px;} /*tumblrposts*/
-            .taskbarapp2, .taskbarapp3, .taskbarapp4 
-                { background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png'); float: left; width: 160px; height: 22px; margin-top: 2px; margin-left: 4px;} /*pyroimage*/
+            .taskbarapp1 { background-image: var(--activetask); float: left; width: 160px; height: 22px; margin-top: 2px; margin-left: 4px;} /*tumblrposts*/
+            .taskbarapp2 { background-image: var(--inactivetask); float: left; width: 160px; height: 22px; margin-top: 2px; margin-left: 4px;}
+            .taskbarapp3 { background-image: var(--inactivetask); float: left; width: 160px; height: 22px; margin-top: 2px; margin-left: 4px;}
+            
+            .start_bar .time {  line-height: 18px; float: right; font-size: 10px; margin-right: 10px;}
+            .start_bar .calendar { float: left; margin-top: 1px; margin-left: 3px;}
+            .taskbaricons { float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px;}
             
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* Message box reference sheets */
@@ -313,17 +327,9 @@
                
             /* message box dumps */
             .pageimage2 { height: 195px; width: 190px; background-position: 0px   0px; background-image: url('https://cdn.discordapp.com/attachments/629307562885644308/783307887677014046/unknown.png');}
-            .pageimage3 { height: 190px; width: 190px; background-position: 0px   0px; background-image: url('https://cdn.discordapp.com/attachments/677255444682506240/783314809914392576/unknown.png');}
-            .pageimage4 { height: 190px; width: 190px; background-position: 0px   0px; background-image: url('https://cdn.discordapp.com/attachments/677255444682506240/783315603115999282/ezgif-7-c9e84b5f07f6.gif');}
-            .pageimage5 { height: 398px; width: 398px; background-position: 0px -20px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/789831202181873678/colour_window.png');}
-                
-            /* Message box position handling */
-            .discord {  position: fixed; top:  7%; right: 3%; z-index: 3; max-width:480px;}     .kofi { position: fixed; top: 50%; right: 5%; z-index: 3; max-width:480px;}
-
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
-        /* box references */
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
-        
+            .pageimage3 { height: 190px; width: 190px; background-position: 0px   0px; background-image: var(--defaultcat);}
+            .pageimage4 { height: 190px; width: 190px; background-position: 0px   0px; background-image: var(--defaultpyro);}
+            
             .displayboxdisplay {    width:184px; height:169px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/793562429425844234/display_window.png');}
             .displaycolour {        width:155px; height: 15px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/793567960446664714/unknown.png');}
             .energysaving {         width: 71px; height: 42px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/799657061062279208/energy.png');}
@@ -331,40 +337,73 @@
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* General formatting */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
+            
+            ul.tree-view { font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px;}
+            ul.tree-view { display:block; background:#ffffff; box-shadow:inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a; padding:6px; margin:0;}
+            ul.tree-view li { list-style-type:none;}
+            ul.tree-view a { text-decoration:none; color:#000;}
+            ul.tree-view a:focus { background-color:navy;color:#ffffff;}
+            ul.tree-view li { margin-top:3px;}
+            ul.tree-view ul { margin-top:3px;}
+            ul.tree-view ul { margin-left:16px; padding-left:16px; border-left:1px dotted grey;}
+            ul.tree-view ul>li { position:relative;}
+            ul.tree-view ul>li:before {content:""; display:block; position:absolute; left:-16px; top:6px; width:12px; border-bottom:1px dotted grey;}
+            ul.tree-view ul>li:last-child:after {content:""; display:block; position:absolute; left:-20px; top:7px; bottom:0; width:8px; background:#fff;}
+            ul.tree-view details { margin-top:0;}
+            ul.tree-view details[open] summary { margin-bottom:0;}
+            ul.tree-view ul details>summary:before { margin-left:-22px; position:relative; z-index:1;}
+            ul.tree-view details>summary:before { text-align:center; display:block; float:left; content:"+"; border:1px solid grey; width:8px; height:9px; line-height:8px; margin-right:5px; padding-left:1px; background-color:#fff; }
+            ul.tree-view details[open]>summary:before { content:"-"; }
+            
+            fieldset{ border:none; box-shadow:inset -1px -1px #fff,inset 1px 1px #0a0a0a,inset -2px -2px grey,inset 2px 2px #dfdfdf; padding:10px; padding-block-start:8px; margin:0}
+            legend{background:silver;}
+            .field-row{ display:flex;align-items:center;}
+            [class^=field-row]+[class^=field-row]{ margin-top:6px;}
+            .field-row>*+*{ margin-left:6px;}
+            .field-row-stacked{ display:flex;flex-direction:column;}
+            .field-row-stacked *+*{ margin-top:6px;}
+            
+            input[type=checkbox] { appearance:none; -webkit-appearance:none; -moz-appearance:none; margin:0; background:0; position:fixed; opacity:0; border:none} 
+            input[type=radio] { appearance:none; -webkit-appearance:none; -moz-appearance:none; margin:0; background:0; position:fixed; opacity:0; border:none}
+            input[type=checkbox]+label  { line-height:13px;}
+            input[type=radio]+label { line-height:13px;}
+            input[type=radio]+label { position:relative; margin-left:18px;}
+            select:focus { color:#ffffff; background-color:navy;}
+            select:focus option { color:#000; background-color:#fff;}
 
-            h3 { font-size: 2rem;}
-
-            .start_bar .time {  line-height: 18px; float: right; font-size: 10px; margin-right: 10px; }
-            .start_bar .calendar { float: left; margin-top: 1px; margin-left: 3px; }
-            .taskbaricons { float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px; }
-
+            h3 {        font-size: 2rem;}
+            a {         color: #000000; text-decoration: none;}
+            a:hover {   text-decoration: underline; color: #ffffff;}
+            span {      background-color: #008383;}
+            label {     display:inline-flex; align-items:center;}
+            
         /* ----------------------------------------------------------------------------------------------------------------------------- */
-        /* Additional HTML handle rendering                                                                                              */
+        /* tumblr post handling                                                                                                          */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
 
             .posts .photo img.image, .posts .audio img.artwork, .posts .html_photoset { display: block; width: 100%;}
             .posts .with_caption {margin-bottom: 1em;}
             .posts .photoset, .posts .audio .audio_player embed { display: block;}
-            .posts p:empty, .posts div:empty, body.permalink_page .posts .controls, .hide_if_last:last-child { display: none; }
+            .posts p:empty, .posts div:empty, body.permalink_page .posts .controls, .hide_if_last:last-child { display: none;}
             
             .content p > img { max-width: 100%; border-radius: 0;}
             .content p, blockquote, ul, ol  {margin: 0 0 0.8em 0;}
             .meta div {margin: 0 0 0.4em 0 !important;}
             .meta div a {text-decoration: none;}
-            #content #posts #tags .comma:last-child { display: none; }
+            #content #posts #tags .comma:last-child { display: none;}
             .content p:last-child, .content blockquote:last-child, .meta div:last-child { margin-bottom: 0 !important;} /* bottom of posts before footer */
             
             /* text Post settings */
-            blockquote { padding-left: 4px; border-left: 2px solid #ABABAB; border-left: 2px solid rgba(0,0,0,0.33); } /* lines at the side of posts */
-            .quote .dash { float: left; padding: 0 2px 0 2px; }
-            .quote .source { float: left; }
-            .chat .line:last-of-type { margin-bottom: 0; }
+            blockquote { padding-left: 5px; margin-top:-5px; margin-bottom:5px; border-left: 2px solid #ABABAB; border-left: 2px solid rgba(0,0,0,0.33); } /* lines at the side of posts */
+            .quote .dash { float: left; padding: 0 2px 0 2px;}
+            .quote .source { float: left;}
+            .chat .line:last-of-type { margin-bottom: 0;}
             .chat ul, .chat ol { padding: 0; list-style: none;}
             
             /* image Post settings */
-            .body img, .caption img { max-width: 100%; overflow: hidden; }
+            .body img, .caption img { max-width: 100%; overflow: hidden;}
             img.full_image {width: 451px} /* bottlenecks images */
-            .middle img { max-width: 451px; width: 100%; height: 100%; display: block; }
+            .middle img { max-width: 451px; width: 100%; height: 100%; display: block;}
             .photoset .wrapper {width: 100%; width: 451px;}
             a img { border: 0; };
             
@@ -397,13 +436,10 @@
             ol.notes li.note .answer_content { font-weight: normal; }
             ol.notes li.note blockquote { padding: 4px 10px; margin: 10px 0px 0px 25px; }
             ol.notes li.note blockquote a { text-decoration: none; }
-
+            
             .cf:before, .cf:after {content:" "; display:table}
             .cf:after{ clear:both }
             .cf{ *zoom:1 }
-            
-             /* gap maker */
-            .filler { height: 2px; }
             
             {CustomCSS}
             
@@ -514,7 +550,7 @@
             var windowstotal = 3;
             
             var discord = "url('https://cdn.discordapp.com/attachments/";
-            function pyrowindow(){ if(pyrotabs == 0){ document.getElementById("taskapp2").style.marginLeft = "-20000px"; windowstotal = windowstotal - 1}}
+            function pyrowindow(){ if(pyrotabs == 0){ document.getElementById("taskapp2").style.marginLeft = "-20000px";}}
 
                 var myPix = new Array(
                 discord + "672475563952439326/798493963824529418/unknown.png')",                discord + "630047188520665121/798499968289603604/unknown.png')", // fluer + trans gun 0-1
@@ -534,18 +570,19 @@
                 discord + "677255444682506240/798816411837399050/unknown.png')",                discord + "677255444682506240/798845723617263616/unknown.png')", // freesex + screaming cat 28
                 discord + "677255444682506240/799296225861566484/unknown.png')",                discord + "677255444682506240/799322617114656817/unknown.png')", // shiji emo + doge bed 30
                 discord + "677255444682506240/799324405855551508/unknown.png')",                discord + "677255444682506240/799325063291600956/unknown.png')", // rlm + airhorn tolet 32
-                discord + "677255444682506240/799327404904415302/unknown.png')",                discord + "677255444682506240/799328383078236160/unknown.png')"  // to paris + kermit
+                discord + "677255444682506240/799327404904415302/unknown.png')",                discord + "677255444682506240/799328383078236160/unknown.png')", // to paris + kermit 34
+                discord + "629307562885644308/783307887677014046/unknown.png')",                discord + "                                                 ')"  // mr bean +  36
                 )
                 
             var r_text = new Array (); 
-                r_text[0] = "Hi-dilly-ho, neighborinos!";   r_text[1] = "hand the purse over.";         r_text[2] = "bloody ell' chums ";           r_text[3] = "help";                         r_text[4] = "قطة غبية سخيف ، كريستوفر أبون ل"; 
-                r_text[5] = "let me hold you, darling.";    r_text[6] = "Spongbob Squarepants";         r_text[7] = "Who shot hannibal?";           r_text[8] = "(the cat is preggers)";        r_text[9] = "I'm a slut for a banana"; 
-                r_text[10] = "Tank Eater~";                 r_text[11] = "Fat cat with fat snax";       r_text[12] = "I'm a butterfly daddy!";      r_text[13] = "Blongongongongong";           r_text[14] = "I did it, I shot hannibal.";
-                r_text[15] = "Pussy fuckers";               r_text[16] = "gangnam style";               r_text[17] = "It seems today-";             r_text[18] = "piekreig";                    r_text[19] = "No one cared who until I sat";
-                r_text[20] = "Ass Eater~";                  r_text[21] = "rct2.exe";                    r_text[22] = "bort.png";                    r_text[23] = "i'm gay, miss.";              r_text[24] = "SEX AT SEX.COM";
-                r_text[25] = "'Silence in  the library'";   r_text[26] = "Neon Genesis Evanjollion";    r_text[27] = "Space Jam";                   r_text[28] = "My mom's crown jewels";       r_text[29] = "NOT THE CUM JAR";
-                r_text[30] = "Get out the phase, shinji";   r_text[31] = "doge bed";                    r_text[32] = "on";                          r_text[33] = "round the outside";           r_text[34] = "⠀";
-                r_text[35] = "Mmmhhjmmm... Homiee";         r_text[36] = "Neon Genesis Evanjollion";    r_text[37] = "Space Jam";                   r_text[38] = "My mom's crown jewels";       r_text[39] = "PWEASE MWISTER, DON'T PUT ME IN THE JAR";
+                r_text[0] = "💯 Hi-dilly-ho, neighborinos!";   r_text[1] = "💯 hand the purse over.";         r_text[ 2] = "💯 bloody ell' chums ";          r_text[ 3] = "💯 help";                        r_text[ 4] = "💯 قطة غبية سخيف ، كريستوفر أبون ل"; 
+                r_text[5] = "💯 let me hold you, darling.";    r_text[6] = "💯 Spongbob Squarepants";         r_text[ 7] = "💯 Who shot hannibal?";          r_text[ 8] = "💯 (the cat is preggers)";       r_text[ 9] = "💯 I'm a slut for a banana"; 
+                r_text[10] = "💯 Tank Eater~";                 r_text[11] = "💯 Fat cat with fat snax";       r_text[12] = "💯 I'm a butterfly daddy!";      r_text[13] = "💯 Blongongongongong";           r_text[14] = "💯 I did it, I shot hannibal.";
+                r_text[15] = "💯 Pussy fuckers";               r_text[16] = "💯 gangnam style";               r_text[17] = "💯 It seems today-";             r_text[18] = "💯 piekreig";                    r_text[19] = "💯 No one cared who until I sat";
+                r_text[20] = "💯 Ass Eater~";                  r_text[21] = "💯 rct2.exe";                    r_text[22] = "💯 bort.png";                    r_text[23] = "💯 i'm gay, miss.";              r_text[24] = "💯 SEX AT SEX.COM";
+                r_text[25] = "💯 'Silence in  the library'";   r_text[26] = "💯 Neon Genesis Evanjollion";    r_text[27] = "💯 Space Jam";                   r_text[28] = "💯 My mom's crown jewels";       r_text[29] = "💯 NOT THE CUM JAR";
+                r_text[30] = "💯 Get out the phase, shinji";   r_text[31] = "💯 doge bed";                    r_text[32] = "💯 on";                          r_text[33] = "💯 round the outside";           r_text[34] = "💯 ⠀";
+                r_text[35] = "💯 Mmmhhjmmm... Homiee";         r_text[36] = "💯 chopstick slammer";           r_text[37] = "💯 Space Jam";                   r_text[38] = "💯 My mom's crown jewels";       r_text[39] = "💯 PWEASE MWISTER, DON'T PUT ME IN THE JAR";
 
             var tick = 3;
             var randomNum = Math.floor(Math.random() * myPix.length);
@@ -562,33 +599,31 @@
                     } else { randomNum2 = Math.floor(Math.random() * myPix.length);
                         randomNum = randomNum2
                         document.getElementById("pyrotext").textContent= r_text[randomNum]; 
-                        document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum]; randomNum = randomNum2;
-                    }
+                        document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum]; randomNum = randomNum2;}
                     if(tick == 4){ document.getElementById("pyrobutton").textContent="Definately";}
                     if(tick == 3){ document.getElementById("pyrobutton").textContent="Probably!";}
                     if(tick == 2){ document.getElementById("pyrobutton").textContent="Maybe?";}
                     if(tick == 1){ document.getElementById("pyrobutton").textContent="No.";}
                     
                     if(randomNum == 30){ document.getElementById("pyrobutton").textContent="Nuzzles"; }
-                    
+
                     tick = tick - 1;
                 } else { 
                     document.getElementById("pyro").style.marginLeft = "-20000px"; pyrowindow(); 
-                    tick = 3; document.getElementById("pyrobutton").textContent="Definately"; document.getElementById("pyrotext").textContent = "💯 bloody ell' chums" ;
-                    document.getElementById("pyroimage").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/677255444682506240/783315603115999282/ezgif-7-c9e84b5f07f6.gif')"
+                    tick = 3; document.getElementById("pyrobutton").textContent="Definately"; document.getElementById("pyrotext").textContent = '💯 Wubba lubba dub dub!';
+                    document.getElementById("pyroimage").style.backgroundImage = "var(--defaultpyro)"
             }}
 
         </script>
         
-        <div class="win98post" style="z-index: 5; height: 246px; width:194px; position: fixed; top: 68%; left: 4%; position: absolute" onmousedown="catactive();" id="cat">
+        <div class="win98post" style="z-index: 5; width:194px; position: fixed; top: 68%; left: 4%; position: absolute" onmousedown="catactive();" id="cat">
                     <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="catclose(); pyrowindow();"><div class="close"></div></div>
                         <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
-                    <div class="title-bar-small" id="catwindow" style="width:194px;"> <div class="container" style="padding:2px; cursor: default;">🙀 cat 
-                    </div></div>
+                    <div class="title-bar-small" id="catwindow" style="width:194px;"> <div class="title-bar-text">🙀 cat </div></div>
                     <div class="messagewindowbody" style="margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: -2px">
                         <div class="pageimage3"></div>
-                        <div class="filler"></div>
-                        <button disabled style="margin-left:55px; margin-top: 3px; margin-bottom: -2px;">OK</button>
+                        <center><div class="win98buttoninactive" style="width:70px; margin-top: 4px; margin-bottom: 4px;"> 
+                    <div class="disabledfont" style="margin-top: 2px;cursor:pointer" id="pyrobutton">Ok</div> </div></center>
         </div></div>
             
         <script>
@@ -600,24 +635,23 @@
                 document.getElementById("catwindow").style.backgroundPosition = "-150px";
                 document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";} 
                 
-            function catclose() { 
+            function catclose() { pyrowindow();
                 pyroButtonOpen = true; window2 = false;
                 document.getElementById("cat").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; 
                 document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";
-                pyrowindow(); idleactive(); inactiveall();}
+                idleactive(); inactiveall();}
                 
         </script>
             
-        <div class="win98post" style="z-index: 5; width:194px; position: fixed; top: 58%; left: 13%;position: absolute" onmousedown="pyroactive();" id="pyro">
+        <div class="win98post" style="z-index: 5; width:194px; position: fixed; top: 58%; left: 12%; position: absolute" onmousedown="pyroactive();" id="pyro">
             <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="pyroclose();"><div class="close"></div></div>
                 <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
-            <div class="title-bar-small" id="pyrowindow" style="width:194px;"> <div class="container" style="padding:2px; cursor: default;" id="pyrotext">💯 bloody ell' chums 
-            </div></div>
+            <div class="title-bar-small" id="pyrowindow" style="width:194px;"> <div class="title-bar-text" id="pyrotext">💯 Wubba lubba dub dub! </div></div>
             <div class="messagewindowbody" style="margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px">
                 <div class="pageimage4" id="pyroimage"></div>
-                <div class="messagewindowbutton" style="margin-left:58px; margin-top: 5px;" onclick="pyroshuffle();">
-                            <button id="pyrobutton">Definately.</button>
-        </div></div></div>
+                <center><div class="win98button" style="width:70px; margin-top: 4px;" onclick="pyroshuffle();"> 
+                    <div class="buttontext" style="margin-top: 2px; margin-left:0.5px; cursor:pointer" id="pyrobutton">Definately.</div></div></center>
+        </div></div>
 
         <script> 
             function pyroactive() { 
@@ -627,11 +661,11 @@
                 document.getElementById("pyrowindow").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')";
                 document.getElementById("pyrowindow").style.backgroundPosition = "-150px";
                 document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png')";} 
-            function pyroclose() { 
+            function pyroclose() { pyrowindow();
                 pyroButtonOpen = true; window1 = false;
                 document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1;
                 document.getElementById("taskapp2").style.backgroundImage = "url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png')";
-                pyrowindow(); idleactive(); inactiveall();}
+                idleactive(); inactiveall();}
         </script>                
                             
         <!-- add more junk here -->
@@ -639,6 +673,9 @@
         <!-- add more junk here -->
 
         <script> 
+        
+            
+        
             function vunnyopen(){
                 idleactive(); inactiveall();
                 windowstotal = windowstotal + 1;
@@ -663,8 +700,7 @@
         <div class="win98post" style="height:  50px; width:306px; right: 8%; top: 63%; z-index:5" onmousedown="messageactive();" id="message">
              <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:2px; margin-top:2px;" onclick="messageclose()"><div class="close"></div></div>
              <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU"><div class="win98titlebarbutton" style="margin-top:2px; cursor: default;"> <div class="help"></div> </div> </a> 
-            <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="container" style="padding:2px; cursor: default;">🧮 brain go brrrrr
-            </div></div>
+            <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="title-bar-text">🧮 brain go brrrrr</div></div>
             <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
                 <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>18:00pm on January 18th, 2021. [GMT]</label></p>
         </div></div>
@@ -707,7 +743,7 @@
         <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; right:  3%; z-index:5; position: absolute" onmousedown="diskactive()" id="disk">
             <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:2px; margin-top:2px; cursor: pointer;" title="close" onclick="diskclose()"><div class="close"></div></div>
             <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="margin-top:2px" title="help"> <div class="help"></div></div></a> 
-            <div class="title-bar-98" id="diskwindow"> <div class="container" style="padding:2px; width: 398px; cursor: default;">📺 Display Properties
+            <div class="title-bar-98" id="diskwindow"> <div class="title-bar-text">📺 Display Properties
             </div></div>
             
             <!--container for the setting window -->
@@ -754,9 +790,9 @@
                     
                     <div class="container" style="position: absolute; margin-left:267px; margin-top: 2px; width:60px;">
                         <div class="win98button" style="position: absolute; width:60px;"> 
-                            <label style="margin-top: 1px; margin-left:11px; cursor:pointer"> Browse... </label> </div> 
+                            <label style="margin-top: 2px; margin-left:11px; cursor:pointer"> Browse... </label> </div> 
                         <div class="win98button" style="position: absolute;margin-top: 27px; width:60px;"> 
-                            <label style="margin-top: 1px; margin-left:11px; cursor:pointer"> Pattern </label> </div> 
+                            <label style="margin-top: 2px; margin-left:11px; cursor:pointer"> Pattern </label> </div> 
                         <label style="position: absolute;margin-top: 60px;">Display</label>
                         <select style="width:67px; margin-top:75px; padding:2px 3px 1px 1px">
                           <option selected>Center</option><option>Span</option><option>Stretch</option></select>
@@ -784,7 +820,7 @@
     
                         <div class="container" style="position: absolute; width:10px; height: 100%; margin-left:228px; margin-top:-4px; ">
                             <div class="win98scroll"><div class="scrollup"></div></div>
-                            <div class="win98button" style="width:10px; height:54px; margin-top:16px"> </div>
+                            <div class="win98button" style="position:absolute; width:10px; height:54px; margin-top:16px"> </div>
                             <div class="win98scroll" style="margin-top:76px"><div class="scrolldown"></div>
                         </div></div>
                     </ul>
@@ -845,8 +881,7 @@
                             <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
                                 <div class="container" style="margin-top: -2px">
                                     <label style="position:absolute;">Normal</label>
-                                    <label style="position:absolute; margin-left: 40px; margin-top: 1px; color:white;"> Disabled </label>
-                                    <label style="position:absolute; margin-left: 39px; margin-top: 0px; color:gray;"> Disabled </label>
+                                    <div class="disabledfont" style="position:absolute; margin-left:39px; margin-top: -0px;">Disabled</div>
                                     <fieldset style="position:absolute; margin-left:85px; margin-top:-1px; padding:2px 4px 1px 4px"> Selected </fieldset> 
                                 </div>
                                 <ul class="tree-view"  style="width:274px; height:82px; margin-left: -3px; margin-top: 18px;">
@@ -871,51 +906,51 @@
                         <button disabled style="position: absolute; margin-left:199px; margin-top:-1px;">Save As...</button>
                         <button disabled style="position: absolute; margin-left:282px; margin-top:-1px;">Delete</button><br><br>
                         
-                        <label>Item</label><label style="margin-left:243px">Colour 1</label>
-                        <label style="position:absolute; margin-left:-97px; margin-top: 1px; color:white;"> Size </label>
-                        <label style="position:absolute; margin-left:-98px; margin-top: 0px; color:gray;"> Size </label>
-                        <label style="position:absolute; margin-left:16px; margin-top: 1px; color:white;"> Colour 2 </label>
-                        <label style="position:absolute; margin-left:15px; margin-top: 0px; color:gray;"> Colour 2 </label><br>
-                        <select style="position: absolute; width:190px; padding:2px 3px 1px 1px;"><option selected>Desktop</option></select>
-                        
-                        <ul class="tree-view" style="position:absolute; width:41px; height:9px; margin-left:199px; background-color:silver">
-                            <div class="container" style="margin-top: -4px; margin-left:27px">
-                                <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:0px; width:11px; height:2px;"><div class="tinyarrowdisabledup" style="margin-left:4px;"></div></div>
-                                <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:9px; width:11px; height:2px;"><div class="tinyarrowdisableddown"  style="margin-left:4px;"></div></div>
-                        </div></ul>
-                        
-                        <div class="win98buttontitlebarinactive" style="position: absolute; margin-left:261px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
-                            <div class="verticalsplitter" style="position: absolute; height: 14px; margin-left: 28px"></div>
-                            <div class="smallarrowdisableddown" style="margin-left: 31px; margin-top:7px"></div>
-                            <div class="container" style="width:20px; height:11px; margin-top: -9px; margin-left: 3px; border:1px solid #000000; background-color: #008080;"></div>
-                        </div> 
-                        <div class="win98buttontitlebarinactive" style="position: absolute; margin-left:312px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
-                            <div class="verticalsplitter" style="position: absolute; height: 14px; margin-left: 28px"></div>
-                            <div class="smallarrowdisableddown" style="margin-left: 31px; margin-top:7px"></div>
-                        </div><br><br>
+                        <!-- line 2 -->
+                        <div class="container" style="margin-top:5px;">
+                            <label>Item</label><label style="margin-left:243px">Colour 1</label>
+                            <div class="disabledfont" style="position:absolute; margin-left:200px; margin-top: -13px;">Size</div>
+                            <div class="disabledfont" style="position:absolute; margin-left:312px; margin-top: -13px;">Colour 2</div><br>
+                            <select style="position: absolute; width:190px; padding:2px 3px 1px 1px;"><option selected>Desktop</option></select>
+                            
+                            <ul class="tree-view" style="position:absolute; width:41px; height:9px; margin-left:199px; background-color:silver">
+                                <div class="container" style="margin-top: -4px; margin-left:27px">
+                                    <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:0px; width:11px; height:2px;"><div class="tinyarrowdisabledup" style="margin-left:4px;"></div></div>
+                                    <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:9px; width:11px; height:2px;"><div class="tinyarrowdisableddown"  style="margin-left:4px;"></div></div>
+                            </div></ul>
+                            
+                            <div class="win98buttontitlebarinactive" style="position: absolute; margin-left:261px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
+                                <div class="verticalsplitter" style="position: absolute; height: 14px; margin-left: 28px"></div>
+                                <div class="smallarrowdisableddown" style="margin-left: 31px; margin-top:7px"></div>
+                                <div class="container" style="width:20px; height:11px; margin-top: -9px; margin-left: 3px; border:1px solid #000000; background-color: #008080;"></div>
+                            </div> 
+                            <div class="win98buttontitlebarinactive" style="position: absolute; margin-left:312px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
+                                <div class="verticalsplitter" style="position: absolute; height: 14px; margin-left: 28px"></div>
+                                <div class="smallarrowdisableddown" style="margin-left: 31px; margin-top:7px"></div></div><br><br>
+                        </div>
                         
                         <!-- line 3 -->
-                        <label>Font</label>
-                        <label style="position:absolute; margin-left:178px; margin-top: 1px; color:white;"> Size </label>
-                        <label style="position:absolute; margin-left:178px; margin-top: 0px; color:gray;"> Size </label>
-                        <label style="position:absolute; margin-left:242px; margin-top: 1px; color:white;"> Colour </label>
-                        <label style="position:absolute; margin-left:241px; margin-top: 0px; color:gray;"> Colour </label><br>
-                        
-                        <ul class="tree-view"  style="position: absolute; width:170px; height: 1px; background-color: silver; padding:10px">
-                            <div class="win98buttontitlebarinactive" style="position:absolute; margin-top: -8px; margin-left:162px; width:10px; height:11px;"><div class="arrowdisableddown" style="margin-left:-4px;"></div></div></ul>
-                        <ul class="tree-view" style="position:absolute; width:41px; height:9px; margin-left:199px; background-color:silver">
-                                <div class="win98buttontitlebarinactive" style="position:absolute; margin-top: -4px; margin-left:29px; width:10px; height:11px;"><div class="arrowdisableddown" style="margin-left:-4px;"></div></div></ul>
-                        
-                        <div class="win98buttontitlebarinactive" style="position: absolute; margin-left:262px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
-                            <div class="verticalsplitter" style="position: absolute; height: 14px; margin-left: 28px"></div>
-                            <div class="smallarrowdisableddown" style="margin-left: 31px; margin-top:7px"></div></div> 
-                        
-                        <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:0px; width:15px; height:15px; margin-left:312px;">
-                            <label style="position:absolute; margin-top:1px; margin-left:5px; color:white; font-weight:700"> B </label>
-                            <label style="position:absolute; margin-left:4px; color:gray; font-weight:700"> B </label></div>
-                        <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:0px; width:15px; height:15px; margin-left:333px;">
-                            <label style="position:absolute; margin-top:1px; margin-left:5px; color:white;"> / </label>
-                            <label style="position:absolute; margin-left:4px; color:gray;">/ </label></div>
+                        <div class="container" style="margin-top:5px;">
+                            <label>Font</label>
+                            <div class="disabledfont" style="position:absolute; margin-left:200px; margin-top: -13px;">Size</div>
+                            <div class="disabledfont" style="position:absolute; margin-left:262px; margin-top: -13px;">Colour</div><br>
+                            
+                            <ul class="tree-view"  style="position: absolute; width:170px; height: 1px; background-color: silver; padding:10px">
+                                <div class="win98buttontitlebarinactive" style="position:absolute; margin-top: -8px; margin-left:162px; width:10px; height:11px;"><div class="arrowdisableddown" style="margin-left:-4px;"></div></div></ul>
+                            <ul class="tree-view" style="position:absolute; width:41px; height:9px; margin-left:199px; background-color:silver">
+                                    <div class="win98buttontitlebarinactive" style="position:absolute; margin-top: -4px; margin-left:29px; width:10px; height:11px;"><div class="arrowdisableddown" style="margin-left:-4px;"></div></div></ul>
+                            
+                            <div class="win98buttontitlebarinactive" style="position: absolute; margin-left:262px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
+                                <div class="verticalsplitter" style="position: absolute; height: 14px; margin-left: 28px"></div>
+                                <div class="smallarrowdisableddown" style="margin-left: 31px; margin-top:7px"></div></div> 
+                            
+                            <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:0px; width:15px; height:15px; margin-left:312px;">
+                                <label style="position:absolute; margin-top:1px; margin-left:5px; color:white; font-weight:700"> B </label>
+                                <label style="position:absolute; margin-left:4px; color:gray; font-weight:700"> B </label></div>
+                            <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:0px; width:15px; height:15px; margin-left:333px;">
+                                <label style="position:absolute; margin-top:1px; margin-left:5px; color:white;"> / </label>
+                                <label style="position:absolute; margin-left:4px; color:gray;">/ </label></div>
+                        </div>
                     </div>
             <!-- inner container end -->
             </div>
@@ -1006,7 +1041,7 @@
         <div class="win98post" style="z-index: 10; margin-left: 200000px; height: 119px; width: 284px; top: 40%; left:  40%;" id="logoff" onmousedown="logonactive();">
             <div class="win98titlebarbutton" style="margin-right:2px; margin-left:2px;" title="close" onclick="logoffno()"><div class="close"></div></div>
             <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" title="help"> <div class="help"></div></div></a> 
-            <div class="title-bar-98" id="logoffwindow"> <div class="container" style="padding:2px;">Log off Windows
+            <div class="title-bar-98" id="logoffwindow"> <div class="title-bar-text">Log off Windows
             </div></div>
         
             <div class="container" style="padding: 3px 3px 3px 3px; index: 100">     
@@ -1032,7 +1067,7 @@
         <div class="win98post" style="z-index: 10; margin-left: 200000px; height: 165px; width: 304px; top: 40%; left:  40%;" id="shutdown" onmousedown="shutdownactive();">
             <div class="win98titlebarbutton" style="margin-right:2px; margin-left:2px;" title="close" onclick="diskclose()"><div class="close"></div></div>
             <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" title="help"> <div class="help"></div></div></a> 
-            <div class="title-bar-98" id="shutdownwindow"> <div class="container" style="padding:2px;">Shut Down Windows
+            <div class="title-bar-98" id="shutdownwindow"> <div class="title-bar-text">Shut Down Windows
             </div></div>
             
             <div class="window-body" style="padding: 10px 10px 10px 10px; margin-top:40px; margin-left-10px; font-family: Arial; font-size: 11px;">
@@ -1115,33 +1150,34 @@
         <div id="desktop" class="container" id="desktop" style="width:1010px; left:-25px; margin-bottom:30px;">
             {block:Posts}
                 <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-left: 20px; position: absolute; cursor: default" onmousedown="tumblractive()" id="post">
-                    <div class="win98titlebarbutton" style="margin-right:2px; margin-left:2px;" title="Close" onclick=""><div class="close"></div></div>
-                    <a href="{Permalink}"><div class="win98titlebarbutton" title="Maximize"> <div class="maximize"></div></div></a> 
-                    <a href="https://thealonic.tumblr.com/"><div class="win98titlebarbutton" title="Minimize"> <div class="minimize"></div></div></a> 
+                    <div class="win98titlebarbutton" style="margin-right:2px; margin-left:2px;" title="Close"><div class="close"></div></div>
+                    <div class="win98titlebarbutton" title="Maximize" style=""> <div class="maximize"></div></div>
+                    <div class="win98titlebarbutton" title="Minimize"> <div class="minimize"></div></div>
                     <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" title="Help"> <div class="help"></div></div></a> 
                     <div class="title-bar-98" id="postwindow" style="background-image:url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')"> 
-                        <div class="container" style="padding:2px;">🍭 very.vunnies - Windows Explorer</div></div>
-                                
-                    <div class="window-body">
+                        <div class="title-bar-text">🍭 very.vunnies - Windows Explorer</div></div>
+                    <div class="window-body"> 
                     
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
             <!-- Post headers body                                                                                                             -->
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-
-                        <div class="container" style="height: 46px; margin-top:-6px;">
+                        
+                        <div class="post-header" style="height: 46px; margin-top:-6px;">
                             <fieldset style="position:absolute; height: 44px; width: 467px; margin-left:-6px; padding:2px;"> 
-                                <div class="verticaltasksplitter" style="margin-top:2px;"></div>
-                                <div class="windowsexplorerlogo"></div>
+                                
+                                <div class="verticaltasksplitter" style="margin-top:2px; margin-bottom: 2px"></div>
+                                <div class="windowsexplorerlogo"></div> <!-- right side of the top container -->
                                 <div class="verticalsplitter" style="float:right; height:21px;"></div>
                                 {block:NoteCount} 
-                                <div class="container" style="float:right; margin-top:4px; margin-right:3.5px;">{NoteCountWithLabel}</div>
+                                <div class="postnote-container" style="float:right; margin-top:4px; margin-right:3.5px;">{NoteCountWithLabel}</div>
                                 <div class="verticalsplitter" style="float:right; margin-right:5px; height:21px;"></div>
                                 {/block:NoteCount}
                                 
+                                 <!-- Left side of the top container -->
                                 <a href="https://thealonic.tumblr.com/"><div class="container" style="position: absolute; margin-left:2px; height:22px; width:49px;">
                                     <div class="explorerback" style="margin-left:4.5px;"></div> <div class="container" style="margin-top:4px;">Back</div></div></a>
                                 <div class="verticalsplitter" style="position: absolute; margin-left:55px; height:21px;"></div> 
-                                <div class="container" style="margin-left:63.5px; margin-top:4px; width:400px;">
+                                <div class="container" style="margin-left:63.5px; margin-top:5px; width:400px;">
                                     {block:RebloggedFrom} 
                                     Posted on <strong style="color: blue; cursor:default; margin-right:-1px" title="Day of posting">{ShortMonth} {DayOfMonth}{DayOfMonthSuffix} </strong>
                                     at: <strong style="color: blue; cursor:default;" title="Time of posting"> {12Hour}:{Minutes} {CapitalAmPm}</strong>, {Year}
@@ -1152,25 +1188,30 @@
                                         <label style="margin-left:2px;">{TimeAgo}</label>.
                                     {/block:NotReblog}</div>
                                    
-                                <div class="menuapplicationsplit" style="width:468px; margin-left:-1px; margin-top: 3px; margin-bottom: 0px"> </div>
+                                <div class="menuapplicationsplit" style="width:468px; margin-left:-1px; margin-top: 4px;"> </div>
                                 
-                                <div class="verticaltasksplitter" style="margin-top:2px;"></div>
-                                <div class="container" style="position:absolute; margin-left:12.5px; margin-top:4px; width:400px;">Address</div>
+                                <div class="verticaltasksplitter" style="margin-top:2px;"></div> <!-- Left side of the Bottom container -->
+                                <div class="container" style="position:absolute; margin-left:12.5px; margin-top:5px; width:400px;">Address</div>
                                 <ul class="tree-view" style="position:absolute; width:300px; height:9px; margin-left:55.5px; overflow:hidden;">
                                     <div class="win98buttontitlebarinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px; width:10px; height:11px;">
                                         <div class="arrowdisableddown" style="margin-left:-4px;"></div></div>
-                                    <div class="container" style="margin-top:-2px">https://thealonic.tumblr.com/post/{PostID}</div></ul>
+                                    <div class="menufavouriteslink" style="position:absolute; margin-top:-5px; margin-left:-5px;"></div>
+                                    <div class="container" style="margin-top:-1px; margin-left:16px;">https://thealonic.tumblr.com/post/{PostID}</div></ul>
                                 
                                 <a href="{Permalink}"><div class="container" style="position: absolute; margin-left:368px; height:22px; width:49px;">
-                                    <div class="explorergo" style="margin-left:5.5px;"></div> <div class="container" style="margin-top:4px;">Go</div></div></a>
+                                    <div class="explorergo" style="margin-left:5.5px;"></div> <div class="container" style="margin-top:5px;">Go</div></div></a>
                                 <div class="verticalsplitter" style="position;absolute; height:22px;margin-left:417px;"></div>
                                 <div class="verticaltasksplitter" style="margin-left:421px; margin-top:-20px;"></div>
-                                <div class="container" style="position: absolute; margin-left:419px; margin-top:-22px; height:22px; width:49px;">
-                                    <div class="container" style="position: absolute; margin-left:12.5px; margin-top:4px;">Links</div>
+                                <div class="postlinks-container" style="position: absolute; margin-left:419px; margin-top:-22px; height:22px; width:49px; cursor:pointer;">
+                                    <div class="container" style="position: absolute; margin-left:12.5px; margin-top:5px;">Links</div>
                                     <div class="explorerlinks" style="position: absolute; margin-left:39px; margin-top:2px;"></div>
                                     <div class="explorerlinks" style="position: absolute; margin-left:42px; margin-top:2px;"></div></div>
                         </fieldset></div>
-                                
+                        
+                        <!--
+                        <div class="win98container" id="startmenu" style="width:163px; height: 20px; margin-top:-23px; margin-left:463px;"> </div>
+                        -->
+                        
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
             <!-- Post window body                                                                                                              -->
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -1179,7 +1220,7 @@
                                 
                         <ul class="tree-view" style="margin-left:-6px; margin-bottom:26px; width: 471px; padding:0px; overflow:hidden;"> 
                             <div class="sidescrollbarmiddlemiddle" style="margin-left: 2px; height: 100%; margin-top:2px; margin-bottom:2px;">
-                            <div class="win98buttoninactive" style="margin-left: 451px;"><div class="arrowdisableup"></div></div>
+                            <div class="win98buttonscrollinactive" style="margin-left: 451px;"><div class="arrowdisableup"></div></div>
                             
                                  <!-- Normalised post container --> 
                                 <div class="container"  style="max-width: 451px;">
@@ -1293,14 +1334,6 @@
                                                 
                                     <!-- Page Redirects -->
                                     {block:PermalinkPage}
-                                    
-                                        {block:ContentSource}
-                                            <div class="attribution" style="margin-left:4px;">({lang:Source}: 
-                                                <!-- Bottom post -->
-                                                <a href="{SourceURL}" style="color:blue; font-weight:700">{SourceTitle}</a>{block:RebloggedFrom}, 
-                                                    {lang:Reblogged from}: <a href="{ReblogParentURL}"style="color:gray; font-weight:700">{ReblogParentName}</a>{/block:RebloggedFrom})
-                                            </div><div class="filler"></div>
-                                        {/block:ContentSource}
             
                                         <!-- People who also rebloged / liked -->
                                         {block:PostNotes}
@@ -1313,7 +1346,7 @@
                                         {/block:PermalinkPage}
                                         
                                     {/block:PermalinkPage}
-                                    <div class="win98buttoninactive" style="margin-top:-16px; margin-left:451px"><div class="arrowdisableddown" style="margin-top:-3px; margin-left:-3px"></div></div>
+                                    <div class="win98buttonscrollinactive" style="margin-top:-16px; margin-left:451px"><div class="arrowdisableddown" style="margin-top:-3px; margin-left:-3px"></div></div>
                                 </div>
         
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -1321,7 +1354,7 @@
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
                             
                                 {block:PostNotes}
-                                    <div class="win98buttoninactive" style="margin-top:-245px; margin-left:451px;"><div class="arrowdisableddown"></div></div>
+                                    <div class="win98buttonscrollinactive" style="margin-top:-245px; margin-left:451px;"><div class="arrowdisableddown"></div></div>
                                     <div class="win98scroll" style="margin-top:-221px; margin-left:451px;"><div class="scrollup"></div></div>
                                     <div class="win98scroll" style="margin-top:-16px; margin-left:451px"><div class="scrolldown" style="margin-top:-3px; margin-left:-3px"></div></div>
                                 {/block:PostNotes}
@@ -1335,7 +1368,7 @@
 
                         {block:HasTags}
                             <label style="position:absolute; height: 16px; max-width:410px; margin-top:-25px; margin-left:-4.5px; overflow:hidden; color: gray">
-                                {block:Tags}<a href="{TagURL}" style="color: grey; white-space: nowrap; margin-left:2px">{Tag}</a><div class="comma">, </div>{/block:Tags}
+                                {block:Tags}<a href="{TagURL}" style="color: grey; white-space: nowrap; margin-left:2px">{Tag}</a><div class="comma">, </div>{/block:Tags}<div class="container" style="background-color:silver; margin-left:-4px;"></div>
                             </label>
                         {/block:HasTags}
                         <div class="container" style="z-index:100; width:100px; float:right; margin-right:-5px;">
@@ -1349,29 +1382,30 @@
                             <!-- blogger container + recolour -->
                         <div class="content body" style="margin-left: -6px; margin-right: -6px; margin-top: -15px; margin-bottom: -6px; width:455px; height:18px; cursor:default;"> 
                                 
-                            <div class="container" title="Originally posted by">
-                                <fieldset style=" width:246px; height:1px;">
+                            <div class="container">
+                                <fieldset style="width:346px; height:1px;">
                                     <div class="content caption" style="-ms-transform: translateY(-50%); transform: translateY(-50%); margin-top:2px; margin-left:-3px" > 
-                                        {block:NotReblog}<p style="color:blue">Thea Vanherst</p>{/block:NotReblog}
-                                        {block:IsDeactivated}<p style="color:red">Deactivated</p>{/block:IsDeactivated}
-                                        {block:Submission}<p style="color:green">{Submitter}</p>{/block:Submission} </a>
-                                        {ReblogParentName} 
-                            </div></fieldset></div>
-                                
-                            <div class="container" style="width: 36px; height: 2px; margin-left: 269px; display: block; margin-top: -19px; cursor:default;" title="Post type">
+                                    <div class="menufind4" style="margin-top:-4px; margin-left:-7px; margin-right:1px;"></div> 
+                                        {block:ContentSource}
+                                            <a href="{SourceURL}" style="color:blue; font-weight:700" title="Source">{SourceTitle}</a>{block:RebloggedFrom}, 
+                                                {lang:Reblogged from}: <a href="{ReblogParentURL}"style="color:gray; font-weight:700" title="Reblogged from">{ReblogParentName}</a>{/block:RebloggedFrom}
+                                        {/block:ContentSource}
+                                        {block:NotReblog}<div class="container" style="margin-top:-1px">
+                                            <a href="https://twitter.com/VeryVhersty" target="_blank" style="color:blue; font-weight: bold;">Thea Vanherst</a></div>
+                                        {/block:NotReblog}
+                            </div></fieldset>
+                            
+                            <div class="container" style="width: 36px; height: 2px; margin-left: 369px; display: block; margin-top: -19px; cursor:default;" title="Post type">
                                 <fieldset style="width:100%; height:1px;">
                                     <div class="content" style="-ms-transform: translateY(-50%); transform: translateY(-50%); margin-top:2px; margin-left:-2px">
                                         {PostType}
                             </div></fieldset></div>
+                                
+                            <div class="container" style="width: 23px; height: 2px; margin-left: 428px; margin-top: -2px; cursor:default;">
+                                <fieldset style="width:100%; height:1px;"></fieldset></div>
                             
-                            <div class="container" style="width: 34px; height: 2px; margin-left: 328px; margin-top: -2px; display: block; cursor:default;" title="Post ID">
-                                <fieldset style="width:100%; height:1px;">
-                                    <div class="content" style="-ms-transform: translateY(-50%); transform: translateY(-50%); margin-top:2px; margin-left:-3px; width:126px">
-                                        
-                            </div></fieldset></div>
-                                
                             <div class="cornerpeice" style="margin-left: 455px; margin-top:1px; cursor:se-resize">  </div>
-                                
+                            </div>    
                         </div>
                     </div>  
                 </div>
@@ -1764,9 +1798,7 @@
                                 <!-- Startup Submenu -->
                                 <div class="win98container" style="margin-left: 20000px; margin-top:-103px; width:89px; height: 20px;" id="startupsubmenu"
                                            onmouseover="startupopen()" onmouseout="startupclose()">
-                                    <label style="margin-left: 20px; margin-top: 2px; color:white;"> (Empty) 
-                                    <label style="margin-left: -35px; margin-top: -0px; color:gray;"> (Empty) </label></label> </div>
-      
+                                    <div class="disabledfont" style="margin-left: 20px; margin-top: 3px">(Empty)</div> </div> 
                             </div>
         
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -1802,8 +1834,7 @@
                                 <!-- Channels Submenu -->
                                 <div class="win98container" style="margin-left: 20000px; margin-top: -103px; width:89px; height: 20px;" id="channelssubmenu"
                                            onmouseover="channelsopen()" onmouseout="channelsclose()">
-                                    <label style="margin-left: 20px; margin-top: 2px; color:white;"> (Empty) 
-                                    <label style="margin-left: -35px; margin-top: -0px; color:gray;"> (Empty) </label></label> </div>
+                                    <div class="disabledfont" style="margin-left: 20px; margin-top: 3px">(Empty)</div> </div>
                                 
                                 <!-- links submenu -->
                                 <div class="win98container" style="margin-left: 20000px; margin-top: -83px; width: 149px; height:120px" id="linkssubmenu" 
