@@ -338,108 +338,123 @@
         /* General formatting */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
             
-            ul.tree-view { font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px;}
-            ul.tree-view { display:block; background:#ffffff; box-shadow:inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a; padding:6px; margin:0;}
-            ul.tree-view li { list-style-type:none;}
-            ul.tree-view a { text-decoration:none; color:#000;}
-            ul.tree-view a:focus { background-color:navy;color:#ffffff;}
-            ul.tree-view li { margin-top:3px;}
-            ul.tree-view ul { margin-top:3px;}
-            ul.tree-view ul { margin-left:16px; padding-left:16px; border-left:1px dotted grey;}
-            ul.tree-view ul>li { position:relative;}
-            ul.tree-view ul>li:before {content:""; display:block; position:absolute; left:-16px; top:6px; width:12px; border-bottom:1px dotted grey;}
-            ul.tree-view ul>li:last-child:after {content:""; display:block; position:absolute; left:-20px; top:7px; bottom:0; width:8px; background:#fff;}
-            ul.tree-view details { margin-top:0;}
-            ul.tree-view details[open] summary { margin-bottom:0;}
-            ul.tree-view ul details>summary:before { margin-left:-22px; position:relative; z-index:1;}
-            ul.tree-view details>summary:before { text-align:center; display:block; float:left; content:"+"; border:1px solid grey; width:8px; height:9px; line-height:8px; margin-right:5px; padding-left:1px; background-color:#fff; }
-            ul.tree-view details[open]>summary:before { content:"-"; }
+            ul.tree-view {          font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px;}
+            ul.tree-view {          display: block; background: #ffffff; box-shadow: inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a; padding: 6px; margin: 0;}
+            ul.tree-view a {        text-decoration: none; color: #000;}
+            ul.tree-view a:focus {  background-color: navy; color: #ffffff;}
+            ul.tree-view li {       list-style-type: none;}
+            ul.tree-view li {       margin-top: 4px;}
             
-            fieldset{ border:none; box-shadow:inset -1px -1px #fff,inset 1px 1px #0a0a0a,inset -2px -2px grey,inset 2px 2px #dfdfdf; padding:10px; padding-block-start:8px; margin:0}
-            legend{background:silver;}
-            .field-row{ display:flex;align-items:center;}
-            [class^=field-row]+[class^=field-row]{ margin-top:6px;}
-            .field-row>*+*{ margin-left:6px;}
-            .field-row-stacked{ display:flex;flex-direction:column;}
-            .field-row-stacked *+*{ margin-top:6px;}
+            ul.tree-view ul {                       margin-top: 4px;}
+            ul.tree-view ul {                       margin-left: 16px; padding-left: 16px; border-left: 1px dotted grey;}
+            ul.tree-view ul>li {                    position:relative;}
+            ul.tree-view ul>li:before {             content:""; display: block; position: absolute; left: -16px; top: 6px; width: 12px; border-bottom: 1px dotted grey;}
+            ul.tree-view ul>li:last-child:after {   content: ""; display: block; position:absolute; left: -20px; top: 7px; bottom:0; width: 8px; background: #fff;}
+            ul.tree-view ul details>summary:before{ margin-left: -22px; position: relative; z-index: 1;}
             
-            input[type=checkbox] { appearance:none; -webkit-appearance:none; -moz-appearance:none; margin:0; background:0; position:fixed; opacity:0; border:none} 
-            input[type=radio] { appearance:none; -webkit-appearance:none; -moz-appearance:none; margin:0; background:0; position:fixed; opacity:0; border:none}
-            input[type=checkbox]+label  { line-height:13px;}
-            input[type=radio]+label { line-height:13px;}
-            input[type=radio]+label { position:relative; margin-left:18px;}
-            select:focus { color:#ffffff; background-color:navy;}
-            select:focus option { color:#000; background-color:#fff;}
+            ul.tree-view details {                      margin-top:0;}
+            ul.tree-view details>summary:before {       text-align: center; display: block; float: left; content: "+"; border: 1px solid grey; width: 8px; height: 9px; 
+                                                        line-height: 8px; margin-right: 5px; padding-left: 1px; background-color: #fff; }
+            ul.tree-view details[open] summary {        margin-bottom: 0;}
+            ul.tree-view details[open]>summary:before { content: "-"; }
+            
+            fieldset{   border: none; box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px grey, inset 2px 2px #dfdfdf; padding:10px; padding-block-start:8px; margin:0}
+            legend{         background: silver;}
+            
+            [class^=field-row]+[class^=field-row]{ margin-top: 6px;}
+            
+            .field-row{             display:flex; align-items: center;}
+            .field-row>*+*{         margin-left: 6px;}
+            .field-row-stacked{     display:flex; flex-direction: column;}
+            .field-row-stacked *+*{ margin-top: 6px;}
+            
+            input[type=checkbox] {          appearance: none; -webkit-appearance: none; -moz-appearance: none; margin: 0; background: 0; position: fixed; opacity: 0; border: none} 
+            input[type=radio] {             appearance: none; -webkit-appearance: none; -moz-appearance: none; margin: 0; background: 0; position: fixed; opacity: 0; border: none}
+            input[type=checkbox]+label  {   line-height: 13px;}
+            input[type=radio]+label {       line-height: 13px;}
+            input[type=radio]+label {       position: relative; margin-left: 18px;}
 
             h3 {        font-size: 2rem;}
             a {         color: #000000; text-decoration: none;}
             a:hover {   text-decoration: underline; color: #ffffff;}
             span {      background-color: #008383;}
-            label {     display:inline-flex; align-items:center;}
+            label {     display:inline-flex; align-items: center;}
             
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* tumblr post handling                                                                                                          */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
 
-            .posts .photo img.image, .posts .audio img.artwork, .posts .html_photoset { display: block; width: 100%;}
-            .posts .with_caption {margin-bottom: 1em;}
-            .posts .photoset, .posts .audio .audio_player embed { display: block;}
-            .posts p:empty, .posts div:empty, body.permalink_page .posts .controls, .hide_if_last:last-child { display: none;}
+            .posts .photo img.image {       display: block; width: 100%;}
+            .posts .audio img.artwork {     display: block; width: 100%;}
+            .posts .html_photoset {         display: block; width: 100%;}
+            .posts .with_caption {          margin-bottom: 1em;}
+            .posts .photoset {              display: block;}
+            .posts .audio .audio_player embed {     display: block;}
+            .posts p:empty {                        display: none;}
+            .posts div:empty {                      display: none;}
+            body.permalink_page .posts .controls {  display: none;}
+            .hide_if_last:last-child {              display: none;}
             
             .content p > img { max-width: 100%; border-radius: 0;}
-            .content p, blockquote, ul, ol  {margin: 0 0 0.8em 0;}
-            .meta div {margin: 0 0 0.4em 0 !important;}
-            .meta div a {text-decoration: none;}
+            .content p, blockquote, ul, ol  { margin: 0 0 0.8em 0;}
+            .meta div { margin: 0 0 0.4em 0 !important;}
+            .meta div a { text-decoration: none;}
             #content #posts #tags .comma:last-child { display: none;}
-            .content p:last-child, .content blockquote:last-child, .meta div:last-child { margin-bottom: 0 !important;} /* bottom of posts before footer */
+            .content p:last-child { margin-bottom: 0 !important;} 
+            .content blockquote:last-child { margin-bottom: 0 !important;}
+            .meta div:last-child { margin-bottom: 0 !important;} /* bottom of posts before footer */
             
             /* text Post settings */
-            blockquote { padding-left: 5px; margin-top:-5px; margin-bottom:5px; border-left: 2px solid #ABABAB; border-left: 2px solid rgba(0,0,0,0.33); } /* lines at the side of posts */
-            .quote .dash { float: left; padding: 0 2px 0 2px;}
-            .quote .source { float: left;}
-            .chat .line:last-of-type { margin-bottom: 0;}
-            .chat ul, .chat ol { padding: 0; list-style: none;}
+            blockquote {                padding-left: 5px; margin-top:-5px; margin-bottom:5px; border-left: 2px solid #ABABAB; border-left: 2px solid rgba(0,0,0,0.33); } /* lines at the side of posts */
+            .quote .dash {              float: left; padding: 0 2px 0 2px;}
+            .quote .source {            float: left;}
+            .chat .line:last-of-type {  margin-bottom: 0;}
+            .chat ul {                  padding: 0; list-style: none;}
+            .chat ol {                  padding: 0; list-style: none;}
             
             /* image Post settings */
-            .body img, .caption img { max-width: 100%; overflow: hidden;}
-            img.full_image {width: 451px} /* bottlenecks images */
-            .middle img { max-width: 451px; width: 100%; height: 100%; display: block;}
+            .body img {         max-width: 100%; overflow: hidden;}
+            .caption img {      max-width: 100%; overflow: hidden;}
+            img.full_image {    width: 451px} /* bottlenecks images */
+            .middle img {       max-width: 451px; width: 100%; height: 100%; display: block;}
             .photoset .wrapper {width: 100%; width: 451px;}
-            a img { border: 0; };
+            a img {             border: 0;}
             
             /* video Post settings */
-            .video .video_player { height: 100%; width: 100%; max-width: 470px; display: block; margin: 0; }
+            .video .video_player { height: 100%; width: 100%; max-width: 470px; display: block; margin: 0;}
             
             /* audio Post settings */
-            .audio { padding: 0; }
-            .audio_container { overflow: hidden; position: relative; width: 100px; }
-            .soundcloud_audio_player { width: 100%; }
-            .tumblr_audio_player { width: 100%; }
-            .spotify_audio_player { height: 80px !important; width:100%; }
+            .audio {                    padding: 0;}
+            .audio_container {          overflow: hidden; position: relative; width: 100px;}
+            .soundcloud_audio_player {  width: 100%;}
+            .tumblr_audio_player {      width: 100%;}
+            .spotify_audio_player {     height: 80px !important; width:100%;}
 
             /* media resizer patch */
-            .media { position: relative; padding-bottom: auto; margin: auto auto auto auto; overflow: hidden; height: auto;}
-            .media iframe, .media object, .media embed { position: absolute; width: 451px; }
+            .media {        position: relative; padding-bottom: auto; margin: auto auto auto auto; overflow: hidden; height: auto;}
+            .media iframe { position: absolute; width: 451px;}
+            .media object { position: absolute; width: 451px;}
+            .media embed {  position: absolute; width: 451px;}
             
             .like-b { position:relative; display:inline-block; height:1em; line-height:1em;}
-            .like-b .like_button iframe { position:absolute; opacity:0; }
-            .like-b .liked + .b { color:inherit; }
+            .like-b .like_button iframe { position:absolute; opacity:0;}
+            .like-b .liked + .b { color:inherit;}
             .like-b .liked + .b:after { content:'d';}
             
             /* infinate scroll script + */
             ul, ol { padding: 0 0 0 18px;}
 
-            .tagged { font-size: 9px; opacity: 0.5; }
-            .notes { margin-top:0px; text-align:left; }
-            ol.notes { padding: 3px; margin: 5px 0px; list-style-type: none; max-height: 216px; width:461px; overflow:auto; margin-top:-6px; }
-            ol.notes li.note img.avatar { vertical-align: -4px; margin-right: 4px; width: 16px; height: 16px; }
-            ol.notes li.note .answer_content { font-weight: normal; }
-            ol.notes li.note blockquote { padding: 4px 10px; margin: 10px 0px 0px 25px; }
-            ol.notes li.note blockquote a { text-decoration: none; }
+            .tagged { font-size: 9px; opacity: 0.5;}
+            .notes { margin-top:0px; text-align:left;}
+            ol.notes { padding: 3px; margin: 5px 0px; list-style-type: none; max-height: 216px; width:461px; overflow:auto; margin-top:-6px;}
+            ol.notes li.note img.avatar { vertical-align: -4px; margin-right: 4px; width: 16px; height: 16px;}
+            ol.notes li.note .answer_content { font-weight: normal;}
+            ol.notes li.note blockquote { padding: 4px 10px; margin: 10px 0px 0px 25px;}
+            ol.notes li.note blockquote a { text-decoration: none;}
             
-            .cf:before, .cf:after {content:" "; display:table}
-            .cf:after{ clear:both }
-            .cf{ *zoom:1 }
+            .cf:before, .cf:after {content:" "; display:table;}
+            .cf:after{ clear:both;}
+            .cf{ *zoom:1;}
             
             {CustomCSS}
             
@@ -600,17 +615,17 @@
                         randomNum = randomNum2
                         document.getElementById("pyrotext").textContent= r_text[randomNum]; 
                         document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum]; randomNum = randomNum2;}
-                    if(tick == 4){ document.getElementById("pyrobutton").textContent="Definately";}
-                    if(tick == 3){ document.getElementById("pyrobutton").textContent="Probably!";}
-                    if(tick == 2){ document.getElementById("pyrobutton").textContent="Maybe?";}
-                    if(tick == 1){ document.getElementById("pyrobutton").textContent="No.";}
+                    if(tick == 4){ document.getElementById("pyrobutton").textContent = "Definately";}
+                    if(tick == 3){ document.getElementById("pyrobutton").textContent = "Probably!";}
+                    if(tick == 2){ document.getElementById("pyrobutton").textContent = "Maybe?";}
+                    if(tick == 1){ document.getElementById("pyrobutton").textContent = "No.";}
                     
                     if(randomNum == 30){ document.getElementById("pyrobutton").textContent="Nuzzles"; }
 
                     tick = tick - 1;
                 } else { 
                     document.getElementById("pyro").style.marginLeft = "-20000px"; pyrowindow(); 
-                    tick = 3; document.getElementById("pyrobutton").textContent="Definately"; document.getElementById("pyrotext").textContent = '💯 Wubba lubba dub dub!';
+                    tick = 3; document.getElementById("pyrobutton").textContent = "Definately"; document.getElementById("pyrotext").textContent = '💯 Wubba lubba dub dub!';
                     document.getElementById("pyroimage").style.backgroundImage = "var(--defaultpyro)"
             }}
 
@@ -623,7 +638,7 @@
                     <div class="messagewindowbody" style="margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: -2px">
                         <div class="pageimage3"></div>
                         <center><div class="win98buttoninactive" style="width:70px; margin-top: 4px; margin-bottom: 4px;"> 
-                    <div class="disabledfont" style="margin-top: 2px;cursor:pointer" id="pyrobutton">Ok</div> </div></center>
+                    <div class="disabledfont" style="margin-top: 2px;cursor:pointer">Ok</div> </div></center>
         </div></div>
             
         <script>
@@ -1368,45 +1383,41 @@
 
                         {block:HasTags}
                             <label style="position:absolute; height: 16px; max-width:410px; margin-top:-25px; margin-left:-4.5px; overflow:hidden; color: gray">
-                                {block:Tags}<a href="{TagURL}" style="color: grey; white-space: nowrap; margin-left:2px">{Tag}</a><div class="comma">, </div>{/block:Tags}<div class="container" style="background-color:silver; margin-left:-4px;"></div>
+                                {block:Tags}<a href="{TagURL}" style="color: grey; white-space: nowrap; margin-left:2px">{Tag}</a><div class="comma">, </div>{/block:Tags}
+                                <div class="container" style="background-color:silver; margin-left:-4px;"></div>
                             </label>
                         {/block:HasTags}
+                        
                         <div class="container" style="z-index:100; width:100px; float:right; margin-right:-5px;">
                             <a class="like-b" href="{ReblogURL}" target="_blank" style="float:right; margin-top:-22px; margin-right:1.5px;">reblog</a>
                             <div class="verticalsplitter" style="float: right; margin-left: 3px; margin-right: 3px; margin-top:-25px; margin-right:34px; height:17px;"></div>
-                            <a class="like-b" href="#" style="float:right; margin-top:-22px; margin-right:38.5px;">{LikeButton}<div class="b" style="background-color: silver; padding: 0px 2px 2px 6px; margin-left:-4px">like</div></a>
-                        </div>
+                            <a class="like-b" href="#" style="float:right; margin-top:-22px; margin-right:38.5px;">{LikeButton}
+                                <div class="b" style="background-color: silver; padding: 0px 2px 2px 6px; margin-left:-4px">like</div>
+                        </a></div>
                         
                         <div class="filler"></div><div class="filler"></div><div class="filler"></div><div class="filler"></div>
                             
                             <!-- blogger container + recolour -->
                         <div class="content body" style="margin-left: -6px; margin-right: -6px; margin-top: -15px; margin-bottom: -6px; width:455px; height:18px; cursor:default;"> 
-                                
                             <div class="container">
                                 <fieldset style="width:346px; height:1px;">
                                     <div class="content caption" style="-ms-transform: translateY(-50%); transform: translateY(-50%); margin-top:2px; margin-left:-3px" > 
                                     <div class="menufind4" style="margin-top:-4px; margin-left:-7px; margin-right:1px;"></div> 
-                                        {block:ContentSource}
-                                            <a href="{SourceURL}" style="color:blue; font-weight:700" title="Source">{SourceTitle}</a>{block:RebloggedFrom}, 
-                                                {lang:Reblogged from}: <a href="{ReblogParentURL}"style="color:gray; font-weight:700" title="Reblogged from">{ReblogParentName}</a>{/block:RebloggedFrom}
-                                        {/block:ContentSource}
-                                        {block:NotReblog}<div class="container" style="margin-top:-1px">
-                                            <a href="https://twitter.com/VeryVhersty" target="_blank" style="color:blue; font-weight: bold;">Thea Vanherst</a></div>
-                                        {/block:NotReblog}
-                            </div></fieldset>
-                            
-                            <div class="container" style="width: 36px; height: 2px; margin-left: 369px; display: block; margin-top: -19px; cursor:default;" title="Post type">
-                                <fieldset style="width:100%; height:1px;">
-                                    <div class="content" style="-ms-transform: translateY(-50%); transform: translateY(-50%); margin-top:2px; margin-left:-2px">
-                                        {PostType}
-                            </div></fieldset></div>
+                                        {block:ContentSource}<a href="{SourceURL}" style="color:blue; font-weight:700" title="Source">{SourceTitle}</a>,{/block:ContentSource}{block:RebloggedFrom} 
+                                        {lang:Reblogged from}: <a href="{ReblogParentURL}"style="color:gray; font-weight:700" title="Reblogged from">{ReblogParentName}</a>{/block:RebloggedFrom}
+                                        {block:NotReblog}Posted by <a href="https://twitter.com/VeryVhersty" target="_blank" style="color:blue; font-weight: bold;">Thea Vanherst</a>{/block:NotReblog}</div></fieldset>
                                 
-                            <div class="container" style="width: 23px; height: 2px; margin-left: 428px; margin-top: -2px; cursor:default;">
-                                <fieldset style="width:100%; height:1px;"></fieldset></div>
-                            
-                            <div class="cornerpeice" style="margin-left: 455px; margin-top:1px; cursor:se-resize">  </div>
-                            </div>    
-                        </div>
+                                <div class="container" style="width: 36px; height: 2px; margin-left: 369px; display: block; margin-top: -19px; cursor:default;" title="Post type">
+                                    <fieldset style="width:100%; height:1px;">
+                                        <div class="content" style="-ms-transform: translateY(-50%); transform: translateY(-50%); margin-top:2px; margin-left:-2px">
+                                            {PostType}</div></fieldset></div>
+                                    
+                                <div class="container" style="width: 23px; height: 2px; margin-left: 428px; margin-top: -2px; cursor:default;">
+                                    <fieldset style="width:100%; height:1px;"></fieldset></div>
+                                <div class="cornerpeice" style="margin-left: 455px; margin-top:1px; cursor:se-resize">  </div>
+                                
+                        </div></div>
+                        
                     </div>  
                 </div>
             {/block:Posts}
