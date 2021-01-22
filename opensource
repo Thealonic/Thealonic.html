@@ -52,11 +52,10 @@
         <!-- Setup -->
         <style type="text/css">
         
-            :root { --spritesheet: url('https://cdn.discordapp.com/attachments/630047188520665121/800775512573083688/spritesheet.png'); 
+            :root { --spritesheet: url('https://cdn.discordapp.com/attachments/630047188520665121/802182565019779082/spritesheet.png'); 
                     
                     --defaultcat: url('https://cdn.discordapp.com/attachments/677255444682506240/783314809914392576/unknown.png');
                     --defaultpyro: url('https://cdn.discordapp.com/attachments/662595661233127434/800859226875494400/ezgif-2-c475330a8091.gif');
-                    --defaultpyrotext: Wubba lubba dub dub!;
                     
                     --inactive: url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png');
                     --active: url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png');
@@ -143,6 +142,8 @@
                                     font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; transition: width 0.1s; height:16px; cursor:pointer;}
             .win98buttoninactive{   box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; margin-bottom: 4px;
                                     font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; height:16px; cursor:pointer;}
+            .win98buttonpressed{    box-shadow:inset 1px 1px #0a0a0a,  inset -1px -1px #fff, inset -2px -2px #dfdfdf, inset 2px 2px grey; background:silver; padding:3px; 
+                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; transition: width 0.1s; height:16px; cursor:pointer;}
             
             .buttontext{            display:inline-flex; align-items:center; }
                        
@@ -177,17 +178,26 @@
             .smallscrollup {    background-position: -211px -220px; height:  3px; width:  3px;}
             .smallscrolldown {  background-position: -211px -224px; height:  3px; width:  3px;}
 
+            /* disabled arrow css */
             .tinyarrowdisableddown {    background-image: var(--spritesheet); height:  3px; width:  4px; background-position: -165px -220px;}
             .smallarrowdisableddown {   background-image: var(--spritesheet); height:  4px; width:  6px; background-position: -164px -219px;}
             .arrowdisableddown {        background-image: var(--spritesheet); height: 16px; width: 16px; background-position: -158px -212px; margin-top:-3px; margin-left:-3px;}
             .tinyarrowdisabledup {      background-image: var(--spritesheet); height:  3px; width:  4px; background-position: -211px -212px;}
             .arrowdisableup {           background-image: var(--spritesheet); height: 16px; width: 16px; background-position: -175px -212px; margin-top:-3px; margin-left:-3px;}
-            .menuarrow1 {               background-image: var(--spritesheet); height:  7px; width:  4px; background-position: -150px -216px; margin: auto; float: right;}
+            
+            /* alternate arrow css */
+            .menuarrow1 {               background-image: var(--spritesheet); height:  7px; width:  4px; background-position:  -54px -216px; margin: auto; float: right;}
+            .tinyarrowdown {            background-image: var(--spritesheet); height:  5px; width:  7px; background-position:   -6px -220px; margin: auto; float: right;}
+            .smallarrowdown {           background-image: var(--spritesheet); height:  3px; width:  5px; background-position:   -5px -219px; margin: auto; float: right;}
+            
+            .disabledtickbox {          background-image: var(--spritesheet); height:  7px; width:  7px; background-position: -143px -212px; margin-top:1px; margin-left:1px; position: absolute;}
+            .enabledtickbox {           background-image: var(--spritesheet); height:  7px; width:  7px; background-position: -143px -220px; position: absolute;}
             
             .explorerlinks { background-image: var(--spritesheet); height:  5px; width:  4px; background-position: -211px  -222px;}
             
             /* tumblr post container things */
             .sidescrollbarmiddlemiddle {    height:  2px; width:467px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/800356725827698728/window_width.png'); background-repeat: repeat-y; overflow:hidden;}
+            .scrollbarmiddle {              height:  2px; width:16px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/802170469985026078/scrollbarempty.png'); background-repeat: repeat-y; overflow:hidden;}
             .scrollbarcontainer {           width:16px; height:16px; background:silver; position: right; position: absolute; padding:0px;}
             .notestopbar {                  background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/786639077117657168/boarder.png'); width:477px; height: 8px;}
             
@@ -224,7 +234,6 @@
             .startmenustartbutton { background-image: var(--spritesheet); height: 22px; width: 54px; margin-left: 2px; margin-top: 2px; background-position:   -0px -36px;}
             .windowsexplorerlogo {  background-image: var(--spritesheet); height: 21px; width: 38px; background-position: -115px -37px; float:right;}
 
-            
             /* start menu misc */
             .verticaltasksplitter {   background-image: var(--spritesheet); height:  18px; width:   3px; background-position: -110px -38px; position:absolute; margin-left: 1px; margin-top: 1px;}
             .menuapplicationsplit { background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/800392317906452510/unknown.png'); height: 2px; width: 1px;background-repeat: repeat-x;}
@@ -337,6 +346,10 @@
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* General formatting */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
+            
+            .drop-down-menu { position: absolute; background: white; margin-top: 20px; z-index: 20000000; }
+            .drop-down-text { height: 11px; width: 100%; padding:2px 3px 1px 2px; background-color:white; color:black;}
+            .drop-down-text:hover { height: 11px; width: 100%; padding:1px 3px 0px 2px;  background-color:#00207c; color: white; border-style: dotted; border-width: 1px; border-color: yellow;}
             
             ul.tree-view {          font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px;}
             ul.tree-view {          display: block; background: #ffffff; box-shadow: inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a; padding: 6px; margin: 0;}
@@ -716,8 +729,8 @@
              <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:2px; margin-top:2px;" onclick="messageclose()"><div class="close"></div></div>
              <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU"><div class="win98titlebarbutton" style="margin-top:2px; cursor: default;"> <div class="help"></div> </div> </a> 
             <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="title-bar-text">🧮 brain go brrrrr</div></div>
-            <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
-                <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>18:00pm on January 18th, 2021. [GMT]</label></p>
+            <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 5px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
+                <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>15:08pm on January 22th, 2021. [GMT]</label></p>
         </div></div>
         
         <!-- message box functions -->
@@ -809,8 +822,35 @@
                         <div class="win98button" style="position: absolute;margin-top: 27px; width:60px;"> 
                             <label style="margin-top: 2px; margin-left:11px; cursor:pointer"> Pattern </label> </div> 
                         <label style="position: absolute;margin-top: 60px;">Display</label>
-                        <select style="width:67px; margin-top:75px; padding:2px 3px 1px 1px">
-                          <option selected>Center</option><option>Span</option><option>Stretch</option></select>
+
+                        <ul class="tree-view"  style="position: absolute; margin-top: 75px; width:62px; height: 17px; padding:2px" onclick="desktopdropdown()" onmouseleave="desktopexit()">
+                                <div class="container" style="padding: 3px 2px 2px 2px;" id="currentdesktopmode">Desktop</div>
+                                <div class="win98button" style="position:absolute; margin-top: -17px; margin-left:46px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
+                            
+                                <div class="drop-down-menu" style="margin-top:1px; width:61px; margin-left: -20000px;" id="desktopmode">
+                                    <div class="win98buttonpressed" style="position:absolute; margin-top: -18px; margin-left:47px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
+                                    <div class="drop-down-text" onclick="centeritem()">Center</div>
+                                    <div class="drop-down-text" onclick="spanitem()">Span</div>
+                                    <div class="drop-down-text" onclick="stretchitem()">Stretch</div>
+                                </div></ul>
+                                
+                            <script>
+                                let desktopdrop = false;
+                                function desktopdropdown(){
+                                    if (desktopdrop == false) { document.getElementById("desktopmode").style.marginLeft = "-2px"; desktopdrop = true;
+                                    } else if (desktopdrop == true){ document.getElementById("desktopmode").style.marginLeft = "-20000px"; desktopdrop = false; }}
+                                
+                                function desktopexit(){ document.getElementById("desktopmode").style.marginLeft = "-20000px"; desktopdrop = false; }
+                                
+                                function centeritem(){  
+                                    document.getElementById("currentdesktopmode").textContent="Center";}
+                                    
+                                function spanitem(){  
+                                    document.getElementById("currentdesktopmode").textContent="Span";}
+                                    
+                                function stretchitem(){  
+                                    document.getElementById("currentdesktopmode").textContent="Stretch";}
+                            </script>
                     </div>
                 
                     <ul class="tree-view" style="width:240px; height:84px; margin-top: 2px; margin-left:4px">
@@ -835,7 +875,7 @@
     
                         <div class="container" style="position: absolute; width:10px; height: 100%; margin-left:228px; margin-top:-4px; ">
                             <div class="win98scroll"><div class="scrollup"></div></div>
-                            <div class="win98button" style="position:absolute; width:10px; height:54px; margin-top:16px"> </div>
+                            <div class="scrollbarmiddle" style="position:absolute; height:60px; margin-top:16px"> </div>
                             <div class="win98scroll" style="margin-top:76px"><div class="scrolldown"></div>
                         </div></div>
                     </ul>
@@ -851,20 +891,45 @@
                     <fieldset style="width:336px; height:50px; margin-left: 12px; margin-top: 18px;">
                         <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: silver; width:64px; padding: 0px 0px 3px 3px; margin-left:-3px"> Screen Saver </label>
                         
-                        <select style="position: absolute; width:168px; margin-top:3px; padding:2px 3px 1px 1px"><option selected>(None)</option></select>
-                        <button disabled style="position: absolute; margin-left:175px; margin-top: 2px; cursor: pointer;">Settings</button>
-                        <button disabled style="position: absolute; margin-left:260px; margin-top: 2px; cursor: pointer;">Preview</button>
+                        <ul class="tree-view"  style="position: absolute; width:168px; height: 17px; padding:2px; margin-top:3px;" onclick="screensaverdropdown()" onmouseleave="screensaverexit()">
+                            <div class="container" style="padding: 3px 2px 2px 2px;" id="currentscreensaver">(none)</div>
+                            <div class="win98button" style="position:absolute; margin-top: -17px; margin-left:152px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
                         
-                        <div class="field-row" style="margin-top:35px"><input disabled type="checkbox" id="passwordprotected"><label for="passwordprotected">Password protected</label></div>
-                        <button disabled style="position: absolute; margin-left:125px; margin-top: -18px; cursor: pointer;">Change...</button>
+                            <div class="drop-down-menu" style="margin-top:1px; width: 167px; margin-left: -20000px;" id="thescreensaver">
+                                <div class="win98buttonpressed" style="position:absolute; margin-top: -18px; margin-left:153px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
+                                <div class="drop-down-text" onclick="none()" id="none">(none)</div>
+                            </div></ul>
                         
-                        <label style="position:absolute; margin-left:209px; margin-top:-14px">Wait:⠀ ⠀ ⠀ ⠀ ⠀ ⠀ ⠀minutes</label>
-                        <ul class="tree-view" style="position:absolute; width:41px; height:9px; margin-top: -16px; margin-left:239px; background-color:silver">
+                        <script>
+                            let screensaverdrop = false;
+                            function screensaverdropdown(){
+                                if (screensaverdrop == false) { document.getElementById("thescreensaver").style.marginLeft = "-2px"; screensaverdrop = true;
+                                } else if (screensaverdrop == true){ document.getElementById("thescreensaver").style.marginLeft = "-20000px"; screensaverdrop = false; }}
+                    
+                            function screensaverexit(){ document.getElementById("thescreensaver").style.marginLeft = "-20000px"; screensaverdrop = false; }
+                            
+                            function none(){  
+                                document.getElementById("currentscreensaver").textContent="(none)";}
+                        </script>
+                        
+                        <div class="win98buttoninactive" style="position: absolute; margin-left:182px; margin-top: 1px; width:66px; height:18px;"> 
+                        <div class="disabledfont" style="margin-top: 3px; margin-left:12px; cursor:pointer"> Save As... </div></div>
+                        <div class="win98buttoninactive" style="position: absolute; margin-left:262px; margin-top: 1px; width:66px; height:18px;"> 
+                        <div class="disabledfont" style="margin-top: 3px; margin-left:14px; cursor:pointer"> Preview </div></div>
+                        
+                        <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 34px; background-color: silver;"></ul>
+                            <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 34px; display: inline-block;">Password Protected</div>
+                        <div class="win98buttontitlebarinactive" style="position: absolute; margin-top: 30px; width:63px; height:18px; margin-left:130px;"> 
+                            <div class="disabledfont" style="margin-top: 3px; margin-left:11px; cursor:pointer"> Change... </div>
+                        
+                        <div class="disabledfont" style="position:absolute; margin-left:72px; margin-top:-12px">Wait:</div>
+                        <ul class="tree-view" style="position:absolute; width:41px; height:9px; margin-top: -16px; margin-left:101px; background-color:silver">
                             <div class="container" style="margin-top: -4px; margin-left:27px">
-                                <label style="position:absolute; margin-left: -14px; margin-top: 1px; color:gray;"> 14 </label>
+                                <label style="position:absolute; margin-left: -14px; margin-top: 3px; color:gray;"> 14 </label>
                                 <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:0px; width:11px; height:2px;"><div class="tinyarrowdisabledup" style="margin-left:4px;"></div></div>
                                 <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:9px; width:11px; height:2px;"><div class="tinyarrowdisableddown"  style="margin-left:4px;"></div></div>
                         </div></ul>
+                        <div class="disabledfont" style="position:absolute; margin-left:161px; margin-top:-12px">minutes</div>
                     </fieldset>
                     
                     <fieldset style="width:336px; height:48px; margin-left: 12px; margin-top: 12px;">
@@ -883,16 +948,18 @@
             
                     <ul class="tree-view"  style="width:337px; height:179px; margin-left: 12px; margin-top: 12px; 
                                                   background: url('https://cdn.discordapp.com/attachments/630047188520665121/786208918119514112/wallpaper32.png'); padding:10px">
+                                                  
                         <div class="win98post" style="height: 137px; width:300px;">
-                            <div class="win98titlebarbutton" style="margin-right:2px;"><div class="close"></div></div>
-                            <div class="win98titlebarbutton"> <div class="help"></div></div>
-                            <div class="title-bar-98"> <div class="titletext">Inactive Window</div></div>
+                            <div class="win98titlebarbutton" style="position:absolute; margin-left: 283px; margin-top:1px; cursor: pointer;" title="close"><div class="close"></div></div>
+                            <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="help"></div></div></a> 
+                            <div class="title-bar-98"> <div class="title-bar-text" style="margin-left:-1px; margin-top:-1px;">💤 Inactive Window</div></div>
                             <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding: 2px 2px 2px 2px"></div>
                         </div>
                         
                         <div class="win98post" style="height: 137px; width:300px; margin-top:24px; margin-left:5px">
-                            <div class="win98titlebarbutton" style="margin-right:2px;"><div class="close"></div></div><div class="win98titlebarbutton"> <div class="help"></div></div>
-                            <div class="title-bar-posts"> <div class="titletext">Active Window</div></div>
+                            <div class="win98titlebarbutton" style="position:absolute; margin-left: 283px; margin-top:1px; cursor: pointer;" title="close"><div class="close"></div></div>
+                            <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="help"></div></div></a> 
+                            <div class="title-bar-posts"> <div class="titletext" style="margin-left:-1px; margin-top:-1px;">💯 Active Window</div></div>
                             <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
                                 <div class="container" style="margin-top: -2px">
                                     <label style="position:absolute;">Normal</label>
@@ -906,41 +973,88 @@
                                 </ul>
                         </div></div>
                         
-                        <div class="win98post" style="height:70px; width:200px; margin-left:20px; margin-top: 100px;">
-                            <div class="win98titlebarbutton" style="margin-right:2px;"><div class="close"></div></div><div class="win98titlebarbutton"> <div class="help"></div></div>
-                            <div class="title-bar-posts"> <div class="titletext">Message Box</div></div>
-                            <div class="window-body" style="position:absolute; margin-top: 3px; margin-bottom: 3px; padding: 2px 0px 0px 0px">Message text<br>
-                            <center><div class="win98buttontitlebarinactive" style="position:absolute;  width:71px; height:16px; margin-top:2px; margin-left:55px"><p style="margin-top:1px">Ok</p></div></center>
+                        <div class="win98post" style="height:67px; width:200px; margin-left:20px; margin-top: 100px;">
+                            <div class="win98titlebarbutton" style="position:absolute; margin-left: 183px; margin-top:1px; cursor: pointer;" title="close"><div class="close"></div></div>
+                            <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="help"></div></div></a> 
+                            <div class="title-bar-posts"> <div class="titletext" style="margin-left:-1px; margin-top:-1px;">💬 Message Box</div></div>
+                            <div class="messagewindowbody" style="margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding:3px;"> Current active window
+                                <center><div class="win98button" style="width:60px; margin-top: 4px;"> 
+                                    <div class="buttontext" style="margin-top: 2px; margin-left:0.5px; cursor:pointer">Ok.</div></div></center>
                         </div></div>
                     </ul>
                     
                     <div class="container" style="margin-left:12px; margin-top: 10px;">
                         <!-- line 1 -->
                         <label>Scheme</label><br>
-                        <select style="position: absolute; width:190px; padding:2px 3px 1px 1px;"><option selected>Windows 98</option></select>
-                        <button disabled style="position: absolute; margin-left:199px; margin-top:-1px;">Save As...</button>
-                        <button disabled style="position: absolute; margin-left:282px; margin-top:-1px;">Delete</button><br><br>
+                        <ul class="tree-view"  style="position: absolute; width:186px; height: 17px; padding:2px" onclick="schemedropdown()" onmouseleave="schemeexit()">
+                            <div class="container" style="padding: 3px 2px 2px 2px;" id="currentscheme">Windows 98</div>
+                            <div class="win98button" style="position:absolute; margin-top: -17px; margin-left:170px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
                         
-                        <!-- line 2 -->
+                            <div class="drop-down-menu" style="margin-top:1px; width: 185px; margin-left: -20000px;" id="scheme">
+                                <div class="win98buttonpressed" style="position:absolute; margin-top: -18px; margin-left:171px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
+                                <div class="drop-down-text" onclick="windows98()" id="windows98scheme">Windows 98</div>
+                                <div class="drop-down-text" onclick="darkmode()"  id="darkmodescheme" style="padding:bottom:2px;" >Dark mode</div>
+                            </div></ul>
+                        
+                        <script>
+                            let schemedrop = false;
+                            function schemedropdown(){
+                                if (schemedrop == false) { document.getElementById("scheme").style.marginLeft = "-2px"; schemedrop = true;
+                                } else if (schemedrop == true){ document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }}
+                            
+                            function schemeexit(){ document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }
+                            
+                            function windows98(){  
+                                document.getElementById("currentscheme").textContent="Windows 98";}
+                            
+                            function darkmode(){  
+                                document.getElementById("currentscheme").textContent="Darkmode 98";}
+                        </script>
+                        
+                        <button disabled style="position: absolute; margin-left:199px; margin-top:-1px;">Save As...</button>
+                        <button disabled style="position: absolute; margin-left:282px; margin-top:-1px;">Delete</button>
+                        <br><br>
+
                         <div class="container" style="margin-top:5px;">
                             <label>Item</label><label style="margin-left:243px">Colour 1</label>
                             <div class="disabledfont" style="position:absolute; margin-left:200px; margin-top: -13px;">Size</div>
                             <div class="disabledfont" style="position:absolute; margin-left:312px; margin-top: -13px;">Colour 2</div><br>
-                            <select style="position: absolute; width:190px; padding:2px 3px 1px 1px;"><option selected>Desktop</option></select>
                             
-                            <ul class="tree-view" style="position:absolute; width:41px; height:9px; margin-left:199px; background-color:silver">
+                        <!-- line 2 -->  
+                            <ul class="tree-view"  style="position: absolute; width:186px; height: 17px; padding:2px" onclick="itemdropdown()" onmouseleave="itemexit()">
+                                <div class="container" style="padding: 3px 2px 2px 2px;" id="currentitem">Desktop</div>
+                                <div class="win98button" style="position:absolute; margin-top: -17px; margin-left:170px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
+                            
+                                <div class="drop-down-menu" style="margin-top:1px; width: 185px; margin-left: -20000px;" id="item">
+                                    <div class="win98buttonpressed" style="position:absolute; margin-top: -18px; margin-left:171px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
+                                    <div class="drop-down-text" onclick="desktopitem()" id="desktopitem">Desktop</div>
+                                </div></ul>
+                                
+                            <script>
+                                let itemdrop = false;
+                                function itemdropdown(){
+                                    if (itemdrop == false) { document.getElementById("item").style.marginLeft = "-2px"; itemdrop = true;
+                                    } else if (itemdrop == true){ document.getElementById("item").style.marginLeft = "-20000px"; itemdrop = false; }}
+                                
+                                function itemexit(){ document.getElementById("item").style.marginLeft = "-20000px"; schemedrop = false; }
+                                
+                                function desktopitem(){  
+                                    document.getElementById("desktopitem").textContent="Desktop";}
+                            </script>
+                            
+                            <ul class="tree-view" style="position:absolute; width:41px; height:9px; margin-left:199px; background-color:silver;">
                                 <div class="container" style="margin-top: -4px; margin-left:27px">
                                     <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:0px; width:11px; height:2px;"><div class="tinyarrowdisabledup" style="margin-left:4px;"></div></div>
                                     <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:9px; width:11px; height:2px;"><div class="tinyarrowdisableddown"  style="margin-left:4px;"></div></div>
                             </div></ul>
                             
                             <div class="win98buttontitlebarinactive" style="position: absolute; margin-left:261px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
-                                <div class="verticalsplitter" style="position: absolute; height: 14px; margin-left: 28px"></div>
-                                <div class="smallarrowdisableddown" style="margin-left: 31px; margin-top:7px"></div>
-                                <div class="container" style="width:20px; height:11px; margin-top: -9px; margin-left: 3px; border:1px solid #000000; background-color: #008080;"></div>
+                                <div class="verticalsplitter" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
+                                <div class="smallarrowdown" style="position:absolute; margin-left: 31px; margin-top:7px"></div>
+                                <div class="container" style="width:20px; height:11px; margin-top: 2px; margin-left: 3px; border:1px solid #000000; background-color: #008080;"></div>
                             </div> 
                             <div class="win98buttontitlebarinactive" style="position: absolute; margin-left:312px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
-                                <div class="verticalsplitter" style="position: absolute; height: 14px; margin-left: 28px"></div>
+                                <div class="verticalsplitter" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
                                 <div class="smallarrowdisableddown" style="margin-left: 31px; margin-top:7px"></div></div><br><br>
                         </div>
                         
@@ -956,15 +1070,13 @@
                                     <div class="win98buttontitlebarinactive" style="position:absolute; margin-top: -4px; margin-left:29px; width:10px; height:11px;"><div class="arrowdisableddown" style="margin-left:-4px;"></div></div></ul>
                             
                             <div class="win98buttontitlebarinactive" style="position: absolute; margin-left:262px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
-                                <div class="verticalsplitter" style="position: absolute; height: 14px; margin-left: 28px"></div>
+                                <div class="verticalsplitter" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
                                 <div class="smallarrowdisableddown" style="margin-left: 31px; margin-top:7px"></div></div> 
                             
                             <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:0px; width:15px; height:15px; margin-left:312px;">
-                                <label style="position:absolute; margin-top:1px; margin-left:5px; color:white; font-weight:700"> B </label>
-                                <label style="position:absolute; margin-left:4px; color:gray; font-weight:700"> B </label></div>
+                                <div class="disabledfont" style="position:absolute; font-weight:700; margin-left:4px; margin-top:1px; ">B</div></div>
                             <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:0px; width:15px; height:15px; margin-left:333px;">
-                                <label style="position:absolute; margin-top:1px; margin-left:5px; color:white;"> / </label>
-                                <label style="position:absolute; margin-left:4px; color:gray;">/ </label></div>
+                                <div class="disabledfont" style="position:absolute; margin-left:4px; margin-top:1px;">/</div></div>
                         </div>
                     </div>
             <!-- inner container end -->
@@ -987,11 +1099,30 @@
                 
                 <!-- display container settings -->
                 <div class="container" style="float: left; margin-top: 12px">
-                    <fieldset style="width:136px; height:39px; margin-left: 12px">
-                        <select style="width:155px; margin-left: -2px">
-                          <option selected>High Colour (16-bit)</option>
-                        </select>
-                        <div class="displaycolour" style="margin-top:5px; margin-left: -2px"></div>
+                    <fieldset style="width:152px; height:39px; margin-left: 12px">
+                    
+                        <ul class="tree-view" style="position: absolute; width:151px; height: 17px; padding:2px; margin-left:-3px;" onclick="colourdropdown()" onmouseleave="colourexit()">
+                            <div class="container" style="padding: 3px 2px 2px 2px;" id="currentcolour">High Colour (16-bit)</div>
+                            <div class="win98button" style="position:absolute; margin-top: -17px; margin-left:135px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
+                                
+                            <div class="drop-down-menu" style="margin-top:1px; width: 150px; margin-left: -20000px; index: 10000000;" id="colour">
+                                <div class="win98buttonpressed" style="position:absolute; margin-top: -18px; margin-left:136px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
+                                <div class="drop-down-text" onclick="16bitcolour()">High Colour (16-bit)</div>
+                        </div></ul>
+
+                        <script>
+                            let colourdrop = false;
+                            function colourdropdown(){
+                                if (colourdrop == false) { document.getElementById("colour").style.marginLeft = "-2px"; colourdrop = true;
+                                } else if (colourdrop == true){ document.getElementById("colour").style.marginLeft = "-20000px"; colourdrop = false; }}
+                                
+                            function colourexit(){ document.getElementById("colour").style.marginLeft = "-20000px"; colourdrop = false; }
+                                
+                            function 16bitcolour(){  
+                                document.getElementById("currentcolour").textContent="High Colour (16-bit)";}
+                        </script>
+                
+                        <div class="displaycolour" style="position:absolute; margin-top:26px; margin-left: -3px"></div>
                     </fieldset></div>
                 <div class="container" style="float: right; margin-top: 12px">
                     <fieldset style="width:136px; height:39px; margin-right: 10px">
@@ -1000,26 +1131,29 @@
                           <input id="range22" type="range" min="1" max="5" value="3" style="width:77px"></input>
                           <label for="range23" style="float:right; margin-right: 5px">More</label>
                         </div>
-                        <center><p> 1920 by 1080 pixels</p></center>
+                        <center style="margin-left:0.9px; margin-top:9px;"> 1920 by 1080 pixels</center>
                     </fieldset></div>
                 <!-- additional settings -->
                 <div class="field-row" style="width: 100%; margin-left: 12px;">
-                    <input checked disabled type="checkbox">
-                    <label for="example4" style="margin-top:14px;">Extend my Windows desktop onto this monitor</label>
-                    <div class="container" style="margin-top: 10px"> 
-                        <button disabled style="cursor: pointer; margin-left:42px">Advanced...</button>
-                    </div>
+                    <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 44px; background-color: silver;">
+                        <div class="disabledtickbox"></div></ul>
+                            <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 45px; display: inline-block;">Extend my Windows desktop onto this monitor</div>
+                    <div class="win98buttoninactive" style="position: absolute; margin-top: 50px; width:75px; height:18px; margin-left:277px;"> 
+                        <div class="disabledfont" style="margin-top: 3px; margin-left:12px; cursor:pointer"> Advanced </div></div>
+
                 </div>
                 <!-- inner container end -->
             </div>
             <!-- settings container end -->
             
-            
             <!-- --------------------------------------- footer --------------------------------------- -->
             <!-- display settings buttons -->
-            <button disabled style="margin-right:6px; width:71px; margin-top: 395px; float: right;">Apply</button>
-            <button style="cursor: pointer; margin-right:6px; width:71px; margin-top: 395px; float: right;" onclick="diskclose()">Cancel</button>
-            <button style="cursor: pointer; margin-right:6px; width:71px; margin-top: 395px; float: right;">Okay</button>
+            <div class="win98buttoninactive" style="position:absolute; width:70px; height:18px; margin-top: 395px; margin-left:316px;"> 
+                        <div class="disabledfont" style="margin-top: 3px; margin-left:22px; cursor:pointer"> Apply </div></div>
+            <div class="win98button" style="position:absolute; width:70px; height:18px; margin-top: 395px; margin-left:234px;">
+                    <div class="buttontext" style="margin-top: 3px; margin-left:18px; cursor:pointer" onclick="diskclose()">Cancel</div></div>
+            <div class="win98button" style="position:absolute; width:70px; height:18px; margin-top: 395px; margin-left:152px;">
+                    <div class="buttontext" style="margin-top: 3px; margin-left:25px; cursor:pointer" onclick="diskclose()">Okay</div></div></div>
         <!-- display settings container end -->
         </div>
         
