@@ -55,6 +55,7 @@
         <style type="text/css">
         
             :root { --spritesheet: url('https://cdn.discordapp.com/attachments/630047188520665121/802182565019779082/spritesheet.png'); 
+                    --desktopsheet: url('https://cdn.discordapp.com/attachments/630047188520665121/802939968019628072/desktopspritesheet.png');
                     
                     --defaultcat: url('https://cdn.discordapp.com/attachments/677255444682506240/783314809914392576/unknown.png');
                     --defaultpyro: url('https://cdn.discordapp.com/attachments/662595661233127434/800859226875494400/ezgif-2-c475330a8091.gif');
@@ -69,7 +70,7 @@
         /* ----------------------------------------------------------------------------------------------------------------------------- */
             
             /* desktop config settings */
-            body {      background-color:#008080; background: url('https://cdn.discordapp.com/attachments/630047188520665121/786208918119514112/wallpaper32.png') repeat fixed; background-size: cover; margin: 0px; padding: auto auto auto auto;}
+            body {      background: url('https://cdn.discordapp.com/attachments/630047188520665121/786208918119514112/wallpaper32.png') repeat fixed; background-size: cover; margin: 0px; padding: auto auto auto auto; background-color:#008080;}
             html{       max-width: 100%; overflow-x: hidden;}
             #desktop, .navigation { margin: 0px auto 0px auto; position: relative; width: 1010px;} /* whole thing */
             body.permalink_page #desktop, 
@@ -85,23 +86,33 @@
             .icons {        margin: 0 0 0 0; padding: -10px; width: 100px; float: left; position: fixed; z-index: 1; font-size: 12px;}
             .icons2 {       margin: 0 0 0 80px; padding: -10px; width: 100px; float: left; position: fixed; z-index: 1; font-size: 12px;}
             .icon_label {   padding-top: 6px; padding-bottom: 10px; color: {color:Icon Links Color}; text-align: center; font-family:Arial;} /* Icon gaps */
-            .thealonic {    height: 72px; width: 100px; background-position: 14px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/677255444682506240/774189990380044288/master_sprite10.png');}
             
             /* sidebar */
-            .veryvhersty {      height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/677255444682506240/774191126655270932/master_sprite11.png'); }
-            .twitter {          height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/677255444682506240/783331524069031996/master_sprite8.png'); }
-            .askicon {          height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/677255444682506240/783331523625615370/master_sprite7.png'); }
-            .discordlink {      height: 72px; width: 100px; background-position:  -8px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/677255444682506240/784092631831019550/master_sprite9.png'); }
-            .officialfunny {    height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/785283246124564520/master_sprite14.png');}
-            .rct2 {             height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/784843863814176779/master_sprite12.png'); }
-            .simcity {          height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/785265020115877898/master_sprite13.png'); }
-            .ovffvp {           height: 72px; width: 100px; background-position: -15px 0px; z-index: 3; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/785265020115877898/master_sprite13.png'); }
-    
+            .thealonic, .veryvhersty, .twitter, .askicon, .discordlink, .officialfunny, .rct2, .simcity {
+                                background-image: var(--desktopsheet); height:  72px; width:  72px; margin-left:14px;}
+            
+            /* coloumn 1                                            coloumn 2 */
+            .thealonic {        background-position:   -0px -0px;}  .simcity {          background-position: -432px -0px;}
+            .veryvhersty {      background-position:  -72px -0px;}  .rct2 {             background-position: -360px -0px;}
+            .twitter {          background-position: -144px -0px;}  .officialfunny {    background-position: -504px -0px;}
+            .askicon {          background-position: -216px -0px;}
+            .discordlink {      background-position: -288px -0px;}
+
+            .thealonicpreview, .veryvherstypreview, .twitterpreview, .askiconpreview, .discordlinkpreview, .officialfunnypreview, .rct2preview, .simcitypreview {
+                                background-image: var(--desktopsheet); height:  36px; width:  36px;}
+            .thealonicpreview {        background-position:   -0px -72px;}  .simcitypreview {          background-position: -214px -72px;}
+            .veryvherstypreview {      background-position:  -36px -72px;}  .rct2preview {             background-position: -180px -72px;}
+            .twitterpreview {          background-position:  -72px -72px;}  .officialfunnypreview {    background-position: -252px -72px;}
+            .askiconpreview {          background-position: -107px -72px;}
+            .discordlinkpreview {      background-position: -144px -72px;}
+            
+            .smalliconscontainer { width:42px; height:36px; display: inline-block; margin-left:16px; }
+
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* Window bar handling */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
             
-            .filler {   height: 2px; }
+            .filler { height: 2px; }
             
             /* custom css for post windows apposed to the default win98 css */
             .win98container{        box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
@@ -112,7 +123,7 @@
             /*randomimagesmenu*/    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
             .title-bar-posts{       font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px; background-image: var(--active); height: 18px; width: 100%}
             .title-bar-small{       font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px; background-image: var(--inactive); height: 18px; width: 100%}
-            .title-bar-98{         font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px; background-image: var(--inactive); height: 18px; width: 100%}
+            .title-bar-98{          font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px; background-image: var(--inactive); height: 18px; width: 100%}
 
             /* window  post handling */
             .window {               box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #dfdfdf,inset -2px -2px grey,inset 2px 2px #fff;background:silver;padding:3px; z-index:2;
@@ -141,7 +152,7 @@
             .win98button:active {   box-shadow:inset 1px 1px #0a0a0a,  inset -1px -1px #fff, inset -2px -2px #dfdfdf, inset 2px 2px grey; background:silver; padding:3px; 
                                     font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; transition: width 0.1s; height:16px; cursor:pointer;}
             .win98buttoninactive {  box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; margin-bottom: 4px;
-                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; height:16px; cursor:pointer;}
+                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; height:16px; cursor:default}
             .win98buttonpressed {   box-shadow:inset 1px 1px #0a0a0a,  inset -1px -1px #fff, inset -2px -2px #dfdfdf, inset 2px 2px grey; background:silver; padding:3px; 
                                     font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; transition: width 0.1s; height:16px; cursor:pointer;}
             
@@ -204,7 +215,7 @@
             
             /* tumblr post container things */
             .sidescrollbarmiddlemiddle {    height:  2px; width:467px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/800356725827698728/window_width.png'); background-repeat: repeat-y; overflow:hidden;}
-            .scrollbarmiddle {              height:  2px; width: 16px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/802170469985026078/scrollbarempty.png'); background-repeat: repeat-y; overflow:hidden;}
+            .scrollbarmiddle {              height:  2px; width: 16px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/802170469985026078/scrollbarempty.png'); background-repeat: repeat; overflow:hidden;}
             .scrollbarcontainer {           height: 16px; width: 16px; background:silver; position: right; position: absolute; padding:0px;}
             .notestopbar {                  background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/786639077117657168/boarder.png'); width:477px; height: 8px;}
             
@@ -377,8 +388,7 @@
             ul.tree-view details[open] summary {        margin-bottom: 0;}
             ul.tree-view details[open]>summary:before { content: "-"; }
             
-            fieldset{   border: none; box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px grey, inset 2px 2px #dfdfdf; padding:10px; padding-block-start:8px; margin:0}
-            legend{         background: silver;}
+            fieldset{   border: none; box-shadow: inset -1px -1px #fff, inset 1px 1px #85898d, inset -2px -2px grey, inset 2px 2px #dfdfdf; padding:10px; padding-block-start:8px; margin:0}
             
             [class^=field-row]+[class^=field-row]{ margin-top: 6px;}
             
@@ -781,7 +791,7 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
             
         <!-- display settings container -->
-        <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; right:  3%; z-index:5; position: absolute" onmousedown="diskactive()" id="disk">
+        <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; right: 3%; z-index:5; position: absolute" onmousedown="diskactive()" id="disk">
             <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:2px; margin-top:2px; cursor: pointer;" title="close" onclick="diskclose()"><div class="close"></div></div>
             <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="margin-top:2px" title="help"> <div class="help"></div></div></a> 
             <div class="title-bar-98" id="diskwindow"> <div class="title-bar-text">📺 Display Properties
@@ -888,10 +898,14 @@
 
                             function wallpaperoptionnone() {    document.getElementById("body").style.backgroundImage = "none"; document.getElementById("body").style.backgroundColor = defaultcolour;
                                                                 document.getElementById("apperancepreview").style.backgroundImage = "none"; document.getElementById("apperancepreview").style.backgroundColor = defaultcolour;}
-                            function wallpaperoption1() { document.getElementById("body").style.backgroundImage = defaultwallpaper;   document.getElementById("apperancepreview").style.backgroundImage = defaultwallpaper;}
-                            function wallpaperoption2() { document.getElementById("body").style.backgroundImage = desktopimage2;      document.getElementById("apperancepreview").style.backgroundImage = desktopimage2;}
-                            function wallpaperoption3() { document.getElementById("body").style.backgroundImage = desktopimage3;      document.getElementById("apperancepreview").style.backgroundImage = desktopimage3;} 
-                            function wallpaperoption4() { document.getElementById("body").style.backgroundImage = desktopimage4;      document.getElementById("apperancepreview").style.backgroundImage = desktopimage4;} 
+                            function wallpaperoption1() { document.getElementById("body").style.backgroundImage = defaultwallpaper;   document.getElementById("apperancepreview").style.backgroundImage = defaultwallpaper;
+                                                          document.getElementById("iconpreview").style.backgroundImage = defaultwallpaper;}
+                            function wallpaperoption2() { document.getElementById("body").style.backgroundImage = desktopimage2;      document.getElementById("apperancepreview").style.backgroundImage = desktopimage2;
+                                                          document.getElementById("iconpreview").style.backgroundImage = desktopimage2;}
+                            function wallpaperoption3() { document.getElementById("body").style.backgroundImage = desktopimage3;      document.getElementById("apperancepreview").style.backgroundImage = desktopimage3;
+                                                          document.getElementById("iconpreview").style.backgroundImage = desktopimage3;} 
+                            function wallpaperoption4() { document.getElementById("body").style.backgroundImage = desktopimage4;      document.getElementById("apperancepreview").style.backgroundImage = desktopimage4;
+                                                          document.getElementById("iconpreview").style.backgroundImage = desktopimage4;} 
                         </script>
     
                         <div class="container" style="position: absolute; width:10px; height: 100%; margin-left:228px; margin-top:-4px; ">
@@ -967,7 +981,7 @@
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="appearance">
             
                 <ul class="tree-view"  style="width:337px; height:179px; margin-left: 12px; margin-top: 12px; background-size: cover;
-                                                  background: url('https://cdn.discordapp.com/attachments/630047188520665121/786208918119514112/wallpaper32.png');  padding:10px" id="apperancepreview">
+                                              background: url('https://cdn.discordapp.com/attachments/630047188520665121/786208918119514112/wallpaper32.png');  padding:10px" id="apperancepreview">
                                                   
                     <div class="win98post" style="height: 137px; width:300px;">
                         <div class="win98titlebarbutton" style="position:absolute; margin-left: 283px; margin-top:1px; cursor: pointer;" title="close"><div class="close"></div></div>
@@ -1099,10 +1113,89 @@
             <!-- --------------------------------------- Effects tab --------------------------------------- -->
             <!-- background inner container -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="effects">
-                <center style="margin-top:25px"><div class="displayboxdisplay"></div></center>
                     
-
-
+                    <fieldset style="width:336px; height:165px; margin-left: 12px; margin-top: 14px;">
+                        <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: silver; width:68px; padding: 0px 0px 3px 3px; margin-left:-3px"> Desktop Icons </label>
+                        
+                        <ul class="tree-view" style="width:318px; height:88px; margin-top:5px; margin-left:2px; overflow:hidden;
+                                                     background: url('https://cdn.discordapp.com/attachments/630047188520665121/786208918119514112/wallpaper32.png');" id="iconpreview">
+                            <div class="container" style="height:75px;">
+                                <div class="smalliconscontainer" style="margin-left:3px; margin-top:2px;">
+                                    <center><div class="thealonicpreview" id="thealonicpreview"></div>
+                                    <div class="icon_label" style="color:white;"><span>
+                                        <label style="max-width:47px;">Thealonic</label>
+                                        <label style="max-width:42px;"> </label></span></div>
+                                </center></div>
+                                <!-- Button Two -->
+                                <div class="smalliconscontainer">
+                                    <center><div class="veryvherstypreview" id="veryverstyiconpreview"></div>
+                                    <div class="icon_label" style="color:white;"><span>
+                                        <label style="max-width:42px;">Very</label>
+                                        <label style="max-width:42px;">Vhersty</label></span></div>
+                                </center></div>
+                                <!-- Button Three -->
+                                <div class="smalliconscontainer">
+                                    <center><div class="twitterpreview" id="twittericonpreview"></div>
+                                    <div class="icon_label" style="color:white;"><span style="padding:1px;">
+                                        <label style="max-width:42px;">Art</label>
+                                        <label style="max-width:42px;">posting</label></span></div>
+                                </center></div>
+                                <!-- Button Four -->
+                                {block:AskEnabled}
+                                <div class="smalliconscontainer">
+                                    <center><div class="askiconpreview" id="askiconpreview"></div>
+                                    <div class="icon_label" style="color:white;"><span>
+                                        <label style="max-width:42px;">Ask</label>
+                                        <label style="max-width:42px;">mommy</label></span></div>
+                                </center></div>
+                                {/block:AskEnabled}
+                                <!-- Button Five -->
+                                {block:SubmitEnabled}
+                                <div class="smalliconscontainer">
+                                    <center><div class="submiticonpreview" id="submiticonpreview"></div>
+                                    <div class="icon_label" style="color:white;"><span>
+                                        <label style="max-width:42px;">Submissions</label>
+                                        <label style="max-width:42px;"> </label></span></div>
+                                </center></div>
+                                {/block:SubmitEnabled}
+                                <!-- Button Six -->
+                                <div class="smalliconscontainer">
+                                    <center><div class="discordlinkpreview" id="discordiconpreview"></div>
+                                    <div class="icon_label" style="color:white;"><span>
+                                        <label style="max-width:42px;">SGSP</label>
+                                        <label style="max-width:42px;">discord</label></span></div>
+                                </center></div></div>
+                            
+                            <div class="scrollbarmiddle" style="position:absolute; height:17px; width:310px;"></div>
+                            <div class="win98button" style="position:absolute; margin-left:306px; width:10px; height:11px;"><div class="scrollright" style="margin-left:-3px; margin-top:-2px;"></div></div>
+                            <div class="win98button" style="position:absolute; margin-left:-4px; width:10px; height:11px;"><div class="scrollleft" style="margin-left:-3px; margin-top:-2px;"></div></div>
+                        </ul>
+                        
+                        <div class="win98buttoninactive" style="float:right; width:78px; height:18px; margin-top: 10px; margin-right:4px; ">
+                            <div class="disabledfont" style="margin-top: 3px; margin-left:12px;"> Default Icon </div></div>
+                        <div class="win98buttoninactive" style="float:right; width:78px; height:18px; margin-top: 10px; margin-right:8px; "> 
+                            <div class="disabledfont" style="margin-top: 3px; margin-left:8px;"> Change Icon... </div></div>
+                        <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 44px; margin-left:3px; background-color: silver;"><div class="disabledtickbox"></div></ul>
+                            <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 45px; display: inline-block;">Preview desktop icons as smaller icons</div>
+                        
+                    </fieldset>
+                    
+                    
+                    <fieldset style="width:336px; height:105px; margin-left: 12px; margin-top: 20px;">
+                        <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: silver; width:68px; padding: 0px 0px 3px 3px; margin-left:-3px"> Visual Effects </label>
+                        
+                        <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 7px; margin-left:3px; background-color: silver;"><div class="disabledtickbox"></div></ul>
+                            <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 8px; display: inline-block;">Use large desktop icons</div>
+                        <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 27px; margin-left:3px; background-color: silver;"><div class="disabledtickbox"></div></ul>
+                            <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 28px; display: inline-block;">Show desktop icons using all possible colours</div>
+                        <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 47px; margin-left:3px; background-color: silver;"></ul>
+                            <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 48px; display: inline-block;">Allow all windows to be draggable</div>
+                        <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 67px; margin-left:3px; background-color: silver;"><div class="disabledtickbox"></div></ul>
+                            <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 68px; display: inline-block;">Smooth edges of screen fonts</div>
+                        <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 87px; margin-left:3px; background-color: silver;"><div class="disabledtickbox"></div></ul>
+                            <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 88px; display: inline-block;">Show window contents while dragging</div>
+                        
+                    </fieldset>
             <!-- inner container end -->
             </div>
             
@@ -1473,13 +1566,15 @@
                                             <div class="media"  data-from-page="{CurrentPage}">{Video-400}</div>
                                         </div>
                                         {block:Caption}
-                                            <div class="content caption" style= "margin-top:0px;" > {Caption} </div> <!-- video caption -->
+                                            <div class="menuapplicationsplit" style="width:100%;"> </div>
+                                            <div class="content caption" style= "margin-top:0px; padding: 3px;" > {Caption} </div> <!-- video caption -->
                                         {/block:Caption}
                                     {/block:Video}
                                     <!-- Video audio -->
                                     {block:Audio}
                                         <div class="audioContainer" style="width: 100%; margin-bottom: -3px"> {block:AudioEmbed}{AudioEmbed color="white"}{/block:AudioEmbed} </div> <!-- Audio container --> 
                                         {block:Caption}
+                                            <div class="menuapplicationsplit" style="width:100%;"> </div>
                                             <div class="content caption" style="margin-top:-30px"> {Caption} </div> <!-- image caption -->
                                         {/block:Caption}
                                     {/block:Audio}
