@@ -650,9 +650,9 @@
                 document.getElementById("catwindow").style.backgroundPosition = "-150px";
                 document.getElementById("taskapp2").style.backgroundImage = discord + "630047188520665121/789416557692452884/Taskbar_application.png')";} 
                 
-            function catclose() { pyrowindow();
+            function catclose() { pyrotabs = pyrotabs - 1; pyrowindow(); 
                 pyroButtonOpen = true; window2 = false;
-                document.getElementById("cat").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; 
+                document.getElementById("cat").style.marginLeft = "-20000px";
                 document.getElementById("taskapp2").style.backgroundImage = discord + "630047188520665121/789420847604564008/Taskbar_application1.png')";
                 idleactive(); inactiveall();}
         </script>
@@ -684,11 +684,10 @@
                     if(tick == 2){ document.getElementById("pyrobutton").textContent = "Maybe?";}
                     if(tick == 1){ document.getElementById("pyrobutton").textContent = "No.";}
                     
-                    if(randomNum == 30){ document.getElementById("pyrobutton").textContent="Nuzzles"; }
-
+                    if(randomNum == 30){ document.getElementById("pyrobutton").textContent="Nuzzles";
                     tick = tick - 1;
-                } else { 
-                    document.getElementById("pyro").style.marginLeft = "-20000px"; pyrowindow(); pyrotabs = pyrotabs - 1;
+                } else { pyrotabs = pyrotabs - 1; pyrowindow();
+                    document.getElementById("pyro").style.marginLeft = "-20000px";
                     document.getElementById("pyrobutton").textContent = "Definately"; document.getElementById("pyrotext").textContent = '💯 Wubba lubba dub dub!';
                     document.getElementById("pyroimage").style.backgroundImage = "var(--defaultpyro)"; }}
                 
@@ -703,9 +702,9 @@
                 document.getElementById("pyrowindow").style.backgroundImage = discord + "630047188520665121/791321110750298162/title-bar_postheader.png')";
                 document.getElementById("pyrowindow").style.backgroundPosition = "-150px";
                 document.getElementById("taskapp2").style.backgroundImage = discord + "630047188520665121/789416557692452884/Taskbar_application.png')";} 
-            function pyroclose() { pyrowindow();
+            function pyroclose() { pyrotabs = pyrotabs - 1; pyrowindow();
                 pyroButtonOpen = true; window1 = false;
-                document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1;
+                document.getElementById("pyro").style.marginLeft = "-20000px";
                 document.getElementById("taskapp2").style.backgroundImage = discord + "630047188520665121/789420847604564008/Taskbar_application1.png')";
                 idleactive(); inactiveall();}
         </script>                
@@ -717,7 +716,6 @@
         <script> 
             function vunnyopen(){
                 idleactive(); inactiveall();
-                windowstotal = windowstotal + 1;
                 pyrotabs = 2; tick = 3; pyroButtonOpen = false;
                 document.getElementById("cat").style.marginLeft = "0px";
                 document.getElementById("pyro").style.marginLeft = "0px"; 
