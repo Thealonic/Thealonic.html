@@ -70,11 +70,10 @@
         /* ----------------------------------------------------------------------------------------------------------------------------- */
             
             /* desktop config settings */
-            body {      background: url('https://cdn.discordapp.com/attachments/630047188520665121/786208918119514112/wallpaper32.png') repeat fixed; background-size: cover; margin: 0px; padding: auto auto auto auto; background-color:#008080;}
-            html{       max-width: 100%; overflow-x: hidden;}
+            body { background: url('https://cdn.discordapp.com/attachments/630047188520665121/786208918119514112/wallpaper32.png') repeat fixed; background-size: cover; margin: 0px; padding: auto auto auto auto; background-color:#008080;}
+            body{ max-width: 100%; overflow-x: hidden;}
             #desktop, .navigation { margin: 0px auto 0px auto; position: relative; width: 1010px;} /* whole thing */
-            body.permalink_page #desktop, 
-            body.permalink_page .navigation { width: 480px;}
+            body.permalink_page #desktop, body.permalink_page .navigation { width: 480px;}
             body.infinite_scrolling .navigation, .inf_scr { display: none;}
             
 
@@ -119,7 +118,7 @@
             /*startmenu*/           font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute; font-size: 11px;}
             .window-body{           margin:8px;}
             
-            .win98post{             box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #dfdfdf,inset -2px -2px grey,inset 2px 2px #fff;background:silver;padding:3px;
+            .win98post{             box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px;
             /*randomimagesmenu*/    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
             .title-bar-posts{       font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px; background-image: var(--active); height: 18px; width: 100%}
             .title-bar-small{       font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px; background-image: var(--inactive); height: 18px; width: 100%}
@@ -169,13 +168,17 @@
                                     font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute; z-index; 100;}
             
             .disabledfont {         font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; color:grey; text-shadow:1px 1px 0 #fff;}
-            .optionsmenu {          cursor:pointer; height: 18px; width: 100%; background-color:#ffffff; color: black border-style: dotted; border-width: 1px; border-color: white;}    
-            .optionsmenu:hover {    cursor:pointer; height: 18px; width: 100%; background-color:#00207c; color: white; border-style: dotted; border-width: 1px; border-color: yellow;}  
+            .optionsmenu {          cursor:pointer; height: 17px; width: 100%; background-color:#ffffff; color: black; border-style: dotted; border-width: 1px; border-color: white; z-index:4;}    
+            .optionsmenu:hover {    cursor:pointer; height: 17px; width: 100%; background-color:#00207c; color: white; border-style: dotted; border-width: 1px; border-color: yellow; z-index:10;}  
             
             .drop-down-menu {       position: absolute; background: white; margin-top: 20px; z-index: 20000000; }
             .drop-down-text {       height: 11px; width: 100%; padding:2px 3px 1px 2px; background-color:white; color:black;}
             .drop-down-text:hover { height: 11px; width: 100%; padding:1px 3px 0px 2px; background-color:#00207c; color: white; border-style: dotted; border-width: 1px; border-color: yellow;}
             
+            .colourselect {         height: 12px; width: 12px; padding:2px; background-color:#ffffff; box-shadow: inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a; display: inline-block;
+                                    border-style: solid; border-width: 1px; border-color: silver; margin-left:-1px; margin-top:-1px;}
+            .colourselect:hover {   height: 12px; width: 12px; padding:2px; background-color:#ffffff; box-shadow: inset -1px -1px white,inset 1px 1px white,inset -2px -2px black,inset 2px 2px black; display: inline-block;
+                                    border-style: solid; border-width: 1px; border-color: black; margin-left:-1px; margin-top:-1px;}
                       
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* Window icon handling */
@@ -406,13 +409,13 @@
             h3 {        font-size: 2rem;}
             a {         color: #ffffff; text-decoration: none;}
             a:hover {   text-decoration: underline; color: #ffffff;}
-            span {      background-color: #008383;}
+            span {      background-color: #008080; color: #ffffff;}
             label {     display:inline-flex; align-items: center;}
             
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* tumblr post handling                                                                                                          */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
-
+            
             .posts .photo img.image {       display: block; width: 100%;}
             .posts .audio img.artwork {     display: block; width: 100%;}
             .posts .html_photoset {         display: block; width: 100%;}
@@ -424,14 +427,15 @@
             body.permalink_page .posts .controls {  display: none;}
             .hide_if_last:last-child {              display: none;}
             
-            .content p > img { max-width: 100%; border-radius: 0;}
-            .content p, blockquote, ul, ol  { margin: 0 0 0.8em 0;}
-            .meta div { margin: 0 0 0.4em 0 !important;}
-            .meta div a { text-decoration: none;}
-            #content #posts #tags .comma:last-child { display: none;}
-            .content p:last-child { margin-bottom: 0 !important;} 
-            .content blockquote:last-child { margin-bottom: 0 !important;}
-            .meta div:last-child { margin-bottom: 0 !important;} /* bottom of posts before footer */
+            .content p > img {      max-width: 100%; border-radius: 0;}
+            .content p {            margin: 0 0 0.8em 0; display: block;}
+            blockquote, ul, ol  {   margin: 0 0 0.8em 0; display: block;}
+            .meta div {             margin: 0 0 0.4em 0 !important;}
+            .meta div a {           text-decoration: none;}
+            #content #posts #tags .comma:last-child {   display: none;}
+            .content p:last-child {                     margin-bottom: 0 !important;} 
+            .content blockquote:last-child {            margin-bottom: 0 !important;}
+            .meta div:last-child {                      margin-bottom: 0 !important;} /* bottom of posts before footer */
             
             /* text Post settings */
             blockquote {                padding-left: 5px; margin-top:-5px; margin-bottom:5px; border-left: 2px solid #ABABAB; border-left: 2px solid rgba(0,0,0,0.33); } /* lines at the side of posts */
@@ -447,7 +451,7 @@
             img.full_image {    width: 451px} /* bottlenecks images */
             .middle img {       max-width: 451px; width: 100%; height: 100%; display: block;}
             .photoset .wrapper {width: 100%; width: 451px;}
-            a img {             border: 0;}
+            a img {             border: 0; }
             
             /* video Post settings */
             .video .video_player { height: 100%; width: 100%; max-width: 470px; display: block; margin: 0;}
@@ -470,7 +474,6 @@
             .like-b .liked + .b { color:inherit;}
             .like-b .liked + .b:after { content:'d';}
             .like-b:hover { color:#ffffff; text-decoration-line: underline; } 
-
             
             /* infinate scroll script + */
             ul, ol { padding: 0 0 0 18px;}
@@ -488,15 +491,7 @@
             .cf{ *zoom:1;}
             
             {CustomCSS}
-            
-            desktop {
-                scrollbar-width: none; /* For Firefox */
-                -ms-overflow-style: none; /* For Internet Explorer and Edge */
-            }
-            
-            desktop::-webkit-scrollbar {
-                width: 0px; /* For Chrome, Safari, and Opera */
-            }
+
         </style>
         
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -515,60 +510,55 @@
                 <!-- Button one -->
                 <a href="https://thealonic.tumblr.com/" class="pages" style="cursor: pointer;">
                     <div class="thealonic" id="thealonic"></div>
-                    <div class="icon_label"><span>
-                        <label>Thealonic
-                </label></span></div> </a>
+                    <div class="icon_label"><span id="desktopi1">
+                        <label id="desktopi1f">Thealonic </label></span></div> </a>
                 <!-- Button Two -->
                 <a href="https://veryvhersty.tumblr.com/" class="pages" style="cursor: pointer;" target="_blank">
                     <div class="veryvhersty" id="veryverstyicon"></div>
-                    <div class="icon_label"><span>
-                        <label> Very.Vhersty
-                </label></span></div> </a>
+                    <div class="icon_label"><span id="desktopi2">
+                        <label id="desktopi2f"> Very.Vhersty </label></span></div> </a>
                 <!-- Button Three -->
                 <a href="https://twitter.com/VeryVhersty" class="pages" style="cursor: pointer;" target="_blank">
                     <div class="twitter" id="twittericon"></div>
-                    <div class="icon_label"><span>
-                        <label> Art Posting
-                </label></span></div> </a>
+                    <div class="icon_label"><span id="desktopi3">
+                        <label id="desktopi3f"> Art Posting </label></span></div> </a>
                 <!-- Button Four -->
                 {block:AskEnabled}
                 <a href="/ask" class="ask" style="cursor: pointer;" target="_blank">
                     <div class="askicon" id="askicon"></div>
-                    <div class="icon_label"><span>
-                        <label>Ask Mommy
-                </label></span></div> </a>
+                    <div class="icon_label"><span id="desktopi4">
+                        <label id="desktopi4f">Ask Mommy </label></span></div> </a>
                 {/block:AskEnabled}
                 <!-- Button Five -->
                 {block:SubmitEnabled}
                 <a href="/submit" class="Submit" style="cursor: pointer;" target="_blank">
                     <div class="submiticon" id="submiticon"></div>
-                    <div class="icon_label"><span>
-                        <label>Submissions
-                </label></span></div> </a>
+                    <div class="icon_label"><span id="desktopi9">
+                        <label id="desktopi9f">Submissions </label></span></div> </a>
                 {/block:SubmitEnabled}
                 <!-- Button Six -->
                 <a href="https://discord.gg/KDQcXs7" class="archive" style="cursor: pointer;" target="_blank">
                     <div class="discordlink" id="discordicon"></div>
-                    <div class="icon_label"><span>
-                        <label>Self-Governed</label> <label>Shitposters
-                </label></span></div> </a>
+                    <div class="icon_label"><span id="desktopi5">
+                        <label id="desktopi5f">Self-Governed</label> <label id="desktopi1fa">Shitposters </label></span></div> </a>
                 <!-- Button Seven -->
                 <a href="https://www.youtube.com/playlist?list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU" class="ovffvp" style="cursor: pointer;" target="_blank">
                     <div class="officialfunny" id="officialfunnyicon"></div>
-                    <div class="icon_label"><span>
-                        <label>The Official Very</label> <label>Funny Video Playlist
-                </label></span></div> </a>
+                    <div class="icon_label"><span id="desktopi6">
+                        <label id="desktopi6f">The Official Very</label> <label id="desktopi6fa">Funny Video Playlist </label></span></div> </a>
             </div>
             <!-- Sidebar icons coloumn 2 -->
             <div class="icons2">
                 <!-- Button one -->
                 <a href="https://youtu.be/WPUZn9TIorM?t=1451" class="ovffvp" style="cursor: pointer;" target="_blank">
                     <div class="simcity"></div>
-                    <div class="icon_label"><span><label>SimCity 4</label></span></div> </a>
+                    <div class="icon_label"><span id="desktopi7">
+                        <label id="desktopi1f">SimCity 4</label></span></div> </a>
                 <!-- Button Two -->
                 <a href="https://www.youtube.com/watch?v=W_4uRZFVKPE&t=383s" class="ovffvp" style="cursor: pointer;" target="_blank">
                     <div class="rct2"></div>
-                    <div class="icon_label"><span><label>Roller Coaster</label> <label>Tycoon 2</label></span></div> </a>
+                    <div class="icon_label"><span id="desktopi8">
+                        <label id="desktopi8f">Roller Coaster</label> <label id="desktopi8fa">Tycoon 2</label></span></div> </a>
         </div></div>
     </head>
      
@@ -639,10 +629,9 @@
             var randomNum = Math.floor(Math.random() * myPix.length);
             document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum];
             document.getElementById("pyrotext").textContent= r_text[randomNum]; 
-
         </script>
         
-        <div class="win98post" style="z-index: 5; width:194px; position: fixed; top: 68%; left: 4%; position: absolute" onmousedown="catactive();" id="cat">
+        <div class="win98post" style="z-index: 5; width:194px; position: fixed; top: 68%; left: 4%;" onmousedown="catactive();" id="cat">
                     <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="catclose(); pyrowindow();"><div class="close"></div></div>
                         <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
                     <div class="title-bar-small" id="catwindow" style="width:194px;"> <div class="title-bar-text">🙀 cat </div></div>
@@ -666,10 +655,9 @@
                 document.getElementById("cat").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; 
                 document.getElementById("taskapp2").style.backgroundImage = discord + "630047188520665121/789420847604564008/Taskbar_application1.png')";
                 idleactive(); inactiveall();}
-                
         </script>
             
-        <div class="win98post" style="z-index: 5; width:194px; position: fixed; top: 58%; left: 12%; position: absolute" onmousedown="pyroactive();" id="pyro">
+        <div class="win98post" style="z-index: 5; width:194px; position: fixed; top: 58%; left: 12%;" onmousedown="pyroactive();" id="pyro">
             <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="pyroclose();"><div class="close"></div></div>
                 <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
             <div class="title-bar-small" id="pyrowindow" style="width:194px;"> <div class="title-bar-text" id="pyrotext">💯 Wubba lubba dub dub! </div></div>
@@ -747,13 +735,13 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
 
         <!-- message box rendering -->
-        <div class="win98post" style="height: 50px; width:306px; right: 8%; top: 63%; z-index:5" onmousedown="messageactive();" id="message">
+        <div class="win98post" style="height: 50px; width:306px; right: 8%; top: 63%; z-index:5;" onmousedown="messageactive();" id="message">
              <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:2px; margin-top:2px;" onclick="messageclose()"><div class="close"></div></div>
              <div class="win98titlebarbutton" style="margin-top:2px;" onclick="messagemaximize()"><div class="maximize"></div></div>
              <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU"><div class="win98titlebarbutton" style="margin-top:2px; cursor: default;"> <div class="help"></div> </div> </a> 
             <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="title-bar-text">🧮 brain go brrrrr</div></div>
             <div class="window-body" style="margin-right: 4px; margin-top: 5px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
-                <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>15:08pm on January 22th, 2021. [GMT]</label></p>
+                <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>22:56pm on January 25th, 2021. [GMT]</label></p>
         </div></div>
         
         <!-- message box functions -->
@@ -791,7 +779,7 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
             
         <!-- display settings container -->
-        <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; right: 3%; z-index:5; position: absolute" onmousedown="diskactive()" id="disk">
+        <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; right: 3%; z-index:5;" onmousedown="diskactive()" id="disk">
             <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:2px; margin-top:2px; cursor: pointer;" title="close" onclick="diskclose()"><div class="close"></div></div>
             <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="margin-top:2px" title="help"> <div class="help"></div></div></a> 
             <div class="title-bar-98" id="diskwindow"> <div class="title-bar-text">📺 Display Properties
@@ -818,15 +806,15 @@
                     e.style.width = "45px"; e.style.height = "16px"; e.style.marginTop = "6px"; e.style.marginLeft = "269px"; e.style.zIndex = 1;}// fifth tab // ee
             
                 function backgroundtab(){ document.getElementById("background").style.zIndex = 9; // first tab
-                    a.style.zIndex = 10; a.style.width = "71px"; a.style.marginLeft = "6px"; a.style.marginTop = "5px"; a.style.height = "17px"; amenu.style.zIndex = 9;}
+                    a.style.zIndex = 10; a.style.width = "71px"; a.style.marginLeft = "6px"; a.style.marginTop = "5px"; a.style.height = "17px";}
                 function screensavertab(){ document.getElementById("screensaver").style.zIndex = 9; // first tab
-                    b.style.zIndex = 10; b.style.width = "72px"; b.style.marginLeft = "78px"; b.style.marginTop = "5px"; b.style.height = "17px"; bmenu.style.zIndex = 9;}
+                    b.style.zIndex = 10; b.style.width = "72px"; b.style.marginLeft = "78px"; b.style.marginTop = "5px"; b.style.height = "17px";}
                 function appearancetab(){ document.getElementById("appearance").style.zIndex = 9; // first tab
-                    c.style.zIndex = 10; c.style.width = "69px"; c.style.marginLeft = "152px"; c.style.marginTop = "5px"; c.style.height = "17px"; cmenu.style.zIndex = 9;}
+                    c.style.zIndex = 10; c.style.width = "69px"; c.style.marginLeft = "152px"; c.style.marginTop = "5px"; c.style.height = "17px";}
                 function effectstab(){ document.getElementById("effects").style.zIndex = 9;// first tab
-                    d.style.zIndex = 10; d.style.width = "42px"; d.style.marginLeft = "223px"; d.style.marginTop = "5px"; d.style.height = "17px"; dmenu.style.zIndex = 9;}
+                    d.style.zIndex = 10; d.style.width = "42px"; d.style.marginLeft = "223px"; d.style.marginTop = "5px"; d.style.height = "17px";}
                 function settingstab(){ document.getElementById("settings").style.zIndex = 9; // fifth tab
-                    e.style.zIndex = 10; e.style.width = "51px"; e.style.marginLeft = "267px"; e.style.marginTop = "5px"; e.style.height = "17px"; emenu.style.zIndex = 9;}
+                    e.style.zIndex = 10; e.style.width = "51px"; e.style.marginLeft = "267px"; e.style.marginTop = "5px"; e.style.height = "17px";}
             </script>
             
             <!-- --------------------------------------- background tab --------------------------------------- -->
@@ -870,49 +858,53 @@
                         </script>
                     </div>
                 
-                    <ul class="tree-view" style="width:240px; height:86px; margin-top: 2px; margin-left:4px">
-                        <div class="container" style="position: absolute; margin-top:-3px; margin-left:-3px" onmouseleave="wallpaperbackgroundupdate()">
+                    <ul class="tree-view" style="width:240px; height:86px; margin-top: 2px; margin-left:4px;">
+                        <div class="container" style="position: absolute; margin-top:-3px; margin-left:-3px; width:247px; height:93px; overflow-y: scroll; overflow-x: hidden">
                             
-                            <div class="optionsmenu" style="width:231px; position: absolute; cursor:pointer" onclick="wallpaperoptionnone()">
+                            <div class="optionsmenu" style="width:227px; position: absolute; cursor:pointer;" onclick="wallpaperoptionnone()">
                                     <div class="none" style="margin-top:-1px;"></div>
                                     <label style="margin-left: 4px; margin-top: 2px; cursor:pointer"> None </label></div>
-                            <div class="optionsmenu" style="width:231px; position: absolute; margin-top:18px; cursor:pointer" onclick="wallpaperoption1()">
+                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:18px; cursor:pointer" onclick="wallpaperoption1()">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Default </label></div>
-                            <div class="optionsmenu" style="width:231px; position: absolute; margin-top:36px; cursor:pointer" onclick="wallpaperoption2()">
+                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:36px; cursor:pointer" onclick="wallpaperoption2()">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Study </label></div>
-                            <div class="optionsmenu" style="width:231px; position: absolute; margin-top:54px; cursor:pointer" onclick="wallpaperoption3()">
+                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:72px; cursor:pointer" onclick="wallpaperoption4()">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
-                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Rolling Hills </label></div>
-                            <div class="optionsmenu" style="width:231px; position: absolute; margin-top:72px; cursor:pointer" onclick="wallpaperoption4()">
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Neon Genesis Evangelion </label></div>
+                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:54px; cursor:pointer" onclick="wallpaperoption3()"> 
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
-                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> /// </label></div></div>
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer" title="submitted by Duke in the discord server"> Star Trek (Submitted by Duke)</label></div>
+                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:92px; cursor:pointer" onclick="wallpaperoption5()">
+                                    <div class="menuapplications10" style="margin-top:-1px"></div>
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer" title="submitted by Xal in the discord server"> Battlefield Girls (Submitted by Xal)</label></div>
+                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:112px; cursor:pointer" onclick="wallpaperoption6()">
+                                    <div class="menuapplications10" style="margin-top:-1px"></div>
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer" title="submitted by Sammy in the discord server"> Vapourwave Sunset (Submitted by Sammy)</label></div>
+                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:132px; cursor:pointer" onclick="wallpaperoption7()">
+                                    <div class="menuapplications10" style="margin-top:-1px"></div>
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> /// </label></div>
+                                    
+                        </div>
                         
                         <script>
-                            var defaultwallpaper = discord + "630047188520665121/786208918119514112/wallpaper32.png')";
-                            var defaultcolour = "#008080";
-                            var desktopimage2 = discord + "630047188520665121/802544094294573056/unknown.png')";
-                            var desktopimage3 = discord + "630047188520665121/802548898290991115/unknown.png')";
-                            var desktopimage4 = discord + "630047188520665121/802576828161064960/unknown.png')";
+                            var defaultwallpaper = discord + "630047188520665121/786208918119514112/wallpaper32.png')"; 
 
-                            function wallpaperoptionnone() {    document.getElementById("body").style.backgroundImage = "none"; document.getElementById("body").style.backgroundColor = defaultcolour;
-                                                                document.getElementById("apperancepreview").style.backgroundImage = "none"; document.getElementById("apperancepreview").style.backgroundColor = defaultcolour;}
-                            function wallpaperoption1() { document.getElementById("body").style.backgroundImage = defaultwallpaper;   document.getElementById("apperancepreview").style.backgroundImage = defaultwallpaper;
-                                                          document.getElementById("iconpreview").style.backgroundImage = defaultwallpaper;}
-                            function wallpaperoption2() { document.getElementById("body").style.backgroundImage = desktopimage2;      document.getElementById("apperancepreview").style.backgroundImage = desktopimage2;
-                                                          document.getElementById("iconpreview").style.backgroundImage = desktopimage2;}
-                            function wallpaperoption3() { document.getElementById("body").style.backgroundImage = desktopimage3;      document.getElementById("apperancepreview").style.backgroundImage = desktopimage3;
-                                                          document.getElementById("iconpreview").style.backgroundImage = desktopimage3;} 
-                            function wallpaperoption4() { document.getElementById("body").style.backgroundImage = desktopimage4;      document.getElementById("apperancepreview").style.backgroundImage = desktopimage4;
-                                                          document.getElementById("iconpreview").style.backgroundImage = desktopimage4;} 
+                            function wallpaperupdate(){ document.getElementById("body").style.backgroundImage = currentwallpaper;
+                                                        document.getElementById("apperancepreview").style.backgroundImage = currentwallpaper;
+                                                        document.getElementById("iconpreview").style.backgroundImage = currentwallpaper;}
+
+                            function wallpaperoptionnone() { currentwallpaper = "none"; wallpaperupdate(); } 
+                            function wallpaperoption1() { currentwallpaper = discord + "630047188520665121/786208918119514112/wallpaper32.png')"; wallpaperupdate(); }
+                            function wallpaperoption2() { currentwallpaper = discord + "630047188520665121/802544094294573056/unknown.png')"; wallpaperupdate(); }
+                            function wallpaperoption3() { currentwallpaper = discord + "630047188520665121/803075431124566066/unknown.png')"; wallpaperupdate(); } 
+                            function wallpaperoption4() { currentwallpaper = discord + "630047188520665121/803072949024325642/unknown.png')"; wallpaperupdate(); } 
+                            function wallpaperoption5() { currentwallpaper = discord + "630047188520665121/803343335552450560/unknown.png')"; wallpaperupdate(); } 
+                            function wallpaperoption6() { currentwallpaper = discord + "630047188520665121/803345954085535744/unknown.png')"; wallpaperupdate(); } 
+                            function wallpaperoption7() { currentwallpaper = discord + " ')"; wallpaperupdate(); } 
                         </script>
-    
-                        <div class="container" style="position: absolute; width:10px; height: 100%; margin-left:228px; margin-top:-4px; ">
-                            <div class="win98scroll"><div class="scrollup"></div></div>
-                            <div class="scrollbarmiddle" style="position:absolute; height:62px; margin-top:16px"> </div>
-                            <div class="win98scroll" style="margin-top:78px"><div class="scrolldown"></div>
-                        </div></div>
+                        
                     </ul>
                 </fieldset>
                 <!-- inner container end -->
@@ -980,19 +972,19 @@
             <!-- background inner container -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="appearance">
             
-                <ul class="tree-view"  style="width:337px; height:179px; margin-left: 12px; margin-top: 12px; background-size: cover;
-                                              background: url('https://cdn.discordapp.com/attachments/630047188520665121/786208918119514112/wallpaper32.png');  padding:10px" id="apperancepreview">
+                <ul class="tree-view"  id="apperancepreview" style="width:337px; height:179px; margin-left: 12px; margin-top: 12px; background-size: cover; padding:10px;
+                                              background: url('https://cdn.discordapp.com/attachments/630047188520665121/786208918119514112/wallpaper32.png');  background-color: #008080;">
                                                   
                     <div class="win98post" style="height: 137px; width:300px;">
                         <div class="win98titlebarbutton" style="position:absolute; margin-left: 283px; margin-top:1px; cursor: pointer;" title="close"><div class="close"></div></div>
-                        <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="help"></div></div></a> 
+                        <div class="win98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="help"></div></div>
                         <div class="title-bar-98"> <div class="title-bar-text" style="margin-left:-1px; margin-top:-1px;">💤 Inactive Window</div></div>
                         <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding: 2px 2px 2px 2px"></div>
                     </div>
                     
                     <div class="win98post" style="height: 137px; width:300px; margin-top:24px; margin-left:5px">
                         <div class="win98titlebarbutton" style="position:absolute; margin-left: 283px; margin-top:1px; cursor: pointer;" title="close"><div class="close"></div></div>
-                        <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="help"></div></div></a> 
+                        <div class="win98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="help"></div></div>
                         <div class="title-bar-posts"> <div class="titletext" style="margin-left:-1px; margin-top:-1px;">💯 Active Window</div></div>
                         <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
                             <div class="container" style="margin-top: -2px">
@@ -1027,6 +1019,7 @@
                         <div class="drop-down-menu" style="margin-top:1px; width: 185px; margin-left: -20000px;" id="scheme">
                             <div class="win98buttonpressed" style="position:absolute; margin-top: -18px; margin-left:171px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
                             <div class="drop-down-text" onclick="windows98()" id="windows98scheme">Windows 98</div>
+                            <div class="drop-down-text" onclick="evangelionmode()"  id="evangelionscheme" style="padding:bottom:2px;" >Evangelion</div>
                             <div class="drop-down-text" onclick="darkmode()"  id="darkmodescheme" style="padding:bottom:2px;" >Dark mode</div>
                     </div></ul>
                         
@@ -1037,8 +1030,9 @@
                             } else if (schemedrop == true){ document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }}
                         
                         function schemeexit(){ document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }
-                        function windows98(){ document.getElementById("currentscheme").textContent="Windows 98";}
-                        function darkmode(){ document.getElementById("currentscheme").textContent="Darkmode 98";}
+                        function windows98(){ document.getElementById("currentscheme").textContent="Windows 98"; cpick12(); wallpaperoption1();}
+                        function evangelionmode(){ document.getElementById("currentscheme").textContent="Evangelion"; cpick19(); wallpaperoption4();}
+                        function darkmode(){ document.getElementById("currentscheme").textContent="Darkmode 98"; cpick18(); wallpaperoption2();}
                     </script>
                         
                     <button disabled style="position: absolute; margin-left:199px; margin-top:-1px;">Save As...</button>
@@ -1076,11 +1070,83 @@
                                 <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:9px; width:11px; height:2px;"><div class="tinyarrowdisableddown"  style="margin-left:4px;"></div></div>
                         </div></ul>
                             
-                        <div class="win98buttontitlebarinactive" style="position: absolute; margin-left:261px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
+                        <div class="win98buttontitlebarinactive" style="position: absolute; margin-left:261px; width:38px; height:17px; margin-top:0px; padding: 2px;" onclick="colourpicker()"> 
                             <div class="verticalsplitter" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
                             <div class="smallarrowdown" style="position:absolute; margin-left: 31px; margin-top:7px"></div>
-                            <div class="container" style="width:20px; height:11px; margin-top: 2px; margin-left: 3px; border:1px solid #000000; background-color: #008080;"></div>
-                        </div> 
+                            <div class="container" style="width:20px; height:11px; margin-top: 2px; margin-left: 3px; border:1px solid #000000; background-color: #008080;" id="currentpickedc"></div>
+                            
+                            <div class="win98post" style="position:absolute; z-index:10000; width:74px; height:98px; padding:5px; margin-top:4px; margin-left:-20000px;" onmouseleave="colourpicker()" id="coloursampler">
+                                <div class="win98buttonpressed" style="position: absolute; width:38px; height:17px; margin-left:-5px; margin-top:-26px; padding: 2px;" onclick="colourpicker()"> 
+                                    <div class="verticalsplitter" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
+                                    <div class="smallarrowdown" style="position:absolute; margin-left: 31px; margin-top:7px"></div>
+                                    <div class="container" style="width:20px; height:11px; margin-top: 2px; margin-left: 3px; border:1px solid #000000; background-color: #008080;" id="currentpickedo"></div></div>
+                                <div class="colourselect" style="background-color: #ffffff" onclick=" cpick1()"></div> <div class="colourselect" style="background-color: #000000" onclick=" cpick2()"></div> 
+                                <div class="colourselect" style="background-color: #c2c6ca" onclick=" cpick3()"></div> <div class="colourselect" style="background-color: #85898d" onclick=" cpick4()"></div> <br>
+                                <div class="colourselect" style="background-color: #ff0000" onclick=" cpick5()"></div> <div class="colourselect" style="background-color: #aa0055" onclick=" cpick6()"></div> 
+                                <div class="colourselect" style="background-color: #ffff00" onclick=" cpick7()"></div> <div class="colourselect" style="background-color: #aaaa55" onclick=" cpick8()"></div> <br>
+                                <div class="colourselect" style="background-color: #00ff00" onclick=" cpick9()"></div> <div class="colourselect" style="background-color: #00aa55" onclick="cpick10()"></div> 
+                                <div class="colourselect" style="background-color: #00ffff" onclick="cpick11()"></div> <div class="colourselect" style="background-color: #008080" onclick="cpick12()"></div> <br>
+                                <div class="colourselect" style="background-color: #0000ff" onclick="cpick13()"></div> <div class="colourselect" style="background-color: #0000aa" onclick="cpick14()"></div> 
+                                <div class="colourselect" style="background-color: #ff00ff" onclick="cpick15()"></div> <div class="colourselect" style="background-color: #aa55aa" onclick="cpick16()"></div> <br>
+                                <div class="menuapplicationsplit" style="width:100%; margin-bottom:3px;"> </div>
+                                <div class="colourselect" style="background-color: #a03762" onclick="cpick17()"></div> <div class="colourselect" style="background-color: #001224" onclick="cpick18()"></div> 
+                                <div class="colourselect" style="background-color: #da3624" onclick="cpick19()"></div> <div class="colourselect" style="background-color: #6d7f36" onclick="cpick20()"></div> <br>
+                        </div></div> 
+                        
+                        <script>
+                            var colourpicked = false; currentcolour = "#008080"; fontcolour = "#ffffff";
+                            var cpo = document.getElementById("currentpickedo"); cpc = document.getElementById("currentpickedc"); ap = document.getElementById("apperancepreview");
+                            
+                            var desktop1 = document.getElementById("desktopi1"); desktop2 = document.getElementById("desktopi2"); desktop3 = document.getElementById("desktopi3"); desktop4 = document.getElementById("desktopi4");
+                                desktop5 = document.getElementById("desktopi5"); desktop6 = document.getElementById("desktopi6"); desktop7 = document.getElementById("desktopi7"); desktop8 = document.getElementById("desktopi8");
+                                desktop9 = document.getElementById("desktopi9"); 
+
+                            function colourpicker(){
+                                       if (colourpicked == false){ document.getElementById("coloursampler").style.marginLeft = "    -2px"; colourpicked =  true;
+                                } else if (colourpicked == true ){ document.getElementById("coloursampler").style.marginLeft = "-20000px"; colourpicked = false; }}
+
+                            function backcolourset(){
+                                document.body.style.backgroundColor = currentcolour; cpc.style.backgroundColor = currentcolour; cpo.style.backgroundColor = currentcolour; 
+                                document.getElementById("iconpreview").style.backgroundColor = currentcolour;  ap.style.backgroundColor = currentcolour;
+                                desktop1.style.backgroundColor = currentcolour; desktop2.style.backgroundColor = currentcolour; desktop3.style.backgroundColor = currentcolour;
+                                desktop4.style.backgroundColor = currentcolour; desktop5.style.backgroundColor = currentcolour; desktop6.style.backgroundColor = currentcolour;
+                                desktop7.style.backgroundColor = currentcolour; desktop8.style.backgroundColor = currentcolour;
+                                
+                                document.getElementById("iconpre1").style.backgroundColor = currentcolour; document.getElementById("iconpre2").style.backgroundColor = currentcolour; 
+                                document.getElementById("iconpre3").style.backgroundColor = currentcolour; document.getElementById("iconpre4").style.backgroundColor = currentcolour; 
+                                document.getElementById("iconpre6").style.backgroundColor = currentcolour;} 
+                                
+                            function fontcolourset(){
+                                desktop1.style.color = fontcolour; desktop2.style.color = fontcolour; desktop3.style.color = fontcolour;
+                                desktop4.style.color = fontcolour; desktop5.style.color = fontcolour; desktop6.style.color = fontcolour;
+                                desktop7.style.color = fontcolour; desktop8.style.color = fontcolour; 
+                                
+                                document.getElementById("iconpre1").style.color = fontcolour; document.getElementById("iconpre2").style.color = fontcolour; 
+                                document.getElementById("iconpre3").style.color = fontcolour; document.getElementById("iconpre4").style.color = fontcolour; 
+                                document.getElementById("iconpre6").style.color = fontcolour;}
+
+                            function cpick1() {   currentcolour = "#ffffff"; backcolourset(); fontcolour = "#000"; fontcolourset();}
+                            function cpick2() {   currentcolour = "#000000"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
+                            function cpick3() {   currentcolour = "#c2c6ca"; backcolourset(); fontcolour = "#000"; fontcolourset();}
+                            function cpick4() {   currentcolour = "#85898d"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
+                            function cpick5() {   currentcolour = "#ff0000"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
+                            function cpick6() {   currentcolour = "#aa0055"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
+                            function cpick7() {   currentcolour = "#ffff00"; backcolourset(); fontcolour = "#000"; fontcolourset();}
+                            function cpick8() {   currentcolour = "#aaaa55"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
+                            function cpick9() {   currentcolour = "#00ff00"; backcolourset(); fontcolour = "#000"; fontcolourset();}
+                            function cpick10() {  currentcolour = "#00aa55"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
+                            function cpick11() {  currentcolour = "#00ffff"; backcolourset(); fontcolour = "#000"; fontcolourset();}
+                            function cpick12() {  currentcolour = "#008080"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
+                            function cpick13() {  currentcolour = "#0000ff"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
+                            function cpick14() {  currentcolour = "#0000aa"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
+                            function cpick15() {  currentcolour = "#ff00ff"; backcolourset(); fontcolour = "#000"; fontcolourset();}
+                            function cpick16() {  currentcolour = "#aa55aa"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
+                            function cpick17() {  currentcolour = "#a03762"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
+                            function cpick18() {  currentcolour = "#001224"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
+                            function cpick19() {  currentcolour = "#da3624"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
+                            function cpick20() {  currentcolour = "#6d7f36"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
+                        </script>
+                        
                         <div class="win98buttontitlebarinactive" style="position: absolute; margin-left:312px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
                             <div class="verticalsplitter" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
                             <div class="smallarrowdisableddown" style="margin-left: 31px; margin-top:7px"></div></div><br><br>
@@ -1118,25 +1184,25 @@
                         <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: silver; width:68px; padding: 0px 0px 3px 3px; margin-left:-3px"> Desktop Icons </label>
                         
                         <ul class="tree-view" style="width:318px; height:88px; margin-top:5px; margin-left:2px; overflow:hidden;
-                                                     background: url('https://cdn.discordapp.com/attachments/630047188520665121/786208918119514112/wallpaper32.png');" id="iconpreview">
+                                                     background: url('https://cdn.discordapp.com/attachments/630047188520665121/786208918119514112/wallpaper32.png'); background-color: #008080;" id="iconpreview">
                             <div class="container" style="height:75px;">
                                 <div class="smalliconscontainer" style="margin-left:3px; margin-top:2px;">
                                     <center><div class="thealonicpreview" id="thealonicpreview"></div>
-                                    <div class="icon_label" style="color:white;"><span>
+                                    <div class="icon_label" style="color:white;"><span id="iconpre1">
                                         <label style="max-width:47px;">Thealonic</label>
                                         <label style="max-width:42px;"> </label></span></div>
                                 </center></div>
                                 <!-- Button Two -->
                                 <div class="smalliconscontainer">
                                     <center><div class="veryvherstypreview" id="veryverstyiconpreview"></div>
-                                    <div class="icon_label" style="color:white;"><span>
+                                    <div class="icon_label" style="color:white;"><span id="iconpre2">
                                         <label style="max-width:42px;">Very</label>
                                         <label style="max-width:42px;">Vhersty</label></span></div>
                                 </center></div>
                                 <!-- Button Three -->
                                 <div class="smalliconscontainer">
                                     <center><div class="twitterpreview" id="twittericonpreview"></div>
-                                    <div class="icon_label" style="color:white;"><span style="padding:1px;">
+                                    <div class="icon_label" style="color:white;"><span id="iconpre3">
                                         <label style="max-width:42px;">Art</label>
                                         <label style="max-width:42px;">posting</label></span></div>
                                 </center></div>
@@ -1144,7 +1210,7 @@
                                 {block:AskEnabled}
                                 <div class="smalliconscontainer">
                                     <center><div class="askiconpreview" id="askiconpreview"></div>
-                                    <div class="icon_label" style="color:white;"><span>
+                                    <div class="icon_label" style="color:white;"><span id="iconpre4">
                                         <label style="max-width:42px;">Ask</label>
                                         <label style="max-width:42px;">mommy</label></span></div>
                                 </center></div>
@@ -1153,7 +1219,7 @@
                                 {block:SubmitEnabled}
                                 <div class="smalliconscontainer">
                                     <center><div class="submiticonpreview" id="submiticonpreview"></div>
-                                    <div class="icon_label" style="color:white;"><span>
+                                    <div class="icon_label" style="color:white;"><span id="iconpre5">
                                         <label style="max-width:42px;">Submissions</label>
                                         <label style="max-width:42px;"> </label></span></div>
                                 </center></div>
@@ -1161,7 +1227,7 @@
                                 <!-- Button Six -->
                                 <div class="smalliconscontainer">
                                     <center><div class="discordlinkpreview" id="discordiconpreview"></div>
-                                    <div class="icon_label" style="color:white;"><span>
+                                    <div class="icon_label" style="color:white;"><span id="iconpre6">
                                         <label style="max-width:42px;">SGSP</label>
                                         <label style="max-width:42px;">discord</label></span></div>
                                 </center></div></div>
@@ -1190,8 +1256,8 @@
                             <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 28px; display: inline-block;">Show desktop icons using all possible colours</div>
                         <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 47px; margin-left:3px; background-color: silver;"></ul>
                             <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 48px; display: inline-block;">Allow all windows to be draggable</div>
-                        <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 67px; margin-left:3px; background-color: silver;"><div class="disabledtickbox"></div></ul>
-                            <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 68px; display: inline-block;">Smooth edges of screen fonts</div>
+                        <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 67px; margin-left:3px; background-color: silver;"></ul>
+                            <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 68px; display: inline-block;">Enable NSFW desktop options</div>
                         <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 87px; margin-left:3px; background-color: silver;"><div class="disabledtickbox"></div></ul>
                             <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 88px; display: inline-block;">Show window contents while dragging</div>
                         
@@ -1221,8 +1287,8 @@
                         <script>
                             let colourdrop = false;
                             function colourdropdown(){
-                                if (colourdrop == false) { document.getElementById("colour").style.marginLeft = "-2px"; colourdrop = true;
-                                } else if (colourdrop == true){ document.getElementById("colour").style.marginLeft = "-20000px"; colourdrop = false; }}
+                                       if (colourdrop == false){ document.getElementById("colour").style.marginLeft = "    -2px"; colourdrop =  true;
+                                } else if (colourdrop ==  true){ document.getElementById("colour").style.marginLeft = "-20000px"; colourdrop = false; }}
                                 
                             function colourexit(){ document.getElementById("colour").style.marginLeft = "-20000px"; colourdrop = false; }
                                 
@@ -1397,21 +1463,26 @@
         {/block:Pagination}
         
         <script>
-            function tumblractive() { tumblrButtonOpen = false;
-                idleactive(); inactiveall();
+            function tumblractive(obj) { 
+                tumblrButtonOpen = false; idleactive(); inactiveall(); 
                 document.getElementById("post").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
-                document.getElementById("postwindow").style.backgroundImage = discord + "630047188520665121/791321110750298162/title-bar_postheader.png')"; 
+                postwindow.style.backgroundImage = discord + "630047188520665121/791321110750298162/title-bar_postheader.png')"; 
                 document.getElementById("taskapp1").style.backgroundImage = discord + "630047188520665121/789416557692452884/Taskbar_application.png')";}
+                
+            function tumblrminimize() { 
+                tumblrButtonOpen = true; idleactive(); inactiveall(); 
+                document.getElementById("desktop").style.left = "-20000px"; 
+                document.body.style.overflowY = "hidden";}
         </script>
         
         <div id="desktop" class="container" id="desktop" style="width:1010px; left:-25px; margin-bottom:30px;">
             {block:Posts}
-                <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-left: 20px; position: absolute; cursor: default" onmousedown="tumblractive()" id="post">
+                <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-left: 20px; position: absolute; cursor: default" onmousedown="tumblractive(this)" id="post">
                     <div class="win98titlebarbutton" style="margin-right:2px; margin-left:2px;" title="Close"><div class="close"></div></div>
                     <div class="win98titlebarbutton" title="Maximize" style=""> <div class="maximize"></div></div>
-                    <div class="win98titlebarbutton" title="Minimize"> <div class="minimize"></div></div>
+                    <div class="win98titlebarbutton" title="Minimize" onclick="tumblrminimize();"> <div class="minimize"></div></div>
                     <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" title="Help"> <div class="help"></div></div></a> 
-                    <div class="title-bar-98" id="postwindow" style="background-image:url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')"> 
+                    <div class="title-bar-98" id="postwindow" style="background-image:url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')" id="tumblrheader"> 
                         <div class="title-bar-text">🍭 very.vunnies - Windows Explorer</div></div>
                     <div class="window-body"> 
                     
@@ -1465,10 +1536,6 @@
                                     <div class="explorerlinks" style="position: absolute; margin-left:42px; margin-top:2px;"></div></div>
                         </fieldset></div>
                         
-                        <!--
-                        <div class="win98container" id="startmenu" style="width:163px; height: 20px; margin-top:-23px; margin-left:463px;"> </div>
-                        -->
-                        
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
             <!-- Post window body                                                                                                              -->
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -1480,7 +1547,7 @@
                             <div class="win98buttonscrollinactive" style="margin-left: 451px;"><div class="arrowdisableup"></div></div>
                             
                                  <!-- Normalised post container --> 
-                                <div class="container"  style="max-width: 451px;">
+                                <div class="container"  style="max-width: 451px;"> <!-- 428px wide, 451 including scrollwheel + padding -->
                                 <!-- Text posts -->
                                     
                                     {block:Text}
@@ -1488,7 +1555,7 @@
                                             {block:Title}
                                                <div class="title-bar-text" style= "margin-left:3px; font-size: 2rem; color:black; margin-bottom:-7px; margin-top:-3px" >{Title}</div>
                                             {/block:Title}
-                                            <div class="content caption" style= "width: 100%; height: 100%; overflow: hidden;"> {Body} </div>
+                                            <div class="content caption" style= "width: 100%; height: 100%; max-width: 428px;"> {Body} </div>
                                         </div>
                                     {/block:Text}
                                                 
@@ -1498,7 +1565,7 @@
                                         <img src="{PhotoURL-400}" class="full_image" style="margin-bottom:-4px; max-width: 451px;" alt="{PhotoAlt}"> </img> <!-- image -->
                                         <!-- Image caption -->
                                         {block:Caption} 
-                                            <div class="content caption" style="padding: 3px"> {Caption} </div> <!-- content -->
+                                            <div class="content caption" style="padding: 3px; "> {Caption} </div> <!-- content -->
                                         {/block:Caption}
                                     {/block:Photo}
                                         
@@ -2332,23 +2399,23 @@
                             inactiveall(); idleactive(); tumblrButtonOpen = true;
                             document.getElementById("postwindow").style.backgroundImage = discord + "630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
                             document.getElementById("taskapp1").style.backgroundImage = discord + "630047188520665121/789420847604564008/Taskbar_application1.png')";
+                            document.getElementById("desktop").style.left = "-20000px"; document.body.style.overflowY = "hidden";
                             
                         } else if (tumblrButtonOpen == true){ 
                             inactiveall(); tumblrButtonOpen = false;
                             document.getElementById("post").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
                             document.getElementById("postwindow").style.backgroundImage = discord + "630047188520665121/791321110750298162/title-bar_postheader.png')";
-                            document.getElementById("taskapp1").style.backgroundImage = discord + "630047188520665121/789416557692452884/Taskbar_application.png')";}}
+                            document.getElementById("taskapp1").style.backgroundImage = discord + "630047188520665121/789416557692452884/Taskbar_application.png')";
+                            document.getElementById("desktop").style.left = "-25px"; document.body.style.overflowY = "scroll";}}
                     
                     // random message box active toggle
                     function pyrotoggle() { 
                         tumblrButtonOpen = true; diskButtonOpen = true;
-                        
                         if (pyroButtonOpen == false) { 
                             inactiveall(); idleactive(); pyroButtonOpen = true;
                             document.getElementById("pyrowindow").style.backgroundImage = discord + "630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
                             document.getElementById("catwindow").style.backgroundImage = discord + "630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
                             document.getElementById("taskapp2").style.backgroundImage = discord + "630047188520665121/789420847604564008/Taskbar_application1.png')";
-                            
                         } else if (pyroButtonOpen == true){
                             inactiveall(); pyroButtonOpen = false;
                             if (window1 == true){ 
@@ -2363,24 +2430,22 @@
                     // disk window active toggle
                     function disktoggle() { 
                         tumblrButtonOpen = true; pyroButtonOpen = true;
-                        
                         if (diskButtonOpen == false) { 
                             inactiveall(); idleactive(); diskButtonOpen = true;
                             document.getElementById("diskwindow").style.backgroundImage = discord + "630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
                             document.getElementById("taskapp3").style.backgroundImage = discord + "630047188520665121/789420847604564008/Taskbar_application1.png')";
+                            document.getElementById("disk").style.marginTop = "-20000px";
                             
                         } else if (diskButtonOpen == true){
                             inactiveall(); diskButtonOpen = false;
                             document.getElementById("disk").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
+                            document.getElementById("disk").style.marginTop = "0px";
                             document.getElementById("diskwindow").style.backgroundImage = discord + "630047188520665121/791321110750298162/title-bar_postheader.png')";  
                             document.getElementById("taskapp3").style.backgroundImage = discord + "630047188520665121/789416557692452884/Taskbar_application.png')";}} 
                             
-                    function idleactive() {
-                        tumblrButtonOpen = true;
-                        pyroButtonOpen = true; 
-                        diskButtonOpen = true;
-                    }
-                            
+                    function idleactive() { tumblrButtonOpen = true;
+                                              pyroButtonOpen = true; 
+                                              diskButtonOpen = true; }
                 </script>
                  
                 <div class="tray">
@@ -2436,8 +2501,7 @@
                     $('#showClock').html(currentTime); }
                 window.setInterval(updateClock, 6000);
                 
-            updateClock();
-            appended_update()});
+            updateClock()});
             
         // ----------------------------------------------------------------------------------------------------------------------------- -->
         // Drag element scripts                                                                                                          -->
@@ -2471,13 +2535,13 @@
             function programsopen() { 
                 document.getElementById("programsmenu").style.marginLeft = "163px"; 
                 document.getElementById("menuprograms").style.backgroundColor = "#00207c";
-                document.getElementById("menuprograms").style.color = "#ffffff"; 
+                document.getElementById("menuprograms").style.color = "#ffffff";
                 document.getElementById("menuarrow1").style.backgroundPosition = "-134px -216px";}
             function programsclosed() { 
                 document.getElementById("programsmenu").style.marginLeft = "200000px"; 
                 document.getElementById("menuprograms").style.backgroundColor = "#c0c0c0";
                 document.getElementById("menuprograms").style.color = "#000000"; 
-                document.getElementById("menuarrow1").style.backgroundPosition = "-150px -216px";}
+                document.getElementById("menuarrow1").style.backgroundPosition = "-54px -216px";}
                 function internetexplorer() { window.open("https://www.google.co.uk/", "_blank", "width=700, height=700")} 
                 function accessoriesopen() { 
                     document.getElementById("menuaccessoriessubmenu").style.marginLeft = "133px"; 
@@ -2488,7 +2552,7 @@
                     document.getElementById("menuaccessoriessubmenu").style.marginLeft = "200000px"; 
                     document.getElementById("accessories").style.backgroundColor = "#c0c0c0";
                     document.getElementById("accessories").style.color = "#000000";
-                    document.getElementById("submenuarrow2").style.backgroundPosition = "-150px -216px";}
+                    document.getElementById("submenuarrow2").style.backgroundPosition = "-54px -216px";}
                     function communicationsopen() { 
                         document.getElementById("menucommunicationssubmenu").style.marginLeft = "130px"; 
                         document.getElementById("communications").style.backgroundColor = "#00207c";
@@ -2498,7 +2562,7 @@
                         document.getElementById("menucommunicationssubmenu").style.marginLeft = "200000px"; 
                         document.getElementById("communications").style.backgroundColor = "#c0c0c0";
                         document.getElementById("communications").style.color = "#000000";
-                        document.getElementById("menuarrow12").style.backgroundPosition = "-150px -216px";}
+                        document.getElementById("menuarrow12").style.backgroundPosition = "-54px -216px";}
                     function entertainmentopen() { 
                         document.getElementById("menuentertainmentsubmenu").style.marginLeft = "130px"; 
                         document.getElementById("entertainment").style.backgroundColor = "#00207c";
@@ -2508,7 +2572,7 @@
                         document.getElementById("menuentertainmentsubmenu").style.marginLeft = "200000px"; 
                         document.getElementById("entertainment").style.backgroundColor = "#c0c0c0";
                         document.getElementById("entertainment").style.color = "#000000";
-                        document.getElementById("menuarrow13").style.backgroundPosition = "-150px -216px";}
+                        document.getElementById("menuarrow13").style.backgroundPosition = "-54px -216px";}
                     function gamesopen() { 
                         document.getElementById("menugamessubmenu").style.marginLeft = "130px"; 
                         document.getElementById("games").style.backgroundColor = "#00207c";
@@ -2518,7 +2582,7 @@
                         document.getElementById("menugamessubmenu").style.marginLeft = "200000px"; 
                         document.getElementById("games").style.backgroundColor = "#c0c0c0";
                         document.getElementById("games").style.color = "#000000";
-                        document.getElementById("menuarrow14").style.backgroundPosition = "-150px -216px";}
+                        document.getElementById("menuarrow14").style.backgroundPosition = "-54px -216px";}
                     function internettoolsopen() { 
                         document.getElementById("menuinternettoolssubmenu").style.marginLeft = "130px"; 
                         document.getElementById("internettools").style.backgroundColor = "#00207c";
@@ -2528,7 +2592,7 @@
                         document.getElementById("menuinternettoolssubmenu").style.marginLeft = "200000px"; 
                         document.getElementById("internettools").style.backgroundColor = "#c0c0c0";
                         document.getElementById("internettools").style.color = "#000000";
-                        document.getElementById("menuarrow15").style.backgroundPosition = "-150px -216px";}
+                        document.getElementById("menuarrow15").style.backgroundPosition = "-54px -216px";}
                     function systemtoolsopen() { 
                         document.getElementById("menusystemtoolssubmenu").style.marginLeft = "130px"; 
                         document.getElementById("systemtools").style.backgroundColor = "#00207c";
@@ -2538,7 +2602,7 @@
                         document.getElementById("menusystemtoolssubmenu").style.marginLeft = "200000px"; 
                         document.getElementById("systemtools").style.backgroundColor = "#c0c0c0";
                         document.getElementById("systemtools").style.color = "#000000";
-                        document.getElementById("menuarrow16").style.backgroundPosition = "-150px -216px";}
+                        document.getElementById("menuarrow16").style.backgroundPosition = "-54px -216px";}
                         
                     
                 function onlineservicesopen() { 
@@ -2550,7 +2614,7 @@
                     document.getElementById("onlineservicessubmenu").style.marginLeft = "200000px"; 
                     document.getElementById("onlineservices").style.backgroundColor = "#c0c0c0";
                     document.getElementById("onlineservices").style.color = "#000000";
-                    document.getElementById("submenuarrow3").style.backgroundPosition = "-150px -216px";}
+                    document.getElementById("submenuarrow3").style.backgroundPosition = "-54px -216px";}
                 function startupopen() { 
                     document.getElementById("startupsubmenu").style.marginLeft = "133px"; 
                     document.getElementById("startup").style.backgroundColor = "#00207c";
@@ -2560,7 +2624,7 @@
                     document.getElementById("startupsubmenu").style.marginLeft = "200000px"; 
                     document.getElementById("startup").style.backgroundColor = "#c0c0c0";
                     document.getElementById("startup").style.color = "#000000";
-                    document.getElementById("submenuarrow4").style.backgroundPosition = "-150px -216px";}
+                    document.getElementById("submenuarrow4").style.backgroundPosition = "-54px -216px";}
             
             function favouritesopen() { 
                 document.getElementById("favouritesmenu").style.marginLeft = "163px"; 
@@ -2571,7 +2635,7 @@
                 document.getElementById("favouritesmenu").style.marginLeft = "200000px"; 
                 document.getElementById("menufavourites").style.backgroundColor = "#c0c0c0";
                 document.getElementById("menufavourites").style.color = "#000000"; 
-                document.getElementById("menuarrow2").style.backgroundPosition = "-150px -216px";}
+                document.getElementById("menuarrow2").style.backgroundPosition = "-54px -216px";}
                 function channelsopen() { 
                     document.getElementById("channelssubmenu").style.marginLeft = "148px"; 
                     document.getElementById("channels").style.backgroundColor = "#00207c";
@@ -2581,7 +2645,7 @@
                     document.getElementById("channelssubmenu").style.marginLeft = "200000px"; 
                     document.getElementById("channels").style.backgroundColor = "#c0c0c0";
                     document.getElementById("channels").style.color = "#000000";
-                    document.getElementById("submenuarrow21").style.backgroundPosition = "-150px -216px";}
+                    document.getElementById("submenuarrow21").style.backgroundPosition = "-54px -216px";}
                 function linksopen() { 
                     document.getElementById("linkssubmenu").style.marginLeft = "148px"; 
                     document.getElementById("links").style.backgroundColor = "#00207c";
@@ -2591,7 +2655,7 @@
                     document.getElementById("linkssubmenu").style.marginLeft = "200000px"; 
                     document.getElementById("links").style.backgroundColor = "#c0c0c0";
                     document.getElementById("links").style.color = "#000000";
-                    document.getElementById("submenuarrow22").style.backgroundPosition = "-150px -216px";}
+                    document.getElementById("submenuarrow22").style.backgroundPosition = "-54px -216px";}
                 function mediaopen() { 
                     document.getElementById("mediasubmenu").style.marginLeft = "148px"; 
                     document.getElementById("media").style.backgroundColor = "#00207c";
@@ -2601,7 +2665,7 @@
                     document.getElementById("mediasubmenu").style.marginLeft = "200000px"; 
                     document.getElementById("media").style.backgroundColor = "#c0c0c0";
                     document.getElementById("media").style.color = "#000000";
-                    document.getElementById("submenuarrow23").style.backgroundPosition = "-150px -216px";}
+                    document.getElementById("submenuarrow23").style.backgroundPosition = "-54px -216px";}
             
             function documentsopen() { 
                 document.getElementById("documentsmenu").style.marginLeft = "163px"; 
@@ -2612,7 +2676,7 @@
                 document.getElementById("documentsmenu").style.marginLeft = "200000px"; 
                 document.getElementById("menudocuments").style.backgroundColor = "#c0c0c0";
                 document.getElementById("menudocuments").style.color = "#000000"; 
-                document.getElementById("menuarrow3").style.backgroundPosition = "-150px -216px";}
+                document.getElementById("menuarrow3").style.backgroundPosition = "-54px -216px";}
                                     
             //start menu button hover script
             function settingsopen() { 
@@ -2624,7 +2688,7 @@
                 document.getElementById("settingsmenu").style.marginLeft = "200000px"; 
                 document.getElementById("menusettings").style.backgroundColor = "#c0c0c0";
                 document.getElementById("menusettings").style.color = "#000000"; 
-                document.getElementById("menuarrow4").style.backgroundPosition = "-150px -216px";}
+                document.getElementById("menuarrow4").style.backgroundPosition = "-54px -216px";}
                 function settingsactivedesktopopen() { 
                     document.getElementById("menuactivedesktopsubmenu").style.marginLeft = "159px"; 
                     document.getElementById("activedesktop").style.backgroundColor = "#00207c";
@@ -2634,7 +2698,7 @@
                     document.getElementById("menuactivedesktopsubmenu").style.marginLeft = "200000px"; 
                     document.getElementById("activedesktop").style.backgroundColor = "#c0c0c0";
                     document.getElementById("activedesktop").style.color = "#000000";
-                    document.getElementById("submenuarrow31").style.backgroundPosition = "-150px -216px";}
+                    document.getElementById("submenuarrow31").style.backgroundPosition = "-54px -216px";}
             
             function findopen() { 
                 document.getElementById("findmenu").style.marginLeft = "163px"; 
@@ -2645,7 +2709,7 @@
                 document.getElementById("findmenu").style.marginLeft = "200000px"; 
                 document.getElementById("menufind").style.backgroundColor = "#c0c0c0";
                 document.getElementById("menufind").style.color = "#000000";
-                document.getElementById("menuarrow5").style.backgroundPosition = "-150px -216px";}
+                document.getElementById("menuarrow5").style.backgroundPosition = "-54px -216px";}
 
         </script>
         
