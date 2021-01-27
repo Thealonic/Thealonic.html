@@ -30,22 +30,14 @@
         <!-- Setup referencing                                                                                                             -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         
+        <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.16/dist/98.css">
+        
         <!-- refs -->
-        <link rel="stylesheet" href="https://unpkg.com/98.css" />
-        
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-        
         <script src="//static.tumblr.com/fpdiq1j/GV9n0wdlc/jquery.infinitescroll.min.js"></script>
         <script src="//static.tumblr.com/fpdiq1j/x8Nn0wiyd/jquery.masonry.min.js"></script>
         <script src="//static.tumblr.com/fpdiq1j/jpPn0wdlf/jquery.photosetgrid.min.js"></script>
-        
-        <script> 
-            var discord = "url('https://cdn.discordapp.com/attachments/"; 
-            var backcolour = "#fffffff"
-            var textcolour = "#0000000"
-            var glowcolour = "#00207c"
-            var desktopcolour = "#008080"
-        </script>
+        <script> var discord = "url('https://cdn.discordapp.com/attachments/"; </script>
             
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <!-- CSS Scripts                                                                                                                   -->
@@ -64,18 +56,17 @@
                     --active: url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png');
                     --inactivetask: url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png');
                     --activetask: url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png');}
-                    
+
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* Tumblr post handling */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
             
             /* desktop config settings */
-            body { background: url('https://cdn.discordapp.com/attachments/630047188520665121/786208918119514112/wallpaper32.png') repeat fixed; background-size: cover; margin: 0px; padding: auto auto auto auto; background-color:#008080;}
+            body { background: repeat fixed; background-size: cover; margin: 0px; padding: auto auto auto auto; background-color:#008080;}
             body{ max-width: 100%; overflow-x: hidden;}
             #desktop, .navigation { margin: 0px auto 0px auto; position: relative; width: 1010px;} /* whole thing */
             body.permalink_page #desktop, body.permalink_page .navigation { width: 480px;}
             body.infinite_scrolling .navigation, .inf_scr { display: none;}
-            
 
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* Desktop setup css */
@@ -265,18 +256,12 @@
             .menusettings,  .menufind,      .menuhelp,      .menurun,        .menulogoff,   .shutdownicon
             { background-image: var(--spritesheet); margin: auto; float: left; height: 36px; width: 36px;}
                 
-            .patchnotes {       background-position:    0px   0px;} /* Patchnotes */
-            .menuprograms {     background-position:  -36px   0px;} /* Programs */
-            .menudocuments {    background-position: -108px   0px;} /* Documents */
-            .menufavourites {   background-position:  -72px   0px;} /* Favourites */
-            .menusettings {     background-position: -144px   0px;} /* Settings */
-            .menufind {         background-position: -180px   0px;} /* Find */
-            .menuhelp {         background-position: -216px -36px;} /* Help */
-            .menurun {          background-position: -252px -36px;} /* Run */
-            .menulogoff {       background-position: -288px   0px;} /* Log Off */
-            .menushutdown {     background-position: -324px   0px;} /* Shut Down */
-            .logofficon {       background-position: -288px -36px;} /* Log Off */
-            .shutdownicon {     background-position: -324px -36px;} /* Shut Down */
+            .patchnotes {       background-position:    0px   0px;} /* Patchnotes */    .menuprograms {     background-position:  -36px   0px;} /* Programs */
+            .menudocuments {    background-position: -108px   0px;} /* Documents */     .menufavourites {   background-position:  -72px   0px;} /* Favourites */
+            .menusettings {     background-position: -144px   0px;} /* Settings */      .menufind {         background-position: -180px   0px;} /* Find */
+            .menuhelp {         background-position: -216px -36px;} /* Help */          .menurun {          background-position: -252px -36px;} /* Run */
+            .menulogoff {       background-position: -288px   0px;} /* Log Off */       .menushutdown {     background-position: -324px   0px;} /* Shut Down */
+            .logofficon {       background-position: -288px -36px;} /* Log Off */       .shutdownicon {     background-position: -324px -36px;} /* Shut Down */
             
             /* start menu submenu icon references */
             .menuprograms123,   .menuapplications7,     .menucommunications1,   .menusystemtools1,
@@ -371,18 +356,17 @@
             .reflinkblack {         color:#000000; }
             .reflinkblack:hover {   color:#ffffff; text-decoration-line: underline; }
             
-            ul.tree-view {          font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px;}
+            ul.tree-view {          font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: 4px;}
             ul.tree-view {          display: block; background: #ffffff; box-shadow: inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a; padding: 6px; margin: 0;}
-            ul.tree-view a {        text-decoration: none; color: #000;}
+            ul.tree-view a {        text-decoration: none; color: #000; }
             ul.tree-view a:focus {  background-color: navy; color: #ffffff;}
-            ul.tree-view li {       list-style-type: none;}
-            ul.tree-view li {       margin-top: 4px;}
+            ul.tree-view li {       margin-top: 4px; list-style-type: none;}
             
-            ul.tree-view ul {                       margin-top: 4px;}
-            ul.tree-view ul {                       margin-left: 16px; padding-left: 16px; border-left: 1px dotted grey;}
-            ul.tree-view ul>li {                    position:relative;}
+            ul.tree-view ul {                       margin-top: 4px; }
+            ul.tree-view ul {                       margin-left: 12px; padding-left: 16px; border-left: 1px dotted grey;}
+            ul.tree-view ul>li {                    position:relative; }
             ul.tree-view ul>li:before {             content:""; display: block; position: absolute; left: -16px; top: 6px; width: 12px; border-bottom: 1px dotted grey;}
-            ul.tree-view ul>li:last-child:after {   content: ""; display: block; position:absolute; left: -20px; top: 7px; bottom:0; width: 8px; background: #fff;}
+            ul.tree-view ul>li:last-child:after {   content:""; display: block; position:absolute; left: -20px; top: 7px; bottom:0; width: 8px; background: #fff;}
             ul.tree-view ul details>summary:before{ margin-left: -22px; position: relative; z-index: 1;}
             
             ul.tree-view details {                      margin-top:0;}
@@ -409,48 +393,37 @@
             h3 {        font-size: 2rem;}
             a {         color: #ffffff; text-decoration: none;}
             a:hover {   text-decoration: underline; color: #ffffff;}
-            span {      background-color: #008080; color: #ffffff;}
+            span {      background-color: #ffffff; color: #000000;}
             label {     display:inline-flex; align-items: center;}
             
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* tumblr post handling                                                                                                          */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
             
-            .posts .photo img.image {       display: block; width: 100%;}
-            .posts .audio img.artwork {     display: block; width: 100%;}
-            .posts .html_photoset {         display: block; width: 100%;}
-            .posts .with_caption {          margin-bottom: 1em;}
-            .posts .photoset {              display: block;}
             .posts .audio .audio_player embed {     display: block;}
             .posts p:empty {                        display: none;}
             .posts div:empty {                      display: none;}
             body.permalink_page .posts .controls {  display: none;}
             .hide_if_last:last-child {              display: none;}
             
-            .content p > img {      max-width: 100%; border-radius: 0;}
-            .content p {            margin: 0 0 0.8em 0; display: block;}
-            blockquote, ul, ol  {   margin: 0 0 0.8em 0; display: block;}
-            .meta div {             margin: 0 0 0.4em 0 !important;}
-            .meta div a {           text-decoration: none;}
+            .content p {            margin: 0 0 0.85em 0; display: block;} /*gaps between text*/
+            blockquote, ul, ol  {   margin: 0 0 0.8em 0; display: block;} /*gaps to the left of text*/
             #content #posts #tags .comma:last-child {   display: none;}
-            .content p:last-child {                     margin-bottom: 0 !important;} 
-            .content blockquote:last-child {            margin-bottom: 0 !important;}
+            .content p:last-child {                     margin-bottom: 0 !important;} /* bottom of posts before footer */
+            .content blockquote:last-child {            margin-bottom: 0 !important;} /* bottom of posts before footer */
             .meta div:last-child {                      margin-bottom: 0 !important;} /* bottom of posts before footer */
             
             /* text Post settings */
-            blockquote {                padding-left: 5px; margin-top:-5px; margin-bottom:5px; border-left: 2px solid #ABABAB; border-left: 2px solid rgba(0,0,0,0.33); } /* lines at the side of posts */
+            blockquote {    padding-left: 5px; margin-top:-5px; margin-bottom:5px; border-left: 2px solid #ABABAB; border-left: 2px solid rgba(0,0,0,0.33); } /* lines at the side of posts */
             .quote .dash {              float: left; padding: 0 2px 0 2px;}
-            .quote .source {            float: left;}
-            .chat .line:last-of-type {  margin-bottom: 0;}
-            .chat ul {                  padding: 0; list-style: none;}
             .chat ol {                  padding: 0; list-style: none;}
             
             /* image Post settings */
             .body img {         max-width: 100%; overflow: hidden;}
             .caption img {      max-width: 100%; overflow: hidden;}
-            img.full_image {    width: 451px} /* bottlenecks images */
+            img.full_image {    width: 451px;} /* bottlenecks images */
             .middle img {       max-width: 451px; width: 100%; height: 100%; display: block;}
-            .photoset .wrapper {width: 100%; width: 451px;}
+            .photoset .wrapper {display: block; position: relative; width: 100%; width: 451px;}
             a img {             border: 0; }
             
             /* video Post settings */
@@ -463,12 +436,17 @@
             .tumblr_audio_player {      width: 100%;}
             .spotify_audio_player {     height: 80px !important; width:100%;}
 
+        /* ----------------------------------------------------------------------------------------------------------------------------- */
+        /* additional tumblr handling                                                                                                    */
+        /* ----------------------------------------------------------------------------------------------------------------------------- */
+
             /* media resizer patch */
             .media {        position: relative; padding-bottom: auto; margin: auto auto auto auto; overflow: hidden; height: auto;}
             .media iframe { position: absolute; width: 451px;}
             .media object { position: absolute; width: 451px;}
             .media embed {  position: absolute; width: 451px;}
             
+            /* tumblr likes formatting */
             .like-b { position:relative; display:inline-block; height:1em; line-height:1em; color:#000000;}
             .like-b .like_button iframe { position:absolute; opacity:0;}
             .like-b .liked + .b { color:inherit;}
@@ -477,11 +455,12 @@
             
             /* infinate scroll script + */
             ul, ol { padding: 0 0 0 18px;}
-
+            
+            /* tumblr notes formatting */
             .tagged { font-size: 9px; opacity: 0.5;}
             .notes { margin-top:0px; text-align:left;}
-            ol.notes { padding: 3px; margin: 5px 0px; list-style-type: none; max-height: 216px; width:461px; overflow:auto; margin-top:-6px;}
-            ol.notes li.note img.avatar { vertical-align: -4px; margin-right: 4px; width: 16px; height: 16px;}
+            ol.notes { padding: 2px; margin: 5px 0px; list-style-type: none; max-height: 216px; width:461px; overflow:auto; margin-top:-6px;}
+            ol.notes li.note img.avatar { vertical-align: -4px; margin-right: 4px; width: 16px; height:16px; margin-top:-2px; margin-bottom;-2px;}
             ol.notes li.note .answer_content { font-weight: normal;}
             ol.notes li.note blockquote { padding: 4px 10px; margin: 10px 0px 0px 25px;}
             ol.notes li.note blockquote a { text-decoration: none;}
@@ -521,7 +500,7 @@
                 <a href="https://twitter.com/VeryVhersty" class="pages" style="cursor: pointer;" target="_blank">
                     <div class="twitter" id="twittericon"></div>
                     <div class="icon_label"><span id="desktopi3">
-                        <label id="desktopi3f"> Art Posting </label></span></div> </a>
+                        <label id="desktopi3f" style="margin-left:0.5px;"> Art Posting </label></span></div> </a>
                 <!-- Button Four -->
                 {block:AskEnabled}
                 <a href="/ask" class="ask" style="cursor: pointer;" target="_blank">
@@ -540,12 +519,12 @@
                 <a href="https://discord.gg/KDQcXs7" class="archive" style="cursor: pointer;" target="_blank">
                     <div class="discordlink" id="discordicon"></div>
                     <div class="icon_label"><span id="desktopi5">
-                        <label id="desktopi5f">Self-Governed</label> <label id="desktopi1fa">Shitposters </label></span></div> </a>
+                        <label id="desktopi5f">Self-Governed</label> <label id="desktopi1fa" style="margin-left:0.5px;">Shitposters </label></span></div> </a>
                 <!-- Button Seven -->
                 <a href="https://www.youtube.com/playlist?list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU" class="ovffvp" style="cursor: pointer;" target="_blank">
                     <div class="officialfunny" id="officialfunnyicon"></div>
                     <div class="icon_label"><span id="desktopi6">
-                        <label id="desktopi6f">The Official Very</label> <label id="desktopi6fa">Funny Video Playlist </label></span></div> </a>
+                        <label id="desktopi6f" style="margin-left:0.5px;">The Official Very</label> <label id="desktopi6fa" style="margin-left:0.5px;">Funny Video Playlist </label></span></div> </a>
             </div>
             <!-- Sidebar icons coloumn 2 -->
             <div class="icons2">
@@ -553,12 +532,12 @@
                 <a href="https://youtu.be/WPUZn9TIorM?t=1451" class="ovffvp" style="cursor: pointer;" target="_blank">
                     <div class="simcity"></div>
                     <div class="icon_label"><span id="desktopi7">
-                        <label id="desktopi1f">SimCity 4</label></span></div> </a>
+                        <label id="desktopi1f" style="margin-left:0.5px;">SimCity 4</label></span></div> </a>
                 <!-- Button Two -->
                 <a href="https://www.youtube.com/watch?v=W_4uRZFVKPE&t=383s" class="ovffvp" style="cursor: pointer;" target="_blank">
                     <div class="rct2"></div>
                     <div class="icon_label"><span id="desktopi8">
-                        <label id="desktopi8f">Roller Coaster</label> <label id="desktopi8fa">Tycoon 2</label></span></div> </a>
+                        <label id="desktopi8f">Roller Coaster</label> <label id="desktopi8fa" style="margin-left:0.5px;">Tycoon 2</label></span></div> </a>
         </div></div>
     </head>
      
@@ -567,15 +546,9 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
     
     <body class="win98
-    {block:IndexPage} index_page infinite_scrolling{/block:IndexPage}
+    {block:IndexPage}index_page infinite_scrolling{/block:IndexPage}
     {block:PermalinkPage}permalink_page{/block:PermalinkPage} 
-    two_column masonry_enabled" id="body">
-        
-        <script>
-            var currentno = 5
-            
-            var window1 = true; var window2 = true;
-        </script>
+    two_column masonry_enabled" id="body" onload="evangelionmode()">
         
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <!-- Tumblr + embedding handling                                                                                                   -->
@@ -590,45 +563,8 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         
         <script>
-            var pyrotabs = 2;
-            var windowstotal = 3;
-
-                var myPix = new Array(
-                discord + "672475563952439326/798493963824529418/unknown.png')",                discord + "630047188520665121/798499968289603604/unknown.png')", // fluer + trans gun 0-1
-                discord + "677255444682506240/783315603115999282/ezgif-7-c9e84b5f07f6.gif')",   discord + "677255444682506240/798502538710089738/unknown.png')", // pyro + dog dressed as chicken. 2 3
-                discord + "677255444682506240/798506381481213962/unknown.png')",                discord + "677255444682506240/798506706274615296/unknown.png')", // cat in cup + putin next to walrus. 4 5
-                discord + "677255444682506240/798507986195578890/unknown.png')",                discord + "677255444682506240/798509320584691732/unknown.png')", // cat in jar + who shot hannibal 6 7
-                discord + "677255444682506240/798509675238785074/unknown.png')",                discord + "677255444682506240/798509990620954654/unknown.png')", // cat drinking + bananana 8 9
-                discord + "677255444682506240/798528719010005002/unknown.png')",                discord + "677255444682506240/798513603384180746/unknown.png')", // tank eater cat in fridge 10 11
-                discord + "677255444682506240/798513784686772254/unknown.png')",                discord + "677255444682506240/798514201449988106/unknown.png')", // cat snake + spring cat 12
-                discord + "677255444682506240/798514567441285160/unknown.png')",                discord + "677255444682506240/798514809716998144/unknown.png')", // muscle cat + Pussy Fuckers 14
-                discord + "677255444682506240/798515890425561098/unknown.png')",                discord + "677255444682506240/798525792257835028/unknown.png')", // dancing cat with bear + Brain the dog drinking 16
-                discord + "363043993069682699/798527303532806165/unknown.png')",                discord + "677255444682506240/798527551290867712/unknown.png')", // wallace tank - joker chair 18
-                discord + "677255444682506240/798813870168473620/unknown.png')",                discord + "677255444682506240/798815059274498108/unknown.png')", // I like ass - charge 50 bucks to piss 20
-                discord + "677255444682506240/798815239029653514/unknown.png')",                discord + "677255444682506240/798815499361320970/unknown.png')", // bort - bowsette smithers 22
-                discord + "677255444682506240/798816411837399050/unknown.png')",                discord + "677255444682506240/798840038443712562/unknown.png')", // free sex - silence confederate 24
-                discord + "677255444682506240/798840513200783380/unknown.png')",                discord + "677255444682506240/798845223588331530/unknown.png')", // connect 4 + I want to play ball 26
-                discord + "677255444682506240/798816411837399050/unknown.png')",                discord + "677255444682506240/798845723617263616/unknown.png')", // freesex + screaming cat 28
-                discord + "677255444682506240/799296225861566484/unknown.png')",                discord + "677255444682506240/799322617114656817/unknown.png')", // shiji emo + doge bed 30
-                discord + "677255444682506240/799324405855551508/unknown.png')",                discord + "677255444682506240/799325063291600956/unknown.png')", // rlm + airhorn tolet 32
-                discord + "677255444682506240/799327404904415302/unknown.png')",                discord + "677255444682506240/799328383078236160/unknown.png')", // to paris + kermit 34
-                discord + "629307562885644308/783307887677014046/unknown.png')",                discord + "                                                 ')"  // mr bean +  36
-                )
-                
-            var r_text = new Array (); 
-                r_text[0] = "💯 Hi-dilly-ho, neighborinos!";   r_text[1] = "💯 hand the purse over.";         r_text[ 2] = "💯 bloody ell' chums ";          r_text[ 3] = "💯 help";                        r_text[ 4] = "💯 قطة غبية سخيف ، كريستوفر أبون ل"; 
-                r_text[5] = "💯 let me hold you, darling.";    r_text[6] = "💯 Spongbob Squarepants";         r_text[ 7] = "💯 Who shot hannibal?";          r_text[ 8] = "💯 (the cat is preggers)";       r_text[ 9] = "💯 I'm a slut for a banana"; 
-                r_text[10] = "💯 Tank Eater~";                 r_text[11] = "💯 Fat cat with fat snax";       r_text[12] = "💯 I'm a butterfly daddy!";      r_text[13] = "💯 Blongongongongong";           r_text[14] = "💯 I did it, I shot hannibal.";
-                r_text[15] = "💯 Pussy fuckers";               r_text[16] = "💯 gangnam style";               r_text[17] = "💯 It seems today-";             r_text[18] = "💯 piekreig";                    r_text[19] = "💯 No one cared who until I sat";
-                r_text[20] = "💯 Ass Eater~";                  r_text[21] = "💯 rct2.exe";                    r_text[22] = "💯 bort.png";                    r_text[23] = "💯 i'm gay, miss.";              r_text[24] = "💯 SEX AT SEX.COM";
-                r_text[25] = "💯 'Silence in  the library'";   r_text[26] = "💯 Neon Genesis Evanjollion";    r_text[27] = "💯 Space Jam";                   r_text[28] = "💯 My mom's crown jewels";       r_text[29] = "💯 NOT THE CUM JAR";
-                r_text[30] = "💯 Get out the phase, shinji";   r_text[31] = "💯 doge bed";                    r_text[32] = "💯 on";                          r_text[33] = "💯 round the outside";           r_text[34] = "💯 ⠀";
-                r_text[35] = "💯 Mmmhhjmmm... Homiee";         r_text[36] = "💯 chopstick slammer";           r_text[37] = "💯 Space Jam";                   r_text[38] = "💯 My mom's crown jewels";       r_text[39] = "💯 PWEASE MWISTER, DON'T PUT ME IN THE JAR";
-
-            var tick = 3;
-            var randomNum = Math.floor(Math.random() * myPix.length);
-            document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum];
-            document.getElementById("pyrotext").textContent= r_text[randomNum]; 
+            var pyrotabs = 2; currentno = 5;
+            var window1 = true; window2 = true; 
         </script>
         
         <div class="win98post" style="z-index: 5; width:194px; position: fixed; top: 68%; left: 4%;" onmousedown="catactive();" id="cat">
@@ -650,9 +586,9 @@
                 document.getElementById("catwindow").style.backgroundPosition = "-150px";
                 document.getElementById("taskapp2").style.backgroundImage = discord + "630047188520665121/789416557692452884/Taskbar_application.png')";} 
                 
-            function catclose() { pyrotabs = pyrotabs - 1; pyrowindow(); 
+            function catclose() { pyrowindow();
                 pyroButtonOpen = true; window2 = false;
-                document.getElementById("cat").style.marginLeft = "-20000px";
+                document.getElementById("cat").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; 
                 document.getElementById("taskapp2").style.backgroundImage = discord + "630047188520665121/789420847604564008/Taskbar_application1.png')";
                 idleactive(); inactiveall();}
         </script>
@@ -668,50 +604,84 @@
         </div></div>
         
         <script>
+        
+            var myPix = new Array(
+                discord + "672475563952439326/798493963824529418/unknown.png')",                discord + "630047188520665121/798499968289603604/unknown.png')", // fluer + trans gun 0-1
+                discord + "677255444682506240/783315603115999282/ezgif-7-c9e84b5f07f6.gif')",   discord + "677255444682506240/798502538710089738/unknown.png')", // pyro + dog dressed as chicken. 2 3
+                discord + "677255444682506240/798506381481213962/unknown.png')",                discord + "677255444682506240/798506706274615296/unknown.png')", // cat in cup + putin next to walrus. 4 5
+                discord + "677255444682506240/798507986195578890/unknown.png')",                discord + "677255444682506240/798509320584691732/unknown.png')", // cat in jar + who shot hannibal 6 7
+                discord + "677255444682506240/798509675238785074/unknown.png')",                discord + "677255444682506240/798509990620954654/unknown.png')", // cat drinking + bananana 8 9
+                discord + "677255444682506240/798528719010005002/unknown.png')",                discord + "677255444682506240/798513603384180746/unknown.png')", // tank eater cat in fridge 10 11
+                discord + "677255444682506240/798513784686772254/unknown.png')",                discord + "677255444682506240/798514201449988106/unknown.png')", // cat snake + spring cat 12
+                discord + "677255444682506240/798514567441285160/unknown.png')",                discord + "677255444682506240/798514809716998144/unknown.png')", // muscle cat + Pussy Fuckers 14
+                discord + "677255444682506240/798515890425561098/unknown.png')",                discord + "677255444682506240/798525792257835028/unknown.png')", // dancing cat with bear + Brain the dog drinking 16
+                discord + "363043993069682699/798527303532806165/unknown.png')",                discord + "677255444682506240/798527551290867712/unknown.png')", // wallace tank - joker chair 18
+                discord + "677255444682506240/798813870168473620/unknown.png')",                discord + "677255444682506240/798815059274498108/unknown.png')", // I like ass - charge 50 bucks to piss 20
+                discord + "677255444682506240/798815239029653514/unknown.png')",                discord + "677255444682506240/798815499361320970/unknown.png')", // bort - bowsette smithers 22
+                discord + "677255444682506240/798816411837399050/unknown.png')",                discord + "677255444682506240/798840038443712562/unknown.png')", // free sex - silence confederate 24
+                discord + "677255444682506240/798840513200783380/unknown.png')",                discord + "677255444682506240/798845223588331530/unknown.png')", // connect 4 + I want to play ball 26
+                discord + "677255444682506240/798816411837399050/unknown.png')",                discord + "677255444682506240/798845723617263616/unknown.png')", // freesex + screaming cat 28
+                discord + "677255444682506240/799296225861566484/unknown.png')",                discord + "677255444682506240/799322617114656817/unknown.png')", // shiji emo + doge bed 30
+                discord + "677255444682506240/799324405855551508/unknown.png')",                discord + "677255444682506240/799325063291600956/unknown.png')", // rlm + airhorn tolet 32
+                discord + "677255444682506240/799327404904415302/unknown.png')",                discord + "677255444682506240/799328383078236160/unknown.png')", // to paris + kermit 34
+                discord + "629307562885644308/783307887677014046/unknown.png')",                // mr bean +  36
+            )
+                
+            var r_text = new Array (); 
+                r_text[0] = "💯 Hi-dilly-ho, neighborinos!";   r_text[1] = "💯 hand the purse over.";         r_text[ 2] = "💯 bloody ell' chums ";          r_text[ 3] = "💯 help";                        r_text[ 4] = "💯 قطة غبية سخيف ، كريستوفر أبون ل"; 
+                r_text[5] = "💯 let me hold you, darling.";    r_text[6] = "💯 Spongbob Squarepants";         r_text[ 7] = "💯 Who shot hannibal?";          r_text[ 8] = "💯 (the cat is preggers)";       r_text[ 9] = "💯 I'm a slut for a banana"; 
+                r_text[10] = "💯 Tank Eater~";                 r_text[11] = "💯 Fat cat with fat snax";       r_text[12] = "💯 I'm a butterfly daddy!";      r_text[13] = "💯 Blongongongongong";           r_text[14] = "💯 I did it, I shot hannibal.";
+                r_text[15] = "💯 Pussy fuckers";               r_text[16] = "💯 gangnam style";               r_text[17] = "💯 It seems today-";             r_text[18] = "💯 piekreig";                    r_text[19] = "💯 No one cared who until I sat";
+                r_text[20] = "💯 Ass Eater~";                  r_text[21] = "💯 rct2.exe";                    r_text[22] = "💯 bort.png";                    r_text[23] = "💯 i'm gay, miss.";              r_text[24] = "💯 SEX AT SEX.COM";
+                r_text[25] = "💯 'Silence in  the library'";   r_text[26] = "💯 Neon Genesis Evanjollion";    r_text[27] = "💯 Space Jam";                   r_text[28] = "💯 My mom's crown jewels";       r_text[29] = "💯 NOT THE CUM JAR";
+                r_text[30] = "💯 Get out the phase, shinji";   r_text[31] = "💯 doge bed";                    r_text[32] = "💯 on";                          r_text[33] = "💯 round the outside";           r_text[34] = "💯 ⠀";
+                r_text[35] = "💯 Mmmhhjmmm... Homiee";         r_text[36] = "💯 chopstick slammer";           
+
+            var tick = 3;
+            var randomNum = Math.floor(Math.random() * myPix.length); 
+            var randomNum2
             function pyroshuffle(){ 
+                
                 if (tick !== 0){ 
-                    var randomNum2 = Math.floor(Math.random() * myPix.length);
+                    randomNum2 = Math.floor(Math.random() * myPix.length);
                     if(randomNum2 !== randomNum){
                         randomNum = randomNum2
                         document.getElementById("pyrotext").textContent= r_text[randomNum]; 
                         document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum]; randomNum = randomNum2;
                     } else { randomNum2 = Math.floor(Math.random() * myPix.length);
-                        randomNum = randomNum2
+                        randomNum = randomNum2;
                         document.getElementById("pyrotext").textContent= r_text[randomNum]; 
                         document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum]; randomNum = randomNum2;}
-                    if(tick == 4){ document.getElementById("pyrobutton").textContent = "Definately";}
+                        
                     if(tick == 3){ document.getElementById("pyrobutton").textContent = "Probably!";}
                     if(tick == 2){ document.getElementById("pyrobutton").textContent = "Maybe?";}
                     if(tick == 1){ document.getElementById("pyrobutton").textContent = "No.";}
                     
-                    if(randomNum == 30){ document.getElementById("pyrobutton").textContent="Nuzzles";
+                    if(randomNum == 30){ document.getElementById("pyrobutton").textContent="Nuzzles";}
                     tick = tick - 1;
-                } else { pyrotabs = pyrotabs - 1; pyrowindow();
-                    document.getElementById("pyro").style.marginLeft = "-20000px";
+                    
+                } else { 
+                    document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1;
                     document.getElementById("pyrobutton").textContent = "Definately"; document.getElementById("pyrotext").textContent = '💯 Wubba lubba dub dub!';
-                    document.getElementById("pyroimage").style.backgroundImage = "var(--defaultpyro)"; }}
+                    document.getElementById("pyroimage").style.backgroundImage = "var(--defaultpyro)"; pyroclose(); }}
                 
-                function pyrowindow(){ if(pyrotabs == 0){ document.getElementById("taskapp2").style.marginLeft = "-20000px";}}
+            function pyrowindow(){ if(pyrotabs == 0){ pyroclose(); }}
         </script>
         
         <script> 
             function pyroactive() { 
                 idleactive(); inactiveall();
-                pyroButtonOpen = false;
-                document.getElementById("pyro").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; 
+                pyroButtonOpen = false; currentno = currentno + 1; 
+                document.getElementById("pyro").style.zIndex = (currentno = currentno + 1);
                 document.getElementById("pyrowindow").style.backgroundImage = discord + "630047188520665121/791321110750298162/title-bar_postheader.png')";
                 document.getElementById("pyrowindow").style.backgroundPosition = "-150px";
                 document.getElementById("taskapp2").style.backgroundImage = discord + "630047188520665121/789416557692452884/Taskbar_application.png')";} 
-            function pyroclose() { pyrotabs = pyrotabs - 1; pyrowindow();
+            function pyroclose() { 
                 pyroButtonOpen = true; window1 = false;
-                document.getElementById("pyro").style.marginLeft = "-20000px";
+                document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1;
                 document.getElementById("taskapp2").style.backgroundImage = discord + "630047188520665121/789420847604564008/Taskbar_application1.png')";
-                idleactive(); inactiveall();}
+                idleactive(); inactiveall(); pyrowindow();}
         </script>                
-                            
-        <!-- add more junk here -->
-        <!-- add more junk here -->
-        <!-- add more junk here -->
 
         <script> 
             function vunnyopen(){
@@ -739,7 +709,7 @@
              <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU"><div class="win98titlebarbutton" style="margin-top:2px; cursor: default;"> <div class="help"></div> </div> </a> 
             <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="title-bar-text">🧮 brain go brrrrr</div></div>
             <div class="window-body" style="margin-right: 4px; margin-top: 5px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
-                <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>22:56pm on January 25th, 2021. [GMT]</label></p>
+                <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>03:09am on January 26th, 2021. [GMT]</label></p>
         </div></div>
         
         <!-- message box functions -->
@@ -762,10 +732,6 @@
                 document.getElementById("message").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
                 document.getElementById("messagewindow").style.backgroundImage = discord + "630047188520665121/791303194356482048/title-bar_diskmanagement_gradientopen.png')";}
         </script>
-        
-        <!-- add more junk here -->
-        <!-- add more junk here -->
-        <!-- add more junk here -->
         
         <!--
         <div class="container" style="top: 12%; right: 5%; z-index:2; position: absolute; float: right">
@@ -868,19 +834,19 @@
                             <div class="optionsmenu" style="width:227px; position: absolute; margin-top:36px; cursor:pointer" onclick="wallpaperoption2()">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Study </label></div>
-                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:72px; cursor:pointer" onclick="wallpaperoption4()">
+                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:54px; cursor:pointer" onclick="wallpaperoption4()">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Neon Genesis Evangelion </label></div>
-                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:54px; cursor:pointer" onclick="wallpaperoption3()"> 
+                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:72px; cursor:pointer" onclick="wallpaperoption3()"> 
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
-                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer" title="submitted by Duke in the discord server"> Star Trek (Submitted by Duke)</label></div>
-                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:92px; cursor:pointer" onclick="wallpaperoption5()">
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer" title="submitted by Matt in the discord server"> Star Trek (Submitted by Matt)</label></div>
+                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:90px; cursor:pointer" onclick="wallpaperoption5()">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer" title="submitted by Xal in the discord server"> Battlefield Girls (Submitted by Xal)</label></div>
-                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:112px; cursor:pointer" onclick="wallpaperoption6()">
+                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:108px; cursor:pointer" onclick="wallpaperoption6()">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer" title="submitted by Sammy in the discord server"> Vapourwave Sunset (Submitted by Sammy)</label></div>
-                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:132px; cursor:pointer" onclick="wallpaperoption7()">
+                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:126px; cursor:pointer" onclick="wallpaperoption7()">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> /// </label></div>
                                     
@@ -888,7 +854,6 @@
                         
                         <script>
                             var defaultwallpaper = discord + "630047188520665121/786208918119514112/wallpaper32.png')"; 
-
                             function wallpaperupdate(){ document.getElementById("body").style.backgroundImage = currentwallpaper;
                                                         document.getElementById("apperancepreview").style.backgroundImage = currentwallpaper;
                                                         document.getElementById("iconpreview").style.backgroundImage = currentwallpaper;}
@@ -900,7 +865,7 @@
                             function wallpaperoption4() { currentwallpaper = discord + "630047188520665121/803072949024325642/unknown.png')"; wallpaperupdate(); } 
                             function wallpaperoption5() { currentwallpaper = discord + "630047188520665121/803343335552450560/unknown.png')"; wallpaperupdate(); } 
                             function wallpaperoption6() { currentwallpaper = discord + "630047188520665121/803345954085535744/unknown.png')"; wallpaperupdate(); } 
-                            function wallpaperoption7() { currentwallpaper = discord + " ')"; wallpaperupdate(); } 
+                            function wallpaperoption7() { currentwallpaper = discord + "630047188520665121/803457397749973022/unknown.png')"; wallpaperupdate(); } 
                         </script>
                         
                     </ul>
@@ -916,7 +881,7 @@
                     <fieldset style="width:336px; height:50px; margin-left: 12px; margin-top: 18px;">
                         <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: silver; width:64px; padding: 0px 0px 3px 3px; margin-left:-3px"> Screen Saver </label>
                         
-                        <ul class="tree-view"  style="position: absolute; width:168px; height: 17px; padding:2px; margin-top:3px;" onclick="screensaverdropdown()" onmouseleave="screensaverexit()">
+                        <ul class="tree-view"  style="position: absolute; width:168px; height: 17px; padding:2px; margin-top:3px;" onclick="screensaverdropdown()" onmouseleave="screensaverdropdown()">
                             <div class="container" style="padding: 3px 2px 2px 2px;" id="currentscreensaver">(none)</div>
                             <div class="win98button" style="position:absolute; margin-top: -17px; margin-left:152px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
                         
@@ -930,9 +895,6 @@
                             function screensaverdropdown(){
                                 if (screensaverdrop == false) { document.getElementById("thescreensaver").style.marginLeft = "-2px"; screensaverdrop = true;
                                 } else if (screensaverdrop == true){ document.getElementById("thescreensaver").style.marginLeft = "-20000px"; screensaverdrop = false; }}
-                    
-                            function screensaverexit(){ document.getElementById("thescreensaver").style.marginLeft = "-20000px"; screensaverdrop = false; }
-                            
                             function none(){ document.getElementById("currentscreensaver").textContent="(none)";}
                         </script>
                         
@@ -962,8 +924,6 @@
                         <label style="width:210px; position: absolute; margin-left: 122px; margin-top: 5px"> To adjust the power settings of your monitor, click settings.</label>
                         <button disabled style="margin-left:255px; margin-top: 24px; cursor: pointer;">Settings</button>
                     </fieldset>
-
-            <!-- inner container end -->
             </div>
             
             <!-- --------------------------------------- appearance tab --------------------------------------- -->
@@ -1016,21 +976,23 @@
                         
                         <div class="drop-down-menu" style="margin-top:1px; width: 185px; margin-left: -20000px;" id="scheme">
                             <div class="win98buttonpressed" style="position:absolute; margin-top: -18px; margin-left:171px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
-                            <div class="drop-down-text" onclick="windows98()" id="windows98scheme">Windows 98</div>
-                            <div class="drop-down-text" onclick="evangelionmode()"  id="evangelionscheme" style="padding:bottom:2px;" >Evangelion</div>
-                            <div class="drop-down-text" onclick="darkmode()"  id="darkmodescheme" style="padding:bottom:2px;" >Dark mode</div>
-                    </div></ul>
+                            
+                            <div class="drop-down-text" onclick="windows98()"           id="windows98scheme"                                 >Windows 98           </div>
+                            <div class="drop-down-text" onclick="evangelionmode()"      id="evangelionscheme"    style="padding:bottom:2px;" >Evangelion           </div>
+                            <div class="drop-down-text" onclick="darkmode()"            id="darkmodescheme"      style="padding:bottom:2px;" >Dark mode            </div>
+                            <div class="drop-down-text" onclick="contrastmodescheme1()" id="contrastmodescheme1" style="padding:bottom:2px;" >High Contrast Mode 1 </div> </div></ul>
                         
                     <script>
                         let schemedrop = false;
                         function schemedropdown(){
-                            if (schemedrop == false) { document.getElementById("scheme").style.marginLeft = "-2px"; schemedrop = true;
-                            } else if (schemedrop == true){ document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }}
-                        
-                        function schemeexit(){ document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }
-                        function windows98(){ document.getElementById("currentscheme").textContent="Windows 98"; cpick12(); wallpaperoption1();}
-                        function evangelionmode(){ document.getElementById("currentscheme").textContent="Evangelion"; cpick19(); wallpaperoption4();}
-                        function darkmode(){ document.getElementById("currentscheme").textContent="Darkmode 98"; cpick18(); wallpaperoption2();}
+                                   if (schemedrop == false) { document.getElementById("scheme").style.marginLeft = "    -2px"; schemedrop = true;
+                            } else if (schemedrop == true){   document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }}
+                        function schemeexit(){                document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }
+                                                                               //text changer               //replaced with        //colour set        //wallpaper option
+                        function windows98(){           document.getElementById("currentscheme").textContent="Windows 98";           cpick12();          wallpaperoption1();}
+                        function evangelionmode(){      document.getElementById("currentscheme").textContent="Evangelion";           cpick18();          wallpaperoption4();}
+                        function darkmode(){            document.getElementById("currentscheme").textContent="Darkmode 98";          cpick19();          wallpaperoption2();}
+                        function contrastmodescheme1(){ document.getElementById("currentscheme").textContent="High Contrast Mode 1"; highcontrast1();    wallpaperoptionnone();}
                     </script>
                         
                     <button disabled style="position: absolute; margin-left:199px; margin-top:-1px;">Save As...</button>
@@ -1057,8 +1019,8 @@
                             function itemdropdown(){
                                 if (itemdrop == false) { document.getElementById("item").style.marginLeft = "-2px"; itemdrop = true;
                                 } else if (itemdrop == true){ document.getElementById("item").style.marginLeft = "-20000px"; itemdrop = false; }}
-                            
                             function itemexit(){ document.getElementById("item").style.marginLeft = "-20000px"; schemedrop = false; }
+                            
                             function desktopitem(){ document.getElementById("desktopitem").textContent="Desktop";}
                         </script>
                             
@@ -1073,7 +1035,7 @@
                             <div class="smallarrowdown" style="position:absolute; margin-left: 31px; margin-top:7px"></div>
                             <div class="container" style="width:20px; height:11px; margin-top: 2px; margin-left: 3px; border:1px solid #000000; background-color: #008080;" id="currentpickedc"></div>
                             
-                            <div class="win98post" style="position:absolute; z-index:10000; width:74px; height:98px; padding:5px; margin-top:4px; margin-left:-20000px;" onmouseleave="colourpicker()" id="coloursampler">
+                            <div class="win98post" style="position:absolute; z-index:10000; width:74px; height:122px; padding:5px; margin-top:4px; margin-left:-20000px;" onmouseleave="colourpickerexit()" id="coloursampler">
                                 <div class="win98buttonpressed" style="position: absolute; width:38px; height:17px; margin-left:-5px; margin-top:-26px; padding: 2px;" onclick="colourpicker()"> 
                                     <div class="verticalsplitter" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
                                     <div class="smallarrowdown" style="position:absolute; margin-left: 31px; margin-top:7px"></div>
@@ -1088,20 +1050,23 @@
                                 <div class="colourselect" style="background-color: #ff00ff" onclick="cpick15()"></div> <div class="colourselect" style="background-color: #aa55aa" onclick="cpick16()"></div> <br>
                                 <div class="menuapplicationsplit" style="width:100%; margin-bottom:3px;"> </div>
                                 <div class="colourselect" style="background-color: #a03762" onclick="cpick17()"></div> <div class="colourselect" style="background-color: #001224" onclick="cpick18()"></div> 
-                                <div class="colourselect" style="background-color: #da3624" onclick="cpick19()"></div> <div class="colourselect" style="background-color: #6d7f36" onclick="cpick20()"></div> <br>
+                                <div class="colourselect" style="background-color: #590f1e" onclick="cpick19()"></div> <div class="colourselect" style="background-color: #6d7f36" onclick="cpick20()"></div> <br>
+                                <div class="menuapplicationsplit" style="width:100%; margin-bottom:3px;"> </div>
+                                <div class="colourselect" style="background-color: #00ffff" onclick="cpick21()"></div> <div class="colourselect" style="background-color: #00ff00" onclick="cpick22()"></div> 
                         </div></div> 
                         
                         <script>
                             var colourpicked = false; currentcolour = "#008080"; fontcolour = "#ffffff";
                             var cpo = document.getElementById("currentpickedo"); cpc = document.getElementById("currentpickedc"); ap = document.getElementById("apperancepreview");
                             
-                            var desktop1 = document.getElementById("desktopi1"); desktop2 = document.getElementById("desktopi2"); desktop3 = document.getElementById("desktopi3"); desktop4 = document.getElementById("desktopi4");
-                                desktop5 = document.getElementById("desktopi5"); desktop6 = document.getElementById("desktopi6"); desktop7 = document.getElementById("desktopi7"); desktop8 = document.getElementById("desktopi8");
-                                desktop9 = document.getElementById("desktopi9"); 
+                            var desktop1 = document.getElementById("desktopi1"); desktop2 = document.getElementById("desktopi2"); desktop3 = document.getElementById("desktopi3"); 
+                                desktop4 = document.getElementById("desktopi4"); desktop5 = document.getElementById("desktopi5"); desktop6 = document.getElementById("desktopi6"); 
+                                desktop7 = document.getElementById("desktopi7"); desktop8 = document.getElementById("desktopi8"); desktop9 = document.getElementById("desktopi9"); 
 
                             function colourpicker(){
                                        if (colourpicked == false){ document.getElementById("coloursampler").style.marginLeft = "    -2px"; colourpicked =  true;
                                 } else if (colourpicked == true ){ document.getElementById("coloursampler").style.marginLeft = "-20000px"; colourpicked = false; }}
+                            function colourpickerexit() { document.getElementById("coloursampler").style.marginLeft = "-20000px"; colourpicked = false; }
 
                             function backcolourset(){
                                 document.body.style.backgroundColor = currentcolour; cpc.style.backgroundColor = currentcolour; cpo.style.backgroundColor = currentcolour; 
@@ -1109,7 +1074,6 @@
                                 desktop1.style.backgroundColor = currentcolour; desktop2.style.backgroundColor = currentcolour; desktop3.style.backgroundColor = currentcolour;
                                 desktop4.style.backgroundColor = currentcolour; desktop5.style.backgroundColor = currentcolour; desktop6.style.backgroundColor = currentcolour;
                                 desktop7.style.backgroundColor = currentcolour; desktop8.style.backgroundColor = currentcolour;
-                                
                                 document.getElementById("iconpre1").style.backgroundColor = currentcolour; document.getElementById("iconpre2").style.backgroundColor = currentcolour; 
                                 document.getElementById("iconpre3").style.backgroundColor = currentcolour; document.getElementById("iconpre4").style.backgroundColor = currentcolour; 
                                 document.getElementById("iconpre6").style.backgroundColor = currentcolour;} 
@@ -1118,7 +1082,6 @@
                                 desktop1.style.color = fontcolour; desktop2.style.color = fontcolour; desktop3.style.color = fontcolour;
                                 desktop4.style.color = fontcolour; desktop5.style.color = fontcolour; desktop6.style.color = fontcolour;
                                 desktop7.style.color = fontcolour; desktop8.style.color = fontcolour; 
-                                
                                 document.getElementById("iconpre1").style.color = fontcolour; document.getElementById("iconpre2").style.color = fontcolour; 
                                 document.getElementById("iconpre3").style.color = fontcolour; document.getElementById("iconpre4").style.color = fontcolour; 
                                 document.getElementById("iconpre6").style.color = fontcolour;}
@@ -1139,10 +1102,22 @@
                             function cpick14() {  currentcolour = "#0000aa"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
                             function cpick15() {  currentcolour = "#ff00ff"; backcolourset(); fontcolour = "#000"; fontcolourset();}
                             function cpick16() {  currentcolour = "#aa55aa"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
+                            
                             function cpick17() {  currentcolour = "#a03762"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
                             function cpick18() {  currentcolour = "#001224"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
-                            function cpick19() {  currentcolour = "#da3624"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
+                            function cpick19() {  currentcolour = "#590f1e"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
                             function cpick20() {  currentcolour = "#6d7f36"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
+                            
+                            function cpick21() {  currentcolour = "#00ffff"; backcolourset(); fontcolour = "#000"; fontcolourset();
+                                                  document.body.style.backgroundColor = "#000"; cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; 
+                                                  document.getElementById("iconpreview").style.backgroundColor = "#000";  ap.style.backgroundColor = "#000";}
+                            function cpick22() {  currentcolour = "#00ff00"; backcolourset(); fontcolour = "#000"; fontcolourset();
+                                                  document.body.style.backgroundColor = "#000"; cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; 
+                                                  document.getElementById("iconpreview").style.backgroundColor = "#000";  ap.style.backgroundColor = "#000";}
+                            
+                            function highcontrast1() { currentcolour = "#00ffff"; backcolourset(); fontcolour = "#000"; fontcolourset(); 
+                                                       document.body.style.backgroundColor = "#000"; cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; 
+                                                       document.getElementById("iconpreview").style.backgroundColor = "#000";  ap.style.backgroundColor = "#000";}
                         </script>
                         
                         <div class="win98buttontitlebarinactive" style="position: absolute; margin-left:312px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
@@ -1169,9 +1144,7 @@
                             <div class="disabledfont" style="position:absolute; font-weight:700; margin-left:4px; margin-top:1px; ">B</div></div>
                         <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:0px; width:15px; height:15px; margin-left:333px;">
                             <div class="disabledfont" style="position:absolute; margin-left:4px; margin-top:1px;">/</div></div>
-                    </div>
-                </div>
-            <!-- inner container end -->
+                </div></div>
             </div>
             
             <!-- --------------------------------------- Effects tab --------------------------------------- -->
@@ -1244,10 +1217,8 @@
                         
                     </fieldset>
                     
-                    
                     <fieldset style="width:336px; height:105px; margin-left: 12px; margin-top: 20px;">
                         <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: silver; width:68px; padding: 0px 0px 3px 3px; margin-left:-3px"> Visual Effects </label>
-                        
                         <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 7px; margin-left:3px; background-color: silver;"><div class="disabledtickbox"></div></ul>
                             <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 8px; display: inline-block;">Use large desktop icons</div>
                         <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 27px; margin-left:3px; background-color: silver;"><div class="disabledtickbox"></div></ul>
@@ -1258,9 +1229,7 @@
                             <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 68px; display: inline-block;">Enable NSFW desktop options</div>
                         <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 87px; margin-left:3px; background-color: silver;"><div class="disabledtickbox"></div></ul>
                             <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 88px; display: inline-block;">Show window contents while dragging</div>
-                        
-                    </fieldset>
-            <!-- inner container end -->
+                </fieldset>
             </div>
             
             <!-- --------------------------------------- settings tab --------------------------------------- -->
@@ -1279,7 +1248,7 @@
                                 
                             <div class="drop-down-menu" style="margin-top:1px; width: 150px; margin-left: -20000px; index: 10000000;" id="colour">
                                 <div class="win98buttonpressed" style="position:absolute; margin-top: -18px; margin-left:136px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
-                                <div class="drop-down-text" onclick="16bitcolour()">High Colour (16-bit)</div>
+                                <div class="drop-down-text" onclick="sixteenbitcolour()">High Colour (16-bit)</div>
                         </div></ul>
 
                         <script>
@@ -1290,7 +1259,7 @@
                                 
                             function colourexit(){ document.getElementById("colour").style.marginLeft = "-20000px"; colourdrop = false; }
                                 
-                            function 16bitcolour(){  
+                            function sixteenbitcolour(){  
                                 document.getElementById("currentcolour").textContent="High Colour (16-bit)";}
                         </script>
                 
@@ -1312,11 +1281,8 @@
                             <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 45px; display: inline-block;">Extend my Windows desktop onto this monitor</div>
                     <div class="win98buttoninactive" style="position: absolute; margin-top: 50px; width:75px; height:18px; margin-left:277px;"> 
                         <div class="disabledfont" style="margin-top: 3px; margin-left:12px; cursor:pointer"> Advanced </div></div>
-
                 </div>
-                <!-- inner container end -->
             </div>
-            <!-- settings container end -->
             
             <!-- --------------------------------------- footer --------------------------------------- -->
             <!-- display settings buttons -->
@@ -1384,7 +1350,6 @@
         </script>
 
         <!-- shut down window -->
-
         <div class="win98post" style="z-index: 10; margin-left: 200000px; height: 165px; width: 304px; top: 40%; left:  40%;" id="shutdown" onmousedown="shutdownactive();">
             <div class="win98titlebarbutton" style="margin-right:2px; margin-left:2px;" title="close" onclick="diskclose()"><div class="close"></div></div>
             <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" title="help"> <div class="help"></div></div></a> 
@@ -1403,8 +1368,7 @@
                                 <label for="radio9">Restart</label></div>
                         <div class="field-row">
                             <input disabled id="radio10" type="radio" name="second-example">
-                                <label for="radio9">Restart in MS-DOS mode</label></div>
-                </div>
+                                <label for="radio9">Restart in MS-DOS mode</label></div></div>
                 
                 <div class="container" style="float: right; margin-right: 75px; margin-top: 19px; padding: 3px 3px 3px 3px; font-family: Arial; font-size: 11px;">
                     <button style="margin-left:5px; width: 77px; cursor:pointer" onclick="location.href='https://www.tumblr.com/dashboard'"> OK </button>
@@ -1461,7 +1425,7 @@
         {/block:Pagination}
         
         <script>
-            function tumblractive(obj) { 
+            function tumblractive() { 
                 tumblrButtonOpen = false; idleactive(); inactiveall(); 
                 document.getElementById("post").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
                 postwindow.style.backgroundImage = discord + "630047188520665121/791321110750298162/title-bar_postheader.png')"; 
@@ -1475,7 +1439,7 @@
         
         <div id="desktop" class="container" id="desktop" style="width:1010px; left:-25px; margin-bottom:30px;">
             {block:Posts}
-                <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-left: 20px; position: absolute; cursor: default" onmousedown="tumblractive(this)" id="post">
+                <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-left: 20px; position: absolute; cursor: default" onmousedown="tumblractive()" id="post">
                     <div class="win98titlebarbutton" style="margin-right:2px; margin-left:2px;" title="Close"><div class="close"></div></div>
                     <div class="win98titlebarbutton" title="Maximize" style=""> <div class="maximize"></div></div>
                     <div class="win98titlebarbutton" title="Minimize" onclick="tumblrminimize();"> <div class="minimize"></div></div>
@@ -1545,7 +1509,7 @@
                             <div class="win98buttonscrollinactive" style="margin-left: 451px;"><div class="arrowdisableup"></div></div>
                             
                                  <!-- Normalised post container --> 
-                                <div class="container"  style="max-width: 451px;"> <!-- 428px wide, 451 including scrollwheel + padding -->
+                                <div class="container"  style="max-width: 451px; margin-left:0.5px;"> <!-- 428px wide, 451 including scrollwheel + padding -->
                                 <!-- Text posts -->
                                     
                                     {block:Text}
@@ -1553,7 +1517,7 @@
                                             {block:Title}
                                                <div class="title-bar-text" style= "margin-left:3px; font-size: 2rem; color:black; margin-bottom:-7px; margin-top:-3px" >{Title}</div>
                                             {/block:Title}
-                                            <div class="content caption" style= "width: 100%; height: 100%; max-width: 428px;"> {Body} </div>
+                                            <div class="content caption" style= "width: 100%; height: 100%;"> {Body} </div>
                                         </div>
                                     {/block:Text}
                                                 
@@ -1563,14 +1527,14 @@
                                         <img src="{PhotoURL-400}" class="full_image" style="margin-bottom:-4px; max-width: 451px;" alt="{PhotoAlt}"> </img> <!-- image -->
                                         <!-- Image caption -->
                                         {block:Caption} 
-                                            <div class="content caption" style="padding: 3px; "> {Caption} </div> <!-- content -->
+                                            <div class="content caption" style="padding: 3px;"> {Caption} </div> <!-- content -->
                                         {/block:Caption}
                                     {/block:Photo}
                                         
                                     {block:Photos} 
                                         <!-- high res wrapper -->
                                         <div class="wrapper"> {LinkOpenTag}
-                                            <img src="{Photoset}" class="full_set" style="height:100%" alt="{PhotoAlt}"> </img> <!-- image -->
+                                            <img src="{Photoset}" class="full_set" alt="{PhotoAlt}"> </img> <!-- image -->
                                             {LinkCloseTag} 
                                         </div>
                                                 <!-- Image caption -->
@@ -1632,7 +1596,7 @@
                                         </div>
                                         {block:Caption}
                                             <div class="menuapplicationsplit" style="width:100%;"> </div>
-                                            <div class="content caption" style= "margin-top:0px; padding: 3px;" > {Caption} </div> <!-- video caption -->
+                                            <div class="content caption" style= "padding: 3px;" > {Caption} </div> <!-- video caption -->
                                         {/block:Caption}
                                     {/block:Video}
                                     <!-- Video audio -->
@@ -1670,18 +1634,13 @@
                                         {/block:PermalinkPage}
                                         
                                     {/block:PermalinkPage}
-                                    <div class="win98buttonscrollinactive" style="margin-top:-16px; margin-left:451px"><div class="arrowdisableddown" style="margin-top:-3px; margin-left:-3px"></div></div>
+                                    <div class="win98buttonscrollinactive" style="margin-top:-16px; margin-left:451px; {block:PermalinkPage}margin-top:-245px;{/block:PermalinkPage}"><div class="arrowdisableddown" style="margin-top:-3px; margin-left:-3px"></div></div>
                                 </div>
         
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
             <!-- Scrollbar handling                                                                                                            -->
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
                             
-                                {block:PostNotes}
-                                    <div class="win98buttonscrollinactive" style="margin-top:-245px; margin-left:451px;"><div class="arrowdisableddown"></div></div>
-                                    <div class="win98scroll" style="margin-top:-221px; margin-left:451px;"><div class="scrollup"></div></div>
-                                    <div class="win98scroll" style="margin-top:-16px; margin-left:451px"><div class="scrolldown" style="margin-top:-3px; margin-left:-3px"></div></div>
-                                {/block:PostNotes}
                             </div>
                             {block:PostNotes}<div class="notestopbar" style="position:absolute; margin-left: -3px; margin-top:-231px; z-index:2000000"></div>{/block:PostNotes}
                         </ul> 
@@ -1725,10 +1684,7 @@
                                     <fieldset style="position: absolute; width:100%; height:1px;"></fieldset></div>
                                 <div class="cornerpeice" style="position: absolute; margin-left: 455px; margin-top: -16px;  cursor:se-resize">  </div>
                                 
-                        </div></div>
-                        
-                    </div>  
-                </div>
+                </div></div></div></div>
             {/block:Posts}
         </div>
         
@@ -2366,17 +2322,14 @@
                     <div class="taskbaricon1"></div>
                     <div class="taskbaricon2"></div>
                     <div class="taskbaricon3" style="cursor:pointer;" onclick="messageopen()();"></div> <!-- active desktop icon -->
-                    <div class="taskbaricon4"></div> 
-                </div>
+                    <div class="taskbaricon4"></div></div>
                 <taskbar class="big_seperator"> </taskbar>
                 <taskbar class="small_seperator" style="cursor:e-resize"> </taskbar>
                 
                 <div class="taskbarapp1" style="cursor:pointer;" onmousedown="tumblrtoggle(); startpressdelay()" id="taskapp1"> <!--position: absolute; margin-left:172px-->
                         <div class="title-bar-text" style="color:black; margin-top:2px; font-size: 11px;">🍭 very.vunnies</div></div>
-                  
                 <div class="taskbarapp2" style="cursor:pointer;" onmousedown="pyrotoggle(); startpressdelay()" id="taskapp2"> <!--position: absolute; margin-left:336px-->
                         <div class="title-bar-text" style="color:black; margin-top:2px; font-size: 11px;">👿 very.unvunny</div></div>
-                
                 <div class="taskbarapp3" style="cursor:pointer;" onmousedown="disktoggle(); startpressdelay()" id="taskapp3"> <!--position: absolute; margin-left:500px-->
                         <div class="title-bar-text" style="color:black; margin-top:2px; font-size: 11px;">📺 Display Properties</div></div>
                 
@@ -2473,21 +2426,16 @@
                     $container.infinitescroll({ 
                             itemSelector: '.window'},
                         function( newElements ) {
-                            var $newElems = $(newElements);
-                            var $newElemsIDs = $newElems.map(function(){
-                                return this.id;
-                            }).get();
+                            var $newElems = $(newElements); $newElemsIDs = $newElems.map(function(){
+                                return this.id; }).get();
                             Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
                             $newElems.imagesLoaded(
                             function(){
                                 $newElems.animate({ opacity: 1 }); 
                                 $container.masonry( 'appended', $newElems, true ); })
-                        }
-                    );
-                } else if( !infScr && twoCol){
+                })} else if( !infScr && twoCol){
                     $container.imagesLoaded(function(){ $container.masonry({ itemSelector: '.window' })})}
             
-                
                 //taskbar clock functions
                 function updateClock(){
                     var date = new Date();
@@ -2512,7 +2460,6 @@
                 dragElement(document.getElementById("message"));
                 dragElement(document.getElementById("logoff"));
                 dragElement(document.getElementById("shutdown"));
-                
                 
                 //grab element for windows
                 function dragElement(elmnt) { //position storage and setting it to window
@@ -2710,10 +2657,5 @@
                 document.getElementById("menuarrow5").style.backgroundPosition = "-54px -216px";}
 
         </script>
-        
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- More post making end                                                                                                          -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-            
     </body>
 </html>
