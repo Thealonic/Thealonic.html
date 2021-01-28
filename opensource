@@ -15,10 +15,39 @@
                                https://twitter.com/VeryVhersty // https://veryvhersty.tumblr.com/ -->
 
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- header start                                                                                                                  -->
+        <!-- Script setup                                                                                                                  -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
                 
 <html>
+    
+    <script type="text/javascript" src="https://static.tumblr.com/d0qlne1/DiAl6ekb7/jquery-1.4.2.min.js"></script>
+    <script src="//static.tumblr.com/fpdiq1j/x8Nn0wiyd/jquery.masonry.min.js"></script>
+    <script src="//static.tumblr.com/fpdiq1j/jpPn0wdlf/jquery.photosetgrid.min.js"></script>
+    <script src="//static.tumblr.com/fpdiq1j/GV9n0wdlc/jquery.infinitescroll.min.js"></script>
+    
+    <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.16/dist/98.css">
+
+    <script> 
+        var discord = "url('https://cdn.discordapp.com/attachments/";
+        
+        $(document).ready(function(){ resizeVideos() });
+        function resizeVideos() {
+           $('.video iframe:not(.tumblr_video_iframe)').each(function(){
+               var scale = $(this).parents('.video').width() / 500;
+               $(this).attr({ width: Math.floor($(this).attr('width') * scale),
+                              height: Math.floor($(this).attr('height') * scale) })});
+           $('.tumblr_video_iframe').each(function(){
+               var scale = $(this).parents('.video').width() / 500;
+               $(this).css({ 'transform': 'scale(' + scale + ')',
+                             'margin': 250 * ( scale - 1 ) + 'px' });
+               $(this).parents('.tumblr_video_container').css({ width: Math.floor($(this).width() * ( scale + 1 ) / 2),
+                                                                height: Math.floor($(this).height() * ( scale + 1 ) / 2)})})};
+    </script>
+    
+        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+        <!-- header start                                                                                                                  -->
+        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+    
     <head>
         <title>{Title}{block:PostSummary}, {PostSummary}{/block:PostSummary}{block:TagPage}, posts tagged "{Tag}"{/block:TagPage}</title>
         {block:Description}<meta name="description" value="{MetaDescription}" />{/block:Description}
@@ -27,22 +56,9 @@
         <meta charset="utf-8" />
         
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- Setup referencing                                                                                                             -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        
-        <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.16/dist/98.css">
-        
-        <!-- refs -->
-        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script src="//static.tumblr.com/fpdiq1j/GV9n0wdlc/jquery.infinitescroll.min.js"></script>
-        <script src="//static.tumblr.com/fpdiq1j/x8Nn0wiyd/jquery.masonry.min.js"></script>
-        <script src="//static.tumblr.com/fpdiq1j/jpPn0wdlf/jquery.photosetgrid.min.js"></script>
-        <script> var discord = "url('https://cdn.discordapp.com/attachments/"; </script>
-            
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <!-- CSS Scripts                                                                                                                   -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-            
+        
         <!-- Setup -->
         <style type="text/css">
         
@@ -108,11 +124,9 @@
             .win98container{        box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
             /*startmenu*/           font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute; font-size: 11px;}
             .window-body{           margin:8px;}
-            
             .win98post{             box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px;
             /*randomimagesmenu*/    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
             .title-bar-posts{       font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px; background-image: var(--active); height: 18px; width: 100%}
-            .title-bar-small{       font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px; background-image: var(--inactive); height: 18px; width: 100%}
             .title-bar-98{          font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px; background-image: var(--inactive); height: 18px; width: 100%}
 
             /* window  post handling */
@@ -121,8 +135,6 @@
             /*.title-bar{           background: url('https://cdn.discordapp.com/attachments/630047188520665121/791289642578214912/title-bar_gradientopen.png'); height: 18px; width:194px;}*/
             /*title-bar.inactive{   background: url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png'); height: 18px; width:194px;}*/
             .title-bar-text {       font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color:#fff; letter-spacing:0; margin-right:24px; padding:1px 4px 2px 4px; cursor: context-menu;}
-            .titletext {            padding:2px 4px 2px 4px; cursor: context-menu; } /*backup css*/
-            
             .win98innerbox {        box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #fff,inset -2px -2px grey,inset 2px 2px #dfdfdf;background:silver;padding:3px;
             /*randomimagesmenu*/    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
             
@@ -131,8 +143,6 @@
                                             font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top:2px;}
             .win98titlebarbutton:active {   width:10px; height: 8px; float:right; box-shadow:inset 1px 1px #0a0a0a,  inset -1px -1px #fff, inset -2px -2px #dfdfdf, inset 2px 2px grey; background:silver; padding:3px; 
                                             font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top:2px;  transition: width 0.1s;}
-            .win98buttontitlebarinactive {  width:10px; height: 8px; float:right; box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
-                                            font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-left: 1px; margin-right:1px; margin-top:2px; position: absolute;}
             .win98buttonscrollinactive {    width:10px; height: 10px; float:right; box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
                                             font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-left: 1px; position: absolute;}                 
               
@@ -145,16 +155,16 @@
                                     font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; height:16px; cursor:default}
             .win98buttonpressed {   box-shadow:inset 1px 1px #0a0a0a,  inset -1px -1px #fff, inset -2px -2px #dfdfdf, inset 2px 2px grey; background:silver; padding:3px; 
                                     font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; transition: width 0.1s; height:16px; cursor:pointer;}
-            
             .buttontext {           display:inline-flex; align-items:center; }
-                       
+            
+            /* scroll buttton css */
             .win98scroll {          width:10px; height: 10px; float:right; box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
                                     font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
             .win98scroll:active {   width:10px; height: 10px; float:right; box-shadow:inset 1px 1px #0a0a0a,  inset -1px -1px #fff, inset -2px -2px #dfdfdf, inset 2px 2px grey; background:silver; padding:3px; 
                                     font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: -1px; margin-left: -1px; transition: width 0.1s; position: absolute;}
             .win98scrollinactive {  width:10px; height: 10px; float:right; box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
                                     font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
-                                    
+            /* css for tabs in windows menus */
             .win98tab {             box-shadow:inset -1px 0px #0a0a0a,inset 1px 1px #fff,inset -2px 0px grey,inset 2px 2px #dfdfdf;background:silver;padding:3px; border-radius: 2px;
                                     font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute; z-index; 100;}
             
@@ -210,8 +220,6 @@
             /* tumblr post container things */
             .sidescrollbarmiddlemiddle {    height:  2px; width:467px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/800356725827698728/window_width.png'); background-repeat: repeat-y; overflow:hidden;}
             .scrollbarmiddle {              height:  2px; width: 16px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/802170469985026078/scrollbarempty.png'); background-repeat: repeat; overflow:hidden;}
-            .scrollbarcontainer {           height: 16px; width: 16px; background:silver; position: right; position: absolute; padding:0px;}
-            .notestopbar {                  background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/786639077117657168/boarder.png'); width:477px; height: 8px;}
             
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* Start bar handling */
@@ -235,7 +243,6 @@
             
             /* start menu application icon config */
             .submenu18 {        height: 18px; background-color:white;   color: black; width:100%;}
-            
             .submenu20 {        height: 20px; background-color:#c0c0c0; color: black; width:100%;}
             .submenu20:hover {  height: 20px; background-color:#00207c; color: white; width:100%;}
             .submenu36 {        height: 36px; background-color:#c0c0c0; color: black; width:100%;}
@@ -394,40 +401,48 @@
             a {         color: #ffffff; text-decoration: none;}
             a:hover {   text-decoration: underline; color: #ffffff;}
             span {      background-color: #ffffff; color: #000000;}
+            icon {      background-color: #008080; color: #ffffff;}
             label {     display:inline-flex; align-items: center;}
             
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* tumblr post handling                                                                                                          */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
             
+            .posts .photo img.image {       display: block; width: 100%; height:auto;}
+            .posts .audio img.artwork {     display: block; width: 100%; height:auto;}
+            .posts .html_photoset {         position: relative; display: block; width: 100%; height:auto;}
+            .posts .with_caption {          margin-bottom: 1em;}
+            .posts .photoset {              position: relative; height:auto;}
             .posts .audio .audio_player embed {     display: block;}
             .posts p:empty {                        display: none;}
             .posts div:empty {                      display: none;}
             body.permalink_page .posts .controls {  display: none;}
             .hide_if_last:last-child {              display: none;}
             
-            .content p {            margin: 0 0 0.85em 0; display: block;} /*gaps between text*/
-            blockquote, ul, ol  {   margin: 0 0 0.8em 0; display: block;} /*gaps to the left of text*/
-            #content #posts #tags .comma:last-child {   display: none;}
-            .content p:last-child {                     margin-bottom: 0 !important;} /* bottom of posts before footer */
-            .content blockquote:last-child {            margin-bottom: 0 !important;} /* bottom of posts before footer */
-            .meta div:last-child {                      margin-bottom: 0 !important;} /* bottom of posts before footer */
+            .content p > img { max-width: 100%; border-radius: 0;}
+            .content p { margin: 0 0 0.85em 0;}
+            blockquote, ul, ol  { margin: 0 0 0.8em 0;}
+            .meta div { margin: 0 0 0.4em 0 !important;}
+            .meta div a { text-decoration: none;}
+            #content #posts #tags .comma:last-child { display: none;}
+            .content p:last-child { margin-bottom: 0 !important;} 
+            .content blockquote:last-child { margin-bottom: 0 !important;}
+            .meta div:last-child { margin-bottom: 0 !important;} /* bottom of posts before footer */
             
             /* text Post settings */
-            blockquote {    padding-left: 5px; margin-top:-5px; margin-bottom:5px; border-left: 2px solid #ABABAB; border-left: 2px solid rgba(0,0,0,0.33); } /* lines at the side of posts */
+            blockquote {                padding-left: 5px; margin-top:-5px; margin-bottom:5px; border-left: 2px solid #ABABAB; border-left: 2px solid rgba(0,0,0,0.33); } /* lines at the side of posts */
             .quote .dash {              float: left; padding: 0 2px 0 2px;}
+            .quote .source {            float: left;}
+            .chat .line:last-of-type {  margin-bottom: 0;}
+            .chat ul {                  padding: 0; list-style: none;}
             .chat ol {                  padding: 0; list-style: none;}
             
             /* image Post settings */
-            .body img {         max-width: 100%; overflow: hidden;}
-            .caption img {      max-width: 100%; overflow: hidden;}
-            img.full_image {    width: 451px;} /* bottlenecks images */
+            .body img {         max-width: 100%; overflow: hidden;} /* bottlenecks images */
+            .caption img {      max-width: 100%; overflow: hidden;} /* bottlenecks images */
+            img.full_image {    width: 451px; overflow: hidden;} /* bottlenecks images */
             .middle img {       max-width: 451px; width: 100%; height: 100%; display: block;}
-            .photoset .wrapper {display: block; position: relative; width: 100%; width: 451px;}
-            a img {             border: 0; }
-            
-            /* video Post settings */
-            .video .video_player { height: 100%; width: 100%; max-width: 470px; display: block; margin: 0;}
+            a img {             border: 0;}
             
             /* audio Post settings */
             .audio {                    padding: 0;}
@@ -435,16 +450,11 @@
             .soundcloud_audio_player {  width: 100%;}
             .tumblr_audio_player {      width: 100%;}
             .spotify_audio_player {     height: 80px !important; width:100%;}
+            .tumblr_video_container {   position: relative; width:auto !important; height:auto !important; padding: auto;}
 
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* additional tumblr handling                                                                                                    */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
-
-            /* media resizer patch */
-            .media {        position: relative; padding-bottom: auto; margin: auto auto auto auto; overflow: hidden; height: auto;}
-            .media iframe { position: absolute; width: 451px;}
-            .media object { position: absolute; width: 451px;}
-            .media embed {  position: absolute; width: 451px;}
             
             /* tumblr likes formatting */
             .like-b { position:relative; display:inline-block; height:1em; line-height:1em; color:#000000;}
@@ -459,7 +469,7 @@
             /* tumblr notes formatting */
             .tagged { font-size: 9px; opacity: 0.5;}
             .notes { margin-top:0px; text-align:left;}
-            ol.notes { padding: 2px; margin: 5px 0px; list-style-type: none; max-height: 216px; width:461px; overflow:auto; margin-top:-6px;}
+            ol.notes { padding: 2px; list-style-type: none; max-height: 320px; width:463px; overflow:auto; margin-top:-6px;}
             ol.notes li.note img.avatar { vertical-align: -4px; margin-right: 4px; width: 16px; height:16px; margin-top:-2px; margin-bottom;-2px;}
             ol.notes li.note .answer_content { font-weight: normal;}
             ol.notes li.note blockquote { padding: 4px 10px; margin: 10px 0px 0px 25px;}
@@ -468,7 +478,7 @@
             .cf:before, .cf:after {content:" "; display:table;}
             .cf:after{ clear:both;}
             .cf{ *zoom:1;}
-            
+
             {CustomCSS}
 
         </style>
@@ -489,55 +499,55 @@
                 <!-- Button one -->
                 <a href="https://thealonic.tumblr.com/" class="pages" style="cursor: pointer;">
                     <div class="thealonic" id="thealonic"></div>
-                    <div class="icon_label"><span id="desktopi1">
-                        <label id="desktopi1f">Thealonic </label></span></div> </a>
+                    <div class="icon_label"><icon id="desktopi1">
+                        <label id="desktopi1f">Thealonic </label></icon></div> </a>
                 <!-- Button Two -->
                 <a href="https://veryvhersty.tumblr.com/" class="pages" style="cursor: pointer;" target="_blank">
                     <div class="veryvhersty" id="veryverstyicon"></div>
-                    <div class="icon_label"><span id="desktopi2">
-                        <label id="desktopi2f"> Very.Vhersty </label></span></div> </a>
+                    <div class="icon_label"><icon id="desktopi2">
+                        <label id="desktopi2f"> Very.Vhersty </label></icon></div> </a>
                 <!-- Button Three -->
                 <a href="https://twitter.com/VeryVhersty" class="pages" style="cursor: pointer;" target="_blank">
                     <div class="twitter" id="twittericon"></div>
-                    <div class="icon_label"><span id="desktopi3">
+                    <div class="icon_label"><icon id="desktopi3">
                         <label id="desktopi3f" style="margin-left:0.5px;"> Art Posting </label></span></div> </a>
                 <!-- Button Four -->
                 {block:AskEnabled}
                 <a href="/ask" class="ask" style="cursor: pointer;" target="_blank">
                     <div class="askicon" id="askicon"></div>
-                    <div class="icon_label"><span id="desktopi4">
-                        <label id="desktopi4f">Ask Mommy </label></span></div> </a>
+                    <div class="icon_label"><icon id="desktopi4">
+                        <label id="desktopi4f">Ask Mommy </label></icon></div> </a>
                 {/block:AskEnabled}
                 <!-- Button Five -->
                 {block:SubmitEnabled}
                 <a href="/submit" class="Submit" style="cursor: pointer;" target="_blank">
                     <div class="submiticon" id="submiticon"></div>
-                    <div class="icon_label"><span id="desktopi9">
-                        <label id="desktopi9f">Submissions </label></span></div> </a>
+                    <div class="icon_label"><icon id="desktopi9">
+                        <label id="desktopi9f">Submissions </label></icon></div> </a>
                 {/block:SubmitEnabled}
                 <!-- Button Six -->
                 <a href="https://discord.gg/KDQcXs7" class="archive" style="cursor: pointer;" target="_blank">
                     <div class="discordlink" id="discordicon"></div>
-                    <div class="icon_label"><span id="desktopi5">
-                        <label id="desktopi5f">Self-Governed</label> <label id="desktopi1fa" style="margin-left:0.5px;">Shitposters </label></span></div> </a>
+                    <div class="icon_label"><icon id="desktopi5">
+                        <label id="desktopi5f">Self-Governed</label> <label id="desktopi1fa" style="margin-left:0.5px;">Shitposters </label></icon></div> </a>
                 <!-- Button Seven -->
                 <a href="https://www.youtube.com/playlist?list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU" class="ovffvp" style="cursor: pointer;" target="_blank">
                     <div class="officialfunny" id="officialfunnyicon"></div>
-                    <div class="icon_label"><span id="desktopi6">
-                        <label id="desktopi6f" style="margin-left:0.5px;">The Official Very</label> <label id="desktopi6fa" style="margin-left:0.5px;">Funny Video Playlist </label></span></div> </a>
+                    <div class="icon_label"><icon id="desktopi6">
+                        <label id="desktopi6f" style="margin-left:0.5px;">The Official Very</label> <label id="desktopi6fa" style="margin-left:0.5px;">Funny Video Playlist </label></icon></div> </a>
             </div>
             <!-- Sidebar icons coloumn 2 -->
             <div class="icons2">
                 <!-- Button one -->
                 <a href="https://youtu.be/WPUZn9TIorM?t=1451" class="ovffvp" style="cursor: pointer;" target="_blank">
                     <div class="simcity"></div>
-                    <div class="icon_label"><span id="desktopi7">
-                        <label id="desktopi1f" style="margin-left:0.5px;">SimCity 4</label></span></div> </a>
+                    <div class="icon_label"><icon id="desktopi7">
+                        <label id="desktopi1f" style="margin-left:0.5px;">SimCity 4</label></icon></div> </a>
                 <!-- Button Two -->
                 <a href="https://www.youtube.com/watch?v=W_4uRZFVKPE&t=383s" class="ovffvp" style="cursor: pointer;" target="_blank">
                     <div class="rct2"></div>
-                    <div class="icon_label"><span id="desktopi8">
-                        <label id="desktopi8f">Roller Coaster</label> <label id="desktopi8fa" style="margin-left:0.5px;">Tycoon 2</label></span></div> </a>
+                    <div class="icon_label"><icon id="desktopi8">
+                        <label id="desktopi8f">Roller Coaster</label> <label id="desktopi8fa" style="margin-left:0.5px;">Tycoon 2</label></icon></div> </a>
         </div></div>
     </head>
      
@@ -545,10 +555,7 @@
         <!-- Page rendering                                                                                                                -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
     
-    <body class="win98
-    {block:IndexPage}index_page infinite_scrolling{/block:IndexPage}
-    {block:PermalinkPage}permalink_page{/block:PermalinkPage} 
-    two_column masonry_enabled" id="body" onload="evangelionmode()">
+    <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" onload="evangelionmode()">
         
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <!-- Tumblr + embedding handling                                                                                                   -->
@@ -570,7 +577,7 @@
         <div class="win98post" style="z-index: 5; width:194px; position: fixed; top: 68%; left: 4%;" onmousedown="catactive();" id="cat">
                     <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="catclose(); pyrowindow();"><div class="close"></div></div>
                         <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
-                    <div class="title-bar-small" id="catwindow" style="width:194px;"> <div class="title-bar-text">🙀 cat </div></div>
+                    <div class="title-bar-98" id="catwindow" style="width:194px;"> <div class="title-bar-text">🙀 cat </div></div>
                     <div class="messagewindowbody" style="margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: -2px">
                         <div class="pageimage3"></div>
                         <center><div class="win98buttoninactive" style="width:70px; margin-top: 4px; margin-bottom: 4px;"> 
@@ -596,7 +603,7 @@
         <div class="win98post" style="z-index: 5; width:194px; position: fixed; top: 58%; left: 12%;" onmousedown="pyroactive();" id="pyro">
             <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="pyroclose();"><div class="close"></div></div>
                 <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
-            <div class="title-bar-small" id="pyrowindow" style="width:194px;"> <div class="title-bar-text" id="pyrotext">💯 Wubba lubba dub dub! </div></div>
+            <div class="title-bar-98" id="pyrowindow" style="width:194px;"> <div class="title-bar-text" id="pyrotext">💯 Wubba lubba dub dub! </div></div>
             <div class="messagewindowbody" style="margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px">
                 <div class="pageimage4" id="pyroimage"></div>
                 <center><div class="win98button" style="width:70px; margin-top: 4px;" onclick="pyroshuffle();"> 
@@ -709,7 +716,7 @@
              <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU"><div class="win98titlebarbutton" style="margin-top:2px; cursor: default;"> <div class="help"></div> </div> </a> 
             <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="title-bar-text">🧮 brain go brrrrr</div></div>
             <div class="window-body" style="margin-right: 4px; margin-top: 5px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
-                <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>03:09am on January 26th, 2021. [GMT]</label></p>
+                <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>18:14pm on January 28th, 2021. [GMT]</label></p>
         </div></div>
         
         <!-- message box functions -->
@@ -943,7 +950,7 @@
                     <div class="win98post" style="height: 137px; width:300px; margin-top:24px; margin-left:5px">
                         <div class="win98titlebarbutton" style="position:absolute; margin-left: 283px; margin-top:1px; cursor: pointer;" title="close"><div class="close"></div></div>
                         <div class="win98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="help"></div></div>
-                        <div class="title-bar-posts"> <div class="titletext" style="margin-left:-1px; margin-top:-1px;">💯 Active Window</div></div>
+                        <div class="title-bar-posts"> <div class="title-bar-text" style="margin-left:-1px; margin-top:-1px;">💯 Active Window</div></div>
                         <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
                             <div class="container" style="margin-top: -2px">
                                 <label style="position:absolute;">Normal</label>
@@ -960,7 +967,7 @@
                     <div class="win98post" style="height:67px; width:200px; margin-left:20px; margin-top: 100px;">
                         <div class="win98titlebarbutton" style="position:absolute; margin-left: 183px; margin-top:1px; cursor: pointer;" title="close"><div class="close"></div></div>
                         <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="help"></div></div></a> 
-                        <div class="title-bar-posts"> <div class="titletext" style="margin-left:-1px; margin-top:-1px;">💬 Message Box</div></div>
+                        <div class="title-bar-posts"> <div class="title-bar-text" style="margin-left:-1px; margin-top:-1px;">💬 Message Box</div></div>
                         <div class="messagewindowbody" style="margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding:3px;"> Current active window
                             <center><div class="win98button" style="width:60px; margin-top: 4px;"> 
                                 <div class="buttontext" style="margin-top: 2px; margin-left:0.5px; cursor:pointer">Ok.</div></div></center>
@@ -1159,48 +1166,48 @@
                             <div class="container" style="height:75px;">
                                 <div class="smalliconscontainer" style="margin-left:3px; margin-top:2px;">
                                     <center><div class="thealonicpreview" id="thealonicpreview"></div>
-                                    <div class="icon_label" style="color:white;"><span id="iconpre1">
+                                    <div class="icon_label" style="color:white;"><icon id="iconpre1">
                                         <label style="max-width:47px;">Thealonic</label>
-                                        <label style="max-width:42px;"> </label></span></div>
+                                        <label style="max-width:42px;"> </label></icon></div>
                                 </center></div>
                                 <!-- Button Two -->
                                 <div class="smalliconscontainer">
                                     <center><div class="veryvherstypreview" id="veryverstyiconpreview"></div>
-                                    <div class="icon_label" style="color:white;"><span id="iconpre2">
+                                    <div class="icon_label" style="color:white;"><icon id="iconpre2">
                                         <label style="max-width:42px;">Very</label>
-                                        <label style="max-width:42px;">Vhersty</label></span></div>
+                                        <label style="max-width:42px;">Vhersty</label></icon></div>
                                 </center></div>
                                 <!-- Button Three -->
                                 <div class="smalliconscontainer">
                                     <center><div class="twitterpreview" id="twittericonpreview"></div>
-                                    <div class="icon_label" style="color:white;"><span id="iconpre3">
+                                    <div class="icon_label" style="color:white;"><icon id="iconpre3">
                                         <label style="max-width:42px;">Art</label>
-                                        <label style="max-width:42px;">posting</label></span></div>
+                                        <label style="max-width:42px;">posting</label></icon></div>
                                 </center></div>
                                 <!-- Button Four -->
                                 {block:AskEnabled}
                                 <div class="smalliconscontainer">
                                     <center><div class="askiconpreview" id="askiconpreview"></div>
-                                    <div class="icon_label" style="color:white;"><span id="iconpre4">
+                                    <div class="icon_label" style="color:white;"><icon id="iconpre4">
                                         <label style="max-width:42px;">Ask</label>
-                                        <label style="max-width:42px;">mommy</label></span></div>
+                                        <label style="max-width:42px;">mommy</label></icon></div>
                                 </center></div>
                                 {/block:AskEnabled}
                                 <!-- Button Five -->
                                 {block:SubmitEnabled}
                                 <div class="smalliconscontainer">
                                     <center><div class="submiticonpreview" id="submiticonpreview"></div>
-                                    <div class="icon_label" style="color:white;"><span id="iconpre5">
+                                    <div class="icon_label" style="color:white;"><icon id="iconpre5">
                                         <label style="max-width:42px;">Submissions</label>
-                                        <label style="max-width:42px;"> </label></span></div>
+                                        <label style="max-width:42px;"> </label></icon></div>
                                 </center></div>
                                 {/block:SubmitEnabled}
                                 <!-- Button Six -->
                                 <div class="smalliconscontainer">
                                     <center><div class="discordlinkpreview" id="discordiconpreview"></div>
-                                    <div class="icon_label" style="color:white;"><span id="iconpre6">
+                                    <div class="icon_label" style="color:white;"><icon id="iconpre6">
                                         <label style="max-width:42px;">SGSP</label>
-                                        <label style="max-width:42px;">discord</label></span></div>
+                                        <label style="max-width:42px;">discord</label></icon></div>
                                 </center></div></div>
                             
                             <div class="scrollbarmiddle" style="position:absolute; height:17px; width:310px;"></div>
@@ -1509,15 +1516,15 @@
                             <div class="win98buttonscrollinactive" style="margin-left: 451px;"><div class="arrowdisableup"></div></div>
                             
                                  <!-- Normalised post container --> 
-                                <div class="container"  style="max-width: 451px; margin-left:0.5px;"> <!-- 428px wide, 451 including scrollwheel + padding -->
+                                <div class="container"  style="max-width: 451px; margin-left:-0.5px; overflow:hidden;"> <!-- 428px wide, 451 including scrollwheel + padding -->
                                 <!-- Text posts -->
                                     
                                     {block:Text}
-                                        <div class="container" style="padding: 3px;">
+                                        <div class="container" style="padding: 3px; max-width:451px;">
                                             {block:Title}
-                                               <div class="title-bar-text" style= "margin-left:3px; font-size: 2rem; color:black; margin-bottom:-7px; margin-top:-3px" >{Title}</div>
+                                               <div class="title-bar-text" style="margin-left:3px; font-size: 2rem; color:black; margin-bottom:-7px; margin-top:-3px">{Title}</div>
                                             {/block:Title}
-                                            <div class="content caption" style= "width: 100%; height: 100%;"> {Body} </div>
+                                            <div class="content caption" style="width: 100%; height: 100%;"> {Body} </div>
                                         </div>
                                     {/block:Text}
                                                 
@@ -1554,49 +1561,56 @@
                                     <!-- Single image containers -->
                                     {block:Quote}
                                         <div class="container" style="padding: 3px;">
-                                        <div class="content caption" style="margin-left:1px"> "{Quote}" </div> <!-- quote itself -->
-                                        {block:Source}
-                                            <div class="content body cf">
-                                                <div class="dash" style="margin-left:2px"> &mdash; </div>
-                                                <div class="source" style="margin-left:2px"> {Source} </div>
-                                            </div>
-                                        {/block:Source}
+                                            <div class="content caption" style="margin-left:1px"> "{Quote}" </div> <!-- quote itself -->
+                                            {block:Source}
+                                                <div class="content body cf">
+                                                    <div class="dash" style="margin-left:2px"> &mdash; </div>
+                                                    <div class="source" style="margin-left:2px"> {Source} </div>
+                                                </div>
+                                            {/block:Source}
                                         </div>
                                     {/block:Quote}
                          
                                     <!-- redirect post -->
                                     {block:Link}
-                                        <a href="{URL}" class="title" {Target}> {Name} &rarr; </a>
-                                        {block:Description}
-                                            <div class="content body"> {Description} </div> <!-- desc -->
-                                        {/block:Description}
+                                        <div class="container" style="padding: 3px;">
+                                            <a href="{URL}" class="title" {Target}> {Name} &rarr; </a>
+                                            {block:Description}
+                                                <div class="content body"> {Description} </div> <!-- desc -->
+                                            {/block:Description}
+                                        </div>
                                     {/block:Link}
                         
                                     <!-- Default posting -->
                                     {block:Chat}
-                                        {block:Title}
-                                            {Title}
-                                        {/block:Title}
-                                        <div class="content body">
-                                            {block:Lines}
-                                                <div class="line">
-                                                    {block:Label}
-                                                        <strong> {Label} </strong> <!-- poster -->
-                                                    {/block:Label}
-                                                    <span class="text"> {Line} </span> <!-- response -->
+                                        <div class="container" style="padding: 3px;">
+                                            {block:Title}
+                                                <div class="title">
+                                                    {Title}
                                                 </div>
-                                            {/block:Lines}      
-                                        </div>
+                                            {/block:Title}
+                                            <div class="content body">
+                                                {block:Lines}
+                                                    <div class="line">
+                                                        {block:Label}
+                                                            <strong>
+                                                                {Label}
+                                                            </strong>
+                                                        {/block:Label}
+                                                        <span class="text">
+                                                            {Line}
+                                                    </span></div>
+                                                {/block:Lines}      
+                                        </div></div>
                                     {/block:Chat}
                         
                                     <!-- Video posts -->
                                     {block:Video}
-                                        <div class="content body" style="max-width: 451px; height:100%;">
-                                            <div class="media"  data-from-page="{CurrentPage}">{Video-400}</div>
+                                        <div class="content body" style="margin-bottom:-2px;">
+                                            <div class="video"  data-from-page="{CurrentPage}" style="height:100%;">{Video-500}</div>
                                         </div>
                                         {block:Caption}
-                                            <div class="menuapplicationsplit" style="width:100%;"> </div>
-                                            <div class="content caption" style= "padding: 3px;" > {Caption} </div> <!-- video caption -->
+                                            <div class="content caption" style= "padding: 3px; margin-top:5px;" > {Caption} </div> <!-- video caption -->
                                         {/block:Caption}
                                     {/block:Video}
                                     <!-- Video audio -->
@@ -1619,32 +1633,25 @@
                                             {Replies}
                                         </div>
                                     {/block:Answer}
-                                                
-                                    <!-- Page Redirects -->
-                                    {block:PermalinkPage}
-            
-                                        <!-- People who also rebloged / liked -->
-                                        {block:PostNotes}
-                                            <div class="notes" style="margin-left: -2px; margin-bottom:-7px; margin-top:10px">
-                                                <div class="content caption" style="height:220px; width:400px; padding:3px;"> 
-                                                    {PostNotes}
-                                                </div> <!-- content -->
-                                            </div>
-                                            {/block:PostNotes}
-                                        {/block:PermalinkPage}
-                                        
-                                    {/block:PermalinkPage}
-                                    <div class="win98buttonscrollinactive" style="margin-top:-16px; margin-left:451px; {block:PermalinkPage}margin-top:-245px;{/block:PermalinkPage}"><div class="arrowdisableddown" style="margin-top:-3px; margin-left:-3px"></div></div>
-                                </div>
+                                    <div class="win98buttonscrollinactive" style="margin-top:-16px; margin-left:452px;{block:PermalinkPage}margin-left:451px;{/block:PermalinkPage}">
+                                        <div class="arrowdisableddown" style="margin-top:-3px; margin-left:-3px"></div>
+                                </div></div>
         
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
             <!-- Scrollbar handling                                                                                                            -->
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
                             
-                            </div>
-                            {block:PostNotes}<div class="notestopbar" style="position:absolute; margin-left: -3px; margin-top:-231px; z-index:2000000"></div>{/block:PostNotes}
-                        </ul> 
-                                    
+                        </div></ul> 
+                        
+                        {block:PermalinkPage}
+                            {block:PostNotes}
+                            <ul class="tree-view" style="width:467px; margin-left:-6px; margin-bottom:26px; margin-top:-20px; padding:2px;"> 
+                                <div class="notes" style="width:100%; margin-top:6px; margin-bottom:-9px; margin-right:-2px;">
+                                    {PostNotes}
+                            </div></ul>
+                            {/block:PostNotes}
+                        {/block:PermalinkPage}
+                              
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
             <!-- Bottom post handling                                                                                                          -->
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -2419,22 +2426,20 @@
                 var infScr = $('body').hasClass('infinite_scrolling');
                 var twoCol = $('body').hasClass('two_column');
                 var $container = $('#desktop');
-                
-                //two coloumn loading 
+
+                    //two coloumn loading 
                 if( infScr && twoCol ){
                     $container.imagesLoaded(function(){ $container.masonry({ itemSelector: '.window'}) });
-                    $container.infinitescroll({ 
-                            itemSelector: '.window'},
+                    $container.infinitescroll({ itemSelector: '.window'},
                         function( newElements ) {
-                            var $newElems = $(newElements); $newElemsIDs = $newElems.map(function(){
-                                return this.id; }).get();
+                            var $newElems = $( newElements ).css({ opacity: 1 }); 
+                            var $newElemsIDs = $newElems.map(function () { 
+                                return this.id; 
+                            }).get();
                             Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
-                            $newElems.imagesLoaded(
-                            function(){
-                                $newElems.animate({ opacity: 1 }); 
-                                $container.masonry( 'appended', $newElems, true ); })
-                })} else if( !infScr && twoCol){
-                    $container.imagesLoaded(function(){ $container.masonry({ itemSelector: '.window' })})}
+                            $newElems.imagesLoaded(function(){ $container.masonry( 'appended', $newElems, true )})
+                            $newElems.find('.video').each( function() { resizeVideos() });
+                })}
             
                 //taskbar clock functions
                 function updateClock(){
@@ -2446,7 +2451,7 @@
                     var currentTime = hrs + ":" + mins + " " + ext;
                     $('#showClock').html(currentTime); }
                 window.setInterval(updateClock, 6000);
-                
+            
             updateClock()});
             
         // ----------------------------------------------------------------------------------------------------------------------------- -->
