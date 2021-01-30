@@ -19,17 +19,14 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
                 
 <html>
-    
     <script type="text/javascript" src="https://static.tumblr.com/d0qlne1/DiAl6ekb7/jquery-1.4.2.min.js"></script>
     <script src="//static.tumblr.com/fpdiq1j/x8Nn0wiyd/jquery.masonry.min.js"></script>
     <script src="//static.tumblr.com/fpdiq1j/jpPn0wdlf/jquery.photosetgrid.min.js"></script>
     <script src="//static.tumblr.com/fpdiq1j/GV9n0wdlc/jquery.infinitescroll.min.js"></script>
-    
     <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.16/dist/98.css">
-
+    
     <script> 
-        var discord = "url('https://cdn.discordapp.com/attachments/";
-        
+        var github = "url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/";
         $(document).ready(function(){ resizeVideos() });
         function resizeVideos() {
            $('.video iframe:not(.tumblr_video_iframe)').each(function(){
@@ -41,7 +38,7 @@
                $(this).css({ 'transform': 'scale(' + scale + ')',
                              'margin': 250 * ( scale - 1 ) + 'px' });
                $(this).parents('.tumblr_video_container').css({ width: Math.floor($(this).width() * ( scale + 1 ) / 2),
-                                                                height: Math.floor($(this).height() * ( scale + 1 ) / 2)})})};
+                                                                height: Math.floor($(this).height() * ( scale + 1 ) / 2)})})}
     </script>
     
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -49,10 +46,8 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
     
     <head>
-        <title>{Title}{block:PostSummary}, {PostSummary}{/block:PostSummary}{block:TagPage}, posts tagged "{Tag}"{/block:TagPage}</title>
-        {block:Description}<meta name="description" value="{MetaDescription}" />{/block:Description}
+        <meta name="description" value="{MetaDescription}" />
         <link rel="shortcut icon" href="{Favicon}" />
-        <link rel="alternate" href="{RSS}" />
         <meta charset="utf-8" />
         
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -62,25 +57,36 @@
         <!-- Setup -->
         <style type="text/css">
         
-            :root { --spritesheet: url('https://cdn.discordapp.com/attachments/630047188520665121/802182565019779082/spritesheet.png'); 
-                    --desktopsheet: url('https://cdn.discordapp.com/attachments/630047188520665121/802939968019628072/desktopspritesheet.png');
+            :root { --spritesheet:      url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/img/spritesheet.png'); 
+                    --desktopsheet:     url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/img/desktopspritesheet.png');
                     
-                    --defaultcat: url('https://cdn.discordapp.com/attachments/677255444682506240/783314809914392576/unknown.png');
-                    --defaultpyro: url('https://cdn.discordapp.com/attachments/662595661233127434/800859226875494400/ezgif-2-c475330a8091.gif');
+                    --defaultcat:       url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/img/windows/unknown.png');
+                    --defaultpyro:      url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/img/windows/ezgif-2-c475330a8091.gif');
                     
-                    --inactive: url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png');
-                    --active: url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png');
-                    --inactivetask: url('https://cdn.discordapp.com/attachments/630047188520665121/789420847604564008/Taskbar_application1.png');
-                    --activetask: url('https://cdn.discordapp.com/attachments/630047188520665121/789416557692452884/Taskbar_application.png');}
+                    --inactive:         url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/img/title-bar%20postheaderinactive.png');
+                    --active:           url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/img/title-bar%20postheader.png');
+                    --inactivetask:     url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/img/Taskbar%20application1.png');
+                    --activetask:       url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/img/Taskbar%20application.png');
+                    
+                    --vertsplitter:     url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/img/vertical%20splitter.png');
+                    --horisplitter:     url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/img/horizontalsplitter.png');
+                    --scrollbar:        url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/img/scrollbarempty.png');
+                    
+                    --displaydisplay:   url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/img/windows/display%20window.png');
+                    --displaycolour:    url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/img/windows/display%20colour.png');
+                    --displayenergy:    url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/img/windows/energy.png');
+                    
+                    --white: #ffffff; --lightg: #dfdfdf;  --silver: #c0c0c0; --midgray: #ababab; --gray: #808080; --black: #0a0a0a;
+                    --prussian: #00207c ; --wincyan: #008080; --yellow: #ffff00; 
+                    }
 
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* Tumblr post handling */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
             
             /* desktop config settings */
-            body { background: repeat fixed; background-size: cover; margin: 0px; padding: auto auto auto auto; background-color:#008080;}
-            body{ max-width: 100%; overflow-x: hidden;}
-            #desktop, .navigation { margin: 0px auto 0px auto; position: relative; width: 1010px;} /* whole thing */
+            body { background: repeat fixed; background-size: cover; padding: auto auto auto auto; background-color: var(--wincyan); font-family:"Pixelated MS Sans Serif", Arial; max-width: 100%; overflow-x: hidden;}
+            #desktop, .navigation { margin: auto auto auto auto; width: 1010px;} /* whole thing */
             body.permalink_page #desktop, body.permalink_page .navigation { width: 480px;}
             body.infinite_scrolling .navigation, .inf_scr { display: none;}
 
@@ -89,13 +95,12 @@
         /* ----------------------------------------------------------------------------------------------------------------------------- */
 
             /* taskbar icon setup */
-            .icons {        margin: 0 0 0 0; padding: -10px; width: 100px; float: left; position: fixed; z-index: 1; font-size: 12px;}
-            .icons2 {       margin: 0 0 0 80px; padding: -10px; width: 100px; float: left; position: fixed; z-index: 1; font-size: 12px;}
-            .icon_label {   padding-top: 6px; padding-bottom: 10px; color: {color:Icon Links Color}; text-align: center; font-family:Arial;} /* Icon gaps */
+            .icons {        margin: 0 0 0 0; padding: -10px; width: 100px; height:100%; float: left; position: fixed; z-index: 1; font-size: 12px;}
+            .icon_label {   padding-top: 6px; padding-bottom: 6px; color: var(--wincyan); text-align: center; cursor: pointer; } /* Icon gaps */
             
             /* sidebar */
             .thealonic, .veryvhersty, .twitter, .askicon, .discordlink, .officialfunny, .rct2, .simcity {
-                                background-image: var(--desktopsheet); height:  72px; width:  72px; margin-left:14px;}
+                                background-image: var(--desktopsheet); height:  72px; width:  72px; margin-left:14px; cursor: pointer; }
             
             /* coloumn 1                                            coloumn 2 */
             .thealonic {        background-position:   -0px -0px;}  .simcity {          background-position: -432px -0px;}
@@ -121,65 +126,49 @@
             .filler { height: 2px; }
             
             /* custom css for post windows apposed to the default win98 css */
-            .win98container{        box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
-            /*startmenu*/           font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute; font-size: 11px;}
-            .window-body{           margin:8px;}
-            .win98post{             box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px;
-            /*randomimagesmenu*/    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
-            .title-bar-posts{       font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px; background-image: var(--active); height: 18px; width: 100%}
-            .title-bar-98{          font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color: white; font-size:11px; background-image: var(--inactive); height: 18px; width: 100%}
+            .win98container{        box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; font-size: 11px; position: absolute;}
+            .win98post{             box-shadow: inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; font-size:11px; position: absolute;}
+            .title-bar-posts{       font-weight: 700; color: var(--white); font-size: 11px; background-image: var(--active); height: 18px; width: 100%}
+            .title-bar-98{          font-weight: 700; color: var(--white); font-size: 11px; background-image: var(--inactive); height: 18px; width: 100%}
+            .window-body{           margin: 8px;}
 
             /* window  post handling */
-            .window {               box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #dfdfdf,inset -2px -2px grey,inset 2px 2px #fff;background:silver;padding:3px; z-index:2;
-                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
-            /*.title-bar{           background: url('https://cdn.discordapp.com/attachments/630047188520665121/791289642578214912/title-bar_gradientopen.png'); height: 18px; width:194px;}*/
-            /*title-bar.inactive{   background: url('https://cdn.discordapp.com/attachments/630047188520665121/791328235451318342/title-bar_postheaderinactive.png'); height: 18px; width:194px;}*/
-            .title-bar-text {       font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-weight:700; color:#fff; letter-spacing:0; margin-right:24px; padding:1px 4px 2px 4px; cursor: context-menu;}
-            .win98innerbox {        box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #fff,inset -2px -2px grey,inset 2px 2px #dfdfdf;background:silver;padding:3px;
-            /*randomimagesmenu*/    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
+            .window {               box-shadow: inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; font-size: 11px; position: absolute;}
+            .title-bar-text {       font-weight: 700; color: var(--white); letter-spacing:0; margin-right:24px; padding:1px 4px 2px 4px; cursor: context-menu;}
+            .win98innerbox {        box-shadow: inset -1px -1px var(--black), inset 1px 1px #fff, inset -2px -2px var(--gray), inset 2px 2px var(--lightg); background:var(--silver); padding:3px; font-size:11px; position: absolute;}
             
             /* window title bar button handling */
-            .win98titlebarbutton {          width:10px; height: 8px; float:right; box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
-                                            font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top:2px;}
-            .win98titlebarbutton:active {   width:10px; height: 8px; float:right; box-shadow:inset 1px 1px #0a0a0a,  inset -1px -1px #fff, inset -2px -2px #dfdfdf, inset 2px 2px grey; background:silver; padding:3px; 
-                                            font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top:2px;  transition: width 0.1s;}
-            .win98buttonscrollinactive {    width:10px; height: 10px; float:right; box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
-                                            font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-left: 1px; position: absolute;}                 
-              
+            .win98titlebarbutton {          width: 10px; height: 8px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); font-size:11px; margin-top:2px; padding:3px; }
+            .win98titlebarbutton:active {   width: 10px; height: 8px; float:right; box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); font-size:11px; margin-top:2px;  transition: width 0.1s; padding:3px; }
+            .win98buttonscrollinactive {    width: 10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); font-size:11px; margin-left: 1px; position: absolute; padding:3px; }                 
+            .win98buttontitlebarinactive {  width: 10px; height: 8px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); font-size:11px; margin-left: 1px; margin-right:1px; margin-top:2px; position: absolute;padding:3px; }
+            
             /* General button handling */
-            .win98button {          box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
-                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; height:16px; cursor:pointer;}
-            .win98button:active {   box-shadow:inset 1px 1px #0a0a0a,  inset -1px -1px #fff, inset -2px -2px #dfdfdf, inset 2px 2px grey; background:silver; padding:3px; 
-                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; transition: width 0.1s; height:16px; cursor:pointer;}
-            .win98buttoninactive {  box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; margin-bottom: 4px;
-                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; height:16px; cursor:default}
-            .win98buttonpressed {   box-shadow:inset 1px 1px #0a0a0a,  inset -1px -1px #fff, inset -2px -2px #dfdfdf, inset 2px 2px grey; background:silver; padding:3px; 
-                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; transition: width 0.1s; height:16px; cursor:pointer;}
+            .win98button {          box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; font-size:11px; height:16px; cursor:pointer;}
+            .win98button:active {   box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); padding:3px; font-size:11px; transition: width 0.1s; height:16px; cursor:pointer;}
+            .win98buttoninactive {  box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; margin-bottom: 4px; font-size:11px; height:16px; cursor:default}
+            .win98buttonpressed {   box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); padding:3px; font-size:11px; transition: width 0.1s; height:16px; cursor:pointer;}
             .buttontext {           display:inline-flex; align-items:center; }
             
             /* scroll buttton css */
-            .win98scroll {          width:10px; height: 10px; float:right; box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
-                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
-            .win98scroll:active {   width:10px; height: 10px; float:right; box-shadow:inset 1px 1px #0a0a0a,  inset -1px -1px #fff, inset -2px -2px #dfdfdf, inset 2px 2px grey; background:silver; padding:3px; 
-                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: -1px; margin-left: -1px; transition: width 0.1s; position: absolute;}
-            .win98scrollinactive {  width:10px; height: 10px; float:right; box-shadow:inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff; background:silver; padding:3px; 
-                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute;}
+            .win98scroll {          width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; font-size:11px; position: absolute;}
+            .win98scroll:active {   width:10px; height: 10px; float:right; box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); padding:3px; font-size:11px; margin-top: -1px; margin-left: -1px; position: absolute;}
+            .win98scrollinactive {  width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; font-size:11px; position: absolute;}
             /* css for tabs in windows menus */
-            .win98tab {             box-shadow:inset -1px 0px #0a0a0a,inset 1px 1px #fff,inset -2px 0px grey,inset 2px 2px #dfdfdf;background:silver;padding:3px; border-radius: 2px;
-                                    font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; position: absolute; z-index; 100;}
+            .win98tab {             box-shadow:inset -1px 0px var(--black),inset 1px 1px #fff,inset -2px 0px var(--gray),inset 2px 2px var(--lightg);background:var(--silver);padding:3px; border-radius: 2px; font-size:11px; position: absolute; z-index; 100;}
             
-            .disabledfont {         font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; color:grey; text-shadow:1px 1px 0 #fff;}
-            .optionsmenu {          cursor:pointer; height: 17px; width: 100%; background-color:#ffffff; color: black; border-style: dotted; border-width: 1px; border-color: white; z-index:4;}    
-            .optionsmenu:hover {    cursor:pointer; height: 17px; width: 100%; background-color:#00207c; color: white; border-style: dotted; border-width: 1px; border-color: yellow; z-index:10;}  
+            .disabledfont {         color:var(--gray); text-shadow:1px 1px 0 var(--white);}
+            .optionsmenu {          cursor:pointer; height: 17px; width: 100%; background-color:var(--white); color:var(--black); border-style: dotted; border-width: 1px; border-color: var(--white); z-index:4;}    
+            .optionsmenu:hover {    cursor:pointer; height: 17px; width: 100%; background-color:var(--prussian); color:var(--white); border-style: dotted; border-width: 1px; border-color: var(--yellow); z-index:10;}  
             
-            .drop-down-menu {       position: absolute; background: white; margin-top: 20px; z-index: 20000000; }
-            .drop-down-text {       height: 11px; width: 100%; padding:2px 3px 1px 2px; background-color:white; color:black;}
-            .drop-down-text:hover { height: 11px; width: 100%; padding:1px 3px 0px 2px; background-color:#00207c; color: white; border-style: dotted; border-width: 1px; border-color: yellow;}
+            .drop-down-menu {       position: absolute; background: var(--white); margin-top: 20px; z-index: 20000000; }
+            .drop-down-text {       height: 11px; width: 100%; padding:2px 3px 1px 2px; background-color:var(--white); color:var(--black);}
+            .drop-down-text:hover { height: 11px; width: 100%; padding:1px 3px 0px 2px; background-color:var(--prussian); color:var(--white); border-style: dotted; border-width: 1px; border-color: var(--yellow);}
             
-            .colourselect {         height: 12px; width: 12px; padding:2px; background-color:#ffffff; box-shadow: inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a; display: inline-block;
-                                    border-style: solid; border-width: 1px; border-color: silver; margin-left:-1px; margin-top:-1px;}
-            .colourselect:hover {   height: 12px; width: 12px; padding:2px; background-color:#ffffff; box-shadow: inset -1px -1px white,inset 1px 1px white,inset -2px -2px black,inset 2px 2px black; display: inline-block;
-                                    border-style: solid; border-width: 1px; border-color: black; margin-left:-1px; margin-top:-1px;}
+            .colourselect {         height: 12px; width: 12px; padding:2px; background-color:var(--white); box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black);
+                                    border-style: solid; border-width: 1px; border-color:var(--silver); margin-left:-1px; margin-top:-1px; display: inline-block;}
+            .colourselect:hover {   height: 12px; width: 12px; padding:2px; background-color:var(--white); box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--white),inset -2px -2px var(--black),inset 2px 2px var(--black); 
+                                    display: inline-block; border-style: solid; border-width: 1px; border-color: black; margin-left:-1px; margin-top:-1px;}
                       
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* Window icon handling */
@@ -218,35 +207,32 @@
             .explorerlinks {        background-image: var(--spritesheet); height:  5px; width:  4px; background-position: -211px  -222px;}
             
             /* tumblr post container things */
-            .sidescrollbarmiddlemiddle {    height:  2px; width:467px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/800356725827698728/window_width.png'); background-repeat: repeat-y; overflow:hidden;}
-            .scrollbarmiddle {              height:  2px; width: 16px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/802170469985026078/scrollbarempty.png'); background-repeat: repeat; overflow:hidden;}
+            .sidescrollbarmiddlemiddle {    height:  2px; width:467px; background-image: var(--windowplacement); background-repeat: repeat-y; overflow:hidden;}
+            .scrollbarmiddle {              height:  2px; width: 16px; background-image: var(--scrollbar); background-repeat: repeat; overflow:hidden;}
+            .verticalsplitter {   background-image: var(--vertsplitter); height: 16px; width: 2px; background-repeat: repeat-y;}
             
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* Start bar handling */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
 
             /* Post settings */
-            .start_bar {                    position: fixed; background-color: rgb(192,192,192); bottom: 0; height: 28px; width: 100%; z-index: 3; font-family:sans-serif; font-size: 12px;}
+            .start_bar {                    position: fixed; background-color: rgb(192,192,192); bottom: 0; height: 28px; width: 100%; z-index: 3; font-family:sans-serif; font-size: 12px; margin-left:-8px;}
             .start_bar .top_border {        border-bottom: 1px solid rgb(255,255,255); border-top: 1px solid rgb(223,223,223);}
             .start_bar .big_seperator {     float: left; border-left: 1px solid rgb(128,128,128); border-right: 1px solid rgb(255,255,255); height: 22px; margin-top: 2px; margin-left: 2px;}
             .start_bar .small_seperator {   float: left;  border-left: 1px solid rgb(255,255,255); border-top: 1px solid rgb(255,255,255); margin-top: 4px; margin-left: 2px;
                                             border-right: 1px solid rgb(128,128,128); border-bottom: 1px solid rgb(128,128,128); background-color: rgb(192,192,192); width: 1px; height: 16px;}
-                                                
-            .verticalsplitter {   background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/800753200377495602/vertical_splitter.png'); height: 16px; width: 2px; background-repeat: repeat-y;}
-
-            /* tray config */
             .start_bar .time {      line-height: 18px; float: right; font-size: 10px; margin-right: 10px;}
             .taskbaricons {         float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px;}
             
-            .start_bar .tray {      border-top: 1px solid rgb(128,128,128); border-left: 1px solid rgb(128,128,128);border-bottom: 1px solid rgb(255,255,255); border-right: 1px solid rgb(255,255,255);
+            .start_bar .tray {      box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver);
                                     height: 18px; width: 79px; margin-right: 5px; margin-top: 2px; float: right;} 
             
             /* start menu application icon config */
-            .submenu18 {        height: 18px; background-color:white;   color: black; width:100%;}
-            .submenu20 {        height: 20px; background-color:#c0c0c0; color: black; width:100%;}
-            .submenu20:hover {  height: 20px; background-color:#00207c; color: white; width:100%;}
-            .submenu36 {        height: 36px; background-color:#c0c0c0; color: black; width:100%;}
-            .submenu36:hover {  height: 36px; background-color:#00207c; color: white; width:100%;}
+            .submenu18 {        height: 18px; background-color:var(--white);   color: var(--black); width:100%;}
+            .submenu20 {        height: 20px; background-color:var(--silver); color: var(--black); width:100%;}
+            .submenu20:hover {  height: 20px; background-color:var(--prussian); color:var(--white); width:100%;}
+            .submenu36 {        height: 36px; background-color:var(--silver); color: var(--black); width:100%;}
+            .submenu36:hover {  height: 36px; background-color:var(--prussian); color:var(--white); width:100%;}
             
             /* start menu button toggle */
             .startbutton {          background-image: var(--spritesheet); height: 22px; width: 54px; margin-left: 2px; margin-top: 2px; background-position:  -54px -36px;}
@@ -255,7 +241,7 @@
 
             /* start menu misc */
             .verticaltasksplitter {   background-image: var(--spritesheet); height:  18px; width:   3px; background-position: -110px -38px; position:absolute; margin-left: 1px; margin-top: 1px;}
-            .menuapplicationsplit { background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/800392317906452510/unknown.png'); height: 2px; width: 1px;background-repeat: repeat-x;}
+            .menuapplicationsplit { background-image: var(--horisplitter); height: 2px; width: 1px;background-repeat: repeat-x;}
             .windowsstartmenubar {  background-image: var(--spritesheet); height: 159px; width:  21px; background-position: -339px -72px; position:absolute; float: left;}
 
             /* start menu icon references */
@@ -335,9 +321,9 @@
             .explorergo {           background-position: -101px  -72px;}                        .none {                 background-position: -100px -192px;                   height: 18px; width: 18px;}
             .explorerback {         background-position: -121px  -72px;}
             
-            .taskbarapp1 { background-image: var(--activetask); float: left; width: 160px; height: 22px; margin-top: 2px; margin-left: 4px;} /*tumblrposts*/
-            .taskbarapp2 { background-image: var(--inactivetask); float: left; width: 160px; height: 22px; margin-top: 2px; margin-left: 4px;}
-            .taskbarapp3 { background-image: var(--inactivetask); float: left; width: 160px; height: 22px; margin-top: 2px; margin-left: 4px;}
+            .taskbarapp1 { font-family:"Pixelated MS Sans Serif", Arial; background-image: var(--activetask); float: left; width: 160px; height: 22px; margin-top: 2px; margin-left: 4px;} /*tumblrposts*/
+            .taskbarapp2 { font-family:"Pixelated MS Sans Serif", Arial; background-image: var(--inactivetask); float: left; width: 160px; height: 22px; margin-top: 2px; margin-left: 4px;}
+            .taskbarapp3 { font-family:"Pixelated MS Sans Serif", Arial; background-image: var(--inactivetask); float: left; width: 160px; height: 22px; margin-top: 2px; margin-left: 4px;}
             
             .start_bar .time {  line-height: 18px; float: right; font-size: 10px; margin-right: 10px;}
             .start_bar .calendar { float: left; margin-top: 1px; margin-left: 3px;}
@@ -348,41 +334,41 @@
         /* ----------------------------------------------------------------------------------------------------------------------------- */
                
             /* message box dumps */
-            .pageimage2 { height: 195px; width: 190px; background-position: 0px   0px; background-image: url('https://cdn.discordapp.com/attachments/629307562885644308/783307887677014046/unknown.png');}
             .pageimage3 { height: 190px; width: 190px; background-position: 0px   0px; background-image: var(--defaultcat);}
             .pageimage4 { height: 190px; width: 190px; background-position: 0px   0px; background-image: var(--defaultpyro);}
             
-            .displayboxdisplay {    width:184px; height:169px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/793562429425844234/display_window.png');}
-            .displaycolour {        width:155px; height: 15px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/793567960446664714/unknown.png');}
-            .energysaving {         width: 71px; height: 42px; background-image: url('https://cdn.discordapp.com/attachments/630047188520665121/799657061062279208/energy.png');}
+            .displayboxdisplay {    width:184px; height:169px; background-image: var(--displaydisplay);}
+            .displaycolour {        width:153px; height: 13px; background-image: var(--displaycolour); background-repeat: repeat-y;}
+            .energysaving {         width: 71px; height: 42px; background-image: var(--displayenergy);}
 
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* General formatting */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
             
-            .reflinkblack {         color:#000000; }
-            .reflinkblack:hover {   color:#ffffff; text-decoration-line: underline; }
+            .reflinkblack {         color: var(--black); }
+            .reflinkblack:hover {   color: var(--white); text-decoration-line: underline; }
+            underline {             text-decoration-line: underline; }
             
             ul.tree-view {          font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: 4px;}
-            ul.tree-view {          display: block; background: #ffffff; box-shadow: inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a; padding: 6px; margin: 0;}
-            ul.tree-view a {        text-decoration: none; color: #000; }
-            ul.tree-view a:focus {  background-color: navy; color: #ffffff;}
+            ul.tree-view {          display: block; background: var(--white); box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black); padding: 6px; margin: 0;}
+            ul.tree-view a {        text-decoration: none; color: var(--black); }
+            ul.tree-view a:focus {  background-color: var(--prussian); color: var(--white);}
             ul.tree-view li {       margin-top: 4px; list-style-type: none;}
             
             ul.tree-view ul {                       margin-top: 4px; }
-            ul.tree-view ul {                       margin-left: 12px; padding-left: 16px; border-left: 1px dotted grey;}
+            ul.tree-view ul {                       margin-left: 12px; padding-left: 16px; border-left: 1px dotted var(--gray);}
             ul.tree-view ul>li {                    position:relative; }
-            ul.tree-view ul>li:before {             content:""; display: block; position: absolute; left: -16px; top: 6px; width: 12px; border-bottom: 1px dotted grey;}
-            ul.tree-view ul>li:last-child:after {   content:""; display: block; position:absolute; left: -20px; top: 7px; bottom:0; width: 8px; background: #fff;}
+            ul.tree-view ul>li:before {             content:""; display: block; position: absolute; left: -16px; top: 6px; width: 12px; border-bottom: 1px dotted var(--gray);}
+            ul.tree-view ul>li:last-child:after {   content:""; display: block; position:absolute; left: -20px; top: 7px; bottom:0; width: 8px; background: var(--white);}
             ul.tree-view ul details>summary:before{ margin-left: -22px; position: relative; z-index: 1;}
             
             ul.tree-view details {                      margin-top:0;}
-            ul.tree-view details>summary:before {       text-align: center; display: block; float: left; content: "+"; border: 1px solid grey; width: 8px; height: 9px; 
-                                                        line-height: 8px; margin-right: 5px; padding-left: 1px; background-color: #fff; }
+            ul.tree-view details>summary:before {       text-align: center; display: block; float: left; content: "+"; border: 1px solid var(--gray); width: 8px; height: 9px; 
+                                                        line-height: 8px; margin-right: 5px; padding-left: 1px; background-color: var(--white); }
             ul.tree-view details[open] summary {        margin-bottom: 0;}
             ul.tree-view details[open]>summary:before { content: "-"; }
             
-            fieldset{   border: none; box-shadow: inset -1px -1px #fff, inset 1px 1px #85898d, inset -2px -2px grey, inset 2px 2px #dfdfdf; padding:10px; padding-block-start:8px; margin:0}
+            fieldset{   border: none; box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray), inset -2px -2px var(--gray), inset 2px 2px var(--lightg); padding:10px; padding-block-start:8px; margin:0}
             
             [class^=field-row]+[class^=field-row]{ margin-top: 6px;}
             
@@ -398,10 +384,10 @@
             input[type=radio]+label {       position: relative; margin-left: 18px;}
 
             h3 {        font-size: 2rem;}
-            a {         color: #ffffff; text-decoration: none;}
-            a:hover {   text-decoration: underline; color: #ffffff;}
-            span {      background-color: #ffffff; color: #000000;}
-            icon {      background-color: #008080; color: #ffffff;}
+            a {         color: var(--white); text-decoration: none;}
+            a:hover {   text-decoration: underline; color: var(--white);}
+            span {      background-color: var(--white); color: var(--black);}
+            icon {      background-color: var(--wincyan); color: var(--white);}
             label {     display:inline-flex; align-items: center;}
             
         /* ----------------------------------------------------------------------------------------------------------------------------- */
@@ -419,18 +405,18 @@
             body.permalink_page .posts .controls {  display: none;}
             .hide_if_last:last-child {              display: none;}
             
-            .content p > img { max-width: 100%; border-radius: 0;}
-            .content p { margin: 0 0 0.85em 0;}
-            blockquote, ul, ol  { margin: 0 0 0.8em 0;}
-            .meta div { margin: 0 0 0.4em 0 !important;}
-            .meta div a { text-decoration: none;}
-            #content #posts #tags .comma:last-child { display: none;}
-            .content p:last-child { margin-bottom: 0 !important;} 
-            .content blockquote:last-child { margin-bottom: 0 !important;}
-            .meta div:last-child { margin-bottom: 0 !important;} /* bottom of posts before footer */
+            .content p > img {      max-width: 100%; border-radius: 0;}
+            .content p {            margin: 0 0 0.85em 0;}
+            blockquote, ul, ol  {   margin: 0 0 0.8em 0;}
+            .meta div {             margin: 0 0 0.4em 0 !important;}
+            .meta div a {           text-decoration: none;}
+            #content #posts #tags .comma:last-child {   display: none;}
+            .content p:last-child {             margin-bottom: 0 !important;} 
+            .content blockquote:last-child {    margin-bottom: 0 !important;}
+            .meta div:last-child {              margin-bottom: 0 !important;} /* bottom of posts before footer */
             
             /* text Post settings */
-            blockquote {                padding-left: 5px; margin-top:-5px; margin-bottom:5px; border-left: 2px solid #ABABAB; border-left: 2px solid rgba(0,0,0,0.33); } /* lines at the side of posts */
+            blockquote {                margin-left: 2px; padding-left: 4px; margin-top:-5px; margin-bottom:5px; border-left: 2px solid var(--midgray); border-left: 2px solid var(--silver); } /* lines at the side of posts */
             .quote .dash {              float: left; padding: 0 2px 0 2px;}
             .quote .source {            float: left;}
             .chat .line:last-of-type {  margin-bottom: 0;}
@@ -457,11 +443,11 @@
         /* ----------------------------------------------------------------------------------------------------------------------------- */
             
             /* tumblr likes formatting */
-            .like-b { position:relative; display:inline-block; height:1em; line-height:1em; color:#000000;}
+            .like-b { position:relative; display:inline-block; height:1em; line-height:1em; color:var(--black);}
             .like-b .like_button iframe { position:absolute; opacity:0;}
             .like-b .liked + .b { color:inherit;}
             .like-b .liked + .b:after { content:'d';}
-            .like-b:hover { color:#ffffff; text-decoration-line: underline; } 
+            .like-b:hover { color:var(--white); text-decoration-line: underline; } 
             
             /* infinate scroll script + */
             ul, ol { padding: 0 0 0 18px;}
@@ -474,81 +460,61 @@
             ol.notes li.note .answer_content { font-weight: normal;}
             ol.notes li.note blockquote { padding: 4px 10px; margin: 10px 0px 0px 25px;}
             ol.notes li.note blockquote a { text-decoration: none;}
-            
-            .cf:before, .cf:after {content:" "; display:table;}
-            .cf:after{ clear:both;}
-            .cf{ *zoom:1;}
 
             {CustomCSS}
-
         </style>
-        
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- Random image generation                                                                                                       -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        
-        
         
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <!-- desktop handling                                                                                                              -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
 
-        <div class="wrapper" style="margin-top:20px" onclick="idleactive(); inactiveall();">
-            <!-- Sidebar icons coloumn 1 -->
-            <div class="icons">
-                <!-- Button one -->
-                <a href="https://thealonic.tumblr.com/" class="pages" style="cursor: pointer;">
-                    <div class="thealonic" id="thealonic"></div>
-                    <div class="icon_label"><icon id="desktopi1">
-                        <label id="desktopi1f">Thealonic </label></icon></div> </a>
-                <!-- Button Two -->
-                <a href="https://veryvhersty.tumblr.com/" class="pages" style="cursor: pointer;" target="_blank">
-                    <div class="veryvhersty" id="veryverstyicon"></div>
-                    <div class="icon_label"><icon id="desktopi2">
-                        <label id="desktopi2f"> Very.Vhersty </label></icon></div> </a>
-                <!-- Button Three -->
-                <a href="https://twitter.com/VeryVhersty" class="pages" style="cursor: pointer;" target="_blank">
-                    <div class="twitter" id="twittericon"></div>
-                    <div class="icon_label"><icon id="desktopi3">
-                        <label id="desktopi3f" style="margin-left:0.5px;"> Art Posting </label></span></div> </a>
-                <!-- Button Four -->
-                {block:AskEnabled}
-                <a href="/ask" class="ask" style="cursor: pointer;" target="_blank">
-                    <div class="askicon" id="askicon"></div>
-                    <div class="icon_label"><icon id="desktopi4">
-                        <label id="desktopi4f">Ask Mommy </label></icon></div> </a>
-                {/block:AskEnabled}
-                <!-- Button Five -->
-                {block:SubmitEnabled}
-                <a href="/submit" class="Submit" style="cursor: pointer;" target="_blank">
-                    <div class="submiticon" id="submiticon"></div>
-                    <div class="icon_label"><icon id="desktopi9">
-                        <label id="desktopi9f">Submissions </label></icon></div> </a>
-                {/block:SubmitEnabled}
-                <!-- Button Six -->
-                <a href="https://discord.gg/KDQcXs7" class="archive" style="cursor: pointer;" target="_blank">
-                    <div class="discordlink" id="discordicon"></div>
-                    <div class="icon_label"><icon id="desktopi5">
-                        <label id="desktopi5f">Self-Governed</label> <label id="desktopi1fa" style="margin-left:0.5px;">Shitposters </label></icon></div> </a>
-                <!-- Button Seven -->
-                <a href="https://www.youtube.com/playlist?list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU" class="ovffvp" style="cursor: pointer;" target="_blank">
-                    <div class="officialfunny" id="officialfunnyicon"></div>
-                    <div class="icon_label"><icon id="desktopi6">
-                        <label id="desktopi6f" style="margin-left:0.5px;">The Official Very</label> <label id="desktopi6fa" style="margin-left:0.5px;">Funny Video Playlist </label></icon></div> </a>
-            </div>
-            <!-- Sidebar icons coloumn 2 -->
-            <div class="icons2">
-                <!-- Button one -->
-                <a href="https://youtu.be/WPUZn9TIorM?t=1451" class="ovffvp" style="cursor: pointer;" target="_blank">
-                    <div class="simcity"></div>
-                    <div class="icon_label"><icon id="desktopi7">
-                        <label id="desktopi1f" style="margin-left:0.5px;">SimCity 4</label></icon></div> </a>
-                <!-- Button Two -->
-                <a href="https://www.youtube.com/watch?v=W_4uRZFVKPE&t=383s" class="ovffvp" style="cursor: pointer;" target="_blank">
-                    <div class="rct2"></div>
-                    <div class="icon_label"><icon id="desktopi8">
-                        <label id="desktopi8f">Roller Coaster</label> <label id="desktopi8fa" style="margin-left:0.5px;">Tycoon 2</label></icon></div> </a>
-        </div></div>
+        <!-- Sidebar icons coloumn 1 -->
+        <div class="icons" style="max-height:100%; max-width:100%; margin-left:-10px;">
+            <!-- Button one -->
+            <a href="https://thealonic.tumblr.com/">
+                <div class="thealonic"></div>
+                <div class="icon_label"><icon id="desktopi1">
+                    <label>Thealonic </label></icon></div> </a>
+            <!-- Button Two -->
+            <a href="https://veryvhersty.tumblr.com/" target="_blank">
+                <div class="veryvhersty"></div>
+                <div class="icon_label"><icon id="desktopi2">
+                    <label> Very.Vhersty </label></icon></div> </a>
+            <!-- Button Three -->
+            <a href="https://twitter.com/VeryVhersty" target="_blank">
+                <div class="twitter"></div>
+                <div class="icon_label"><icon id="desktopi3">
+                    <label style="margin-left:0.5px;"> Art Posting </label></span></div> </a>
+            <!-- Button Four -->
+            {block:AskEnabled}
+            <a href="/ask" class="ask" target="_blank">
+                <div class="askicon"></div>
+                <div class="icon_label"><icon id="desktopi4">
+                    <label>Ask Mommy </label></icon></div> </a>
+            {/block:AskEnabled}
+            <!-- Button Five -->
+            {block:SubmitEnabled}
+            <a href="/submit" class="Submit"target="_blank">
+                <div class="submiticon"></div>
+                <div class="icon_label"><icon id="desktopi9">
+                    <label>Submissions </label></icon></div> </a>
+            {/block:SubmitEnabled}
+            <!-- Button Six -->
+            <a href="https://discord.gg/KDQcXs7" target="_blank">
+                <div class="discordlink"></div>
+                <div class="icon_label"><icon id="desktopi5">
+                    <label>Self-Governed</label> <label style="margin-left:0.5px;">Shitposters </label></icon></div> </a>
+            <!-- Button Seven -->
+            <a href="https://www.youtube.com/playlist?list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU" target="_blank">
+                <div class="officialfunny"></div>
+                <div class="icon_label"><icon id="desktopi6">
+                    <label style="margin-left:0.5px;">The Official Very</label> <label style="margin-left:0.5px;">Funny Video Playlist </label></icon></div> </a>
+            <!-- Button Eight -->
+            <a href="https://www.youtube.com/watch?v=W_4uRZFVKPE&t=383s" target="_blank">
+                <div class="rct2"></div>
+                <div class="icon_label"><icon id="desktopi8">
+                    <label>Roller Coaster</label> <label style="margin-left:0.5px;">Tycoon 2</label></icon></div> </a>
+        </div>
     </head>
      
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -572,6 +538,7 @@
         <script>
             var pyrotabs = 2; currentno = 5;
             var window1 = true; window2 = true; 
+            function pyrowindow(){ if(pyrotabs == 0){ document.getElementById("taskapp2").style.marginLeft = "-20000px";}}
         </script>
         
         <div class="win98post" style="z-index: 5; width:194px; position: fixed; top: 68%; left: 4%;" onmousedown="catactive();" id="cat">
@@ -589,14 +556,14 @@
                 idleactive(); inactiveall();
                 pyroButtonOpen = false;
                 document.getElementById("cat").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
-                document.getElementById("catwindow").style.backgroundImage = discord + "630047188520665121/791321110750298162/title-bar_postheader.png')";
+                document.getElementById("catwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";
                 document.getElementById("catwindow").style.backgroundPosition = "-150px";
-                document.getElementById("taskapp2").style.backgroundImage = discord + "630047188520665121/789416557692452884/Taskbar_application.png')";} 
+                document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application.png')";} 
                 
-            function catclose() { pyrowindow();
+            function catclose() {
                 pyroButtonOpen = true; window2 = false;
-                document.getElementById("cat").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; 
-                document.getElementById("taskapp2").style.backgroundImage = discord + "630047188520665121/789420847604564008/Taskbar_application1.png')";
+                document.getElementById("cat").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; pyrowindow();
+                document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application1.png')";
                 idleactive(); inactiveall();}
         </script>
             
@@ -611,52 +578,23 @@
         </div></div>
         
         <script>
-        
             var myPix = new Array(
-                discord + "672475563952439326/798493963824529418/unknown.png')",                discord + "630047188520665121/798499968289603604/unknown.png')", // fluer + trans gun 0-1
-                discord + "677255444682506240/783315603115999282/ezgif-7-c9e84b5f07f6.gif')",   discord + "677255444682506240/798502538710089738/unknown.png')", // pyro + dog dressed as chicken. 2 3
-                discord + "677255444682506240/798506381481213962/unknown.png')",                discord + "677255444682506240/798506706274615296/unknown.png')", // cat in cup + putin next to walrus. 4 5
-                discord + "677255444682506240/798507986195578890/unknown.png')",                discord + "677255444682506240/798509320584691732/unknown.png')", // cat in jar + who shot hannibal 6 7
-                discord + "677255444682506240/798509675238785074/unknown.png')",                discord + "677255444682506240/798509990620954654/unknown.png')", // cat drinking + bananana 8 9
-                discord + "677255444682506240/798528719010005002/unknown.png')",                discord + "677255444682506240/798513603384180746/unknown.png')", // tank eater cat in fridge 10 11
-                discord + "677255444682506240/798513784686772254/unknown.png')",                discord + "677255444682506240/798514201449988106/unknown.png')", // cat snake + spring cat 12
-                discord + "677255444682506240/798514567441285160/unknown.png')",                discord + "677255444682506240/798514809716998144/unknown.png')", // muscle cat + Pussy Fuckers 14
-                discord + "677255444682506240/798515890425561098/unknown.png')",                discord + "677255444682506240/798525792257835028/unknown.png')", // dancing cat with bear + Brain the dog drinking 16
-                discord + "363043993069682699/798527303532806165/unknown.png')",                discord + "677255444682506240/798527551290867712/unknown.png')", // wallace tank - joker chair 18
-                discord + "677255444682506240/798813870168473620/unknown.png')",                discord + "677255444682506240/798815059274498108/unknown.png')", // I like ass - charge 50 bucks to piss 20
-                discord + "677255444682506240/798815239029653514/unknown.png')",                discord + "677255444682506240/798815499361320970/unknown.png')", // bort - bowsette smithers 22
-                discord + "677255444682506240/798816411837399050/unknown.png')",                discord + "677255444682506240/798840038443712562/unknown.png')", // free sex - silence confederate 24
-                discord + "677255444682506240/798840513200783380/unknown.png')",                discord + "677255444682506240/798845223588331530/unknown.png')", // connect 4 + I want to play ball 26
-                discord + "677255444682506240/798816411837399050/unknown.png')",                discord + "677255444682506240/798845723617263616/unknown.png')", // freesex + screaming cat 28
-                discord + "677255444682506240/799296225861566484/unknown.png')",                discord + "677255444682506240/799322617114656817/unknown.png')", // shiji emo + doge bed 30
-                discord + "677255444682506240/799324405855551508/unknown.png')",                discord + "677255444682506240/799325063291600956/unknown.png')", // rlm + airhorn tolet 32
-                discord + "677255444682506240/799327404904415302/unknown.png')",                discord + "677255444682506240/799328383078236160/unknown.png')", // to paris + kermit 34
-                discord + "629307562885644308/783307887677014046/unknown.png')",                // mr bean +  36
+                github + "   ')"
             )
                 
             var r_text = new Array (); 
-                r_text[0] = "💯 Hi-dilly-ho, neighborinos!";   r_text[1] = "💯 hand the purse over.";         r_text[ 2] = "💯 bloody ell' chums ";          r_text[ 3] = "💯 help";                        r_text[ 4] = "💯 قطة غبية سخيف ، كريستوفر أبون ل"; 
-                r_text[5] = "💯 let me hold you, darling.";    r_text[6] = "💯 Spongbob Squarepants";         r_text[ 7] = "💯 Who shot hannibal?";          r_text[ 8] = "💯 (the cat is preggers)";       r_text[ 9] = "💯 I'm a slut for a banana"; 
-                r_text[10] = "💯 Tank Eater~";                 r_text[11] = "💯 Fat cat with fat snax";       r_text[12] = "💯 I'm a butterfly daddy!";      r_text[13] = "💯 Blongongongongong";           r_text[14] = "💯 I did it, I shot hannibal.";
-                r_text[15] = "💯 Pussy fuckers";               r_text[16] = "💯 gangnam style";               r_text[17] = "💯 It seems today-";             r_text[18] = "💯 piekreig";                    r_text[19] = "💯 No one cared who until I sat";
-                r_text[20] = "💯 Ass Eater~";                  r_text[21] = "💯 rct2.exe";                    r_text[22] = "💯 bort.png";                    r_text[23] = "💯 i'm gay, miss.";              r_text[24] = "💯 SEX AT SEX.COM";
-                r_text[25] = "💯 'Silence in  the library'";   r_text[26] = "💯 Neon Genesis Evanjollion";    r_text[27] = "💯 Space Jam";                   r_text[28] = "💯 My mom's crown jewels";       r_text[29] = "💯 NOT THE CUM JAR";
-                r_text[30] = "💯 Get out the phase, shinji";   r_text[31] = "💯 doge bed";                    r_text[32] = "💯 on";                          r_text[33] = "💯 round the outside";           r_text[34] = "💯 ⠀";
-                r_text[35] = "💯 Mmmhhjmmm... Homiee";         r_text[36] = "💯 chopstick slammer";           
+                r_text[0] = "💯 Hi-dilly-ho, neighborinos!";       
 
             var tick = 3;
             var randomNum = Math.floor(Math.random() * myPix.length); 
-            var randomNum2
+            var randomNum2;
+            
             function pyroshuffle(){ 
-                
-                if (tick !== 0){ 
-                    randomNum2 = Math.floor(Math.random() * myPix.length);
-                    if(randomNum2 !== randomNum){
-                        randomNum = randomNum2
+                if (tick !== 0){ randomNum2 = Math.floor(Math.random() * myPix.length);
+                    if(randomNum2 !== randomNum){randomNum = randomNum2
                         document.getElementById("pyrotext").textContent= r_text[randomNum]; 
                         document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum]; randomNum = randomNum2;
-                    } else { randomNum2 = Math.floor(Math.random() * myPix.length);
-                        randomNum = randomNum2;
+                    } else { randomNum2 = Math.floor(Math.random() * myPix.length); randomNum = randomNum2;
                         document.getElementById("pyrotext").textContent= r_text[randomNum]; 
                         document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum]; randomNum = randomNum2;}
                         
@@ -666,43 +604,40 @@
                     
                     if(randomNum == 30){ document.getElementById("pyrobutton").textContent="Nuzzles";}
                     tick = tick - 1;
-                    
                 } else { 
-                    document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1;
+                    document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; pyrowindow();
                     document.getElementById("pyrobutton").textContent = "Definately"; document.getElementById("pyrotext").textContent = '💯 Wubba lubba dub dub!';
-                    document.getElementById("pyroimage").style.backgroundImage = "var(--defaultpyro)"; pyroclose(); }}
-                
-            function pyrowindow(){ if(pyrotabs == 0){ pyroclose(); }}
-        </script>
-        
-        <script> 
+                    document.getElementById("pyroimage").style.backgroundImage = "var(--defaultpyro)";}}
+
             function pyroactive() { 
                 idleactive(); inactiveall();
                 pyroButtonOpen = false; currentno = currentno + 1; 
                 document.getElementById("pyro").style.zIndex = (currentno = currentno + 1);
-                document.getElementById("pyrowindow").style.backgroundImage = discord + "630047188520665121/791321110750298162/title-bar_postheader.png')";
+                document.getElementById("pyrowindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";
                 document.getElementById("pyrowindow").style.backgroundPosition = "-150px";
-                document.getElementById("taskapp2").style.backgroundImage = discord + "630047188520665121/789416557692452884/Taskbar_application.png')";} 
+                document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application.png')";} 
             function pyroclose() { 
                 pyroButtonOpen = true; window1 = false;
-                document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1;
-                document.getElementById("taskapp2").style.backgroundImage = discord + "630047188520665121/789420847604564008/Taskbar_application1.png')";
-                idleactive(); inactiveall(); pyrowindow();}
+                document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; pyrowindow();
+                document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application1.png')";
+                idleactive(); inactiveall();}
         </script>                
 
         <script> 
             function vunnyopen(){
                 idleactive(); inactiveall();
+                document.getElementById("cat").style.left = "4%"; document.getElementById("cat").style.top = "68%";
+                document.getElementById("pyro").style.left = "12%"; document.getElementById("pyro").style.top = "58%";
                 pyrotabs = 2; tick = 3; pyroButtonOpen = false;
                 document.getElementById("cat").style.marginLeft = "0px";
                 document.getElementById("pyro").style.marginLeft = "0px"; 
                 //var placement = ((windowstotal x 160) + 4)
                 document.getElementById("cat").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; 
                 document.getElementById("pyro").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; 
-                document.getElementById("pyrowindow").style.backgroundImage = discord + "630047188520665121/791321110750298162/title-bar_postheader.png')";
+                document.getElementById("pyrowindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";
                 document.getElementById("pyrowindow").style.backgroundPosition = "-150px";
                 document.getElementById("taskapp2").style.marginLeft = "4px";
-                document.getElementById("taskapp2").style.backgroundImage = discord + "630047188520665121/789416557692452884/Taskbar_application.png')";} 
+                document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application.png')";} 
         </script> 
 
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -710,13 +645,13 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
 
         <!-- message box rendering -->
-        <div class="win98post" style="height: 50px; width:306px; right: 8%; top: 63%; z-index:5;" onmousedown="messageactive();" id="message">
+        <div class="win98post" style="height: 50px; width:306px; left: 76%; top: 63%; z-index:5;" onmousedown="messageactive();" id="message">
              <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:2px; margin-top:2px;" onclick="messageclose()"><div class="close"></div></div>
              <div class="win98titlebarbutton" style="margin-top:2px;" onclick="messagemaximize()"><div class="maximize"></div></div>
              <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU"><div class="win98titlebarbutton" style="margin-top:2px; cursor: default;"> <div class="help"></div> </div> </a> 
             <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="title-bar-text">🧮 brain go brrrrr</div></div>
             <div class="window-body" style="margin-right: 4px; margin-top: 5px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
-                <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>18:14pm on January 28th, 2021. [GMT]</label></p>
+                <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>06:38am on January 30th, 2021. [GMT]</label></p>
         </div></div>
         
         <!-- message box functions -->
@@ -724,42 +659,37 @@
             function messageactive() {
                 idleactive(); inactiveall();
                 document.getElementById("message").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
-                document.getElementById("messagewindow").style.backgroundImage = discord + "630047188520665121/791303194356482048/title-bar_diskmanagement_gradientopen.png')";} 
+                document.getElementById("messagewindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";} 
             function messageinactive() { 
                 inactiveall(); inactiveall();
-                document.getElementById("messagewindow").style.backgroundImage = discord + "630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";} 
+                document.getElementById("messagewindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";} 
             function messageclose() { 
                 document.getElementById("message").style.right = "-100%";
                 document.getElementById("message").style.marginLeft = "-20000px"
                 idleactive(); inactiveall();}
             function messageopen() {
                 idleactive(); inactiveall();
-                document.getElementById("message").style.right = "8%";
+                document.getElementById("message").style.left = "76%";
+                document.getElementById("message").style.top = "63%";
                 document.getElementById("message").style.marginLeft = "0px"
                 document.getElementById("message").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
-                document.getElementById("messagewindow").style.backgroundImage = discord + "630047188520665121/791303194356482048/title-bar_diskmanagement_gradientopen.png')";}
+                document.getElementById("messagewindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";}
         </script>
-        
-        <!--
-        <div class="container" style="top: 12%; right: 5%; z-index:2; position: absolute; float: right">
-        <iframe src="https://discord.com/widget?id=228593075008569344&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" 
-                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe></div>
-        
+
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <!-- Display properties rendering                                                                                                  -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
             
         <!-- display settings container -->
-        <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; right: 3%; z-index:5;" onmousedown="diskactive()" id="disk">
+        <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; left: 76%; z-index:5;" onmousedown="diskactive()" id="disk">
             <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:2px; margin-top:2px; cursor: pointer;" title="close" onclick="diskclose()"><div class="close"></div></div>
             <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="margin-top:2px" title="help"> <div class="help"></div></div></a> 
-            <div class="title-bar-98" id="diskwindow"> <div class="title-bar-text">📺 Display Properties
-            </div></div>
+            <div class="title-bar-98" id="diskwindow"> <div class="title-bar-text">📺 Display Properties</div></div>
             
             <!--container for the setting window -->
             <div class="win98tab" style="width:71px; height:17px; margin-top:5px; margin-left:  6px; z-index:10" onclick="tabreset(); backgroundtab();" id="backgroundtab"><center><label style="margin-top:1px;">Background</label></center></div>
             <div class="win98tab" style="width:68px; height:16px; margin-top:6px; margin-left: 80px; z-index: 1"  onclick="tabreset(); screensavertab();" id="screenSavertab"><center><label style="margin-top:1px;">Screen Saver</label></center></div>
-            <div class="win98tab" style="width:65px; height:16px; margin-top:6px; margin-left:154px; z-index: 1"  onclick="tabreset();appearancetab();" id="appearancetab"><center><label style="margin-top:1px;">Appearance</label></center></div>
+            <div class="win98tab" style="width:65px; height:16px; margin-top:6px; margin-left:154px; z-index: 1"  onclick="tabreset(); appearancetab();" id="appearancetab"><center><label style="margin-top:1px;">Appearance</label></center></div>
             <div class="win98tab" style="width:38px; height:16px; margin-top:6px; margin-left:225px; z-index: 1"  onclick="tabreset(); effectstab();" id="effectstab"><center><label style="margin-top:1px;">Effects</label></center></div>
             <div class="win98tab" style="width:45px; height:16px; margin-top:6px; margin-left:269px; z-index: 1"  onclick="tabreset(); settingstab();" id="settingstab"><center><label style="margin-top:1px;">Settings</label></center></div>
             
@@ -860,19 +790,19 @@
                         </div>
                         
                         <script>
-                            var defaultwallpaper = discord + "630047188520665121/786208918119514112/wallpaper32.png')"; 
+                            var defaultwallpaper
                             function wallpaperupdate(){ document.getElementById("body").style.backgroundImage = currentwallpaper;
                                                         document.getElementById("apperancepreview").style.backgroundImage = currentwallpaper;
                                                         document.getElementById("iconpreview").style.backgroundImage = currentwallpaper;}
 
                             function wallpaperoptionnone() { currentwallpaper = "none"; wallpaperupdate(); } 
-                            function wallpaperoption1() { currentwallpaper = discord + "630047188520665121/786208918119514112/wallpaper32.png')"; wallpaperupdate(); }
-                            function wallpaperoption2() { currentwallpaper = discord + "630047188520665121/802544094294573056/unknown.png')"; wallpaperupdate(); }
-                            function wallpaperoption3() { currentwallpaper = discord + "630047188520665121/803075431124566066/unknown.png')"; wallpaperupdate(); } 
-                            function wallpaperoption4() { currentwallpaper = discord + "630047188520665121/803072949024325642/unknown.png')"; wallpaperupdate(); } 
-                            function wallpaperoption5() { currentwallpaper = discord + "630047188520665121/803343335552450560/unknown.png')"; wallpaperupdate(); } 
-                            function wallpaperoption6() { currentwallpaper = discord + "630047188520665121/803345954085535744/unknown.png')"; wallpaperupdate(); } 
-                            function wallpaperoption7() { currentwallpaper = discord + "630047188520665121/803457397749973022/unknown.png')"; wallpaperupdate(); } 
+                            function wallpaperoption1() { currentwallpaper = github + "img/wallpapers/wallpaper32.png')"; wallpaperupdate(); }
+                            function wallpaperoption2() { currentwallpaper = github + "img/wallpapers/study.png')"; wallpaperupdate(); }
+                            function wallpaperoption3() { currentwallpaper = github + "img/wallpapers/startrek.png')"; wallpaperupdate(); } 
+                            function wallpaperoption4() { currentwallpaper = github + "img/wallpapers/unknown.png')"; wallpaperupdate(); } 
+                            function wallpaperoption5() { currentwallpaper = github + "img/wallpapers/anime.png')"; wallpaperupdate(); } 
+                            function wallpaperoption6() { currentwallpaper = github + "img/wallpapers/neon.png')"; wallpaperupdate(); } 
+                            function wallpaperoption7() { currentwallpaper = github + "img/wallpapers/vinyl.png')"; wallpaperupdate(); } 
                         </script>
                         
                     </ul>
@@ -888,7 +818,7 @@
                     <fieldset style="width:336px; height:50px; margin-left: 12px; margin-top: 18px;">
                         <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: silver; width:64px; padding: 0px 0px 3px 3px; margin-left:-3px"> Screen Saver </label>
                         
-                        <ul class="tree-view"  style="position: absolute; width:168px; height: 17px; padding:2px; margin-top:3px;" onclick="screensaverdropdown()" onmouseleave="screensaverdropdown()">
+                        <ul class="tree-view"  style="position: absolute; width:168px; height: 17px; padding:2px; margin-top:3px;" onclick="screensaverdropdown()" onmouseleave="screensaverdropdownclose()">
                             <div class="container" style="padding: 3px 2px 2px 2px;" id="currentscreensaver">(none)</div>
                             <div class="win98button" style="position:absolute; margin-top: -17px; margin-left:152px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
                         
@@ -903,6 +833,7 @@
                                 if (screensaverdrop == false) { document.getElementById("thescreensaver").style.marginLeft = "-2px"; screensaverdrop = true;
                                 } else if (screensaverdrop == true){ document.getElementById("thescreensaver").style.marginLeft = "-20000px"; screensaverdrop = false; }}
                             function none(){ document.getElementById("currentscreensaver").textContent="(none)";}
+                            function screensaverdropdownclose(){ document.getElementById("thescreensaver").style.marginLeft = "-20000px"; screensaverdrop = false; }
                         </script>
                         
                         <div class="win98buttoninactive" style="position: absolute; margin-left:182px; margin-top: 1px; width:66px; height:18px;"> 
@@ -937,8 +868,7 @@
             <!-- background inner container -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="appearance">
             
-                <ul class="tree-view"  id="apperancepreview" style="width:337px; height:179px; margin-left: 12px; margin-top: 12px; background-size: cover; padding:10px;
-                                              background: url('https://cdn.discordapp.com/attachments/630047188520665121/786208918119514112/wallpaper32.png');  background-color: #008080;">
+                <ul class="tree-view"  id="apperancepreview" style="width:337px; height:179px; margin-left: 12px; margin-top: 12px; background-size: cover; padding:10px; background-color: #008080;">
                                                   
                     <div class="win98post" style="height: 137px; width:300px;">
                         <div class="win98titlebarbutton" style="position:absolute; margin-left: 283px; margin-top:1px; cursor: pointer;" title="close"><div class="close"></div></div>
@@ -1068,7 +998,7 @@
                             
                             var desktop1 = document.getElementById("desktopi1"); desktop2 = document.getElementById("desktopi2"); desktop3 = document.getElementById("desktopi3"); 
                                 desktop4 = document.getElementById("desktopi4"); desktop5 = document.getElementById("desktopi5"); desktop6 = document.getElementById("desktopi6"); 
-                                desktop7 = document.getElementById("desktopi7"); desktop8 = document.getElementById("desktopi8"); desktop9 = document.getElementById("desktopi9"); 
+                                desktop8 = document.getElementById("desktopi8"); desktop9 = document.getElementById("desktopi9"); 
 
                             function colourpicker(){
                                        if (colourpicked == false){ document.getElementById("coloursampler").style.marginLeft = "    -2px"; colourpicked =  true;
@@ -1080,7 +1010,7 @@
                                 document.getElementById("iconpreview").style.backgroundColor = currentcolour;  ap.style.backgroundColor = currentcolour;
                                 desktop1.style.backgroundColor = currentcolour; desktop2.style.backgroundColor = currentcolour; desktop3.style.backgroundColor = currentcolour;
                                 desktop4.style.backgroundColor = currentcolour; desktop5.style.backgroundColor = currentcolour; desktop6.style.backgroundColor = currentcolour;
-                                desktop7.style.backgroundColor = currentcolour; desktop8.style.backgroundColor = currentcolour;
+                                desktop8.style.backgroundColor = currentcolour;
                                 document.getElementById("iconpre1").style.backgroundColor = currentcolour; document.getElementById("iconpre2").style.backgroundColor = currentcolour; 
                                 document.getElementById("iconpre3").style.backgroundColor = currentcolour; document.getElementById("iconpre4").style.backgroundColor = currentcolour; 
                                 document.getElementById("iconpre6").style.backgroundColor = currentcolour;} 
@@ -1088,7 +1018,7 @@
                             function fontcolourset(){
                                 desktop1.style.color = fontcolour; desktop2.style.color = fontcolour; desktop3.style.color = fontcolour;
                                 desktop4.style.color = fontcolour; desktop5.style.color = fontcolour; desktop6.style.color = fontcolour;
-                                desktop7.style.color = fontcolour; desktop8.style.color = fontcolour; 
+                                desktop8.style.color = fontcolour; 
                                 document.getElementById("iconpre1").style.color = fontcolour; document.getElementById("iconpre2").style.color = fontcolour; 
                                 document.getElementById("iconpre3").style.color = fontcolour; document.getElementById("iconpre4").style.color = fontcolour; 
                                 document.getElementById("iconpre6").style.color = fontcolour;}
@@ -1161,8 +1091,7 @@
                     <fieldset style="width:336px; height:165px; margin-left: 12px; margin-top: 14px;">
                         <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: silver; width:68px; padding: 0px 0px 3px 3px; margin-left:-3px"> Desktop Icons </label>
                         
-                        <ul class="tree-view" style="width:318px; height:88px; margin-top:5px; margin-left:2px; overflow:hidden;
-                                                     background: url('https://cdn.discordapp.com/attachments/630047188520665121/786208918119514112/wallpaper32.png'); background-color: #008080;" id="iconpreview">
+                        <ul class="tree-view" style="width:318px; height:88px; margin-top:5px; margin-left:2px; overflow:hidden; background-color: #008080;" id="iconpreview">
                             <div class="container" style="height:75px;">
                                 <div class="smalliconscontainer" style="margin-left:3px; margin-top:2px;">
                                     <center><div class="thealonicpreview" id="thealonicpreview"></div>
@@ -1299,32 +1228,33 @@
                     <div class="buttontext" style="margin-top: 3px; margin-left:18px; cursor:pointer" onclick="diskclose()">Cancel</div></div>
             <div class="win98button" style="position:absolute; width:70px; height:18px; margin-top: 395px; margin-left:152px;">
                     <div class="buttontext" style="margin-top: 3px; margin-left:25px; cursor:pointer" onclick="diskclose()">Okay</div></div></div>
-        <!-- display settings container end -->
         </div>
+        
+        <!-- --------------------------------------- disk properties functions --------------------------------------- -->
         
         <script> 
             function diskactive() { 
                 idleactive(); inactiveall(); diskButtonOpen = false;
                 document.getElementById("disk").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; 
-                document.getElementById("diskwindow").style.backgroundImage = discord + "630047188520665121/791321110750298162/title-bar_postheader.png')";
-                document.getElementById("taskapp3").style.backgroundImage = discord + "630047188520665121/789416557692452884/Taskbar_application.png')";} 
+                document.getElementById("diskwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";
+                document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application.png')";} 
+            
+            function diskopen() { 
+                idleactive(); inactiveall(); tabreset(); diskButtonOpen = false;
+                document.getElementById("disk").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; 
+                document.getElementById("disk").style.marginLeft = "0px";
+                document.getElementById("disk").style.top = "13%";
+                document.getElementById("disk").style.left = "76%";
+                document.getElementById("diskwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";
+                document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application.png')";
+                document.getElementById("taskapp3").style.marginLeft = "4px";}
                 
             function diskclose() { diskButtonOpen = true;
                 document.getElementById("disk").style.marginLeft = "-20000px";
                 document.getElementById("disk").style.right = "-100%";
                 document.getElementById("taskapp3").style.marginLeft = "-20000px";
-                document.getElementById("taskapp3").style.backgroundImage = discord + "630047188520665121/789420847604564008/Taskbar_application1.png')";
+                document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application1.png')";
                 idleactive(); inactiveall();}
-            
-            function diskopen() { 
-                idleactive(); inactiveall(); diskButtonOpen = false;
-                document.getElementById("disk").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; 
-                document.getElementById("disk").style.marginLeft = "0px";
-                document.getElementById("disk").style.right = "3%";
-                document.getElementById("diskwindow").style.backgroundImage = discord + "630047188520665121/791321110750298162/title-bar_postheader.png')";
-                document.getElementById("taskapp3").style.backgroundImage = discord + "630047188520665121/789416557692452884/Taskbar_application.png')";
-                document.getElementById("taskapp3").style.marginLeft = "4px";}
-                
         </script> 
         
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -1351,7 +1281,7 @@
             function logonactive(){
                 idleactive(); inactiveall();
                 document.getElementById("logoff").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
-                document.getElementById("logoffwindow").style.backgroundImage = discord + "630047188520665121/791321110750298162/title-bar_postheader.png')" }
+                document.getElementById("logoffwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')"; }
             function logoff() {     document.getElementById("logoff").style.marginLeft = "0px"; document.getElementById("logoff").style.zIndex = "100"; }
             function logoffno() {   document.getElementById("logoff").style.marginLeft = "200000px"; document.getElementById("logoff").style.zIndex = "1"; }
         </script>
@@ -1387,7 +1317,7 @@
             function shutdownactive(){
                 idleactive(); inactiveall();
                 document.getElementById("shutdown").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
-                document.getElementById("shutdownwindow").style.backgroundImage = discord + "630047188520665121/791321110750298162/title-bar_postheader.png')" }
+                document.getElementById("shutdownwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')"; }
             function shutdown() {   document.getElementById("shutdown").style.marginLeft = "0px"; document.getElementById("shutdown").style.zIndex = "100"; }
             function shutdownno() { document.getElementById("shutdown").style.marginLeft = "200000px"; document.getElementById("shutdown").style.zIndex = "1"; }
         </script>
@@ -1399,20 +1329,20 @@
         <script>    
             function inactiveall() { 
                 //complete toggle script, insert ids here
-                document.getElementById("pyrowindow").style.backgroundImage = discord + "630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
-                document.getElementById("catwindow").style.backgroundImage = discord + "630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
-                document.getElementById("taskapp2").style.backgroundImage = discord + "630047188520665121/789420847604564008/Taskbar_application1.png')";
+                document.getElementById("pyrowindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
+                document.getElementById("catwindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
+                document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application1.png')";
                 
-                document.getElementById("messagewindow").style.backgroundImage = discord + "630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
+                document.getElementById("messagewindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
                 
-                document.getElementById("diskwindow").style.backgroundImage = discord + "630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
-                document.getElementById("taskapp3").style.backgroundImage = discord + "630047188520665121/789420847604564008/Taskbar_application1.png')";
+                document.getElementById("diskwindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
+                document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application1.png')";
                 
-                document.getElementById("postwindow").style.backgroundImage = discord + "630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
-                document.getElementById("taskapp1").style.backgroundImage = discord + "630047188520665121/789420847604564008/Taskbar_application1.png')";
+                document.getElementById("postwindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
+                document.getElementById("taskapp1").style.backgroundImage = github + "img/Taskbar%20application1.png')";
                 
-                document.getElementById("logoffwindow").style.backgroundImage = discord + "630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
-                document.getElementById("shutdownwindow").style.backgroundImage = discord + "630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";}
+                document.getElementById("logoffwindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
+                document.getElementById("shutdownwindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";}
         </script>
 
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -1420,23 +1350,17 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         
         <!-- Page generation -->
-        {block:Pagination}
-            <div class="navigation cf" id="i_nav">
-                {block:NextPage}
-                    <a class="next" id="i_next" href="{NextPage}">{lang:Next} &rarr;</a>
-                {/block:NextPage}
-                {block:PreviousPage}
-                    <a class="prev" href="{PreviousPage}">&larr; {lang:Previous}</a>
-                {/block:PreviousPage}
-            </div>
-        {/block:Pagination}
+        <div class="navigation cf" id="i_nav">
+            <a class="next" id="i_next" href="{NextPage}">{lang:Next} &rarr;</a>
+            <a class="prev" href="{PreviousPage}">&larr; {lang:Previous}</a>
+        </div>
         
         <script>
             function tumblractive() { 
                 tumblrButtonOpen = false; idleactive(); inactiveall(); 
                 document.getElementById("post").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
-                postwindow.style.backgroundImage = discord + "630047188520665121/791321110750298162/title-bar_postheader.png')"; 
-                document.getElementById("taskapp1").style.backgroundImage = discord + "630047188520665121/789416557692452884/Taskbar_application.png')";}
+                postwindow.style.backgroundImage = github + "img/title-bar%20postheader.png')"; 
+                document.getElementById("taskapp1").style.backgroundImage = github + "img/Taskbar%20application.png')";}
                 
             function tumblrminimize() { 
                 tumblrButtonOpen = true; idleactive(); inactiveall(); 
@@ -1444,14 +1368,14 @@
                 document.body.style.overflowY = "hidden";}
         </script>
         
-        <div id="desktop" class="container" id="desktop" style="width:1010px; left:-25px; margin-bottom:30px;">
+        <div id="desktop" class="container" id="desktop" style="width:1010px; left:-25px; margin-top:20px;">
             {block:Posts}
                 <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-left: 20px; position: absolute; cursor: default" onmousedown="tumblractive()" id="post">
                     <div class="win98titlebarbutton" style="margin-right:2px; margin-left:2px;" title="Close"><div class="close"></div></div>
                     <div class="win98titlebarbutton" title="Maximize" style=""> <div class="maximize"></div></div>
                     <div class="win98titlebarbutton" title="Minimize" onclick="tumblrminimize();"> <div class="minimize"></div></div>
                     <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" title="Help"> <div class="help"></div></div></a> 
-                    <div class="title-bar-98" id="postwindow" style="background-image:url('https://cdn.discordapp.com/attachments/630047188520665121/791321110750298162/title-bar_postheader.png')" id="tumblrheader"> 
+                    <div class="title-bar-98" id="postwindow" style="background-image:url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/img/title-bar%20postheader.png')" id="tumblrheader"> 
                         <div class="title-bar-text">🍭 very.vunnies - Windows Explorer</div></div>
                     <div class="window-body"> 
                     
@@ -1488,7 +1412,7 @@
                                 <div class="menuapplicationsplit" style="width:468px; margin-left:-1px; margin-top: 4px;"> </div>
                                 
                                 <div class="verticaltasksplitter" style="margin-top:2px;"></div> <!-- Left side of the Bottom container -->
-                                <div class="container" style="position:absolute; margin-left:12.5px; margin-top:5px; width:400px;">Address</div>
+                                <div class="container" style="position:absolute; margin-left:12.5px; margin-top:5px; width:400px;">A<underline>d</underline>dress</div>
                                 <ul class="tree-view" style="position:absolute; width:300px; height:9px; margin-left:55.5px; overflow:hidden;">
                                     <div class="win98buttontitlebarinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px; width:10px; height:11px;">
                                         <div class="arrowdisableddown" style="margin-left:-4px;"></div></div>
@@ -1512,13 +1436,10 @@
                         <div class="filler"></div><div class="filler"></div>
                                 
                         <ul class="tree-view" style="margin-left:-6px; margin-bottom:26px; width: 471px; padding:0px; overflow:hidden;"> 
-                            <div class="sidescrollbarmiddlemiddle" style="margin-left: 2px; height: 100%; margin-top:2px; margin-bottom:2px;">
-                            <div class="win98buttonscrollinactive" style="margin-left: 451px;"><div class="arrowdisableup"></div></div>
-                            
-                                 <!-- Normalised post container --> 
-                                <div class="container"  style="max-width: 451px; margin-left:-0.5px; overflow:hidden;"> <!-- 428px wide, 451 including scrollwheel + padding -->
+                            <div class="scrollbarmiddle" style="margin-left: 2.5px; height: 100%; width:467px; margin-top:2px; margin-bottom:2px;">
+                                <div class="container"  style="max-width: 451px; background-color:white; overflow:hidden;"> <!-- 428px wide, 451 including scrollwheel + padding -->
                                 <!-- Text posts -->
-                                    
+                                    <div class="win98buttonscrollinactive" style="margin-left: 451px;"><div class="arrowdisableup"></div></div>
                                     {block:Text}
                                         <div class="container" style="padding: 3px; max-width:451px;">
                                             {block:Title}
@@ -1633,6 +1554,7 @@
                                             {Replies}
                                         </div>
                                     {/block:Answer}
+                                    
                                     <div class="win98buttonscrollinactive" style="margin-top:-16px; margin-left:452px;{block:PermalinkPage}margin-left:451px;{/block:PermalinkPage}">
                                         <div class="arrowdisableddown" style="margin-top:-3px; margin-left:-3px"></div>
                                 </div></div>
@@ -1730,7 +1652,7 @@
                         <a href="https://thealonic.tumblr.com/patch-notes" onclick="startpressdelay();"><label style="margin-top:3px;">
                             <div class="submenu36" style="width: 141px; height:36px">
                                 <div class="patchnotes"></div>
-                                <label style="margin-left: 2px; height: 36px"> Update log </label>
+                                <label style="margin-left: 2px; height: 36px"> <underline>U</underline>pdate log </label>
                         </div></label></a>
                         
                         <!-- verticalsplitterER -->
@@ -1741,46 +1663,46 @@
                             <div class="submenu36" style="width: 142px;" id="menuprograms"
                                  onmouseover="programsopen()" onmouseout="programsclosed()"> 
                                 <div class="menuprograms"></div>
-                                <label style="margin-left: 2px; height: 36px"> Programs </label>
+                                <label style="margin-left: 2px; height: 36px"> <underline>P</underline>rograms </label>
                             <div class="menuarrow1" style="margin-top:15px; margin-right: 5px" id="menuarrow1"></div></div></label>
                         <!-- Favourites -->
                         <label> <!--needed for 32x32-->
                             <div class="submenu36" style="width: 142px;" id="menufavourites"
                                 onmouseover="favouritesopen()" onmouseout="favouritesclosed()"> 
                                 <div class="menufavourites"></div>
-                                <label style="margin-left: 2px; height: 36px"> My Favourites </label>
+                                <label style="margin-left: 2px; height: 36px"> My F<underline>a</underline>vourites </label>
                             <div class="menuarrow1" style="margin-top:15px; margin-right: 5px" id="menuarrow2"></div></div></label>
                         <!-- Documents -->  
                         <label> <!--needed for 32x32-->
                             <div class="submenu36" style="width: 142px;" id="menudocuments"
                                  onmouseover="documentsopen()" onmouseout="documentsclosed()"> 
                                 <div class="menudocuments"></div>
-                                <label style="margin-left: 2px; height: 36px"> Documents </label>
+                                <label style="margin-left: 2px; height: 36px"> <underline>D</underline>ocuments </label>
                             <div class="menuarrow1" style="margin-top:15px; margin-right: 5px" id="menuarrow3"></div></div></label>
                         <!-- Settings -->
                         <label> <!--needed for 32x32-->
                             <div class="submenu36" style="width: 142px;" id="menusettings"
                                  onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
                                 <div class="menusettings"></div>
-                                <label style="margin-left: 2px; height: 36px"> Settings </label>
+                                <label style="margin-left: 2px; height: 36px"> <underline>S</underline>ettings </label>
                             <div class="menuarrow1" style="margin-top:15px; margin-right: 5px" id="menuarrow4"></div></div></label>
                         <!-- Find -->
                         <label> <!--needed for 32x32-->
                             <div class="submenu36" style="width: 142px;" id="menufind"
                                  onmouseover="findopen()" onmouseout="findclosed()"> 
                                 <div class="menufind"></div>
-                                <label style="margin-left: 2px; height: 36px"> Find </label>
+                                <label style="margin-left: 2px; height: 36px"> <underline>F</underline>ind </label>
                             <div class="menuarrow1" style="margin-top:15px; margin-right: 5px" id="menuarrow5"></div></div></label>
                         <!-- Help -->     
                         <label> <!--needed for 32x32-->
                             <a href="https://raw.githubusercontent.com/Thealonic/Thealonic.html/main/opensource"><div class="submenu36" style="width: 142px;" >
                                 <div class="menuhelp"></div> <!-- https://github.com/Thealonic/Thealonic.html -->
-                                <label style="margin-left: 2px; height:36px"> Source-code </label></div></a></label>
+                                <label style="margin-left: 2px; height:36px"> <underline>S</underline>ource-code </label></div></a></label>
                         <!-- Run -->
                         <label> <!--needed for 32x32-->
                             <a href="https://paypal.me/TheaVanherst"><div class="submenu36" style="width: 142px;" >
                                 <div class="menurun"></div>
-                                <label style="margin-left: 2px; height:36px"> Support development </label></div></a></label>   
+                                <label style="margin-left: 2px; height:36px"> <underline>S</underline>upport development </label></div></a></label>   
                         
                         <!-- verticalsplitterER -->
                         <div class="menuapplicationsplit" style="width:139px; margin-left: 2px; margin-top: 3px; margin-bottom: 4px"> </div>
@@ -1789,12 +1711,12 @@
                         <label onclick="logoff(); inactiveall(); logonactive(); startpressdelay();"> <!--needed for 32x32-->
                             <div class="submenu36" style="width: 141px;" >
                                 <div class="menulogoff"></div>
-                                <label style="margin-left: 2px; height:36px"> Log off </label></div></label>  
+                                <label style="margin-left: 2px; height:36px"> <underline>L</underline>og off </label></div></label>  
                         <!--Log off submenu -->
                         <label onclick="shutdown(); inactiveall(); shutdownactive(); startpressdelay();"> <!--needed for 32x32-->
                             <div class="submenu36" style="width: 141px;" >
                                 <div class="menushutdown"></div>
-                                <label style="margin-left: 2px; height:36px"> Shutdown </label></div></label>
+                                <label style="margin-left: 2px; height:36px"> Sh<underline>u</underline>tdown </label></div></label>
                         
                         <!-- Startbutton script placement holder -->
                         <div class="startmenustartbutton" style="margin-left: -23px; margin-top: 3px" onclick="startpress2()";></div>
@@ -2261,7 +2183,7 @@
                                 <!-- Printers -->
                                 <div class="submenu20">
                                     <div class="menusettings2"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px; cursor: pointer;" onclick="diskopen(); startpressdelay();"> Display Properties </label></div>
+                                    <label style="margin-left: 8px; margin-top: 3px; cursor: pointer;" onclick="diskopen(); backgroundtab(); startpressdelay();"> Display Properties </label></div>
                                 <!-- Taskbar & Start menu -->
                                 <div class="submenu20">
                                     <div class="menusettings3"></div>
@@ -2283,7 +2205,7 @@
                                     <label style="margin-left: 8px; margin-top: 3px"> Windows Update</label></div>
                                 
                                 <!-- Activedesktop submenu -->
-                                <div class="win98container" style="margin-left:20000px; margin-top:-50px; width:170px; height:40px" id="menuactivedesktopsubmenu" 
+                                <div class="win98container" style="margin-left:20000px; margin-top:-50px; width:170px; height:60px" id="menuactivedesktopsubmenu" 
                                      onmouseover="settingsactivedesktopopen()" onmouseout="settingsactivedesktopclose()">
                                     
                                     <!--Buttons 1-3 -->
@@ -2291,6 +2213,8 @@
                                         <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="messageopen(); startpressdelay()"> 🧮 brain go brrrrr </label></div>
                                     <div class="submenu20" style="cursor: pointer;"> 
                                         <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="vunnyopen(); startpressdelay()"> 👿 very.unvunny </label></div>
+                                    <div class="submenu20" style="cursor: pointer;"> 
+                                        <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="diskopen(); settingstab(); startpressdelay()"> 📺 Customise desktop... </label></div>
                                             
                                 <!--Settings submenu END --> 
                                 </div> 
@@ -2328,7 +2252,7 @@
                 <div class="taskbaricons">
                     <div class="taskbaricon1"></div>
                     <div class="taskbaricon2"></div>
-                    <div class="taskbaricon3" style="cursor:pointer;" onclick="messageopen()();"></div> <!-- active desktop icon -->
+                    <div class="taskbaricon3" style="cursor:pointer;" onclick="messageopen();"></div> <!-- active desktop icon -->
                     <div class="taskbaricon4"></div></div>
                 <taskbar class="big_seperator"> </taskbar>
                 <taskbar class="small_seperator" style="cursor:e-resize"> </taskbar>
@@ -2355,15 +2279,15 @@
                         
                         if (tumblrButtonOpen == false) { 
                             inactiveall(); idleactive(); tumblrButtonOpen = true;
-                            document.getElementById("postwindow").style.backgroundImage = discord + "630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
-                            document.getElementById("taskapp1").style.backgroundImage = discord + "630047188520665121/789420847604564008/Taskbar_application1.png')";
+                            document.getElementById("postwindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
+                            document.getElementById("taskapp1").style.backgroundImage = github + "img/Taskbar%20application1.png')";
                             document.getElementById("desktop").style.left = "-20000px"; document.body.style.overflowY = "hidden";
                             
                         } else if (tumblrButtonOpen == true){ 
                             inactiveall(); tumblrButtonOpen = false;
                             document.getElementById("post").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
-                            document.getElementById("postwindow").style.backgroundImage = discord + "630047188520665121/791321110750298162/title-bar_postheader.png')";
-                            document.getElementById("taskapp1").style.backgroundImage = discord + "630047188520665121/789416557692452884/Taskbar_application.png')";
+                            document.getElementById("postwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";
+                            document.getElementById("taskapp1").style.backgroundImage = github + "img/Taskbar%20application.png')";
                             document.getElementById("desktop").style.left = "-25px"; document.body.style.overflowY = "scroll";}}
                     
                     // random message box active toggle
@@ -2371,35 +2295,35 @@
                         tumblrButtonOpen = true; diskButtonOpen = true;
                         if (pyroButtonOpen == false) { 
                             inactiveall(); idleactive(); pyroButtonOpen = true;
-                            document.getElementById("pyrowindow").style.backgroundImage = discord + "630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
-                            document.getElementById("catwindow").style.backgroundImage = discord + "630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
-                            document.getElementById("taskapp2").style.backgroundImage = discord + "630047188520665121/789420847604564008/Taskbar_application1.png')";
+                            document.getElementById("pyrowindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
+                            document.getElementById("catwindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
+                            document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application1.png')";
                         } else if (pyroButtonOpen == true){
                             inactiveall(); pyroButtonOpen = false;
                             if (window1 == true){ 
                                 document.getElementById("pyro").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
-                                document.getElementById("pyrowindow").style.backgroundImage = discord + "630047188520665121/791321110750298162/title-bar_postheader.png')";  
-                                document.getElementById("taskapp2").style.backgroundImage = discord + "630047188520665121/789416557692452884/Taskbar_application.png')"; 
+                                document.getElementById("pyrowindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";  
+                                document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application.png')"; 
                             } else if (window2 == true){ 
                                 document.getElementById("cat").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
-                                document.getElementById("catwindow").style.backgroundImage = discord + "630047188520665121/791321110750298162/title-bar_postheader.png')";  
-                                document.getElementById("taskapp2").style.backgroundImage = discord + "630047188520665121/789416557692452884/Taskbar_application.png')";}}}
+                                document.getElementById("catwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";  
+                                document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application.png')";}}}
                     
                     // disk window active toggle
                     function disktoggle() { 
                         tumblrButtonOpen = true; pyroButtonOpen = true;
                         if (diskButtonOpen == false) { 
                             inactiveall(); idleactive(); diskButtonOpen = true;
-                            document.getElementById("diskwindow").style.backgroundImage = discord + "630047188520665121/791328235451318342/title-bar_postheaderinactive.png')";
-                            document.getElementById("taskapp3").style.backgroundImage = discord + "630047188520665121/789420847604564008/Taskbar_application1.png')";
+                            document.getElementById("diskwindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
+                            document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application1.png')";
                             document.getElementById("disk").style.marginTop = "-20000px";
                             
                         } else if (diskButtonOpen == true){
                             inactiveall(); diskButtonOpen = false;
                             document.getElementById("disk").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
                             document.getElementById("disk").style.marginTop = "0px";
-                            document.getElementById("diskwindow").style.backgroundImage = discord + "630047188520665121/791321110750298162/title-bar_postheader.png')";  
-                            document.getElementById("taskapp3").style.backgroundImage = discord + "630047188520665121/789416557692452884/Taskbar_application.png')";}} 
+                            document.getElementById("diskwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";  
+                            document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application.png')";}} 
                             
                     function idleactive() { tumblrButtonOpen = true;
                                               pyroButtonOpen = true; 
@@ -2432,12 +2356,14 @@
                     $container.imagesLoaded(function(){ $container.masonry({ itemSelector: '.window'}) });
                     $container.infinitescroll({ itemSelector: '.window'},
                         function( newElements ) {
-                            var $newElems = $( newElements ).css({ opacity: 1 }); 
+                            var $newElems = $( newElements ).css({ opacity: 0 }); 
                             var $newElemsIDs = $newElems.map(function () { 
                                 return this.id; 
                             }).get();
                             Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
-                            $newElems.imagesLoaded(function(){ $container.masonry( 'appended', $newElems, true )})
+                            $newElems.imagesLoaded(function(){
+                                $container.masonry( 'appended', $newElems, true ); 
+                                $newElems.animate({ opacity: 1 })})
                             $newElems.find('.video').each( function() { resizeVideos() });
                 })}
             
