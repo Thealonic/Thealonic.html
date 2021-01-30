@@ -40,11 +40,6 @@
                $(this).parents('.tumblr_video_container').css({ width: Math.floor($(this).width() * ( scale + 1 ) / 2),
                                                                 height: Math.floor($(this).height() * ( scale + 1 ) / 2)})})}
     </script>
-    
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- header start                                                                                                                  -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-    
     <head>
         <meta name="description" value="{MetaDescription}" />
         <link rel="shortcut icon" href="{Favicon}" />
@@ -85,7 +80,7 @@
         /* ----------------------------------------------------------------------------------------------------------------------------- */
             
             /* desktop config settings */
-            body { background: repeat fixed; background-size: cover; padding: auto auto auto auto; background-color: var(--wincyan); font-family:"Pixelated MS Sans Serif", Arial; max-width: 100%; overflow-x: hidden;}
+            body { background: repeat fixed; background-size: cover; padding: auto auto auto auto; background-color: var(--wincyan); font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; max-width: 100%; overflow-x: hidden;}
             #desktop, .navigation { margin: auto auto auto auto; width: 1010px;} /* whole thing */
             body.permalink_page #desktop, body.permalink_page .navigation { width: 480px;}
             body.infinite_scrolling .navigation, .inf_scr { display: none;}
@@ -101,8 +96,6 @@
             /* sidebar */
             .thealonic, .veryvhersty, .twitter, .askicon, .discordlink, .officialfunny, .rct2, .simcity {
                                 background-image: var(--desktopsheet); height:  72px; width:  72px; margin-left:14px; cursor: pointer; }
-            
-            /* coloumn 1                                            coloumn 2 */
             .thealonic {        background-position:   -0px -0px;}  .simcity {          background-position: -432px -0px;}
             .veryvhersty {      background-position:  -72px -0px;}  .rct2 {             background-position: -360px -0px;}
             .twitter {          background-position: -144px -0px;}  .officialfunny {    background-position: -504px -0px;}
@@ -126,8 +119,8 @@
             .filler { height: 2px; }
             
             /* custom css for post windows apposed to the default win98 css */
-            .win98container{        box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; font-size: 11px; position: absolute;}
-            .win98post{             box-shadow: inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; font-size:11px; position: absolute;}
+            .win98container{        box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; position: absolute;}
+            .win98post{             box-shadow: inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; position: absolute;}
             .title-bar-posts{       font-weight: 700; color: var(--white); font-size: 11px; background-image: var(--active); height: 18px; width: 100%}
             .title-bar-98{          font-weight: 700; color: var(--white); font-size: 11px; background-image: var(--inactive); height: 18px; width: 100%}
             .window-body{           margin: 8px;}
@@ -138,22 +131,22 @@
             .win98innerbox {        box-shadow: inset -1px -1px var(--black), inset 1px 1px #fff, inset -2px -2px var(--gray), inset 2px 2px var(--lightg); background:var(--silver); padding:3px; font-size:11px; position: absolute;}
             
             /* window title bar button handling */
-            .win98titlebarbutton {          width: 10px; height: 8px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); font-size:11px; margin-top:2px; padding:3px; }
-            .win98titlebarbutton:active {   width: 10px; height: 8px; float:right; box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); font-size:11px; margin-top:2px;  transition: width 0.1s; padding:3px; }
-            .win98buttonscrollinactive {    width: 10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); font-size:11px; margin-left: 1px; position: absolute; padding:3px; }                 
-            .win98buttontitlebarinactive {  width: 10px; height: 8px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); font-size:11px; margin-left: 1px; margin-right:1px; margin-top:2px; position: absolute;padding:3px; }
+            .win98titlebarbutton {          width: 10px; height: 8px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); margin-top:2px; padding:3px; }
+            .win98titlebarbutton:active {   width: 10px; height: 8px; float:right; box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); margin-top:2px; padding:3px; }
+            .win98buttonscrollinactive {    width: 10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); margin-left: 1px; position: absolute; padding:3px; }                 
+            .win98buttontitlebarinactive {  width: 10px; height: 8px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); margin-left: 1px; margin-right:1px; margin-top:2px; position: absolute; padding:3px; }
             
             /* General button handling */
-            .win98button {          box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; font-size:11px; height:16px; cursor:pointer;}
-            .win98button:active {   box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); padding:3px; font-size:11px; transition: width 0.1s; height:16px; cursor:pointer;}
-            .win98buttoninactive {  box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; margin-bottom: 4px; font-size:11px; height:16px; cursor:default}
-            .win98buttonpressed {   box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); padding:3px; font-size:11px; transition: width 0.1s; height:16px; cursor:pointer;}
+            .win98button {          box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; height:16px; cursor:pointer;}
+            .win98button:active {   box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); padding:3px; height:16px; cursor:pointer;}
+            .win98buttoninactive {  box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; margin-bottom: 4px; height:16px; cursor:default}
+            .win98buttonpressed {   box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); padding:3px; height:16px; cursor:pointer;}
             .buttontext {           display:inline-flex; align-items:center; }
             
             /* scroll buttton css */
-            .win98scroll {          width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; font-size:11px; position: absolute;}
-            .win98scroll:active {   width:10px; height: 10px; float:right; box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); padding:3px; font-size:11px; margin-top: -1px; margin-left: -1px; position: absolute;}
-            .win98scrollinactive {  width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; font-size:11px; position: absolute;}
+            .win98scroll {          width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; position: absolute;}
+            .win98scroll:active {   width:10px; height: 10px; float:right; box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); padding:3px; margin-top: -1px; margin-left: -1px; position: absolute;}
+            .win98scrollinactive {  width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; position: absolute;}
             /* css for tabs in windows menus */
             .win98tab {             box-shadow:inset -1px 0px var(--black),inset 1px 1px #fff,inset -2px 0px var(--gray),inset 2px 2px var(--lightg);background:var(--silver);padding:3px; border-radius: 2px; font-size:11px; position: absolute; z-index; 100;}
             
@@ -226,18 +219,18 @@
             
             .start_bar .tray {      box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver);
                                     height: 18px; width: 79px; margin-right: 5px; margin-top: 2px; float: right;} 
-            
+                                    
+            /* start menu button toggle */
+            .startbutton {          background-image: var(--spritesheet); height: 22px; width: 54px; margin-left: 2px; margin-top: 2px; background-position:  -54px -36px;}
+            .startmenustartbutton { background-image: var(--spritesheet); height: 22px; width: 54px; margin-left: 2px; margin-top: 2px; background-position:   -0px -36px;}
+            .windowsexplorerlogo {  background-image: var(--spritesheet); height: 21px; width: 38px; background-position: -115px -37px; float:right;}
+
             /* start menu application icon config */
             .submenu18 {        height: 18px; background-color:var(--white);   color: var(--black); width:100%;}
             .submenu20 {        height: 20px; background-color:var(--silver); color: var(--black); width:100%;}
             .submenu20:hover {  height: 20px; background-color:var(--prussian); color:var(--white); width:100%;}
             .submenu36 {        height: 36px; background-color:var(--silver); color: var(--black); width:100%;}
             .submenu36:hover {  height: 36px; background-color:var(--prussian); color:var(--white); width:100%;}
-            
-            /* start menu button toggle */
-            .startbutton {          background-image: var(--spritesheet); height: 22px; width: 54px; margin-left: 2px; margin-top: 2px; background-position:  -54px -36px;}
-            .startmenustartbutton { background-image: var(--spritesheet); height: 22px; width: 54px; margin-left: 2px; margin-top: 2px; background-position:   -0px -36px;}
-            .windowsexplorerlogo {  background-image: var(--spritesheet); height: 21px; width: 38px; background-position: -115px -37px; float:right;}
 
             /* start menu misc */
             .verticaltasksplitter {   background-image: var(--spritesheet); height:  18px; width:   3px; background-position: -110px -38px; position:absolute; margin-left: 1px; margin-top: 1px;}
@@ -332,19 +325,13 @@
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* Message box reference sheets */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
-               
-            /* message box dumps */
+
             .pageimage3 { height: 190px; width: 190px; background-position: 0px   0px; background-image: var(--defaultcat);}
             .pageimage4 { height: 190px; width: 190px; background-position: 0px   0px; background-image: var(--defaultpyro);}
-            
             .displayboxdisplay {    width:184px; height:169px; background-image: var(--displaydisplay);}
             .displaycolour {        width:153px; height: 13px; background-image: var(--displaycolour); background-repeat: repeat-y;}
             .energysaving {         width: 71px; height: 42px; background-image: var(--displayenergy);}
 
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
-        /* General formatting */
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
-            
             .reflinkblack {         color: var(--black); }
             .reflinkblack:hover {   color: var(--white); text-decoration-line: underline; }
             underline {             text-decoration-line: underline; }
@@ -460,8 +447,6 @@
             ol.notes li.note .answer_content { font-weight: normal;}
             ol.notes li.note blockquote { padding: 4px 10px; margin: 10px 0px 0px 25px;}
             ol.notes li.note blockquote a { text-decoration: none;}
-
-            {CustomCSS}
         </style>
         
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -1350,10 +1335,16 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         
         <!-- Page generation -->
-        <div class="navigation cf" id="i_nav">
-            <a class="next" id="i_next" href="{NextPage}">{lang:Next} &rarr;</a>
-            <a class="prev" href="{PreviousPage}">&larr; {lang:Previous}</a>
-        </div>
+        {block:Pagination}
+            <div class="navigation cf" id="i_nav">
+                {block:NextPage}
+                    <a class="next" id="i_next" href="{NextPage}">{lang:Next} &rarr;</a>
+                {/block:NextPage}
+                {block:PreviousPage}
+                    <a class="prev" href="{PreviousPage}">&larr; {lang:Previous}</a>
+                {/block:PreviousPage}
+            </div>
+        {/block:Pagination}
         
         <script>
             function tumblractive() { 
@@ -1449,7 +1440,6 @@
                                         </div>
                                     {/block:Text}
                                                 
-                                    <!-- Single image containers -->
                                     {block:Photo}
                                         <!-- high res wrapper -->
                                         <img src="{PhotoURL-400}" class="full_image" style="margin-bottom:-4px; max-width: 451px;" alt="{PhotoAlt}"> </img> <!-- image -->
@@ -1460,18 +1450,15 @@
                                     {/block:Photo}
                                         
                                     {block:Photos} 
-                                        <!-- high res wrapper -->
                                         <div class="wrapper"> {LinkOpenTag}
                                             <img src="{Photoset}" class="full_set" alt="{PhotoAlt}"> </img> <!-- image -->
                                             {LinkCloseTag} 
                                         </div>
-                                                <!-- Image caption -->
                                         {block:Caption} 
                                             <div class="content caption" style="padding: 3px;"> {Caption} </div> <!-- content -->
                                         {/block:Caption}
                                     {/block:Photos}
                                                     
-                                    <!-- Multiple image containers -->
                                     {block:Photoset}
                                         {Photoset} <!-- image set -->
                                         {block:Caption}
@@ -1479,7 +1466,6 @@
                                         {/block:Caption}
                                     {/block:Photoset}
                          
-                                    <!-- Single image containers -->
                                     {block:Quote}
                                         <div class="container" style="padding: 3px;">
                                             <div class="content caption" style="margin-left:1px"> "{Quote}" </div> <!-- quote itself -->
@@ -1492,7 +1478,6 @@
                                         </div>
                                     {/block:Quote}
                          
-                                    <!-- redirect post -->
                                     {block:Link}
                                         <div class="container" style="padding: 3px;">
                                             <a href="{URL}" class="title" {Target}> {Name} &rarr; </a>
@@ -1502,7 +1487,6 @@
                                         </div>
                                     {/block:Link}
                         
-                                    <!-- Default posting -->
                                     {block:Chat}
                                         <div class="container" style="padding: 3px;">
                                             {block:Title}
@@ -1525,7 +1509,6 @@
                                         </div></div>
                                     {/block:Chat}
                         
-                                    <!-- Video posts -->
                                     {block:Video}
                                         <div class="content body" style="margin-bottom:-2px;">
                                             <div class="video"  data-from-page="{CurrentPage}" style="height:100%;">{Video-500}</div>
@@ -1534,7 +1517,7 @@
                                             <div class="content caption" style= "padding: 3px; margin-top:5px;" > {Caption} </div> <!-- video caption -->
                                         {/block:Caption}
                                     {/block:Video}
-                                    <!-- Video audio -->
+
                                     {block:Audio}
                                         <div class="audioContainer" style="width: 100%; margin-bottom: -3px"> {block:AudioEmbed}{AudioEmbed color="white"}{/block:AudioEmbed} </div> <!-- Audio container --> 
                                         {block:Caption}
@@ -1543,7 +1526,6 @@
                                         {/block:Caption}
                                     {/block:Audio}
                                                 
-                                    <!-- Question Posts -->
                                     {block:Answer}
                                         <div class="content body" style="max-width: 451px; height:100%; padding:3px ">
                                             <strong style="color: blue"> {lang:Asker asked 2}:</strong>
@@ -2276,13 +2258,11 @@
                     // tumblr post toggle
                     function tumblrtoggle() { 
                         pyroButtonOpen = true; diskButtonOpen = true;
-                        
                         if (tumblrButtonOpen == false) { 
                             inactiveall(); idleactive(); tumblrButtonOpen = true;
                             document.getElementById("postwindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
                             document.getElementById("taskapp1").style.backgroundImage = github + "img/Taskbar%20application1.png')";
                             document.getElementById("desktop").style.left = "-20000px"; document.body.style.overflowY = "hidden";
-                            
                         } else if (tumblrButtonOpen == true){ 
                             inactiveall(); tumblrButtonOpen = false;
                             document.getElementById("post").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
@@ -2334,7 +2314,7 @@
                     <taskbar class="calendar"> </taskbar>
                     <label class="time" style="font-size:11px" id="showClock"> 00:00 am </label>
                 </div>
-            
+
             </div>
             <!-- Startbar additional rendering -->
                 
@@ -2350,8 +2330,7 @@
                 var infScr = $('body').hasClass('infinite_scrolling');
                 var twoCol = $('body').hasClass('two_column');
                 var $container = $('#desktop');
-
-                    //two coloumn loading 
+                //two coloumn loading 
                 if( infScr && twoCol ){
                     $container.imagesLoaded(function(){ $container.masonry({ itemSelector: '.window'}) });
                     $container.infinitescroll({ itemSelector: '.window'},
@@ -2364,9 +2343,7 @@
                             $newElems.imagesLoaded(function(){
                                 $container.masonry( 'appended', $newElems, true ); 
                                 $newElems.animate({ opacity: 1 })})
-                            $newElems.find('.video').each( function() { resizeVideos() });
-                })}
-            
+                            $newElems.find('.video').each( function() { resizeVideos() })})}
                 //taskbar clock functions
                 function updateClock(){
                     var date = new Date();
@@ -2377,216 +2354,142 @@
                     var currentTime = hrs + ":" + mins + " " + ext;
                     $('#showClock').html(currentTime); }
                 window.setInterval(updateClock, 6000);
-            
-            updateClock()});
+                updateClock()});
             
         // ----------------------------------------------------------------------------------------------------------------------------- -->
         // Drag element scripts                                                                                                          -->
         // ----------------------------------------------------------------------------------------------------------------------------- -->
             
-                //drag element id grabber
-                dragElement(document.getElementById("cat"));
-                dragElement(document.getElementById("pyro"));
-                dragElement(document.getElementById("disk"));
-                dragElement(document.getElementById("message"));
-                dragElement(document.getElementById("logoff"));
-                dragElement(document.getElementById("shutdown"));
+            //drag element id grabber
+            dragElement(document.getElementById("cat"));
+            dragElement(document.getElementById("pyro"));
+            dragElement(document.getElementById("disk"));
+            dragElement(document.getElementById("message"));
+            dragElement(document.getElementById("logoff"));
+            dragElement(document.getElementById("shutdown"));
                 
-                //grab element for windows
-                function dragElement(elmnt) { //position storage and setting it to window
-                var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-                if (document.getElementById(elmnt.id + "window")) { document.getElementById(elmnt.id + "window").onmousedown = dragMouseDown; } else { elmnt.onmousedown = dragMouseDown; }
-                function dragMouseDown(e) { //mouse moment grabbing
-                    e = e || window.event; e.preventDefault(); pos3 = e.clientX; pos4 = e.clientY;
-                    document.onmouseup = closeDragElement; document.onmousemove = elementDrag; }
-                function elementDrag(e) { e = e || window.event;  e.preventDefault();
-                   pos1 = pos3 - e.clientX; pos2 = pos4 - e.clientY; pos3 = e.clientX; pos4 = e.clientY;
-                    elmnt.style.top = (elmnt.offsetTop - pos2) + "px"; elmnt.style.left = (elmnt.offsetLeft - pos1) + "px"; }
-                function closeDragElement() { document.onmouseup = null; document.onmousemove = null; }}
+            //grab element for windows
+            function dragElement(elmnt) { //position storage and setting it to window
+            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            if (document.getElementById(elmnt.id + "window")) { document.getElementById(elmnt.id + "window").onmousedown = dragMouseDown; } else { elmnt.onmousedown = dragMouseDown; }
+            function dragMouseDown(e) { //mouse moment grabbing
+                e = e || window.event; e.preventDefault(); pos3 = e.clientX; pos4 = e.clientY;
+                document.onmouseup = closeDragElement; document.onmousemove = elementDrag; }
+            function elementDrag(e) { e = e || window.event;  e.preventDefault();
+               pos1 = pos3 - e.clientX; pos2 = pos4 - e.clientY; pos3 = e.clientX; pos4 = e.clientY;
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px"; elmnt.style.left = (elmnt.offsetLeft - pos1) + "px"; }
+            function closeDragElement() { document.onmouseup = null; document.onmousemove = null; }}
         
         // ----------------------------------------------------------------------------------------------------------------------------- -->
         // Start Menu Handling                                                                                                           -->
         // ----------------------------------------------------------------------------------------------------------------------------- -->
                              
             function programsopen() { 
-                document.getElementById("programsmenu").style.marginLeft = "163px"; 
-                document.getElementById("menuprograms").style.backgroundColor = "#00207c";
-                document.getElementById("menuprograms").style.color = "#ffffff";
-                document.getElementById("menuarrow1").style.backgroundPosition = "-134px -216px";}
+                document.getElementById("menuprograms").style.backgroundColor = "#00207c"; document.getElementById("programsmenu").style.marginLeft = "163px"; 
+                document.getElementById("menuprograms").style.color = "#ffffff"; document.getElementById("menuarrow1").style.backgroundPosition = "-134px -216px";}
             function programsclosed() { 
-                document.getElementById("programsmenu").style.marginLeft = "200000px"; 
-                document.getElementById("menuprograms").style.backgroundColor = "#c0c0c0";
-                document.getElementById("menuprograms").style.color = "#000000"; 
-                document.getElementById("menuarrow1").style.backgroundPosition = "-54px -216px";}
-                function internetexplorer() { window.open("https://www.google.co.uk/", "_blank", "width=700, height=700")} 
+                document.getElementById("menuprograms").style.backgroundColor = "#c0c0c0"; document.getElementById("programsmenu").style.marginLeft = "200000px"; 
+                document.getElementById("menuprograms").style.color = "#000000"; document.getElementById("menuarrow1").style.backgroundPosition = "-54px -216px";}
                 function accessoriesopen() { 
-                    document.getElementById("menuaccessoriessubmenu").style.marginLeft = "133px"; 
-                    document.getElementById("accessories").style.backgroundColor = "#00207c";
-                    document.getElementById("accessories").style.color = "#ffffff";
-                    document.getElementById("submenuarrow2").style.backgroundPosition = "-134px -216px";}
-                function accessoriesclose() { 
-                    document.getElementById("menuaccessoriessubmenu").style.marginLeft = "200000px"; 
-                    document.getElementById("accessories").style.backgroundColor = "#c0c0c0";
-                    document.getElementById("accessories").style.color = "#000000";
-                    document.getElementById("submenuarrow2").style.backgroundPosition = "-54px -216px";}
+                    document.getElementById("accessories").style.backgroundColor = "#00207c"; document.getElementById("menuaccessoriessubmenu").style.marginLeft = "133px"; 
+                    document.getElementById("accessories").style.color = "#ffffff"; document.getElementById("submenuarrow2").style.backgroundPosition = "-134px -216px";}
+                function accessoriesclose() {
+                    document.getElementById("accessories").style.backgroundColor = "#c0c0c0"; document.getElementById("menuaccessoriessubmenu").style.marginLeft = "200000px"; 
+                    document.getElementById("accessories").style.color = "#000000"; document.getElementById("submenuarrow2").style.backgroundPosition = "-54px -216px";}
                     function communicationsopen() { 
-                        document.getElementById("menucommunicationssubmenu").style.marginLeft = "130px"; 
-                        document.getElementById("communications").style.backgroundColor = "#00207c";
-                        document.getElementById("communications").style.color = "#ffffff";
-                        document.getElementById("menuarrow12").style.backgroundPosition = "-134px -216px";}
+                        document.getElementById("communications").style.backgroundColor = "#00207c"; document.getElementById("menucommunicationssubmenu").style.marginLeft = "130px"; 
+                        document.getElementById("communications").style.color = "#ffffff"; document.getElementById("menuarrow12").style.backgroundPosition = "-134px -216px";}
                     function communicationsclose() { 
-                        document.getElementById("menucommunicationssubmenu").style.marginLeft = "200000px"; 
-                        document.getElementById("communications").style.backgroundColor = "#c0c0c0";
-                        document.getElementById("communications").style.color = "#000000";
-                        document.getElementById("menuarrow12").style.backgroundPosition = "-54px -216px";}
+                        document.getElementById("communications").style.backgroundColor = "#c0c0c0"; document.getElementById("menucommunicationssubmenu").style.marginLeft = "200000px"; 
+                        document.getElementById("communications").style.color = "#000000"; document.getElementById("menuarrow12").style.backgroundPosition = "-54px -216px";}
                     function entertainmentopen() { 
-                        document.getElementById("menuentertainmentsubmenu").style.marginLeft = "130px"; 
-                        document.getElementById("entertainment").style.backgroundColor = "#00207c";
-                        document.getElementById("entertainment").style.color = "#ffffff";
-                        document.getElementById("menuarrow13").style.backgroundPosition = "-134px -216px";}
+                        document.getElementById("entertainment").style.backgroundColor = "#00207c"; document.getElementById("menuentertainmentsubmenu").style.marginLeft = "130px"; 
+                        document.getElementById("entertainment").style.color = "#ffffff"; document.getElementById("menuarrow13").style.backgroundPosition = "-134px -216px";}
                     function entertainmentclose() { 
-                        document.getElementById("menuentertainmentsubmenu").style.marginLeft = "200000px"; 
-                        document.getElementById("entertainment").style.backgroundColor = "#c0c0c0";
-                        document.getElementById("entertainment").style.color = "#000000";
-                        document.getElementById("menuarrow13").style.backgroundPosition = "-54px -216px";}
+                        document.getElementById("entertainment").style.backgroundColor = "#c0c0c0"; document.getElementById("menuentertainmentsubmenu").style.marginLeft = "200000px"; 
+                        document.getElementById("entertainment").style.color = "#000000"; document.getElementById("menuarrow13").style.backgroundPosition = "-54px -216px";}
                     function gamesopen() { 
-                        document.getElementById("menugamessubmenu").style.marginLeft = "130px"; 
-                        document.getElementById("games").style.backgroundColor = "#00207c";
-                        document.getElementById("games").style.color = "#ffffff";
-                        document.getElementById("menuarrow14").style.backgroundPosition = "-134px -216px";}
+                        document.getElementById("games").style.backgroundColor = "#00207c"; document.getElementById("menugamessubmenu").style.marginLeft = "130px"; 
+                        document.getElementById("games").style.color = "#ffffff"; document.getElementById("menuarrow14").style.backgroundPosition = "-134px -216px";}
                     function gamesclose() { 
-                        document.getElementById("menugamessubmenu").style.marginLeft = "200000px"; 
-                        document.getElementById("games").style.backgroundColor = "#c0c0c0";
-                        document.getElementById("games").style.color = "#000000";
-                        document.getElementById("menuarrow14").style.backgroundPosition = "-54px -216px";}
+                        document.getElementById("games").style.backgroundColor = "#c0c0c0"; document.getElementById("menugamessubmenu").style.marginLeft = "200000px"; 
+                        document.getElementById("games").style.color = "#000000"; document.getElementById("menuarrow14").style.backgroundPosition = "-54px -216px";}
                     function internettoolsopen() { 
-                        document.getElementById("menuinternettoolssubmenu").style.marginLeft = "130px"; 
-                        document.getElementById("internettools").style.backgroundColor = "#00207c";
-                        document.getElementById("internettools").style.color = "#ffffff";
-                        document.getElementById("menuarrow15").style.backgroundPosition = "-134px -216px";}
+                        document.getElementById("internettools").style.backgroundColor = "#00207c"; document.getElementById("menuinternettoolssubmenu").style.marginLeft = "130px"; 
+                        document.getElementById("internettools").style.color = "#ffffff"; document.getElementById("menuarrow15").style.backgroundPosition = "-134px -216px";}
                     function internettoolsclose() { 
-                        document.getElementById("menuinternettoolssubmenu").style.marginLeft = "200000px"; 
-                        document.getElementById("internettools").style.backgroundColor = "#c0c0c0";
-                        document.getElementById("internettools").style.color = "#000000";
-                        document.getElementById("menuarrow15").style.backgroundPosition = "-54px -216px";}
+                        document.getElementById("internettools").style.backgroundColor = "#c0c0c0"; document.getElementById("menuinternettoolssubmenu").style.marginLeft = "200000px"; 
+                        document.getElementById("internettools").style.color = "#000000"; document.getElementById("menuarrow15").style.backgroundPosition = "-54px -216px";}
                     function systemtoolsopen() { 
-                        document.getElementById("menusystemtoolssubmenu").style.marginLeft = "130px"; 
-                        document.getElementById("systemtools").style.backgroundColor = "#00207c";
-                        document.getElementById("systemtools").style.color = "#ffffff";
-                        document.getElementById("menuarrow16").style.backgroundPosition = "-134px -216px";}
+                        document.getElementById("systemtools").style.backgroundColor = "#00207c"; document.getElementById("menusystemtoolssubmenu").style.marginLeft = "130px"; 
+                        document.getElementById("systemtools").style.color = "#ffffff"; document.getElementById("menuarrow16").style.backgroundPosition = "-134px -216px";}
                     function systemtoolsclose() { 
-                        document.getElementById("menusystemtoolssubmenu").style.marginLeft = "200000px"; 
-                        document.getElementById("systemtools").style.backgroundColor = "#c0c0c0";
-                        document.getElementById("systemtools").style.color = "#000000";
-                        document.getElementById("menuarrow16").style.backgroundPosition = "-54px -216px";}
-                        
+                        document.getElementById("systemtools").style.backgroundColor = "#c0c0c0"; document.getElementById("menusystemtoolssubmenu").style.marginLeft = "200000px"; 
+                        document.getElementById("systemtools").style.color = "#000000"; document.getElementById("menuarrow16").style.backgroundPosition = "-54px -216px";}
                     
                 function onlineservicesopen() { 
-                    document.getElementById("onlineservicessubmenu").style.marginLeft = "133px"; 
-                    document.getElementById("onlineservices").style.backgroundColor = "#00207c";
-                    document.getElementById("onlineservices").style.color = "#ffffff";
-                    document.getElementById("submenuarrow3").style.backgroundPosition = "-134px -216px";}
+                    document.getElementById("onlineservices").style.backgroundColor = "#00207c"; document.getElementById("onlineservicessubmenu").style.marginLeft = "133px"; 
+                    document.getElementById("onlineservices").style.color = "#ffffff"; document.getElementById("submenuarrow3").style.backgroundPosition = "-134px -216px";}
                 function onlineservicesclose() { 
-                    document.getElementById("onlineservicessubmenu").style.marginLeft = "200000px"; 
-                    document.getElementById("onlineservices").style.backgroundColor = "#c0c0c0";
-                    document.getElementById("onlineservices").style.color = "#000000";
-                    document.getElementById("submenuarrow3").style.backgroundPosition = "-54px -216px";}
+                    document.getElementById("onlineservices").style.backgroundColor = "#c0c0c0"; document.getElementById("onlineservicessubmenu").style.marginLeft = "200000px";
+                    document.getElementById("onlineservices").style.color = "#000000"; document.getElementById("submenuarrow3").style.backgroundPosition = "-54px -216px";}
                 function startupopen() { 
-                    document.getElementById("startupsubmenu").style.marginLeft = "133px"; 
-                    document.getElementById("startup").style.backgroundColor = "#00207c";
-                    document.getElementById("startup").style.color = "#ffffff";
-                    document.getElementById("submenuarrow4").style.backgroundPosition = "-134px -216px";}
+                    document.getElementById("startup").style.backgroundColor = "#00207c"; document.getElementById("startupsubmenu").style.marginLeft = "133px"; 
+                    document.getElementById("startup").style.color = "#ffffff"; document.getElementById("submenuarrow4").style.backgroundPosition = "-134px -216px";}
                 function startupclose() { 
-                    document.getElementById("startupsubmenu").style.marginLeft = "200000px"; 
-                    document.getElementById("startup").style.backgroundColor = "#c0c0c0";
-                    document.getElementById("startup").style.color = "#000000";
-                    document.getElementById("submenuarrow4").style.backgroundPosition = "-54px -216px";}
+                    document.getElementById("startup").style.backgroundColor = "#c0c0c0"; document.getElementById("startupsubmenu").style.marginLeft = "200000px";
+                    document.getElementById("startup").style.color = "#000000"; document.getElementById("submenuarrow4").style.backgroundPosition = "-54px -216px";}
             
             function favouritesopen() { 
-                document.getElementById("favouritesmenu").style.marginLeft = "163px"; 
-                document.getElementById("menufavourites").style.backgroundColor = "#00207c";
-                document.getElementById("menufavourites").style.color = "#ffffff"; 
-                document.getElementById("menuarrow2").style.backgroundPosition = "-134px -216px";}
-            function favouritesclosed() { 
-                document.getElementById("favouritesmenu").style.marginLeft = "200000px"; 
-                document.getElementById("menufavourites").style.backgroundColor = "#c0c0c0";
-                document.getElementById("menufavourites").style.color = "#000000"; 
-                document.getElementById("menuarrow2").style.backgroundPosition = "-54px -216px";}
+                document.getElementById("menufavourites").style.backgroundColor = "#00207c"; document.getElementById("favouritesmenu").style.marginLeft = "163px";
+                document.getElementById("menufavourites").style.color = "#ffffff"; document.getElementById("menuarrow2").style.backgroundPosition = "-134px -216px";}
+            function favouritesclosed() {       
+                document.getElementById("menufavourites").style.backgroundColor = "#c0c0c0"; document.getElementById("favouritesmenu").style.marginLeft = "200000px";
+                document.getElementById("menufavourites").style.color = "#000000"; document.getElementById("menuarrow2").style.backgroundPosition = "-54px -216px";}
                 function channelsopen() { 
-                    document.getElementById("channelssubmenu").style.marginLeft = "148px"; 
-                    document.getElementById("channels").style.backgroundColor = "#00207c";
-                    document.getElementById("channels").style.color = "#ffffff";
-                    document.getElementById("submenuarrow21").style.backgroundPosition = "-134px -216px";}
+                    document.getElementById("channels").style.backgroundColor = "#00207c"; document.getElementById("channelssubmenu").style.marginLeft = "148px"; 
+                    document.getElementById("channels").style.color = "#ffffff"; document.getElementById("submenuarrow21").style.backgroundPosition = "-134px -216px";}
                 function channelsclose() { 
-                    document.getElementById("channelssubmenu").style.marginLeft = "200000px"; 
-                    document.getElementById("channels").style.backgroundColor = "#c0c0c0";
-                    document.getElementById("channels").style.color = "#000000";
-                    document.getElementById("submenuarrow21").style.backgroundPosition = "-54px -216px";}
+                    document.getElementById("channels").style.backgroundColor = "#c0c0c0"; document.getElementById("channelssubmenu").style.marginLeft = "200000px";
+                    document.getElementById("channels").style.color = "#000000"; document.getElementById("submenuarrow21").style.backgroundPosition = "-54px -216px";}
                 function linksopen() { 
-                    document.getElementById("linkssubmenu").style.marginLeft = "148px"; 
-                    document.getElementById("links").style.backgroundColor = "#00207c";
-                    document.getElementById("links").style.color = "#ffffff";
-                    document.getElementById("submenuarrow22").style.backgroundPosition = "-134px -216px";}
+                    document.getElementById("links").style.backgroundColor = "#00207c"; document.getElementById("linkssubmenu").style.marginLeft = "148px"; 
+                    document.getElementById("links").style.color = "#ffffff"; document.getElementById("submenuarrow22").style.backgroundPosition = "-134px -216px";}
                 function linksclose() { 
-                    document.getElementById("linkssubmenu").style.marginLeft = "200000px"; 
-                    document.getElementById("links").style.backgroundColor = "#c0c0c0";
-                    document.getElementById("links").style.color = "#000000";
-                    document.getElementById("submenuarrow22").style.backgroundPosition = "-54px -216px";}
+                    document.getElementById("links").style.backgroundColor = "#c0c0c0"; document.getElementById("linkssubmenu").style.marginLeft = "200000px";
+                    document.getElementById("links").style.color = "#000000"; document.getElementById("submenuarrow22").style.backgroundPosition = "-54px -216px";}
                 function mediaopen() { 
-                    document.getElementById("mediasubmenu").style.marginLeft = "148px"; 
-                    document.getElementById("media").style.backgroundColor = "#00207c";
-                    document.getElementById("media").style.color = "#ffffff";
-                    document.getElementById("submenuarrow23").style.backgroundPosition = "-134px -216px";}
+                    document.getElementById("media").style.backgroundColor = "#00207c"; document.getElementById("mediasubmenu").style.marginLeft = "148px";
+                    document.getElementById("media").style.color = "#ffffff"; document.getElementById("submenuarrow23").style.backgroundPosition = "-134px -216px";}
                 function mediaclose() { 
-                    document.getElementById("mediasubmenu").style.marginLeft = "200000px"; 
-                    document.getElementById("media").style.backgroundColor = "#c0c0c0";
-                    document.getElementById("media").style.color = "#000000";
-                    document.getElementById("submenuarrow23").style.backgroundPosition = "-54px -216px";}
+                    document.getElementById("media").style.backgroundColor = "#c0c0c0"; document.getElementById("mediasubmenu").style.marginLeft = "200000px";
+                    document.getElementById("media").style.color = "#000000"; document.getElementById("submenuarrow23").style.backgroundPosition = "-54px -216px";}
             
             function documentsopen() { 
-                document.getElementById("documentsmenu").style.marginLeft = "163px"; 
-                document.getElementById("menudocuments").style.backgroundColor = "#00207c";
-                document.getElementById("menudocuments").style.color = "#ffffff"; 
-                document.getElementById("menuarrow3").style.backgroundPosition = "-134px -216px";}
+                document.getElementById("menudocuments").style.backgroundColor = "#00207c"; document.getElementById("documentsmenu").style.marginLeft = "163px";
+                document.getElementById("menudocuments").style.color = "#ffffff"; document.getElementById("menuarrow3").style.backgroundPosition = "-134px -216px";}
             function documentsclosed() { 
-                document.getElementById("documentsmenu").style.marginLeft = "200000px"; 
-                document.getElementById("menudocuments").style.backgroundColor = "#c0c0c0";
-                document.getElementById("menudocuments").style.color = "#000000"; 
-                document.getElementById("menuarrow3").style.backgroundPosition = "-54px -216px";}
+                document.getElementById("menudocuments").style.backgroundColor = "#c0c0c0"; document.getElementById("documentsmenu").style.marginLeft = "200000px";
+                document.getElementById("menudocuments").style.color = "#000000"; document.getElementById("menuarrow3").style.backgroundPosition = "-54px -216px";}
                                     
-            //start menu button hover script
-            function settingsopen() { 
-                document.getElementById("settingsmenu").style.marginLeft = "163px"; 
-                document.getElementById("menusettings").style.backgroundColor = "#00207c";
-                document.getElementById("menusettings").style.color = "#ffffff"; 
-                document.getElementById("menuarrow4").style.backgroundPosition = "-134px -216px";}
+            function settingsopen() {
+                document.getElementById("menusettings").style.backgroundColor = "#00207c";  document.getElementById("settingsmenu").style.marginLeft = "163px";
+                document.getElementById("menusettings").style.color = "#ffffff"; document.getElementById("menuarrow4").style.backgroundPosition = "-134px -216px";}
             function settingsclosed() { 
-                document.getElementById("settingsmenu").style.marginLeft = "200000px"; 
-                document.getElementById("menusettings").style.backgroundColor = "#c0c0c0";
-                document.getElementById("menusettings").style.color = "#000000"; 
-                document.getElementById("menuarrow4").style.backgroundPosition = "-54px -216px";}
+                document.getElementById("menusettings").style.backgroundColor = "#c0c0c0"; document.getElementById("settingsmenu").style.marginLeft = "200000px"; 
+                document.getElementById("menusettings").style.color = "#000000"; document.getElementById("menuarrow4").style.backgroundPosition = "-54px -216px";}
                 function settingsactivedesktopopen() { 
-                    document.getElementById("menuactivedesktopsubmenu").style.marginLeft = "159px"; 
-                    document.getElementById("activedesktop").style.backgroundColor = "#00207c";
-                    document.getElementById("activedesktop").style.color = "#ffffff";
-                    document.getElementById("submenuarrow31").style.backgroundPosition = "-134px -216px";}
+                    document.getElementById("activedesktop").style.backgroundColor = "#00207c"; document.getElementById("menuactivedesktopsubmenu").style.marginLeft = "159px";
+                    document.getElementById("activedesktop").style.color = "#ffffff"; document.getElementById("submenuarrow31").style.backgroundPosition = "-134px -216px";}
                 function settingsactivedesktopclose() { 
-                    document.getElementById("menuactivedesktopsubmenu").style.marginLeft = "200000px"; 
-                    document.getElementById("activedesktop").style.backgroundColor = "#c0c0c0";
-                    document.getElementById("activedesktop").style.color = "#000000";
-                    document.getElementById("submenuarrow31").style.backgroundPosition = "-54px -216px";}
+                    document.getElementById("activedesktop").style.backgroundColor = "#c0c0c0"; document.getElementById("menuactivedesktopsubmenu").style.marginLeft = "200000px";
+                    document.getElementById("activedesktop").style.color = "#000000"; document.getElementById("submenuarrow31").style.backgroundPosition = "-54px -216px";}
             
             function findopen() { 
-                document.getElementById("findmenu").style.marginLeft = "163px"; 
-                document.getElementById("menufind").style.backgroundColor = "#00207c";
-                document.getElementById("menufind").style.color = "#ffffff";
-                document.getElementById("menuarrow5").style.backgroundPosition = "-134px -216px";}
+                document.getElementById("menufind").style.backgroundColor = "#00207c"; document.getElementById("findmenu").style.marginLeft = "163px";
+                document.getElementById("menufind").style.color = "#ffffff"; document.getElementById("menuarrow5").style.backgroundPosition = "-134px -216px";}
             function findclosed() { 
-                document.getElementById("findmenu").style.marginLeft = "200000px"; 
-                document.getElementById("menufind").style.backgroundColor = "#c0c0c0";
-                document.getElementById("menufind").style.color = "#000000";
-                document.getElementById("menuarrow5").style.backgroundPosition = "-54px -216px";}
-
+                document.getElementById("menufind").style.backgroundColor = "#c0c0c0"; document.getElementById("findmenu").style.marginLeft = "200000px"; 
+                document.getElementById("menufind").style.color = "#000000"; document.getElementById("menuarrow5").style.backgroundPosition = "-54px -216px";}
         </script>
-    </body>
-</html>
+</body></html>
