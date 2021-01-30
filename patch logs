@@ -1,8 +1,29 @@
 <div class="container" style="margin-left: -10px;">
 <ul>
+<li><strong>2021 January 29th (210129)</strong><em> - &ldquo;The debug update&rdquo;</em><br />
+<ul>
+<li>Page loading optimisations<strong><br /></strong>
+<ul>
+<li>Reference links to images and website assets are no longer being done by discord and now are sourced by github.</li>
+<li>Slimmed down required CSS to format desktop icons.</li>
+<li>Cut down needed assets required to format pages.</li>
+<li><em>Page loading and rendering optimisation.</em></li>
+</ul>
+</li>
+<li>Added capability to underline letters in text to emulate windows 98.</li>
+<li>After moving a window around, re-opening it from the start menu will refocus it in it&rsquo;s default load location.</li>
+<li>Windows on startup are now always tied to the left hand side of the screen, rather than alternating between left and right depending on each window.</li>
+<li>Changed colours in the website style to be based on root vars.</li>
+</ul>
+<ol>
+<li>- Fixed desktop rendering to no longer stutter or adjust after page load.</li>
+<li>- Fixed relativity inconsistancies with windows after moving moving said window would adjust the relativity of post from right to left if originally based on relativity to the right.</li>
+<li>- Fixed dropdown menu bugs in the Display Properties menu.</li>
+</ol></li>
 <li><strong>2021 January 28th (210128)</strong><br />
 <ul>
 <li>Reformatted how notes are handled on permalink posts to no longer be an extention on the same html as posts, and is now a seperate extention to each post.</li>
+<li>Notes are no longer forced to be a hight of 220px, and will resize dynamically upto a certain height.</li>
 <li>Page loading now looks less fragmented and smoother.</li>
 <li>Slimmed down required CSS to format posts.</li>
 </ul>
@@ -11,6 +32,7 @@
 <li>- Fixed scrollbar graphic bugs related to the notes section of pemalink pages.</li>
 <li>- Fixed a bug where if there was no notes on posts,&nbsp; there would still be a footer on permalink posts for notes.</li>
 <li>- Solved the issue of desktop icons having the same background as the solution given to fixing the background colour of notes on permalink posts.</li>
+<li>- Fixed a bug where the Very.Unvunny task wouldn&rsquo;t be removed from the taskbar after all windows are closed.</li>
 </ol></li>
 <li><strong>2021 January 26th (210126)</strong><strong> - </strong><em>The &ldquo;Accessability </em><em><em>setup</em>&rdquo; update<br /></em>
 <ul>
@@ -24,6 +46,7 @@
 <li>Evangelion theme now loads by default on windows startup.</li>
 <li>Adjustments to spacing on posts and notes.</li>
 <li><em>Optimised page loading.</em></li>
+<li><em>Tons of optimisation for window dragging.</em></li>
 </ul>
 <ol>
 <li>- Fixed a bug where closing the Very.Unvunny windows would result in the task remaining on the taskbar.</li>
