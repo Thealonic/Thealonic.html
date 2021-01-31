@@ -149,7 +149,7 @@
             /* css for tabs in windows menus */
             .win98tab {             box-shadow:inset -1px 0px var(--black),inset 1px 1px #fff,inset -2px 0px var(--gray),inset 2px 2px var(--lightg);background:var(--silver);padding:3px; border-radius: 2px; font-size:11px; position: absolute; z-index; 100;}
             
-            .disabledfont {         color:var(--gray); text-shadow:1px 1px 0 var(--white);}
+            .disabledfont {         font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--gray); text-shadow:1px 1px 0 var(--white);}
             .optionsmenu {          cursor:pointer; height: 17px; width: 100%; background-color:var(--white); color:var(--black); border-style: dotted; border-width: 1px; border-color: var(--white); z-index:4;}    
             .optionsmenu:hover {    cursor:pointer; height: 17px; width: 100%; background-color:var(--prussian); color:var(--white); border-style: dotted; border-width: 1px; border-color: var(--yellow); z-index:10;}  
             
@@ -249,26 +249,21 @@
             .logofficon {       background-position: -288px -36px;} /* Log Off */       .shutdownicon {     background-position: -324px -36px;} /* Shut Down */
             
             /* start menu submenu icon references */
-            .menuprograms123,   .menuapplications7,     .menucommunications1,   .menusystemtools1,
-            .menuprograms4,     .menuapplications8,     .menucommunications2,   .menusystemtools2,
-            .menuprograms5,     .menuapplications9,     .menucommunications3,   .menusystemtools3,
-            .menuprograms6,     .menuapplications10,    .menucommunications4,   .menusystemtools4,
-            .menuprograms7,     .menuapplications11,                            .menusystemtools5,
-                                .menuapplications12,    .menuinternettools1,    .menusystemtools6,
-            .menufind1,         .menuapplications13,    .menuinternettools2,    .menusystemtools7,
-            .menufind2,         .menuapplications14,    .menuinternettools3,    .menusystemtools8,
-            .menufind3,         .menuapplications15,    .menuinternettools4,    .menusystemtools9,
-            .menufind4,                                                         .menusystemtools10,
-                                .menusettings1,         .menuentertainment1,    .menusystemtools11,
-            .menugames1,        .menusettings2,         .menuentertainment2,    .menusystemtools12,
-            .menugames2,        .menusettings3,         .menuentertainment3,    .menusystemtools13,
-            .menugames3,        .menusettings4,         .menuentertainment4,    
-            .menugames4,        .menusettings5,         .menuentertainment5,    .taskbaricon1,
-                                .menusettings6,                                 .taskbaricon2,
-            .menudocumentssound,                        .menufavouritesfolder,  .taskbaricon3,
-            .menudocuments1,    .none,                  .menufavouriteslink,    .taskbaricon4,
-            .menudocumentsdoc,                          .explorergo,
-            .menudocumentssound,                        .explorerback,          .calendar
+            .menuprograms123,   .menuapplications7,     .menucommunications1,   .menusystemtools1,  .taskbaricon1,
+            .menuprograms4,     .menuapplications8,     .menucommunications2,   .menusystemtools2,  .taskbaricon2,
+            .menuprograms5,     .menuapplications9,     .menucommunications3,   .menusystemtools3,  .taskbaricon3,
+            .menuprograms6,     .menuapplications10,    .menucommunications4,   .menusystemtools4,  .taskbaricon4,
+            .menuprograms7,     .menuapplications11,    .none,                  .menusystemtools5,  .calendar,
+            .menufind1,         .menuapplications12,    .menuinternettools1,    .menusystemtools6,  .menufavouritesfolder,
+            .menufind2,         .menuapplications13,    .menuinternettools2,    .menusystemtools7,  .menufavouriteslink,
+            .menufind3,         .menuapplications14,    .menuinternettools3,    .menusystemtools8,  .explorergo,
+            .menufind4,         .menuapplications15,    .menuinternettools4,    .menusystemtools9,  .explorerback,
+            .menugames1,        .menusettings1,         .menuentertainment1,    .menusystemtools10, .menudocumentsfolder,
+            .menugames2,        .menusettings2,         .menuentertainment2,    .menusystemtools11, .menudocumentssound,
+            .menugames3,        .menusettings3,         .menuentertainment3,    .menusystemtools12, .menudocuments1,
+            .menugames4,        .menusettings4,         .menuentertainment4,    .menusystemtools13, .menudocumentssound
+            .menugames3,        .menusettings5,         .menuentertainment5,    
+            .menugames4,        .menusettings6,         .menuentertainment
             { background-image: var(--spritesheet); margin: auto; float: left; height: 20px; width: 20px;}
 
             .menuapplications7 {    background-position:  -20px  -92px;} /* calc */             .menuapplications12 {   background-position:    0px -112px;} /* ask */
@@ -276,7 +271,6 @@
             .menuapplications9 {    background-position:  -60px  -92px;} /* wordpad */          .menuapplications14 {   background-position:  -40px -112px;} /* msn */
             .menuapplications10 {   background-position:  -80px  -92px;} /* paint */            .menuapplications15 {   background-position:  -60px -112px;} /* prodigy */
             .menuapplications11 {   background-position: -100px  -92px;} /* notepad */
-                    
             .menucommunications1 {  background-position:    0px -132px;} /* Dial Up */          .menuentertainment1 {   background-position:    0px -152px;} /* Cd player */
             .menucommunications2 {  background-position:  -20px -132px;} /* Hyper terminal */   .menuentertainment2 {   background-position:  -20px -152px;} /* Cd Burner */
             .menucommunications3 {  background-position:  -40px -132px;} /* Configurations */   .menuentertainment3 {   background-position:  -40px -152px;} /* Cd Recorder */
@@ -286,7 +280,6 @@
             .menugames2 {           background-position:  -20px -172px;} /* Hearts */           .menuinternettools2 {   background-position: -160px  -72px;} /* Microsoft chat */
             .menugames3 {           background-position:  -40px -172px;} /* Minesweeper */      .menuinternettools3 {   background-position: -180px  -72px;} /* Net meeting */
             .menugames4 {           background-position:  -60px -172px;} /* Solitar */          .menuinternettools4 {   background-position: -200px  -72px;} /* Personal Webserver */
-
             .menusystemtools1 {     background-position: -140px  -92px;} /* character map */    .menusystemtools11 {    background-position: -140px -112px;} /* systeminfo */
             .menusystemtools2 {     background-position: -160px  -92px;} /* clipboard viewer */ .menusystemtools12 {    background-position: -160px -112px;} /* systemmonitor */
             .menusystemtools3 {     background-position: -180px  -92px;} /* disk cleanup */     .menusystemtools13 {    background-position: -180px -112px;} /* welcometowindows */
@@ -336,76 +329,55 @@
             
             .reflinkblack { color: var(--black); } .reflinkblack:hover { color: var(--white); text-decoration-line: underline; }
             
-            ul.tree-view {          font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: 4px; display: block; background: var(--white); 
-                                    box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black); padding: 6px; margin: 0;}
-            ul.tree-view a {        text-decoration: none; color: var(--black); }
-            ul.tree-view a:focus {  background-color: var(--prussian); color: var(--white);}
-            ul.tree-view li {       margin-top: 4px; list-style-type: none;}
-            
-            ul.tree-view ul {                       margin-top: 4px; margin-left: 12px; padding-left: 16px; border-left: 1px dotted var(--gray);}
-            ul.tree-view ul>li {                    position:relative; }
-            ul.tree-view ul>li:before {             content:""; display: block; position: absolute; left: -16px; top: 6px; width: 12px; border-bottom: 1px dotted var(--gray);}
-            ul.tree-view ul>li:last-child:after {   content:""; display: block; position:absolute; left: -20px; top: 7px; bottom:0; width: 8px; background: var(--white);}
-            ul.tree-view ul details>summary:before{ margin-left: -22px; position: relative; z-index: 1;}
-            
-            ul.tree-view details {                  margin-top:0;} ul.tree-view details>summary:before {   text-align: center; display: block; float: left; content: "+"; border: 1px solid var(--gray); 
-                                                    width: 8px; height: 9px; line-height: 8px; margin-right: 5px; padding-left: 1px; background-color: var(--white); }
-            ul.tree-view details[open] summary {    margin-bottom: 0;} ul.tree-view details[open]>summary:before { content: "-"; }
+            ul.tree-view { font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: 4px; display: block; background: var(--white); 
+                           box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black); padding: 6px; margin: 0;}
+            ul.tree-view a { text-decoration: none; color: var(--black); } ul.tree-view a:focus { background-color: var(--prussian); color: var(--white);}
+            ul.tree-view ul { margin-top: 4px; margin-left: 12px; padding-left: 16px; border-left: 1px dotted var(--gray);} ul.tree-view ul>li { position:relative; }
+            ul.tree-view ul>li:before { content:""; display: block; position: absolute; left: -16px; top: 6px; width: 12px; border-bottom: 1px dotted var(--gray);}
+            ul.tree-view ul>li:last-child:after { content:""; display: block; position:absolute; left: -20px; top: 7px; bottom:0; width: 8px; background: var(--white);}
+            ul.tree-view li { margin-top: 4px; list-style-type: none;} ul.tree-view ul details>summary:before{ margin-left: -22px; position: relative; z-index: 1;}
+            ul.tree-view details { margin-top:0;} ul.tree-view details>summary:before {   text-align: center; display: block; float: left; content: "+"; border: 1px solid var(--gray); 
+                                   width: 8px; height: 9px; line-height: 8px; margin-right: 5px; padding-left: 1px; background-color: var(--white); }
+            ul.tree-view details[open] summary { margin-bottom: 0;} ul.tree-view details[open]>summary:before { content: "-"; }
             
             /* checkboxes */
-            fieldset{   border: none; box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray), inset -2px -2px var(--gray), inset 2px 2px var(--lightg); padding:10px; padding-block-start:8px; margin:0}
-            input[type=checkbox] {          appearance: none; -webkit-appearance: none; -moz-appearance: none; margin: 0; background: 0; position: fixed; opacity: 0; border: none} 
-            input[type=radio] {             appearance: none; -webkit-appearance: none; -moz-appearance: none; margin: 0; background: 0; position: fixed; opacity: 0; border: none}
-            input[type=checkbox]+label  {   line-height: 13px;} input[type=radio]+label { line-height: 13px; position: relative; margin-left: 18px;} [class^=field-row]+[class^=field-row]{ margin-top: 6px;}   
+            fieldset{  border: none; box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray), inset -2px -2px var(--gray), inset 2px 2px var(--lightg); padding:10px; padding-block-start:8px; margin:0}
+            input[type=checkbox] { appearance: none; -webkit-appearance: none; -moz-appearance: none; margin: 0; background: 0; position: fixed; opacity: 0; border: none} 
+            input[type=radio] { appearance: none; -webkit-appearance: none; -moz-appearance: none; margin: 0; background: 0; position: fixed; opacity: 0; border: none}
+            input[type=checkbox]+label  { line-height: 13px;} input[type=radio]+label { line-height: 13px; position: relative; margin-left: 18px;} [class^=field-row]+[class^=field-row]{ margin-top: 6px;}   
             .field-row{ display:flex; align-items: center;} .field-row>*+*{ margin-left: 6px;} .field-row-stacked{ display:flex; flex-direction: column;} .field-row-stacked *+*{ margin-top: 6px;}
             
-            a {         color: var(--white); text-decoration: none;} a:hover {   text-decoration: underline; color: var(--white);}
-            span {      background-color: var(--white); color: var(--black);} icon {      background-color: var(--wincyan); color: var(--white);}
-            label {     display:inline-flex; align-items: center;} underline { text-decoration-line: underline; } h3 {        font-size: 2rem;}
+            a {         color: var(--white); text-decoration: none;} a:hover { text-decoration: underline; color: var(--white);}
+            span {      background-color: var(--white); color: var(--black);} icon { background-color: var(--wincyan); color: var(--white);}
+            label {     display:inline-flex; align-items: center;} underline { text-decoration-line: underline;} h3 { font-size: 2rem;}
             
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* tumblr post handling                                                                                                          */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
             
-            .posts .photo img.image {       display: block; width: 100%; height:auto;}
-            .posts .audio img.artwork {     display: block; width: 100%; height:auto;}
-            .posts .html_photoset {         position: relative; display: block; width: 100%; height:auto;}
-            .posts .with_caption {          margin-bottom: 1em;}
-            .posts .photoset {              position: relative; height:auto;}
-            .posts .audio .audio_player embed {     display: block;}
-            .posts p:empty {                        display: none;}
-            .posts div:empty {                      display: none;}
-            body.permalink_page .posts .controls {  display: none;}
-            .hide_if_last:last-child {              display: none;}
+            .posts .photo img.image { display: block; width: 100%; height:auto;} .posts .audio img.artwork { display: block; width: 100%; height:auto;}
+            .posts .html_photoset {  position: relative; display: block; width: 100%; height:auto;} .posts .photoset { position: relative; height:auto;}
+            .posts p:empty { display: none;} .posts div:empty { display: none;} .posts .with_caption {margin-bottom: 1em;} .hide_if_last:last-child { display: none;} 
+            body.permalink_page .posts .controls {  display: none;} #content #posts #tags .comma:last-child { display: none;}
             
-            .content p > img {      max-width: 100%; border-radius: 0;}
-            .content p {            margin: 0 0 0.85em 0;}
-            blockquote, ul, ol  {   margin: 0 0 0.8em 0;}
-            .meta div {             margin: 0 0 0.4em 0 !important;}
-            .meta div a {           text-decoration: none;}
-            #content #posts #tags .comma:last-child {   display: none;}
-            .content p:last-child {             margin-bottom: 0 !important;} 
-            .content blockquote:last-child {    margin-bottom: 0 !important;}
-            .meta div:last-child {              margin-bottom: 0 !important;} /* bottom of posts before footer */
+            .content p > img { max-width: 100%; border-radius: 0;} .content p { margin: 0 0 0.85em 0;}
+            .meta div { margin: 0 0 0.4em 0 !important;} .meta div a { text-decoration: none;} .meta div:last-child { margin-bottom: 0 !important;} /* bottom of posts before footer */
+            .content p:last-child { margin-bottom: 0 !important;} .content blockquote:last-child { margin-bottom: 0 !important;} blockquote, ul, ol  { margin: 0 0 0.8em 0;}
             
             /* text Post settings */
-            blockquote {                margin-left: 2px; padding-left: 4px; margin-top:-5px; margin-bottom:5px; border-left: 2px solid var(--midgray); border-left: 2px solid var(--silver); } /* lines at the side of posts */
-            .quote .dash {              float: left; padding: 0 2px 0 2px;} .quote .source { float: left;}
-            .chat .line:last-of-type {  margin-bottom: 0;} .chat ul { padding: 0; list-style: none;} .chat ol { padding: 0; list-style: none;}
+            blockquote { margin-left: 2px; padding-left: 4px; margin-top:-5px; margin-bottom:5px; border-left: 2px solid var(--midgray); border-left: 2px solid var(--silver); } /* lines at the side of posts */
+            .quote .dash { float: left; padding: 0 2px 0 2px;} .quote .source { float: left;}
+            .chat .line:last-of-type { margin-bottom: 0;} .chat ul { padding: 0; list-style: none;} .chat ol { padding: 0; list-style: none;}
             
             /* image Post settings */
-            .body img { max-width: 100%; overflow: hidden;} .caption img { max-width: 100%; overflow: hidden;} img.full_image {width: 451px; overflow: hidden;}
-            .middle img {       max-width: 451px; width: 100%; height: 100%; display: block;} a img {border: 0;}
+            .body img { max-width: 100%; overflow: hidden;} .caption img { max-width: 100%; overflow: hidden;} img.full_image { ,width: 451px; overflow: hidden;}
+            .middle img { max-width: 451px; width: 100%; height: 100%; display: block;} a img {border: 0;}
             
             /* audio Post settings */
-            .audio_container {          overflow: hidden; position: relative; width: 100px;} .tumblr_audio_player {width: 100%;}
+            .audio_container { overflow: hidden; position: relative; width: 100px;} .tumblr_audio_player {width: 100%;} .posts .audio .audio_player embed { display: block;}
             .soundcloud_audio_player { width: 100%;} .spotify_audio_player { height: 80px !important; width:100%;}
             .tumblr_video_container {   position: relative; width:auto !important; height:auto !important; padding: auto;}
 
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
-        /* additional tumblr handling                                                                                                    */
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
-            
             /* tumblr likes formatting */
             .like-b { position:relative; display:inline-block; height:1em; line-height:1em; color:var(--black);} .like-b .like_button iframe { position:absolute; opacity:0;}
             .like-b .liked + .b { color:inherit;} .like-b .liked + .b:after { content:'d';} .like-b:hover { color:var(--white); text-decoration-line: underline; } 
@@ -697,7 +669,7 @@
                             <div class="optionsmenu" style="width:227px; position: absolute; margin-top:36px; cursor:pointer" onclick="wallpaperoption2(); wallpapercust();">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
                                         <div class="container" style="width:100%; height:100%;" id="wallpaperoverlay3" style="color:white;">
-                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Study </label></div></div>
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Octavia's Study </label></div></div>
                             <div class="optionsmenu" style="width:227px; position: absolute; margin-top:72px; cursor:pointer" onclick="wallpaperoption3(); wallpapercust();"> 
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
                                         <div class="container" style="width:100%; height:100%;" id="wallpaperoverlay4">
@@ -713,11 +685,11 @@
                             <div class="optionsmenu" style="width:227px; position: absolute; margin-top:108px; cursor:pointer" onclick="wallpaperoption6(); wallpapercust();">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
                                         <div class="container" style="width:100%; height:100%;" id="wallpaperoverlay7">
-                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer" title="submitted by Sammy in the discord server"> Vapourwave Sunset (Submitted by Sammy)</label></div></div>
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Vinyl Scratch</label></div></div>
                             <div class="optionsmenu" style="width:227px; position: absolute; margin-top:126px; cursor:pointer" onclick="wallpaperoption7(); wallpapercust();">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
-                                        <div class="container" style="width:100%; height:100%;" id="wallpaperoverlay8">
-                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Vinyl </label></div></div></div>
+                                        <div class="container" style="width:100%; height:100%;" title="submitted by Millie in the discord server" id="wallpaperoverlay8">
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Clouds at Midnight (Submitted by Millie)  </label></div></div></div>
                         
                         <script>
                             var colorwallpaperpicked = "#c0c0c0"; currentwallpaper = "";
@@ -737,13 +709,10 @@
                             function wallpaperoption3() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay4").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/startrek.png')"; wallpaperpreview();} 
                             function wallpaperoption4() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay5").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/unknown.png')"; wallpaperpreview();} 
                             function wallpaperoption5() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay6").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/anime.png')"; wallpaperpreview();} 
-                            function wallpaperoption6() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay7").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/neon.png')"; wallpaperpreview();} 
-                            function wallpaperoption7() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay8").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/vinyl.png')"; wallpaperpreview();} 
+                            function wallpaperoption6() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay7").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/vinyl.png')"; wallpaperpreview();} 
+                            function wallpaperoption7() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay8").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/lynn.png')"; wallpaperpreview();} 
                         </script>
-                        
-                </ul></fieldset>
-                <!-- inner container end -->
-            </div>
+            </ul></fieldset></div>
             
             <!-- --------------------------------------- screensaver tab --------------------------------------- -->
             <!-- background inner container -->
@@ -759,8 +728,7 @@
                         
                             <div class="drop-down-menu" style="margin-top:1px; width: 167px; margin-left: -20000px;" id="thescreensaver">
                                 <div class="win98buttonpressed" style="position:absolute; margin-top: -18px; margin-left:153px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
-                                <div class="drop-down-text" onclick="none()" id="none">(none)</div>
-                        </div></ul>
+                                <div class="drop-down-text" onclick="none()" id="none">(none)</div></div></ul>
                         
                         <script>
                             let screensaverdrop = false;
@@ -801,7 +769,6 @@
             <!-- --------------------------------------- appearance tab --------------------------------------- -->
             <!-- background inner container -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="appearance">
-            
                 <ul class="tree-view"  id="apperancepreview" style="width:337px; height:179px; margin-left: 12px; margin-top: 12px; background-size: cover; padding:10px;">
                                                   
                     <div class="win98post" style="height: 137px; width:300px;">
@@ -827,14 +794,12 @@
                         
                     <div class="win98post" style="height:67px; width:200px; margin-left:20px; margin-top: 100px;">
                         <div class="win98titlebarbutton" style="position:absolute; margin-left: 183px; margin-top:1px; cursor: pointer;" title="close"><div class="close"></div></div>
-                        <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="help"></div></div></a> 
+                        <div class="win98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="help"></div></div>
                         <div class="title-bar-posts"> <div class="title-bar-text" style="margin-left:-1px; margin-top:-1px;">💬 Message Box</div></div>
                         <div class="messagewindowbody" style="margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding:3px;"> Current active window
                             <center><div class="win98button" style="width:60px; margin-top: 4px;"> 
                                 <div class="buttontext" style="margin-top: 2px; margin-left:0.5px; cursor:pointer">Ok.</div></div></center>
-                    </div></div>
-                </ul>
-                    
+                </div></div></ul>
                 <div class="container" style="margin-left:12px; margin-top: 10px;">
                     <!-- line 1 -->
                     <label>Scheme</label><br>
@@ -845,22 +810,26 @@
                         <div class="drop-down-menu" style="margin-top:1px; width: 185px; margin-left: -20000px;" id="scheme">
                             <div class="win98buttonpressed" style="position:absolute; margin-top: -18px; margin-left:171px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
                             
-                            <div class="drop-down-text" onclick="windows98()"           id="windows98scheme"                                 >Windows 98           </div>
-                            <div class="drop-down-text" onclick="evangelionmode()"      id="evangelionscheme"    style="padding:bottom:2px;" >Evangelion           </div>
-                            <div class="drop-down-text" onclick="darkmode()"            id="darkmodescheme"      style="padding:bottom:2px;" >Dark mode            </div>
-                            <div class="drop-down-text" onclick="contrastmodescheme1()" id="contrastmodescheme1" style="padding:bottom:2px;" >High Contrast Mode 1 </div>
-                            <div class="drop-down-text" onclick="contrastmodescheme2()" id="contrastmodescheme2" style="padding:bottom:2px;" >High Contrast Mode 2 </div> </div></ul>
+                            <div class="drop-down-text" onclick="windows98()"           id="windows98scheme"                                 >Windows 98                </div>
+                            <div class="drop-down-text" onclick="evangelionmode()"      id="evangelionscheme"    style="padding:bottom:2px;" >Neon Genesis Evangelion   </div>
+                            <div class="drop-down-text" onclick="Octavia()"             id="Octavia"             style="padding:bottom:2px;" >Octavia's Study           </div>
+                            <div class="drop-down-text" onclick="girlsdayout()"         id="girlsdayout"         style="padding:bottom:2px;" >A Girls Day Out           </div>
+                            <div class="drop-down-text" onclick="milyvean()"            id="milyvean"            style="padding:bottom:2px;" >Clouds at Midnight        </div>
+                            <div class="drop-down-text" onclick="contrastmodescheme1()" id="contrastmodescheme1" style="padding:bottom:2px;" >High Contrast Mode 1      </div>
+                            <div class="drop-down-text" onclick="contrastmodescheme2()" id="contrastmodescheme2" style="padding:bottom:2px;" >High Contrast Mode 2      </div> </div></ul>
                     <script>
                         var schemedrop = false;
                         function schemedropdown(){ if (schemedrop == false) { document.getElementById("scheme").style.marginLeft = "    -2px"; schemedrop = true;
                                             } else if (schemedrop == true){   document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }}
                         function schemeexit(){                document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }
-                                                                               //text changer               //replaced with        //colour set        //wallpaper option
-                        function windows98(){           document.getElementById("currentscheme").textContent="Windows 98";           cpick12();          wallpaperoption1();}
-                        function evangelionmode(){      document.getElementById("currentscheme").textContent="Evangelion";           cpick18();          wallpaperoption4();}
-                        function darkmode(){            document.getElementById("currentscheme").textContent="Darkmode 98";          cpick19();          wallpaperoption2();}
-                        function contrastmodescheme1(){ document.getElementById("currentscheme").textContent="High Contrast Mode 1"; highcontrast1();    wallpaperoptionnone();}
-                        function contrastmodescheme2(){ document.getElementById("currentscheme").textContent="High Contrast Mode 2"; highcontrast2();    wallpaperoptionnone();}
+                                                                               //text changer               //replaced with           //colour set        //wallpaper option
+                        function windows98(){           document.getElementById("currentscheme").textContent="Windows 98";              cpick12();          wallpaperoption1();}
+                        function evangelionmode(){      document.getElementById("currentscheme").textContent="Neon Genesis Evangelion"; cpick18();          wallpaperoption4();}
+                        function Octavia(){             document.getElementById("currentscheme").textContent="Octavia's Study";         cpick17();          wallpaperoption2();}
+                        function girlsdayout(){         document.getElementById("currentscheme").textContent="A Girls Day Out";         cpick19();          wallpaperoption5();}
+                        function milyvean(){            document.getElementById("currentscheme").textContent="Clouds at Midnight";      cpick18();          wallpaperoption7();}
+                        function contrastmodescheme1(){ document.getElementById("currentscheme").textContent="High Contrast Mode 1";    highcontrast1();    wallpaperoptionnone();}
+                        function contrastmodescheme2(){ document.getElementById("currentscheme").textContent="High Contrast Mode 2";    highcontrast2();    wallpaperoptionnone();}
                         
                         function highcontrast1() {  currentcolour = "#00ffff"; fontcolour = "#000"; backcolourpreview(); ctoggle = true; 
                                                     cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; 
@@ -924,7 +893,7 @@
                                 <div class="colourselect" style="background-color: #ff00ff" onclick="cpick15()"></div> <div class="colourselect" style="background-color: #aa55aa" onclick="cpick16(); wallpapercust();"></div> <br>
                                 <div class="menuapplicationsplit" style="width:100%; margin-bottom:3px;"> </div>
                                 <div class="colourselect" style="background-color: #a03762" onclick="cpick17()"></div> <div class="colourselect" style="background-color: #001224" onclick="cpick18(); wallpapercust();"></div> 
-                                <div class="colourselect" style="background-color: #590f1e" onclick="cpick19()"></div> <div class="colourselect" style="background-color: #6d7f36" onclick="cpick20(); wallpapercust();"></div> <br>
+                                <div class="colourselect" style="background-color: #590f1e" onclick="cpick19()"></div> <div class="colourselect" style="background-color: #ffdaa3" onclick="cpick20(); wallpapercust();"></div> <br>
                         </div></div> 
                         
                         <script>
@@ -980,7 +949,7 @@
                             function cpick17() {  currentcolour = "#a03762"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
                             function cpick18() {  currentcolour = "#001224"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
                             function cpick19() {  currentcolour = "#590f1e"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
-                            function cpick20() {  currentcolour = "#6d7f36"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
+                            function cpick20() {  currentcolour = "#ffdaa3"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
                         </script>
                         
                         <div class="win98buttoninactive" style="position: absolute; margin-left:312px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
@@ -1128,7 +1097,7 @@
                           <label for="range23" style="float:right; margin-right: 5px">More</label>
                         </div>
                         <center style="margin-left:0.9px; margin-top:9px;"> 1920 by 1080 pixels</center>
-                    </fieldset></div>
+                </fieldset></div>
                 <!-- additional settings -->
                 <div class="field-row" style="width: 100%; margin-left: 12px;">
                     <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 44px; background-color: silver;">
@@ -1136,8 +1105,7 @@
                             <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 45px; display: inline-block;">Extend my Windows desktop onto this monitor</div>
                     <div class="win98buttoninactive" style="position: absolute; margin-top: 50px; width:75px; height:18px; margin-left:277px;"> 
                         <div class="disabledfont" style="margin-top: 3px; margin-left:12px; cursor:pointer"> Advanced </div></div>
-                </div>
-            </div>
+            </div></div>
             
             <!-- --------------------------------------- footer --------------------------------------- -->
             <!-- display settings buttons -->
