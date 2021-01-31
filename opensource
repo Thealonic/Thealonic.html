@@ -71,7 +71,7 @@
                     --displayenergy:    url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/energy.png');
                     
                     --white: #ffffff; --lightg: #dfdfdf;  --silver: #c0c0c0; --midgray: #ababab; --gray: #808080; --black: #0a0a0a;
-                    --prussian: #00207c ; --wincyan: #008080; --yellow: #ffff00; 
+                    --prussian: #00207c ; --wincyan: #008080; --yellow: #ffff00;
                 }
 
         /* ----------------------------------------------------------------------------------------------------------------------------- */
@@ -317,6 +317,7 @@
             .taskbarapp2 { font-family:"Pixelated MS Sans Serif", Arial; background-image: var(--inactivetask); float: left; width: 160px; height: 22px; margin-top: 2px; margin-left: 4px;}
             .taskbarapp3 { font-family:"Pixelated MS Sans Serif", Arial; background-image: var(--inactivetask); float: left; width: 160px; height: 22px; margin-top: 2px; margin-left: 4px;}
             
+            .clock{ box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray); padding:2px; float:right; width:96px; height:18px; margin-right:2px; margin-top:2px;}
             .start_bar .time {  line-height: 18px; float: right; font-size: 10px; margin-right: 10px;}
             .start_bar .calendar { float: left; margin-top: 1px; margin-left: 3px;}
             .taskbaricons { float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px;}
@@ -331,50 +332,34 @@
             .displaycolour {        width:153px; height: 13px; background-image: var(--displaycolour); background-repeat: repeat-y;}
             .energysaving {         width: 71px; height: 42px; background-image: var(--displayenergy);}
 
-            .reflinkblack {         color: var(--black); }
-            .reflinkblack:hover {   color: var(--white); text-decoration-line: underline; }
-            underline {             text-decoration-line: underline; }
+            .reflinkblack { color: var(--black); } .reflinkblack:hover { color: var(--white); text-decoration-line: underline; }
             
-            ul.tree-view {          font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: 4px;}
-            ul.tree-view {          display: block; background: var(--white); box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black); padding: 6px; margin: 0;}
+            ul.tree-view {          font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: 4px; display: block; background: var(--white); 
+                                    box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black); padding: 6px; margin: 0;}
             ul.tree-view a {        text-decoration: none; color: var(--black); }
             ul.tree-view a:focus {  background-color: var(--prussian); color: var(--white);}
             ul.tree-view li {       margin-top: 4px; list-style-type: none;}
             
-            ul.tree-view ul {                       margin-top: 4px; }
-            ul.tree-view ul {                       margin-left: 12px; padding-left: 16px; border-left: 1px dotted var(--gray);}
+            ul.tree-view ul {                       margin-top: 4px; margin-left: 12px; padding-left: 16px; border-left: 1px dotted var(--gray);}
             ul.tree-view ul>li {                    position:relative; }
             ul.tree-view ul>li:before {             content:""; display: block; position: absolute; left: -16px; top: 6px; width: 12px; border-bottom: 1px dotted var(--gray);}
             ul.tree-view ul>li:last-child:after {   content:""; display: block; position:absolute; left: -20px; top: 7px; bottom:0; width: 8px; background: var(--white);}
             ul.tree-view ul details>summary:before{ margin-left: -22px; position: relative; z-index: 1;}
             
-            ul.tree-view details {                      margin-top:0;}
-            ul.tree-view details>summary:before {       text-align: center; display: block; float: left; content: "+"; border: 1px solid var(--gray); width: 8px; height: 9px; 
-                                                        line-height: 8px; margin-right: 5px; padding-left: 1px; background-color: var(--white); }
-            ul.tree-view details[open] summary {        margin-bottom: 0;}
-            ul.tree-view details[open]>summary:before { content: "-"; }
+            ul.tree-view details {                  margin-top:0;} ul.tree-view details>summary:before {   text-align: center; display: block; float: left; content: "+"; border: 1px solid var(--gray); 
+                                                    width: 8px; height: 9px; line-height: 8px; margin-right: 5px; padding-left: 1px; background-color: var(--white); }
+            ul.tree-view details[open] summary {    margin-bottom: 0;} ul.tree-view details[open]>summary:before { content: "-"; }
             
+            /* checkboxes */
             fieldset{   border: none; box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray), inset -2px -2px var(--gray), inset 2px 2px var(--lightg); padding:10px; padding-block-start:8px; margin:0}
-            
-            [class^=field-row]+[class^=field-row]{ margin-top: 6px;}
-            
-            .field-row{             display:flex; align-items: center;}
-            .field-row>*+*{         margin-left: 6px;}
-            .field-row-stacked{     display:flex; flex-direction: column;}
-            .field-row-stacked *+*{ margin-top: 6px;}
-            
             input[type=checkbox] {          appearance: none; -webkit-appearance: none; -moz-appearance: none; margin: 0; background: 0; position: fixed; opacity: 0; border: none} 
             input[type=radio] {             appearance: none; -webkit-appearance: none; -moz-appearance: none; margin: 0; background: 0; position: fixed; opacity: 0; border: none}
-            input[type=checkbox]+label  {   line-height: 13px;}
-            input[type=radio]+label {       line-height: 13px;}
-            input[type=radio]+label {       position: relative; margin-left: 18px;}
-
-            h3 {        font-size: 2rem;}
-            a {         color: var(--white); text-decoration: none;}
-            a:hover {   text-decoration: underline; color: var(--white);}
-            span {      background-color: var(--white); color: var(--black);}
-            icon {      background-color: var(--wincyan); color: var(--white);}
-            label {     display:inline-flex; align-items: center;}
+            input[type=checkbox]+label  {   line-height: 13px;} input[type=radio]+label { line-height: 13px; position: relative; margin-left: 18px;} [class^=field-row]+[class^=field-row]{ margin-top: 6px;}   
+            .field-row{ display:flex; align-items: center;} .field-row>*+*{ margin-left: 6px;} .field-row-stacked{ display:flex; flex-direction: column;} .field-row-stacked *+*{ margin-top: 6px;}
+            
+            a {         color: var(--white); text-decoration: none;} a:hover {   text-decoration: underline; color: var(--white);}
+            span {      background-color: var(--white); color: var(--black);} icon {      background-color: var(--wincyan); color: var(--white);}
+            label {     display:inline-flex; align-items: center;} underline { text-decoration-line: underline; } h3 {        font-size: 2rem;}
             
         /* ----------------------------------------------------------------------------------------------------------------------------- */
         /* tumblr post handling                                                                                                          */
@@ -403,25 +388,16 @@
             
             /* text Post settings */
             blockquote {                margin-left: 2px; padding-left: 4px; margin-top:-5px; margin-bottom:5px; border-left: 2px solid var(--midgray); border-left: 2px solid var(--silver); } /* lines at the side of posts */
-            .quote .dash {              float: left; padding: 0 2px 0 2px;}
-            .quote .source {            float: left;}
-            .chat .line:last-of-type {  margin-bottom: 0;}
-            .chat ul {                  padding: 0; list-style: none;}
-            .chat ol {                  padding: 0; list-style: none;}
+            .quote .dash {              float: left; padding: 0 2px 0 2px;} .quote .source { float: left;}
+            .chat .line:last-of-type {  margin-bottom: 0;} .chat ul { padding: 0; list-style: none;} .chat ol { padding: 0; list-style: none;}
             
             /* image Post settings */
-            .body img {         max-width: 100%; overflow: hidden;} /* bottlenecks images */
-            .caption img {      max-width: 100%; overflow: hidden;} /* bottlenecks images */
-            img.full_image {    width: 451px; overflow: hidden;} /* bottlenecks images */
-            .middle img {       max-width: 451px; width: 100%; height: 100%; display: block;}
-            a img {             border: 0;}
+            .body img { max-width: 100%; overflow: hidden;} .caption img { max-width: 100%; overflow: hidden;} img.full_image {width: 451px; overflow: hidden;}
+            .middle img {       max-width: 451px; width: 100%; height: 100%; display: block;} a img {border: 0;}
             
             /* audio Post settings */
-            .audio {                    padding: 0;}
-            .audio_container {          overflow: hidden; position: relative; width: 100px;}
-            .soundcloud_audio_player {  width: 100%;}
-            .tumblr_audio_player {      width: 100%;}
-            .spotify_audio_player {     height: 80px !important; width:100%;}
+            .audio_container {          overflow: hidden; position: relative; width: 100px;} .tumblr_audio_player {width: 100%;}
+            .soundcloud_audio_player { width: 100%;} .spotify_audio_player { height: 80px !important; width:100%;}
             .tumblr_video_container {   position: relative; width:auto !important; height:auto !important; padding: auto;}
 
         /* ----------------------------------------------------------------------------------------------------------------------------- */
@@ -429,23 +405,18 @@
         /* ----------------------------------------------------------------------------------------------------------------------------- */
             
             /* tumblr likes formatting */
-            .like-b { position:relative; display:inline-block; height:1em; line-height:1em; color:var(--black);}
-            .like-b .like_button iframe { position:absolute; opacity:0;}
-            .like-b .liked + .b { color:inherit;}
-            .like-b .liked + .b:after { content:'d';}
-            .like-b:hover { color:var(--white); text-decoration-line: underline; } 
+            .like-b { position:relative; display:inline-block; height:1em; line-height:1em; color:var(--black);} .like-b .like_button iframe { position:absolute; opacity:0;}
+            .like-b .liked + .b { color:inherit;} .like-b .liked + .b:after { content:'d';} .like-b:hover { color:var(--white); text-decoration-line: underline; } 
             
             /* infinate scroll script + */
             ul, ol { padding: 0 0 0 18px;}
             
             /* tumblr notes formatting */
+            .notes { margin-top:0px; text-align:left;} ol.notes { padding: 2px; list-style-type: none; max-height: 320px; width:463px; overflow:auto; margin-top:-6px;} 
+            ol.notes li.note img.avatar { vertical-align: -4px; margin-right: 4px; width: 16px; height:16px; margin-top:-2px; margin-bottom;-2px;} ol.notes li.note .answer_content { font-weight: normal;}
+            ol.notes li.note blockquote { padding: 4px 10px; margin: 10px 0px 0px 25px;} ol.notes li.note blockquote a { text-decoration: none;} 
+            
             .tagged { font-size: 9px; opacity: 0.5;}
-            .notes { margin-top:0px; text-align:left;}
-            ol.notes { padding: 2px; list-style-type: none; max-height: 320px; width:463px; overflow:auto; margin-top:-6px;}
-            ol.notes li.note img.avatar { vertical-align: -4px; margin-right: 4px; width: 16px; height:16px; margin-top:-2px; margin-bottom;-2px;}
-            ol.notes li.note .answer_content { font-weight: normal;}
-            ol.notes li.note blockquote { padding: 4px 10px; margin: 10px 0px 0px 25px;}
-            ol.notes li.note blockquote a { text-decoration: none;}
         </style>
         
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -463,7 +434,7 @@
             <a href="https://veryvhersty.tumblr.com/" target="_blank">
                 <div class="veryvhersty"></div>
                 <div class="icon_label"><icon id="desktopi2">
-                    <label> Very.Vhersty </label></icon></div> </a>
+                    <label > Very.Vhersty </label></icon></div> </a>
             <!-- Button Three -->
             <a href="https://twitter.com/VeryVhersty" target="_blank">
                 <div class="twitter"></div>
@@ -505,7 +476,7 @@
         <!-- Page rendering                                                                                                                -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
     
-    <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" onload="evangelionmode()">
+    <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" onload="evangelionmode(); backcolourset(); fontcolourset(); wallpaperupdate();">
         
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <!-- Tumblr + embedding handling                                                                                                   -->
@@ -520,8 +491,7 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         
         <script>
-            var pyrotabs = 2; currentno = 5;
-            var window1 = true; window2 = true; 
+            var pyrotabs = 2; currentlayer = 5; window1 = true; window2 = true; 
             function pyrowindow(){ if(pyrotabs == 0){ document.getElementById("taskapp2").style.marginLeft = "-20000px";}}
         </script>
         
@@ -536,19 +506,15 @@
         </div></div>
             
         <script>
-            function catactive() {
-                idleactive(); inactiveall();
-                pyroButtonOpen = false;
-                document.getElementById("cat").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
+            function catactive() { idleactive(); inactiveall(); pyroButtonOpen = false;
+                document.getElementById("cat").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
                 document.getElementById("catwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";
                 document.getElementById("catwindow").style.backgroundPosition = "-150px";
                 document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application.png')";} 
                 
-            function catclose() {
-                pyroButtonOpen = true; window2 = false;
+            function catclose() { idleactive(); inactiveall(); pyroButtonOpen = true; window2 = false;
                 document.getElementById("cat").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; pyrowindow();
-                document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application1.png')";
-                idleactive(); inactiveall();}
+                document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application1.png')";}
         </script>
             
         <div class="win98post" style="z-index: 5; width:194px; position: fixed; top: 58%; left: 12%;" onmousedown="pyroactive();" id="pyro">
@@ -568,10 +534,8 @@
                 
             var r_text = new Array (); 
                 r_text[0] = "💯 Hi-dilly-ho, neighborinos!";       
-
-            var tick = 3;
-            var randomNum = Math.floor(Math.random() * myPix.length); 
-            var randomNum2;
+                
+            var randomNum = Math.floor(Math.random() * myPix.length); randomNum2 = 0; tick = 3;
             
             function pyroshuffle(){ 
                 if (tick !== 0){ randomNum2 = Math.floor(Math.random() * myPix.length);
@@ -595,8 +559,8 @@
 
             function pyroactive() { 
                 idleactive(); inactiveall();
-                pyroButtonOpen = false; currentno = currentno + 1; 
-                document.getElementById("pyro").style.zIndex = (currentno = currentno + 1);
+                pyroButtonOpen = false; currentlayer = currentlayer + 1; 
+                document.getElementById("pyro").style.zIndex = (currentlayer = currentlayer + 1);
                 document.getElementById("pyrowindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";
                 document.getElementById("pyrowindow").style.backgroundPosition = "-150px";
                 document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application.png')";} 
@@ -607,6 +571,9 @@
                 idleactive(); inactiveall();}
         </script>                
 
+
+
+
         <script> 
             function vunnyopen(){
                 idleactive(); inactiveall();
@@ -616,8 +583,8 @@
                 document.getElementById("cat").style.marginLeft = "0px";
                 document.getElementById("pyro").style.marginLeft = "0px"; 
                 //var placement = ((windowstotal x 160) + 4)
-                document.getElementById("cat").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; 
-                document.getElementById("pyro").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; 
+                document.getElementById("cat").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1; 
+                document.getElementById("pyro").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1; 
                 document.getElementById("pyrowindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";
                 document.getElementById("pyrowindow").style.backgroundPosition = "-150px";
                 document.getElementById("taskapp2").style.marginLeft = "4px";
@@ -642,7 +609,7 @@
         <script> 
             function messageactive() {
                 idleactive(); inactiveall();
-                document.getElementById("message").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
+                document.getElementById("message").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
                 document.getElementById("messagewindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";} 
             function messageinactive() { 
                 inactiveall(); inactiveall();
@@ -656,7 +623,7 @@
                 document.getElementById("message").style.left = "76%";
                 document.getElementById("message").style.top = "63%";
                 document.getElementById("message").style.marginLeft = "0px"
-                document.getElementById("message").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
+                document.getElementById("message").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
                 document.getElementById("messagewindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";}
         </script>
 
@@ -748,45 +715,56 @@
                             
                             <div class="optionsmenu" style="width:227px; position: absolute; cursor:pointer;" onclick="wallpaperoptionnone()">
                                     <div class="none" style="margin-top:-1px;"></div>
-                                    <label style="margin-left: 4px; margin-top: 2px; cursor:pointer"> None </label></div>
+                                        <div class="container" style="width:100%; height:100%;" id="wallpaperoverlay1">
+                                    <label style="margin-left: 4px; margin-top: 2px; cursor:pointer;"> None </label></div></div>
                             <div class="optionsmenu" style="width:227px; position: absolute; margin-top:18px; cursor:pointer" onclick="wallpaperoption1()">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
-                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Default </label></div>
+                                        <div class="container" style="width:100%; height:100%;" id="wallpaperoverlay2">
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Default </label></div></div>
                             <div class="optionsmenu" style="width:227px; position: absolute; margin-top:36px; cursor:pointer" onclick="wallpaperoption2()">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
-                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Study </label></div>
-                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:54px; cursor:pointer" onclick="wallpaperoption4()">
-                                    <div class="menuapplications10" style="margin-top:-1px"></div>
-                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Neon Genesis Evangelion </label></div>
+                                        <div class="container" style="width:100%; height:100%;" id="wallpaperoverlay3" style="color:white;">
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Study </label></div></div>
                             <div class="optionsmenu" style="width:227px; position: absolute; margin-top:72px; cursor:pointer" onclick="wallpaperoption3()"> 
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
-                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer" title="submitted by Matt in the discord server"> Star Trek (Submitted by Matt)</label></div>
+                                        <div class="container" style="width:100%; height:100%;" id="wallpaperoverlay4">
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer" title="submitted by Matt in the discord server"> Star Trek (Submitted by Matt)</label></div></div>
+                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:54px; cursor:pointer" onclick="wallpaperoption4()">
+                                    <div class="menuapplications10" style="margin-top:-1px"></div>
+                                        <div class="container" style="width:100%; height:100%;" id="wallpaperoverlay5" style="color:">
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Neon Genesis Evangelion </label></div></div>
                             <div class="optionsmenu" style="width:227px; position: absolute; margin-top:90px; cursor:pointer" onclick="wallpaperoption5()">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
-                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer" title="submitted by Xal in the discord server"> Battlefield Girls (Submitted by Xal)</label></div>
+                                        <div class="container" style="width:100%; height:100%;" id="wallpaperoverlay6">
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer" title="submitted by Xal in the discord server"> Battlefield Girls (Submitted by Xal)</label></div></div>
                             <div class="optionsmenu" style="width:227px; position: absolute; margin-top:108px; cursor:pointer" onclick="wallpaperoption6()">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
-                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer" title="submitted by Sammy in the discord server"> Vapourwave Sunset (Submitted by Sammy)</label></div>
+                                        <div class="container" style="width:100%; height:100%;" id="wallpaperoverlay7">
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer" title="submitted by Sammy in the discord server"> Vapourwave Sunset (Submitted by Sammy)</label></div></div>
                             <div class="optionsmenu" style="width:227px; position: absolute; margin-top:126px; cursor:pointer" onclick="wallpaperoption7()">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
-                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> /// </label></div>
-                                    
+                                        <div class="container" style="width:100%; height:100%;" id="wallpaperoverlay8">
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Vinyl </label></div></div>
                         </div>
                         
                         <script>
-                            var defaultwallpaper
-                            function wallpaperupdate(){ document.getElementById("body").style.backgroundImage = currentwallpaper;
-                                                        document.getElementById("apperancepreview").style.backgroundImage = currentwallpaper;
-                                                        document.getElementById("iconpreview").style.backgroundImage = currentwallpaper;}
-
-                            function wallpaperoptionnone() { currentwallpaper = "none"; wallpaperupdate(); } 
-                            function wallpaperoption1() { currentwallpaper = github + "img/wallpapers/wallpaper32.png')"; wallpaperupdate(); }
-                            function wallpaperoption2() { currentwallpaper = github + "img/wallpapers/study.png')"; wallpaperupdate(); }
-                            function wallpaperoption3() { currentwallpaper = github + "img/wallpapers/startrek.png')"; wallpaperupdate(); } 
-                            function wallpaperoption4() { currentwallpaper = github + "img/wallpapers/unknown.png')"; wallpaperupdate(); } 
-                            function wallpaperoption5() { currentwallpaper = github + "img/wallpapers/anime.png')"; wallpaperupdate(); } 
-                            function wallpaperoption6() { currentwallpaper = github + "img/wallpapers/neon.png')"; wallpaperupdate(); } 
-                            function wallpaperoption7() { currentwallpaper = github + "img/wallpapers/vinyl.png')"; wallpaperupdate(); } 
+                            var colorwallpaperpicked = "#c0c0c0"; currentwallpaper = "";
+                            function wallpaperupdate(){ document.getElementById("body").style.backgroundImage = currentwallpaper;}
+                            function wallpaperpreview(){ document.getElementById("apperancepreview").style.backgroundImage = currentwallpaper;
+                                                         document.getElementById("iconpreview").style.backgroundImage = currentwallpaper;}
+                            function wallpapercurrentreset() { 
+                            document.getElementById("wallpaperoverlay1").style.backgroundColor = ""; document.getElementById("wallpaperoverlay2").style.backgroundColor = "";
+                            document.getElementById("wallpaperoverlay3").style.backgroundColor = ""; document.getElementById("wallpaperoverlay4").style.backgroundColor = "";
+                            document.getElementById("wallpaperoverlay5").style.backgroundColor = ""; document.getElementById("wallpaperoverlay6").style.backgroundColor = "";
+                            document.getElementById("wallpaperoverlay7").style.backgroundColor = ""; document.getElementById("wallpaperoverlay8").style.backgroundColor = "";}
+                            function wallpaperoptionnone() { wallpapercurrentreset(); document.getElementById("wallpaperoverlay1").style.backgroundColor = colorwallpaperpicked; currentwallpaper = "none"; wallpaperpreview();} 
+                            function wallpaperoption1() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay2").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/wallpaper32.png')"; wallpaperpreview();}
+                            function wallpaperoption2() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay3").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/study.png')"; wallpaperpreview();}
+                            function wallpaperoption3() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay4").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/startrek.png')"; wallpaperpreview();} 
+                            function wallpaperoption4() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay5").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/unknown.png')"; wallpaperpreview();} 
+                            function wallpaperoption5() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay6").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/anime.png')"; wallpaperpreview();} 
+                            function wallpaperoption6() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay7").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/neon.png')"; wallpaperpreview();} 
+                            function wallpaperoption7() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay8").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/vinyl.png')"; wallpaperpreview();} 
                         </script>
                         
                     </ul>
@@ -852,7 +830,7 @@
             <!-- background inner container -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="appearance">
             
-                <ul class="tree-view"  id="apperancepreview" style="width:337px; height:179px; margin-left: 12px; margin-top: 12px; background-size: cover; padding:10px; background-color: #008080;">
+                <ul class="tree-view"  id="apperancepreview" style="width:337px; height:179px; margin-left: 12px; margin-top: 12px; background-size: cover; padding:10px;">
                                                   
                     <div class="win98post" style="height: 137px; width:300px;">
                         <div class="win98titlebarbutton" style="position:absolute; margin-left: 283px; margin-top:1px; cursor: pointer;" title="close"><div class="close"></div></div>
@@ -901,10 +879,10 @@
                             <div class="drop-down-text" onclick="windows98()"           id="windows98scheme"                                 >Windows 98           </div>
                             <div class="drop-down-text" onclick="evangelionmode()"      id="evangelionscheme"    style="padding:bottom:2px;" >Evangelion           </div>
                             <div class="drop-down-text" onclick="darkmode()"            id="darkmodescheme"      style="padding:bottom:2px;" >Dark mode            </div>
-                            <div class="drop-down-text" onclick="contrastmodescheme1()" id="contrastmodescheme1" style="padding:bottom:2px;" >High Contrast Mode 1 </div> </div></ul>
-                        
+                            <div class="drop-down-text" onclick="contrastmodescheme1()" id="contrastmodescheme1" style="padding:bottom:2px;" >High Contrast Mode 1 </div>
+                            <div class="drop-down-text" onclick="contrastmodescheme2()" id="contrastmodescheme2" style="padding:bottom:2px;" >High Contrast Mode 2 </div> </div></ul>
                     <script>
-                        let schemedrop = false;
+                        var schemedrop = false;
                         function schemedropdown(){
                                    if (schemedrop == false) { document.getElementById("scheme").style.marginLeft = "    -2px"; schemedrop = true;
                             } else if (schemedrop == true){   document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }}
@@ -914,10 +892,21 @@
                         function evangelionmode(){      document.getElementById("currentscheme").textContent="Evangelion";           cpick18();          wallpaperoption4();}
                         function darkmode(){            document.getElementById("currentscheme").textContent="Darkmode 98";          cpick19();          wallpaperoption2();}
                         function contrastmodescheme1(){ document.getElementById("currentscheme").textContent="High Contrast Mode 1"; highcontrast1();    wallpaperoptionnone();}
+                        function contrastmodescheme2(){ document.getElementById("currentscheme").textContent="High Contrast Mode 2"; highcontrast2();    wallpaperoptionnone();}
+                        
+                        function highcontrast1() {  currentcolour = "#00ffff"; fontcolour = "#000"; backcolourpreview(); ctoggle = true; 
+                                                    cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; 
+                                                    document.getElementById("iconpreview").style.backgroundColor = "#000";  ap.style.backgroundColor = "#000";}
+                        function highcontrast2() {  currentcolour = "#00ff00"; fontcolour = "#000"; backcolourpreview(); ctoggle = true;
+                                                    cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; 
+                                                    document.getElementById("iconpreview").style.backgroundColor = "#000";  ap.style.backgroundColor = "#000";}
+                        
                     </script>
                         
-                    <button disabled style="position: absolute; margin-left:199px; margin-top:-1px;">Save As...</button>
                     <button disabled style="position: absolute; margin-left:282px; margin-top:-1px;">Delete</button>
+                    
+                    <div class="win98buttoninactive" style="position: absolute; margin-left:199px; margin-top:-1px;">
+                            <div class="disabledfont" style="margin-top: 3px; margin-left:12px;"> Default Icon </div></div>
                     <br><br>
                     
                     <div class="container" style="margin-top:5px;">
@@ -956,7 +945,7 @@
                             <div class="smallarrowdown" style="position:absolute; margin-left: 31px; margin-top:7px"></div>
                             <div class="container" style="width:20px; height:11px; margin-top: 2px; margin-left: 3px; border:1px solid #000000; background-color: #008080;" id="currentpickedc"></div>
                             
-                            <div class="win98post" style="position:absolute; z-index:10000; width:74px; height:122px; padding:5px; margin-top:4px; margin-left:-20000px;" onmouseleave="colourpickerexit()" id="coloursampler">
+                            <div class="win98post" style="position:absolute; z-index:10000; width:74px; height:96px; padding:5px; margin-top:4px; margin-left:-20000px;" onmouseleave="colourpickerexit()" id="coloursampler">
                                 <div class="win98buttonpressed" style="position: absolute; width:38px; height:17px; margin-left:-5px; margin-top:-26px; padding: 2px;" onclick="colourpicker()"> 
                                     <div class="verticalsplitter" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
                                     <div class="smallarrowdown" style="position:absolute; margin-left: 31px; margin-top:7px"></div>
@@ -972,73 +961,65 @@
                                 <div class="menuapplicationsplit" style="width:100%; margin-bottom:3px;"> </div>
                                 <div class="colourselect" style="background-color: #a03762" onclick="cpick17()"></div> <div class="colourselect" style="background-color: #001224" onclick="cpick18()"></div> 
                                 <div class="colourselect" style="background-color: #590f1e" onclick="cpick19()"></div> <div class="colourselect" style="background-color: #6d7f36" onclick="cpick20()"></div> <br>
-                                <div class="menuapplicationsplit" style="width:100%; margin-bottom:3px;"> </div>
-                                <div class="colourselect" style="background-color: #00ffff" onclick="cpick21()"></div> <div class="colourselect" style="background-color: #00ff00" onclick="cpick22()"></div> 
                         </div></div> 
                         
                         <script>
                             var colourpicked = false; currentcolour = "#008080"; fontcolour = "#ffffff";
                             var cpo = document.getElementById("currentpickedo"); cpc = document.getElementById("currentpickedc"); ap = document.getElementById("apperancepreview");
-                            
-                            var desktop1 = document.getElementById("desktopi1"); desktop2 = document.getElementById("desktopi2"); desktop3 = document.getElementById("desktopi3"); 
+                                desktop1 = document.getElementById("desktopi1"); desktop2 = document.getElementById("desktopi2"); desktop3 = document.getElementById("desktopi3"); 
                                 desktop4 = document.getElementById("desktopi4"); desktop5 = document.getElementById("desktopi5"); desktop6 = document.getElementById("desktopi6"); 
                                 desktop8 = document.getElementById("desktopi8"); desktop9 = document.getElementById("desktopi9"); 
-
+                            
+                            function colourpickerupdate(){ cpc.style.backgroundColor = currentcolour; cpo.style.backgroundColor = currentcolour; }
                             function colourpicker(){
                                        if (colourpicked == false){ document.getElementById("coloursampler").style.marginLeft = "    -2px"; colourpicked =  true;
                                 } else if (colourpicked == true ){ document.getElementById("coloursampler").style.marginLeft = "-20000px"; colourpicked = false; }}
                             function colourpickerexit() { document.getElementById("coloursampler").style.marginLeft = "-20000px"; colourpicked = false; }
 
-                            function backcolourset(){
-                                document.body.style.backgroundColor = currentcolour; cpc.style.backgroundColor = currentcolour; cpo.style.backgroundColor = currentcolour; 
-                                document.getElementById("iconpreview").style.backgroundColor = currentcolour;  ap.style.backgroundColor = currentcolour;
+                            function backcolourset(){ //changes desktop icon span colour + backround colour.
+                                document.body.style.backgroundColor = currentcolour;
                                 desktop1.style.backgroundColor = currentcolour; desktop2.style.backgroundColor = currentcolour; desktop3.style.backgroundColor = currentcolour;
                                 desktop4.style.backgroundColor = currentcolour; desktop5.style.backgroundColor = currentcolour; desktop6.style.backgroundColor = currentcolour;
                                 desktop8.style.backgroundColor = currentcolour;
-                                document.getElementById("iconpre1").style.backgroundColor = currentcolour; document.getElementById("iconpre2").style.backgroundColor = currentcolour; 
-                                document.getElementById("iconpre3").style.backgroundColor = currentcolour; document.getElementById("iconpre4").style.backgroundColor = currentcolour; 
-                                document.getElementById("iconpre6").style.backgroundColor = currentcolour;} 
-                                
-                            function fontcolourset(){
+                                if(ctoggle == true){ 
+                                    document.body.style.backgroundColor = "#000"; document.getElementById("iconpreview").style.backgroundColor = "#000";
+                                    cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; ap.style.backgroundColor = "#000";}} 
+                            function fontcolourset(){ // changes desktop icon text color;
                                 desktop1.style.color = fontcolour; desktop2.style.color = fontcolour; desktop3.style.color = fontcolour;
                                 desktop4.style.color = fontcolour; desktop5.style.color = fontcolour; desktop6.style.color = fontcolour;
-                                desktop8.style.color = fontcolour; 
+                                desktop8.style.color = fontcolour;}
+                                
+                            function backcolourpreview(){ // changes preview desktop icons background colour + background colours in appearance tab.
+                                document.getElementById("iconpre1").style.backgroundColor = currentcolour; document.getElementById("iconpre2").style.backgroundColor = currentcolour; 
+                                document.getElementById("iconpre3").style.backgroundColor = currentcolour; document.getElementById("iconpre4").style.backgroundColor = currentcolour; 
+                                document.getElementById("iconpre6").style.backgroundColor = currentcolour; document.getElementById("iconpreview").style.backgroundColor = currentcolour;  
+                                ap.style.backgroundColor = currentcolour; fontcolorsetpreview();}
+                            function fontcolorsetpreview(){ // changes preview desktop icons span colour
                                 document.getElementById("iconpre1").style.color = fontcolour; document.getElementById("iconpre2").style.color = fontcolour; 
                                 document.getElementById("iconpre3").style.color = fontcolour; document.getElementById("iconpre4").style.color = fontcolour; 
                                 document.getElementById("iconpre6").style.color = fontcolour;}
 
-                            function cpick1() {   currentcolour = "#ffffff"; backcolourset(); fontcolour = "#000"; fontcolourset();}
-                            function cpick2() {   currentcolour = "#000000"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
-                            function cpick3() {   currentcolour = "#c2c6ca"; backcolourset(); fontcolour = "#000"; fontcolourset();}
-                            function cpick4() {   currentcolour = "#85898d"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
-                            function cpick5() {   currentcolour = "#ff0000"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
-                            function cpick6() {   currentcolour = "#aa0055"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
-                            function cpick7() {   currentcolour = "#ffff00"; backcolourset(); fontcolour = "#000"; fontcolourset();}
-                            function cpick8() {   currentcolour = "#aaaa55"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
-                            function cpick9() {   currentcolour = "#00ff00"; backcolourset(); fontcolour = "#000"; fontcolourset();}
-                            function cpick10() {  currentcolour = "#00aa55"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
-                            function cpick11() {  currentcolour = "#00ffff"; backcolourset(); fontcolour = "#000"; fontcolourset();}
-                            function cpick12() {  currentcolour = "#008080"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
-                            function cpick13() {  currentcolour = "#0000ff"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
-                            function cpick14() {  currentcolour = "#0000aa"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
-                            function cpick15() {  currentcolour = "#ff00ff"; backcolourset(); fontcolour = "#000"; fontcolourset();}
-                            function cpick16() {  currentcolour = "#aa55aa"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
+                            function cpick1() {   currentcolour = "#ffffff"; fontcolour = "#000"; colourpickerupdate(); document.getElementById("iconpre2").style.backgroundColor = currentcolour;}
+                            function cpick2() {   currentcolour = "#000000"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
+                            function cpick3() {   currentcolour = "#c2c6ca"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
+                            function cpick4() {   currentcolour = "#85898d"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
+                            function cpick5() {   currentcolour = "#ff0000"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
+                            function cpick6() {   currentcolour = "#aa0055"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
+                            function cpick7() {   currentcolour = "#ffff00"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
+                            function cpick8() {   currentcolour = "#aaaa55"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
+                            function cpick9() {   currentcolour = "#00ff00"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
+                            function cpick10() {  currentcolour = "#00aa55"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
+                            function cpick11() {  currentcolour = "#00ffff"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
+                            function cpick12() {  currentcolour = "#008080"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
+                            function cpick13() {  currentcolour = "#0000ff"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
+                            function cpick14() {  currentcolour = "#0000aa"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
+                            function cpick15() {  currentcolour = "#ff00ff"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
+                            function cpick16() {  currentcolour = "#aa55aa"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
                             
-                            function cpick17() {  currentcolour = "#a03762"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
-                            function cpick18() {  currentcolour = "#001224"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
-                            function cpick19() {  currentcolour = "#590f1e"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
-                            function cpick20() {  currentcolour = "#6d7f36"; backcolourset(); fontcolour = "#fff"; fontcolourset();}
-                            
-                            function cpick21() {  currentcolour = "#00ffff"; backcolourset(); fontcolour = "#000"; fontcolourset();
-                                                  document.body.style.backgroundColor = "#000"; cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; 
-                                                  document.getElementById("iconpreview").style.backgroundColor = "#000";  ap.style.backgroundColor = "#000";}
-                            function cpick22() {  currentcolour = "#00ff00"; backcolourset(); fontcolour = "#000"; fontcolourset();
-                                                  document.body.style.backgroundColor = "#000"; cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; 
-                                                  document.getElementById("iconpreview").style.backgroundColor = "#000";  ap.style.backgroundColor = "#000";}
-                            
-                            function highcontrast1() { currentcolour = "#00ffff"; backcolourset(); fontcolour = "#000"; fontcolourset(); 
-                                                       document.body.style.backgroundColor = "#000"; cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; 
-                                                       document.getElementById("iconpreview").style.backgroundColor = "#000";  ap.style.backgroundColor = "#000";}
+                            function cpick17() {  currentcolour = "#a03762"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
+                            function cpick18() {  currentcolour = "#001224"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
+                            function cpick19() {  currentcolour = "#590f1e"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
+                            function cpick20() {  currentcolour = "#6d7f36"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
                         </script>
                         
                         <div class="win98buttontitlebarinactive" style="position: absolute; margin-left:312px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
@@ -1206,8 +1187,8 @@
             
             <!-- --------------------------------------- footer --------------------------------------- -->
             <!-- display settings buttons -->
-            <div class="win98buttoninactive" style="position:absolute; width:70px; height:18px; margin-top: 395px; margin-left:316px;"> 
-                        <div class="disabledfont" style="margin-top: 3px; margin-left:22px; cursor:pointer"> Apply </div></div>
+            <div class="win98button" style="position:absolute; width:70px; height:18px; margin-top: 395px; margin-left:316px;" onclick=" wallpaperupdate(); backcolourset(); fontcolourset();"> 
+                        <div class="buttontext" style="margin-top: 3px; margin-left:22px; cursor:pointer"> Apply </div></div>
             <div class="win98button" style="position:absolute; width:70px; height:18px; margin-top: 395px; margin-left:234px;">
                     <div class="buttontext" style="margin-top: 3px; margin-left:18px; cursor:pointer" onclick="diskclose()">Cancel</div></div>
             <div class="win98button" style="position:absolute; width:70px; height:18px; margin-top: 395px; margin-left:152px;">
@@ -1219,13 +1200,13 @@
         <script> 
             function diskactive() { 
                 idleactive(); inactiveall(); diskButtonOpen = false;
-                document.getElementById("disk").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; 
+                document.getElementById("disk").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1; 
                 document.getElementById("diskwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";
                 document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application.png')";} 
             
             function diskopen() { 
                 idleactive(); inactiveall(); tabreset(); diskButtonOpen = false;
-                document.getElementById("disk").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1; 
+                document.getElementById("disk").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1; 
                 document.getElementById("disk").style.marginLeft = "0px";
                 document.getElementById("disk").style.top = "13%";
                 document.getElementById("disk").style.left = "76%";
@@ -1264,7 +1245,7 @@
         <script>
             function logonactive(){
                 idleactive(); inactiveall();
-                document.getElementById("logoff").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
+                document.getElementById("logoff").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
                 document.getElementById("logoffwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')"; }
             function logoff() {     document.getElementById("logoff").style.marginLeft = "0px"; document.getElementById("logoff").style.zIndex = "100"; }
             function logoffno() {   document.getElementById("logoff").style.marginLeft = "200000px"; document.getElementById("logoff").style.zIndex = "1"; }
@@ -1300,7 +1281,7 @@
         <script>
             function shutdownactive(){
                 idleactive(); inactiveall();
-                document.getElementById("shutdown").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
+                document.getElementById("shutdown").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
                 document.getElementById("shutdownwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')"; }
             function shutdown() {   document.getElementById("shutdown").style.marginLeft = "0px"; document.getElementById("shutdown").style.zIndex = "100"; }
             function shutdownno() { document.getElementById("shutdown").style.marginLeft = "200000px"; document.getElementById("shutdown").style.zIndex = "1"; }
@@ -1348,7 +1329,7 @@
         <script>
             function tumblractive() { 
                 tumblrButtonOpen = false; idleactive(); inactiveall(); 
-                document.getElementById("post").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
+                document.getElementById("post").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
                 postwindow.style.backgroundImage = github + "img/title-bar%20postheader.png')"; 
                 document.getElementById("taskapp1").style.backgroundImage = github + "img/Taskbar%20application.png')";}
                 
@@ -1536,7 +1517,7 @@
                                         </div>
                                     {/block:Answer}
                                     
-                                    <div class="win98buttonscrollinactive" style="margin-top:-16px; margin-left:452px;{block:PermalinkPage}margin-left:451px;{/block:PermalinkPage}">
+                                    <div class="win98buttonscrollinactive" style="margin-top:-16px; margin-left:451px;">
                                         <div class="arrowdisableddown" style="margin-top:-3px; margin-left:-3px"></div>
                                 </div></div>
         
@@ -2264,7 +2245,7 @@
                             document.getElementById("desktop").style.left = "-20000px"; document.body.style.overflowY = "hidden";
                         } else if (tumblrButtonOpen == true){ 
                             inactiveall(); tumblrButtonOpen = false;
-                            document.getElementById("post").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
+                            document.getElementById("post").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
                             document.getElementById("postwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";
                             document.getElementById("taskapp1").style.backgroundImage = github + "img/Taskbar%20application.png')";
                             document.getElementById("desktop").style.left = "-25px"; document.body.style.overflowY = "scroll";}}
@@ -2280,11 +2261,11 @@
                         } else if (pyroButtonOpen == true){
                             inactiveall(); pyroButtonOpen = false;
                             if (window1 == true){ 
-                                document.getElementById("pyro").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
+                                document.getElementById("pyro").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
                                 document.getElementById("pyrowindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";  
                                 document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application.png')"; 
                             } else if (window2 == true){ 
-                                document.getElementById("cat").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
+                                document.getElementById("cat").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
                                 document.getElementById("catwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";  
                                 document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application.png')";}}}
                     
@@ -2299,7 +2280,7 @@
                             
                         } else if (diskButtonOpen == true){
                             inactiveall(); diskButtonOpen = false;
-                            document.getElementById("disk").style.zIndex = (currentno = currentno + 1); currentno = currentno + 1;
+                            document.getElementById("disk").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
                             document.getElementById("disk").style.marginTop = "0px";
                             document.getElementById("diskwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";  
                             document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application.png')";}} 
@@ -2309,8 +2290,9 @@
                                               diskButtonOpen = true; }
                 </script>
                  
-                <div class="tray">
+                <div class="clock">
                     <taskbar class="calendar"> </taskbar>
+                    <div class="menuentertainment3" style="margin-top:-1px; margin-left:1px;"></div>
                     <label class="time" style="font-size:11px" id="showClock"> 00:00 am </label>
                 </div>
 
