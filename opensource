@@ -125,7 +125,7 @@
             .window-body{           margin: 8px;}
 
             /* window  post handling */
-            .window {               box-shadow: inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; font-size: 11px; position: absolute;}
+            .window {               box-shadow: inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; font-size: 11px; position: absolute; z-index:4}
             .title-bar-text {       font-weight: 700; color: var(--white); letter-spacing:0; margin-right:24px; padding:1px 4px 2px 4px; cursor: context-menu;}
             .win98innerbox {        box-shadow: inset -1px -1px var(--black), inset 1px 1px #fff, inset -2px -2px var(--gray), inset 2px 2px var(--lightg); background:var(--silver); padding:3px; font-size:11px; position: absolute;}
             
@@ -329,9 +329,10 @@
             .pageimage3 { height: 190px; width: 190px; background-position: 0px   0px; background-image: var(--defaultcat);}
             .pageimage4 { height: 190px; width: 190px; background-position: 0px   0px; background-image: var(--defaultpyro);}
             .displayboxdisplay {    width:184px; height:169px; background-image: var(--displaydisplay);}
-            .displaycolour {        width:153px; height: 13px; background-image: var(--displaycolour); background-repeat: repeat-y;}
+            .displaycolour {        width:153px; height: 13px; background-image: var(--displaycolour); z-index:20; background-repeat: repeat-y;}
+            .displaycolourback {    width:152px; height:132px; margin-top:37px; z-index:1; background-size: auto; background-size: 152px 132px;}
             .energysaving {         width: 71px; height: 42px; background-image: var(--displayenergy);}
-
+            
             .reflinkblack { color: var(--black); } .reflinkblack:hover { color: var(--white); text-decoration-line: underline; }
             
             ul.tree-view {          font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: 4px; display: block; background: var(--white); 
@@ -424,7 +425,7 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
 
         <!-- Sidebar icons coloumn 1 -->
-        <div class="icons" style="max-height:100%; max-width:100%; margin-left:-10px;">
+        <div class="icons" style="max-height:100%; max-width:100%; margin-left:-10px; z-index:1">
             <!-- Button one -->
             <a href="https://thealonic.tumblr.com/">
                 <div class="thealonic"></div>
@@ -596,7 +597,7 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
 
         <!-- message box rendering -->
-        <div class="win98post" style="height: 50px; width:306px; left: 76%; top: 63%; z-index:5;" onmousedown="messageactive();" id="message">
+        <div class="win98post" style="height: 50px; width:306px; left: 77%; top: 62%; z-index:5;" onmousedown="messageactive();" id="message">
              <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:2px; margin-top:2px;" onclick="messageclose()"><div class="close"></div></div>
              <div class="win98titlebarbutton" style="margin-top:2px;" onclick="messagemaximize()"><div class="maximize"></div></div>
              <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU"><div class="win98titlebarbutton" style="margin-top:2px; cursor: default;"> <div class="help"></div> </div> </a> 
@@ -620,8 +621,8 @@
                 idleactive(); inactiveall();}
             function messageopen() {
                 idleactive(); inactiveall();
-                document.getElementById("message").style.left = "76%";
-                document.getElementById("message").style.top = "63%";
+                document.getElementById("message").style.left = "77%";
+                document.getElementById("message").style.top = "62%";
                 document.getElementById("message").style.marginLeft = "0px"
                 document.getElementById("message").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
                 document.getElementById("messagewindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";}
@@ -632,7 +633,7 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
             
         <!-- display settings container -->
-        <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; left: 76%; z-index:5;" onmousedown="diskactive()" id="disk">
+        <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; left: 77%; z-index:5;" onmousedown="diskactive()" id="disk">
             <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:2px; margin-top:2px; cursor: pointer;" title="close" onclick="diskclose()"><div class="close"></div></div>
             <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="margin-top:2px" title="help"> <div class="help"></div></div></a> 
             <div class="title-bar-98" id="diskwindow"> <div class="title-bar-text">📺 Display Properties</div></div>
@@ -672,10 +673,10 @@
             <!-- --------------------------------------- background tab --------------------------------------- -->
             <!-- background inner container -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:9" id="background">
-                <center style="margin-top:12px"><div class="displayboxdisplay"></div></center>
+                <center style="margin-top:12px"><div class="displaycolourback" id="dcb1"><div class="displayboxdisplay" style="margin-left:-16px; margin-top:-20px;"></div></div></center>
                     
                     <!-- display container settings -->
-                <fieldset style="width:336px; height:125px; margin-left: 12px; margin-top: 18px;">
+                <fieldset style="width:336px; height:125px; margin-left: 12px; margin-top: 49px;">
                     <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: silver; width:52px; padding: 0px 0px 3px 3px; margin-left:-3px"> Wallpaper </label>
                     <label style="margin-top:8px; color: black">Select a HTML document or picture:</label>
                     
@@ -717,31 +718,31 @@
                                     <div class="none" style="margin-top:-1px;"></div>
                                         <div class="container" style="width:100%; height:100%;" id="wallpaperoverlay1">
                                     <label style="margin-left: 4px; margin-top: 2px; cursor:pointer;"> None </label></div></div>
-                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:18px; cursor:pointer" onclick="wallpaperoption1()">
+                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:18px; cursor:pointer" onclick="wallpaperoption1(); wallpapercust();">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
                                         <div class="container" style="width:100%; height:100%;" id="wallpaperoverlay2">
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Default </label></div></div>
-                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:36px; cursor:pointer" onclick="wallpaperoption2()">
+                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:36px; cursor:pointer" onclick="wallpaperoption2(); wallpapercust();">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
                                         <div class="container" style="width:100%; height:100%;" id="wallpaperoverlay3" style="color:white;">
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Study </label></div></div>
-                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:72px; cursor:pointer" onclick="wallpaperoption3()"> 
+                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:72px; cursor:pointer" onclick="wallpaperoption3(); wallpapercust();"> 
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
                                         <div class="container" style="width:100%; height:100%;" id="wallpaperoverlay4">
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer" title="submitted by Matt in the discord server"> Star Trek (Submitted by Matt)</label></div></div>
-                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:54px; cursor:pointer" onclick="wallpaperoption4()">
+                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:54px; cursor:pointer" onclick="wallpaperoption4(); wallpapercust();">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
                                         <div class="container" style="width:100%; height:100%;" id="wallpaperoverlay5" style="color:">
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Neon Genesis Evangelion </label></div></div>
-                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:90px; cursor:pointer" onclick="wallpaperoption5()">
+                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:90px; cursor:pointer" onclick="wallpaperoption5(); wallpapercust();">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
                                         <div class="container" style="width:100%; height:100%;" id="wallpaperoverlay6">
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer" title="submitted by Xal in the discord server"> Battlefield Girls (Submitted by Xal)</label></div></div>
-                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:108px; cursor:pointer" onclick="wallpaperoption6()">
+                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:108px; cursor:pointer" onclick="wallpaperoption6(); wallpapercust();">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
                                         <div class="container" style="width:100%; height:100%;" id="wallpaperoverlay7">
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer" title="submitted by Sammy in the discord server"> Vapourwave Sunset (Submitted by Sammy)</label></div></div>
-                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:126px; cursor:pointer" onclick="wallpaperoption7()">
+                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:126px; cursor:pointer" onclick="wallpaperoption7(); wallpapercust();">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
                                         <div class="container" style="width:100%; height:100%;" id="wallpaperoverlay8">
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Vinyl </label></div></div>
@@ -751,7 +752,8 @@
                             var colorwallpaperpicked = "#c0c0c0"; currentwallpaper = "";
                             function wallpaperupdate(){ document.getElementById("body").style.backgroundImage = currentwallpaper;}
                             function wallpaperpreview(){ document.getElementById("apperancepreview").style.backgroundImage = currentwallpaper;
-                                                         document.getElementById("iconpreview").style.backgroundImage = currentwallpaper;}
+                                                         document.getElementById("iconpreview").style.backgroundImage = currentwallpaper;
+                                                        dcb1.style.backgroundImage = currentwallpaper; dcb2.style.backgroundImage = currentwallpaper;}
                             function wallpapercurrentreset() { 
                             document.getElementById("wallpaperoverlay1").style.backgroundColor = ""; document.getElementById("wallpaperoverlay2").style.backgroundColor = "";
                             document.getElementById("wallpaperoverlay3").style.backgroundColor = ""; document.getElementById("wallpaperoverlay4").style.backgroundColor = "";
@@ -775,9 +777,9 @@
             <!-- --------------------------------------- screensaver tab --------------------------------------- -->
             <!-- background inner container -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="screensaver">
-                <center style="margin-top:12px"><div class="displayboxdisplay"></div></center>
+                <center style="margin-top:12px"><div class="displaycolourback" id="dcb2"><div class="displayboxdisplay" style="margin-left:-16px; margin-top:-20px;"></div></div></center>
                     
-                    <fieldset style="width:336px; height:50px; margin-left: 12px; margin-top: 18px;">
+                    <fieldset style="width:336px; height:50px; margin-left: 12px; margin-top: 49px;">
                         <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: silver; width:64px; padding: 0px 0px 3px 3px; margin-left:-3px"> Screen Saver </label>
                         
                         <ul class="tree-view"  style="position: absolute; width:168px; height: 17px; padding:2px; margin-top:3px;" onclick="screensaverdropdown()" onmouseleave="screensaverdropdownclose()">
@@ -799,14 +801,14 @@
                         </script>
                         
                         <div class="win98buttoninactive" style="position: absolute; margin-left:182px; margin-top: 1px; width:66px; height:18px;"> 
-                        <div class="disabledfont" style="margin-top: 3px; margin-left:12px; cursor:pointer"> Save As... </div></div>
+                        <div class="disabledfont" style="margin-top: 3px; margin-left:12px;"> Save As... </div></div>
                         <div class="win98buttoninactive" style="position: absolute; margin-left:262px; margin-top: 1px; width:66px; height:18px;"> 
-                        <div class="disabledfont" style="margin-top: 3px; margin-left:14px; cursor:pointer"> Preview </div></div>
+                        <div class="disabledfont" style="margin-top: 3px; margin-left:14px;"> Preview </div></div>
                         
                         <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 34px; background-color: silver;"></ul>
                             <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 34px; display: inline-block;">Password Protected</div>
                         <div class="win98buttontitlebarinactive" style="position: absolute; margin-top: 30px; width:63px; height:18px; margin-left:130px;"> 
-                            <div class="disabledfont" style="margin-top: 3px; margin-left:11px; cursor:pointer"> Change... </div>
+                            <div class="disabledfont" style="margin-top: 3px; margin-left:11px;"> Change... </div>
                         
                         <div class="disabledfont" style="position:absolute; margin-left:72px; margin-top:-12px">Wait:</div>
                         <ul class="tree-view" style="position:absolute; width:41px; height:9px; margin-top: -16px; margin-left:101px; background-color:silver">
@@ -822,7 +824,8 @@
                         <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: silver; width:154px; padding: 0px 0px 3px 3px; margin-left:-3px"> Energy saving features of monitor </label>
                         <div class="energysaving" style="position: absolute; margin-left:24px; margin-top:5px"></div>
                         <label style="width:210px; position: absolute; margin-left: 122px; margin-top: 5px"> To adjust the power settings of your monitor, click settings.</label>
-                        <button disabled style="margin-left:255px; margin-top: 24px; cursor: pointer;">Settings</button>
+                        <div class="win98buttoninactive" style="margin-left:266px; margin-top: 24px; width:63px; height:18px;"> 
+                            <div class="disabledfont" style="margin-top: 3px; margin-left:13px;"> Settings </div>
                     </fieldset>
             </div>
             
@@ -900,13 +903,11 @@
                         function highcontrast2() {  currentcolour = "#00ff00"; fontcolour = "#000"; backcolourpreview(); ctoggle = true;
                                                     cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; 
                                                     document.getElementById("iconpreview").style.backgroundColor = "#000";  ap.style.backgroundColor = "#000";}
-                        
+                        function wallpapercust() { document.getElementById("currentscheme").textContent="(Custom)"; }
                     </script>
                         
+                    <button disabled style="position: absolute; margin-left:199px; margin-top:-1px;">Save As...</button>
                     <button disabled style="position: absolute; margin-left:282px; margin-top:-1px;">Delete</button>
-                    
-                    <div class="win98buttoninactive" style="position: absolute; margin-left:199px; margin-top:-1px;">
-                            <div class="disabledfont" style="margin-top: 3px; margin-left:12px;"> Default Icon </div></div>
                     <br><br>
                     
                     <div class="container" style="margin-top:5px;">
@@ -950,21 +951,21 @@
                                     <div class="verticalsplitter" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
                                     <div class="smallarrowdown" style="position:absolute; margin-left: 31px; margin-top:7px"></div>
                                     <div class="container" style="width:20px; height:11px; margin-top: 2px; margin-left: 3px; border:1px solid #000000; background-color: #008080;" id="currentpickedo"></div></div>
-                                <div class="colourselect" style="background-color: #ffffff" onclick=" cpick1()"></div> <div class="colourselect" style="background-color: #000000" onclick=" cpick2()"></div> 
-                                <div class="colourselect" style="background-color: #c2c6ca" onclick=" cpick3()"></div> <div class="colourselect" style="background-color: #85898d" onclick=" cpick4()"></div> <br>
-                                <div class="colourselect" style="background-color: #ff0000" onclick=" cpick5()"></div> <div class="colourselect" style="background-color: #aa0055" onclick=" cpick6()"></div> 
-                                <div class="colourselect" style="background-color: #ffff00" onclick=" cpick7()"></div> <div class="colourselect" style="background-color: #aaaa55" onclick=" cpick8()"></div> <br>
-                                <div class="colourselect" style="background-color: #00ff00" onclick=" cpick9()"></div> <div class="colourselect" style="background-color: #00aa55" onclick="cpick10()"></div> 
-                                <div class="colourselect" style="background-color: #00ffff" onclick="cpick11()"></div> <div class="colourselect" style="background-color: #008080" onclick="cpick12()"></div> <br>
-                                <div class="colourselect" style="background-color: #0000ff" onclick="cpick13()"></div> <div class="colourselect" style="background-color: #0000aa" onclick="cpick14()"></div> 
-                                <div class="colourselect" style="background-color: #ff00ff" onclick="cpick15()"></div> <div class="colourselect" style="background-color: #aa55aa" onclick="cpick16()"></div> <br>
+                                <div class="colourselect" style="background-color: #ffffff" onclick=" cpick1()"></div> <div class="colourselect" style="background-color: #000000" onclick=" cpick2(); wallpapercust();"></div> 
+                                <div class="colourselect" style="background-color: #c2c6ca" onclick=" cpick3()"></div> <div class="colourselect" style="background-color: #85898d" onclick=" cpick4(); wallpapercust();"></div> <br>
+                                <div class="colourselect" style="background-color: #ff0000" onclick=" cpick5()"></div> <div class="colourselect" style="background-color: #aa0055" onclick=" cpick6(); wallpapercust();"></div> 
+                                <div class="colourselect" style="background-color: #ffff00" onclick=" cpick7()"></div> <div class="colourselect" style="background-color: #aaaa55" onclick=" cpick8(); wallpapercust();"></div> <br>
+                                <div class="colourselect" style="background-color: #00ff00" onclick=" cpick9()"></div> <div class="colourselect" style="background-color: #00aa55" onclick="cpick10(); wallpapercust();"></div> 
+                                <div class="colourselect" style="background-color: #00ffff" onclick="cpick11()"></div> <div class="colourselect" style="background-color: #008080" onclick="cpick12(); wallpapercust();"></div> <br>
+                                <div class="colourselect" style="background-color: #0000ff" onclick="cpick13()"></div> <div class="colourselect" style="background-color: #0000aa" onclick="cpick14(); wallpapercust();"></div> 
+                                <div class="colourselect" style="background-color: #ff00ff" onclick="cpick15()"></div> <div class="colourselect" style="background-color: #aa55aa" onclick="cpick16(); wallpapercust();"></div> <br>
                                 <div class="menuapplicationsplit" style="width:100%; margin-bottom:3px;"> </div>
-                                <div class="colourselect" style="background-color: #a03762" onclick="cpick17()"></div> <div class="colourselect" style="background-color: #001224" onclick="cpick18()"></div> 
-                                <div class="colourselect" style="background-color: #590f1e" onclick="cpick19()"></div> <div class="colourselect" style="background-color: #6d7f36" onclick="cpick20()"></div> <br>
+                                <div class="colourselect" style="background-color: #a03762" onclick="cpick17()"></div> <div class="colourselect" style="background-color: #001224" onclick="cpick18(); wallpapercust();"></div> 
+                                <div class="colourselect" style="background-color: #590f1e" onclick="cpick19()"></div> <div class="colourselect" style="background-color: #6d7f36" onclick="cpick20(); wallpapercust();"></div> <br>
                         </div></div> 
                         
                         <script>
-                            var colourpicked = false; currentcolour = "#008080"; fontcolour = "#ffffff";
+                            var colourpicked = false; currentcolour = "#008080"; fontcolour = "#ffffff"; dcb1 = document.getElementById("dcb1"); dcb2 = document.getElementById("dcb2");
                             var cpo = document.getElementById("currentpickedo"); cpc = document.getElementById("currentpickedc"); ap = document.getElementById("apperancepreview");
                                 desktop1 = document.getElementById("desktopi1"); desktop2 = document.getElementById("desktopi2"); desktop3 = document.getElementById("desktopi3"); 
                                 desktop4 = document.getElementById("desktopi4"); desktop5 = document.getElementById("desktopi5"); desktop6 = document.getElementById("desktopi6"); 
@@ -993,12 +994,12 @@
                                 document.getElementById("iconpre1").style.backgroundColor = currentcolour; document.getElementById("iconpre2").style.backgroundColor = currentcolour; 
                                 document.getElementById("iconpre3").style.backgroundColor = currentcolour; document.getElementById("iconpre4").style.backgroundColor = currentcolour; 
                                 document.getElementById("iconpre6").style.backgroundColor = currentcolour; document.getElementById("iconpreview").style.backgroundColor = currentcolour;  
-                                ap.style.backgroundColor = currentcolour; fontcolorsetpreview();}
+                                ap.style.backgroundColor = currentcolour; fontcolorsetpreview(); dcb1.style.backgroundColor = currentcolour;  dcb2.style.backgroundColor = currentcolour; }
                             function fontcolorsetpreview(){ // changes preview desktop icons span colour
                                 document.getElementById("iconpre1").style.color = fontcolour; document.getElementById("iconpre2").style.color = fontcolour; 
                                 document.getElementById("iconpre3").style.color = fontcolour; document.getElementById("iconpre4").style.color = fontcolour; 
                                 document.getElementById("iconpre6").style.color = fontcolour;}
-
+                            
                             function cpick1() {   currentcolour = "#ffffff"; fontcolour = "#000"; colourpickerupdate(); document.getElementById("iconpre2").style.backgroundColor = currentcolour;}
                             function cpick2() {   currentcolour = "#000000"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
                             function cpick3() {   currentcolour = "#c2c6ca"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
@@ -1136,8 +1137,8 @@
             <!-- --------------------------------------- settings tab --------------------------------------- -->
             <!-- inner container -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="settings">
-                <center style="margin-top:25px"><div class="displayboxdisplay"></div></center>
-                <p style="margin-left:14px" > Display: <br> Default Monitor on DisplayPort - Standard PCI Graphics Adapter (XGA) </p>
+                <center style="margin-top:12px"><div class="displaycolourback" style="background-color:#008080" id="dcb3"><div class="displayboxdisplay" style="margin-left:-16px; margin-top:-20px;"></div></div></center>
+                <p style="margin-left:14px; margin-top:58px;" > Display: <br> Default Monitor on DisplayPort - Standard PCI Graphics Adapter (XGA) </p>
                 
                 <!-- display container settings -->
                 <div class="container" style="float: left; margin-top: 12px">
@@ -1209,7 +1210,7 @@
                 document.getElementById("disk").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1; 
                 document.getElementById("disk").style.marginLeft = "0px";
                 document.getElementById("disk").style.top = "13%";
-                document.getElementById("disk").style.left = "76%";
+                document.getElementById("disk").style.left = "77%";
                 document.getElementById("diskwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";
                 document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application.png')";
                 document.getElementById("taskapp3").style.marginLeft = "4px";}
@@ -1339,7 +1340,7 @@
                 document.body.style.overflowY = "hidden";}
         </script>
         
-        <div id="desktop" class="container" id="desktop" style="width:1010px; left:-25px; margin-top:20px;">
+        <div id="desktop" class="container" id="desktop" style="width:1010px; margin-top:20px;">
             {block:Posts}
                 <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-left: 20px; position: absolute; cursor: default" onmousedown="tumblractive()" id="post">
                     <div class="win98titlebarbutton" style="margin-right:2px; margin-left:2px;" title="Close"><div class="close"></div></div>
@@ -1347,7 +1348,7 @@
                     <div class="win98titlebarbutton" title="Minimize" onclick="tumblrminimize();"> <div class="minimize"></div></div>
                     <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" title="Help"> <div class="help"></div></div></a> 
                     <div class="title-bar-98" id="postwindow" style="background-image:url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/img/title-bar%20postheader.png')" id="tumblrheader"> 
-                        <div class="title-bar-text">🍭 very.vunnies - Windows Explorer</div></div>
+                        <div class="title-bar-text">🍭 very.vunnies on Tumblr - Internet Explorer</div></div>
                     <div class="window-body"> 
                     
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -2174,7 +2175,7 @@
                                     <div class="submenu20" style="cursor: pointer;"> 
                                         <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="messageopen(); startpressdelay()"> 🧮 brain go brrrrr </label></div>
                                     <div class="submenu20" style="cursor: pointer;"> 
-                                        <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="vunnyopen(); startpressdelay()"> 👿 very.unvunny </label></div>
+                                        <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="vunnyopen(); startpressdelay()"> 👿 very.unvunny</label></div>
                                     <div class="submenu20" style="cursor: pointer;"> 
                                         <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="diskopen(); settingstab(); startpressdelay()"> 📺 Customise desktop... </label></div>
                                             
@@ -2212,7 +2213,7 @@
                 <taskbar class="big_seperator" style="margin-left:58px"> </taskbar>
                 <taskbar class="small_seperator" style="cursor:e-resize"> </taskbar>
                 <div class="taskbaricons">
-                    <div class="taskbaricon1"></div>
+                    <div class="taskbaricon1" style="cursor:pointer;" onclick="tumblrtoggle();"></div>
                     <div class="taskbaricon2"></div>
                     <div class="taskbaricon3" style="cursor:pointer;" onclick="messageopen();"></div> <!-- active desktop icon -->
                     <div class="taskbaricon4"></div></div>
