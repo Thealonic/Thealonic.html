@@ -329,8 +329,9 @@
             .pageimage3 { height: 190px; width: 190px; background-position: 0px   0px; background-image: var(--defaultcat);}
             .pageimage4 { height: 190px; width: 190px; background-position: 0px   0px; background-image: var(--defaultpyro);}
             .displayboxdisplay {    width:184px; height:169px; background-image: var(--displaydisplay);}
-            .displaycolour {        width:153px; height: 13px; background-image: var(--displaycolour); z-index:20; background-repeat: repeat-y;}
+            .displaycolour {        width:153px; height: 13px; background-image: var(--displaycolour); z-index:20;}
             .displaycolourback {    width:152px; height:132px; margin-top:37px; z-index:1; background-size: auto; background-size: 152px 132px;}
+            .displaycolourbackb {   width:152px; height:132px; margin-top:37px; z-index:1; background-size: auto; background-size: 152px 132px; background-color: #008080;}
             .energysaving {         width: 71px; height: 42px; background-image: var(--displayenergy);}
             
             .reflinkblack { color: var(--black); } .reflinkblack:hover { color: var(--white); text-decoration-line: underline; }
@@ -470,8 +471,7 @@
                 <div class="rct2"></div>
                 <div class="icon_label"><icon id="desktopi8">
                     <label>Roller Coaster</label> <label style="margin-left:0.5px;">Tycoon 2</label></icon></div> </a>
-        </div>
-    </head>
+    </div></head>
      
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <!-- Page rendering                                                                                                                -->
@@ -492,7 +492,7 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         
         <script>
-            var pyrotabs = 2; currentlayer = 5; window1 = true; window2 = true; 
+            var pyrotabs = 2; currentlayer = 5; window1 = true; window2 = true; randomNum = Math.floor(Math.random() * myPix.length); randomNum2 = 0; tick = 3;
             function pyrowindow(){ if(pyrotabs == 0){ document.getElementById("taskapp2").style.marginLeft = "-20000px";}}
         </script>
         
@@ -535,8 +535,6 @@
                 
             var r_text = new Array (); 
                 r_text[0] = "💯 Hi-dilly-ho, neighborinos!";       
-                
-            var randomNum = Math.floor(Math.random() * myPix.length); randomNum2 = 0; tick = 3;
             
             function pyroshuffle(){ 
                 if (tick !== 0){ randomNum2 = Math.floor(Math.random() * myPix.length);
@@ -546,44 +544,28 @@
                     } else { randomNum2 = Math.floor(Math.random() * myPix.length); randomNum = randomNum2;
                         document.getElementById("pyrotext").textContent= r_text[randomNum]; 
                         document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum]; randomNum = randomNum2;}
-                        
                     if(tick == 3){ document.getElementById("pyrobutton").textContent = "Probably!";}
                     if(tick == 2){ document.getElementById("pyrobutton").textContent = "Maybe?";}
                     if(tick == 1){ document.getElementById("pyrobutton").textContent = "No.";}
-                    
-                    if(randomNum == 30){ document.getElementById("pyrobutton").textContent="Nuzzles";}
                     tick = tick - 1;
-                } else { 
-                    document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; pyrowindow();
+                } else { document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; pyrowindow();
                     document.getElementById("pyrobutton").textContent = "Definately"; document.getElementById("pyrotext").textContent = '💯 Wubba lubba dub dub!';
                     document.getElementById("pyroimage").style.backgroundImage = "var(--defaultpyro)";}}
 
-            function pyroactive() { 
-                idleactive(); inactiveall();
-                pyroButtonOpen = false; currentlayer = currentlayer + 1; 
+            function pyroactive() { idleactive(); inactiveall(); pyroButtonOpen = false; currentlayer = currentlayer + 1; 
                 document.getElementById("pyro").style.zIndex = (currentlayer = currentlayer + 1);
                 document.getElementById("pyrowindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";
                 document.getElementById("pyrowindow").style.backgroundPosition = "-150px";
                 document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application.png')";} 
-            function pyroclose() { 
-                pyroButtonOpen = true; window1 = false;
+            function pyroclose() { pyroButtonOpen = true; window1 = false;
                 document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; pyrowindow();
                 document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application1.png')";
                 idleactive(); inactiveall();}
-        </script>                
 
-
-
-
-        <script> 
-            function vunnyopen(){
-                idleactive(); inactiveall();
+            function vunnyopen(){ idleactive(); inactiveall(); pyrotabs = 2; tick = 3; pyroButtonOpen = false;
                 document.getElementById("cat").style.left = "4%"; document.getElementById("cat").style.top = "68%";
                 document.getElementById("pyro").style.left = "12%"; document.getElementById("pyro").style.top = "58%";
-                pyrotabs = 2; tick = 3; pyroButtonOpen = false;
-                document.getElementById("cat").style.marginLeft = "0px";
-                document.getElementById("pyro").style.marginLeft = "0px"; 
-                //var placement = ((windowstotal x 160) + 4)
+                document.getElementById("cat").style.marginLeft = "0px"; document.getElementById("pyro").style.marginLeft = "0px"; 
                 document.getElementById("cat").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1; 
                 document.getElementById("pyro").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1; 
                 document.getElementById("pyrowindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";
@@ -603,27 +585,20 @@
              <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU"><div class="win98titlebarbutton" style="margin-top:2px; cursor: default;"> <div class="help"></div> </div> </a> 
             <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="title-bar-text">🧮 brain go brrrrr</div></div>
             <div class="window-body" style="margin-right: 4px; margin-top: 5px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
-                <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>06:38am on January 30th, 2021. [GMT]</label></p>
+                <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>09:04am on January 31st, 2021. [GMT]</label></p>
         </div></div>
         
         <!-- message box functions -->
         <script> 
-            function messageactive() {
-                idleactive(); inactiveall();
+            function messageactive() { idleactive(); inactiveall();
                 document.getElementById("message").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
                 document.getElementById("messagewindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";} 
-            function messageinactive() { 
-                inactiveall(); inactiveall();
+            function messageinactive() { inactiveall(); inactiveall();
                 document.getElementById("messagewindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";} 
-            function messageclose() { 
-                document.getElementById("message").style.right = "-100%";
-                document.getElementById("message").style.marginLeft = "-20000px"
-                idleactive(); inactiveall();}
-            function messageopen() {
-                idleactive(); inactiveall();
-                document.getElementById("message").style.left = "77%";
-                document.getElementById("message").style.top = "62%";
-                document.getElementById("message").style.marginLeft = "0px"
+            function messageclose() { idleactive(); inactiveall(); document.getElementById("message").style.right = "-100%";
+                document.getElementById("message").style.marginLeft = "-20000px"}
+            function messageopen() { idleactive(); inactiveall(); document.getElementById("message").style.marginLeft = "0px"
+                document.getElementById("message").style.left = "77%"; document.getElementById("message").style.top = "62%";
                 document.getElementById("message").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
                 document.getElementById("messagewindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";}
         </script>
@@ -649,9 +624,8 @@
             var a = document.getElementById("backgroundtab"); var b = document.getElementById("screenSavertab"); var c = document.getElementById("appearancetab"); 
             var d = document.getElementById("effectstab"); var e = document.getElementById("settingstab");
             
-                function tabreset(){
+                function tabreset(){ document.getElementById("effects").style.zIndex = 2; document.getElementById("settings").style.zIndex = 2;
                     document.getElementById("background").style.zIndex = 2; document.getElementById("screensaver").style.zIndex = 2; document.getElementById("appearance").style.zIndex = 2; 
-                    document.getElementById("effects").style.zIndex = 2; document.getElementById("settings").style.zIndex = 2;
                     a.style.width = "63px"; a.style.height = "16px"; a.style.marginTop = "6px"; a.style.marginLeft = " 11px"; a.style.zIndex = 1; // first tab // aa
                     b.style.width = "68px"; b.style.height = "16px"; b.style.marginTop = "6px"; b.style.marginLeft = " 80px"; b.style.zIndex = 1; // second tab // bb
                     c.style.width = "65px"; c.style.height = "16px"; c.style.marginTop = "6px"; c.style.marginLeft = "154px"; c.style.zIndex = 1; // third tab // cc
@@ -700,10 +674,8 @@
                                 
                         <script>
                             let desktopdrop = false;
-                            function desktopdropdown(){
-                                if (desktopdrop == false) { document.getElementById("desktopmode").style.marginLeft = "-2px"; desktopdrop = true;
-                                } else if (desktopdrop == true){ document.getElementById("desktopmode").style.marginLeft = "-20000px"; desktopdrop = false; }}
-                            
+                            function desktopdropdown(){ if (desktopdrop == false) { document.getElementById("desktopmode").style.marginLeft = "-2px"; desktopdrop = true;
+                                                 } else if (desktopdrop == true){ document.getElementById("desktopmode").style.marginLeft = "-20000px"; desktopdrop = false; }}
                             function desktopexit(){ document.getElementById("desktopmode").style.marginLeft = "-20000px"; desktopdrop = false; }
                             function centeritem(){ document.getElementById("currentdesktopmode").textContent = "Center";}
                             function spanitem(){ document.getElementById("currentdesktopmode").textContent = "Span";}
@@ -745,15 +717,15 @@
                             <div class="optionsmenu" style="width:227px; position: absolute; margin-top:126px; cursor:pointer" onclick="wallpaperoption7(); wallpapercust();">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
                                         <div class="container" style="width:100%; height:100%;" id="wallpaperoverlay8">
-                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Vinyl </label></div></div>
-                        </div>
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Vinyl </label></div></div></div>
                         
                         <script>
                             var colorwallpaperpicked = "#c0c0c0"; currentwallpaper = "";
-                            function wallpaperupdate(){ document.getElementById("body").style.backgroundImage = currentwallpaper;}
+                            function wallpaperupdate(){ document.getElementById("body").style.backgroundImage = currentwallpaper; 
+                                                        dcb1.style.backgroundImage = currentwallpaper; dcb2.style.backgroundImage = currentwallpaper;}
                             function wallpaperpreview(){ document.getElementById("apperancepreview").style.backgroundImage = currentwallpaper;
                                                          document.getElementById("iconpreview").style.backgroundImage = currentwallpaper;
-                                                        dcb1.style.backgroundImage = currentwallpaper; dcb2.style.backgroundImage = currentwallpaper;}
+                                                         dcb1.style.backgroundImage = currentwallpaper; dcb2.style.backgroundImage = currentwallpaper;}
                             function wallpapercurrentreset() { 
                             document.getElementById("wallpaperoverlay1").style.backgroundColor = ""; document.getElementById("wallpaperoverlay2").style.backgroundColor = "";
                             document.getElementById("wallpaperoverlay3").style.backgroundColor = ""; document.getElementById("wallpaperoverlay4").style.backgroundColor = "";
@@ -769,8 +741,7 @@
                             function wallpaperoption7() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay8").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/vinyl.png')"; wallpaperpreview();} 
                         </script>
                         
-                    </ul>
-                </fieldset>
+                </ul></fieldset>
                 <!-- inner container end -->
             </div>
             
@@ -793,9 +764,8 @@
                         
                         <script>
                             let screensaverdrop = false;
-                            function screensaverdropdown(){
-                                if (screensaverdrop == false) { document.getElementById("thescreensaver").style.marginLeft = "-2px"; screensaverdrop = true;
-                                } else if (screensaverdrop == true){ document.getElementById("thescreensaver").style.marginLeft = "-20000px"; screensaverdrop = false; }}
+                            function screensaverdropdown(){ if (screensaverdrop == false) { document.getElementById("thescreensaver").style.marginLeft = "-2px"; screensaverdrop = true;
+                                                     } else if (screensaverdrop == true){ document.getElementById("thescreensaver").style.marginLeft = "-20000px"; screensaverdrop = false; }}
                             function none(){ document.getElementById("currentscreensaver").textContent="(none)";}
                             function screensaverdropdownclose(){ document.getElementById("thescreensaver").style.marginLeft = "-20000px"; screensaverdrop = false; }
                         </script>
@@ -807,15 +777,15 @@
                         
                         <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 34px; background-color: silver;"></ul>
                             <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 34px; display: inline-block;">Password Protected</div>
-                        <div class="win98buttontitlebarinactive" style="position: absolute; margin-top: 30px; width:63px; height:18px; margin-left:130px;"> 
+                        <div class="win98buttoninactive" style="position: absolute; margin-top: 30px; width:63px; height:18px; margin-left:130px;"> 
                             <div class="disabledfont" style="margin-top: 3px; margin-left:11px;"> Change... </div>
                         
                         <div class="disabledfont" style="position:absolute; margin-left:72px; margin-top:-12px">Wait:</div>
                         <ul class="tree-view" style="position:absolute; width:41px; height:9px; margin-top: -16px; margin-left:101px; background-color:silver">
                             <div class="container" style="margin-top: -4px; margin-left:27px">
                                 <label style="position:absolute; margin-left: -14px; margin-top: 3px; color:gray;"> 14 </label>
-                                <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:0px; width:11px; height:2px;"><div class="tinyarrowdisabledup" style="margin-left:4px;"></div></div>
-                                <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:9px; width:11px; height:2px;"><div class="tinyarrowdisableddown"  style="margin-left:4px;"></div></div>
+                                <div class="win98buttoninactive" style="position:absolute; margin-left:1px; margin-top:0px; width:11px; height:2px;"><div class="tinyarrowdisabledup" style="margin-left:4px;"></div></div>
+                                <div class="win98buttoninactive" style="position:absolute; margin-left:1px; margin-top:9px; width:11px; height:2px;"><div class="tinyarrowdisableddown"  style="margin-left:4px;"></div></div>
                         </div></ul>
                         <div class="disabledfont" style="position:absolute; margin-left:161px; margin-top:-12px">minutes</div>
                     </fieldset>
@@ -826,8 +796,7 @@
                         <label style="width:210px; position: absolute; margin-left: 122px; margin-top: 5px"> To adjust the power settings of your monitor, click settings.</label>
                         <div class="win98buttoninactive" style="margin-left:266px; margin-top: 24px; width:63px; height:18px;"> 
                             <div class="disabledfont" style="margin-top: 3px; margin-left:13px;"> Settings </div>
-                    </fieldset>
-            </div>
+            </fieldset></div>
             
             <!-- --------------------------------------- appearance tab --------------------------------------- -->
             <!-- background inner container -->
@@ -839,8 +808,7 @@
                         <div class="win98titlebarbutton" style="position:absolute; margin-left: 283px; margin-top:1px; cursor: pointer;" title="close"><div class="close"></div></div>
                         <div class="win98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="help"></div></div>
                         <div class="title-bar-98"> <div class="title-bar-text" style="margin-left:-1px; margin-top:-1px;">💤 Inactive Window</div></div>
-                        <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding: 2px 2px 2px 2px"></div>
-                    </div>
+                        <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding: 2px 2px 2px 2px"></div></div>
                     
                     <div class="win98post" style="height: 137px; width:300px; margin-top:24px; margin-left:5px">
                         <div class="win98titlebarbutton" style="position:absolute; margin-left: 283px; margin-top:1px; cursor: pointer;" title="close"><div class="close"></div></div>
@@ -850,14 +818,12 @@
                             <div class="container" style="margin-top: -2px">
                                 <label style="position:absolute;">Normal</label>
                                 <div class="disabledfont" style="position:absolute; margin-left:39px; margin-top: -0px;">Disabled</div>
-                                <fieldset style="position:absolute; margin-left:85px; margin-top:-1px; padding:2px 4px 1px 4px"> Selected </fieldset> 
-                            </div>
+                                <fieldset style="position:absolute; margin-left:85px; margin-top:-1px; padding:2px 4px 1px 4px"> Selected </fieldset></div>
                             <ul class="tree-view"  style="width:274px; height:82px; margin-left: -3px; margin-top: 18px;">
                                 <div class="container" style="position:absolute; background-color: #c0c0c0; margin-left: 262px; width:16px; height:80px"> </div>
                                 <div class="win98scroll" style="margin-left: 262px; margin-top:-4px"><div class="scrollup"></div></div>
                                 <div class="win98scroll" style="margin-left: 262px; margin-top:70px"><div class="scrolldown"></div></div>
-                            </ul>
-                    </div></div>
+                    </ul></div></div>
                         
                     <div class="win98post" style="height:67px; width:200px; margin-left:20px; margin-top: 100px;">
                         <div class="win98titlebarbutton" style="position:absolute; margin-left: 183px; margin-top:1px; cursor: pointer;" title="close"><div class="close"></div></div>
@@ -886,9 +852,8 @@
                             <div class="drop-down-text" onclick="contrastmodescheme2()" id="contrastmodescheme2" style="padding:bottom:2px;" >High Contrast Mode 2 </div> </div></ul>
                     <script>
                         var schemedrop = false;
-                        function schemedropdown(){
-                                   if (schemedrop == false) { document.getElementById("scheme").style.marginLeft = "    -2px"; schemedrop = true;
-                            } else if (schemedrop == true){   document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }}
+                        function schemedropdown(){ if (schemedrop == false) { document.getElementById("scheme").style.marginLeft = "    -2px"; schemedrop = true;
+                                            } else if (schemedrop == true){   document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }}
                         function schemeexit(){                document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }
                                                                                //text changer               //replaced with        //colour set        //wallpaper option
                         function windows98(){           document.getElementById("currentscheme").textContent="Windows 98";           cpick12();          wallpaperoption1();}
@@ -903,7 +868,7 @@
                         function highcontrast2() {  currentcolour = "#00ff00"; fontcolour = "#000"; backcolourpreview(); ctoggle = true;
                                                     cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; 
                                                     document.getElementById("iconpreview").style.backgroundColor = "#000";  ap.style.backgroundColor = "#000";}
-                        function wallpapercust() { document.getElementById("currentscheme").textContent="(Custom)"; }
+                        function wallpapercust() {  document.getElementById("currentscheme").textContent="(Custom)"; }
                     </script>
                         
                     <button disabled style="position: absolute; margin-left:199px; margin-top:-1px;">Save As...</button>
@@ -927,21 +892,19 @@
                                 
                         <script>
                             let itemdrop = false;
-                            function itemdropdown(){
-                                if (itemdrop == false) { document.getElementById("item").style.marginLeft = "-2px"; itemdrop = true;
-                                } else if (itemdrop == true){ document.getElementById("item").style.marginLeft = "-20000px"; itemdrop = false; }}
+                            function itemdropdown(){ if (itemdrop == false) { document.getElementById("item").style.marginLeft = "-2px"; itemdrop = true;
+                                              } else if (itemdrop == true){ document.getElementById("item").style.marginLeft = "-20000px"; itemdrop = false; }}
                             function itemexit(){ document.getElementById("item").style.marginLeft = "-20000px"; schemedrop = false; }
-                            
                             function desktopitem(){ document.getElementById("desktopitem").textContent="Desktop";}
                         </script>
                             
                         <ul class="tree-view" style="position:absolute; width:41px; height:9px; margin-left:199px; background-color:silver;">
                             <div class="container" style="margin-top: -4px; margin-left:27px">
-                                <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:0px; width:11px; height:2px;"><div class="tinyarrowdisabledup" style="margin-left:4px;"></div></div>
-                                <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:9px; width:11px; height:2px;"><div class="tinyarrowdisableddown"  style="margin-left:4px;"></div></div>
+                                <div class="win98buttoninactive" style="position:absolute; margin-left:1px; margin-top:0px; width:11px; height:2px;"><div class="tinyarrowdisabledup" style="margin-left:4px;"></div></div>
+                                <div class="win98buttoninactive" style="position:absolute; margin-left:1px; margin-top:9px; width:11px; height:2px;"><div class="tinyarrowdisableddown"  style="margin-left:4px;"></div></div>
                         </div></ul>
                             
-                        <div class="win98buttontitlebarinactive" style="position: absolute; margin-left:261px; width:38px; height:17px; margin-top:0px; padding: 2px;" onclick="colourpicker()"> 
+                        <div class="win98buttoninactive" style="position: absolute; margin-left:262px; width:38px; height:17px; margin-top:0px; padding: 2px;" onclick="colourpicker()"> 
                             <div class="verticalsplitter" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
                             <div class="smallarrowdown" style="position:absolute; margin-left: 31px; margin-top:7px"></div>
                             <div class="container" style="width:20px; height:11px; margin-top: 2px; margin-left: 3px; border:1px solid #000000; background-color: #008080;" id="currentpickedc"></div>
@@ -972,19 +935,16 @@
                                 desktop8 = document.getElementById("desktopi8"); desktop9 = document.getElementById("desktopi9"); 
                             
                             function colourpickerupdate(){ cpc.style.backgroundColor = currentcolour; cpo.style.backgroundColor = currentcolour; }
-                            function colourpicker(){
-                                       if (colourpicked == false){ document.getElementById("coloursampler").style.marginLeft = "    -2px"; colourpicked =  true;
-                                } else if (colourpicked == true ){ document.getElementById("coloursampler").style.marginLeft = "-20000px"; colourpicked = false; }}
+                            function colourpicker(){ if (colourpicked == false){ document.getElementById("coloursampler").style.marginLeft = "    -2px"; colourpicked =  true;
+                                              } else if (colourpicked == true ){ document.getElementById("coloursampler").style.marginLeft = "-20000px"; colourpicked = false; }}
                             function colourpickerexit() { document.getElementById("coloursampler").style.marginLeft = "-20000px"; colourpicked = false; }
 
                             function backcolourset(){ //changes desktop icon span colour + backround colour.
-                                document.body.style.backgroundColor = currentcolour;
                                 desktop1.style.backgroundColor = currentcolour; desktop2.style.backgroundColor = currentcolour; desktop3.style.backgroundColor = currentcolour;
                                 desktop4.style.backgroundColor = currentcolour; desktop5.style.backgroundColor = currentcolour; desktop6.style.backgroundColor = currentcolour;
-                                desktop8.style.backgroundColor = currentcolour;
-                                if(ctoggle == true){ 
-                                    document.body.style.backgroundColor = "#000"; document.getElementById("iconpreview").style.backgroundColor = "#000";
-                                    cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; ap.style.backgroundColor = "#000";}} 
+                                desktop8.style.backgroundColor = currentcolour; document.body.style.backgroundColor = currentcolour;
+                                if(ctoggle == true){ document.body.style.backgroundColor = "#000"; document.getElementById("iconpreview").style.backgroundColor = "#000";
+                                                     cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; ap.style.backgroundColor = "#000";}} 
                             function fontcolourset(){ // changes desktop icon text color;
                                 desktop1.style.color = fontcolour; desktop2.style.color = fontcolour; desktop3.style.color = fontcolour;
                                 desktop4.style.color = fontcolour; desktop5.style.color = fontcolour; desktop6.style.color = fontcolour;
@@ -1023,7 +983,7 @@
                             function cpick20() {  currentcolour = "#6d7f36"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
                         </script>
                         
-                        <div class="win98buttontitlebarinactive" style="position: absolute; margin-left:312px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
+                        <div class="win98buttoninactive" style="position: absolute; margin-left:312px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
                             <div class="verticalsplitter" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
                             <div class="smallarrowdisableddown" style="margin-left: 31px; margin-top:7px"></div></div><br><br>
                     </div>
@@ -1035,20 +995,19 @@
                         <div class="disabledfont" style="position:absolute; margin-left:262px; margin-top: -13px;">Colour</div><br>
                         
                         <ul class="tree-view"  style="position: absolute; width:170px; height: 1px; background-color: silver; padding:10px">
-                            <div class="win98buttontitlebarinactive" style="position:absolute; margin-top: -8px; margin-left:162px; width:10px; height:11px;"><div class="arrowdisableddown" style="margin-left:-4px;"></div></div></ul>
+                            <div class="win98buttoninactive" style="position:absolute; margin-top: -8px; margin-left:162px; width:10px; height:11px;"><div class="arrowdisableddown" style="margin-left:-4px;"></div></div></ul>
                         <ul class="tree-view" style="position:absolute; width:41px; height:9px; margin-left:199px; background-color:silver">
-                                <div class="win98buttontitlebarinactive" style="position:absolute; margin-top: -4px; margin-left:29px; width:10px; height:11px;"><div class="arrowdisableddown" style="margin-left:-4px;"></div></div></ul>
+                                <div class="win98buttoninactive" style="position:absolute; margin-top: -4px; margin-left:29px; width:10px; height:11px;"><div class="arrowdisableddown" style="margin-left:-4px;"></div></div></ul>
                         
-                        <div class="win98buttontitlebarinactive" style="position: absolute; margin-left:262px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
+                        <div class="win98buttoninactive" style="position: absolute; margin-left:262px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
                             <div class="verticalsplitter" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
                             <div class="smallarrowdisableddown" style="margin-left: 31px; margin-top:7px"></div></div> 
                         
-                        <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:0px; width:15px; height:15px; margin-left:312px;">
+                        <div class="win98buttoninactive" style="position:absolute; margin-top:0px; width:15px; height:15px; margin-left:313px;">
                             <div class="disabledfont" style="position:absolute; font-weight:700; margin-left:4px; margin-top:1px; ">B</div></div>
-                        <div class="win98buttontitlebarinactive" style="position:absolute; margin-top:0px; width:15px; height:15px; margin-left:333px;">
+                        <div class="win98buttoninactive" style="position:absolute; margin-top:0px; width:15px; height:15px; margin-left:334px;">
                             <div class="disabledfont" style="position:absolute; margin-left:4px; margin-top:1px;">/</div></div>
-                </div></div>
-            </div>
+            </div></div></div>
             
             <!-- --------------------------------------- Effects tab --------------------------------------- -->
             <!-- background inner container -->
@@ -1116,7 +1075,6 @@
                             <div class="disabledfont" style="margin-top: 3px; margin-left:8px;"> Change Icon... </div></div>
                         <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 44px; margin-left:3px; background-color: silver;"><div class="disabledtickbox"></div></ul>
                             <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 45px; display: inline-block;">Preview desktop icons as smaller icons</div>
-                        
                     </fieldset>
                     
                     <fieldset style="width:336px; height:105px; margin-left: 12px; margin-top: 20px;">
@@ -1131,13 +1089,12 @@
                             <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 68px; display: inline-block;">Enable NSFW desktop options</div>
                         <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 87px; margin-left:3px; background-color: silver;"><div class="disabledtickbox"></div></ul>
                             <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 88px; display: inline-block;">Show window contents while dragging</div>
-                </fieldset>
-            </div>
+            </fieldset></div>
             
             <!-- --------------------------------------- settings tab --------------------------------------- -->
             <!-- inner container -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="settings">
-                <center style="margin-top:12px"><div class="displaycolourback" style="background-color:#008080" id="dcb3"><div class="displayboxdisplay" style="margin-left:-16px; margin-top:-20px;"></div></div></center>
+                <center style="margin-top:12px"><div class="displaycolourbackb" id="dcb3"><div class="displayboxdisplay" style="margin-left:-16px; margin-top:-20px;"></div></div></center>
                 <p style="margin-left:14px; margin-top:58px;" > Display: <br> Default Monitor on DisplayPort - Standard PCI Graphics Adapter (XGA) </p>
                 
                 <!-- display container settings -->
@@ -1154,15 +1111,11 @@
                         </div></ul>
 
                         <script>
-                            let colourdrop = false;
-                            function colourdropdown(){
-                                       if (colourdrop == false){ document.getElementById("colour").style.marginLeft = "    -2px"; colourdrop =  true;
-                                } else if (colourdrop ==  true){ document.getElementById("colour").style.marginLeft = "-20000px"; colourdrop = false; }}
-                                
+                            var colourdrop = false;
+                            function colourdropdown(){ if (colourdrop == false){ document.getElementById("colour").style.marginLeft = "    -2px"; colourdrop =  true;
+                                                } else if (colourdrop ==  true){ document.getElementById("colour").style.marginLeft = "-20000px"; colourdrop = false; }}
                             function colourexit(){ document.getElementById("colour").style.marginLeft = "-20000px"; colourdrop = false; }
-                                
-                            function sixteenbitcolour(){  
-                                document.getElementById("currentcolour").textContent="High Colour (16-bit)";}
+                            function sixteenbitcolour(){  document.getElementById("currentcolour").textContent="High Colour (16-bit)";}
                         </script>
                 
                         <div class="displaycolour" style="position:absolute; margin-top:26px; margin-left: -3px"></div>
@@ -1199,14 +1152,12 @@
         <!-- --------------------------------------- disk properties functions --------------------------------------- -->
         
         <script> 
-            function diskactive() { 
-                idleactive(); inactiveall(); diskButtonOpen = false;
+            function diskactive() { idleactive(); inactiveall(); diskButtonOpen = false;
                 document.getElementById("disk").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1; 
                 document.getElementById("diskwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";
                 document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application.png')";} 
             
-            function diskopen() { 
-                idleactive(); inactiveall(); tabreset(); diskButtonOpen = false;
+            function diskopen() { idleactive(); inactiveall(); tabreset(); diskButtonOpen = false;
                 document.getElementById("disk").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1; 
                 document.getElementById("disk").style.marginLeft = "0px";
                 document.getElementById("disk").style.top = "13%";
@@ -1215,12 +1166,11 @@
                 document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application.png')";
                 document.getElementById("taskapp3").style.marginLeft = "4px";}
                 
-            function diskclose() { diskButtonOpen = true;
+            function diskclose() { diskButtonOpen = true; idleactive(); inactiveall();
                 document.getElementById("disk").style.marginLeft = "-20000px";
                 document.getElementById("disk").style.right = "-100%";
                 document.getElementById("taskapp3").style.marginLeft = "-20000px";
-                document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application1.png')";
-                idleactive(); inactiveall();}
+                document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application1.png')";}
         </script> 
         
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -1244,8 +1194,7 @@
         </div></div></div>
         
         <script>
-            function logonactive(){
-                idleactive(); inactiveall();
+            function logonactive(){ idleactive(); inactiveall();
                 document.getElementById("logoff").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
                 document.getElementById("logoffwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')"; }
             function logoff() {     document.getElementById("logoff").style.marginLeft = "0px"; document.getElementById("logoff").style.zIndex = "100"; }
@@ -1280,8 +1229,7 @@
         </div></div></div></div>
 
         <script>
-            function shutdownactive(){
-                idleactive(); inactiveall();
+            function shutdownactive(){ idleactive(); inactiveall();
                 document.getElementById("shutdown").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
                 document.getElementById("shutdownwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')"; }
             function shutdown() {   document.getElementById("shutdown").style.marginLeft = "0px"; document.getElementById("shutdown").style.zIndex = "100"; }
@@ -1293,20 +1241,16 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         
         <script>    
-            function inactiveall() { 
-                //complete toggle script, insert ids here
+            function inactiveall() { //complete toggle script, insert ids here
                 document.getElementById("pyrowindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
                 document.getElementById("catwindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
                 document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application1.png')";
-                
-                document.getElementById("messagewindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
-                
                 document.getElementById("diskwindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
                 document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application1.png')";
-                
                 document.getElementById("postwindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
                 document.getElementById("taskapp1").style.backgroundImage = github + "img/Taskbar%20application1.png')";
                 
+                document.getElementById("messagewindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
                 document.getElementById("logoffwindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
                 document.getElementById("shutdownwindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";}
         </script>
@@ -1328,16 +1272,13 @@
         {/block:Pagination}
         
         <script>
-            function tumblractive() { 
-                tumblrButtonOpen = false; idleactive(); inactiveall(); 
+            function tumblractive() { tumblrButtonOpen = false; idleactive(); inactiveall(); 
                 document.getElementById("post").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
                 postwindow.style.backgroundImage = github + "img/title-bar%20postheader.png')"; 
                 document.getElementById("taskapp1").style.backgroundImage = github + "img/Taskbar%20application.png')";}
                 
-            function tumblrminimize() { 
-                tumblrButtonOpen = true; idleactive(); inactiveall(); 
-                document.getElementById("desktop").style.left = "-20000px"; 
-                document.body.style.overflowY = "hidden";}
+            function tumblrminimize() { tumblrButtonOpen = true; idleactive(); inactiveall(); 
+                document.getElementById("desktop").style.left = "-20000px"; document.body.style.overflowY = "hidden";}
         </script>
         
         <div id="desktop" class="container" id="desktop" style="width:1010px; margin-top:20px;">
@@ -1412,8 +1353,7 @@
                                 <div class="container"  style="max-width: 451px; background-color:white; overflow:hidden;"> <!-- 428px wide, 451 including scrollwheel + padding -->
                                 <!-- Text posts -->
                                     <div class="win98buttonscrollinactive" style="margin-left: 451px;"><div class="arrowdisableup"></div></div>
-                                    {block:Text}
-                                        <div class="container" style="padding: 3px; max-width:451px;">
+                                    {block:Text}<div class="container" style="padding: 3px; max-width:451px;">
                                             {block:Title}
                                                <div class="title-bar-text" style="margin-left:3px; font-size: 2rem; color:black; margin-bottom:-7px; margin-top:-3px">{Title}</div>
                                             {/block:Title}
@@ -1521,13 +1461,12 @@
                                     <div class="win98buttonscrollinactive" style="margin-top:-16px; margin-left:451px;">
                                         <div class="arrowdisableddown" style="margin-top:-3px; margin-left:-3px"></div>
                                 </div></div>
+                        </div></ul> 
         
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
             <!-- Scrollbar handling                                                                                                            -->
             <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
                             
-                        </div></ul> 
-                        
                         {block:PermalinkPage}
                             {block:PostNotes}
                             <ul class="tree-view" style="width:467px; margin-left:-6px; margin-bottom:26px; margin-top:-20px; padding:2px;"> 
@@ -1602,7 +1541,6 @@
             <div class="container" style="position: fixed; bottom: 0%; bottom: 24px; left: 2px;" onmouseleave="menuclosed(this)">
                 <div class="win98container" id="startmenu" style="width:163px; height: 377px; margin-top:-383px ;margin-left: 200000px"> 
                     <div class="container" style="margin-left: 20px; margin-top: -3px">
-                        
                         <!-- windows gradient bar -->
                         <div class="windowsstartmenubar" style="height:51px; margin-left:-21px; margin-top:3px;"></div>
                         <div class="windowsstartmenubar" style="height:51px; margin-left:-21px; margin-top:53px;"></div>
@@ -1610,17 +1548,14 @@
                         <div class="windowsstartmenubar" style="height:51px; margin-left:-21px; margin-top:153px;"></div>
                         <div class="windowsstartmenubar" style="height:51px; margin-left:-21px; margin-top:203px;"></div>
                         <div class="windowsstartmenubar" style="margin-top:224px; margin-left:-21px;"></div>
-                        
                         <!-- Patchnotes -->
                         <a href="https://thealonic.tumblr.com/patch-notes" onclick="startpressdelay();"><label style="margin-top:3px;">
                             <div class="submenu36" style="width: 141px; height:36px">
                                 <div class="patchnotes"></div>
                                 <label style="margin-left: 2px; height: 36px"> <underline>U</underline>pdate log </label>
                         </div></label></a>
-                        
                         <!-- verticalsplitterER -->
                         <div class="menuapplicationsplit" style="width:139px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px"> </div>
-                        
                         <!-- Programs -->
                         <label> <!--needed for 32x32-->
                             <div class="submenu36" style="width: 142px;" id="menuprograms"
@@ -1666,10 +1601,8 @@
                             <a href="https://paypal.me/TheaVanherst"><div class="submenu36" style="width: 142px;" >
                                 <div class="menurun"></div>
                                 <label style="margin-left: 2px; height:36px"> <underline>S</underline>upport development </label></div></a></label>   
-                        
                         <!-- verticalsplitterER -->
                         <div class="menuapplicationsplit" style="width:139px; margin-left: 2px; margin-top: 3px; margin-bottom: 4px"> </div>
-                        
                         <!--Log off submenu -->
                         <label onclick="logoff(); inactiveall(); logonactive(); startpressdelay();"> <!--needed for 32x32-->
                             <div class="submenu36" style="width: 141px;" >
@@ -1680,7 +1613,6 @@
                             <div class="submenu36" style="width: 141px;" >
                                 <div class="menushutdown"></div>
                                 <label style="margin-left: 2px; height:36px"> Sh<underline>u</underline>tdown </label></div></label>
-                        
                         <!-- Startbutton script placement holder -->
                         <div class="startmenustartbutton" style="margin-left: -23px; margin-top: 3px" onclick="startpress2()";></div>
                     </div>
@@ -1688,19 +1620,13 @@
                     <script>   
                         //start button / menu addressing
                         let startButtonOpen = false; var y = document.getElementById("startmenu");
-                        //start button default // no start menu window
-                        function startpress2() { if (y.style.marginLeft !== "200000px") { y.style.marginLeft = "200000px"; 
-                                                 document.getElementById("start").style.zIndex = "4"; }}
-                                
+                        function startpress2() { if (y.style.marginLeft !== "200000px") { y.style.marginLeft = "200000px"; document.getElementById("start").style.zIndex = "4"; }}
                         //start button pressed // start menu window
                         function startpress() { startButtonOpen = !startButtonOpen;
-                            if (startButtonOpen) { 
-                                y.style.marginLeft = "0px"; document.getElementById("start").style.zIndex = "10000000"; }}
-                        function menuclosed() { 
-                                y.style.marginLeft = "200000px"; document.getElementById("start").style.zIndex = "10000000"; 
-                                if( startButtonOpen = false) { startButtonOpen = !startButtonOpen; }}
-                        function startpressdelay(){ setTimeout(function(){
-                                y.style.marginLeft = "200000px"; document.getElementById("start").style.zIndex = "10000000"; }, 200)};
+                            if (startButtonOpen) { y.style.marginLeft = "0px"; document.getElementById("start").style.zIndex = "10000000"; }}
+                        function menuclosed() { if( startButtonOpen = false) { startButtonOpen = !startButtonOpen; }
+                            y.style.marginLeft = "200000px"; document.getElementById("start").style.zIndex = "10000000";}
+                        function startpressdelay(){ setTimeout(function(){ y.style.marginLeft = "200000px"; document.getElementById("start").style.zIndex = "10000000"; }, 200)};
                     </script> 
                         
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -1799,7 +1725,6 @@
                                 <div class="submenu20">
                                     <div class="menuapplications11"></div>
                                     <label style="margin-left: 8px; margin-top: 3px;"> Wordpad </label></div>
-                            
                                     <!-- Communications submenu -->
                                     <div class="win98container" style="margin-left: 20000px; margin-top:-223px; width:181px; height:80px" id="menucommunicationssubmenu" 
                                          onmouseover="communicationsopen()" onmouseout="communicationsclose()"> 
@@ -1820,7 +1745,6 @@
                                             <div class="menucommunications4"></div>
                                             <label style="margin-left: 8px; margin-top: 3px"> Phone Dialer </label></div>
                                     </div>
-                                    
                                     <!-- Entertainment submenu -->
                                     <div class="win98container" style="margin-left: 20000px; margin-top:-203px; width:163px; height:100px" id="menuentertainmentsubmenu" 
                                          onmouseover="entertainmentopen()" onmouseout="entertainmentclose()"> 
@@ -1844,7 +1768,6 @@
                                             <div class="menuentertainment5"></div>
                                             <label style="margin-left: 8px; margin-top: 3px"> Windows Media Player </label></div>
                                     </div>
-                                    
                                     <!-- Games submenu -->
                                     <div class="win98container" style="margin-left: 20000px; margin-top:-183px; width:183px; height:80px" id="menugamessubmenu" 
                                          onmouseover="gamesopen()" onmouseout="gamesclose()"> 
@@ -1865,7 +1788,6 @@
                                             <div class="menugames4"></div>
                                             <label style="margin-left: 8px; margin-top: 3px"> Solitaire </label></div>
                                     </div>
-                                    
                                     <!-- Internet Tools submenu -->
                                     <div class="win98container" style="margin-left: 20000px; margin-top:-163px; width:183px; height:80px" id="menuinternettoolssubmenu" 
                                          onmouseover="internettoolsopen()" onmouseout="internettoolsclose()"> 
@@ -1886,7 +1808,6 @@
                                             <div class="menuinternettools4"></div>
                                             <label style="margin-left: 8px; margin-top: 3px"> Personal Webserver </label></div>
                                     </div>
-                                    
                                     <!-- System Tools submenu -->
                                     <div class="win98container" style="margin-left: 20000px; margin-top:-143px; width:183px; height:260px" id="menusystemtoolssubmenu" 
                                          onmouseover="systemtoolsopen()" onmouseout="systemtoolsclose()"> 
@@ -1945,7 +1866,6 @@
                                     </div>
                                 <!-- Application submenu end -->
                                 </div>
-                                        
                                 <!-- Online Services Submenu -->
                                 <div class="win98container" style="margin-left: 20000px; margin-top:-123px; width:110px; height:60px; " id="onlineservicessubmenu" 
                                      onmouseover="onlineservicesopen()" onmouseout="onlineservicesclose()"> 
@@ -1962,7 +1882,6 @@
                                         <div class="menuapplications14"></div>
                                         <label style="margin-left: 8px; margin-top: 3px"> MSN </label></div>
                                 </div>
- 
                                 <!-- Startup Submenu -->
                                 <div class="win98container" style="margin-left: 20000px; margin-top:-103px; width:89px; height: 20px;" id="startupsubmenu"
                                            onmouseover="startupopen()" onmouseout="startupclose()">
@@ -1975,7 +1894,6 @@
                         
                             <div class="win98container" style="margin-left: 20000px; margin-top: -324px; width: 149px; height:100px" id="favouritesmenu" 
                                  onmouseover="favouritesopen()" onmouseout="favouritesclosed()"> 
-                                
                                 <!-- Channels -->
                                 <div class="submenu20" onmouseover="channelsopen()" onmouseout="channelsclose()" id="channels">
                                     <div class="menufavouritesfolder"></div>
@@ -1998,12 +1916,10 @@
                                 <a href="hhttps://thealonic.tumblr.com/" target="_blank"><div class="submenu20">
                                     <div class="menufavouriteslink"></div>
                                     <label style="margin-left: 8px; margin-top: 3px"> Thealonic </label></div></a>
-                                
                                 <!-- Channels Submenu -->
                                 <div class="win98container" style="margin-left: 20000px; margin-top: -103px; width:89px; height: 20px;" id="channelssubmenu"
                                            onmouseover="channelsopen()" onmouseout="channelsclose()">
                                     <div class="disabledfont" style="margin-left: 20px; margin-top: 3px">(Empty)</div> </div>
-                                
                                 <!-- links submenu -->
                                 <div class="win98container" style="margin-left: 20000px; margin-top: -83px; width: 149px; height:120px" id="linkssubmenu" 
                                      onmouseover="linksopen()" onmouseout="linksclose()"> 
@@ -2028,7 +1944,6 @@
                                         <label style="margin-left: 8px; margin-top: 3px"> Youtube </label></div></a>
                                 <!--links submenu END --> 
                                 </div>
-                                    
                                 <!-- Media submenu -->
                                 <div class="win98container" style="margin-left: 20000px; margin-top: -203px; width: 138px; height:420px" id="mediasubmenu" 
                                      onmouseover="mediaopen()" onmouseout="mediaclose()"> 
@@ -2098,7 +2013,6 @@
                                         <label style="margin-left: 8px; margin-top: 3px"> EzGif </label></div></a>
                                 <!--Media submenu END --> 
                                 </div>
-                                        
                             </div>
         
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -2107,14 +2021,11 @@
                         
                             <div class="win98container" style="margin-left: 20000px; margin-top: -288px; width: 160px; height:108px" id="documentsmenu" 
                                  onmouseover="documentsopen()" onmouseout="documentsclosed()"> 
-                                
                                 <!-- My Documents -->
                                 <div class="submenu20">
                                     <div class="menudocuments1"></div>
                                     <label style="margin-left: 8px; margin-top: 3px"> My Documents </label></div>
-                                    
                                 <div class="menuapplicationsplit" style="margin-left: 2px; margin-top: 3px; width:156px"> </div>
-                                    
                                 <!-- Audio files -->
                                 <div class="submenu20" style="margin-top:3px">
                                     <div class="menudocumentssound"></div>
@@ -2138,7 +2049,6 @@
                         
                             <div class="win98container" style="margin-left: 200000px; margin-top: -252px; width: 160px; height:128px" id="settingsmenu" 
                                  onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
-                                
                                 <!-- Control panel -->
                                 <div class="submenu20">
                                     <div class="menusettings1"></div>
@@ -2166,11 +2076,9 @@
                                 <div class="submenu20" style="margin-top: 3px">
                                     <div class="menusettings6"></div>
                                     <label style="margin-left: 8px; margin-top: 3px"> Windows Update</label></div>
-                                
                                 <!-- Activedesktop submenu -->
                                 <div class="win98container" style="margin-left:20000px; margin-top:-50px; width:170px; height:60px" id="menuactivedesktopsubmenu" 
                                      onmouseover="settingsactivedesktopopen()" onmouseout="settingsactivedesktopclose()">
-                                    
                                     <!--Buttons 1-3 -->
                                     <div class="submenu20" style="cursor: pointer;"> 
                                         <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="messageopen(); startpressdelay()"> 🧮 brain go brrrrr </label></div>
@@ -2178,7 +2086,6 @@
                                         <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="vunnyopen(); startpressdelay()"> 👿 very.unvunny</label></div>
                                     <div class="submenu20" style="cursor: pointer;"> 
                                         <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="diskopen(); settingstab(); startpressdelay()"> 📺 Customise desktop... </label></div>
-                                            
                                 <!--Settings submenu END --> 
                                 </div> 
                             <!--Settings menu END -->            
@@ -2200,11 +2107,9 @@
                                 <label style="width: 118px;"><div class="submenu20" style="width: 116px; height:20px">
                                         <div class="menufind4"></div><label style="margin-left: 8px; margin-top: 3px"> People</label></div></label>     
                             </div>
-                            
             <!-- Start menu rendering END -->
             </div></div>
-            <!--<label style="float:right; margin-top:-19px; margin-right:3px; color:white"> twitter.com/VeryVhersty</label>
-            <label style="float:right; margin-top:-32px; margin-right:3px; color:white"> theme by Thea Vanherst</label>
+ 
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <!-- Taskbar Rendering                                                                                                             -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -2232,35 +2137,25 @@
                 <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
                 
                 <script>
-                    let tumblrButtonOpen = false
-                    let pyroButtonOpen = true; 
-                    let diskButtonOpen = true;
-                
+                    let tumblrButtonOpen = false; pyroButtonOpen = true; diskButtonOpen = true;
                     // tumblr post toggle
-                    function tumblrtoggle() { 
-                        pyroButtonOpen = true; diskButtonOpen = true;
-                        if (tumblrButtonOpen == false) { 
-                            inactiveall(); idleactive(); tumblrButtonOpen = true;
+                    function tumblrtoggle() { pyroButtonOpen = true; diskButtonOpen = true;
+                        if (tumblrButtonOpen == false) { inactiveall(); idleactive(); tumblrButtonOpen = true;
                             document.getElementById("postwindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
                             document.getElementById("taskapp1").style.backgroundImage = github + "img/Taskbar%20application1.png')";
                             document.getElementById("desktop").style.left = "-20000px"; document.body.style.overflowY = "hidden";
-                        } else if (tumblrButtonOpen == true){ 
-                            inactiveall(); tumblrButtonOpen = false;
+                        } else if (tumblrButtonOpen == true){ inactiveall(); tumblrButtonOpen = false;
                             document.getElementById("post").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
                             document.getElementById("postwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";
                             document.getElementById("taskapp1").style.backgroundImage = github + "img/Taskbar%20application.png')";
-                            document.getElementById("desktop").style.left = "-25px"; document.body.style.overflowY = "scroll";}}
-                    
+                            document.getElementById("desktop").style.left = "0px"; document.body.style.overflowY = "scroll";}}
                     // random message box active toggle
-                    function pyrotoggle() { 
-                        tumblrButtonOpen = true; diskButtonOpen = true;
-                        if (pyroButtonOpen == false) { 
-                            inactiveall(); idleactive(); pyroButtonOpen = true;
+                    function pyrotoggle() { tumblrButtonOpen = true; diskButtonOpen = true;
+                        if (pyroButtonOpen == false) { inactiveall(); idleactive(); pyroButtonOpen = true;
                             document.getElementById("pyrowindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
                             document.getElementById("catwindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
                             document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application1.png')";
-                        } else if (pyroButtonOpen == true){
-                            inactiveall(); pyroButtonOpen = false;
+                        } else if (pyroButtonOpen == true){ inactiveall(); pyroButtonOpen = false;
                             if (window1 == true){ 
                                 document.getElementById("pyro").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
                                 document.getElementById("pyrowindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";  
@@ -2269,26 +2164,19 @@
                                 document.getElementById("cat").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
                                 document.getElementById("catwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";  
                                 document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application.png')";}}}
-                    
                     // disk window active toggle
-                    function disktoggle() { 
-                        tumblrButtonOpen = true; pyroButtonOpen = true;
-                        if (diskButtonOpen == false) { 
-                            inactiveall(); idleactive(); diskButtonOpen = true;
+                    function disktoggle() { tumblrButtonOpen = true; pyroButtonOpen = true;
+                        if (diskButtonOpen == false) { inactiveall(); idleactive(); diskButtonOpen = true;
                             document.getElementById("diskwindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
                             document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application1.png')";
                             document.getElementById("disk").style.marginTop = "-20000px";
-                            
                         } else if (diskButtonOpen == true){
                             inactiveall(); diskButtonOpen = false;
                             document.getElementById("disk").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
                             document.getElementById("disk").style.marginTop = "0px";
                             document.getElementById("diskwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";  
                             document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application.png')";}} 
-                            
-                    function idleactive() { tumblrButtonOpen = true;
-                                              pyroButtonOpen = true; 
-                                              diskButtonOpen = true; }
+                    function idleactive() { tumblrButtonOpen = true; pyroButtonOpen = true; diskButtonOpen = true; }
                 </script>
                  
                 <div class="clock">
@@ -2296,10 +2184,8 @@
                     <div class="menuentertainment3" style="margin-top:-1px; margin-left:1px;"></div>
                     <label class="time" style="font-size:11px" id="showClock"> 00:00 am </label>
                 </div>
-
             </div>
             <!-- Startbar additional rendering -->
-                
         </div>
 
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -2307,7 +2193,6 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         
         <script>
-
             $(document).ready(function(){
                 var infScr = $('body').hasClass('infinite_scrolling');
                 var twoCol = $('body').hasClass('two_column');
