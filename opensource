@@ -54,9 +54,6 @@
             :root { --spritesheet:      url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png'); 
                     --desktopsheet:     url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/desktopspritesheet.png');
                     
-                    --defaultcat:       url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/unknown.png');
-                    --defaultpyro:      url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/ezgif-2-c475330a8091.gif');
-                    
                     --inactive:         url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheaderinactive.png');
                     --active:           url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheader.png');
                     --inactivetask:     url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/Taskbar%20application1.png');
@@ -128,6 +125,7 @@
             .window {               box-shadow: inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; font-size: 11px; position: absolute; z-index:4}
             .title-bar-text {       font-weight: 700; color: var(--white); letter-spacing:0; margin-right:24px; padding:1px 4px 2px 4px; cursor: context-menu;}
             .win98innerbox {        box-shadow: inset -1px -1px var(--black), inset 1px 1px #fff, inset -2px -2px var(--gray), inset 2px 2px var(--lightg); background:var(--silver); padding:3px; font-size:11px; position: absolute;}
+            .messagewindowbody {    margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px;}
             
             /* window title bar button handling */
             .win98titlebarbutton {          width: 10px; height: 8px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); margin-top:2px; padding:3px; }
@@ -178,8 +176,8 @@
             .scrollup {     background-position:  -32px -212px; }       .scrollright {  background-position:  -48px -212px;}
             
             .cornerpeice {      background-position: -192px -212px; height: 16px; width: 16px;}
-            .smallscrollup {    background-position: -211px -220px; height:  3px; width:  3px;}
-            .smallscrolldown {  background-position: -211px -224px; height:  3px; width:  3px;}
+            .smallscrollup {    background-position:  -38px -218px; height:  2px; width:  3px;}
+            .smallscrolldown {  background-position:   -6px -220px; height:  2px; width:  3px;}
 
             /* disabled arrow css */
             .tinyarrowdisableddown {    background-image: var(--spritesheet); height:  3px; width:  4px; background-position: -165px -220px;}
@@ -319,8 +317,6 @@
         /* Message box reference sheets */
         /* ----------------------------------------------------------------------------------------------------------------------------- */
 
-            .pageimage3 { height: 190px; width: 190px; background-position: 0px   0px; background-image: var(--defaultcat);}
-            .pageimage4 { height: 190px; width: 190px; background-position: 0px   0px; background-image: var(--defaultpyro);}
             .displayboxdisplay {    width:184px; height:169px; background-image: var(--displaydisplay);}
             .displaycolour {        width:153px; height: 13px; background-image: var(--displaycolour); z-index:20;}
             .displaycolourback {    width:152px; height:132px; margin-top:37px; z-index:1; background-size: auto; background-size: 152px 132px;}
@@ -449,7 +445,7 @@
         <!-- Page rendering                                                                                                                -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
     
-    <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" onload="evangelionmode(); backcolourset(); fontcolourset(); wallpaperupdate();">
+    <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" onload="evangelionmode(); backcolourset(); fontcolourset(); wallpaperupdate(); clocku();">
         
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <!-- Tumblr + embedding handling                                                                                                   -->
@@ -464,19 +460,16 @@
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         
         <script>
-            var pyrotabs = 2; currentlayer = 5; window1 = true; window2 = true; randomNum = Math.floor(Math.random() * myPix.length); randomNum2 = 0; tick = 3;
+            var pyrotabs = 2; currentlayer = 5; window1 = true; window2 = true;
             function pyrowindow(){ if(pyrotabs == 0){ document.getElementById("taskapp2").style.marginLeft = "-20000px";}}
         </script>
         
-        <div class="win98post" style="z-index: 5; width:194px; position: fixed; top: 68%; left: 4%;" onmousedown="catactive();" id="cat">
-                    <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="catclose(); pyrowindow();"><div class="close"></div></div>
-                        <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
-                    <div class="title-bar-98" id="catwindow" style="width:194px;"> <div class="title-bar-text">🙀 cat </div></div>
-                    <div class="messagewindowbody" style="margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: -2px">
-                        <div class="pageimage3"></div>
-                        <center><div class="win98buttoninactive" style="width:70px; margin-top: 4px; margin-bottom: 4px;"> 
-                    <div class="disabledfont" style="margin-top: 2px;cursor:pointer">Ok</div> </div></center>
-        </div></div>
+        <div class="win98post" style="z-index: 5; position: fixed; top: 68%; left: 4%;" onmousedown="catactive();" id="cat">
+            <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="catclose(); pyrowindow();"><div class="close"></div></div>
+                <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
+                <div class="title-bar-98" id="catwindow"> <div class="title-bar-text">🙀 cat</div></div><div class="messagewindowbody" style="padding-right:4px"> 
+                <ul class="tree-view" style="width: 100%; height: 100%; padding:2px;"> <img style="max-width: 250px; margin-right:-4px; margin-bottom:-2px; margin-left:-1px; margin-top:-1px; width:190px; height:190px;" id="catimage"/></ul>
+                <center><div class="win98buttoninactive" style="width:70px; margin-top: 4px; margin-bottom: 4px;"> <div class="disabledfont" style="margin-top: 2px;">Ok</div> </div></center></div></div>
             
         <script>
             function catactive() { idleactive(); inactiveall(); pyroButtonOpen = false;
@@ -490,25 +483,26 @@
                 document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application1.png')";}
         </script>
             
-        <div class="win98post" style="z-index: 5; width:194px; position: fixed; top: 58%; left: 12%;" onmousedown="pyroactive();" id="pyro">
+        <div class="win98post" style="z-index: 5; position: fixed; top: 58%; left: 12%;" onmousedown="pyroactive();" id="pyro">
             <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="pyroclose();"><div class="close"></div></div>
                 <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
-            <div class="title-bar-98" id="pyrowindow" style="width:194px;"> <div class="title-bar-text" id="pyrotext">💯 Wubba lubba dub dub! </div></div>
-            <div class="messagewindowbody" style="margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px">
-                <div class="pageimage4" id="pyroimage"></div>
-                <center><div class="win98button" style="width:70px; margin-top: 4px;" onclick="pyroshuffle();"> 
-                    <div class="buttontext" style="margin-top: 2px; margin-left:0.5px; cursor:pointer" id="pyrobutton">Definately.</div></div></center>
-        </div></div>
+                <div class="title-bar-98" id="pyrowindow"> <div class="title-bar-text" id="pyrotext">💯 Wubba lubba dub dub!</div></div><div class="messagewindowbody" style="padding-right:4px">
+                <ul class="tree-view" style="width: 100%; height: 100%; padding:2px;"> <img style="margin-right:-4px; margin-bottom:-2px; margin-left:-1px; margin-top:-1px; width:190px; height:190px;" id="pyroimage"/></ul>
+                <center><div class="win98button" style="width:70px; margin-top: 3px;" onclick="pyroshuffle();"> <div class="buttontext" style="margin-top: 2px; margin-left:0.5px; cursor:pointer" id="pyrobutton">Definately.</div></div></center></div></div>
         
         <script>
             var myPix = new Array(
-                github + "   ')"
+
             )
                 
-            var r_text = new Array (); 
-                r_text[0] = "💯 Hi-dilly-ho, neighborinos!";       
-            
-            function pyroshuffle(){ 
+            var r_text = new Array (
+                
+            );
+              //a                                       p                                       l                                       m
+            var randomNum = Math.floor(Math.random() * myPix.length); randomNum2 = 0; tick = 3;
+            if (tick == 3) {document.getElementById("pyroimage").style.backgroundImage = github + "img/windows/ezgif-2-c475330a8091.gif')";
+                            document.getElementById("catimage").style.backgroundImage = github + "img/windows/unknown.png')";}
+            function pyroshuffle(){
                 if (tick !== 0){ randomNum2 = Math.floor(Math.random() * myPix.length);
                     if(randomNum2 !== randomNum){randomNum = randomNum2
                         document.getElementById("pyrotext").textContent= r_text[randomNum]; 
@@ -518,8 +512,7 @@
                         document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum]; randomNum = randomNum2;}
                     if(tick == 3){ document.getElementById("pyrobutton").textContent = "Probably!";}
                     if(tick == 2){ document.getElementById("pyrobutton").textContent = "Maybe?";}
-                    if(tick == 1){ document.getElementById("pyrobutton").textContent = "No.";}
-                    tick = tick - 1;
+                    if(tick == 1){ document.getElementById("pyrobutton").textContent = "No.";} tick = tick - 1;
                 } else { document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; pyrowindow();
                     document.getElementById("pyrobutton").textContent = "Definately"; document.getElementById("pyrotext").textContent = '💯 Wubba lubba dub dub!';
                     document.getElementById("pyroimage").style.backgroundImage = "var(--defaultpyro)";}}
@@ -560,21 +553,95 @@
                 <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>09:04am on January 31st, 2021. [GMT]</label></p>
         </div></div>
         
-        <!-- message box functions -->
         <script> 
-            function messageactive() { idleactive(); inactiveall();
-                document.getElementById("message").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
-                document.getElementById("messagewindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";} 
-            function messageinactive() { inactiveall(); inactiveall();
-                document.getElementById("messagewindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";} 
-            function messageclose() { idleactive(); inactiveall(); document.getElementById("message").style.right = "-100%";
-                document.getElementById("message").style.marginLeft = "-20000px"}
-            function messageopen() { idleactive(); inactiveall(); document.getElementById("message").style.marginLeft = "0px"
-                document.getElementById("message").style.left = "77%"; document.getElementById("message").style.top = "62%";
-                document.getElementById("message").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
-                document.getElementById("messagewindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";}
+            function messageactive() { document.getElementById("message").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
+                idleactive(); inactiveall(); document.getElementById("messagewindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";} 
+            function messageinactive() { inactiveall(); inactiveall(); document.getElementById("messagewindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";} 
+            function messageclose() { idleactive(); inactiveall(); document.getElementById("message").style.right = "-100%"; document.getElementById("message").style.marginLeft = "-20000px"}
+            function messageopen() { idleactive(); inactiveall(); document.getElementById("message").style.marginLeft = "0px"; document.getElementById("message").style.left = "77%"; document.getElementById("message").style.top = "62%";
+                document.getElementById("message").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1; document.getElementById("messagewindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";}
         </script>
-
+        
+        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+        <!-- Time / date properties rendering                                                                                              -->
+        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+        
+        <div class="win98post" style="height: 409px; width: 442px; position: fixed; margin-left:-20000px; z-index:6;" onmousedown="clockactive()" id="clock">
+            <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:2px; margin-top:2px; cursor: pointer;" title="close" onclick="clockclose()"><div class="close"></div></div>
+            <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="margin-top:2px" title="help"> <div class="help"></div></div></a> 
+            <div class="title-bar-98" id="clockwindow"> <div class="title-bar-text" style="margin-left:0.5px;">🕑 Time / Date Properties</div></div>
+            <div class="win98tab" style="width:71px; height:15px; margin-top:5px; margin-left:  6px; z-index:10"><center><label style="margin-top:3px; margin-left:0.5px;">Date & Time</label></center></div>
+            <div class="win98innerbox" style="margin-top: 24px; width:424px; height:322px; margin-left:6px; z-index:9">
+            
+                <fieldset style="position:absolute; width:166px; height:183px; margin-left: 12px; margin-top: 12px;">
+                    <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: silver; width:24px; padding: 0px 0px 3px 3px; margin-left:-3px"> <underline>D</underline>ate </label>
+                    
+                    <ul class="tree-view"  style="position: absolute; width:70px; height: 17px; padding:2px; margin-top:13px; margin-left:1px;" onmouseleave="monthmenuclose()"><div class="container" style="padding: 3px 2px 2px 2px;" id="month"></div>
+                        <div class="win98button" style="position:absolute; margin-top: -17px; margin-left:54px; width:10px; height:11px;" onclick="monthmenu()"><div class="scrolldown" style="margin-left:-3px;"></div></div>
+                        <div class="drop-down-menu" style="position:absolute; margin-top:0px; width: 69px; margin-left: -200000px;" id="monthmenu">
+                            <div class="win98buttonpressed" style="position:absolute; margin-top: -17px; margin-left:56px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
+                            <div class="drop-down-text" onclick="jan(); monthmenuclose()">January</div><div class="drop-down-text" onclick="feb(); monthmenuclose()">Febuary</div><div class="drop-down-text" onclick="mar(); monthmenuclose()">March</div>  
+                            <div class="drop-down-text" onclick="apr(); monthmenuclose()">April</div><div class="drop-down-text" onclick="may(); monthmenuclose()">May</div><div class="drop-down-text" onclick="jun(); monthmenuclose()">June</div>  
+                            <div class="drop-down-text" onclick="jul(); monthmenuclose()">July</div><div class="drop-down-text" onclick="aug(); monthmenuclose()">August</div><div class="drop-down-text" onclick="sep(); monthmenuclose()">September</div> 
+                            <div class="drop-down-text" onclick="oct(); monthmenuclose()">October</div><div class="drop-down-text" onclick="nov(); monthmenuclose()">November</div><div class="drop-down-text" onclick="dec(); monthmenuclose()">December</div></ul>
+                            
+                    <ul class="tree-view"  style="position: absolute; width:76px; height: 17px; padding:2px; margin-top:13px; margin-left: 83px;"><div class="container" style="padding: 3px 2px 2px 2px;" id="year"></div>
+                        <div class="win98button" style="position:absolute; margin-top: -17px; margin-left:61px; width:9px; height:2px;" onclick="yearadd()"><div class="smallscrollup" style="margin-left:3px; margin-top:0px;"></div></div>
+                        <div class="win98button" style="position:absolute; margin-top: -8px; margin-left:61px; width:9px; height:2px;" onclick="yearsub()"><div class="smallscrolldown" style="margin-left:3px; margin-top:0px;"></div></div></ul>
+                        
+                    <script>
+                        var monthdrop = false; realmonth = true;
+                        function monthmenu(){ if (desktopdrop == false) { document.getElementById("monthmenu").style.marginLeft = "-2px"; desktopdrop = true;
+                                       } else if (desktopdrop == true){ document.getElementById("monthmenu").style.marginLeft = "-200000px"; desktopdrop = false; }}
+                        function monthmenuclose() { document.getElementById("monthmenu").style.marginLeft = "-200000px"; desktopdrop = false; }
+                        function jan() { realmonth = false; month = "January"; clocku();} function feb() { realmonth = false; month = "Febuary"; clocku();} function mar() { realmonth = false; month = "March"; clocku();}
+                        function apr() { realmonth = false; month = "April"; clocku();} function may() { realmonth = false; month = "May"; clocku();} function jun() { realmonth = false; month = "June"; clocku();}
+                        function jul() { realmonth = false; month = "July"; clocku();} function aug() { realmonth = false; month = "August"; clocku();} function sep() { realmonth = false; month = "September"; clocku();}
+                        function oct() { realmonth = false; month = "October"; clocku();} function nov() { realmonth = false; month = "November"; clocku();} function dec() { realmonth = false; month = "December"; clocku();}
+                    </script> 
+                            
+                    <ul class="tree-view"  style="position: absolute; width:158px; height: 126px; padding:2px; margin-top:45px; margin-left:1px;">
+                    
+                    </ul>
+                            
+                            
+                </fieldset>
+                
+                <fieldset style="position:absolute; width:166px; height:183px; margin-left: 226px; margin-top: 12px;">
+                    <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: silver; width:24px; padding: 0px 0px 3px 3px; margin-left:-3px"> <underline>T</underline>ime </label>
+                        
+                </fieldset>
+                
+                <fieldset style="position:absolute; width:379px; height:55px; margin-left: 12px; margin-top: 234px;">
+                    <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: silver; width:49px; padding: 0px 0px 3px 3px; margin-left:-3px"> Time <underline> z</underline>one </label>
+                    <ul class="tree-view"  style="position: absolute; width:373px; height: 17px; padding:2px; margin-top:7px; margin-left:1px;"><div class="container" style="padding: 3px 2px 2px 2px;">(GMT 0:00) London, Greenwich Mean Time </div>
+                        <div class="win98button" style="position:absolute; margin-top: -17px; margin-left:357px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
+                    <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 13px; margin-left:-3px; background-color: silver;"><div class="disabledtickbox"></div></ul>
+                            <div class="disabledfont" style="position:absolute; margin-left:15px; margin-top: 14px; display: inline-block;">Automatically adjust clock for daylight savings</div>
+                </fieldset>
+                
+            </div>
+            <!-- --------------------------------------- footer --------------------------------------- -->
+            <!-- display settings buttons -->
+            <div class="win98button" style="position:absolute; width:70px; height:18px; margin-top: 360px; margin-left:360px;"> 
+                <div class="buttontext" style="margin-top: 3px; margin-left:22px; cursor:pointer"> Apply </div></div>
+            <div class="win98button" style="position:absolute; width:70px; height:18px; margin-top: 360px; margin-left:280px;">
+                <div class="buttontext" style="margin-top: 3px; margin-left:18px; cursor:pointer" onclick="clockclose()">Cancel</div></div>
+            <div class="win98button" style="position:absolute; width:70px; height:18px; margin-top: 360px; margin-left:200px;">
+                <div class="buttontext" style="margin-top: 3px; margin-left:25px; cursor:pointer" onclick="clockclose()">Okay</div></div></div>
+        </div>
+        
+        <script>
+            var yearmath = 0; realmonth = true; monthArr = ["January", "February","March", "April", "May", "June", "July", "August", "September", "October", "November","December"];
+            function clocku(){ da = new Date(); date = da.getDate(); year = da.getFullYear() + yearmath; if(realmonth == true){monthno = da.getMonth(); month = monthArr[monthno]};
+                 document.getElementById("month").innerHTML = month; document.getElementById("year").innerHTML = year; }
+            function yearadd() {yearmath = yearmath + 1; clocku();} function yearsub() {yearmath = yearmath - 1; clocku();}
+            
+            function clockactive() { idleactive(); inactiveall(); document.getElementById("clock").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;  document.getElementById("clockwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";}
+            function clockclose() { idleactive(); inactiveall(); document.getElementById("clock").style.marginLeft = "-20000px"; document.getElementById("clock").style.right = "-100%";}
+            function clockopen() { clockactive(); document.getElementById("clock").style.left = "75%"; document.getElementById("clock").style.top = "50%"; document.getElementById("clock").style.marginLeft = "0px";}
+        </script>
+        
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
         <!-- Display properties rendering                                                                                                  -->
         <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
@@ -796,7 +863,7 @@
                         <div class="win98titlebarbutton" style="position:absolute; margin-left: 183px; margin-top:1px; cursor: pointer;" title="close"><div class="close"></div></div>
                         <div class="win98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="help"></div></div>
                         <div class="title-bar-posts"> <div class="title-bar-text" style="margin-left:-1px; margin-top:-1px;">💬 Message Box</div></div>
-                        <div class="messagewindowbody" style="margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding:3px;"> Current active window
+                        <div class="messagewindowbody" style="padding:3px;"> Current active window
                             <center><div class="win98button" style="width:60px; margin-top: 4px;"> 
                                 <div class="buttontext" style="margin-top: 2px; margin-left:0.5px; cursor:pointer">Ok.</div></div></center>
                 </div></div></ul>
@@ -1109,12 +1176,12 @@
             
             <!-- --------------------------------------- footer --------------------------------------- -->
             <!-- display settings buttons -->
-            <div class="win98button" style="position:absolute; width:70px; height:18px; margin-top: 395px; margin-left:316px;" onclick=" wallpaperupdate(); backcolourset(); fontcolourset();"> 
+            <div class="win98button" style="position:absolute; width:70px; height:18px; margin-top: 395px; margin-left:316px;" onclick="wallpaperupdate(); backcolourset(); fontcolourset();"> 
                         <div class="buttontext" style="margin-top: 3px; margin-left:22px; cursor:pointer"> Apply </div></div>
             <div class="win98button" style="position:absolute; width:70px; height:18px; margin-top: 395px; margin-left:234px;">
                     <div class="buttontext" style="margin-top: 3px; margin-left:18px; cursor:pointer" onclick="diskclose()">Cancel</div></div>
             <div class="win98button" style="position:absolute; width:70px; height:18px; margin-top: 395px; margin-left:152px;">
-                    <div class="buttontext" style="margin-top: 3px; margin-left:25px; cursor:pointer" onclick="diskclose()">Okay</div></div></div>
+                    <div class="buttontext" style="margin-top: 3px; margin-left:25px; cursor:pointer" onclick="diskclose(); wallpaperupdate(); backcolourset(); fontcolourset();">Okay</div></div></div>
         </div>
         
         <!-- --------------------------------------- disk properties functions --------------------------------------- -->
@@ -1217,6 +1284,7 @@
                 document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application1.png')";
                 document.getElementById("postwindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
                 document.getElementById("taskapp1").style.backgroundImage = github + "img/Taskbar%20application1.png')";
+                document.getElementById("clockwindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
                 
                 document.getElementById("messagewindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
                 document.getElementById("logoffwindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";
@@ -2148,7 +2216,7 @@
                 </script>
                  
                 <div class="clock">
-                    <taskbar class="calendar"> </taskbar>
+                    <taskbar class="calendar" style="cursor: pointer;" onclick="clockopen();"> </taskbar>
                     <div class="menuentertainment3" style="margin-top:-1px; margin-left:1px;"></div>
                     <label class="time" style="font-size:11px" id="showClock"> 00:00 am </label>
                 </div>
@@ -2202,6 +2270,7 @@
             dragElement(document.getElementById("message"));
             dragElement(document.getElementById("logoff"));
             dragElement(document.getElementById("shutdown"));
+            dragElement(document.getElementById("clock"));
                 
             //grab element for windows
             function dragElement(elmnt) { //position storage and setting it to window
