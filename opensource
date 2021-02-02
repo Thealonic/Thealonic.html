@@ -161,8 +161,6 @@
             .disabledtickbox {          background-image: var(--spritesheet); height:  7px; width:  7px; background-position: -143px -212px; margin-top:1px; margin-left:1px; position: absolute;}
             .enabledtickbox {           background-image: var(--spritesheet); height:  7px; width:  7px; background-position: -143px -220px; position: absolute;}
             
-            .explorerlinks {            background-image: var(--spritesheet); height:  5px; width:  4px; background-position: -211px  -222px;}
-            
             /* tumblr post container things */
             .sidescrollbarmiddlemiddle { height:  2px; width:467px; background-image: var(--windowplacement); background-repeat: repeat-y; overflow:hidden;}
             .scrollbarmiddle {           height:  2px; width: 16px; background-image: var(--scrollbar); background-repeat: repeat; overflow:hidden;}
@@ -217,7 +215,7 @@
             .menuprograms4,     .menuapplications8,     .menucommunications2,   .menusystemtools2,  .taskbaricon2,
             .menuprograms5,     .menuapplications9,     .menucommunications3,   .menusystemtools3,  .taskbaricon3,
             .menuprograms6,     .menuapplications10,    .menucommunications4,   .menusystemtools4,  .taskbaricon4,
-            .menuprograms7,     .menuapplications11,    .none,                  .menusystemtools5,  .calendar,
+            .menuprograms7,     .menuapplications11,    .explorerlinks          .menusystemtools5,  .calendar,
             .menufind1,         .menuapplications12,    .menuinternettools1,    .menusystemtools6,  .menufavouritesfolder,
             .menufind2,         .menuapplications13,    .menuinternettools2,    .menusystemtools7,  .menufavouriteslink,
             .menufind3,         .menuapplications14,    .menuinternettools3,    .menusystemtools8,  .explorergo,
@@ -226,7 +224,7 @@
             .menugames2,        .menusettings2,         .menuentertainment2,    .menusystemtools11, .menudocumentssound,
             .menugames3,        .menusettings3,         .menuentertainment3,    .menusystemtools12, .menudocuments1,
             .menugames4,        .menusettings4,         .menuentertainment4,    .menusystemtools13, .menudocumentssound
-            .menugames3,        .menusettings5,         .menuentertainment5,    
+            .menugames3,        .menusettings5,         .menuentertainment5,    .none,
             .menugames4,        .menusettings6,         .menuentertainment
             { background-image: var(--spritesheet); margin: auto; float: left; height: 20px; width: 20px;}
 
@@ -269,6 +267,7 @@
             
             .explorergo {           background-position: -101px  -72px;}                        .none {                 background-position: -100px -192px;                   height: 18px; width: 18px;}
             .explorerback {         background-position: -121px  -72px;}
+            .explorerlinks {        height:  5px; width:  4px; background-position: -211px  -222px;}
             
             .taskbarapp1 { font-family:"Pixelated MS Sans Serif", Arial; background-image: var(--activetask); float: left; width: 160px; height: 22px; margin-top: 2px; margin-left: 4px;} /*tumblrposts*/
             .taskbarapp2 { font-family:"Pixelated MS Sans Serif", Arial; background-image: var(--inactivetask); float: left; width: 160px; height: 22px; margin-top: 2px; margin-left: 4px;}
@@ -340,14 +339,11 @@
             /* tumblr likes formatting */
             .like-b { position:relative; display:inline-block; height:1em; line-height:1em; color:var(--black);} .like-b .like_button iframe { position:absolute; opacity:0;}
             .like-b .liked + .b { color:inherit;} .like-b .liked + .b:after { content:'d';} .like-b:hover { color:var(--white); text-decoration-line: underline; } 
-            
-            /* infinate scroll script + */
-            ul, ol { padding: 0 0 0 18px;}
-            
+
             /* tumblr notes formatting */
             .notes { margin-top:0px; text-align:left;} ol.notes { padding: 2px; list-style-type: none; max-height: 320px; width:463px; overflow:auto; margin-top:-6px;} 
             ol.notes li.note img.avatar { vertical-align: -4px; margin-right: 4px; width: 16px; height:16px; margin-top:-2px; margin-bottom;-2px;} ol.notes li.note .answer_content { font-weight: normal;}
-            ol.notes li.note blockquote { padding: 4px 10px; margin: 10px 0px 0px 25px;} ol.notes li.note blockquote a { text-decoration: none;} 
+            ol.notes li.note blockquote { padding: 4px 10px; margin: 10px 0px 0px 25px;} ol.notes li.note blockquote a { text-decoration: none;} ul, ol { padding: 0 0 0 18px;} /*infinate scroll*/
             
             .tagged { font-size: 9px; opacity: 0.5;}
         </style>
@@ -435,11 +431,9 @@
             var myPix = new Array(
 
             )
-                
             var r_text = new Array (
                 
-            );
-              //a                                       p                                       l                                       m
+            )
             var randomNum = Math.floor(Math.random() * myPix.length); randomNum2 = 0; tick = 3;
             if (tick == 3) {document.getElementById("pyroimage").style.backgroundImage = github + "img/windows/ezgif-2-c475330a8091.gif')";
                             document.getElementById("catimage").style.backgroundImage = github + "img/windows/Untitled-5.jpg')";}
@@ -1126,7 +1120,6 @@
                 document.getElementById("disk").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1; 
                 document.getElementById("diskwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";
                 document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application.png')";} 
-            
             function diskopen() { idleactive(); inactiveall(); tabreset(); diskButtonOpen = false;
                 document.getElementById("disk").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1; 
                 document.getElementById("disk").style.marginLeft = "0px";
@@ -1135,7 +1128,6 @@
                 document.getElementById("diskwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";
                 document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application.png')";
                 document.getElementById("taskapp3").style.marginLeft = "4px";}
-                
             function diskclose() { diskButtonOpen = true; idleactive(); inactiveall();
                 document.getElementById("disk").style.marginLeft = "-20000px";
                 document.getElementById("disk").style.right = "-100%";
@@ -1162,8 +1154,8 @@
             function logonactive(){ idleactive(); inactiveall();
                 document.getElementById("logoff").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
                 document.getElementById("logoffwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')"; }
-            function logoff() {     document.getElementById("logoff").style.marginLeft = "0px"; document.getElementById("logoff").style.zIndex = "100"; }
-            function logoffno() {   document.getElementById("logoff").style.marginLeft = "200000px"; document.getElementById("logoff").style.zIndex = "1"; }
+            function logoff() {   document.getElementById("logoff").style.marginLeft = "0px"; document.getElementById("logoff").style.zIndex = "100"; }
+            function logoffno() { document.getElementById("logoff").style.marginLeft = "200000px"; document.getElementById("logoff").style.zIndex = "1"; }
         </script>
 
         <!-- shut down window -->
@@ -1315,8 +1307,7 @@
                                             {block:Title}
                                                <div class="title-bar-text" style="margin-left:3px; font-size: 2rem; color:black; margin-bottom:-7px; margin-top:-3px">{Title}</div>
                                             {/block:Title}
-                                            <div class="content caption" style="width: 100%; height: 100%;"> {Body} </div>
-                                        </div>
+                                            <div class="content caption" style="width: 100%; height: 100%;"> {Body} </div></div>
                                     {/block:Text}
                                                 
                                     {block:Photo}
@@ -1351,8 +1342,7 @@
                                             {block:Source}
                                                 <div class="content body cf">
                                                     <div class="dash" style="margin-left:2px"> &mdash; </div>
-                                                    <div class="source" style="margin-left:2px"> {Source} </div>
-                                                </div>
+                                                    <div class="source" style="margin-left:2px"> {Source} </div></div>
                                             {/block:Source}
                                         </div>
                                     {/block:Quote}
@@ -1390,8 +1380,7 @@
                         
                                     {block:Video}
                                         <div class="content body" style="margin-bottom:-2px;">
-                                            <div class="video"  data-from-page="{CurrentPage}" style="height:100%;">{Video-500}</div>
-                                        </div>
+                                            <div class="video"  data-from-page="{CurrentPage}" style="height:100%;">{Video-500}</div></div>
                                         {block:Caption}
                                             <div class="content caption" style= "padding: 3px; margin-top:9px;" > {Caption} </div> <!-- video caption -->
                                         {/block:Caption}
@@ -1417,28 +1406,24 @@
                                     {/block:Answer}
                                     
                                     <div class="win98buttonscrollinactive" style="margin-top:-16px; margin-left:451px;">
-                                        <div class="arrowdisableddown" style="margin-top:-3px; margin-left:-3px"></div>
-                                </div></div>
+                                        <div class="arrowdisableddown" style="margin-top:-3px; margin-left:-3px"></div></div></div>
                         </div></ul> 
         
 <!-- Scrollbar handling ------------------------------------------------------------------------------>
                             
-                        {block:PermalinkPage}
-                            {block:PostNotes}
+                        {block:PermalinkPage}{block:PostNotes}
                             <ul class="tree-view" style="width:467px; margin-left:-6px; margin-bottom:26px; margin-top:-20px; padding:2px;"> 
                                 <div class="notes" style="width:100%; margin-top:6px; margin-bottom:-9px; margin-right:-2px;">
                                     {PostNotes}
                             </div></ul>
-                            {/block:PostNotes}
-                        {/block:PermalinkPage}
+                        {/block:PostNotes}{/block:PermalinkPage}
                               
 <!-- Bottom post handling ------------------------------------------------------------------------------>
 
                         {block:HasTags}
                             <label style="position:absolute; height: 16px; max-width:410px; margin-top:-25px; margin-left:-4.5px; overflow:hidden; color: gray">
                                 {block:Tags}<a href="{TagURL}" style="color: grey; white-space: nowrap; margin-left:2px">{Tag}</a><div class="comma">, </div>{/block:Tags}
-                                <div class="container" style="background-color:silver; margin-left:-4px;"></div>
-                            </label>
+                                <div class="container" style="background-color:silver; margin-left:-4px;"></div></label>
                         {/block:HasTags}
                         
                         <div class="container" style="z-index:100; width:100px; float:right; margin-right:-5px;">
@@ -1714,7 +1699,7 @@
                                             <label style="margin-left: 8px; margin-top: 3px"> Windows Media Player </label></div>
                                     </div>
                                     <!-- Games submenu -->
-                                    <div class="win98container" style="margin-left: 20000px; margin-top:-183px; width:183px; height:80px" id="menugamessubmenu" 
+                                    <div class="win98container" style="margin-left: 20000px; margin-top:-183px; width:183px; height:80px" id="gamessubmenu" 
                                          onmouseover="gamesopen()" onmouseout="gamesclose()"> 
                                         <!-- Dial-up Networking -->
                                         <div class="submenu20">
@@ -1734,7 +1719,7 @@
                                             <label style="margin-left: 8px; margin-top: 3px"> Solitaire </label></div>
                                     </div>
                                     <!-- Internet Tools submenu -->
-                                    <div class="win98container" style="margin-left: 20000px; margin-top:-163px; width:183px; height:80px" id="menuinternettoolssubmenu" 
+                                    <div class="win98container" style="margin-left: 20000px; margin-top:-163px; width:183px; height:80px" id="internettoolssubmenu" 
                                          onmouseover="internettoolsopen()" onmouseout="internettoolsclose()"> 
                                         <!-- Connection Wizard -->
                                         <div class="submenu20">
@@ -1754,7 +1739,7 @@
                                             <label style="margin-left: 8px; margin-top: 3px"> Personal Webserver </label></div>
                                     </div>
                                     <!-- System Tools submenu -->
-                                    <div class="win98container" style="margin-left: 20000px; margin-top:-143px; width:183px; height:260px" id="menusystemtoolssubmenu" 
+                                    <div class="win98container" style="margin-left: 20000px; margin-top:-143px; width:183px; height:260px" id="systemtoolssubmenu" 
                                          onmouseover="systemtoolsopen()" onmouseout="systemtoolsclose()"> 
                                         <!-- Character Map -->
                                         <div class="submenu20">
@@ -2016,7 +2001,7 @@
                                     <div class="menusettings6"></div>
                                     <label style="margin-left: 8px; margin-top: 3px"> Windows Update</label></div>
                                 <!-- Activedesktop submenu -->
-                                <div class="win98container" style="margin-left:20000px; margin-top:-50px; width:170px; height:60px" id="menuactivedesktopsubmenu" 
+                                <div class="win98container" style="margin-left:20000px; margin-top:-50px; width:170px; height:60px" id="activedesktopsubmenu" 
                                      onmouseover="settingsactivedesktopopen()" onmouseout="settingsactivedesktopclose()">
                                     <!--Buttons 1-3 -->
                                     <div class="submenu20" style="cursor: pointer;"> 
@@ -2123,23 +2108,13 @@
         
         <script>
             $(document).ready(function(){
-                var infScr = $('body').hasClass('infinite_scrolling');
-                var twoCol = $('body').hasClass('two_column');
-                var $container = $('#desktop');
-                //two coloumn loading 
-                if( infScr && twoCol ){
-                    $container.imagesLoaded(function(){ $container.masonry({ itemSelector: '.window'}) });
-                    $container.infinitescroll({ itemSelector: '.window'},
-                        function( newElements ) {
-                            var $newElems = $( newElements ).css({ opacity: 0 }); 
-                            var $newElemsIDs = $newElems.map(function () { 
-                                return this.id; 
-                            }).get();
-                            Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
-                            $newElems.imagesLoaded(function(){
-                                $container.masonry( 'appended', $newElems, true ); 
-                                $newElems.animate({ opacity: 1 })})
-                            $newElems.find('.video').each( function() { resizeVideos() })})}
+                var infScr = $('body').hasClass('infinite_scrolling'); twoCol = $('body').hasClass('two_column'); $container = $('#desktop');
+                if( infScr && twoCol ){ $container.imagesLoaded(function(){ $container.masonry({ itemSelector: '.window'}) });
+                    $container.infinitescroll({ itemSelector: '.window'}, function( newElements ) {
+                        var $newElems = $( newElements ).css({ opacity: 0 }); $newElemsIDs = $newElems.map(function () { return this.id; }).get();
+                        Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
+                        $newElems.imagesLoaded(function(){ $container.masonry( 'appended', $newElems, true ); $newElems.animate({ opacity: 1 })})
+                        $newElems.find('.video').each( function() { resizeVideos() })})}
                 //taskbar clock functions
                 window.setInterval(updateClock, 6000);
                 updateClock()});
@@ -2163,13 +2138,13 @@
             
             var progmenu = document.getElementById("menuprograms"); progsubmenu = document.getElementById("programsmenu"); accemenu = document.getElementById("accessories"); accesubmenu = document.getElementById("menuaccessoriessubmenu");
                 commmenu = document.getElementById("communications"); commsubmenu = document.getElementById("menucommunicationssubmenu"); entemenu = document.getElementById("entertainment"); sentsubmenu = document.getElementById("menuentertainmentsubmenu");
-                gamemenu = document.getElementById("games"); gamesubmenu = document.getElementById("menugamessubmenu"); intemenu = document.getElementById("internettools"); intesubmenu = document.getElementById("internettoolssubmenu");
+                gamemenu = document.getElementById("games"); gamesubmenu = document.getElementById("gamessubmenu"); intemenu = document.getElementById("internettools"); intesubmenu = document.getElementById("internettoolssubmenu");
                 systmenu = document.getElementById("systemtools"); systsubmenu = document.getElementById("systemtoolssubmenu"); onlimenu = document.getElementById("onlineservices"); onlisubmenu = document.getElementById("onlineservicessubmenu");
                 starmenu = document.getElementById("startup"); starsubmenu = document.getElementById("startupsubmenu"); favomenu = document.getElementById("menufavourites"); favosubmenu = document.getElementById("favouritesmenu");
                 chanmenu = document.getElementById("channels"); chansubmenu = document.getElementById("channelssubmenu"); linkmenu = document.getElementById("links"); linksubmenu = document.getElementById("linkssubmenu");
                 medimenu = document.getElementById("media"); medisubmenu = document.getElementById("mediasubmenu"); documenu = document.getElementById("menudocuments"); docusubmenu = document.getElementById("documentsmenu");
                 settmenu = document.getElementById("menusettings"); settsubmenu = document.getElementById("settingsmenu"); actimenu = document.getElementById("activedesktop"); actisubmenu = document.getElementById("activedesktopsubmenu");
-                findmenu = document.getElementById("menufind"); findsubmenu = document.getElementById("findmeu");
+                findmenu = document.getElementById("menufind"); findsubmenu = document.getElementById("findmenu");
             var white = "#fff"; black = "#000"; prus = "#00207c"; silv = "#c0c0c0"; faraw = "200000px"
             
             function programsopen() { progmenu.style.backgroundColor = prus; progsubmenu.style.marginLeft = "163px"; progmenu.style.color = white; document.getElementById("menuarrow1").style.backgroundPosition = "-134px -216px";}
@@ -2179,17 +2154,17 @@
             function communicationsopen() { commmenu.style.backgroundColor = prus; commsubmenu.style.marginLeft = "130px"; commmenu.style.color = white; document.getElementById("menuarrow12").style.backgroundPosition = "-134px -216px";}
             function communicationsclose() { commmenu.style.backgroundColor = silv; commsubmenu.style.marginLeft = faraw; commmenu.style.color = black; document.getElementById("menuarrow12").style.backgroundPosition = "-54px -216px";}
             function entertainmentopen() { entemenu.style.backgroundColor = prus; sentsubmenu.style.marginLeft = "130px"; entemenu.style.color = white; document.getElementById("menuarrow13").style.backgroundPosition = "-134px -216px";}
-            function entertainmentclose() { entemenu.style.backgroundColor = silv; sentsubmenu.style.marginLeft = farw; entemenu.style.color = black; document.getElementById("menuarrow13").style.backgroundPosition = "-54px -216px";}
+            function entertainmentclose() { entemenu.style.backgroundColor = silv; sentsubmenu.style.marginLeft = faraw; entemenu.style.color = black; document.getElementById("menuarrow13").style.backgroundPosition = "-54px -216px";}
             function gamesopen() { gamemenu.style.backgroundColor = prus; gamesubmenu.style.marginLeft = "130px"; gamemenu.style.color = white; document.getElementById("menuarrow14").style.backgroundPosition = "-134px -216px";}
-            function gamesclose() { gamemenu.style.backgroundColor = silver; gamesubmenu.style.marginLeft = faraw; gamemenu.style.color = black; document.getElementById("menuarrow14").style.backgroundPosition = "-54px -216px";}
+            function gamesclose() { gamemenu.style.backgroundColor = silv; gamesubmenu.style.marginLeft = faraw; gamemenu.style.color = black; document.getElementById("menuarrow14").style.backgroundPosition = "-54px -216px";}
             function internettoolsopen() { intemenu.style.backgroundColor = prus; intesubmenu.style.marginLeft = "130px"; intemenu.style.color = white; document.getElementById("menuarrow15").style.backgroundPosition = "-134px -216px";}
-            function internettoolsclose() { intemenu.style.backgroundColor = silver; intesubmenu.style.marginLeft = faraw; intemenu.style.color = black; document.getElementById("menuarrow15").style.backgroundPosition = "-54px -216px";}
+            function internettoolsclose() { intemenu.style.backgroundColor = silv; intesubmenu.style.marginLeft = faraw; intemenu.style.color = black; document.getElementById("menuarrow15").style.backgroundPosition = "-54px -216px";}
             function systemtoolsopen() { systmenu.style.backgroundColor = prus; systsubmenu.style.marginLeft = "130px"; systmenu.style.color = white; document.getElementById("menuarrow16").style.backgroundPosition = "-134px -216px";}
-            function systemtoolsclose() { systmenu.style.backgroundColor = silver; systsubmenu.style.marginLeft = faraw; systmenu.style.color = black; document.getElementById("menuarrow16").style.backgroundPosition = "-54px -216px";}
+            function systemtoolsclose() { systmenu.style.backgroundColor = silv; systsubmenu.style.marginLeft = faraw; systmenu.style.color = black; document.getElementById("menuarrow16").style.backgroundPosition = "-54px -216px";}
             function onlineservicesopen() { onlimenu.style.backgroundColor = prus; onlisubmenu.style.marginLeft = "133px"; onlimenu.style.color = white; document.getElementById("submenuarrow3").style.backgroundPosition = "-134px -216px";}
-            function onlineservicesclose() { onlimenu.style.backgroundColor = silver; onlisubmenu.style.marginLeft = faraw; onlimenu.style.color = black; document.getElementById("submenuarrow3").style.backgroundPosition = "-54px -216px";}
+            function onlineservicesclose() { onlimenu.style.backgroundColor = silv; onlisubmenu.style.marginLeft = faraw; onlimenu.style.color = black; document.getElementById("submenuarrow3").style.backgroundPosition = "-54px -216px";}
             function startupopen() { starmenu.style.backgroundColor = prus; starsubmenu.style.marginLeft = "133px"; starmenu.style.color = white; document.getElementById("submenuarrow4").style.backgroundPosition = "-134px -216px";}
-            function startupclose() { starmenu.style.backgroundColor = silver; starsubmenu.style.marginLeft = faraw; starmenu.style.color = black; document.getElementById("submenuarrow4").style.backgroundPosition = "-54px -216px";}
+            function startupclose() { starmenu.style.backgroundColor = silv; starsubmenu.style.marginLeft = faraw; starmenu.style.color = black; document.getElementById("submenuarrow4").style.backgroundPosition = "-54px -216px";}
             function favouritesopen() { favomenu.style.backgroundColor = prus; favosubmenu.style.marginLeft = "163px"; favomenu.style.color = white; document.getElementById("menuarrow2").style.backgroundPosition = "-134px -216px";}
             function favouritesclosed() { favomenu.style.backgroundColor = silv; favosubmenu.style.marginLeft = faraw; favomenu.style.color = black; document.getElementById("menuarrow2").style.backgroundPosition = "-54px -216px";}
             function channelsopen() { chanmenu.style.backgroundColor = prus; chansubmenu.style.marginLeft = "148px"; chanmenu.style.color = white; document.getElementById("submenuarrow21").style.backgroundPosition = "-134px -216px";}
@@ -2201,7 +2176,7 @@
             function documentsopen() { documenu.style.backgroundColor = prus; docusubmenu.style.marginLeft = "163px"; documenu.style.color = white; document.getElementById("menuarrow3").style.backgroundPosition = "-134px -216px";}
             function documentsclosed() { documenu.style.backgroundColor = silv; docusubmenu.style.marginLeft = faraw; documenu.style.color = black; document.getElementById("menuarrow3").style.backgroundPosition = "-54px -216px";}
             function settingsopen() { settmenu.style.backgroundColor = prus;  settsubmenu.style.marginLeft = "163px"; settmenu.style.color = white; document.getElementById("menuarrow4").style.backgroundPosition = "-134px -216px";}
-            function settingsclosed() { settmenu.style.backgroundColor = silv; settsubmenu.style.marginLeft = faraw; settmenu.style.color = white; document.getElementById("menuarrow4").style.backgroundPosition = "-54px -216px";}
+            function settingsclosed() { settmenu.style.backgroundColor = silv; settsubmenu.style.marginLeft = faraw; settmenu.style.color = black; document.getElementById("menuarrow4").style.backgroundPosition = "-54px -216px";}
             function settingsactivedesktopopen() { actimenu.style.backgroundColor = prus; actisubmenu.style.marginLeft = "159px"; actimenu.style.color = white; document.getElementById("submenuarrow31").style.backgroundPosition = "-134px -216px";}
             function settingsactivedesktopclose() { actimenu.style.backgroundColor = silv; actisubmenu.style.marginLeft = faraw; actimenu.style.color = black; document.getElementById("submenuarrow31").style.backgroundPosition = "-54px -216px";}
             function findopen() { findmenu.style.backgroundColor = prus; findsubmenu.style.marginLeft = "163px"; findmenu.style.color = white; document.getElementById("menuarrow5").style.backgroundPosition = "-134px -216px";}
