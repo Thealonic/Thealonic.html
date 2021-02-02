@@ -14,9 +14,7 @@
             
                                https://twitter.com/VeryVhersty // https://veryvhersty.tumblr.com/ -->
 
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- Script setup                                                                                                                  -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- Script setup ------------------------------------------------------------------------------>
                 
 <html>
     <script type="text/javascript" src="https://static.tumblr.com/d0qlne1/DiAl6ekb7/jquery-1.4.2.min.js"></script>
@@ -27,27 +25,21 @@
     
     <script> 
         var github = "url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/";
-        $(document).ready(function(){ resizeVideos() });
+        $(document).ready(function(){ resizeVideos() }); 
         function resizeVideos() {
            $('.video iframe:not(.tumblr_video_iframe)').each(function(){
                var scale = $(this).parents('.video').width() / 500;
-               $(this).attr({ width: Math.floor($(this).attr('width') * scale),
-                              height: Math.floor($(this).attr('height') * scale) })});
+               $(this).attr({ width: Math.floor($(this).attr('width') * scale), height: Math.floor($(this).attr('height') * scale) })});
            $('.tumblr_video_iframe').each(function(){
                var scale = $(this).parents('.video').width() / 500;
-               $(this).css({ 'transform': 'scale(' + scale + ')',
-                             'margin': 250 * ( scale - 1 ) + 'px' });
-               $(this).parents('.tumblr_video_container').css({ width: Math.floor($(this).width() * ( scale + 1 ) / 2),
-                                                                height: Math.floor($(this).height() * ( scale + 1 ) / 2)})})}
+               $(this).css({ 'transform': 'scale(' + scale + ')', 'margin': 250 * ( scale - 1 ) + 'px' });
+               $(this).parents('.tumblr_video_container').css({ 
+                   width: Math.floor($(this).width() * ( scale + 1 ) / 2), height: Math.floor($(this).height() * ( scale + 1 ) / 2)})})}
     </script>
     <head>
-        <meta name="description" value="{MetaDescription}" />
-        <link rel="shortcut icon" href="{Favicon}" />
-        <meta charset="utf-8" />
+        <meta name="description" value="{MetaDescription}" /><link rel="shortcut icon" href="{Favicon}"/><meta charset="utf-8" />
         
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- CSS Scripts                                                                                                                   -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- CSS Scripts ------------------------------------------------------------------------------>
         
         <!-- Setup -->
         <style type="text/css">
@@ -68,12 +60,9 @@
                     --displayenergy:    url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/energy.png');
                     
                     --white: #ffffff; --lightg: #dfdfdf;  --silver: #c0c0c0; --midgray: #ababab; --gray: #808080; --black: #0a0a0a;
-                    --prussian: #00207c ; --wincyan: #008080; --yellow: #ffff00;
-                }
+                    --prussian: #00207c ; --wincyan: #008080; --yellow: #ffff00;}
 
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
-        /* Tumblr post handling */
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
+/* Tumblr post handling ------------------------------------------------------------------------------*/
             
             /* desktop config settings */
             body { background: repeat fixed; background-size: cover; padding: auto auto auto auto; background-color: var(--wincyan); font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; max-width: 100%; overflow-x: hidden;}
@@ -81,9 +70,7 @@
             body.permalink_page #desktop, body.permalink_page .navigation { width: 480px;}
             body.infinite_scrolling .navigation, .inf_scr { display: none;}
 
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
-        /* Desktop setup css */
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
+/* Desktop setup css ------------------------------------------------------------------------------*/
 
             /* taskbar icon setup */
             .icons {        margin: 0 0 0 0; padding: -10px; width: 100px; height:100%; float: left; position: fixed; z-index: 1; font-size: 12px;}
@@ -91,26 +78,16 @@
             
             /* sidebar */
             .thealonic, .veryvhersty, .twitter, .askicon, .discordlink, .officialfunny, .rct2, .simcity {
-                                background-image: var(--desktopsheet); height:  72px; width:  72px; margin-left:14px; cursor: pointer; }
-            .thealonic {        background-position:   -0px -0px;}  .simcity {          background-position: -432px -0px;}
-            .veryvhersty {      background-position:  -72px -0px;}  .rct2 {             background-position: -360px -0px;}
-            .twitter {          background-position: -144px -0px;}  .officialfunny {    background-position: -504px -0px;}
-            .askicon {          background-position: -216px -0px;}
-            .discordlink {      background-position: -288px -0px;}
+                background-image: var(--desktopsheet); height:  72px; width:  72px; margin-left:14px; cursor: pointer; }
+            .thealonic { background-position:   -0px -0px;}  .simcity {       background-position: -432px -0px;} .veryvhersty { background-position:  -72px -0px;}  .rct2 {       background-position: -360px -0px;}
+            .twitter {   background-position: -144px -0px;}  .officialfunny { background-position: -504px -0px;} .askicon {     background-position: -216px -0px;} .discordlink { background-position: -288px -0px;}
 
             .thealonicpreview, .veryvherstypreview, .twitterpreview, .askiconpreview, .discordlinkpreview, .officialfunnypreview, .rct2preview, .simcitypreview {
                                 background-image: var(--desktopsheet); height:  36px; width:  36px;}
-            .thealonicpreview {        background-position:   -0px -72px;}  .simcitypreview {          background-position: -214px -72px;}
-            .veryvherstypreview {      background-position:  -36px -72px;}  .rct2preview {             background-position: -180px -72px;}
-            .twitterpreview {          background-position:  -72px -72px;}  .officialfunnypreview {    background-position: -252px -72px;}
-            .askiconpreview {          background-position: -107px -72px;}
-            .discordlinkpreview {      background-position: -144px -72px;}
-            
-            .smalliconscontainer { width:42px; height:36px; display: inline-block; margin-left:16px; }
+            .thealonicpreview {   background-position:   -0px -72px;}  .simcitypreview {       background-position: -214px -72px;} .veryvherstypreview { background-position:  -36px -72px;} .rct2preview {        background-position: -180px -72px;}
+            .twitterpreview {     background-position:  -72px -72px;}  .officialfunnypreview { background-position: -252px -72px;} .askiconpreview {     background-position: -107px -72px;} .discordlinkpreview { background-position: -144px -72px;}
 
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
-        /* Window bar handling */
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
+/* Window bar handling ------------------------------------------------------------------------------*/
             
             .filler { height: 2px; }
             
@@ -160,31 +137,21 @@
             .colourselect:hover {   height: 12px; width: 12px; padding:2px; background-color:var(--white); box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--white),inset -2px -2px var(--black),inset 2px 2px var(--black); 
                                     display: inline-block; border-style: solid; border-width: 1px; border-color: black; margin-left:-1px; margin-top:-1px;}
                       
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
-        /* Window icon handling */
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
+/* Window icon handling ------------------------------------------------------------------------------*/
             
-            .help, .minimize, .maximize, .close { 
-                        background-image: var(--spritesheet); width:12px; height:10px; margin-top: -1px; margin-left: -1px;}
-            .help {     background-position:  -66px -215px;} /* help */         .minimize { background-position:  -82px -215px;} /* minimize */
-            .maximize { background-position:  -98px -215px;} /* maximize */     .close {    background-position: -114px -215px;} /* close */
-            
-            /* tumblr post post icons */
-            .scrollup, .scrollright, .scrolldown, .scrollleft, .cornerpeice, .smallscrollup, .smallscrolldown { 
-                            background-image: var(--spritesheet); height: 16px; width: 16px; margin-top: -3px; margin-left: -3px;}
-            .scrolldown {   background-position:    0px -212px; }       .scrollleft {   background-position:  -16px -212px;}
-            .scrollup {     background-position:  -32px -212px; }       .scrollright {  background-position:  -48px -212px;}
-            
-            .cornerpeice {      background-position: -192px -212px; height: 16px; width: 16px;}
-            .smallscrollup {    background-position:  -38px -218px; height:  2px; width:  3px;}
-            .smallscrolldown {  background-position:   -6px -220px; height:  2px; width:  3px;}
+            .help, .minimize, .maximize, .close { background-image: var(--spritesheet); width:12px; height:10px; margin-top: -1px; margin-left: -1px;}
+            .help { background-position: -66px -215px;} .minimize { background-position: -82px -215px;} .maximize { background-position: -98px -215px;} .close { background-position: -114px -215px;}
+        
+            .scrollup, .scrollright, .scrolldown, .scrollleft, .cornerpeice, .smallscrollup, .smallscrolldown { background-image: var(--spritesheet); height: 16px; width: 16px; margin-top: -3px; margin-left: -3px;}
+            .scrolldown { background-position: 0px -212px; } .scrollleft { background-position: -16px -212px;} .scrollup { background-position:  -32px -212px; } .scrollright { background-position: -48px -212px;}
+            .smallscrollup { background-position: -38px -218px; height: 2px; width: 3px;} .smallscrolldown { background-position: -6px -220px; height: 2px; width: 3px;} 
 
             /* disabled arrow css */
-            .tinyarrowdisableddown {    background-image: var(--spritesheet); height:  3px; width:  4px; background-position: -165px -220px;}
-            .smallarrowdisableddown {   background-image: var(--spritesheet); height:  4px; width:  6px; background-position: -164px -219px;}
-            .arrowdisableddown {        background-image: var(--spritesheet); height: 16px; width: 16px; background-position: -158px -212px; margin-top:-3px; margin-left:-3px;}
-            .tinyarrowdisabledup {      background-image: var(--spritesheet); height:  3px; width:  4px; background-position: -211px -212px;}
-            .arrowdisableup {           background-image: var(--spritesheet); height: 16px; width: 16px; background-position: -175px -212px; margin-top:-3px; margin-left:-3px;}
+            .tinyarrowdisableddown {  background-image: var(--spritesheet); height:  3px; width:  4px; background-position: -165px -220px;}
+            .smallarrowdisableddown { background-image: var(--spritesheet); height:  4px; width:  6px; background-position: -164px -219px;}
+            .arrowdisableddown {      background-image: var(--spritesheet); height: 16px; width: 16px; background-position: -158px -212px; margin-top:-3px; margin-left:-3px;}
+            .tinyarrowdisabledup {    background-image: var(--spritesheet); height:  3px; width:  4px; background-position: -211px -212px;}
+            .arrowdisableup {         background-image: var(--spritesheet); height: 16px; width: 16px; background-position: -175px -212px; margin-top:-3px; margin-left:-3px;}
             
             /* alternate arrow css */
             .menuarrow1 {               background-image: var(--spritesheet); height:  7px; width:  4px; background-position:  -54px -216px; margin: auto; float: right;}
@@ -194,28 +161,27 @@
             .disabledtickbox {          background-image: var(--spritesheet); height:  7px; width:  7px; background-position: -143px -212px; margin-top:1px; margin-left:1px; position: absolute;}
             .enabledtickbox {           background-image: var(--spritesheet); height:  7px; width:  7px; background-position: -143px -220px; position: absolute;}
             
-            .explorerlinks {        background-image: var(--spritesheet); height:  5px; width:  4px; background-position: -211px  -222px;}
+            .explorerlinks {            background-image: var(--spritesheet); height:  5px; width:  4px; background-position: -211px  -222px;}
             
             /* tumblr post container things */
-            .sidescrollbarmiddlemiddle {    height:  2px; width:467px; background-image: var(--windowplacement); background-repeat: repeat-y; overflow:hidden;}
-            .scrollbarmiddle {              height:  2px; width: 16px; background-image: var(--scrollbar); background-repeat: repeat; overflow:hidden;}
-            .verticalsplitter {   background-image: var(--vertsplitter); height: 16px; width: 2px; background-repeat: repeat-y;}
+            .sidescrollbarmiddlemiddle { height:  2px; width:467px; background-image: var(--windowplacement); background-repeat: repeat-y; overflow:hidden;}
+            .scrollbarmiddle {           height:  2px; width: 16px; background-image: var(--scrollbar); background-repeat: repeat; overflow:hidden;}
+            .verticalsplitter {          background-image: var(--vertsplitter); height: 16px; width: 2px; background-repeat: repeat-y;}
+            .cornerpeice {               background-position: -192px -212px; height: 16px; width: 16px;}
             
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
-        /* Start bar handling */
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
+/* Start bar handling ------------------------------------------------------------------------------*/
 
             /* Post settings */
-            .start_bar {                    position: fixed; background-color: rgb(192,192,192); bottom: 0; height: 28px; width: 100%; z-index: 3; font-family:sans-serif; font-size: 12px; margin-left:-8px;}
-            .start_bar .top_border {        border-bottom: 1px solid rgb(255,255,255); border-top: 1px solid rgb(223,223,223);}
-            .start_bar .big_seperator {     float: left; border-left: 1px solid rgb(128,128,128); border-right: 1px solid rgb(255,255,255); height: 22px; margin-top: 2px; margin-left: 2px;}
-            .start_bar .small_seperator {   float: left;  border-left: 1px solid rgb(255,255,255); border-top: 1px solid rgb(255,255,255); margin-top: 4px; margin-left: 2px;
-                                            border-right: 1px solid rgb(128,128,128); border-bottom: 1px solid rgb(128,128,128); background-color: rgb(192,192,192); width: 1px; height: 16px;}
-            .start_bar .time {      line-height: 18px; float: right; font-size: 10px; margin-right: 10px;}
-            .taskbaricons {         float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px;}
+            .start_bar {                  position: fixed; background-color: rgb(192,192,192); bottom: 0; height: 28px; width: 100%; z-index: 3; font-family:sans-serif; font-size: 12px; margin-left:-8px;}
+            .start_bar .top_border {      border-bottom: 1px solid rgb(255,255,255); border-top: 1px solid rgb(223,223,223);}
+            .start_bar .big_seperator {   float: left; border-left: 1px solid rgb(128,128,128); border-right: 1px solid rgb(255,255,255); height: 22px; margin-top: 2px; margin-left: 2px;}
+            .start_bar .small_seperator { float: left;  border-left: 1px solid rgb(255,255,255); border-top: 1px solid rgb(255,255,255); margin-top: 4px; margin-left: 2px;
+                                          border-right: 1px solid rgb(128,128,128); border-bottom: 1px solid rgb(128,128,128); background-color: rgb(192,192,192); width: 1px; height: 16px;}
+            .start_bar .time { line-height: 18px; float: right; font-size: 10px; margin-right: 10px;}
+            .taskbaricons {    float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px;}
             
-            .start_bar .tray {      box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver);
-                                    height: 18px; width: 79px; margin-right: 5px; margin-top: 2px; float: right;} 
+            .start_bar .tray { box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver);
+                               height: 18px; width: 79px; margin-right: 5px; margin-top: 2px; float: right;} 
                                     
             /* start menu button toggle */
             .startbutton {          background-image: var(--spritesheet); height: 22px; width: 54px; margin-left: 2px; margin-top: 2px; background-position:  -54px -36px;}
@@ -312,10 +278,9 @@
             .start_bar .time {  line-height: 18px; float: right; font-size: 10px; margin-right: 10px;}
             .start_bar .calendar { float: left; margin-top: 1px; margin-left: 3px;}
             .taskbaricons { float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px;}
+            .smalliconscontainer {       width:42px; height:36px; display: inline-block; margin-left:16px; }
             
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
-        /* Message box reference sheets */
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
+ /* Message box reference sheets ------------------------------------------------------------------------------*/
 
             .displayboxdisplay {    width:184px; height:169px; background-image: var(--displaydisplay);}
             .displaycolour {        width:153px; height: 13px; background-image: var(--displaycolour); z-index:20;}
@@ -347,9 +312,7 @@
             span {      background-color: var(--white); color: var(--black);} icon { background-color: var(--wincyan); color: var(--white);}
             label {     display:inline-flex; align-items: center;} underline { text-decoration-line: underline;} h3 { font-size: 2rem;}
             
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
-        /* tumblr post handling                                                                                                          */
-        /* ----------------------------------------------------------------------------------------------------------------------------- */
+/* tumblr post handling ------------------------------------------------------------------------------*/
             
             .posts .photo img.image { display: block; width: 100%; height:auto;} .posts .audio img.artwork { display: block; width: 100%; height:auto;}
             .posts .html_photoset {  position: relative; display: block; width: 100%; height:auto;} .posts .photoset { position: relative; height:auto;}
@@ -389,75 +352,53 @@
             .tagged { font-size: 9px; opacity: 0.5;}
         </style>
         
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- desktop handling                                                                                                              -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- desktop handling ------------------------------------------------------------------------------>
 
         <!-- Sidebar icons coloumn 1 -->
         <div class="icons" style="max-height:100%; max-width:100%; margin-left:-10px; z-index:1">
             <!-- Button one -->
             <a href="https://thealonic.tumblr.com/">
-                <div class="thealonic"></div>
-                <div class="icon_label"><icon id="desktopi1">
+                <div class="thealonic"></div><div class="icon_label"><icon id="desktopi1">
                     <label>Thealonic </label></icon></div> </a>
             <!-- Button Two -->
             <a href="https://veryvhersty.tumblr.com/" target="_blank">
-                <div class="veryvhersty"></div>
-                <div class="icon_label"><icon id="desktopi2">
+                <div class="veryvhersty"></div><div class="icon_label"><icon id="desktopi2">
                     <label > Very.Vhersty </label></icon></div> </a>
             <!-- Button Three -->
             <a href="https://twitter.com/VeryVhersty" target="_blank">
-                <div class="twitter"></div>
-                <div class="icon_label"><icon id="desktopi3">
+                <div class="twitter"></div><div class="icon_label"><icon id="desktopi3">
                     <label style="margin-left:0.5px;"> Art Posting </label></span></div> </a>
             <!-- Button Four -->
             {block:AskEnabled}
             <a href="/ask" class="ask" target="_blank">
-                <div class="askicon"></div>
-                <div class="icon_label"><icon id="desktopi4">
+                <div class="askicon"></div><div class="icon_label"><icon id="desktopi4">
                     <label>Ask Mommy </label></icon></div> </a>
             {/block:AskEnabled}
             <!-- Button Five -->
             {block:SubmitEnabled}
             <a href="/submit" class="Submit"target="_blank">
-                <div class="submiticon"></div>
-                <div class="icon_label"><icon id="desktopi9">
+                <div class="submiticon"></div><div class="icon_label"><icon id="desktopi9">
                     <label>Submissions </label></icon></div> </a>
             {/block:SubmitEnabled}
             <!-- Button Six -->
             <a href="https://discord.gg/KDQcXs7" target="_blank">
-                <div class="discordlink"></div>
-                <div class="icon_label"><icon id="desktopi5">
+                <div class="discordlink"></div><div class="icon_label"><icon id="desktopi5">
                     <label>Self-Governed</label> <label style="margin-left:0.5px;">Shitposters </label></icon></div> </a>
             <!-- Button Seven -->
             <a href="https://www.youtube.com/playlist?list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU" target="_blank">
-                <div class="officialfunny"></div>
-                <div class="icon_label"><icon id="desktopi6">
+                <div class="officialfunny"></div><div class="icon_label"><icon id="desktopi6">
                     <label style="margin-left:0.5px;">The Official Very</label> <label style="margin-left:0.5px;">Funny Video Playlist </label></icon></div> </a>
             <!-- Button Eight -->
             <a href="https://www.youtube.com/watch?v=W_4uRZFVKPE&t=383s" target="_blank">
-                <div class="rct2"></div>
-                <div class="icon_label"><icon id="desktopi8">
+                <div class="rct2"></div><div class="icon_label"><icon id="desktopi8">
                     <label>Roller Coaster</label> <label style="margin-left:0.5px;">Tycoon 2</label></icon></div> </a>
     </div></head>
      
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- Page rendering                                                                                                                -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- Page rendering ------------------------------------------------------------------------------>
     
     <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" onload="evangelionmode(); backcolourset(); fontcolourset(); wallpaperupdate(); clocku();">
-        
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- Tumblr + embedding handling                                                                                                   -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
 
-        <!--<a href='https://ko-fi.com/A4662M6H' target='_blank'>
-            <img height='36' style='position: fixed; float: right; height:36px; right: 10px; bottom: 40px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=0' 
-            border='0' alt='Buy Me a Coffee at ko-fi.com' /> </a>
-
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- VUNNY message box rendering                                                                                                   -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- VUNNY message box rendering ------------------------------------------------------------------------------>
         
         <script>
             var pyrotabs = 2; currentlayer = 5; window1 = true; window2 = true;
@@ -467,9 +408,9 @@
         <div class="win98post" style="z-index: 5; position: fixed; top: 68%; left: 4%;" onmousedown="catactive();" id="cat">
             <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="catclose(); pyrowindow();"><div class="close"></div></div>
                 <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
-                <div class="title-bar-98" id="catwindow"> <div class="title-bar-text">🙀 cat</div></div><div class="messagewindowbody" style="padding-right:4px"> 
-                <ul class="tree-view" style="width: 100%; height: 100%; padding:2px;"> <img style="max-width: 250px; margin-right:-4px; margin-bottom:-2px; margin-left:-1px; margin-top:-1px; width:190px; height:190px;" id="catimage"/></ul>
-                <center><div class="win98buttoninactive" style="width:70px; margin-top: 4px; margin-bottom: 4px;"> <div class="disabledfont" style="margin-top: 2px;">Ok</div> </div></center></div></div>
+                <div class="title-bar-98" id="catwindow"> <div class="title-bar-text">💯 IT'S BOUNCY CEMENT</div></div><div class="messagewindowbody" style="padding-right:4px"> 
+                <ul class="tree-view" style="width: 100%; height: 100%; padding:2px;"> <img style="max-width: 250px; margin-right:-5px; margin-bottom:-2px; margin-left:-1px; margin-top:-1px; width:190px; height:190px;" id="catimage"/></ul>
+                <center><div class="win98buttoninactive" style="width:70px; margin-top: 4px; margin-bottom: 4px;"> <div class="disabledfont" style="margin-top: 2px;">Asshole</div> </div></center></div></div>
             
         <script>
             function catactive() { idleactive(); inactiveall(); pyroButtonOpen = false;
@@ -487,7 +428,7 @@
             <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="pyroclose();"><div class="close"></div></div>
                 <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
                 <div class="title-bar-98" id="pyrowindow"> <div class="title-bar-text" id="pyrotext">💯 Wubba lubba dub dub!</div></div><div class="messagewindowbody" style="padding-right:4px">
-                <ul class="tree-view" style="width: 100%; height: 100%; padding:2px;"> <img style="margin-right:-4px; margin-bottom:-2px; margin-left:-1px; margin-top:-1px; width:190px; height:190px;" id="pyroimage"/></ul>
+                <ul class="tree-view" style="width: 100%; height: 100%; padding:2px;"> <img style="margin-right:-5px; margin-bottom:-2px; margin-left:-1px; margin-top:-1px; width:190px; height:190px;" id="pyroimage"/></ul>
                 <center><div class="win98button" style="width:70px; margin-top: 3px;" onclick="pyroshuffle();"> <div class="buttontext" style="margin-top: 2px; margin-left:0.5px; cursor:pointer" id="pyrobutton">Definately.</div></div></center></div></div>
         
         <script>
@@ -501,7 +442,7 @@
               //a                                       p                                       l                                       m
             var randomNum = Math.floor(Math.random() * myPix.length); randomNum2 = 0; tick = 3;
             if (tick == 3) {document.getElementById("pyroimage").style.backgroundImage = github + "img/windows/ezgif-2-c475330a8091.gif')";
-                            document.getElementById("catimage").style.backgroundImage = github + "img/windows/unknown.png')";}
+                            document.getElementById("catimage").style.backgroundImage = github + "img/windows/Untitled-5.jpg')";}
             function pyroshuffle(){
                 if (tick !== 0){ randomNum2 = Math.floor(Math.random() * myPix.length);
                     if(randomNum2 !== randomNum){randomNum = randomNum2
@@ -518,30 +459,19 @@
                     document.getElementById("pyroimage").style.backgroundImage = "var(--defaultpyro)";}}
 
             function pyroactive() { idleactive(); inactiveall(); pyroButtonOpen = false; currentlayer = currentlayer + 1; 
-                document.getElementById("pyro").style.zIndex = (currentlayer = currentlayer + 1);
-                document.getElementById("pyrowindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";
-                document.getElementById("pyrowindow").style.backgroundPosition = "-150px";
-                document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application.png')";} 
-            function pyroclose() { pyroButtonOpen = true; window1 = false;
-                document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; pyrowindow();
-                document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application1.png')";
-                idleactive(); inactiveall();}
+                document.getElementById("pyro").style.zIndex = (currentlayer = currentlayer + 1); document.getElementById("pyrowindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";
+                document.getElementById("pyrowindow").style.backgroundPosition = "-150px"; document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application.png')";} 
+            function pyroclose() { pyroButtonOpen = true; window1 = false; document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; pyrowindow();
+                document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application1.png')"; idleactive(); inactiveall();}
 
-            function vunnyopen(){ idleactive(); inactiveall(); pyrotabs = 2; tick = 3; pyroButtonOpen = false;
-                document.getElementById("cat").style.left = "4%"; document.getElementById("cat").style.top = "68%";
-                document.getElementById("pyro").style.left = "12%"; document.getElementById("pyro").style.top = "58%";
-                document.getElementById("cat").style.marginLeft = "0px"; document.getElementById("pyro").style.marginLeft = "0px"; 
-                document.getElementById("cat").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1; 
-                document.getElementById("pyro").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1; 
-                document.getElementById("pyrowindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";
-                document.getElementById("pyrowindow").style.backgroundPosition = "-150px";
-                document.getElementById("taskapp2").style.marginLeft = "4px";
-                document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application.png')";} 
+            function vunnyopen(){ idleactive(); inactiveall(); pyrotabs = 2; tick = 3; pyroButtonOpen = false; document.getElementById("cat").style.marginLeft = "0px"; document.getElementById("pyro").style.marginLeft = "0px"; 
+                document.getElementById("cat").style.left = "4%"; document.getElementById("cat").style.top = "68%"; document.getElementById("pyro").style.left = "12%"; document.getElementById("pyro").style.top = "58%";
+                document.getElementById("cat").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1; document.getElementById("pyro").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1; 
+                document.getElementById("pyrowindow").style.backgroundImage = github + "img/title-bar%20postheader.png')"; document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application.png')";
+                document.getElementById("pyrowindow").style.backgroundPosition = "-150px"; document.getElementById("taskapp2").style.marginLeft = "4px";}
         </script> 
 
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- regular message box rendering                                                                                                 -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- regular message box rendering ------------------------------------------------------------------------------>
 
         <!-- message box rendering -->
         <div class="win98post" style="height: 50px; width:306px; left: 77%; top: 62%; z-index:5;" onmousedown="messageactive();" id="message">
@@ -550,7 +480,7 @@
              <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU"><div class="win98titlebarbutton" style="margin-top:2px; cursor: default;"> <div class="help"></div> </div> </a> 
             <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="title-bar-text">🧮 brain go brrrrr</div></div>
             <div class="window-body" style="margin-right: 4px; margin-top: 5px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
-                <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>09:04am on January 31st, 2021. [GMT]</label></p>
+                <p style="color: blue; margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>13:20pm on Febuary 1st, 2021. [GMT]</label></p>
         </div></div>
         
         <script> 
@@ -562,9 +492,7 @@
                 document.getElementById("message").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1; document.getElementById("messagewindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";}
         </script>
         
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- Time / date properties rendering                                                                                              -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- Time / date properties rendering ------------------------------------------------------------------------------>
         
         <div class="win98post" style="height: 409px; width: 442px; position: fixed; margin-left:-20000px; z-index:6;" onmousedown="clockactive()" id="clock">
             <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:2px; margin-top:2px; cursor: pointer;" title="close" onclick="clockclose()"><div class="close"></div></div>
@@ -632,19 +560,27 @@
         </div>
         
         <script>
-            var yearmath = 0; realmonth = true; monthArr = ["January", "February","March", "April", "May", "June", "July", "August", "September", "October", "November","December"];
-            function clocku(){ da = new Date(); date = da.getDate(); year = da.getFullYear() + yearmath; if(realmonth == true){monthno = da.getMonth(); month = monthArr[monthno]};
+            var da = new Date(); realmonth = true;
+            var yearmath = 0; monthArr = ["January", "February","March", "April", "May", "June", "July", "August", "September", "October", "November","December"];
+            function clocku(){ date = da.getDate(); year = da.getFullYear() + yearmath; if(realmonth == true){monthno = da.getMonth(); month = monthArr[monthno]};
                  document.getElementById("month").innerHTML = month; document.getElementById("year").innerHTML = year; }
             function yearadd() {yearmath = yearmath + 1; clocku();} function yearsub() {yearmath = yearmath - 1; clocku();}
             
             function clockactive() { idleactive(); inactiveall(); document.getElementById("clock").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;  document.getElementById("clockwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";}
             function clockclose() { idleactive(); inactiveall(); document.getElementById("clock").style.marginLeft = "-20000px"; document.getElementById("clock").style.right = "-100%";}
             function clockopen() { clockactive(); document.getElementById("clock").style.left = "75%"; document.getElementById("clock").style.top = "50%"; document.getElementById("clock").style.marginLeft = "0px";}
+        
+            function updateClock(){
+                var mins = da.getMinutes(); var hrs = da.getHours(); var ext = "AM";
+                if(hrs > 12){ var ext = "PM"; var hrs = hrs - parseInt(12); }
+                if(hrs < 10){ var hrs = "0"+hrs; }
+                if(mins < 10){ var mins = "0"+mins; }
+                var currentTime = hrs + ":" + mins + " " + ext;
+                $('#showClock').html(currentTime); }
+            
         </script>
         
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- Display properties rendering                                                                                                  -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- Display properties rendering ------------------------------------------------------------------------------>
             
         <!-- display settings container -->
         <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; left: 77%; z-index:5;" onmousedown="diskactive()" id="disk">
@@ -762,8 +698,7 @@
                             var colorwallpaperpicked = "#c0c0c0"; currentwallpaper = "";
                             function wallpaperupdate(){ document.getElementById("body").style.backgroundImage = currentwallpaper; 
                                                         dcb1.style.backgroundImage = currentwallpaper; dcb2.style.backgroundImage = currentwallpaper;}
-                            function wallpaperpreview(){ document.getElementById("apperancepreview").style.backgroundImage = currentwallpaper;
-                                                         document.getElementById("iconpreview").style.backgroundImage = currentwallpaper;
+                            function wallpaperpreview(){ document.getElementById("apperancepreview").style.backgroundImage = currentwallpaper; document.getElementById("iconpreview").style.backgroundImage = currentwallpaper;
                                                          dcb1.style.backgroundImage = currentwallpaper; dcb2.style.backgroundImage = currentwallpaper;}
                             function wallpapercurrentreset() { 
                             document.getElementById("wallpaperoverlay1").style.backgroundColor = ""; document.getElementById("wallpaperoverlay2").style.backgroundColor = "";
@@ -1184,7 +1119,7 @@
                     <div class="buttontext" style="margin-top: 3px; margin-left:25px; cursor:pointer" onclick="diskclose(); wallpaperupdate(); backcolourset(); fontcolourset();">Okay</div></div></div>
         </div>
         
-        <!-- --------------------------------------- disk properties functions --------------------------------------- -->
+<!-- --------------------------------------- disk properties functions --------------------------------------- -->
         
         <script> 
             function diskactive() { idleactive(); inactiveall(); diskButtonOpen = false;
@@ -1208,25 +1143,20 @@
                 document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application1.png')";}
         </script> 
         
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- Window box handling                                                                                                           -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- Window box handling ------------------------------------------------------------------------------>
         
         <!-- Log off window -->
-        <div class="win98post" style="z-index: 10; margin-left: 200000px; height: 119px; width: 284px; top: 40%; left:  40%;" id="logoff" onmousedown="logonactive();">
+        <div class="win98post" style="z-index: 10; margin-left: 200000px; height: 112px; width: 284px; top: 40%; left:  40%;" id="logoff" onmousedown="logonactive();">
             <div class="win98titlebarbutton" style="margin-right:2px; margin-left:2px;" title="close" onclick="logoffno()"><div class="close"></div></div>
             <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" title="help"> <div class="help"></div></div></a> 
-            <div class="title-bar-98" id="logoffwindow"> <div class="title-bar-text">Log off Windows
-            </div></div>
-        
-            <div class="container" style="padding: 3px 3px 3px 3px; index: 100">     
-                <div class="window-body" style="padding: 10px 10px 10px 10px; font-family: Arial; font-size: 11px;">
-                        <div class="logofficon" style="float: left;"></div> 
-                        <label style="margin-top: 5px; margin-left: 24px; cursor:default"> Are you sure you want to log off? </label></div>
-                <div class="window-body" style="padding: 3px 3px 3px 3px; font-family: Arial; font-size: 11px;">
-                    <center> <div class="win98button" style="margin-left:63px; width:60px;" onclick="location.href='https://thealonic.tumblr.com/loggedout'"> <p style="margin-top: 1px">  Yes </p> </div> 
-                             <div class="win98button" style="margin-left:135px; width:60px;" onclick="logoffno()"> <p style="margin-top: 1px"> No </p> </div> </center> 
-        </div></div></div>
+            <div class="title-bar-98" id="logoffwindow"> <div class="title-bar-text">💤 Log off Windows
+            </div></div><div class="window-body" style="padding: 13px; margin-top:5px;">
+                <div class="logofficon" style="float: left;"></div> 
+                <label style="margin-top: 5px; margin-left: 24px; cursor:default"> Are you sure you want to log off? </label></div>
+            <div class="window-body" style="padding: 3px 3px 3px 3px; font-family: Arial; font-size: 11px;">
+                <center> <div class="win98button" style="position: absolute; margin-left:63px; width:60px;" onclick="location.href='https://thealonic.tumblr.com/loggedout'"> <p style="margin-top: 1px">  Yes </p> </div> 
+                    <div class="win98button" style="position: absolute; margin-left:135px; width:60px;" onclick="logoffno()"> <p style="margin-top: 1px"> No </p> </div> </center> 
+        </div></div>
         
         <script>
             function logonactive(){ idleactive(); inactiveall();
@@ -1240,7 +1170,7 @@
         <div class="win98post" style="z-index: 10; margin-left: 200000px; height: 165px; width: 304px; top: 40%; left:  40%;" id="shutdown" onmousedown="shutdownactive();">
             <div class="win98titlebarbutton" style="margin-right:2px; margin-left:2px;" title="close" onclick="diskclose()"><div class="close"></div></div>
             <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" title="help"> <div class="help"></div></div></a> 
-            <div class="title-bar-98" id="shutdownwindow"> <div class="title-bar-text">Shut Down Windows
+            <div class="title-bar-98" id="shutdownwindow"> <div class="title-bar-text">🔌 Shut Down Windows
             </div></div>
             
             <div class="window-body" style="padding: 10px 10px 10px 10px; margin-top:40px; margin-left-10px; font-family: Arial; font-size: 11px;">
@@ -1271,9 +1201,7 @@
             function shutdownno() { document.getElementById("shutdown").style.marginLeft = "200000px"; document.getElementById("shutdown").style.zIndex = "1"; }
         </script>
 
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- message box inactive toggle                                                                                                   -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- message box inactive toggle ------------------------------------------------------------------------------>
         
         <script>    
             function inactiveall() { //complete toggle script, insert ids here
@@ -1291,9 +1219,7 @@
                 document.getElementById("shutdownwindow").style.backgroundImage = github + "img/title-bar%20postheaderinactive.png')";}
         </script>
 
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- Windows 98 desktop handling                                                                                                   -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- Windows 98 desktop handling ------------------------------------------------------------------------------>
         
         <!-- Page generation -->
         {block:Pagination}
@@ -1328,9 +1254,7 @@
                         <div class="title-bar-text">🍭 very.vunnies on Tumblr - Internet Explorer</div></div>
                     <div class="window-body"> 
                     
-            <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-            <!-- Post headers body                                                                                                             -->
-            <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- Post headers body ------------------------------------------------------------------------------>
                         
                         <div class="post-header" style="height: 46px; margin-top:-6px;">
                             <fieldset style="position:absolute; height: 44px; width: 467px; margin-left:-6px; padding:2px;"> 
@@ -1378,9 +1302,7 @@
                                     <div class="explorerlinks" style="position: absolute; margin-left:42px; margin-top:2px;"></div></div>
                         </fieldset></div>
                         
-            <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-            <!-- Post window body                                                                                                              -->
-            <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- Post window body ------------------------------------------------------------------------------>
                                 
                         <div class="filler"></div><div class="filler"></div>
                                 
@@ -1399,7 +1321,7 @@
                                                 
                                     {block:Photo}
                                         <!-- high res wrapper -->
-                                        <img src="{PhotoURL-400}" class="full_image" style="margin-bottom:-4px; max-width: 451px;" alt="{PhotoAlt}"> </img> <!-- image -->
+                                        <img src="{PhotoURL-400}" class="full_image" style="margin-bottom:-4px; width: 451px; height:auto;" alt="{PhotoAlt}"> </img> <!-- image -->
                                         <!-- Image caption -->
                                         {block:Caption} 
                                             <div class="content caption" style="padding: 3px;"> {Caption} </div> <!-- content -->
@@ -1471,7 +1393,7 @@
                                             <div class="video"  data-from-page="{CurrentPage}" style="height:100%;">{Video-500}</div>
                                         </div>
                                         {block:Caption}
-                                            <div class="content caption" style= "padding: 3px; margin-top:5px;" > {Caption} </div> <!-- video caption -->
+                                            <div class="content caption" style= "padding: 3px; margin-top:9px;" > {Caption} </div> <!-- video caption -->
                                         {/block:Caption}
                                     {/block:Video}
 
@@ -1499,9 +1421,7 @@
                                 </div></div>
                         </div></ul> 
         
-            <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-            <!-- Scrollbar handling                                                                                                            -->
-            <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- Scrollbar handling ------------------------------------------------------------------------------>
                             
                         {block:PermalinkPage}
                             {block:PostNotes}
@@ -1512,9 +1432,7 @@
                             {/block:PostNotes}
                         {/block:PermalinkPage}
                               
-            <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-            <!-- Bottom post handling                                                                                                          -->
-            <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- Bottom post handling ------------------------------------------------------------------------------>
 
                         {block:HasTags}
                             <label style="position:absolute; height: 16px; max-width:410px; margin-top:-25px; margin-left:-4.5px; overflow:hidden; color: gray">
@@ -1555,23 +1473,28 @@
             {/block:Posts}
         </div>
         
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- Additional Page Rendering                                                                                                     -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- Additional Page Rendering ------------------------------------------------------------------------------>
         
         {block:NextPage} <div class="container" style="height:50px;"></div> {/block:NextPage}
         {block:PostNotes} <div class="container" style="height:10px;"></div> {/block:PostNotes} <!-- THIS PREVENTS REDIRECTS BEING CUT OFF
         
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- Taskbar Rendering                                                                                                             -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- Taskbar Rendering ------------------------------------------------------------------------------>
         
         <!-- Start bar rendering -->
-        <div class="start_bar" id="start" style= "z-index:10000000000000">
+        <div class="start_bar" id="start" style= "z-index:100000000">
             <div class="top_border"></div> <!-- top line render-->
             
+            <script>   
+                //start button / menu addressing
+                let startButtonOpen = false; 
+                function startpress() { if (startButtonOpen == true) { document.getElementById("startmenu").style.marginLeft = "200000px"; startButtonOpen = false;
+                    } else if(startButtonOpen == false) { document.getElementById("startmenu").style.marginLeft = "0px"; startButtonOpen = true; }}
+                //start button pressed // start menu window
+                function menuclosed(){ document.getElementById("startmenu").style.marginLeft = "200000px"; startButtonOpen = false; }
+            </script> 
+            
             <!-- Start button toggle -->
-            <div class="startbutton" id="startbutton" onclick="startpress2(); startpress()"> </div> 
+            <div class="startbutton" id="startbutton" onclick="startpress()"> </div> 
             
                 <!-- Start menu closed -->
             <div class="container" style="position: fixed; bottom: 0%; bottom: 24px; left: 2px;" onmouseleave="menuclosed(this)">
@@ -1585,7 +1508,7 @@
                         <div class="windowsstartmenubar" style="height:51px; margin-left:-21px; margin-top:203px;"></div>
                         <div class="windowsstartmenubar" style="margin-top:224px; margin-left:-21px;"></div>
                         <!-- Patchnotes -->
-                        <a href="https://thealonic.tumblr.com/patch-notes" onclick="startpressdelay();"><label style="margin-top:3px;">
+                        <a href="https://thealonic.tumblr.com/patch-notes" onclick="menuclosed();"><label style="margin-top:3px;">
                             <div class="submenu36" style="width: 141px; height:36px">
                                 <div class="patchnotes"></div>
                                 <label style="margin-left: 2px; height: 36px"> <underline>U</underline>pdate log </label>
@@ -1640,34 +1563,20 @@
                         <!-- verticalsplitterER -->
                         <div class="menuapplicationsplit" style="width:139px; margin-left: 2px; margin-top: 3px; margin-bottom: 4px"> </div>
                         <!--Log off submenu -->
-                        <label onclick="logoff(); inactiveall(); logonactive(); startpressdelay();"> <!--needed for 32x32-->
+                        <label onclick="logoff(); inactiveall(); logonactive(); menuclosed();"> <!--needed for 32x32-->
                             <div class="submenu36" style="width: 141px;" >
                                 <div class="menulogoff"></div>
                                 <label style="margin-left: 2px; height:36px"> <underline>L</underline>og off </label></div></label>  
                         <!--Log off submenu -->
-                        <label onclick="shutdown(); inactiveall(); shutdownactive(); startpressdelay();"> <!--needed for 32x32-->
+                        <label onclick="shutdown(); inactiveall(); shutdownactive(); menuclosed();"> <!--needed for 32x32-->
                             <div class="submenu36" style="width: 141px;" >
                                 <div class="menushutdown"></div>
                                 <label style="margin-left: 2px; height:36px"> Sh<underline>u</underline>tdown </label></div></label>
                         <!-- Startbutton script placement holder -->
-                        <div class="startmenustartbutton" style="margin-left: -23px; margin-top: 3px" onclick="startpress2()";></div>
+                        <div class="startmenustartbutton" style="margin-left: -23px; margin-top: 3px" onclick="startpress()";></div>
                     </div>
-            
-                    <script>   
-                        //start button / menu addressing
-                        let startButtonOpen = false; var y = document.getElementById("startmenu");
-                        function startpress2() { if (y.style.marginLeft !== "200000px") { y.style.marginLeft = "200000px"; document.getElementById("start").style.zIndex = "4"; }}
-                        //start button pressed // start menu window
-                        function startpress() { startButtonOpen = !startButtonOpen;
-                            if (startButtonOpen) { y.style.marginLeft = "0px"; document.getElementById("start").style.zIndex = "10000000"; }}
-                        function menuclosed() { if( startButtonOpen = false) { startButtonOpen = !startButtonOpen; }
-                            y.style.marginLeft = "200000px"; document.getElementById("start").style.zIndex = "10000000";}
-                        function startpressdelay(){ setTimeout(function(){ y.style.marginLeft = "200000px"; document.getElementById("start").style.zIndex = "10000000"; }, 200)};
-                    </script> 
-                        
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- Programs menu rendering                                                                                                       -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+
+<!-- Programs menu rendering ------------------------------------------------------------------------------>
                         
                     <div class="win98container" style="margin-left: 20000px; margin-top: -360px; width: 133px; height: 140px" id="programsmenu" 
                         onmouseover="programsopen()" onmouseout="programsclosed()"> 
@@ -1924,10 +1833,8 @@
                                     <div class="disabledfont" style="margin-left: 20px; margin-top: 3px">(Empty)</div> </div> 
                             </div>
         
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- Favourites menu rendering                                                                                                      -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-                        
+<!-- Favourites menu rendering------------------------------------------------------------------------------>
+        
                             <div class="win98container" style="margin-left: 20000px; margin-top: -324px; width: 149px; height:100px" id="favouritesmenu" 
                                  onmouseover="favouritesopen()" onmouseout="favouritesclosed()"> 
                                 <!-- Channels -->
@@ -2051,9 +1958,7 @@
                                 </div>
                             </div>
         
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- Documents menu rendering                                                                                                      -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- Documents menu rendering ------------------------------------------------------------------------------>
                         
                             <div class="win98container" style="margin-left: 20000px; margin-top: -288px; width: 160px; height:108px" id="documentsmenu" 
                                  onmouseover="documentsopen()" onmouseout="documentsclosed()"> 
@@ -2079,9 +1984,7 @@
                             <!--Documents submenu END --> 
                             </div>
                      
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- Settings menu rendering                                                                                                       -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- Settings menu rendering ------------------------------------------------------------------------------>
                         
                             <div class="win98container" style="margin-left: 200000px; margin-top: -252px; width: 160px; height:128px" id="settingsmenu" 
                                  onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
@@ -2092,7 +1995,7 @@
                                 <!-- Printers -->
                                 <div class="submenu20">
                                     <div class="menusettings2"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px; cursor: pointer;" onclick="diskopen(); backgroundtab(); startpressdelay();"> Display Properties </label></div>
+                                    <label style="margin-left: 8px; margin-top: 3px; cursor: pointer;" onclick="diskopen(); backgroundtab(); menuclosed()"> Display Properties </label></div>
                                 <!-- Taskbar & Start menu -->
                                 <div class="submenu20">
                                     <div class="menusettings3"></div>
@@ -2117,19 +2020,17 @@
                                      onmouseover="settingsactivedesktopopen()" onmouseout="settingsactivedesktopclose()">
                                     <!--Buttons 1-3 -->
                                     <div class="submenu20" style="cursor: pointer;"> 
-                                        <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="messageopen(); startpressdelay()"> 🧮 brain go brrrrr </label></div>
+                                        <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="messageopen(); menuclosed()"> 🧮 brain go brrrrr </label></div>
                                     <div class="submenu20" style="cursor: pointer;"> 
-                                        <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="vunnyopen(); startpressdelay()"> 👿 very.unvunny</label></div>
+                                        <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="vunnyopen(); menuclosed()"> 👿 very.unvunny</label></div>
                                     <div class="submenu20" style="cursor: pointer;"> 
-                                        <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="diskopen(); settingstab(); startpressdelay()"> 📺 Customise desktop... </label></div>
+                                        <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="diskopen(); settingstab(); menuclosed()"> 📺 Customise desktop... </label></div>
                                 <!--Settings submenu END --> 
                                 </div> 
                             <!--Settings menu END -->            
                             </div>
                               
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- Find menu rendering                                                                                                           -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- Find menu rendering ------------------------------------------------------------------------------>
                                 
                             <div class="win98container" style="margin-left: 20000px; margin-top: -218px" id="findmenu"
                                  onmouseover="findopen()"onmouseout="findclosed()";>
@@ -2143,16 +2044,13 @@
                                 <label style="width: 118px;"><div class="submenu20" style="width: 116px; height:20px">
                                         <div class="menufind4"></div><label style="margin-left: 8px; margin-top: 3px"> People</label></div></label>     
                             </div>
-            <!-- Start menu rendering END -->
             </div></div>
  
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- Taskbar Rendering                                                                                                             -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- Taskbar Rendering  ------------------------------------------------------------------------------>
+        
             <div class="container" style="margin-top: -24px">
                 <!-- taskbar application icons -->
-                <taskbar class="big_seperator" style="margin-left:58px"> </taskbar>
-                <taskbar class="small_seperator" style="cursor:e-resize"> </taskbar>
+                <taskbar class="big_seperator" style="margin-left:58px"> </taskbar> <taskbar class="small_seperator" style="cursor:e-resize"> </taskbar>
                 <div class="taskbaricons">
                     <div class="taskbaricon1" style="cursor:pointer;" onclick="tumblrtoggle();"></div>
                     <div class="taskbaricon2"></div>
@@ -2161,16 +2059,14 @@
                 <taskbar class="big_seperator"> </taskbar>
                 <taskbar class="small_seperator" style="cursor:e-resize"> </taskbar>
                 
-                <div class="taskbarapp1" style="cursor:pointer;" onmousedown="tumblrtoggle(); startpressdelay()" id="taskapp1"> <!--position: absolute; margin-left:172px-->
+                <div class="taskbarapp1" style="cursor:pointer;" onmousedown="tumblrtoggle(); menuclosed()" id="taskapp1"> <!--position: absolute; margin-left:172px-->
                         <div class="title-bar-text" style="color:black; margin-top:2px; font-size: 11px;">🍭 very.vunnies</div></div>
-                <div class="taskbarapp2" style="cursor:pointer;" onmousedown="pyrotoggle(); startpressdelay()" id="taskapp2"> <!--position: absolute; margin-left:336px-->
+                <div class="taskbarapp2" style="cursor:pointer;" onmousedown="pyrotoggle(); menuclosed()" id="taskapp2"> <!--position: absolute; margin-left:336px-->
                         <div class="title-bar-text" style="color:black; margin-top:2px; font-size: 11px;">👿 very.unvunny</div></div>
-                <div class="taskbarapp3" style="cursor:pointer;" onmousedown="disktoggle(); startpressdelay()" id="taskapp3"> <!--position: absolute; margin-left:500px-->
+                <div class="taskbarapp3" style="cursor:pointer;" onmousedown="disktoggle(); menuclosed()" id="taskapp3"> <!--position: absolute; margin-left:500px-->
                         <div class="title-bar-text" style="color:black; margin-top:2px; font-size: 11px;">📺 Display Properties</div></div>
                 
-                <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-                <!-- toggle setup                                                                                                                  -->
-                <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- toggle setup ------------------------------------------------------------------------------>
                 
                 <script>
                     let tumblrButtonOpen = false; pyroButtonOpen = true; diskButtonOpen = true;
@@ -2221,12 +2117,9 @@
                     <label class="time" style="font-size:11px" id="showClock"> 00:00 am </label>
                 </div>
             </div>
-            <!-- Startbar additional rendering -->
         </div>
 
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
-        <!-- On page load handling                                                                                                         -->
-        <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+<!-- On page load handling ------------------------------------------------------------------------------>
         
         <script>
             $(document).ready(function(){
@@ -2248,33 +2141,15 @@
                                 $newElems.animate({ opacity: 1 })})
                             $newElems.find('.video').each( function() { resizeVideos() })})}
                 //taskbar clock functions
-                function updateClock(){
-                    var date = new Date();
-                    var mins = date.getMinutes(); var hrs = date.getHours(); var ext = "AM";
-                    if(hrs > 12){ var ext = "PM"; var hrs = hrs - parseInt(12); }
-                    if(hrs < 10){ var hrs = "0"+hrs; }
-                    if(mins < 10){ var mins = "0"+mins; }
-                    var currentTime = hrs + ":" + mins + " " + ext;
-                    $('#showClock').html(currentTime); }
                 window.setInterval(updateClock, 6000);
                 updateClock()});
             
-        // ----------------------------------------------------------------------------------------------------------------------------- -->
-        // Drag element scripts                                                                                                          -->
-        // ----------------------------------------------------------------------------------------------------------------------------- -->
+        // Drag element scripts ------------------------------------------------------------------------------>
             
-            //drag element id grabber
-            dragElement(document.getElementById("cat"));
-            dragElement(document.getElementById("pyro"));
-            dragElement(document.getElementById("disk"));
-            dragElement(document.getElementById("message"));
-            dragElement(document.getElementById("logoff"));
-            dragElement(document.getElementById("shutdown"));
-            dragElement(document.getElementById("clock"));
+            dragElement(document.getElementById("cat")); dragElement(document.getElementById("pyro")); dragElement(document.getElementById("disk")); dragElement(document.getElementById("message"));
+            dragElement(document.getElementById("logoff")); dragElement(document.getElementById("shutdown")); dragElement(document.getElementById("clock"));
                 
-            //grab element for windows
-            function dragElement(elmnt) { //position storage and setting it to window
-            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            function dragElement(elmnt) { var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
             if (document.getElementById(elmnt.id + "window")) { document.getElementById(elmnt.id + "window").onmousedown = dragMouseDown; } else { elmnt.onmousedown = dragMouseDown; }
             function dragMouseDown(e) { //mouse moment grabbing
                 e = e || window.event; e.preventDefault(); pos3 = e.clientX; pos4 = e.clientY;
@@ -2284,116 +2159,52 @@
                 elmnt.style.top = (elmnt.offsetTop - pos2) + "px"; elmnt.style.left = (elmnt.offsetLeft - pos1) + "px"; }
             function closeDragElement() { document.onmouseup = null; document.onmousemove = null; }}
         
-        // ----------------------------------------------------------------------------------------------------------------------------- -->
-        // Start Menu Handling                                                                                                           -->
-        // ----------------------------------------------------------------------------------------------------------------------------- -->
-                             
-            function programsopen() { 
-                document.getElementById("menuprograms").style.backgroundColor = "#00207c"; document.getElementById("programsmenu").style.marginLeft = "163px"; 
-                document.getElementById("menuprograms").style.color = "#ffffff"; document.getElementById("menuarrow1").style.backgroundPosition = "-134px -216px";}
-            function programsclosed() { 
-                document.getElementById("menuprograms").style.backgroundColor = "#c0c0c0"; document.getElementById("programsmenu").style.marginLeft = "200000px"; 
-                document.getElementById("menuprograms").style.color = "#000000"; document.getElementById("menuarrow1").style.backgroundPosition = "-54px -216px";}
-                function accessoriesopen() { 
-                    document.getElementById("accessories").style.backgroundColor = "#00207c"; document.getElementById("menuaccessoriessubmenu").style.marginLeft = "133px"; 
-                    document.getElementById("accessories").style.color = "#ffffff"; document.getElementById("submenuarrow2").style.backgroundPosition = "-134px -216px";}
-                function accessoriesclose() {
-                    document.getElementById("accessories").style.backgroundColor = "#c0c0c0"; document.getElementById("menuaccessoriessubmenu").style.marginLeft = "200000px"; 
-                    document.getElementById("accessories").style.color = "#000000"; document.getElementById("submenuarrow2").style.backgroundPosition = "-54px -216px";}
-                    function communicationsopen() { 
-                        document.getElementById("communications").style.backgroundColor = "#00207c"; document.getElementById("menucommunicationssubmenu").style.marginLeft = "130px"; 
-                        document.getElementById("communications").style.color = "#ffffff"; document.getElementById("menuarrow12").style.backgroundPosition = "-134px -216px";}
-                    function communicationsclose() { 
-                        document.getElementById("communications").style.backgroundColor = "#c0c0c0"; document.getElementById("menucommunicationssubmenu").style.marginLeft = "200000px"; 
-                        document.getElementById("communications").style.color = "#000000"; document.getElementById("menuarrow12").style.backgroundPosition = "-54px -216px";}
-                    function entertainmentopen() { 
-                        document.getElementById("entertainment").style.backgroundColor = "#00207c"; document.getElementById("menuentertainmentsubmenu").style.marginLeft = "130px"; 
-                        document.getElementById("entertainment").style.color = "#ffffff"; document.getElementById("menuarrow13").style.backgroundPosition = "-134px -216px";}
-                    function entertainmentclose() { 
-                        document.getElementById("entertainment").style.backgroundColor = "#c0c0c0"; document.getElementById("menuentertainmentsubmenu").style.marginLeft = "200000px"; 
-                        document.getElementById("entertainment").style.color = "#000000"; document.getElementById("menuarrow13").style.backgroundPosition = "-54px -216px";}
-                    function gamesopen() { 
-                        document.getElementById("games").style.backgroundColor = "#00207c"; document.getElementById("menugamessubmenu").style.marginLeft = "130px"; 
-                        document.getElementById("games").style.color = "#ffffff"; document.getElementById("menuarrow14").style.backgroundPosition = "-134px -216px";}
-                    function gamesclose() { 
-                        document.getElementById("games").style.backgroundColor = "#c0c0c0"; document.getElementById("menugamessubmenu").style.marginLeft = "200000px"; 
-                        document.getElementById("games").style.color = "#000000"; document.getElementById("menuarrow14").style.backgroundPosition = "-54px -216px";}
-                    function internettoolsopen() { 
-                        document.getElementById("internettools").style.backgroundColor = "#00207c"; document.getElementById("menuinternettoolssubmenu").style.marginLeft = "130px"; 
-                        document.getElementById("internettools").style.color = "#ffffff"; document.getElementById("menuarrow15").style.backgroundPosition = "-134px -216px";}
-                    function internettoolsclose() { 
-                        document.getElementById("internettools").style.backgroundColor = "#c0c0c0"; document.getElementById("menuinternettoolssubmenu").style.marginLeft = "200000px"; 
-                        document.getElementById("internettools").style.color = "#000000"; document.getElementById("menuarrow15").style.backgroundPosition = "-54px -216px";}
-                    function systemtoolsopen() { 
-                        document.getElementById("systemtools").style.backgroundColor = "#00207c"; document.getElementById("menusystemtoolssubmenu").style.marginLeft = "130px"; 
-                        document.getElementById("systemtools").style.color = "#ffffff"; document.getElementById("menuarrow16").style.backgroundPosition = "-134px -216px";}
-                    function systemtoolsclose() { 
-                        document.getElementById("systemtools").style.backgroundColor = "#c0c0c0"; document.getElementById("menusystemtoolssubmenu").style.marginLeft = "200000px"; 
-                        document.getElementById("systemtools").style.color = "#000000"; document.getElementById("menuarrow16").style.backgroundPosition = "-54px -216px";}
-                    
-                function onlineservicesopen() { 
-                    document.getElementById("onlineservices").style.backgroundColor = "#00207c"; document.getElementById("onlineservicessubmenu").style.marginLeft = "133px"; 
-                    document.getElementById("onlineservices").style.color = "#ffffff"; document.getElementById("submenuarrow3").style.backgroundPosition = "-134px -216px";}
-                function onlineservicesclose() { 
-                    document.getElementById("onlineservices").style.backgroundColor = "#c0c0c0"; document.getElementById("onlineservicessubmenu").style.marginLeft = "200000px";
-                    document.getElementById("onlineservices").style.color = "#000000"; document.getElementById("submenuarrow3").style.backgroundPosition = "-54px -216px";}
-                function startupopen() { 
-                    document.getElementById("startup").style.backgroundColor = "#00207c"; document.getElementById("startupsubmenu").style.marginLeft = "133px"; 
-                    document.getElementById("startup").style.color = "#ffffff"; document.getElementById("submenuarrow4").style.backgroundPosition = "-134px -216px";}
-                function startupclose() { 
-                    document.getElementById("startup").style.backgroundColor = "#c0c0c0"; document.getElementById("startupsubmenu").style.marginLeft = "200000px";
-                    document.getElementById("startup").style.color = "#000000"; document.getElementById("submenuarrow4").style.backgroundPosition = "-54px -216px";}
+        // Start Menu Handling ------------------------------------------------------------------------------>
             
-            function favouritesopen() { 
-                document.getElementById("menufavourites").style.backgroundColor = "#00207c"; document.getElementById("favouritesmenu").style.marginLeft = "163px";
-                document.getElementById("menufavourites").style.color = "#ffffff"; document.getElementById("menuarrow2").style.backgroundPosition = "-134px -216px";}
-            function favouritesclosed() {       
-                document.getElementById("menufavourites").style.backgroundColor = "#c0c0c0"; document.getElementById("favouritesmenu").style.marginLeft = "200000px";
-                document.getElementById("menufavourites").style.color = "#000000"; document.getElementById("menuarrow2").style.backgroundPosition = "-54px -216px";}
-                function channelsopen() { 
-                    document.getElementById("channels").style.backgroundColor = "#00207c"; document.getElementById("channelssubmenu").style.marginLeft = "148px"; 
-                    document.getElementById("channels").style.color = "#ffffff"; document.getElementById("submenuarrow21").style.backgroundPosition = "-134px -216px";}
-                function channelsclose() { 
-                    document.getElementById("channels").style.backgroundColor = "#c0c0c0"; document.getElementById("channelssubmenu").style.marginLeft = "200000px";
-                    document.getElementById("channels").style.color = "#000000"; document.getElementById("submenuarrow21").style.backgroundPosition = "-54px -216px";}
-                function linksopen() { 
-                    document.getElementById("links").style.backgroundColor = "#00207c"; document.getElementById("linkssubmenu").style.marginLeft = "148px"; 
-                    document.getElementById("links").style.color = "#ffffff"; document.getElementById("submenuarrow22").style.backgroundPosition = "-134px -216px";}
-                function linksclose() { 
-                    document.getElementById("links").style.backgroundColor = "#c0c0c0"; document.getElementById("linkssubmenu").style.marginLeft = "200000px";
-                    document.getElementById("links").style.color = "#000000"; document.getElementById("submenuarrow22").style.backgroundPosition = "-54px -216px";}
-                function mediaopen() { 
-                    document.getElementById("media").style.backgroundColor = "#00207c"; document.getElementById("mediasubmenu").style.marginLeft = "148px";
-                    document.getElementById("media").style.color = "#ffffff"; document.getElementById("submenuarrow23").style.backgroundPosition = "-134px -216px";}
-                function mediaclose() { 
-                    document.getElementById("media").style.backgroundColor = "#c0c0c0"; document.getElementById("mediasubmenu").style.marginLeft = "200000px";
-                    document.getElementById("media").style.color = "#000000"; document.getElementById("submenuarrow23").style.backgroundPosition = "-54px -216px";}
+            var progmenu = document.getElementById("menuprograms"); progsubmenu = document.getElementById("programsmenu"); accemenu = document.getElementById("accessories"); accesubmenu = document.getElementById("menuaccessoriessubmenu");
+                commmenu = document.getElementById("communications"); commsubmenu = document.getElementById("menucommunicationssubmenu"); entemenu = document.getElementById("entertainment"); sentsubmenu = document.getElementById("menuentertainmentsubmenu");
+                gamemenu = document.getElementById("games"); gamesubmenu = document.getElementById("menugamessubmenu"); intemenu = document.getElementById("internettools"); intesubmenu = document.getElementById("internettoolssubmenu");
+                systmenu = document.getElementById("systemtools"); systsubmenu = document.getElementById("systemtoolssubmenu"); onlimenu = document.getElementById("onlineservices"); onlisubmenu = document.getElementById("onlineservicessubmenu");
+                starmenu = document.getElementById("startup"); starsubmenu = document.getElementById("startupsubmenu"); favomenu = document.getElementById("menufavourites"); favosubmenu = document.getElementById("favouritesmenu");
+                chanmenu = document.getElementById("channels"); chansubmenu = document.getElementById("channelssubmenu"); linkmenu = document.getElementById("links"); linksubmenu = document.getElementById("linkssubmenu");
+                medimenu = document.getElementById("media"); medisubmenu = document.getElementById("mediasubmenu"); documenu = document.getElementById("menudocuments"); docusubmenu = document.getElementById("documentsmenu");
+                settmenu = document.getElementById("menusettings"); settsubmenu = document.getElementById("settingsmenu"); actimenu = document.getElementById("activedesktop"); actisubmenu = document.getElementById("activedesktopsubmenu");
+                findmenu = document.getElementById("menufind"); findsubmenu = document.getElementById("findmeu");
+            var white = "#fff"; black = "#000"; prus = "#00207c"; silv = "#c0c0c0"; faraw = "200000px"
             
-            function documentsopen() { 
-                document.getElementById("menudocuments").style.backgroundColor = "#00207c"; document.getElementById("documentsmenu").style.marginLeft = "163px";
-                document.getElementById("menudocuments").style.color = "#ffffff"; document.getElementById("menuarrow3").style.backgroundPosition = "-134px -216px";}
-            function documentsclosed() { 
-                document.getElementById("menudocuments").style.backgroundColor = "#c0c0c0"; document.getElementById("documentsmenu").style.marginLeft = "200000px";
-                document.getElementById("menudocuments").style.color = "#000000"; document.getElementById("menuarrow3").style.backgroundPosition = "-54px -216px";}
-                                    
-            function settingsopen() {
-                document.getElementById("menusettings").style.backgroundColor = "#00207c";  document.getElementById("settingsmenu").style.marginLeft = "163px";
-                document.getElementById("menusettings").style.color = "#ffffff"; document.getElementById("menuarrow4").style.backgroundPosition = "-134px -216px";}
-            function settingsclosed() { 
-                document.getElementById("menusettings").style.backgroundColor = "#c0c0c0"; document.getElementById("settingsmenu").style.marginLeft = "200000px"; 
-                document.getElementById("menusettings").style.color = "#000000"; document.getElementById("menuarrow4").style.backgroundPosition = "-54px -216px";}
-                function settingsactivedesktopopen() { 
-                    document.getElementById("activedesktop").style.backgroundColor = "#00207c"; document.getElementById("menuactivedesktopsubmenu").style.marginLeft = "159px";
-                    document.getElementById("activedesktop").style.color = "#ffffff"; document.getElementById("submenuarrow31").style.backgroundPosition = "-134px -216px";}
-                function settingsactivedesktopclose() { 
-                    document.getElementById("activedesktop").style.backgroundColor = "#c0c0c0"; document.getElementById("menuactivedesktopsubmenu").style.marginLeft = "200000px";
-                    document.getElementById("activedesktop").style.color = "#000000"; document.getElementById("submenuarrow31").style.backgroundPosition = "-54px -216px";}
-            
-            function findopen() { 
-                document.getElementById("menufind").style.backgroundColor = "#00207c"; document.getElementById("findmenu").style.marginLeft = "163px";
-                document.getElementById("menufind").style.color = "#ffffff"; document.getElementById("menuarrow5").style.backgroundPosition = "-134px -216px";}
-            function findclosed() { 
-                document.getElementById("menufind").style.backgroundColor = "#c0c0c0"; document.getElementById("findmenu").style.marginLeft = "200000px"; 
-                document.getElementById("menufind").style.color = "#000000"; document.getElementById("menuarrow5").style.backgroundPosition = "-54px -216px";}
+            function programsopen() { progmenu.style.backgroundColor = prus; progsubmenu.style.marginLeft = "163px"; progmenu.style.color = white; document.getElementById("menuarrow1").style.backgroundPosition = "-134px -216px";}
+            function programsclosed() { progmenu.style.backgroundColor = silv; progsubmenu.style.marginLeft = faraw; progmenu.style.color = black; document.getElementById("menuarrow1").style.backgroundPosition = "-54px -216px";}
+            function accessoriesopen() { accemenu.style.backgroundColor = prus; accesubmenu.style.marginLeft = "133px"; accemenu.style.color = white; document.getElementById("submenuarrow2").style.backgroundPosition = "-134px -216px";}
+            function accessoriesclose() { accemenu.style.backgroundColor = silv; accesubmenu.style.marginLeft = faraw; accemenu.style.color = black; document.getElementById("submenuarrow2").style.backgroundPosition = "-54px -216px";}
+            function communicationsopen() { commmenu.style.backgroundColor = prus; commsubmenu.style.marginLeft = "130px"; commmenu.style.color = white; document.getElementById("menuarrow12").style.backgroundPosition = "-134px -216px";}
+            function communicationsclose() { commmenu.style.backgroundColor = silv; commsubmenu.style.marginLeft = faraw; commmenu.style.color = black; document.getElementById("menuarrow12").style.backgroundPosition = "-54px -216px";}
+            function entertainmentopen() { entemenu.style.backgroundColor = prus; sentsubmenu.style.marginLeft = "130px"; entemenu.style.color = white; document.getElementById("menuarrow13").style.backgroundPosition = "-134px -216px";}
+            function entertainmentclose() { entemenu.style.backgroundColor = silv; sentsubmenu.style.marginLeft = farw; entemenu.style.color = black; document.getElementById("menuarrow13").style.backgroundPosition = "-54px -216px";}
+            function gamesopen() { gamemenu.style.backgroundColor = prus; gamesubmenu.style.marginLeft = "130px"; gamemenu.style.color = white; document.getElementById("menuarrow14").style.backgroundPosition = "-134px -216px";}
+            function gamesclose() { gamemenu.style.backgroundColor = silver; gamesubmenu.style.marginLeft = faraw; gamemenu.style.color = black; document.getElementById("menuarrow14").style.backgroundPosition = "-54px -216px";}
+            function internettoolsopen() { intemenu.style.backgroundColor = prus; intesubmenu.style.marginLeft = "130px"; intemenu.style.color = white; document.getElementById("menuarrow15").style.backgroundPosition = "-134px -216px";}
+            function internettoolsclose() { intemenu.style.backgroundColor = silver; intesubmenu.style.marginLeft = faraw; intemenu.style.color = black; document.getElementById("menuarrow15").style.backgroundPosition = "-54px -216px";}
+            function systemtoolsopen() { systmenu.style.backgroundColor = prus; systsubmenu.style.marginLeft = "130px"; systmenu.style.color = white; document.getElementById("menuarrow16").style.backgroundPosition = "-134px -216px";}
+            function systemtoolsclose() { systmenu.style.backgroundColor = silver; systsubmenu.style.marginLeft = faraw; systmenu.style.color = black; document.getElementById("menuarrow16").style.backgroundPosition = "-54px -216px";}
+            function onlineservicesopen() { onlimenu.style.backgroundColor = prus; onlisubmenu.style.marginLeft = "133px"; onlimenu.style.color = white; document.getElementById("submenuarrow3").style.backgroundPosition = "-134px -216px";}
+            function onlineservicesclose() { onlimenu.style.backgroundColor = silver; onlisubmenu.style.marginLeft = faraw; onlimenu.style.color = black; document.getElementById("submenuarrow3").style.backgroundPosition = "-54px -216px";}
+            function startupopen() { starmenu.style.backgroundColor = prus; starsubmenu.style.marginLeft = "133px"; starmenu.style.color = white; document.getElementById("submenuarrow4").style.backgroundPosition = "-134px -216px";}
+            function startupclose() { starmenu.style.backgroundColor = silver; starsubmenu.style.marginLeft = faraw; starmenu.style.color = black; document.getElementById("submenuarrow4").style.backgroundPosition = "-54px -216px";}
+            function favouritesopen() { favomenu.style.backgroundColor = prus; favosubmenu.style.marginLeft = "163px"; favomenu.style.color = white; document.getElementById("menuarrow2").style.backgroundPosition = "-134px -216px";}
+            function favouritesclosed() { favomenu.style.backgroundColor = silv; favosubmenu.style.marginLeft = faraw; favomenu.style.color = black; document.getElementById("menuarrow2").style.backgroundPosition = "-54px -216px";}
+            function channelsopen() { chanmenu.style.backgroundColor = prus; chansubmenu.style.marginLeft = "148px"; chanmenu.style.color = white; document.getElementById("submenuarrow21").style.backgroundPosition = "-134px -216px";}
+            function channelsclose() { chanmenu.style.backgroundColor = silv; chansubmenu.style.marginLeft = faraw; chanmenu.style.color = black; document.getElementById("submenuarrow21").style.backgroundPosition = "-54px -216px";}
+            function linksopen() { linkmenu.style.backgroundColor = prus; linksubmenu.style.marginLeft = "148px"; linkmenu.style.color = white; document.getElementById("submenuarrow22").style.backgroundPosition = "-134px -216px";}
+            function linksclose() { linkmenu.style.backgroundColor = silv; linksubmenu.style.marginLeft = faraw; linkmenu.style.color = black; document.getElementById("submenuarrow22").style.backgroundPosition = "-54px -216px";}
+            function mediaopen() { medimenu.style.backgroundColor = prus; medisubmenu.style.marginLeft = "148px"; medimenu.style.color = white; document.getElementById("submenuarrow23").style.backgroundPosition = "-134px -216px";}
+            function mediaclose() { medimenu.style.backgroundColor = silv; medisubmenu.style.marginLeft = faraw; medimenu.style.color = black; document.getElementById("submenuarrow23").style.backgroundPosition = "-54px -216px";}
+            function documentsopen() { documenu.style.backgroundColor = prus; docusubmenu.style.marginLeft = "163px"; documenu.style.color = white; document.getElementById("menuarrow3").style.backgroundPosition = "-134px -216px";}
+            function documentsclosed() { documenu.style.backgroundColor = silv; docusubmenu.style.marginLeft = faraw; documenu.style.color = black; document.getElementById("menuarrow3").style.backgroundPosition = "-54px -216px";}
+            function settingsopen() { settmenu.style.backgroundColor = prus;  settsubmenu.style.marginLeft = "163px"; settmenu.style.color = white; document.getElementById("menuarrow4").style.backgroundPosition = "-134px -216px";}
+            function settingsclosed() { settmenu.style.backgroundColor = silv; settsubmenu.style.marginLeft = faraw; settmenu.style.color = white; document.getElementById("menuarrow4").style.backgroundPosition = "-54px -216px";}
+            function settingsactivedesktopopen() { actimenu.style.backgroundColor = prus; actisubmenu.style.marginLeft = "159px"; actimenu.style.color = white; document.getElementById("submenuarrow31").style.backgroundPosition = "-134px -216px";}
+            function settingsactivedesktopclose() { actimenu.style.backgroundColor = silv; actisubmenu.style.marginLeft = faraw; actimenu.style.color = black; document.getElementById("submenuarrow31").style.backgroundPosition = "-54px -216px";}
+            function findopen() { findmenu.style.backgroundColor = prus; findsubmenu.style.marginLeft = "163px"; findmenu.style.color = white; document.getElementById("menuarrow5").style.backgroundPosition = "-134px -216px";}
+            function findclosed() { findmenu.style.backgroundColor = silv; findsubmenu.style.marginLeft = faraw; findmenu.style.color = black; document.getElementById("menuarrow5").style.backgroundPosition = "-54px -216px";}
         </script>
 </body></html>
