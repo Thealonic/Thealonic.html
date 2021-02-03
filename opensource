@@ -55,10 +55,6 @@
                     --horisplitter:     url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/horizontalsplitter.png');
                     --scrollbar:        url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/scrollbarempty.png');
                     
-                    --displaydisplay:   url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/display%20window.png');
-                    --displaycolour:    url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/display%20colour.png');
-                    --displayenergy:    url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/energy.png');
-                    
                     --white: #ffffff; --lightg: #dfdfdf;  --silver: #c0c0c0; --midgray: #ababab; --gray: #808080; --black: #0a0a0a;
                     --prussian: #00207c ; --wincyan: #008080; --yellow: #ffff00;}
 
@@ -281,11 +277,12 @@
             
  /* Message box reference sheets ------------------------------------------------------------------------------*/
 
-            .displayboxdisplay {    width:184px; height:169px; background-image: var(--displaydisplay);}
-            .displaycolour {        width:153px; height: 13px; background-image: var(--displaycolour); z-index:20;}
+            .displayboxdisplay {    width:184px; height:169px; background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/display%20window.png')}
+            .displaycolour {        width:153px; height: 13px; background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/display%20colour.png'); z-index:20;}
             .displaycolourback {    width:152px; height:132px; margin-top:37px; z-index:1; background-size: auto; background-size: 152px 132px;}
             .displaycolourbackb {   width:152px; height:132px; margin-top:37px; z-index:1; background-size: auto; background-size: 152px 132px; background-color: #008080;}
-            .energysaving {         width: 71px; height: 42px; background-image: var(--displayenergy);}
+            .energysaving {         width: 71px; height: 42px; background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/energy.png')}
+            .currentclock {         width:127px; height:127px; background-image: url('https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/clock.png')}
             
             .reflinkblack { color: var(--black); } .reflinkblack:hover { color: var(--white); text-decoration-line: underline; }
             
@@ -467,7 +464,6 @@
 
 <!-- regular message box rendering ------------------------------------------------------------------------------>
 
-        <!-- message box rendering -->
         <div class="win98post" style="height: 50px; width:306px; left: 77%; top: 62%; z-index:5;" onmousedown="messageactive();" id="message">
              <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:2px; margin-top:2px;" onclick="messageclose()"><div class="close"></div></div>
              <div class="win98titlebarbutton" style="margin-top:2px;" onclick="messagemaximize()"><div class="maximize"></div></div>
@@ -498,40 +494,44 @@
                 <fieldset style="position:absolute; width:166px; height:183px; margin-left: 12px; margin-top: 12px;">
                     <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: silver; width:24px; padding: 0px 0px 3px 3px; margin-left:-3px"> <underline>D</underline>ate </label>
                     
-                    <ul class="tree-view"  style="position: absolute; width:70px; height: 17px; padding:2px; margin-top:13px; margin-left:1px;" onmouseleave="monthmenuclose()"><div class="container" style="padding: 3px 2px 2px 2px;" id="month"></div>
-                        <div class="win98button" style="position:absolute; margin-top: -17px; margin-left:54px; width:10px; height:11px;" onclick="monthmenu()"><div class="scrolldown" style="margin-left:-3px;"></div></div>
+                    <ul class="tree-view"  style="position: absolute; width:70px; height: 17px; padding:2px; margin-top:13px; margin-left:1px;" onmouseleave="monthmenuclose()"><div class="container" style="padding: 2px 1px 1px 1px; border-style: dotted; border-width: 1px; white" id="month"></div> 
+                        <div class="win98button" style="position:absolute; margin-top: -17px; margin-left:54px; width:10px; height:11px;" onclick="monthmenu(); yeardropbackfa();"><div class="scrolldown" style="margin-left:-3px;"></div></div>
                         <div class="drop-down-menu" style="position:absolute; margin-top:0px; width: 69px; margin-left: -200000px;" id="monthmenu">
                             <div class="win98buttonpressed" style="position:absolute; margin-top: -17px; margin-left:56px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
-                            <div class="drop-down-text" onclick="jan(); monthmenuclose()">January</div><div class="drop-down-text" onclick="feb(); monthmenuclose()">Febuary</div><div class="drop-down-text" onclick="mar(); monthmenuclose()">March</div>  
-                            <div class="drop-down-text" onclick="apr(); monthmenuclose()">April</div><div class="drop-down-text" onclick="may(); monthmenuclose()">May</div><div class="drop-down-text" onclick="jun(); monthmenuclose()">June</div>  
-                            <div class="drop-down-text" onclick="jul(); monthmenuclose()">July</div><div class="drop-down-text" onclick="aug(); monthmenuclose()">August</div><div class="drop-down-text" onclick="sep(); monthmenuclose()">September</div> 
-                            <div class="drop-down-text" onclick="oct(); monthmenuclose()">October</div><div class="drop-down-text" onclick="nov(); monthmenuclose()">November</div><div class="drop-down-text" onclick="dec(); monthmenuclose()">December</div></ul>
+                            <div class="drop-down-text" onclick="jan(); monthdropback(); monthmenuclose()">January</div><div class="drop-down-text" onclick="feb(); monthdropback(); monthmenuclose()">Febuary</div><div class="drop-down-text" onclick="mar(); monthdropback(); monthmenuclose()">March</div>  
+                            <div class="drop-down-text" onclick="apr(); monthdropback(); monthmenuclose()">April</div><div class="drop-down-text" onclick="may(); monthdropback(); monthmenuclose()">May</div><div class="drop-down-text" onclick="jun(); monthdropback(); monthmenuclose()">June</div>  
+                            <div class="drop-down-text" onclick="jul(); monthdropback(); monthmenuclose()">July</div><div class="drop-down-text" onclick="aug(); monthdropback(); monthmenuclose()">August</div><div class="drop-down-text" onclick="sep(); monthdropback(); monthmenuclose()">September</div> 
+                            <div class="drop-down-text" onclick="oct(); monthdropback(); monthmenuclose()">October</div><div class="drop-down-text" onclick="nov(); monthdropback(); monthmenuclose()">November</div><div class="drop-down-text" onclick="dec(); monthdropback(); monthmenuclose()">December</div></ul>
                             
-                    <ul class="tree-view"  style="position: absolute; width:76px; height: 17px; padding:2px; margin-top:13px; margin-left: 83px;"><div class="container" style="padding: 3px 2px 2px 2px;" id="year"></div>
-                        <div class="win98button" style="position:absolute; margin-top: -17px; margin-left:61px; width:9px; height:2px;" onclick="yearadd()"><div class="smallscrollup" style="margin-left:3px; margin-top:0px;"></div></div>
-                        <div class="win98button" style="position:absolute; margin-top: -8px; margin-left:61px; width:9px; height:2px;" onclick="yearsub()"><div class="smallscrolldown" style="margin-left:3px; margin-top:0px;"></div></div></ul>
+                    <ul class="tree-view"  style="position: absolute; width:76px; height: 17px; padding:2px; margin-top:13px; margin-left: 83px;"><div class="container" style="padding: 2px 1px 1px 1px; border-style: dotted; border-width: 1px; border-color: white;" id="year"></div>
+                        <div class="win98button" style="position:absolute; margin-top: -17px; margin-left:61px; width:9px; height:2px;" onclick="yearadd(); yeardropback(); monthdropdefa() "><div class="smallscrollup" style="margin-left:3px; margin-top:0px;"></div></div>
+                        <div class="win98button" style="position:absolute; margin-top: -8px; margin-left:61px; width:9px; height:2px;" onclick="yearsub(); yeardropback(); monthdropdefa() "><div class="smallscrolldown" style="margin-left:3px; margin-top:0px;"></div></div></ul>
                         
                     <script>
                         var monthdrop = false; realmonth = true;
                         function monthmenu(){ if (desktopdrop == false) { document.getElementById("monthmenu").style.marginLeft = "-2px"; desktopdrop = true;
-                                       } else if (desktopdrop == true){ document.getElementById("monthmenu").style.marginLeft = "-200000px"; desktopdrop = false; }}
-                        function monthmenuclose() { document.getElementById("monthmenu").style.marginLeft = "-200000px"; desktopdrop = false; }
+                                       } else if (desktopdrop == true){ document.getElementById("monthmenu").style.marginLeft = "-200000px"; desktopdrop = false;}}
+                        function monthmenuclose() { document.getElementById("monthmenu").style.marginLeft = "-200000px"; desktopdrop = false;} 
                         function jan() { realmonth = false; month = "January"; clocku();} function feb() { realmonth = false; month = "Febuary"; clocku();} function mar() { realmonth = false; month = "March"; clocku();}
                         function apr() { realmonth = false; month = "April"; clocku();} function may() { realmonth = false; month = "May"; clocku();} function jun() { realmonth = false; month = "June"; clocku();}
                         function jul() { realmonth = false; month = "July"; clocku();} function aug() { realmonth = false; month = "August"; clocku();} function sep() { realmonth = false; month = "September"; clocku();}
                         function oct() { realmonth = false; month = "October"; clocku();} function nov() { realmonth = false; month = "November"; clocku();} function dec() { realmonth = false; month = "December"; clocku();}
+                        
+                        function monthyearclear() { monthdropdefa(); yeardropbackfa(); }
+                        function monthdropback() { document.getElementById("month").style.backgroundColor = prus; document.getElementById("month").style.color = white; document.getElementById("month").style.borderColor = yell }
+                        function monthdropdefa() { document.getElementById("month").style.backgroundColor = white; document.getElementById("month").style.color = black; document.getElementById("month").style.borderColor = white }
+                        function yeardropback() { document.getElementById("year").style.backgroundColor = prus; document.getElementById("year").style.color = white; document.getElementById("year").style.borderColor = yell }
+                        function yeardropbackfa() { document.getElementById("year").style.backgroundColor = white; document.getElementById("year").style.color = black; document.getElementById("year").style.borderColor = white }
                     </script> 
                             
                     <ul class="tree-view"  style="position: absolute; width:158px; height: 126px; padding:2px; margin-top:45px; margin-left:1px;">
                     
                     </ul>
-                            
-                            
                 </fieldset>
                 
                 <fieldset style="position:absolute; width:166px; height:183px; margin-left: 226px; margin-top: 12px;">
                     <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: silver; width:24px; padding: 0px 0px 3px 3px; margin-left:-3px"> <underline>T</underline>ime </label>
-                        
+                        <center><div class="currentclock" style="margin-top:10px;"><canvas id="canvas" width="128" height="128"/></div></center>
                 </fieldset>
                 
                 <fieldset style="position:absolute; width:379px; height:55px; margin-left: 12px; margin-top: 234px;">
@@ -546,37 +546,36 @@
             <!-- --------------------------------------- footer --------------------------------------- -->
             <!-- display settings buttons -->
             <div class="win98button" style="position:absolute; width:70px; height:18px; margin-top: 360px; margin-left:360px;"> 
-                <div class="buttontext" style="margin-top: 3px; margin-left:22px; cursor:pointer"> Apply </div></div>
+                <div class="buttontext" style="margin-top: 3px; margin-left:22px; cursor:pointer" onclick="monthyearclear();"> Apply </div></div>
             <div class="win98button" style="position:absolute; width:70px; height:18px; margin-top: 360px; margin-left:280px;">
-                <div class="buttontext" style="margin-top: 3px; margin-left:18px; cursor:pointer" onclick="clockclose()">Cancel</div></div>
+                <div class="buttontext" style="margin-top: 3px; margin-left:18px; cursor:pointer" onclick="clockclose();">Cancel</div></div>
             <div class="win98button" style="position:absolute; width:70px; height:18px; margin-top: 360px; margin-left:200px;">
-                <div class="buttontext" style="margin-top: 3px; margin-left:25px; cursor:pointer" onclick="clockclose()">Okay</div></div></div>
+                <div class="buttontext" style="margin-top: 3px; margin-left:25px; cursor:pointer" onclick="clockclose();">Okay</div></div></div>
         </div>
         
         <script>
-            var da = new Date(); realmonth = true;
-            var yearmath = 0; monthArr = ["January", "February","March", "April", "May", "June", "July", "August", "September", "October", "November","December"];
-            function clocku(){ date = da.getDate(); year = da.getFullYear() + yearmath; if(realmonth == true){monthno = da.getMonth(); month = monthArr[monthno]};
+            var da = new Date(); monthArr = ["January", "February","March", "April", "May", "June", "July", "August", "September", "October", "November","December"]; realmonth = true; 
+            var yearmath = 0; daymath = 0; minutemath = 0; hourmath = 0;
+            
+            if (minutemath > 60){ minutemath - 60; hourmath + 1;} if(minutemath < 0){ minutemath + 60; hourmath - 1;}
+            if (hourmath > 24){ hourmath - 24; daymath + 1;} if(hourmath < 0){ hourmath + 24; daymath - 1;}
+            
+            function clocku(){ date = da.getDate() + daymath; year = da.getFullYear() + yearmath; 
+                               if(realmonth == true){monthno = da.getMonth(); month = monthArr[monthno]};
                  document.getElementById("month").innerHTML = month; document.getElementById("year").innerHTML = year; }
-            function yearadd() {yearmath = yearmath + 1; clocku();} function yearsub() {yearmath = yearmath - 1; clocku();}
-            
-            function clockactive() { idleactive(); inactiveall(); document.getElementById("clock").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;  document.getElementById("clockwindow").style.backgroundImage = github + "img/title-bar%20postheader.png')";}
-            function clockclose() { idleactive(); inactiveall(); document.getElementById("clock").style.marginLeft = "-20000px"; document.getElementById("clock").style.right = "-100%";}
-            function clockopen() { clockactive(); document.getElementById("clock").style.left = "75%"; document.getElementById("clock").style.top = "50%"; document.getElementById("clock").style.marginLeft = "0px";}
-        
-            function updateClock(){
-                var mins = da.getMinutes(); var hrs = da.getHours(); var ext = "AM";
-                if(hrs > 12){ var ext = "PM"; var hrs = hrs - parseInt(12); }
-                if(hrs < 10){ var hrs = "0"+hrs; }
-                if(mins < 10){ var mins = "0"+mins; }
-                var currentTime = hrs + ":" + mins + " " + ext;
-                $('#showClock').html(currentTime); }
-            
+                 
+            function minuteadd() { minutemath = minutemath + 1; clocku()}   function minutesub() { minutemath = minutemath - 1; clocku()}
+            function houradd() { hourmath = hourmath + 1; clocku()}         function hoursub() { hourmath = hourmath - 1; clocku()}
+            function yearadd() {yearmath = yearmath + 1; clocku()}          function yearsub() {yearmath = yearmath - 1; clocku()}
+
+            var docclock = document.getElementById("clock"); docclockwin = document.getElementById("clockwindow"); 
+            function clockactive() { idleactive(); inactiveall(); docclock.style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;  docclockwin.style.backgroundImage = github + "img/title-bar%20postheader.png')";}
+            function clockclose() { idleactive(); inactiveall(); docclock.style.marginLeft = "-20000px"; docclock.style.right = "-100%"; monthdropdefa(); yeardropbackfa();}
+            function clockopen() { clockactive(); docclock.style.left = "75%"; docclock.style.top = "50%"; docclock.style.marginLeft = "0px";}
         </script>
         
 <!-- Display properties rendering ------------------------------------------------------------------------------>
             
-        <!-- display settings container -->
         <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; left: 77%; z-index:5;" onmousedown="diskactive()" id="disk">
             <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:2px; margin-top:2px; cursor: pointer;" title="close" onclick="diskclose()"><div class="close"></div></div>
             <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="margin-top:2px" title="help"> <div class="help"></div></div></a> 
@@ -614,7 +613,6 @@
             </script>
             
             <!-- --------------------------------------- background tab --------------------------------------- -->
-            <!-- background inner container -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:9" id="background">
                 <center style="margin-top:12px"><div class="displaycolourback" id="dcb1"><div class="displayboxdisplay" style="margin-left:-16px; margin-top:-20px;"></div></div></center>
                     
@@ -711,7 +709,6 @@
             </ul></fieldset></div>
             
             <!-- --------------------------------------- screensaver tab --------------------------------------- -->
-            <!-- background inner container -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="screensaver">
                 <center style="margin-top:12px"><div class="displaycolourback" id="dcb2"><div class="displayboxdisplay" style="margin-left:-16px; margin-top:-20px;"></div></div></center>
                     
@@ -763,7 +760,6 @@
             </fieldset></div>
             
             <!-- --------------------------------------- appearance tab --------------------------------------- -->
-            <!-- background inner container -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="appearance">
                 <ul class="tree-view"  id="apperancepreview" style="width:337px; height:179px; margin-left: 12px; margin-top: 12px; background-size: cover; padding:10px;">
                                                   
@@ -1057,7 +1053,6 @@
             </fieldset></div>
             
             <!-- --------------------------------------- settings tab --------------------------------------- -->
-            <!-- inner container -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="settings">
                 <center style="margin-top:12px"><div class="displaycolourbackb" id="dcb3"><div class="displayboxdisplay" style="margin-left:-16px; margin-top:-20px;"></div></div></center>
                 <p style="margin-left:14px; margin-top:58px;" > Display: <br> Default Monitor on DisplayPort - Standard PCI Graphics Adapter (XGA) </p>
@@ -1104,14 +1099,12 @@
             </div></div>
             
             <!-- --------------------------------------- footer --------------------------------------- -->
-            <!-- display settings buttons -->
             <div class="win98button" style="position:absolute; width:70px; height:18px; margin-top: 395px; margin-left:316px;" onclick="wallpaperupdate(); backcolourset(); fontcolourset();"> 
                         <div class="buttontext" style="margin-top: 3px; margin-left:22px; cursor:pointer"> Apply </div></div>
             <div class="win98button" style="position:absolute; width:70px; height:18px; margin-top: 395px; margin-left:234px;">
                     <div class="buttontext" style="margin-top: 3px; margin-left:18px; cursor:pointer" onclick="diskclose()">Cancel</div></div>
             <div class="win98button" style="position:absolute; width:70px; height:18px; margin-top: 395px; margin-left:152px;">
-                    <div class="buttontext" style="margin-top: 3px; margin-left:25px; cursor:pointer" onclick="diskclose(); wallpaperupdate(); backcolourset(); fontcolourset();">Okay</div></div></div>
-        </div>
+                    <div class="buttontext" style="margin-top: 3px; margin-left:25px; cursor:pointer" onclick="diskclose(); wallpaperupdate(); backcolourset(); fontcolourset();">Okay</div></div></div></div>
         
 <!-- --------------------------------------- disk properties functions --------------------------------------- -->
         
@@ -1225,6 +1218,8 @@
             </div>
         {/block:Pagination}
         
+<!-- Tumblr Post handler ------------------------------------------------------------------------------>
+        
         <script>
             function tumblractive() { tumblrButtonOpen = false; idleactive(); inactiveall(); 
                 document.getElementById("post").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
@@ -1245,8 +1240,6 @@
                     <div class="title-bar-98" id="postwindow" style="background-image:url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/img/title-bar%20postheader.png')" id="tumblrheader"> 
                         <div class="title-bar-text">🍭 very.vunnies on Tumblr - Internet Explorer</div></div>
                     <div class="window-body"> 
-                    
-<!-- Post headers body ------------------------------------------------------------------------------>
                         
                         <div class="post-header" style="height: 46px; margin-top:-6px;">
                             <fieldset style="position:absolute; height: 44px; width: 467px; margin-left:-6px; padding:2px;"> 
@@ -2116,8 +2109,39 @@
                         $newElems.imagesLoaded(function(){ $container.masonry( 'appended', $newElems, true ); $newElems.animate({ opacity: 1 })})
                         $newElems.find('.video').each( function() { resizeVideos() })})}
                 //taskbar clock functions
-                window.setInterval(updateClock, 6000);
+                window.setInterval(updateClock(), 6000);
                 updateClock()});
+            
+            function updateClock(){
+                var mins = da.getMinutes() + minutemath; var hrs = da.getHours() + hourmath; var ext = "AM";
+                if(hrs > 12){ var ext = "PM"; var hrs = hrs - parseInt(12); }
+                if(hrs < 10){ var hrs = "0"+hrs; } if(mins < 10){ var mins = "0"+mins; }
+                var currentTime = hrs + ":" + mins + " " + ext;
+                $('#showClock').html(currentTime); }
+                
+//-- clock for clockbox ------------------------------------------------------------------------------>
+                
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d"); var radius = canvas.height / 2;
+            ctx.translate(radius, radius); radius = radius * 0.90; setInterval(drawClock, 1000);
+            
+            function drawClock() { drawFace(ctx, radius); drawTime(ctx, radius)}
+            function drawFace(ctx, radius) { ctx.beginPath(); ctx.arc(0, 0, radius, 0, 2*Math.PI); ctx.fillStyle = "#c0c0c0";ctx.fill();}
+            
+            function drawTime(ctx, radius){ 
+                var now = new Date(); hour = now.getHours(); minute = now.getMinutes() + minutemath; second = now.getSeconds();
+                hour=hour%12; hour=(hour*Math.PI/6)+(minute*Math.PI/(6*60))+(second*Math.PI/(360*60));
+                
+                drawHand(ctx, hour, radius*0.5, radius*0.05); //hand drawing functions
+                minute=(minute*Math.PI/30)+(second*Math.PI/(30*60)); drawHand(ctx, minute, radius*0.8, radius*0.05);
+                second=(second*Math.PI/30); drawHand(ctx, second, radius*0.9, radius*0.005)} //hand drawing functions
+            
+            var hand = 1;
+            function drawHand(ctx, pos, length, width) {
+            	if (hand < 3){ ctx.beginPath(); ctx.lineWidth = 2.5; ctx.strokeStyle = "#008080";
+                  ctx.moveTo(0,0); ctx.rotate(pos); ctx.lineTo(0, -length); ctx.stroke(); ctx.rotate(-pos); hand = hand + 1;
+            	} else { ctx.beginPath(); ctx.lineWidth = 0.5; ctx.strokeStyle = "#000"; ctx.lineCap = "round"; 
+                  ctx.moveTo(0,0); ctx.rotate(pos); ctx.lineTo(0, -length); ctx.stroke(); ctx.rotate(-pos); hand = 1 }}
             
         // Drag element scripts ------------------------------------------------------------------------------>
             
@@ -2134,10 +2158,10 @@
                 elmnt.style.top = (elmnt.offsetTop - pos2) + "px"; elmnt.style.left = (elmnt.offsetLeft - pos1) + "px"; }
             function closeDragElement() { document.onmouseup = null; document.onmousemove = null; }}
         
-        // Start Menu Handling ------------------------------------------------------------------------------>
+//-- Startmenu script handling ------------------------------------------------------------------------------>
             
             var progmenu = document.getElementById("menuprograms"); progsubmenu = document.getElementById("programsmenu"); accemenu = document.getElementById("accessories"); accesubmenu = document.getElementById("menuaccessoriessubmenu");
-                commmenu = document.getElementById("communications"); commsubmenu = document.getElementById("menucommunicationssubmenu"); entemenu = document.getElementById("entertainment"); sentsubmenu = document.getElementById("menuentertainmentsubmenu");
+                commmenu = document.getElementById("communications"); commsubmenu = document.getElementById("menucommunicationssubmenu"); entemenu = document.getElementById("entertainment"); entesubmenu = document.getElementById("menuentertainmentsubmenu");
                 gamemenu = document.getElementById("games"); gamesubmenu = document.getElementById("gamessubmenu"); intemenu = document.getElementById("internettools"); intesubmenu = document.getElementById("internettoolssubmenu");
                 systmenu = document.getElementById("systemtools"); systsubmenu = document.getElementById("systemtoolssubmenu"); onlimenu = document.getElementById("onlineservices"); onlisubmenu = document.getElementById("onlineservicessubmenu");
                 starmenu = document.getElementById("startup"); starsubmenu = document.getElementById("startupsubmenu"); favomenu = document.getElementById("menufavourites"); favosubmenu = document.getElementById("favouritesmenu");
@@ -2145,41 +2169,49 @@
                 medimenu = document.getElementById("media"); medisubmenu = document.getElementById("mediasubmenu"); documenu = document.getElementById("menudocuments"); docusubmenu = document.getElementById("documentsmenu");
                 settmenu = document.getElementById("menusettings"); settsubmenu = document.getElementById("settingsmenu"); actimenu = document.getElementById("activedesktop"); actisubmenu = document.getElementById("activedesktopsubmenu");
                 findmenu = document.getElementById("menufind"); findsubmenu = document.getElementById("findmenu");
-            var white = "#fff"; black = "#000"; prus = "#00207c"; silv = "#c0c0c0"; faraw = "200000px"
+            var white = "#fff"; black = "#000"; prus = "#00207c"; silv = "#c0c0c0"; faraw = "200000px"; aropen = "-134px -216px"; arclose = "-54px -216px"; yell = "#ffff00";
             
-            function programsopen() { progmenu.style.backgroundColor = prus; progsubmenu.style.marginLeft = "163px"; progmenu.style.color = white; document.getElementById("menuarrow1").style.backgroundPosition = "-134px -216px";}
-            function programsclosed() { progmenu.style.backgroundColor = silv; progsubmenu.style.marginLeft = faraw; progmenu.style.color = black; document.getElementById("menuarrow1").style.backgroundPosition = "-54px -216px";}
-            function accessoriesopen() { accemenu.style.backgroundColor = prus; accesubmenu.style.marginLeft = "133px"; accemenu.style.color = white; document.getElementById("submenuarrow2").style.backgroundPosition = "-134px -216px";}
-            function accessoriesclose() { accemenu.style.backgroundColor = silv; accesubmenu.style.marginLeft = faraw; accemenu.style.color = black; document.getElementById("submenuarrow2").style.backgroundPosition = "-54px -216px";}
-            function communicationsopen() { commmenu.style.backgroundColor = prus; commsubmenu.style.marginLeft = "130px"; commmenu.style.color = white; document.getElementById("menuarrow12").style.backgroundPosition = "-134px -216px";}
-            function communicationsclose() { commmenu.style.backgroundColor = silv; commsubmenu.style.marginLeft = faraw; commmenu.style.color = black; document.getElementById("menuarrow12").style.backgroundPosition = "-54px -216px";}
-            function entertainmentopen() { entemenu.style.backgroundColor = prus; sentsubmenu.style.marginLeft = "130px"; entemenu.style.color = white; document.getElementById("menuarrow13").style.backgroundPosition = "-134px -216px";}
-            function entertainmentclose() { entemenu.style.backgroundColor = silv; sentsubmenu.style.marginLeft = faraw; entemenu.style.color = black; document.getElementById("menuarrow13").style.backgroundPosition = "-54px -216px";}
-            function gamesopen() { gamemenu.style.backgroundColor = prus; gamesubmenu.style.marginLeft = "130px"; gamemenu.style.color = white; document.getElementById("menuarrow14").style.backgroundPosition = "-134px -216px";}
-            function gamesclose() { gamemenu.style.backgroundColor = silv; gamesubmenu.style.marginLeft = faraw; gamemenu.style.color = black; document.getElementById("menuarrow14").style.backgroundPosition = "-54px -216px";}
-            function internettoolsopen() { intemenu.style.backgroundColor = prus; intesubmenu.style.marginLeft = "130px"; intemenu.style.color = white; document.getElementById("menuarrow15").style.backgroundPosition = "-134px -216px";}
-            function internettoolsclose() { intemenu.style.backgroundColor = silv; intesubmenu.style.marginLeft = faraw; intemenu.style.color = black; document.getElementById("menuarrow15").style.backgroundPosition = "-54px -216px";}
-            function systemtoolsopen() { systmenu.style.backgroundColor = prus; systsubmenu.style.marginLeft = "130px"; systmenu.style.color = white; document.getElementById("menuarrow16").style.backgroundPosition = "-134px -216px";}
-            function systemtoolsclose() { systmenu.style.backgroundColor = silv; systsubmenu.style.marginLeft = faraw; systmenu.style.color = black; document.getElementById("menuarrow16").style.backgroundPosition = "-54px -216px";}
-            function onlineservicesopen() { onlimenu.style.backgroundColor = prus; onlisubmenu.style.marginLeft = "133px"; onlimenu.style.color = white; document.getElementById("submenuarrow3").style.backgroundPosition = "-134px -216px";}
-            function onlineservicesclose() { onlimenu.style.backgroundColor = silv; onlisubmenu.style.marginLeft = faraw; onlimenu.style.color = black; document.getElementById("submenuarrow3").style.backgroundPosition = "-54px -216px";}
-            function startupopen() { starmenu.style.backgroundColor = prus; starsubmenu.style.marginLeft = "133px"; starmenu.style.color = white; document.getElementById("submenuarrow4").style.backgroundPosition = "-134px -216px";}
-            function startupclose() { starmenu.style.backgroundColor = silv; starsubmenu.style.marginLeft = faraw; starmenu.style.color = black; document.getElementById("submenuarrow4").style.backgroundPosition = "-54px -216px";}
-            function favouritesopen() { favomenu.style.backgroundColor = prus; favosubmenu.style.marginLeft = "163px"; favomenu.style.color = white; document.getElementById("menuarrow2").style.backgroundPosition = "-134px -216px";}
-            function favouritesclosed() { favomenu.style.backgroundColor = silv; favosubmenu.style.marginLeft = faraw; favomenu.style.color = black; document.getElementById("menuarrow2").style.backgroundPosition = "-54px -216px";}
-            function channelsopen() { chanmenu.style.backgroundColor = prus; chansubmenu.style.marginLeft = "148px"; chanmenu.style.color = white; document.getElementById("submenuarrow21").style.backgroundPosition = "-134px -216px";}
-            function channelsclose() { chanmenu.style.backgroundColor = silv; chansubmenu.style.marginLeft = faraw; chanmenu.style.color = black; document.getElementById("submenuarrow21").style.backgroundPosition = "-54px -216px";}
-            function linksopen() { linkmenu.style.backgroundColor = prus; linksubmenu.style.marginLeft = "148px"; linkmenu.style.color = white; document.getElementById("submenuarrow22").style.backgroundPosition = "-134px -216px";}
-            function linksclose() { linkmenu.style.backgroundColor = silv; linksubmenu.style.marginLeft = faraw; linkmenu.style.color = black; document.getElementById("submenuarrow22").style.backgroundPosition = "-54px -216px";}
-            function mediaopen() { medimenu.style.backgroundColor = prus; medisubmenu.style.marginLeft = "148px"; medimenu.style.color = white; document.getElementById("submenuarrow23").style.backgroundPosition = "-134px -216px";}
-            function mediaclose() { medimenu.style.backgroundColor = silv; medisubmenu.style.marginLeft = faraw; medimenu.style.color = black; document.getElementById("submenuarrow23").style.backgroundPosition = "-54px -216px";}
-            function documentsopen() { documenu.style.backgroundColor = prus; docusubmenu.style.marginLeft = "163px"; documenu.style.color = white; document.getElementById("menuarrow3").style.backgroundPosition = "-134px -216px";}
-            function documentsclosed() { documenu.style.backgroundColor = silv; docusubmenu.style.marginLeft = faraw; documenu.style.color = black; document.getElementById("menuarrow3").style.backgroundPosition = "-54px -216px";}
-            function settingsopen() { settmenu.style.backgroundColor = prus;  settsubmenu.style.marginLeft = "163px"; settmenu.style.color = white; document.getElementById("menuarrow4").style.backgroundPosition = "-134px -216px";}
-            function settingsclosed() { settmenu.style.backgroundColor = silv; settsubmenu.style.marginLeft = faraw; settmenu.style.color = black; document.getElementById("menuarrow4").style.backgroundPosition = "-54px -216px";}
-            function settingsactivedesktopopen() { actimenu.style.backgroundColor = prus; actisubmenu.style.marginLeft = "159px"; actimenu.style.color = white; document.getElementById("submenuarrow31").style.backgroundPosition = "-134px -216px";}
-            function settingsactivedesktopclose() { actimenu.style.backgroundColor = silv; actisubmenu.style.marginLeft = faraw; actimenu.style.color = black; document.getElementById("submenuarrow31").style.backgroundPosition = "-54px -216px";}
-            function findopen() { findmenu.style.backgroundColor = prus; findsubmenu.style.marginLeft = "163px"; findmenu.style.color = white; document.getElementById("menuarrow5").style.backgroundPosition = "-134px -216px";}
-            function findclosed() { findmenu.style.backgroundColor = silv; findsubmenu.style.marginLeft = faraw; findmenu.style.color = black; document.getElementById("menuarrow5").style.backgroundPosition = "-54px -216px";}
+            function cmw() {cm.style.color = white} function cmb() {cm.style.color = black} function cmd() {cms.style.marginLeft = faraw} function cmbp() {cm.style.backgroundColor = silv} function cmbs() {cm.style.backgroundColor = prus}
+            function progcm() {cm = progmenu; cms = progsubmenu} function accecm() {cm = accemenu; cms = accesubmenu} function commcm() {cm = commmenu; cms = commsubmenu} function entecm() {cm = entemenu; cms = entesubmenu} 
+            function gamecm() {cm = gamemenu; cms = gamesubmenu} function intecm() {cm = intemenu; cms = intesubmenu} function systcm() {cm = systmenu; cms = systsubmenu} function onlicm() {cm = onlimenu; cms = onlisubmenu} 
+            function starcm() {cm = starmenu; cms = starsubmenu} function favocm() {cm = favomenu; cms = favosubmenu} function chancm() {cm = chanmenu; cms = chansubmenu} function linkcm() {cm = linkmenu; cms = linksubmenu} 
+            function medicm() {cm = medimenu; cms = medisubmenu} function docucm() {cm = documenu; cms = docusubmenu} function settcm() {cm = settmenu; cms = settsubmenu} function acticm() {cm = actimenu; cms = actisubmenu} 
+            function findcm() {cm = findmenu; cms = findsubmenu} function starton() {cmbs(); cmw()} function startoff(){cmbp(); cmb()}
+
+            
+            function programsopen() {   progcm(); starton(); cms.style.marginLeft = "163px";  document.getElementById("menuarrow1").style.backgroundPosition = aropen}
+            function programsclosed() { progcm(); startoff(); document.getElementById("menuarrow1").style.backgroundPosition = arclose; cmd()}
+            function accessoriesopen() {  accecm(); starton(); cms.style.marginLeft = "133px"; document.getElementById("submenuarrow2").style.backgroundPosition = aropen}
+            function accessoriesclose() { accecm(); startoff(); document.getElementById("submenuarrow2").style.backgroundPosition = arclose; cmd()}
+            function communicationsopen() {  commcm(); starton(); cms.style.marginLeft = "130px"; document.getElementById("menuarrow12").style.backgroundPosition = aropen}
+            function communicationsclose() { commcm(); startoff(); document.getElementById("menuarrow12").style.backgroundPosition = arclose; cmd()}
+            function entertainmentopen() {  entecm(); starton(); cms.style.marginLeft = "130px"; document.getElementById("menuarrow13").style.backgroundPosition = aropen}
+            function entertainmentclose() { entecm(); startoff(); document.getElementById("menuarrow13").style.backgroundPosition = arclose; cmd()}
+            function gamesopen() {  gamecm(); starton(); cms.style.marginLeft = "130px"; document.getElementById("menuarrow14").style.backgroundPosition = aropen}
+            function gamesclose() { gamecm(); startoff(); document.getElementById("menuarrow14").style.backgroundPosition = arclose; cmd()}
+            function internettoolsopen() {  intecm(); starton(); cms.style.marginLeft = "130px"; document.getElementById("menuarrow15").style.backgroundPosition = aropen}
+            function internettoolsclose() { intecm(); startoff(); document.getElementById("menuarrow15").style.backgroundPosition = arclose; cmd()}
+            function systemtoolsopen() {  systcm(); starton(); cms.style.marginLeft = "130px"; document.getElementById("menuarrow16").style.backgroundPosition = aropen}
+            function systemtoolsclose() { systcm(); startoff(); document.getElementById("menuarrow16").style.backgroundPosition = arclose; cmd()}
+            function onlineservicesopen() {  onlicm(); starton(); cms.style.marginLeft = "133px"; document.getElementById("submenuarrow3").style.backgroundPosition = aropen}
+            function onlineservicesclose() { onlicm(); startoff(); document.getElementById("submenuarrow3").style.backgroundPosition = arclose; cmd()}
+            function startupopen() {  starcm(); starton(); cms.style.marginLeft = "133px"; document.getElementById("submenuarrow4").style.backgroundPosition = aropen}
+            function startupclose() { starcm(); startoff(); document.getElementById("submenuarrow4").style.backgroundPosition = arclose; cmd()}
+            function favouritesopen() {   favocm(); starton(); cms.style.marginLeft = "163px"; document.getElementById("menuarrow2").style.backgroundPosition = aropen}
+            function favouritesclosed() { favocm(); startoff(); document.getElementById("menuarrow2").style.backgroundPosition = arclose; cmd()}
+            function channelsopen() {  chancm(); starton(); cms.style.marginLeft = "148px"; document.getElementById("submenuarrow21").style.backgroundPosition = aropen}
+            function channelsclose() { chancm(); startoff(); document.getElementById("submenuarrow21").style.backgroundPosition = arclose; cmd()}
+            function linksopen() {  linkcm(); starton(); cms.style.marginLeft = "148px"; document.getElementById("submenuarrow22").style.backgroundPosition = aropen}
+            function linksclose() { linkcm(); startoff(); document.getElementById("submenuarrow22").style.backgroundPosition = arclose; cmd()}
+            function mediaopen() {  medicm(); starton(); cms.style.marginLeft = "148px"; document.getElementById("submenuarrow23").style.backgroundPosition = aropen}
+            function mediaclose() { medicm(); startoff(); document.getElementById("submenuarrow23").style.backgroundPosition = arclose; cmd()}
+            function documentsopen() {   medicm(); starton(); cms.style.marginLeft = "163px"; document.getElementById("menuarrow3").style.backgroundPosition = aropen}
+            function documentsclosed() { medicm(); startoff(); document.getElementById("menuarrow3").style.backgroundPosition = arclose; cmd()}
+            function settingsopen() {   settcm(); starton(); cms.style.marginLeft = "163px"; document.getElementById("menuarrow4").style.backgroundPosition = aropen}
+            function settingsclosed() { settcm(); startoff(); document.getElementById("menuarrow4").style.backgroundPosition = arclose; cmd()}
+            function settingsactivedesktopopen() { acticm(); starton(); cms.style.marginLeft = "163px"; document.getElementById("submenuarrow31").style.backgroundPosition = aropen}
+            function settingsactivedesktopclose() { acticm(); startoff(); document.getElementById("submenuarrow31").style.backgroundPosition = arclose; cmd()}
+            function findopen() {   findcm(); starton(); cms.style.marginLeft = "163px"; document.getElementById("menuarrow5").style.backgroundPosition = aropen}
+            function findclosed() { findcm(); startoff(); document.getElementById("menuarrow5").style.backgroundPosition = arclose; cmd()}
         </script>
 </body></html>
