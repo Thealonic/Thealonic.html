@@ -24,7 +24,8 @@
     <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.16/dist/98.css">
     
     <script> 
-        var github = "url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/", currentactiveheader, currentinactiveheader, precurrentactiveheader, precurrentinactiveheader;
+        var github = "url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/";
+        var currentinactiveheader = github + "img/title-bar%20postheaderinactive.png')", currentactiveheader = github + "img/title-bar%20postheader.png')";
         $(document).ready(function(){ resizeVideos() }); 
         function resizeVideos() {
            $('.video iframe:not(.tumblr_video_iframe)').each(function(){
@@ -43,24 +44,24 @@
         
         <!-- Setup -->
         <style type="text/css">
-            :root { --spritesheet:      url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png'); 
-                    --desktopsheet:     url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/desktopspritesheet.png');
+            :root { --spritesheet: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png'); 
+                    --desktopsheet: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/desktopspritesheet.png');
                     
-                    --inactive:         url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheaderinactive.png');
-                    --active:           url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheader.png');
-                    --inactivetask:     url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/Taskbar%20application1.png');
-                    --activetask:       url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/Taskbar%20application.png');
+                    --inactive: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheaderinactive.png');
+                    --active: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheader.png');
+                    --inactivetask: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/Taskbar%20application1.png');
+                    --activetask: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/Taskbar%20application.png');
                     
-                    --vertsplitter:     url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/vertical%20splitter.png');
-                    --horisplitter:     url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/horizontalsplitter.png');
-                    --scrollbar:        url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/scrollbarempty.png');
+                    --vertsplitter: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/vertical%20splitter.png');
+                    --horisplitter: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/horizontalsplitter.png');
+                    --scrollbar: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/scrollbarempty.png');
                     
                     --white: #ffffff; --lightg: #dfdfdf;  --silver: #c0c0c0; --midgray: #ababab; --gray: #808080; --black: #0a0a0a; --blue: #0000ff;
                     --prussian: #00207c ; --wincyan: #008080; --yellow: #ffff00; --font: #0000000; --fonttitle: #ffffff; --hover: #ffffff; --stext: #000000;
                     
                     
-                    --preinactive:         url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheaderinactive.png');
-                    --preactive:           url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheader.png');
+                    --preinactive: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheaderinactive.png');
+                    --preactive: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheader.png');
                     --prewhite: #ffffff; --prelightg: #dfdfdf;  --presilver: #c0c0c0; --premidgray: #ababab; --pregray: #808080; --preblack: #0a0a0a;
                     --preprussian: #00207c ; --prewincyan: #008080; --preyellow: #ffff00; --prefont: #000000; --prefonttitle: #ffffff; --prehover: #ffffff; --prestext: #000000;
             }
@@ -155,6 +156,7 @@
             .predisabledfont {         font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--pregray); text-shadow:1px 1px 0 var(--prewhite);}
             preul.tree-view { font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: 4px; display: block; background: var(--prewhite); 
                            box-shadow: inset -1px -1px var(--prewhite),inset 1px 1px var(--pregray),inset -2px -2px var(--prelightg),inset 2px 2px var(--preblack); padding: 6px; margin: 0;}
+            prefieldset{  border: none; box-shadow: inset -1px -1px var(--prewhite), inset 1px 1px var(--pregray), inset -2px -2px var(--pregray), inset 2px 2px var(--prelightg); padding:10px; padding-block-start:8px; margin:0;}
                   
 /* Window icon handling ------------------------------------------------------------------------------*/
             
@@ -413,7 +415,7 @@
      
 <!-- Page rendering ------------------------------------------------------------------------------>
     
-    <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" onload="evangelionmode(); themechange(); backcolourset(); fontcolourset(); wallpaperupdate();">
+    <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" onload="evangelionmode(); backcolourset(); fontcolourset(); wallpaperupdate();">
 
 <!-- VUNNY message box rendering ------------------------------------------------------------------------------>
         
@@ -796,20 +798,20 @@
                         <div class="pretitle-bar-posts" style="background-image: var(--preactive);"> <div class="title-bar-text" style="margin-left:-1px; margin-top:-1px;">💯 Active Window</div></div>
                         <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
                             <div class="container" style="margin-top: -2px">
-                                <label style="position:absolute;">Normal</label>
+                                <label style="position:absolute; color:var(--preblack)">Normal</label>
                                 <div class="predisabledfont" style="position:absolute; margin-left:39px; margin-top: -0px;">Disabled</div>
-                                <fieldset style="position:absolute; margin-left:85px; margin-top:-1px; padding:2px 4px 1px 4px"> Selected </fieldset></div>
-                            <preul class="tree-view"  style="width:274px; height:82px; margin-left: -3px; margin-top: 18px;">
-                                <div class="container" style="position:absolute; background-color: #c0c0c0; margin-left: 262px; width:16px; height:80px"> </div>
-                                <div class="prewin98scroll" style="margin-left: 262px; margin-top:-4px"><div class="scrollup"></div></div>
-                                <div class="prewin98scroll" style="margin-left: 262px; margin-top:70px"><div class="scrolldown"></div></div>
+                                <prefieldset style="position:absolute; margin-left:85px; margin-top:-1px; padding:2px 4px 1px 4px; color:var(--preblack);"> Selected </prefieldset></div>
+                            <preul class="tree-view"  style="width:284px; height:82px; margin-left: -3px; margin-top: 18px;">
+                                <div class="container" style="position:absolute; background-color: #c0c0c0; margin-left: 272px; width:16px; height:80px"> </div>
+                                <div class="prewin98scroll" style="margin-left: 272px; margin-top:-4px"><div class="scrollup"></div></div>
+                                <div class="prewin98scroll" style="margin-left: 272px; margin-top:70px"><div class="scrolldown"></div></div>
                     </preul></div></div>
                         
                     <div class="prewin98post" style="height:67px; width:200px; margin-left:20px; margin-top: 100px;">
                         <div class="prewin98titlebarbutton" style="position:absolute; margin-left: 183px; margin-top:1px; cursor: pointer;" title="close"><div class="close"></div></div>
                         <div class="prewin98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="help"></div></div>
                         <div class="pretitle-bar-posts" style="background-image: var(--preactive);"> <div class="title-bar-text" style="margin-left:-1px; margin-top:-1px;">💬 Message Box</div></div>
-                        <div class="messagewindowbody" style="padding:3px;"> Current active window
+                        <div class="messagewindowbody" style="padding:3px; color:var(--text);"> Current active window
                             <center><div class="prewin98button" style="width:60px; margin-top: 4px;"> 
                                 <div class="prebuttontext" style="margin-top: 2px; margin-left:0.5px; cursor:pointer">Ok.</div></div></center>
                 </div></div></ul>
@@ -846,11 +848,9 @@
                         function Octavia(){             document.getElementById("currentscheme").textContent="Octavia's Study";         cpick17();          wallpaperoption2(); 
                             curcolwhite = "#545454";   curcollightg = "#9f9f9f";  curcolsilver = "#3f3f3f"; curcolmidgray = "#ababab"; curcolgray = "#292929"; curcolblack = "#000000"; curcolblue = "#ffffff";
                             curcolprussian = "#00207c"; curcolwincyan = "#008080";  curcolyellow = "#c0c0c0"; curcolfont = "#c0c0c0"; curcolfonttitle = "#ffffff"; curcolhover = "#ffffff";
-                            document.documentElement.style.setProperty('--inactive', 'url("//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheader-darkmode.png")');
-                            document.documentElement.style.setProperty('--active', 'url("//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheader-darkmodeactive.png")');
-                            document.documentElement.style.setProperty('--preinactive', 'url("//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheader-darkmode.png")');
-                            document.documentElement.style.setProperty('--preactive', 'url("//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheader-darkmodeactive.png")');
-                            precurrentactiveheader = github + "img/title-bar%20postheader-darkmodeactive.png')"; precurrentinactiveheader = github + "img/title-bar%20postheader-darkmode.png')"; precolourupdate(); themepreviewchange();}
+                            precurrentactiveheader = github + "img/title-bar%20postheader-darkmodeactive.png')"; precurrentinactiveheader = github + "img/title-bar%20postheader-darkmode.png')"; 
+                            document.documentElement.style.setProperty('--inactive', precurrentinactiveheader); document.documentElement.style.setProperty('--active', precurrentactiveheader);
+                            document.documentElement.style.setProperty('--preinactive', precurrentinactiveheader); document.documentElement.style.setProperty('--preactive', precurrentactiveheader); precolourupdate(); themepreviewchange();}
                             
                         function girlsdayout(){         document.getElementById("currentscheme").textContent="A Girls Day Out";         cpick19();          wallpaperoption5(); defaultcolourscheme(); precolourupdate();  themepreviewchange();}
                         function milyvean(){            document.getElementById("currentscheme").textContent="Clouds at Midnight";      cpick18();          wallpaperoption7(); defaultcolourscheme(); precolourupdate();  themepreviewchange();}
@@ -866,7 +866,7 @@
                             precolwhite = curcolwhite; precollightg = curcollightg; precolsilver = curcolsilver; precolmidgray = curcolmidgray; precolgray = curcolgray; precolblack = curcolblack; precolblue = curcolblue;
                             precolprussian = curcolprussian; precolwincyan = curcolwincyan; precolyellow = curcolyellow; precolfont = curcolfont; precolfonttitle = curcolfonttitle; precolhover = curcolhover;}
                         function themechange() { document.documentElement.style.setProperty('--blue', curcolblue); 
-                        currentinactiveheader = precurrentinactiveheader; currentactiveheader = precurrentactiveheader; document.getElementById("diskwindow").style.backgroundImage = currentactiveheader;
+                            currentinactiveheader = precurrentinactiveheader; currentactiveheader = precurrentactiveheader; document.getElementById("diskwindow").style.backgroundImage = currentactiveheader;
                             document.documentElement.style.setProperty('--white', curcolwhite); document.documentElement.style.setProperty('--gray', curcolgray); document.documentElement.style.setProperty('--lightg', curcollightg); 
                             document.documentElement.style.setProperty('--black', curcolblack); document.documentElement.style.setProperty('--silver', curcolsilver); document.documentElement.style.setProperty('--prussian', curcolprussian);
                             document.documentElement.style.setProperty('--midgray', curcolmidgray); document.documentElement.style.setProperty('--wincyan', curcolwincyan); document.documentElement.style.setProperty('--yellow', curcolyellow); 
@@ -879,18 +879,17 @@
                     
                         function defaultcolourscheme() { 
                             curcolwhite = "#ffffff";   curcollightg = "#dfdfdf";   curcolsilver = "#c0c0c0"; curcolmidgray = "#ababab"; curcolgray = "#808080"; curcolblack = "#0a0a0a"; curcolblue = "#0000ff";
-                            curcolprussian = "#00207c" ; curcolwincyan = "#008080";  curcolyellow = "#ffff00"; curcolfont = "#000000"; curcolfonttitle = "#ffffff"; curcolhover = "#ffffff"; precolourupdate();  themepreviewchange();
-                            document.documentElement.style.setProperty('--inactive', 'url("//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheaderinactive.png")');
-                            document.documentElement.style.setProperty('--active', 'url("//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheader.png")');
-                            document.documentElement.style.setProperty('--preinactive', 'url("//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheaderinactive.png")');
-                            document.documentElement.style.setProperty('--preactive', 'url("//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/iimg/title-bar%20postheader.png")');
-                            precurrentinactiveheader = github + "img/title-bar%20postheaderinactive.png')"; 
-                            precurrentactiveheader = github + "img/title-bar%20postheader.png')";}
+                            curcolprussian = "#00207c" ; curcolwincyan = "#008080";  curcolyellow = "#ffff00"; curcolfont = "#000000"; curcolfonttitle = "#ffffff"; curcolhover = "#ffffff";
+                            precurrentinactiveheader = github + "img/title-bar%20postheaderinactive.png')"; precurrentactiveheader = github + "img/title-bar%20postheader.png')";
+                            document.documentElement.style.setProperty('--inactive', precurrentinactiveheader); document.documentElement.style.setProperty('--active', precurrentactiveheader);
+                            document.documentElement.style.setProperty('--preinactive', precurrentinactiveheader); document.documentElement.style.setProperty('--preactive', precurrentactiveheader); precolourupdate(); themepreviewchange();}
                         
                     </script>
                         
-                    <button disabled style="position: absolute; margin-left:199px; margin-top:-1px;">Save As...</button>
-                    <button disabled style="position: absolute; margin-left:282px; margin-top:-1px;">Delete</button>
+                    <div class="win98buttoninactive" style="position: absolute; margin-left:199px; margin-top: -2px; width:66px; height:18px;"> 
+                        <div class="disabledfont" style="margin-top: 3px; margin-left:12px;"> Save As... </div></div>
+                        <div class="win98buttoninactive" style="position: absolute; margin-left:280px; margin-top: -2px; width:66px; height:18px;"> 
+                        <div class="disabledfont" style="margin-top: 3px; margin-left:14px;"> Preview </div></div>
                     <br><br>
                     
                     <div class="container" style="margin-top:5px;">
