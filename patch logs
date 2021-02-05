@@ -1,20 +1,49 @@
 <div class="container" style="margin-left: -10px; margin-top: 6px;">
 <ul>
-<li><strong>2021 Febuary 4rd (210204)<em> <br /></em></strong>
+<li><strong>2021 Febuary 5rd (210205) </strong><em>- </em><em><em>The </em>"Schemes"</em><em> Update</em>
 <ul>
-<li><strong>Added fully functioning Schemes</strong><strong><br /></strong>
+<li><strong>Major overhaul to themes handling.</strong><strong><br /></strong>
 <ul>
-<li><strong>Added "Dark Mode" theme&nbsp;</strong> under "octavia" in the presets.<strong><br /></strong></li>
-<li>Added setup for additional themes in the future.</li>
-<li>Reworked preview windows to be their own seperate entities entirely.</li>
-<li>Clicking on a scheme will now show the preview to themes.</li>
+<li>Post headers are now more adaptable to themes and no longer rely on images.</li>
+<li>Post footers are now more adaptable to themes and no longer rely on images.</li>
+<li><strong>Taskbar rehaul. </strong>Buttons have been completely redesigned and toggle functions are now more optimised alongside being scheme friendly due to no longer relying on image assets.</li>
+<li>Different schemes can now easily call the same colour schemes.</li>
+<li>Post titlebars now adjust according to current active scheme.</li>
+<li><em>Theme handling optimisations.<strong><br /></strong></em></li>
 </ul>
 </li>
-<li>Removed visual "resize" area at the bottom right of posts to help the implimentation of themes.</li>
+<li><strong>Page forming overhaul.</strong>
+<ul>
+<li>Taskbar button script rehaul.</li>
+<li>Window handling and calling is now more efficent.</li>
+<li>Major script adjustments to prevent continous script calling.</li>
+<li>Optimised post layering.</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>- Fixed Date and Time not updating unless it was manually updated.</li>
+<li>- Fixed a bug where the hover effect over the currently selected wallpaper wouldn't change after changing to darkmode and back to light mode.</li>
+<li>- Fixed occasional 1 pixel gap between posts and embedding.</li>
+</ol></li>
+<li><strong>2021 Febuary 4rd (210204)<em> <br /></em></strong>
+<ul>
+<li><strong>Implimentation of &lsquo;beta&rsquo; theme</strong><strong>s<br /></strong>
+<ul>
+<li><strong>Added &ldquo;Dark Mode&rdquo; theme&nbsp;</strong> under &ldquo;octavia&rdquo; in the presets.<strong><br /></strong></li>
+<li>Added setup for additional themes in the future.</li>
+<li>All colours are now based on root variables.</li>
+<li>Reworked preview windows to be their own seperate entities entirely.</li>
+<li>Clicking on a scheme will now show the preview to themes.</li>
+<li>Added darktheme spritesheet as a temporary measure to fix some "Dark Mode" colour issues.</li>
+</ul>
+</li>
+<li>Scrollbars now rely on transparancy for theme adaptability.</li>
+<li>Taskbar tasks now rely on transparancy for theme adaptability.</li>
 </ul>
 <ol>
 <li>- Fixed tons of issues relating to colour variables and how they are assigned for better theme compatibility.</li>
-<li>- Fixed a bug where pressing on the "okay" button in display properties wouldn't apply any settings but clicking on the text<em><em> would.</em></em></li>
+<li>- Fixed a bug where pressing on the &ldquo;okay&rdquo; button in display properties wouldn&rsquo;t apply any settings but clicking on the text<em><em> would.</em></em></li>
 <li>- Fixed a bug with two buttons on the Display Properties appearance tab being reliant on very early CSS.</li>
 <li><strong>@Devnote;</strong> Themes may take a few days to fully impliment due to issues with posts being reliant on images for dividers and such.</li>
 </ol></li>
@@ -155,7 +184,7 @@
 <li>Added basic theme functionality under the &ldquo;appearance tab&rdquo;.</li>
 </ul>
 </li>
-<li><strong>Added 3 new themes</strong> which apply settings from accross the Display Properties menu. (This is only a bare bone implementation)</li>
+<li><strong>Added 3 new </strong><strong><strong>&rsquo;</strong>alpha<strong>&rsquo; </strong> themes</strong> which apply settings from accross the Display Properties menu. (This is only a bare bone implementation)</li>
 <li>Removed href links within the &ldquo;preview&rdquo; of the appearance tab.</li>
 <li><em>Optimised how wallpapers are referenced + page loading.</em></li>
 </ul>
