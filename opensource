@@ -49,21 +49,23 @@
                     
                     --inactive: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheaderinactive.png');
                     --active: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheader.png');
-                    --inactivetask: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/Taskbar%20application1.png');
-                    --activetask: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/Taskbar%20application.png');
                     
                     --vertsplitter: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/vertical%20splitter.png');
                     --horisplitter: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/horizontalsplitter.png');
                     --scrollbar: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/scrollbarempty.png');
                     
                     --white: #ffffff; --lightg: #dfdfdf;  --silver: #c0c0c0; --midgray: #ababab; --gray: #808080; --black: #0a0a0a; --blue: #0000ff;
-                    --prussian: #00207c ; --wincyan: #008080; --yellow: #ffff00; --font: #0000000; --fonttitle: #ffffff; --hover: #ffffff; --stext: #000000;
-                    
+                    --prussian: #00207c ; --wincyan: #008080; --yellow: #ffff00; --font: #0000000; --fonttitle: #ffffff; --hover: #ffffff;
+                    --taskbarstarttop1: #808080; --taskbarstarttop2: #0a0a0a; --taskbarstartbottom1: #ffffff; --taskbarstartbottom2: #dfdfdf; 
+                    --taskbar1top1: #808080; --taskbar1top2: #0a0a0a; --taskbar1bottom1: #ffffff; --taskbar1bottom2: #dfdfdf; 
+                    --taskbar2top1: #ffffff; --taskbar2top2: #dfdfdf; --taskbar2bottom1: #808080; --taskbar2bottom2: #0a0a0a; 
+                    --taskbar3top1: #ffffff; --taskbar3top2: #dfdfdf; --taskbar3bottom1: #808080; --taskbar3bottom2: #0a0a0a; 
+                    --taskbar4top1: #ffffff; --taskbar4top2: #dfdfdf; --taskbar4bottom1: #808080; --taskbar4bottom2: #0a0a0a; 
                     
                     --preinactive: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheaderinactive.png');
                     --preactive: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheader.png');
                     --prewhite: #ffffff; --prelightg: #dfdfdf;  --presilver: #c0c0c0; --premidgray: #ababab; --pregray: #808080; --preblack: #0a0a0a;
-                    --preprussian: #00207c ; --prewincyan: #008080; --preyellow: #ffff00; --prefont: #000000; --prefonttitle: #ffffff; --prehover: #ffffff; --prestext: #000000;
+                    --preprussian: #00207c ; --prewincyan: #008080; --preyellow: #ffff00; --prefont: #000000; --prefonttitle: #ffffff; --prehover: #ffffff;
             }
 
 /* Tumblr post handling ------------------------------------------------------------------------------*/
@@ -94,12 +96,11 @@
 /* Window bar handling ------------------------------------------------------------------------------*/
             
             .filler { height: 2px; }
-            
             /* custom css for post windows apposed to the default win98 css */
             .win98container{        box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; position: absolute; color:var(--font);}
             .win98post{             box-shadow: inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; position: absolute; color:var(--font);}
-            .title-bar-posts{       font-weight: 700; color: var(--fonttitle); font-size: 11px; background-image: var(--active); height: 18px; width: 100%}
-            .title-bar-98{          font-weight: 700; color: var(--fonttitle); font-size: 11px; background-image: var(--inactive); height: 18px; width: 100%}
+            .title-bar-posts{       font-weight: 700; color: var(--fonttitle); font-size: 11px; background-image: var(--active); height: 18px; width: 100%; background-size: cover;}
+            .title-bar-98{          font-weight: 700; color: var(--fonttitle); font-size: 11px; background-image: var(--inactive); height: 18px; width: 100%; background-size: cover;}
             .window-body{           margin: 8px; color:var(--font);}
 
             /* window  post handling */
@@ -186,19 +187,18 @@
             .sidescrollbarmiddlemiddle { height:  2px; width:467px; background-image: var(--windowplacement); background-repeat: repeat-y; overflow:hidden;}
             .scrollbarmiddle {           height:  2px; width: 16px; background-image: var(--scrollbar); background-repeat: repeat; overflow:hidden; background-color: var(--white)}
             .verticalsplitter {          background-image: var(--vertsplitter); height: 16px; width: 2px; background-repeat: repeat-y;}
-            .cornerpeice {               background-position: -192px -212px; height: 16px; width: 16px;}
             
 /* Start bar handling ------------------------------------------------------------------------------*/
 
-            /* Post settings */
-            .start_bar {                  position: fixed; background-color: var(--silver); ; bottom: 0; height: 28px; width: 100%; z-index: 3; font-family:sans-serif; font-size: 12px; margin-left:-8px;}
-            .start_bar .top_border {      border-bottom: 1px solid rgb(255,255,255); border-top: 1px solid var(--white);}
-            .start_bar .big_seperator {   float: left; border-left: 1px solid rgb(128,128,128); border-right: 1px solid rgb(255,255,255); height: 22px; margin-top: 2px; margin-left: 2px;}
-            .start_bar .small_seperator { float: left;  border-left: 1px solid rgb(255,255,255); border-top: 1px solid rgb(255,255,255); margin-top: 4px; margin-left: 2px;
-                                          border-right: 1px solid rgb(128,128,128); border-bottom: 1px solid rgb(128,128,128); background-color: rgb(192,192,192); width: 1px; height: 16px;}
+            /* taskbar settings */
+            .start_bar { position: fixed; background-color: var(--silver); ; bottom: 0; height: 28px; width: 100%; z-index: 3; font-family:sans-serif; font-size: 12px; margin-left:-8px;}
+            .start_bar .top_border { border-bottom: 1px solid var(--lightg); border-top: 1px solid var(--white);}
+            .big_seperator { float: left; border-left: 1px solid var(--gray); border-right: 1px solid var(--lightg); height: 22px; margin-top: 2px; margin-left: -1px;} /*thin seperator but tall*/
+            .small_seperator { float: left;  border-left: 1px solid var(--white); border-top: 1px solid var(--white); margin-top: 3px; margin-left: 1px; height:17px; /*thin seperator but tall*/
+                                          border-right: 1px solid var(--gray); border-bottom: 1px solid var(--gray); background-color: var(--silver); width: 1px; height: 18px;}
             .start_bar .time { line-height: 18px; float: right; font-size: 10px; margin-right: 10px;}
             .taskbaricons {    float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px;}
-            
+
             .start_bar .tray { box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver);
                                height: 18px; width: 79px; margin-right: 5px; margin-top: 2px; float: right;} 
                                     
@@ -208,14 +208,13 @@
             .windowsexplorerlogo {  background-image: var(--spritesheet); height: 21px; width: 38px; background-position: -115px -37px; float:right;}
 
             /* start menu application icon config */
-            .submenu18 {        height: 18px; background-color:var(--white);   color: var(--text); width:100%;}
-            .submenu20 {        height: 20px; background-color:var(--silver); color: var(--text); width:100%;}
+            .submenu18 {        height: 18px; background-color:var(--white);   color: var(--text); width:100%;} /* general dropdown menus */
+            .submenu20 {        height: 20px; background-color:var(--silver); color: var(--text); width:100%;} /* submneu hovers */
             .submenu20:hover {  height: 20px; background-color:var(--prussian); color:var(--hover); width:100%;}
-            .submenu36 {        height: 36px; background-color:var(--silver); color: var(--text); width:100%;}
+            .submenu36 {        height: 36px; background-color:var(--silver); color: var(--text); width:100%;} /* startmenu hovers */
             .submenu36:hover {  height: 36px; background-color:var(--prussian); color:var(--hover); width:100%;}
 
             /* start menu misc */
-            .verticaltasksplitter {   background-image: var(--spritesheet); height:  18px; width:   3px; background-position: -110px -38px; position:absolute; margin-left: 1px; margin-top: 1px;}
             .menuapplicationsplit { background-image: var(--horisplitter); height: 2px; width: 1px;background-repeat: repeat-x;}
             .windowsstartmenubar {  background-image: var(--spritesheet); height: 159px; width:  21px; background-position: -339px -72px; position:absolute; float: left;}
 
@@ -289,14 +288,17 @@
             .explorergo {           background-position: -101px  -72px;}                        .none {                 background-position: -100px -192px;                   height: 18px; width: 18px;}
             .explorerback {         background-position: -121px  -72px;}
             .explorerlinks {        height:  5px; width:  4px; background-position: -211px  -222px;}
-            
-            .taskbarapp1 { font-family:"Pixelated MS Sans Serif", Arial; background-image: var(--activetask); float: left; width: 160px; height: 22px; margin-top: 2px; margin-left: 4px;} /*tumblrposts*/
-            .taskbarapp2 { font-family:"Pixelated MS Sans Serif", Arial; background-image: var(--inactivetask); float: left; width: 160px; height: 22px; margin-top: 2px; margin-left: 4px;}
-            .taskbarapp3 { font-family:"Pixelated MS Sans Serif", Arial; background-image: var(--inactivetask); float: left; width: 160px; height: 22px; margin-top: 2px; margin-left: 4px;}
+
+            .taskbartask1 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; margin-left: 4px; background:var(--white); padding:2px; color:var(--font); background-repeat: repeat;
+                            box-shadow:inset -1px -1px var(--taskbar1bottom2), inset 1px 1px var(--taskbar1top2), inset -2px -2px var(--taskbar1bottom1), inset 2px 2px var(--taskbar1top1); background-image: var(--scrollbar);}
+            .taskbartask2 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; margin-left: 4px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat;
+                            box-shadow:inset -1px -1px var(--taskbar2bottom2), inset 1px 1px var(--taskbar2top2), inset -2px -2px var(--taskbar2bottom1), inset 2px 2px var(--taskbar2top1);}
+            .taskbartask3 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; margin-left: 4px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat;
+                            box-shadow:inset -1px -1px var(--taskbar3bottom2), inset 1px 1px var(--taskbar3top2), inset -2px -2px var(--taskbar3bottom1), inset 2px 2px var(--taskbar3top1);}
             
             .clock{ box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray); padding:2px; float:right; width:96px; height:18px; margin-right:2px; margin-top:2px;}
-            .start_bar .time {  line-height: 18px; float: right; font-size: 10px; margin-right: 10px;}
-            .start_bar .calendar { float: left; margin-top: 1px; margin-left: 3px;}
+            .start_bar .time {  line-height: 18px; float: right; font-size: 10px; margin-right: 10px; color:var(--text);}
+            .calendar { float: left; margin-top: 1px; margin-left: 3px;}
             .taskbaricons { float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px;}
             .smalliconscontainer {       width:42px; height:36px; display: inline-block; margin-left:16px; }
             
@@ -312,7 +314,7 @@
             .reflinkblack { color: var(--black); } .reflinkblack:hover { color: var(--white); text-decoration-line: underline; }
             
             ul.tree-view { font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: 4px; display: block; background: var(--white); 
-                           box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black); padding: 6px; margin: 0;}
+                           box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black); padding: 6px; margin: 0; }
             ul.tree-view a { text-decoration: none; color: var(--black);} ul.tree-view a:focus { background-color: var(--prussian); color: var(--white);}
             ul.tree-view ul { margin-top: 4px; margin-left: 12px; padding-left: 16px; border-left: 1px dotted var(--gray);} ul.tree-view ul>li { position:relative; }
             ul.tree-view ul>li:before { content:""; display: block; position: absolute; left: -16px; top: 6px; width: 12px; border-bottom: 1px dotted var(--gray);}
@@ -323,13 +325,13 @@
             ul.tree-view details[open] summary { margin-bottom: 0;} ul.tree-view details[open]>summary:before { content: "-"; }
             
             /* checkboxes */
-            fieldset{  border: none; box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray), inset -2px -2px var(--gray), inset 2px 2px var(--lightg); padding:10px; padding-block-start:8px; margin:0;}
+            fieldset{  border: none; box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray), inset -2px -2px var(--gray), inset 2px 2px var(--lightg); padding:10px; padding-block-start:8px; margin:0; color:var(--text);}
             input[type=checkbox] { appearance: none; -webkit-appearance: none; -moz-appearance: none; margin: 0; background: 0; position: fixed; opacity: 0; border: none} 
             input[type=radio] { appearance: none; -webkit-appearance: none; -moz-appearance: none; margin: 0; background: 0; position: fixed; opacity: 0; border: none}
             input[type=checkbox]+label  { line-height: 13px;} input[type=radio]+label { line-height: 13px; position: relative; margin-left: 18px;} [class^=field-row]+[class^=field-row]{ margin-top: 6px;}   
             .field-row{ display:flex; align-items: center;} .field-row>*+*{ margin-left: 6px;} .field-row-stacked{ display:flex; flex-direction: column;} .field-row-stacked *+*{ margin-top: 6px;}
             
-            a {         color: var(--text); text-decoration: none;} a:hover { text-decoration: underline; color: var(--hover);}
+            a {         color: var(--atext); text-decoration: none;} a:hover { text-decoration: underline; color: var(--hover);}
             span {      background-color: var(--white); color: var(--text);} icon { background-color: var(--wincyan); color: var(--white);}
             label {     display:inline-flex; align-items: center; color: var(--text);} underline { text-decoration-line: underline;} h3 { font-size: 2rem;}
             
@@ -369,7 +371,6 @@
             
             .tagged { font-size: 9px; opacity: 0.5;}
         </style>
-
         
 <!-- desktop handling ------------------------------------------------------------------------------>
 
@@ -415,7 +416,7 @@
      
 <!-- Page rendering ------------------------------------------------------------------------------>
     
-    <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" onload="evangelionmode(); backcolourset(); fontcolourset(); wallpaperupdate();">
+    <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" onload="evangelionmode(); backcolourset(); fontcolourset(); wallpaperupdate(); themechange(); tumblractive();">
 
 <!-- VUNNY message box rendering ------------------------------------------------------------------------------>
         
@@ -424,6 +425,8 @@
             function pyrowindow(){ if(pyrotabs == 0){ document.getElementById("taskapp2").style.marginLeft = "-20000px";}}
         </script>
         
+        
+        
         <div class="win98post" style="z-index: 5; position: fixed; top: 68%; left: 4%;" onmousedown="catactive();" id="cat">
             <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="catclose(); pyrowindow();"><div class="close"></div></div>
                 <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
@@ -431,13 +434,10 @@
                 <ul class="tree-view" style="width: 100%; height: 100%; padding:2px;"> <img style="max-width: 250px; margin-right:-5px; margin-bottom:-2px; margin-left:-1px; margin-top:-1px; width:190px; height:190px;" id="catimage"></ul>
                 <center><div class="win98buttoninactive" style="width:70px; margin-top: 4px; margin-bottom: 4px;"> <div class="disabledfont" style="margin-top: 2px;">Asshole</div> </div></center></div></div>
         <script>
-            var cat = document.getElementById("cat"); catwin = document.getElementById("catwindow"); catfullwin = document.getElementById("catfull"); catfullwin = document.getElementById("catfullwindow");
-            
-            function catactive() { idleactive(); inactiveall(); pyroButtonOpen = false; cat.style.zIndex = (currentlayer = currentlayer + 1); catwin.style.backgroundPosition = "-150px"; currentlayer = currentlayer + 1;
-                catwin.style.backgroundImage = currentactiveheader; document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application.png')";} 
-                
-            function catclose() { idleactive(); inactiveall(); pyroButtonOpen = true; window2 = false; pyrotabs = pyrotabs - 1; pyrowindow();
-                cat.style.marginLeft = "-20000px"; document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application1.png')";}
+            var cat = document.getElementById("cat"); catwin = document.getElementById("catwindow");
+            function catactive() { inactiveall(); vunnyactive(); pyroButtonOpen = false; 
+                currentlayer = currentlayer + 1; cat.style.zIndex = currentlayer; catwin.style.backgroundImage = currentactiveheader;} 
+            function catclose() { inactiveall(); pyroButtonOpen = true; window2 = false; pyrotabs = pyrotabs - 1; pyrowindow(); cat.style.marginLeft = "-20000px";}
         </script>
 
         <div class="win98post" style="z-index: 5; position: fixed; top: 58%; left: 12%;" onmousedown="pyroactive();" id="pyro">
@@ -445,45 +445,27 @@
                 <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
                 <div class="title-bar-98" id="pyrowindow"> <div class="title-bar-text" id="pyrotext">💯 Wubba lubba dub dub!</div></div><div class="messagewindowbody" style="padding-right:4px">
                 <ul class="tree-view" style="width: 100%; height: 100%; padding:2px;"> <img style="margin-right:-5px; margin-bottom:-2px; margin-left:-1px; margin-top:-1px; width:190px; height:190px;" id="pyroimage"/></ul>
-                <center><div class="win98button" style="width:70px; margin-top: 3px;" onclick="pyroshuffle();"> <div class="buttontext" style="margin-top: 2px; margin-left:0.5px; cursor:pointer" id="pyrobutton">Definately.</div></div></center></div></div>
+                <center><div class="win98button" style="width:70px; margin-top: 3px;" onclick="pyroshuffle();"> <div class="buttontext" style="margin-top: 2px; cursor:pointer" id="pyrobutton">Definately.</div></div></center></div></div>
         
         <script>
-            var myPix = new Array(
+            var pyro = document.getElementById("pyro"); pyrowin = document.getElementById("pyrowindow");
+            function pyroactive() { inactiveall(); vunnyactive(); pyroButtonOpen = false; 
+                currentlayer = currentlayer + 1; pyro.style.zIndex = currentlayer; pyrowin.style.backgroundImage = currentactiveheader;} 
+            function pyroclose() { inactiveall(); pyroButtonOpen = true; window1 = false; pyrotabs = pyrotabs - 1; pyrowindow(); pyro.style.marginLeft = "-20000px";}
+        </script>
 
-            )
-            var r_text = new Array (
-                
-            )
-            var randomNum = Math.floor(Math.random() * myPix.length); randomNum2 = 0; tick = 3;
-            if (tick == 3) { document.getElementById("pyroimage").style.backgroundImage = github + "img/windows/ezgif-2-c475330a8091.gif')";
-                             document.getElementById("catimage").style.backgroundImage = github + "img/windows/Untitled-5.jpg')";}
-            function pyroshuffle(){
-                if (tick !== 0){ randomNum2 = Math.floor(Math.random() * myPix.length);
-                    if(randomNum2 !== randomNum){randomNum = randomNum2
-                        document.getElementById("pyrotext").textContent= r_text[randomNum]; 
-                        document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum]; randomNum = randomNum2;
-                    } else { randomNum2 = Math.floor(Math.random() * myPix.length); randomNum = randomNum2;
-                        document.getElementById("pyrotext").textContent= r_text[randomNum]; 
-                        document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum]; randomNum = randomNum2;}
-                    if(tick == 3){ document.getElementById("pyrobutton").textContent = "Probably!";}
-                    if(tick == 2){ document.getElementById("pyrobutton").textContent = "Maybe?";}
-                    if(tick == 1){ document.getElementById("pyrobutton").textContent = "No.";} tick = tick - 1;
-                } else { document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; pyrowindow();
-                    document.getElementById("pyrobutton").textContent = "Definately"; document.getElementById("pyrotext").textContent = '💯 Wubba lubba dub dub!';
-                    document.getElementById("pyroimage").style.backgroundImage = "var(--defaultpyro)";}}
 
-            function pyroactive() { idleactive(); inactiveall(); pyroButtonOpen = false; currentlayer = currentlayer + 1; 
-                document.getElementById("pyro").style.zIndex = (currentlayer = currentlayer + 1); document.getElementById("pyrowindow").style.backgroundImage = currentactiveheader;
-                document.getElementById("pyrowindow").style.backgroundPosition = "-150px"; document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application.png')";} 
-            function pyroclose() { pyroButtonOpen = true; window1 = false; document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; pyrowindow();
-                document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application1.png')"; idleactive(); inactiveall();}
 
-            function vunnyopen(){ idleactive(); inactiveall(); pyrotabs = 2; tick = 3; pyroButtonOpen = false; document.getElementById("cat").style.marginLeft = "0px"; document.getElementById("pyro").style.marginLeft = "0px"; 
-                document.getElementById("cat").style.left = "4%"; document.getElementById("cat").style.top = "68%"; document.getElementById("pyro").style.left = "12%"; document.getElementById("pyro").style.top = "58%";
-                document.getElementById("cat").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1; document.getElementById("pyro").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1; 
-                document.getElementById("pyrowindow").style.backgroundImage = currentactiveheader; document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application.png')";
-                document.getElementById("pyrowindow").style.backgroundPosition = "-150px"; document.getElementById("taskapp2").style.marginLeft = "4px";}
-        </script> 
+        <script> 
+            function vunnyactive(){ document.getElementById("taskapp2font").style.color = taskbartextpressed;
+                document.getElementById("taskapp2").style.backgroundImage = github + "img/scrollbarempty.png')"; document.getElementById("taskapp2").style.backgroundColor = whit;
+                document.documentElement.style.setProperty('--taskbar2top1', gray); document.documentElement.style.setProperty('--taskbar2top2', blac);
+                document.documentElement.style.setProperty('--taskbar2bottom1', whit); document.documentElement.style.setProperty('--taskbar2bottom2', lightg);}
+            function vunnyopen(){ inactiveall(); pyroactive(); pyrotabs = 2; tick = 3; pyroButtonOpen = false;
+                cat.style.marginLeft = "0px"; pyro.style.marginLeft = "0px"; document.getElementById("taskapp2").style.marginLeft = "4px";
+                cat.style.left = "4%"; cat.style.top = "68%"; pyro.style.left = "12%"; pyro.style.top = "58%";
+                currentlayer = currentlayer + 1; cat.style.zIndex = currentlayer; currentlayer = currentlayer + 1; document.getElementById("pyro").style.zIndex = currentlayer;}
+        </script>
 
 <!-- regular message box rendering ------------------------------------------------------------------------------>
 
@@ -493,16 +475,15 @@
              <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU"><div class="win98titlebarbutton" style="margin-top:2px; cursor: default;"> <div class="help"></div> </div> </a> 
             <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="title-bar-text">🧮 brain go brrrrr</div></div>
             <div class="window-body" style="margin-right: 4px; margin-top: 5px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
-                <p style="color: var(--blue); margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>13:20pm on Febuary 1st, 2021. [GMT]</label></p>
+                <p style="color: var(--blue); margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>12:06pm on Febuary 4st, 2021. [GMT]</label></p>
         </div></div>
         
-        <script> 
-            function messageactive() { document.getElementById("message").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
-                idleactive(); inactiveall(); document.getElementById("messagewindow").style.backgroundImage = currentactiveheader;} 
-            function messageinactive() { inactiveall(); inactiveall(); document.getElementById("messagewindow").style.backgroundImage = currentinactiveheader} 
-            function messageclose() { idleactive(); inactiveall(); document.getElementById("message").style.right = "-100%"; document.getElementById("message").style.marginLeft = "-20000px"}
-            function messageopen() { idleactive(); inactiveall(); document.getElementById("message").style.marginLeft = "0px"; document.getElementById("message").style.left = "77%"; document.getElementById("message").style.top = "62%";
-                document.getElementById("message").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1; document.getElementById("messagewindow").style.backgroundImage = currentactiveheader;}
+        <script>
+            var message = document.getElementById("message"); messagewin = document.getElementById("messagewindow");
+            function messageactive() { currentlayer = currentlayer + 1; message.style.zIndex = currentlayer; inactiveall();} 
+            function messageclose() { message.style.right = "-100%"; message.style.marginLeft = "-20000px"}
+            function messageopen() {message.style.marginLeft = "0px"; message.style.left = "77%"; message.style.top = "62%";
+                currentlayer = currentlayer + 1; message.style.zIndex = currentlayer; messagewin.style.backgroundImage = currentactiveheader;}
         </script>
         
 <!-- Time / date properties rendering ------------------------------------------------------------------------------>
@@ -516,31 +497,35 @@
             
                 <fieldset style="position:absolute; width:166px; height:183px; margin-left: 12px; margin-top: 12px;">
                     <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: var(--silver); width:24px; padding: 0px 0px 3px 3px; margin-left:-3px"> <underline>D</underline>ate </label>
-                    
+                    <!-- dropdown menu container for months -->
                     <ul class="tree-view"  style="position: absolute; width:70px; height: 17px; padding:2px; margin-top:13px; margin-left:1px;" onmouseleave="monthmenuclose()"><div class="container" style="padding: 2px 1px 1px 1px; border-style: dotted; border-width: 1px; white" id="month"></div> 
                         <div class="win98button" style="position:absolute; margin-top: -17px; margin-left:54px; width:10px; height:11px;" onclick="monthmenu(); yeardropbackfa();"><div class="scrolldown" style="margin-left:-3px;"></div></div>
                         <div class="drop-down-menu" style="position:absolute; margin-top:0px; width: 69px; margin-left: -200000px;" id="monthmenu">
+                            <!-- dropdown men for month selecting -->
                             <div class="win98buttonpressed" style="position:absolute; margin-top: -17px; margin-left:56px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
                             <div class="drop-down-text" onclick="jan(); monthdropback(); monthmenuclose()">January</div><div class="drop-down-text" onclick="feb(); monthdropback(); monthmenuclose()">Febuary</div><div class="drop-down-text" onclick="mar(); monthdropback(); monthmenuclose()">March</div>  
                             <div class="drop-down-text" onclick="apr(); monthdropback(); monthmenuclose()">April</div><div class="drop-down-text" onclick="may(); monthdropback(); monthmenuclose()">May</div><div class="drop-down-text" onclick="jun(); monthdropback(); monthmenuclose()">June</div>  
                             <div class="drop-down-text" onclick="jul(); monthdropback(); monthmenuclose()">July</div><div class="drop-down-text" onclick="aug(); monthdropback(); monthmenuclose()">August</div><div class="drop-down-text" onclick="sep(); monthdropback(); monthmenuclose()">September</div> 
                             <div class="drop-down-text" onclick="oct(); monthdropback(); monthmenuclose()">October</div><div class="drop-down-text" onclick="nov(); monthdropback(); monthmenuclose()">November</div><div class="drop-down-text" onclick="dec(); monthdropback(); monthmenuclose()">December</div></ul>
-                            
+                    <!-- year adder and subtracter -->
                     <ul class="tree-view"  style="position: absolute; width:76px; height: 17px; padding:2px; margin-top:13px; margin-left: 83px;"><div class="container" style="padding: 2px 1px 1px 1px; border-style: dotted; border-width: 1px; border-color: white;" id="year"></div>
                         <div class="win98button" style="position:absolute; margin-top: -17px; margin-left:61px; width:9px; height:2px;" onclick="yearadd(); yeardropback(); monthdropdefa() "><div class="smallscrollup" style="margin-left:3px; margin-top:0px;"></div></div>
                         <div class="win98button" style="position:absolute; margin-top: -8px; margin-left:61px; width:9px; height:2px;" onclick="yearsub(); yeardropback(); monthdropdefa() "><div class="smallscrolldown" style="margin-left:3px; margin-top:0px;"></div></div></ul>
                         
                     <script>
-                        var monthdrop = false; realmonth = true;
-                        function monthmenu(){ if (desktopdrop == false) { document.getElementById("monthmenu").style.marginLeft = "-2px"; desktopdrop = true;
+                        var monthdrop = false; realmonth = true; //month dropdown toggle and year toggle
+                        //IF statement for the month dropdown box being open or closed
+                        function monthmenu(){ if (desktopdrop == false) { document.getElementById("monthmenu").style.marginLeft = "-2px"; desktopdrop = true; clocku();
                                        } else if (desktopdrop == true){ document.getElementById("monthmenu").style.marginLeft = "-200000px"; desktopdrop = false;}}
                         function monthmenuclose() { document.getElementById("monthmenu").style.marginLeft = "-200000px"; desktopdrop = false;} 
+                        //month updaters when clicked and overrides the calender
                         function jan() { realmonth = false; month = "January"; clocku();} function feb() { realmonth = false; month = "Febuary"; clocku();} function mar() { realmonth = false; month = "March"; clocku();}
                         function apr() { realmonth = false; month = "April"; clocku();} function may() { realmonth = false; month = "May"; clocku();} function jun() { realmonth = false; month = "June"; clocku();}
                         function jul() { realmonth = false; month = "July"; clocku();} function aug() { realmonth = false; month = "August"; clocku();} function sep() { realmonth = false; month = "September"; clocku();}
                         function oct() { realmonth = false; month = "October"; clocku();} function nov() { realmonth = false; month = "November"; clocku();} function dec() { realmonth = false; month = "December"; clocku();}
                         
-                        function monthyearclear() { monthdropdefa(); yeardropbackfa(); }
+                        function monthyearclear() { monthdropdefa(); yeardropbackfa();} //cleans out the background color for the container of the dropdown menu
+                        // dropdown menu container box updater to make the background darkblue after selecting an option
                         function monthdropback() { document.getElementById("month").style.backgroundColor = prus; document.getElementById("month").style.color = white; document.getElementById("month").style.borderColor = yell }
                         function monthdropdefa() { document.getElementById("month").style.backgroundColor = white; document.getElementById("month").style.color = black; document.getElementById("month").style.borderColor = white }
                         function yeardropback() { document.getElementById("year").style.backgroundColor = prus; document.getElementById("year").style.color = white; document.getElementById("year").style.borderColor = yell }
@@ -592,8 +577,8 @@
             function yearadd() {yearmath = yearmath + 1; clocku()}          function yearsub() {yearmath = yearmath - 1; clocku()}
 
             var docclock = document.getElementById("clock"); docclockwin = document.getElementById("clockwindow"); 
-            function clockactive() { idleactive(); inactiveall(); docclock.style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;  docclockwin.style.backgroundImage = currentactiveheader;}
-            function clockclose() { idleactive(); inactiveall(); docclock.style.marginLeft = "-20000px"; docclock.style.right = "-100%"; monthdropdefa(); yeardropbackfa();}
+            function clockactive() { inactiveall(); currentlayer = currentlayer + 1; docclock.style.zIndex = currentlayer; docclockwin.style.backgroundImage = currentactiveheader;}
+            function clockclose() { inactiveall(); docclock.style.marginLeft = "-20000px"; docclock.style.right = "-100%"; monthdropdefa(); yeardropbackfa();}
             function clockopen() { clockactive(); docclock.style.left = "75%"; docclock.style.top = "50%"; docclock.style.marginLeft = "0px";}
         </script>
         
@@ -659,19 +644,17 @@
                                 <div class="win98buttonpressed" style="position:absolute; margin-top: -18px; margin-left:47px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
                                 <div class="drop-down-text" onclick="centeritem()">Center</div>
                                 <div class="drop-down-text" onclick="spanitem()">Span</div>
-                                <div class="drop-down-text" onclick="stretchitem()">Stretch</div>
-                        </div></ul>
+                                <div class="drop-down-text" onclick="stretchitem()">Stretch</div></div></ul></div>
                                 
-                        <script>
-                            let desktopdrop = false;
-                            function desktopdropdown(){ if (desktopdrop == false) { document.getElementById("desktopmode").style.marginLeft = "-2px"; desktopdrop = true;
-                                                 } else if (desktopdrop == true){ document.getElementById("desktopmode").style.marginLeft = "-20000px"; desktopdrop = false; }}
-                            function desktopexit(){ document.getElementById("desktopmode").style.marginLeft = "-20000px"; desktopdrop = false; }
-                            function centeritem(){ document.getElementById("currentdesktopmode").textContent = "Center";}
-                            function spanitem(){ document.getElementById("currentdesktopmode").textContent = "Span";}
-                            function stretchitem(){ document.getElementById("currentdesktopmode").textContent = "Stretch";}
-                        </script>
-                    </div>
+                    <script>
+                        var desktopdrop = false;
+                        function desktopdropdown(){ if (desktopdrop == false) { document.getElementById("desktopmode").style.marginLeft = "-2px"; desktopdrop = true;
+                                             } else if (desktopdrop == true){ document.getElementById("desktopmode").style.marginLeft = "-20000px"; desktopdrop = false; }}
+                        function desktopexit(){ document.getElementById("desktopmode").style.marginLeft = "-20000px"; desktopdrop = false; }
+                        function centeritem(){ document.getElementById("currentdesktopmode").textContent = "Center";}
+                        function spanitem(){ document.getElementById("currentdesktopmode").textContent = "Span";}
+                        function stretchitem(){ document.getElementById("currentdesktopmode").textContent = "Stretch";}
+                    </script>
                 
                     <ul class="tree-view" style="width:240px; height:86px; margin-top: 2px; margin-left:4px;">
                         <div class="container" style="position: absolute; margin-top:-3px; margin-left:-3px; width:247px; height:93px; overflow-y: scroll; overflow-x: hidden">
@@ -707,29 +690,34 @@
                             <div class="optionsmenu" style="width:227px; position: absolute; margin-top:126px; cursor:pointer" onclick="wallpaperoption7(); wallpapercust();">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
                                         <div class="container" style="width:100%; height:100%;" title="submitted by Millie in the discord server" id="wallpaperoverlay8">
-                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Clouds at Midnight (Submitted by Millie)  </label></div></div></div>
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Clouds at Midnight (Submitted by Millie)  </label></div></div></div></ul></fieldset></div>
                         
-                        <script>
-                            var colorwallpaperpicked = "#c0c0c0", currentwallpaper = "";
-                            function wallpaperupdate(){ document.getElementById("body").style.backgroundImage = currentwallpaper; 
-                                                        dcb1.style.backgroundImage = currentwallpaper; dcb2.style.backgroundImage = currentwallpaper;}
-                            function wallpaperpreview(){ document.getElementById("apperancepreview").style.backgroundImage = currentwallpaper; document.getElementById("iconpreview").style.backgroundImage = currentwallpaper;
-                                                         dcb1.style.backgroundImage = currentwallpaper; dcb2.style.backgroundImage = currentwallpaper;}
-                            function wallpapercurrentreset() { 
-                            document.getElementById("wallpaperoverlay1").style.backgroundColor = ""; document.getElementById("wallpaperoverlay2").style.backgroundColor = "";
-                            document.getElementById("wallpaperoverlay3").style.backgroundColor = ""; document.getElementById("wallpaperoverlay4").style.backgroundColor = "";
-                            document.getElementById("wallpaperoverlay5").style.backgroundColor = ""; document.getElementById("wallpaperoverlay6").style.backgroundColor = "";
-                            document.getElementById("wallpaperoverlay7").style.backgroundColor = ""; document.getElementById("wallpaperoverlay8").style.backgroundColor = "";}
-                            function wallpaperoptionnone() { wallpapercurrentreset(); document.getElementById("wallpaperoverlay1").style.backgroundColor = colorwallpaperpicked; currentwallpaper = "none"; wallpaperpreview();} 
-                            function wallpaperoption1() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay2").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/wallpaper32.png')"; wallpaperpreview();}
-                            function wallpaperoption2() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay3").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/study.png')"; wallpaperpreview();}
-                            function wallpaperoption3() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay4").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/startrek.png')"; wallpaperpreview();} 
-                            function wallpaperoption4() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay5").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/unknown.png')"; wallpaperpreview();} 
-                            function wallpaperoption5() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay6").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/anime.png')"; wallpaperpreview();} 
-                            function wallpaperoption6() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay7").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/vinyl.png')"; wallpaperpreview();} 
-                            function wallpaperoption7() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay8").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/lynn.png')"; wallpaperpreview();} 
-                        </script>
-            </ul></fieldset></div>
+            <script>
+                var colorwallpaperpicked = "#c0c0c0", currentwallpaper = "", sens = "";
+                function wallpaperupdate(){ document.getElementById("body").style.backgroundImage = currentwallpaper; 
+                    dcb1.style.backgroundImage = currentwallpaper; dcb2.style.backgroundImage = currentwallpaper;}
+                function wallpaperpreview(){ document.getElementById("apperancepreview").style.backgroundImage = currentwallpaper; document.getElementById("iconpreview").style.backgroundImage = currentwallpaper;
+                    dcb1.style.backgroundImage = currentwallpaper; dcb2.style.backgroundImage = currentwallpaper;}
+                function wallpapercurrentreset() { 
+                    document.getElementById("wallpaperoverlay1").style.backgroundColor = ""; document.getElementById("wallpaperoverlay2").style.backgroundColor = "";
+                    document.getElementById("wallpaperoverlay3").style.backgroundColor = ""; document.getElementById("wallpaperoverlay4").style.backgroundColor = "";
+                    document.getElementById("wallpaperoverlay5").style.backgroundColor = ""; document.getElementById("wallpaperoverlay6").style.backgroundColor = "";
+                    document.getElementById("wallpaperoverlay7").style.backgroundColor = ""; document.getElementById("wallpaperoverlay8").style.backgroundColor = "";}
+                function wallpaperoptionnone() { wallpapercurrentreset(); document.getElementById("wallpaperoverlay1").style.backgroundColor = colorwallpaperpicked; currentwallpaper = "none"; wallpaperpreview(); sens = 0} 
+                function wallpaperoption1() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay2").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/wallpaper32.png')"; wallpaperpreview(); sens = 1}
+                function wallpaperoption2() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay3").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/study.png')"; wallpaperpreview(); sens = 2}
+                function wallpaperoption3() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay4").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/startrek.png')"; wallpaperpreview(); sens = 3} 
+                function wallpaperoption4() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay5").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/unknown.png')"; wallpaperpreview(); sens = 4} 
+                function wallpaperoption5() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay6").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/anime.png')"; wallpaperpreview(); sens = 5} 
+                function wallpaperoption6() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay7").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/vinyl.png')"; wallpaperpreview(); sens = 6} 
+                function wallpaperoption7() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay8").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/lynn.png')"; wallpaperpreview(); sens = 7} 
+                        
+                function sensupdate() { 
+                    if(sens == 0){document.getElementById("wallpaperoverlay1").style.backgroundColor = colorwallpaperpicked;} if(sens == 1){document.getElementById("wallpaperoverlay2").style.backgroundColor = colorwallpaperpicked;}
+                    if(sens == 2){document.getElementById("wallpaperoverlay3").style.backgroundColor = colorwallpaperpicked;} if(sens == 3){document.getElementById("wallpaperoverlay4").style.backgroundColor = colorwallpaperpicked;}
+                    if(sens == 4){document.getElementById("wallpaperoverlay5").style.backgroundColor = colorwallpaperpicked;} if(sens == 5){document.getElementById("wallpaperoverlay6").style.backgroundColor = colorwallpaperpicked;}
+                    if(sens == 6){document.getElementById("wallpaperoverlay7").style.backgroundColor = colorwallpaperpicked;} if(sens == 7){document.getElementById("wallpaperoverlay8").style.backgroundColor = colorwallpaperpicked;}}
+            </script>
             
             <!-- --------------------------------------- screensaver tab --------------------------------------- -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="screensaver">
@@ -747,7 +735,7 @@
                                 <div class="drop-down-text" onclick="none()" id="none">(none)</div></div></ul>
                         
                         <script>
-                            let screensaverdrop = false;
+                            var screensaverdrop = false;
                             function screensaverdropdown(){ if (screensaverdrop == false) { document.getElementById("thescreensaver").style.marginLeft = "-2px"; screensaverdrop = true;
                                                      } else if (screensaverdrop == true){ document.getElementById("thescreensaver").style.marginLeft = "-20000px"; screensaverdrop = false; }}
                             function none(){ document.getElementById("currentscreensaver").textContent="(none)";}
@@ -836,54 +824,60 @@
                     <script>
                         var curcolwhite, curcollightg, curcolsilver, curcolmidgray, curcolgray, curcolblack, curcolblue, curcolprussian, curcolwincyan, curcolyellow, curcolfont, curcolfonttitle, curcolhover,
                             precolwhite, precollightg, precolsilver, precolmidgray, precolgray, precolblack, precolblue, precolprussian, precolwincyan, precolyellow, precolfont, precolfonttitle, precolhover;
-                        var schemedrop = false; 
+                        var schemedrop = false, themecurrent = "lightmode";
                         function schemedropdown(){ if (schemedrop == false) { document.getElementById("scheme").style.marginLeft = "    -2px"; schemedrop = true;
                                             } else if (schemedrop == true){   document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }}
-                        function schemeexit(){                document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }
+                        function schemeexit(){ document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }
                         function wallpapercust() {  document.getElementById("currentscheme").textContent="(Custom)"; }
 
-                        function windows98(){           document.getElementById("currentscheme").textContent="Windows 98";              cpick12();          wallpaperoption1(); defaultcolourscheme(); precolourupdate();  themepreviewchange();}
-                        function evangelionmode(){      document.getElementById("currentscheme").textContent="Neon Genesis Evangelion"; cpick18();          wallpaperoption4(); defaultcolourscheme(); precolourupdate();  themepreviewchange();}
+                        function windows98(){           document.getElementById("currentscheme").textContent="Windows 98";              cpick12();       wallpaperoption1();    themecurrent = "lightmode"; themeupdate(); precolourupdate(); themepreviewchange();}
+                        function evangelionmode(){      document.getElementById("currentscheme").textContent="Neon Genesis Evangelion"; cpick18();       wallpaperoption4();    themecurrent = "darkmode";  themeupdate(); precolourupdate(); themepreviewchange();}
+                        function Octavia(){             document.getElementById("currentscheme").textContent="Octavia's Study";         cpick17();       wallpaperoption2();    themecurrent = "darkmode";  themeupdate(); precolourupdate(); themepreviewchange();}
+                        function girlsdayout(){         document.getElementById("currentscheme").textContent="A Girls Day Out";         cpick19();       wallpaperoption5();    themecurrent = "lightmode"; themeupdate(); precolourupdate(); themepreviewchange();}
+                        function milyvean(){            document.getElementById("currentscheme").textContent="Clouds at Midnight";      cpick18();       wallpaperoption7();    themecurrent = "lightmode"; themeupdate(); precolourupdate(); themepreviewchange();}
+                        function contrastmodescheme1(){ document.getElementById("currentscheme").textContent="High Contrast Mode 1";    highcontrast1(); wallpaperoptionnone(); themecurrent = "lightmode"; themeupdate(); precolourupdate(); themepreviewchange();}
+                        function contrastmodescheme2(){ document.getElementById("currentscheme").textContent="High Contrast Mode 2";    highcontrast2(); wallpaperoptionnone(); themecurrent = "lightmode"; themeupdate(); precolourupdate(); themepreviewchange();}
                         
-                        function Octavia(){             document.getElementById("currentscheme").textContent="Octavia's Study";         cpick17();          wallpaperoption2(); 
-                            curcolwhite = "#545454";   curcollightg = "#9f9f9f";  curcolsilver = "#3f3f3f"; curcolmidgray = "#ababab"; curcolgray = "#292929"; curcolblack = "#000000"; curcolblue = "#ffffff";
-                            curcolprussian = "#00207c"; curcolwincyan = "#008080";  curcolyellow = "#c0c0c0"; curcolfont = "#c0c0c0"; curcolfonttitle = "#ffffff"; curcolhover = "#ffffff";
-                            precurrentactiveheader = github + "img/title-bar%20postheader-darkmodeactive.png')"; precurrentinactiveheader = github + "img/title-bar%20postheader-darkmode.png')"; 
-                            document.documentElement.style.setProperty('--inactive', precurrentinactiveheader); document.documentElement.style.setProperty('--active', precurrentactiveheader);
-                            document.documentElement.style.setProperty('--preinactive', precurrentinactiveheader); document.documentElement.style.setProperty('--preactive', precurrentactiveheader); precolourupdate(); themepreviewchange();}
+                        function highcontrast1() {  currentcolour = "#00ffff"; fontcolour = "#000"; backcolourpreview(); ctoggle = true; cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; document.getElementById("iconpreview").style.backgroundColor = "#000";  ap.style.backgroundColor = "#000";}
+                        function highcontrast2() {  currentcolour = "#00ff00"; fontcolour = "#000"; backcolourpreview(); ctoggle = true; cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; document.getElementById("iconpreview").style.backgroundColor = "#000";  ap.style.backgroundColor = "#000";}
+                        
+                        
+                        function themeupdate() { 
+                            if (themecurrent == "darkmode"){ darkmode();} 
+                            if (themecurrent == "lightmode"){ lightmode();} 
+                            sensupdate();}
+                        
+                        function darkmode(){ colorwallpaperpicked = "#292929"; pretaskbartext = "#9f9f9f"; pretaskbartextpressed = "#000";
+                            precurrentactiveheader = github + "img/title-bar%20postheader-darkmodeactive.png')"; precurrentinactiveheader = github + "img/title-bar%20postheader-darkmode.png')";
+                            curcolwhite = "#545454";   curcollightg = "#9f9f9f"; curcolsilver = "#3f3f3f"; curcolmidgray = "#ababab"; curcolgray = "#292929"; curcolblack = "#000000"; curcolblue = "#fccc39";
+                            curcolprussian = "#00207c"; curcolwincyan = "#008080"; curcolyellow = "#c0c0c0"; curcolfont = "#c0c0c0"; curcolfonttitle = "#ffffff"; curcolhover = "#ffffff"; 
+                            document.documentElement.style.setProperty('--preinactive', precurrentinactiveheader); document.documentElement.style.setProperty('--preactive', precurrentactiveheader);}
                             
-                        function girlsdayout(){         document.getElementById("currentscheme").textContent="A Girls Day Out";         cpick19();          wallpaperoption5(); defaultcolourscheme(); precolourupdate();  themepreviewchange();}
-                        function milyvean(){            document.getElementById("currentscheme").textContent="Clouds at Midnight";      cpick18();          wallpaperoption7(); defaultcolourscheme(); precolourupdate();  themepreviewchange();}
-                        function contrastmodescheme1(){ document.getElementById("currentscheme").textContent="High Contrast Mode 1";    highcontrast1();    wallpaperoptionnone(); defaultcolourscheme(); precolourupdate();  themepreviewchange();}
-                        function contrastmodescheme2(){ document.getElementById("currentscheme").textContent="High Contrast Mode 2";    highcontrast2();    wallpaperoptionnone(); defaultcolourscheme(); precolourupdate();  themepreviewchange();}
-                        
-                        function highcontrast1() {  currentcolour = "#00ffff"; fontcolour = "#000"; backcolourpreview(); ctoggle = true; 
-                                                    cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; document.getElementById("iconpreview").style.backgroundColor = "#000";  ap.style.backgroundColor = "#000";}
-                        function highcontrast2() {  currentcolour = "#00ff00"; fontcolour = "#000"; backcolourpreview(); ctoggle = true;
-                                                    cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; document.getElementById("iconpreview").style.backgroundColor = "#000";  ap.style.backgroundColor = "#000";}
+                        function lightmode(){ colorwallpaperpicked = "#c0c0c0"; pretaskbartext = "#000"; pretaskbartextpressed = "#000"
+                            precurrentinactiveheader = github + "img/title-bar%20postheaderinactive.png')"; precurrentactiveheader = github + "img/title-bar%20postheader.png')";
+                            curcolwhite = "#ffffff";   curcollightg = "#dfdfdf"; curcolsilver = "#c0c0c0"; curcolmidgray = "#ababab"; curcolgray = "#808080"; curcolblack = "#0a0a0a"; curcolblue = "#0000FF";
+                            curcolprussian = "#00207c" ; curcolwincyan = "#008080"; curcolyellow = "#ffff00"; curcolfont = "#000000"; curcolfonttitle = "#ffffff"; curcolhover = "#ffffff";
+                            document.documentElement.style.setProperty('--preinactive', precurrentinactiveheader); document.documentElement.style.setProperty('--preactive', precurrentactiveheader); precolourupdate(); themepreviewchange();}
                         
                         function precolourupdate() {
                             precolwhite = curcolwhite; precollightg = curcollightg; precolsilver = curcolsilver; precolmidgray = curcolmidgray; precolgray = curcolgray; precolblack = curcolblack; precolblue = curcolblue;
                             precolprussian = curcolprussian; precolwincyan = curcolwincyan; precolyellow = curcolyellow; precolfont = curcolfont; precolfonttitle = curcolfonttitle; precolhover = curcolhover;}
-                        function themechange() { document.documentElement.style.setProperty('--blue', curcolblue); 
-                            currentinactiveheader = precurrentinactiveheader; currentactiveheader = precurrentactiveheader; document.getElementById("diskwindow").style.backgroundImage = currentactiveheader;
-                            document.documentElement.style.setProperty('--white', curcolwhite); document.documentElement.style.setProperty('--gray', curcolgray); document.documentElement.style.setProperty('--lightg', curcollightg); 
-                            document.documentElement.style.setProperty('--black', curcolblack); document.documentElement.style.setProperty('--silver', curcolsilver); document.documentElement.style.setProperty('--prussian', curcolprussian);
-                            document.documentElement.style.setProperty('--midgray', curcolmidgray); document.documentElement.style.setProperty('--wincyan', curcolwincyan); document.documentElement.style.setProperty('--yellow', curcolyellow); 
-                            document.documentElement.style.setProperty('--font', curcolfont); document.documentElement.style.setProperty('--fonttitle', curcolfonttitle); document.documentElement.style.setProperty('--hover', curcolhover);}
+                        
                         function themepreviewchange() { document.documentElement.style.setProperty('--preblue', precolblue);
                             document.documentElement.style.setProperty('--prewhite', precolwhite); document.documentElement.style.setProperty('--pregray', precolgray); document.documentElement.style.setProperty('--prelightg', precollightg); 
                             document.documentElement.style.setProperty('--preblack', precolblack); document.documentElement.style.setProperty('--presilver', precolsilver); document.documentElement.style.setProperty('--preprussian', precolprussian);
                             document.documentElement.style.setProperty('--premidgray', precolmidgray); document.documentElement.style.setProperty('--prewincyan', precolwincyan); document.documentElement.style.setProperty('--preyellow', precolyellow); 
-                            document.documentElement.style.setProperty('--prefont', precolfont); document.documentElement.style.setProperty('--prefonttitle', precolfonttitle); document.documentElement.style.setProperty('--prehover', precolhover);}
-                    
-                        function defaultcolourscheme() { 
-                            curcolwhite = "#ffffff";   curcollightg = "#dfdfdf";   curcolsilver = "#c0c0c0"; curcolmidgray = "#ababab"; curcolgray = "#808080"; curcolblack = "#0a0a0a"; curcolblue = "#0000ff";
-                            curcolprussian = "#00207c" ; curcolwincyan = "#008080";  curcolyellow = "#ffff00"; curcolfont = "#000000"; curcolfonttitle = "#ffffff"; curcolhover = "#ffffff";
-                            precurrentinactiveheader = github + "img/title-bar%20postheaderinactive.png')"; precurrentactiveheader = github + "img/title-bar%20postheader.png')";
-                            document.documentElement.style.setProperty('--inactive', precurrentinactiveheader); document.documentElement.style.setProperty('--active', precurrentactiveheader);
-                            document.documentElement.style.setProperty('--preinactive', precurrentinactiveheader); document.documentElement.style.setProperty('--preactive', precurrentactiveheader); precolourupdate(); themepreviewchange();}
+                            document.documentElement.style.setProperty('--prefont', precolfont); document.documentElement.style.setProperty('--prefonttitle', precolfonttitle); document.documentElement.style.setProperty('--prehover', precolhover);
+                            document.documentElement.style.setProperty('--preinactive', precurrentinactiveheader); document.documentElement.style.setProperty('--preactive', precurrentactiveheader);}
                         
+                        function themechange() { document.documentElement.style.setProperty('--blue', curcolblue); currentinactiveheader = precurrentinactiveheader; currentactiveheader = precurrentactiveheader;
+                            document.documentElement.style.setProperty('--white', curcolwhite); document.documentElement.style.setProperty('--gray', curcolgray); document.documentElement.style.setProperty('--lightg', curcollightg); 
+                            document.documentElement.style.setProperty('--black', curcolblack); document.documentElement.style.setProperty('--silver', curcolsilver); document.documentElement.style.setProperty('--prussian', curcolprussian);
+                            document.documentElement.style.setProperty('--midgray', curcolmidgray); document.documentElement.style.setProperty('--wincyan', curcolwincyan); document.documentElement.style.setProperty('--yellow', curcolyellow); 
+                            document.documentElement.style.setProperty('--font', curcolfont); document.documentElement.style.setProperty('--fonttitle', curcolfonttitle); document.documentElement.style.setProperty('--hover', curcolhover);
+                            whit = curcolhover; blac = curcolblack; prus = curcolprussian; silv = curcolsilver; yell = curcolyellow; lightg = curcollightg; gray = curcolgray; text = curcolfont; taskbartext = pretaskbartext; taskbartextpressed = pretaskbartextpressed; 
+                            currentinactiveheader = precurrentinactiveheader; currentactiveheader = precurrentactiveheader; document.documentElement.style.setProperty('--inactive', currentinactiveheader); document.documentElement.style.setProperty('--active', currentactiveheader);
+                            inactiveall(); diskactive();}
                     </script>
                         
                     <div class="win98buttoninactive" style="position: absolute; margin-left:199px; margin-top: -2px; width:66px; height:18px;"> 
@@ -908,7 +902,7 @@
                         </div></ul>
                                 
                         <script>
-                            let itemdrop = false;
+                            var itemdrop = false;
                             function itemdropdown(){ if (itemdrop == false) { document.getElementById("item").style.marginLeft = "-2px"; itemdrop = true;
                                               } else if (itemdrop == true){ document.getElementById("item").style.marginLeft = "-20000px"; itemdrop = false; }}
                             function itemexit(){ document.getElementById("item").style.marginLeft = "-20000px"; schemedrop = false; }
@@ -1165,25 +1159,25 @@
 <!-- --------------------------------------- disk properties functions --------------------------------------- -->
         
         <script> 
-            function diskactive() { idleactive(); inactiveall(); diskButtonOpen = false;
-                document.getElementById("disk").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1; 
-                document.getElementById("diskwindow").style.backgroundImage = currentactiveheader;
-                document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application.png')";} 
-            function diskopen() { idleactive(); inactiveall(); tabreset(); diskButtonOpen = false;
-                document.getElementById("disk").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1; 
-                document.getElementById("disk").style.marginLeft = "0px";
-                document.getElementById("disk").style.top = "13%";
-                document.getElementById("disk").style.left = "77%";
-                document.getElementById("diskwindow").style.backgroundImage = currentactiveheader;
-                document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application.png')";
+            var disk = document.getElementById("disk"); diskwin = document.getElementById("diskwindow");
+            function diskactive() { inactiveall(); diskButtonOpen = false;
+                currentlayer = currentlayer + 1; disk.style.zIndex = currentlayer; 
+                diskwin.style.backgroundImage = currentactiveheader; document.getElementById("taskapp3font").style.color = taskbartextpressed;
+                document.getElementById("taskapp3").style.backgroundImage = github + "img/scrollbarempty.png')"; document.getElementById("taskapp3").style.backgroundColor = whit;
+                document.documentElement.style.setProperty('--taskbar3top1', gray); document.documentElement.style.setProperty('--taskbar3top2', blac);
+                document.documentElement.style.setProperty('--taskbar3bottom1', whit); document.documentElement.style.setProperty('--taskbar3bottom2', lightg);}
+            function diskopen() { inactiveall(); tabreset(); diskButtonOpen = true;
+                currentlayer = currentlayer + 1; disk.style.zIndex = currentlayer;
+                disk.style.marginTop = "0px"; disk.style.left = "77%"; disk.style.top = "13%"; diskwin.style.backgroundImage = currentactiveheader;
+                document.documentElement.style.setProperty('--taskbar3top1', whit); document.documentElement.style.setProperty('--taskbar3top2', lightg);
+                document.documentElement.style.setProperty('--taskbar3bottom1', gray); document.documentElement.style.setProperty('--taskbar3bottom2', blac);
                 document.getElementById("taskapp3").style.marginLeft = "4px";}
-            function diskclose() { diskButtonOpen = true; idleactive(); inactiveall();
-                document.getElementById("disk").style.marginLeft = "-20000px";
-                document.getElementById("disk").style.right = "-100%";
-                document.getElementById("taskapp3").style.marginLeft = "-20000px";
-                document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application1.png')";}
+            function diskclose() { inactiveall(); diskButtonOpen = true;
+                disk.style.marginLeft = "-20000px"; disk.style.right = "-100%";
+                document.getElementById("taskapp3").style.marginLeft = "-20000px"; diskwin.style.backgroundImage = currentinactiveheader;
+                document.documentElement.style.setProperty('--taskbar3top1', whit); document.documentElement.style.setProperty('--taskbar3top2', lightg);
+                document.documentElement.style.setProperty('--taskbar3bottom1', gray); document.documentElement.style.setProperty('--taskbar3bottom2', blac);}
         </script> 
-        
 <!-- Window box handling ------------------------------------------------------------------------------>
         
         <!-- Log off window -->
@@ -1200,11 +1194,12 @@
         </div></div>
         
         <script>
-            function logonactive(){ idleactive(); inactiveall();
-                document.getElementById("logoff").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
-                document.getElementById("logoffwindow").style.backgroundImage = currentactiveheader; }
-            function logoff() {   document.getElementById("logoff").style.marginLeft = "0px"; document.getElementById("logoff").style.zIndex = "100"; }
-            function logoffno() { document.getElementById("logoff").style.marginLeft = "200000px"; document.getElementById("logoff").style.zIndex = "1"; }
+            var logoff = document.getElementById("logoff"); logoffwin = document.getElementById("logoffwindow");
+            function logonactive(){ inactiveall();
+                currentlayer = currentlayer + 1; logoff.getElementById("logoff").style.zIndex = currentlayer;
+                logoffwin.style.backgroundImage = currentactiveheader; }
+            function logoff() { logoff.style.marginLeft = "0px"; logoff.style.zIndex = "100"; }
+            function logoffno() { logoff.style.marginLeft = "200000px"; logoff.style.zIndex = "1"; }
         </script>
 
         <!-- shut down window -->
@@ -1235,29 +1230,40 @@
         </div></div></div></div>
 
         <script>
-            function shutdownactive(){ idleactive(); inactiveall();
-                document.getElementById("shutdown").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
-                document.getElementById("shutdownwindow").style.backgroundImage = currentactiveheader; }
-            function shutdown() {   document.getElementById("shutdown").style.marginLeft = "0px"; document.getElementById("shutdown").style.zIndex = "100"; }
-            function shutdownno() { document.getElementById("shutdown").style.marginLeft = "200000px"; document.getElementById("shutdown").style.zIndex = "1"; }
+            var shutdown = document.getElementById("shutdown"); shutdownwin = document.getElementById("shutdownwindow");
+            function shutdownactive(){ inactiveall();
+                currentlayer = currentlayer + 1; shutdown.style.zIndex = currentlayer
+                shutdownwin.style.backgroundImage = currentactiveheader; }
+            function shutdown() {   shutdown.style.marginLeft = "0px"; shutdown.style.zIndex = "100"; }
+            function shutdownno() { shutdown.style.marginLeft = "200000px"; shutdown.style.zIndex = "1"; }
         </script>
 
 <!-- message box inactive toggle ------------------------------------------------------------------------------>
         
         <script>    
-            function inactiveall() { //complete toggle script, insert ids here
-                document.getElementById("pyrowindow").style.backgroundImage = currentinactiveheader
-                document.getElementById("catwindow").style.backgroundImage = currentinactiveheader 
-                document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application1.png')";
-                document.getElementById("diskwindow").style.backgroundImage = currentinactiveheader
-                document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application1.png')";
-                document.getElementById("postwindow").style.backgroundImage = currentinactiveheader
-                document.getElementById("taskapp1").style.backgroundImage = github + "img/Taskbar%20application1.png')";
-                document.getElementById("clockwindow").style.backgroundImage = currentinactiveheader
-                
-                document.getElementById("messagewindow").style.backgroundImage = currentinactiveheader
-                document.getElementById("logoffwindow").style.backgroundImage = currentinactiveheader
-                document.getElementById("shutdownwindow").style.backgroundImage = currentinactiveheader}
+            function inactiveall() { var timer = 0
+                if (timer < 1){ timer = timer + 1;
+                    tumblrButtonOpen = true;
+                    document.getElementById("postwindow").style.backgroundImage = currentinactiveheader; document.getElementById("taskapp1font").style.color = taskbartext;
+                    document.getElementById("taskapp1").style.backgroundImage = "none"; document.getElementById("taskapp1").style.backgroundColor = silv;
+                    document.documentElement.style.setProperty('--taskbar1top1', whit); document.documentElement.style.setProperty('--taskbar1top2', lightg);
+                    document.documentElement.style.setProperty('--taskbar1bottom1', gray); document.documentElement.style.setProperty('--taskbar1bottom2', blac);
+                    pyroButtonOpen = true;
+                    pyrowin.style.backgroundImage = currentinactiveheader; catwin.style.backgroundImage = currentinactiveheader; document.getElementById("taskapp2font").style.color = taskbartext;
+                    document.getElementById("taskapp2").style.backgroundImage = "none"; document.getElementById("taskapp2").style.backgroundColor = silv;
+                    document.documentElement.style.setProperty('--taskbar2top1', whit); document.documentElement.style.setProperty('--taskbar2top2', lightg);
+                    document.documentElement.style.setProperty('--taskbar2bottom1', gray); document.documentElement.style.setProperty('--taskbar2bottom2', blac);
+                    diskButtonOpen = true;
+                    diskwin.style.backgroundImage = currentinactiveheader; document.getElementById("taskapp3font").style.color = taskbartext;
+                    document.getElementById("taskapp3").style.backgroundImage = "none"; document.getElementById("taskapp3").style.backgroundColor = silv;
+                    document.documentElement.style.setProperty('--taskbar3top1', whit); document.documentElement.style.setProperty('--taskbar3top2', lightg);
+                    document.documentElement.style.setProperty('--taskbar3bottom1', gray); document.documentElement.style.setProperty('--taskbar3bottom2', blac);
+                    
+                    messagewin.style.backgroundImage = currentactiveheader;
+                    logoff.style.backgroundImage = currentinactiveheader;
+                    shutdown.style.backgroundImage = currentinactiveheader;
+                    }
+                }
         </script>
 <!-- Windows 98 desktop handling ------------------------------------------------------------------------------>
         
@@ -1276,12 +1282,14 @@
 <!-- Tumblr Post handler ------------------------------------------------------------------------------>
         
         <script>
-            function tumblractive() { tumblrButtonOpen = false; idleactive(); inactiveall(); 
-                document.getElementById("post").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
-                postwindow.style.backgroundImage = currentactiveheader; 
-                document.getElementById("taskapp1").style.backgroundImage = github + "img/Taskbar%20application.png')";}
+            function tumblractive() { inactiveall(); tumblrButtonOpen = false;
+                currentlayer = currentlayer + 1; document.getElementById("post").style.zIndex = currentlayer;
+                document.getElementById("postwindow").style.backgroundImage = currentactiveheader; document.getElementById("taskapp1font").style.color = taskbartextpressed;
+                document.getElementById("taskapp1").style.backgroundImage = github + "img/scrollbarempty.png')"; document.getElementById("taskapp1").style.backgroundColor = whit;
+                document.documentElement.style.setProperty('--taskbar1top1', gray); document.documentElement.style.setProperty('--taskbar1top2', blac);
+                document.documentElement.style.setProperty('--taskbar1bottom1', whit); document.documentElement.style.setProperty('--taskbar1bottom2', lightg);}
                 
-            function tumblrminimize() { tumblrButtonOpen = true; idleactive(); inactiveall(); 
+            function tumblrminimize() { tumblrButtonOpen = true; inactiveall(); 
                 document.getElementById("desktop").style.left = "-20000px"; document.body.style.overflowY = "hidden";}
         </script>
         
@@ -1292,25 +1300,25 @@
                     <div class="win98titlebarbutton" title="Maximize" style=""> <div class="maximize"></div></div>
                     <div class="win98titlebarbutton" title="Minimize" onclick="tumblrminimize();"> <div class="minimize"></div></div>
                     <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" title="Help"> <div class="help"></div></div></a> 
-                    <div class="title-bar-98" id="postwindow" style="background-image:url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/img/title-bar%20postheader.png');" id="tumblrheader"> 
+                    <div class="title-bar-98" id="postwindow"> 
                         <div class="title-bar-text">🍭 very.vunnies on Tumblr - Internet Explorer</div></div>
                     <div class="window-body"> 
                         
                         <div class="post-header" style="height: 46px; margin-top:-6px;">
                             <fieldset style="position:absolute; height: 44px; width: 467px; margin-left:-6px; padding:2px;"> 
                                 
-                                <div class="verticaltasksplitter" style="margin-top:2px; margin-bottom: 2px"></div>
+                                <div class="small_seperator" style="margin-top:1px; height:17px;"></div>
                                 <div class="windowsexplorerlogo"></div> <!-- right side of the top container -->
-                                <div class="verticalsplitter" style="float:right; height:21px;"></div>
+                                <div class="big_seperator" style="float:right; height:21px; margin-top:0px;"></div>
                                 {block:NoteCount} 
                                 <div class="postnote-container" style="float:right; margin-top:4px; margin-right:3.5px;">{NoteCountWithLabel}</div>
-                                <div class="verticalsplitter" style="float:right; margin-right:5px; height:21px;"></div>
+                                <div class="big_seperator" style="float:right; margin-right:5px; margin-top:0px; height:21px;"></div>
                                 {/block:NoteCount}
                                 
                                  <!-- Left side of the top container -->
                                 <a href="https://thealonic.tumblr.com/"><div class="container" style="position: absolute; margin-left:2px; height:22px; width:49px;">
                                     <div class="explorerback" style="margin-left:4.5px;"></div> <div class="reflinkblack" style="margin-top:4px;">Back</div></div></a>
-                                <div class="verticalsplitter" style="position: absolute; margin-left:55px; height:21px;"></div> 
+                                <div class="big_seperator" style="position: absolute; margin-left:55px; margin-top:0px; height:21px;"></div> 
                                 <div class="container" style="margin-left:63.5px; margin-top:5px; width:400px;">
                                     {block:RebloggedFrom} 
                                     Posted on <strong style="color: var(--blue); cursor:default; margin-right:-1px" title="Day of posting">{ShortMonth} {DayOfMonth}{DayOfMonthSuffix} </strong>
@@ -1324,7 +1332,7 @@
                                    
                                 <div class="menuapplicationsplit" style="width:468px; margin-left:-1px; margin-top: 4px;"> </div>
                                 
-                                <div class="verticaltasksplitter" style="margin-top:2px;"></div> <!-- Left side of the Bottom container -->
+                                <div class="small_seperator" style="margin-top:1px; height:17px;"></div> <!-- Left side of the Bottom container -->
                                 <div class="container" style="position:absolute; margin-left:12.5px; margin-top:5px; width:400px;">A<underline>d</underline>dress</div>
                                 <ul class="tree-view" style="position:absolute; width:300px; height:9px; margin-left:55.5px; overflow:hidden;">
                                     <div class="win98buttontitlebarinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px; width:10px; height:11px;">
@@ -1334,9 +1342,8 @@
                                 
                                 <a href="{Permalink}"><div class="container" style="position: absolute; margin-left:368px; height:22px; width:49px;">
                                     <div class="explorergo" style="margin-left:5.5px;"></div> <div class="reflinkblack" style="margin-top:5px;">Go</div></div></a>
-                                <div class="verticalsplitter" style="position;absolute; height:22px;margin-left:417px;"></div>
-                                <div class="verticaltasksplitter" style="margin-left:421px; margin-top:-20px;"></div>
-                                <div class="postlinks-container" style="position: absolute; margin-left:419px; margin-top:-22px; height:22px; width:49px; cursor:pointer;">
+                                <div class="big_seperator" style="position;absolute; height:21px; margin-top:-0px; margin-left:411px;"></div>
+                                <div class="postlinks-container" style="position: absolute; margin-left:419px; margin-top:-0px; height:22px; width:49px; cursor:pointer;">
                                     <div class="container" style="position: absolute; margin-left:12.5px; margin-top:5px;">Links</div>
                                     <div class="explorerlinks" style="position: absolute; margin-left:39px; margin-top:2px;"></div>
                                     <div class="explorerlinks" style="position: absolute; margin-left:42px; margin-top:2px;"></div></div>
@@ -1347,12 +1354,12 @@
                         <div class="filler"></div><div class="filler"></div>
                                 
                         <ul class="tree-view" style="margin-left:-6px; margin-bottom:26px; width: 471px; padding:0px; overflow:hidden; background-color: var(--white)"> 
-                            <div class="scrollbarmiddle" style="margin-left: 2.5px; height: 100%; width:467px; margin-top:2px; margin-bottom:2px; background-color: var(--white);">
-                                <div class="container"  style="max-width: 451px; background-color:var(--white); overflow:hidden;"> <!-- 428px wide, 451 including scrollwheel + padding -->
+                            <div class="scrollbarmiddle" style="margin-left: 2px; height: 100%; width:467px; margin-top:2px; margin-bottom:2px; background-color: var(--white);">
+                                <div class="container"  style="max-width: 451px; background-color:var(--white); overflow:hidden; color:car(--text);"> <!-- 428px wide, 451 including scrollwheel + padding -->
                                 <!-- Text posts -->
                                     <div class="win98buttonscrollinactive" style="margin-left: 451px;"><div class="arrowdisableup"></div></div>
                                     {block:Text}
-                                        <div class="container" style="padding: 3px; max-width:451px;">
+                                        <div class="container" style="padding: 3.5px; max-width:451px;">
                                             {block:Title}
                                                <div class="title-bar-text" style="margin-left:3px; font-size: 2rem; color:black; margin-bottom:-7px; margin-top:-3px">{Title}</div>
                                             {/block:Title}
@@ -1363,7 +1370,7 @@
                                         <img src="{PhotoURL-400}" class="full_image" style="margin-bottom:-4px; width: 451px; height:auto;" alt="{PhotoAlt}"> </img> <!-- image -->
                                         <!-- Image caption -->
                                         {block:Caption} 
-                                            <div class="content caption" style="padding: 3px;"> {Caption} </div> <!-- content -->
+                                            <div class="content caption" style="padding: 3.5px;"> {Caption} </div> <!-- content -->
                                         {/block:Caption}
                                     {/block:Photo}
                                         
@@ -1373,19 +1380,19 @@
                                             {LinkCloseTag} 
                                         </div>
                                         {block:Caption} 
-                                            <div class="content caption" style="padding: 3px;"> {Caption} </div> <!-- content -->
+                                            <div class="content caption" style="padding: 3.5px;"> {Caption} </div> <!-- content -->
                                         {/block:Caption}
                                     {/block:Photos}
                                                     
                                     {block:Photoset}
                                         {Photoset} <!-- image set -->
                                         {block:Caption}
-                                            <div class="content caption" style="margin-left:2px; height:100%"> {Caption} </div> <!-- image caption -->
+                                            <div class="content caption" style="margin-left:2.5px; height:100%"> {Caption} </div> <!-- image caption -->
                                         {/block:Caption}
                                     {/block:Photoset}
                          
                                     {block:Quote}
-                                        <div class="container" style="padding: 3px;">
+                                        <div class="container" style="padding: 3.5px;">
                                             <div class="content caption" style="margin-left:1px"> "{Quote}" </div> <!-- quote itself -->
                                             {block:Source}
                                                 <div class="content body cf">
@@ -1396,7 +1403,7 @@
                                     {/block:Quote}
                          
                                     {block:Link}
-                                        <div class="container" style="padding: 3px;">
+                                        <div class="container" style="padding: 3.5px;">
                                             <a href="{URL}" class="title" {Target}> {Name} &rarr; </a>
                                             {block:Description}
                                                 <div class="content body"> {Description} </div> <!-- desc -->
@@ -1405,7 +1412,7 @@
                                     {/block:Link}
                         
                                     {block:Chat}
-                                        <div class="container" style="padding: 3px;">
+                                        <div class="container" style="padding: 3.5px;">
                                             {block:Title}
                                                 <div class="title">
                                                     {Title}
@@ -1430,7 +1437,7 @@
                                         <div class="content body" style="margin-bottom:-2px;">
                                             <div class="video"  data-from-page="{CurrentPage}" style="height:100%;">{Video-500}</div></div>
                                         {block:Caption}
-                                            <div class="content caption" style= "padding: 3px; margin-top:9px;" > {Caption} </div> <!-- video caption -->
+                                            <div class="content caption" style= "padding: 3.5px; margin-top:9px;" > {Caption} </div> <!-- video caption -->
                                         {/block:Caption}
                                     {/block:Video}
 
@@ -1443,7 +1450,7 @@
                                     {/block:Audio}
                                                 
                                     {block:Answer}
-                                        <div class="content body" style="max-width: 451px; height:100%; padding:3px ">
+                                        <div class="content body" style="max-width: 451px; height:100%; padding:3.5px ">
                                             <strong style="color: var(--blue)"> {lang:Asker asked 2}:</strong>
                                             {Question} 
                                             <div class"filler"></div>
@@ -1476,7 +1483,7 @@
                         
                         <div class="container" style="z-index:100; width:100px; float:right; margin-right:-5px;;">
                             <a class="like-b" href="{ReblogURL}" target="_blank" style="float:right; margin-top:-22px; margin-right:1.5px;">reblog</a>
-                            <div class="verticalsplitter" style="float: right; margin-left: 3px; margin-right: 3px; margin-top:-25px; margin-right:34px; height:17px;"></div>
+                            <div class="big_seperator" style="float: right; margin-left: 3px; margin-right: 3px; margin-top:-25px; margin-right:34px; height:17px;"></div>
                             <a class="like-b" href="#" style="float:right; margin-top:-22px; margin-right:38.5px;">{LikeButton}
                                 <div class="b" style="background-color: var(--silver); padding: 0px 2px 2px 6px; margin-left:-4px">like</div>
                         </a></div>
@@ -1500,12 +1507,37 @@
                                     
                                 <div class="container" style="position: absolute; width: 23px; height: 2px; margin-left: 428px; margin-top: -19px; cursor:default;">
                                     <fieldset style="position: absolute; width:100%; height:1px;"></fieldset></div>
-                                
                 </div></div></div></div>
             {/block:Posts}
         </div>
         
 <!-- Additional Page Rendering ------------------------------------------------------------------------------>
+        
+        <script> 
+            var myPix = new Array(
+
+            )
+            var r_text = new Array (
+                
+            )
+            var randomNum = Math.floor(Math.random() * myPix.length); randomNum2 = 0; tick = 3;
+            if (tick == 3) { document.getElementById("pyroimage").style.backgroundImage = github + "img/windows/ezgif-2-c475330a8091.gif')";
+                             document.getElementById("catimage").style.backgroundImage = github + "img/windows/Untitled-5.jpg')";}
+            function pyroshuffle(){
+                if (tick !== 0){ randomNum2 = Math.floor(Math.random() * myPix.length);
+                    if(randomNum2 !== randomNum){randomNum = randomNum2
+                        document.getElementById("pyrotext").textContent= r_text[randomNum]; 
+                        document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum]; randomNum = randomNum2;
+                    } else { randomNum2 = Math.floor(Math.random() * myPix.length); randomNum = randomNum2;
+                        document.getElementById("pyrotext").textContent= r_text[randomNum]; 
+                        document.getElementById("pyroimage").style.backgroundImage = myPix[randomNum]; randomNum = randomNum2;}
+                    if(tick == 3){ document.getElementById("pyrobutton").textContent = "Probably!";}
+                    if(tick == 2){ document.getElementById("pyrobutton").textContent = "Maybe?";}
+                    if(tick == 1){ document.getElementById("pyrobutton").textContent = "No.";} tick = tick - 1;
+                } else { document.getElementById("pyro").style.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; pyrowindow();
+                    document.getElementById("pyrobutton").textContent = "Definately"; document.getElementById("pyrotext").textContent = '💯 Wubba lubba dub dub!';
+                    document.getElementById("pyroimage").style.backgroundImage = "var(--defaultpyro)";}}
+        </script>
         
         {block:NextPage} <div class="container" style="height:50px;"></div> {/block:NextPage}
         {block:PostNotes} <div class="container" style="height:10px;"></div> {/block:PostNotes} <!-- THIS PREVENTS REDIRECTS BEING CUT OFF
@@ -1518,7 +1550,7 @@
             
             <script>   
                 //start button / menu addressing
-                let startButtonOpen = false; 
+                var startButtonOpen = false;
                 function startpress() { if (startButtonOpen == true) { document.getElementById("startmenu").style.marginLeft = "200000px"; startButtonOpen = false;
                     } else if(startButtonOpen == false) { document.getElementById("startmenu").style.marginLeft = "0px"; startButtonOpen = true; }}
                 //start button pressed // start menu window
@@ -2082,7 +2114,7 @@
         
             <div class="container" style="margin-top: -24px">
                 <!-- taskbar application icons -->
-                <taskbar class="big_seperator" style="margin-left:58px"> </taskbar> <taskbar class="small_seperator" style="cursor:e-resize"> </taskbar>
+                <div class="big_seperator" style="margin-left:58px"> </div> <div class="small_seperator" style="cursor:e-resize"> </div>
                 <div class="taskbaricons">
                     <div class="taskbaricon1" style="cursor:pointer;" onclick="tumblrtoggle();"></div>
                     <div class="taskbaricon2"></div>
@@ -2091,60 +2123,42 @@
                 <taskbar class="big_seperator"> </taskbar>
                 <taskbar class="small_seperator" style="cursor:e-resize"> </taskbar>
                 
-                <div class="taskbarapp1" style="cursor:pointer;" onmousedown="tumblrtoggle(); menuclosed()" id="taskapp1"> <!--position: absolute; margin-left:172px-->
-                        <div class="title-bar-text" style="color:black; margin-top:2px; font-size: 11px;">🍭 very.vunnies</div></div>
-                <div class="taskbarapp2" style="cursor:pointer;" onmousedown="pyrotoggle(); menuclosed()" id="taskapp2"> <!--position: absolute; margin-left:336px-->
-                        <div class="title-bar-text" style="color:black; margin-top:2px; font-size: 11px;">👿 very.unvunny</div></div>
-                <div class="taskbarapp3" style="cursor:pointer;" onmousedown="disktoggle(); menuclosed()" id="taskapp3"> <!--position: absolute; margin-left:500px-->
-                        <div class="title-bar-text" style="color:black; margin-top:2px; font-size: 11px;">📺 Display Properties</div></div>
+                <div class="taskbartask1" style="cursor:pointer;" onmousedown="task1toggle(); menuclosed()" id="taskapp1"> <!--position: absolute; margin-left:172px-->
+                        <div class="title-bar-text" style="font-size: 11px;" id="taskapp1font">🍭 very.vunnies</div></div>
+                <div class="taskbartask2" style="cursor:pointer;" onmousedown="task2toggle(); menuclosed()" id="taskapp2"> <!--position: absolute; margin-left:336px-->
+                        <div class="title-bar-text" style="font-size: 11px;" id="taskapp2font">👿 very.unvunny</div></div>
+                <div class="taskbartask3" style="cursor:pointer;" onmousedown="task3toggle(); menuclosed()" id="taskapp3"> <!--position: absolute; margin-left:500px-->
+                        <div class="title-bar-text" style="font-size: 11px;" id="taskapp3font">📺 Display Properties</div></div>
                 
-<!-- toggle setup ------------------------------------------------------------------------------>
                 
                 <script>
-                    let tumblrButtonOpen = false; pyroButtonOpen = true; diskButtonOpen = true;
-                    // tumblr post toggle
-                    function tumblrtoggle() { pyroButtonOpen = true; diskButtonOpen = true;
-                        if (tumblrButtonOpen == false) { inactiveall(); idleactive(); tumblrButtonOpen = true;
-                            document.getElementById("postwindow").style.backgroundImage = currentinactiveheader
-                            document.getElementById("taskapp1").style.backgroundImage = github + "img/Taskbar%20application1.png')";
-                            document.getElementById("desktop").style.left = "-20000px"; document.body.style.overflowY = "hidden";
-                        } else if (tumblrButtonOpen == true){ inactiveall(); tumblrButtonOpen = false;
-                            document.getElementById("post").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
-                            document.getElementById("postwindow").style.backgroundImage = currentactiveheader;
-                            document.getElementById("taskapp1").style.backgroundImage = github + "img/Taskbar%20application.png')";
-                            document.getElementById("desktop").style.left = "0px"; document.body.style.overflowY = "scroll";}}
-                    // random message box active toggle
-                    function pyrotoggle() { tumblrButtonOpen = true; diskButtonOpen = true;
-                        if (pyroButtonOpen == false) { inactiveall(); idleactive(); pyroButtonOpen = true;
-                            document.getElementById("pyrowindow").style.backgroundImage = currentinactiveheader
-                            document.getElementById("catwindow").style.backgroundImage = currentinactiveheader
-                            document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application1.png')";
-                        } else if (pyroButtonOpen == true){ inactiveall(); pyroButtonOpen = false;
-                            if (window1 == true){ 
-                                document.getElementById("pyro").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
-                                document.getElementById("pyrowindow").style.backgroundImage = currentactiveheader;  
-                                document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application.png')"; 
-                            } else if (window2 == true){ 
-                                document.getElementById("cat").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
-                                document.getElementById("catwindow").style.backgroundImage = currentactiveheader;  
-                                document.getElementById("taskapp2").style.backgroundImage = github + "img/Taskbar%20application.png')";}}}
+                    var tumblrButtonOpen = false, pyroButtonOpen = true, diskButtonOpen = true;
+                    var taskbartext, taskbartextpressed, pretaskbartext, pretaskbartextpressed;
+                    
                     // disk window active toggle
-                    function disktoggle() { tumblrButtonOpen = true; pyroButtonOpen = true;
-                        if (diskButtonOpen == false) { inactiveall(); idleactive(); diskButtonOpen = true;
-                            document.getElementById("diskwindow").style.backgroundImage = currentinactiveheader
-                            document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application1.png')";
-                            document.getElementById("disk").style.marginTop = "-20000px";
-                        } else if (diskButtonOpen == true){
-                            inactiveall(); diskButtonOpen = false;
-                            document.getElementById("disk").style.zIndex = (currentlayer = currentlayer + 1); currentlayer = currentlayer + 1;
-                            document.getElementById("disk").style.marginTop = "0px";
-                            document.getElementById("diskwindow").style.backgroundImage = currentactiveheader;  
-                            document.getElementById("taskapp3").style.backgroundImage = github + "img/Taskbar%20application.png')";}} 
-                    function idleactive() { tumblrButtonOpen = true; pyroButtonOpen = true; diskButtonOpen = true; }
+                    function task1toggle() { 
+                        if (tumblrButtonOpen == false) { tumblrminimize();
+                        } else if (tumblrButtonOpen == true){ tumblractive();
+                            document.getElementById("desktop").style.left = "0px"; document.body.style.overflowY = "scroll";}}
+                    // disk window active toggle
+                    function task2toggle(){        
+                        if (pyroButtonOpen == false) { inactiveall();
+                        } else if (pyroButtonOpen == true){ inactiveall(); pyroactive();
+                            if (window1 == true){ 
+                                document.getElementById("pyro").style.zIndex = currentlayer = currentlayer + 1; currentlayer
+                                document.getElementById("pyrowindow").style.backgroundImage = currentactiveheader;
+                            } else if (window2 == true){ 
+                                document.getElementById("cat").style.zIndex = currentlayer = currentlayer + 1; currentlayer;
+                                document.getElementById("catwindow").style.backgroundImage = currentactiveheader;}}}
+                                
+                    // disk window active toggle
+                    function task3toggle() {
+                        if (diskButtonOpen == false) { inactiveall(); document.getElementById("disk").style.marginTop = "-20000px";
+                        } else if (diskButtonOpen == true){ diskactive(); document.getElementById("disk").style.marginTop = "0px";}} 
                 </script>
                  
                 <div class="clock">
-                    <taskbar class="calendar" style="cursor: pointer;" onclick="clockopen();"> </taskbar>
+                    <div class="calendar" style="cursor: pointer;" onclick="clockopen();"> </div>
                     <div class="menuentertainment3" style="margin-top:-1px; margin-left:1px;"></div>
                     <label class="time" style="font-size:11px" id="showClock"> 00:00 am </label>
                 </div>
@@ -2223,9 +2237,9 @@
                 medimenu = document.getElementById("media"); medisubmenu = document.getElementById("mediasubmenu"); documenu = document.getElementById("menudocuments"); docusubmenu = document.getElementById("documentsmenu");
                 settmenu = document.getElementById("menusettings"); settsubmenu = document.getElementById("settingsmenu"); actimenu = document.getElementById("activedesktop"); actisubmenu = document.getElementById("activedesktopsubmenu");
                 findmenu = document.getElementById("menufind"); findsubmenu = document.getElementById("findmenu");
-            var white = "#fff"; black = "#000"; prus = "#00207c"; silv = "#c0c0c0"; faraw = "200000px"; aropen = "-134px -216px"; arclose = "-54px -216px"; yell = "#ffff00";
+            var whit = "#fff"; blac = "#000"; prus = "#00207c"; silv = "#c0c0c0"; faraw = "200000px"; aropen = "-134px -216px"; arclose = "-54px -216px"; yell = "#ffff00"; lightg = "#dfdfdf";  gray = "#808080"; text = "#000000"
             
-            function cmw() {cm.style.color = white} function cmb() {cm.style.color = black} function cmd() {cms.style.marginLeft = faraw} function cmbp() {cm.style.backgroundColor = silv} function cmbs() {cm.style.backgroundColor = prus}
+            function cmw() {cm.style.color = whit} function cmb() {cm.style.color = text} function cmd() {cms.style.marginLeft = faraw} function cmbp() {cm.style.backgroundColor = silv} function cmbs() {cm.style.backgroundColor = prus}
             function progcm() {cm = progmenu; cms = progsubmenu} function accecm() {cm = accemenu; cms = accesubmenu} function commcm() {cm = commmenu; cms = commsubmenu} function entecm() {cm = entemenu; cms = entesubmenu} 
             function gamecm() {cm = gamemenu; cms = gamesubmenu} function intecm() {cm = intemenu; cms = intesubmenu} function systcm() {cm = systmenu; cms = systsubmenu} function onlicm() {cm = onlimenu; cms = onlisubmenu} 
             function starcm() {cm = starmenu; cms = starsubmenu} function favocm() {cm = favomenu; cms = favosubmenu} function chancm() {cm = chanmenu; cms = chansubmenu} function linkcm() {cm = linkmenu; cms = linksubmenu} 
