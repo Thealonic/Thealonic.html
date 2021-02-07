@@ -1,6 +1,20 @@
 <div class="container" style="margin-left: -10px; margin-top: 6px;">
 <ul>
-<li><strong>2021 Febuary 5rd (210205) </strong><em>- </em><em><em>The </em>"Schemes"</em><em> Update</em>
+<li><strong style="color: var(--atext);">2021 Febuary 6th (210206)</strong>
+<ul>
+<li>Updated startmenu to no longer fully close when accidentally moving your mouse off a submenu, but still closes the submenu and instead, now closes if something else is clicked on, rather than going out of the start menu.</li>
+<li>Very.Unvunny windows now have a minimize button and now minimizable. They can be reopened by closing and reopening through the taskbar.</li>
+<li>Patchnotes now use current active scheme colours alongside update dates having a seperate colour to make update logs easier to read between.</li>
+<li>Like and reblog buttons now use theme colours.</li>
+<li>Date and Time now uses theme colours.</li>
+</ul>
+<ol>
+<li>- Fixed VeryUnvunny task not toggling from active to inactive status on the taskbar when clicked on.</li>
+<li>- Fixed a bunch of formatting issues to do with titles in the update log.</li>
+<li>- Fixed a bug where the background colour of the clock in the Date and Time menu was always lightmode.</li>
+<li>- Fixed dropdown menu colour related bugs within the Time and Date interface.</li>
+</ol></li>
+<li><strong style="color: var(--atext);">2021 Febuary 5th (210205) </strong><em>- </em>The &ldquo;Schemes&rdquo;<em> Update</em>
 <ul>
 <li><strong>Major overhaul to themes handling.</strong><strong><br /></strong>
 <ul>
@@ -23,19 +37,19 @@
 </ul>
 <ol>
 <li>- Fixed Date and Time not updating unless it was manually updated.</li>
-<li>- Fixed a bug where the hover effect over the currently selected wallpaper wouldn't change after changing to darkmode and back to light mode.</li>
+<li>- Fixed a bug where the hover effect over the currently selected wallpaper wouldn&rsquo;t change after changing to darkmode and back to light mode.</li>
 <li>- Fixed occasional 1 pixel gap between posts and embedding.</li>
 </ol></li>
-<li><strong>2021 Febuary 4rd (210204)<em> <br /></em></strong>
+<li><strong style="color: var(--atext);">2021 Febuary 4th (210204)<em> <br /></em></strong>
 <ul>
-<li><strong>Implimentation of &lsquo;beta&rsquo; theme</strong><strong>s<br /></strong>
+<li><strong>Implimentation of &lsquo;beta&rsquo; themes<br /></strong>
 <ul>
 <li><strong>Added &ldquo;Dark Mode&rdquo; theme&nbsp;</strong> under &ldquo;octavia&rdquo; in the presets.<strong><br /></strong></li>
 <li>Added setup for additional themes in the future.</li>
 <li>All colours are now based on root variables.</li>
 <li>Reworked preview windows to be their own seperate entities entirely.</li>
 <li>Clicking on a scheme will now show the preview to themes.</li>
-<li>Added darktheme spritesheet as a temporary measure to fix some "Dark Mode" colour issues.</li>
+<li>Added darktheme spritesheet as a temporary measure to fix some &ldquo;Dark Mode&rdquo; colour issues.</li>
 </ul>
 </li>
 <li>Scrollbars now rely on transparancy for theme adaptability.</li>
@@ -47,7 +61,7 @@
 <li>- Fixed a bug with two buttons on the Display Properties appearance tab being reliant on very early CSS.</li>
 <li><strong>@Devnote;</strong> Themes may take a few days to fully impliment due to issues with posts being reliant on images for dividers and such.</li>
 </ol></li>
-<li><strong>2021 Febuary 3rd (210203)<em> <br /></em></strong>
+<li><strong style="color: var(--atext);">2021 Febuary 3rd (210203)<em> <br /></em></strong>
 <ul>
 <li>Added a clock into &ldquo;Time and Date&rdquo; menu.<strong><br /></strong></li>
 <li>Replaced very.unvunny image and added a maximize feature.</li>
@@ -57,7 +71,7 @@
 <ol>
 <li>- Removed unnecessary images stored in root.</li>
 </ol></li>
-<li><strong>2021 Febuary 2nd (210202)<em> <strong><br /></strong></em></strong>
+<li><strong style="color: var(--atext);">2021 Febuary 2nd (210202)<em> <strong><br /></strong></em></strong>
 <ul>
 <li>Rewritten how start menu scripts are handled.</li>
 <li><em><em>Overall page optimisations</em></em></li>
@@ -70,7 +84,7 @@
 <li>- Fixed issues with Log Off buttons being misaligned.</li>
 <li>- Fixed start menu script conflictions</li>
 </ol></li>
-<li><strong>2021 Febuary 1st (210201)<em> <strong><br /></strong></em></strong>
+<li><strong style="color: var(--atext);">2021 Febuary 1st (210201)<em> <strong><br /></strong></em></strong>
 <ul>
 <li><strong>Added &ldquo;Time and Date&rdquo; menu</strong><strong><br /></strong>
 <ul>
@@ -85,7 +99,7 @@
 <li><em>Page loading optimisations</em></li>
 </ul>
 </li>
-<li><strong>2021 January 31st (210131)</strong><em> - &ldquo;The Customisation Update&rdquo; extention 1<strong><br /></strong></em>
+<li><strong style="color: var(--atext);">2021 January 31st (210131)</strong><em> - &ldquo;The Customisation Update&rdquo; extention 1<strong><br /></strong></em>
 <ul>
 <li><strong>Desktop theme adjustments<br /></strong>
 <ul>
@@ -110,7 +124,7 @@
 <li>- Fixed a bunch of inconsistancy bugs to do with high contrast mode themes.</li>
 <li>- Fixed a layering bug to do with tumblr posts and desktop icons.</li>
 </ol></li>
-<li><strong>2021 January 30th (210130)</strong><em> - &ldquo;The debug update&rdquo;</em><br />
+<li><strong style="color: var(--atext);">2021 January 30th (210130)</strong><em> - &ldquo;The debug update&rdquo;</em><br />
 <ul>
 <li>Page loading optimisations<strong><br /></strong>
 <ul>
@@ -130,7 +144,7 @@
 <li>- Fixed relativity inconsistancies with windows after moving moving said window would adjust the relativity of post from right to left if originally based on relativity to the right.</li>
 <li>- Fixed dropdown menu bugs in the Display Properties menu.</li>
 </ol></li>
-<li><strong>2021 January 28th (210128)</strong><br />
+<li><strong style="color: var(--atext);">2021 January 28th (210128)</strong><br />
 <ul>
 <li>Reformatted how notes are handled on permalink posts to no longer be an extention on the same html as posts, and is now a seperate extention to each post.</li>
 <li>Notes are no longer forced to be a hight of 220px, and will resize dynamically upto a certain height.</li>
@@ -144,7 +158,7 @@
 <li>- Solved the issue of desktop icons having the same background as the solution given to fixing the background colour of notes on permalink posts.</li>
 <li>- Fixed a bug where the Very.Unvunny task wouldn&rsquo;t be removed from the taskbar after all windows are closed.</li>
 </ol></li>
-<li><strong>2021 January 26th (210126)</strong><strong> - </strong><em>The &ldquo;Accessability </em><em><em>setup</em>&rdquo; update<br /></em>
+<li><strong style="color: var(--atext);">2021 January 26th (210126)</strong><strong> - </strong><em>The &ldquo;Accessability </em><em><em>setup</em>&rdquo; update<br /></em>
 <ul>
 <li><strong>Added accessability options. <br /></strong>
 <ul>
@@ -164,7 +178,7 @@
 <li>- Fixed unnecessary loading of images in Pyrobox</li>
 <li>- Fixed notes having a mismatched background colour to the background.</li>
 </ol></li>
-<li><strong>2021</strong> <strong>January 25th (210125) -</strong><em> &ldquo;</em><em><em>The </em>Customization </em><em><em>Update</em>&rdquo;<strong><br /></strong></em>
+<li><strong style="color: var(--atext);">2021 January 25th (210125)</strong>-<em> &ldquo;</em><em><em>The </em>Customization </em><em><em>Update</em>&rdquo;<strong><br /></strong></em>
 <ul>
 <li>Updated desktop handing<strong><br /></strong>
 <ul>
@@ -198,7 +212,7 @@
 <li>- Fixed a bunch of outdated layering errors in the display properties menu.</li>
 <li>- General optimisation for the Display properties window</li>
 </ol></li>
-<li><strong>2021 January 24th (210124)</strong><br />
+<li><strong style="color: var(--atext);">2021 January 24th (210124)</strong><br />
 <ul>
 <li>Updated Display properties CSS<strong><br /></strong>
 <ul>
@@ -218,7 +232,7 @@
 <li>- Fixed a bug where the page wouldn&rsquo;t register the background colour until the page background is changed to none.</li>
 <li>- Hovering over disabled buttons no longer show the pointer, and show the default cursor.</li>
 </ol></li>
-<li><strong>2021 January 23rd (210123)<br /></strong>
+<li><strong style="color: var(--atext);">2021 January 23rd (210123)<br /></strong>
 <ul>
 <li><strong>Added changable desktop wallpapers.</strong></li>
 <li>Updated Display properties CSS<strong><br /></strong>
@@ -234,7 +248,7 @@
 <li>- Fixed a bug where pressing titlebar buttons would make it move by one pixel for a millisecond every time when pressed. (This was more noticable on windows that weren&rsquo;t tumblr posts.)</li>
 <li>- Fixed some alignment issues with chrome on the footer of posts.</li>
 </ol></li>
-<li><strong>2021 January 22nd (210122)</strong><br />
+<li><strong style="color: var(--atext);">2021 January 22nd (210122)</strong><br />
 <ul>
 <li><strong>Updated Display properties CSS<br /></strong>
 <ul>
@@ -251,7 +265,7 @@
 <ol>
 <li>- Fixed some misalignments in inactive dropdown menus within the appearance tab of Display Properties</li>
 </ol></li>
-<li><strong>2021 January 21st (210121)<br /></strong>
+<li><strong style="color: var(--atext);">2021 January 21st (210121)<br /></strong>
 <ul>
 <li><strong>Revamped drop down menu CSS with custom and easier expandability. </strong>This change has been applied to all currently existing drop down menus.</li>
 <li>Added function functionality to drop-down menus.</li>
@@ -260,7 +274,7 @@
 <li>- Fixed titlebar font spacing in the &ldquo;appearance&rdquo; tab of the Display properties menu.</li>
 <li>- Fixed a few visual issues in the &ldquo;appearance&rdquo; tab of the Display properties menu.</li>
 </ol></li>
-<li><strong>2021 January 19th (210119)<strong><br /></strong></strong>
+<li><strong style="color: var(--atext);">2021 January 19th (210119)<strong><br /></strong></strong>
 <ul>
 <li>The footer of posts now shows where the post was reblogged from, and who was the original poster, rather than just who it was posted by.</li>
 <li>Posts created by Thealonic now include &ldquo;Posted by;&rdquo; and link to Thealonic&rsquo;s twitter account.</li>
@@ -286,7 +300,7 @@
 <li>- Fixed a few text bugs</li>
 <li>- Fixed tons of text misalignment.</li>
 </ol></li>
-<li><strong>2021 January 18th (210118)<br /></strong>
+<li><strong style="color: var(--atext);">2021 January 18th (210118)<br /></strong>
 <ul>
 <li><strong>Revamped Tumblr Post Headers<br /></strong>
 <ul>
@@ -304,7 +318,7 @@
 <li>- Fixed some graphical bugs in the display properties.</li>
 <li>- Fixed a bug where the function to close the taskbar task for &ldquo;VeryUnvunny&rdquo; wouldn&rsquo;t be called when all the windows are closed.</li>
 </ol></li>
-<li><strong>2021 January 17th (210117)</strong><br />
+<li><strong style="color: var(--atext);">2021 January 17th (210117)</strong><br />
 <ul>
 <li>Removed bottom scrollbar of posts.</li>
 <li>Removed vertical scrollbar functionability.</li>
@@ -321,7 +335,7 @@
 <li>- Fixed taskbar CSS and jank task CSS.</li>
 <li>- Fixed a bug on footers of permalinked posts</li>
 </ol></li>
-<li><strong>2021 January 16th (210116)<strong><br /></strong></strong>
+<li><strong style="color: var(--atext);">2021 January 16th (210116)<strong><br /></strong></strong>
 <ul>
 <li>Display properties window updates<strong><br /></strong>
 <ul>
@@ -338,7 +352,7 @@
 <li>- Fixed anti-aliasing text issues for Display Properties.</li>
 <li>- Fixed anti-aliasing issues on post header.</li>
 </ol></li>
-<li><strong>2021 January 15th (210115)<br /></strong>
+<li><strong style="color: var(--atext);">2021 January 15th (210115)<br /></strong>
 <ul>
 <li><strong>Display properties window updates<br /></strong>
 <ul>
@@ -359,7 +373,7 @@
 <li>- Optimised random image scripts.</li>
 <li>- Fixed anti-aliasing issues on post footer</li>
 </ol></li>
-<li><strong>2021 January 14th (210114)</strong> <em>- The &ldquo;Ease of use&rdquo; update.</em>
+<li><strong style="color: var(--atext);">2021 January 14th (210114)</strong> <em>- The &ldquo;Ease of use&rdquo; update.</em>
 <ul>
 <li>Display properties window updates<strong><br /></strong>
 <ul>
@@ -396,7 +410,7 @@
 <li>- Fixed the scrollbars on focused posts.</li>
 <li>- Fixed a bug where the footer of posts were too close to image post captions.</li>
 </ol></li>
-<li><strong>2021 January 13th (210113) </strong><em>- &ldquo;The alt-tab&rdquo; update.</em><br />
+<li><strong style="color: var(--atext);">2021 January 13th (210113) </strong><em>- &ldquo;The alt-tab&rdquo; update.</em><br />
 <ul>
 <li><strong>Major Taskbar tasks overhaul</strong>
 <ul>
@@ -420,7 +434,7 @@
 <li>- Fixed a layering bug with Tumblr posts which would add 1 to the Z index when the post is clicked off of instead of during, which would result in buggy layering with other windows.</li>
 <li>- Fixed Start Button graphical bug</li>
 </ol></li>
-<li><strong>2021 January 12th (210112)</strong><br />
+<li><strong style="color: var(--atext);">2021 January 12th (210112)</strong><br />
 <ul>
 <li>Adjusted Tumblr CSS to present threads between users closer together, taking up less horizontal room as a result.</li>
 <li>Message Box Changes</li>
@@ -436,7 +450,7 @@
 <li>- Fixed all Patch Note related formatting issues.</li>
 <li>- Fixed Patch note dates from being the incorrect format.</li>
 </ol></li>
-<li><strong>2021 January 10th (210110)<br /></strong>
+<li><strong style="color: var(--atext);">2021 January 10th (210110)<br /></strong>
 <ul>
 <li>Added Like and reblog buttons on posts. <em>(but currently only functions with the first 15 posts loaded on the page)</em></li>
 <li>Adjusted the bottom right hand corner &ldquo;window resizer&rdquo; of each post to be more representative of windows 98 by being transparent and covering the bottom footer correctly.</li>
@@ -451,7 +465,7 @@
 <li>- Fixed a few graphical bugs in the Start Menu due to issues with the sprite sheet.</li>
 <li>- Fixed a bug in Chrome where the Display Properties slider is horizontally smaller.</li>
 </ol></li>
-<li><strong>2021 January 9th (210109)<br /></strong>
+<li><strong style="color: var(--atext);">2021 January 9th (210109)<br /></strong>
 <ul>
 <li>Message title bar buttons now register their animation when clicked.</li>
 <li><strong>Titlebar buttons no longer include drag functionality.</strong></li>
@@ -460,7 +474,7 @@
 <li>All windows now refer to the same image URL for the titlebar apposed to using different sizes, it uses background location.</li>
 </ul>
 </li>
-<li><strong>2021 January 8th (210108)<br /></strong>
+<li><strong style="color: var(--atext);">2021 January 8th (210108)<br /></strong>
 <ul>
 <li>Start Menu Changes</li>
 <ul>
@@ -474,7 +488,7 @@
 <ol>
 <li>- Fixed &ldquo;open source&rdquo; page error.</li>
 </ol></li>
-<li><strong>2021 January 7th (210107)</strong><em> - &ldquo;The Alt-Tab" update</em><br />
+<li><strong style="color: var(--atext);">2021 January 7th (210107)</strong><em> - &ldquo;The Alt-Tab" update</em><br />
 <ul>
 <li><strong>Added window drag functionality to selected windows.</strong></li>
 <li><strong>Added proper tabbing functionality so windows will remember what layer is on in comparrision to other windows.</strong></li>
@@ -487,7 +501,7 @@
 <li>- Fixed placements of the Shut Down and Log off menus to be not based on the same location.</li>
 <li>- Fixed audio posts padding inconsistancy.</li>
 </ol></li>
-<li><strong>2021 January 6th (210106)</strong><br />
+<li><strong style="color: var(--atext);">2021 January 6th (210106)</strong><br />
 <ul>
 <li>Spritesheet changes.</li>
 <ul>
@@ -505,7 +519,7 @@
 <li>Posts by Thealonic now have unique headers; &ldquo;[Posted by Thealonic, [time ago]&rdquo; aposed to &ldquo;[Posted by [Reblogged from] at [time] on [day]&rdquo; to prevent broken headers on page redirects.</li>
 </ul>
 </li>
-<li><strong>2021 January 5th (210105)<em><br /></em></strong>
+<li><strong style="color: var(--atext);">2021 January 5th (210105)<em><br /></em></strong>
 <ul>
 <li><strong>Replaced the main Start Menu icons with a sprite sheet </strong>so icons will all load at the same time and will be easier to refer to.</li>
 <li>Adjusted source credits in the footer of posts to be more distinguishable.</li>
@@ -516,7 +530,7 @@
 <li>- Fixed a bug where closing a message box would require to double click on the taskbar.</li>
 <li>- Fixed tags in which the background of commas inbetween tags would be blue.</li>
 </ol></li>
-<li><strong>2021 January 4th (210104)<em><br /></em></strong>
+<li><strong style="color: var(--atext);">2021 January 4th (210104)<em><br /></em></strong>
 <ul>
 <li>Start menu Changes</li>
 <ul>
@@ -532,7 +546,7 @@
 <li>-Fixed text spacing issues at the footer of posts.</li>
 <li>-Fixed early Patch Notes having listing bugs</li>
 </ol></li>
-<li><strong>2021 January 3rd (210103)</strong><br />
+<li><strong style="color: var(--atext);">2021 January 3rd (210103)</strong><br />
 <ul>
 <li>Embedded post changes</li>
 <ul>
@@ -551,7 +565,7 @@
 <li>- Fixed a graphical bug with the Last Updated message box when it becomes unfocused after clicking on the titlebox once.</li>
 <li>- Fixed taskbar double clicking issues.</li>
 </ol></li>
-<li><strong>2020 december 28th (201228) </strong><em>&ndash; &ldquo;Message box&rdquo; Update<strong><strong><br /></strong></strong></em>
+<li><strong style="color: var(--atext);">2020 december 28th (201228) </strong><em>&ndash; &ldquo;Message box&rdquo; Update<strong><strong><br /></strong></strong></em>
 <ul>
 <li>Added a close ability to &ldquo;cat&rdquo; message box</li>
 <li><strong>Optimised window order loading </strong>depending on which window is in focus, resulting in whichever window you last selected will always be the top window other than the current active window.</li>
@@ -563,7 +577,7 @@
 <li>- Fixed a bug where clicking on the &ldquo;last update&rdquo; box wouldn&rsquo;t make the &ldquo;Very.Unvunny&rdquo; tabs inactive.</li>
 <li>- Fixed incorrect dates in the patch notes.</li>
 </ol></li>
-<li><strong>2020 december 23rd (231220)</strong><em> &ndash; &ldquo;The postponed update&rdquo;<strong><strong><br /></strong></strong></em>
+<li><strong style="color: var(--atext);">2020 december 23rd (231220)</strong><em> &ndash; &ldquo;The postponed update&rdquo;<strong><strong><br /></strong></strong></em>
 <ul>
 <li><strong>Major title bar rework</strong></li>
 <ul>
@@ -579,7 +593,7 @@
 <ol>
 <li>- Fixed page redirects in the start menu to not create a new window.</li>
 </ol></li>
-<li><strong>2020 december 22nd (201222) </strong><em>&ndash; &ldquo;Start menu&rdquo; Update<strong><strong><br /></strong></strong></em>
+<li><strong style="color: var(--atext);">2020 december 22nd (201222) </strong><em>&ndash; &ldquo;Start menu&rdquo; Update<strong><strong><br /></strong></strong></em>
 <ul>
 <li>Start Menu updates</li>
 <ul>
@@ -596,7 +610,7 @@
 <ol>
 <li>- Fixed a bug where the tags of a post would misalign the scrollbars and buttons.</li>
 </ol></li>
-<li><strong>2020 december 21st (201221)<strong><br /></strong></strong>
+<li><strong style="color: var(--atext);">2020 december 21st (201221)<strong><br /></strong></strong>
 <ul>
 <li>Major Start Menu updates</li>
 <ul>
@@ -607,7 +621,7 @@
 <li>Desktop icons now stay behind all windows, including posts. (This will mainly be a visual fix for issues on mobile or lower resolutions)</li>
 </ul>
 </li>
-<li><strong>2020 december 20th (201220)</strong> <em>&ndash; &ldquo;The Container&rdquo; Update</em><strong><br /></strong>
+<li><strong style="color: var(--atext);">2020 december 20th (201220)</strong> <em>&ndash; &ldquo;The Container&rdquo; Update</em><strong><br /></strong>
 <ul>
 <li><strong>&nbsp;Major Start Menu updates</strong></li>
 <ul>
@@ -631,7 +645,7 @@
 <ol>
 <li>- Fixed some post-based loading issues.</li>
 </ol></li>
-<li><strong>2020 december 19th (201219) </strong><br />
+<li><strong style="color: var(--atext);">2020 december 19th (201219) </strong><br />
 <ul>
 <li><strong>Major Start Menu overhaul</strong></li>
 <ul>
@@ -654,7 +668,7 @@
 <li>- Fixed a bug where the page would load both coloumns, and adjust the second coloumn after loading in.</li>
 <li>- Fully added a non-antialiased font type rather than relying on external css references.</li>
 </ol></li>
-<li><strong>2020 december 18th (201218)</strong>
+<li><strong style="color: var(--atext);">2020 december 18th (201218)</strong>
 <ul>
 <li>Added a loading screen inbetween the logged out screen and the homepage.</li>
 <li>More additions to the Start Menu</li>
@@ -676,7 +690,7 @@
 <ol>
 <li>- Fixed some font issues in message boxes</li>
 </ol></li>
-<li><strong>2020 december 17th (201217)</strong>
+<li><strong style="color: var(--atext);">2020 december 17th (201217)</strong>
 <ul>
 <li><strong>Major Start Menu overhaul</strong></li>
 <ul>
@@ -696,7 +710,7 @@
 <li>Adjustments to previous patch notes</li>
 </ul>
 </li>
-<li><strong>2020 </strong><strong>december 16th (201216)</strong>
+<li><strong style="color: var(--atext);">2020 december 16th (201216)</strong>
 <ul>
 <li><strong>Major &ldquo;Start Menu&rdquo; additions</strong></li>
 <ul>
@@ -724,7 +738,7 @@
 <ol>
 <li><em>- Fixed desktop icon redirect issues.</em></li>
 </ol></li>
-<li><strong>2020 december 15th (201215)</strong>
+<li><strong style="color: var(--atext);">2020 december 15th (201215)</strong>
 <ul>
 <li><strong>Complete Scrollbar Revamp</strong></li>
 <ul>
@@ -751,7 +765,7 @@
 <li>Removed Discord overlay.</li>
 </ul>
 </li>
-<li><strong>2020 december 14th (201214)</strong>
+<li><strong style="color: var(--atext);">2020 december 14th (201214)</strong>
 <ul>
 <li><strong>Post window rework</strong></li>
 <ul>
@@ -769,7 +783,7 @@
 <li>Start Menu now closes when clicked.</li>
 </ul>
 </li>
-<li><strong>2020 december 12th (201212)</strong>
+<li><strong style="color: var(--atext);">2020 december 12th (201212)</strong>
 <ul>
 <li><strong>Major Start Menu changes</strong></li>
 <ul>
@@ -790,7 +804,7 @@
 <li>Previous missing patch notes have been added.</li>
 </ul>
 </li>
-<li><strong>2020 december 10th </strong><strong>(201210)</strong>
+<li><strong style="color: var(--atext);">2020 december 10th (201210)</strong>
 <ul>
 <li>Message boxes now have an easier to add backend</li>
 <ul>
@@ -816,7 +830,7 @@
 <li>Desktop icons gapping tweaked.</li>
 </ul>
 </li>
-<li><strong>2020 december 9th </strong><strong>(201209)</strong>
+<li><strong style="color: var(--atext);">2020 december 9th (201209)</strong>
 <ul>
 <li>Start button script handling is finished.</li>
 <li><strong>Start menu has been added.</strong></li>
@@ -835,7 +849,7 @@
 <li>Several easter eggs added.</li>
 </ul>
 </li>
-<li><strong>2020 december 8th </strong><strong>(201208)</strong>
+<li><strong style="color: var(--atext);">2020 december 8th (201208)</strong>
 <ul>
 <li>Message boxes removed</li>
 <li>Start button added, but current script for functionability is not finished</li>
@@ -849,7 +863,7 @@
 <li>Easter eggs added.</li>
 </ul>
 </li>
-<li><strong>2020 december 7th </strong><strong>(201207)</strong>
+<li><strong style="color: var(--atext);">2020 december 7th (201207)</strong>
 <ul>
 <li><strong>Source posts have been patched</strong></li>
 <ul>
@@ -865,7 +879,7 @@
 <li>Post padding fixed to be more consistant.</li>
 </ul>
 </li>
-<li><strong>2020 december 6th </strong><strong>(201206)</strong>
+<li><strong style="color: var(--atext);">2020 december 6th (201206)</strong>
 <ul>
 <li>Discord embeded window has been removed to just be the base discord embed.</li>
 <li>Multiple desktop icons adjustments</li>
@@ -884,7 +898,7 @@
 <ol>
 <li>- Fixed link embedding on all posts.</li>
 </ol></li>
-<li><strong>2020 december 5th </strong><strong>(201205)</strong>
+<li><strong style="color: var(--atext);">2020 december 5th (201205)</strong>
 <ul>
 <li>New desktop icons added</li>
 <ul>
@@ -907,7 +921,7 @@
 <li>- Fixed issues with backend image resizing.</li>
 <li>- Fixed a bunch of post loading issues.</li>
 </ol></li>
-<li><strong>2020 december 4th </strong><strong>(201204)</strong>
+<li><strong style="color: var(--atext);">2020 december 4th (201204)</strong>
 <ul>
 <li><strong>Major taskbar adjustments</strong></li>
 <ul>
@@ -932,7 +946,7 @@
 <li><strong>Added win98.</strong></li>
 </ul>
 </li>
-<li><strong>2020 december 3rd </strong><strong>(201203)</strong>
+<li><strong style="color: var(--atext);">2020 december 3rd (201203)</strong>
 <ul>
 <li><strong>backend adjustments and rework</strong>
 <ul>
@@ -947,7 +961,7 @@
 <ol>
 <li>- Fixed a few loading issues.</li>
 </ol></li>
-<li><strong>2020 december 1st (Win98 development begins)<br /></strong>
+<li><strong style="color: var(--atext);">2020 december 1st (Win98 development begins)<br /></strong>
 <ul>
 <li>Added new desktop message boxes.</li>
 <li>Redesigned desktop icons.</li>
