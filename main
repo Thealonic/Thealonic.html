@@ -314,25 +314,28 @@
             
             ul.tree-view { font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: 4px; display: block; background: var(--white); color:var(--text);
                            box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black); padding: 6px; margin: 0; }
-            ul.tree-view a { text-decoration: none; color: var(--black);} ul.tree-view a:focus { background-color: var(--prussian); color: var(--white);}
-            ul.tree-view ul { margin-top: 4px; margin-left: 12px; padding-left: 16px; border-left: 1px dotted var(--gray);} ul.tree-view ul>li { position:relative; }
+            ul.tree-view a { text-decoration: none; color: var(--black);}
+            ul.tree-view a:focus { background-color: var(--prussian); color: var(--white);}
+            ul.tree-view ul { margin-top: 4px; margin-left: 12px; padding-left: 16px; border-left: 1px dotted var(--gray);} 
+            ul.tree-view ul>li { position:relative; }
             ul.tree-view ul>li:before { content:""; display: block; position: absolute; left: -16px; top: 6px; width: 12px; border-bottom: 1px dotted var(--gray);}
             ul.tree-view ul>li:last-child:after { content:""; display: block; position:absolute; left: -20px; top: 7px; bottom:0; width: 8px; background: var(--white);}
-            ul.tree-view li { margin-top: 4px; list-style-type: none;} ul.tree-view ul details>summary:before{ margin-left: -22px; position: relative; z-index: 1;}
-            ul.tree-view details { margin-top:0;} ul.tree-view details>summary:before {   text-align: center; display: block; float: left; content: "+"; border: 1px solid var(--gray); 
+            ul.tree-view li { margin-top: 4px; list-style-type: none;} 
+            ul.tree-view ul details>summary:before{ margin-left: -22px; position: relative; z-index: 1;}
+            ul.tree-view details { margin-top:0;} 
+            ul.tree-view details>summary:before {   text-align: center; display: block; float: left; content: "+"; border: 1px solid var(--gray); 
                                    width: 8px; height: 9px; line-height: 8px; margin-right: 5px; padding-left: 1px; background-color: var(--white); }
-            ul.tree-view details[open] summary { margin-bottom: 0;} ul.tree-view details[open]>summary:before { content: "-"; }
+            ul.tree-view details[open] summary { margin-bottom: 0;} 
+            ul.tree-view details[open]>summary:before { content: "-"; }
             
             /* checkboxes */
-            fieldset{  border: none; box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray), inset -2px -2px var(--gray), inset 2px 2px var(--lightg); padding:10px; padding-block-start:8px; margin:0; color:var(--text);}
-            input[type=checkbox] { appearance: none; -webkit-appearance: none; -moz-appearance: none; margin: 0; background: 0; position: fixed; opacity: 0; border: none} 
-            input[type=radio] { appearance: none; -webkit-appearance: none; -moz-appearance: none; margin: 0; background: 0; position: fixed; opacity: 0; border: none}
-            input[type=checkbox]+label  { line-height: 13px;} input[type=radio]+label { line-height: 13px; position: relative; margin-left: 18px;} [class^=field-row]+[class^=field-row]{ margin-top: 6px;}   
-            .field-row{ display:flex; align-items: center;} .field-row>*+*{ margin-left: 6px;} .field-row-stacked{ display:flex; flex-direction: column;} .field-row-stacked *+*{ margin-top: 6px;}
+            .field-row{ display:flex; align-items: center;} .field-row>*+*{ margin-left: 6px;} 
+            .field-row-stacked{ display:flex; flex-direction: column;} .field-row-stacked *+*{ margin-top: 6px;}
             
-            a {         color: var(--hover); text-decoration: none;} a:hover { text-decoration: underline; color: var(--hover)}
+            a {         color: var(--text); text-decoration: none;} a:hover { text-decoration: underline; color: var(--hover)}
             span {      background-color: var(--white); color: var(--text);} icon { background-color: var(--wincyan); color: var(--white)}
             label {     display:inline-flex; align-items: center; color: var(--text);} underline { text-decoration-line: underline;} h3 { font-size: 2rem;}
+            fieldset{  border: none; box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray), inset -2px -2px var(--gray), inset 2px 2px var(--lightg); padding:10px; padding-block-start:8px; margin:0; color:var(--text);}
             strong {    color: var(--blue)}
             
 /* tumblr post handling ------------------------------------------------------------------------------*/
@@ -829,7 +832,7 @@
                         var curcolwhite, curcollightg, curcolsilver, curcolmidgray, curcolgray, curcolblack, curcolblue, curcolprussian, curcolwincyan, curcolyellow, curcolfont, curcolfonttitle, curcolhover, curcolatext, prewhite,
                             precolwhite, precollightg, precolsilver, precolmidgray, precolgray, precolblack, precolblue, precolprussian, precolwincyan, precolyellow, precolfont, precolfonttitle, precolhover, precolatext, preblack;
                         var schemedrop = false, themecurrent = "lightmode"; 
-                        var docelem = document.documentElement; currentsch = document.getElementById("currentscheme"); iconpre = document.getElementById("iconpreview");
+                        var docelem = document.documentElement, currentsch = document.getElementById("currentscheme");
                         function schemedropdown(){ if (schemedrop == false) { document.getElementById("scheme").style.marginLeft = "    -2px"; schemedrop = true;
                                             } else if (schemedrop == true){   document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }}
                         function schemeexit(){ document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }
@@ -861,10 +864,10 @@
                             docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader); precolourupdate(); themepreviewchange();}
                         
                         function highcontrast1() {  currentcolour = "#00ffff"; fontcolour = "#000"; backcolourpreview(); ctoggle = true; 
-                            cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; iconpre.style.backgroundColor = "#000";  ap.style.backgroundColor = "#000";}
+                            cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; document.getElementById("iconpreview").style.backgroundColor = "#000";  ap.style.backgroundColor = "#000";}
                         
                         function highcontrast2() {  currentcolour = "#00ff00"; fontcolour = "#000"; backcolourpreview(); ctoggle = true; 
-                            cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; iconpre.style.backgroundColor = "#000";  ap.style.backgroundColor = "#000";}
+                            cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; document.getElementById("iconpreview").style.backgroundColor = "#000";  ap.style.backgroundColor = "#000";}
                         
                         function precolourupdate() {
                             precolwhite = curcolwhite; precollightg = curcollightg; precolsilver = curcolsilver; precolmidgray = curcolmidgray; precolgray = curcolgray; precolblack = curcolblack; precolblue = curcolblue;
@@ -1171,13 +1174,14 @@
             function diskactive() { inactiveall(); diskButtonOpen = false;
                 currentlayer = currentlayer + 1; disk.style.zIndex = currentlayer; 
                 diskwin.style.backgroundImage = currentactiveheader; document.getElementById("taskapp3font").style.color = taskbartextpressed;
-                document.getElementById("disk").style.marginTop = "0px";
+                document.getElementById("disk").style.marginLeft = "0px";
                 document.getElementById("taskapp3").style.backgroundImage = github + "img/scrollbarempty.png')"; document.getElementById("taskapp3").style.backgroundColor = whit;
                 document.documentElement.style.setProperty('--taskbar3top1', gray); document.documentElement.style.setProperty('--taskbar3top2', blac);
                 document.documentElement.style.setProperty('--taskbar3bottom1', whit); document.documentElement.style.setProperty('--taskbar3bottom2', lightg);}
             function diskopen() { inactiveall(); tabreset(); diskButtonOpen = true;
                 currentlayer = currentlayer + 1; disk.style.zIndex = currentlayer;
                 disk.style.marginTop = "0px"; disk.style.left = "77%"; disk.style.top = "13%"; diskwin.style.backgroundImage = currentactiveheader;
+                document.getElementById("disk").style.marginLeft = "0px";
                 document.documentElement.style.setProperty('--taskbar3top1', whit); document.documentElement.style.setProperty('--taskbar3top2', lightg);
                 document.documentElement.style.setProperty('--taskbar3bottom1', gray); document.documentElement.style.setProperty('--taskbar3bottom2', blac);
                 document.getElementById("taskapp3").style.marginLeft = "4px";}
@@ -1204,12 +1208,12 @@
         </div></div>
         
         <script>
-            var logoff = document.getElementById("logoff"); logoffwin = document.getElementById("logoffwindow");
             function logonactive(){ inactiveall();
-                currentlayer = currentlayer + 1; logoff.getElementById("logoff").style.zIndex = currentlayer;
-                logoffwin.style.backgroundImage = currentactiveheader; }
-            function logoff() { logoff.style.marginLeft = "0px"; logoff.style.zIndex = "100"; }
-            function logoffno() { logoff.style.marginLeft = "200000px"; logoff.style.zIndex = "1"; }
+                document.getElementById("logoff").style.marginLeft = "0px";
+                currentlayer = currentlayer + 1; document.getElementById("logoff").style.zIndex = currentlayer;
+                document.getElementById("logoffwindow").style.backgroundImage = currentactiveheader; }
+            function logoff() { logonactive(); document.getElementById("logoff").style.marginLeft = "0px"; document.getElementById("logoff").style.zIndex = "100"; }
+            function logoffno() { document.getElementById("logoff").style.marginLeft = "200000px"; document.getElementById("logoff").style.zIndex = "1"; }
         </script>
 
         <!-- shut down window -->
@@ -1240,19 +1244,19 @@
         </div></div></div></div>
 
         <script>
-            var shutdown = document.getElementById("shutdown"); shutdownwin = document.getElementById("shutdownwindow");
             function shutdownactive(){ inactiveall();
-                currentlayer = currentlayer + 1; shutdown.style.zIndex = currentlayer
-                shutdownwin.style.backgroundImage = currentactiveheader; }
-            function shutdown() {   shutdown.style.marginLeft = "0px"; shutdown.style.zIndex = "100"; }
-            function shutdownno() { shutdown.style.marginLeft = "200000px"; shutdown.style.zIndex = "1"; }
+                currentlayer = currentlayer + 1; document.getElementById("shutdown").style.zIndex = currentlayer
+                document.getElementById("shutdownwindow").style.backgroundImage = currentactiveheader; }
+            function shutdown() {   document.getElementById("shutdown").style.marginLeft = "0px"; document.getElementById("shutdown").style.zIndex = "100"; }
+            function shutdownno() { document.getElementById("shutdown").style.marginLeft = "200000px"; document.getElementById("shutdown").style.zIndex = "1"; }
         </script>
 
 <!-- message box inactive toggle ------------------------------------------------------------------------------>
         
         <script>    
             function inactiveall() { var timer = 0
-                if (timer < 1){ timer = timer + 1; menuclosed();
+                if (timer < 1){ timer = timer + 1; 
+                    menuclosed();
                     tumblrButtonOpen = true; 
                     document.getElementById("postwindow").style.backgroundImage = currentinactiveheader; document.getElementById("taskapp1font").style.color = taskbartext;
                     document.getElementById("taskapp1").style.backgroundImage = "none"; document.getElementById("taskapp1").style.backgroundColor = silv;
@@ -1270,8 +1274,9 @@
                     document.documentElement.style.setProperty('--taskbar3bottom1', gray); document.documentElement.style.setProperty('--taskbar3bottom2', blac);
                     
                     messagewin.style.backgroundImage = currentinactiveheader;
-                    logoff.style.backgroundImage = currentinactiveheader;
-                    shutdown.style.backgroundImage = currentinactiveheader;
+                    docclockwin.style.backgroundImage = currentinactiveheader;
+                    document.getElementById("logoffwindow").style.backgroundImage = currentinactiveheader;
+                    document.getElementById("shutdownwindow").style.backgroundImage = currentinactiveheader;
                     }
                 }
         </script>
@@ -1584,65 +1589,60 @@
                         <a href="https://thealonic.tumblr.com/patch-notes" onclick="menuclosed();"><label style="margin-top:3px;">
                             <div class="submenu36" style="width: 141px; height:36px">
                                 <div class="patchnotes"></div>
-                                <label style="margin-left: 2px; height: 36px"> <underline>U</underline>pdate log </label>
+                                <label style="margin-left: 2px; height: 36px" > <underline>U</underline>pdate log </label>
                         </div></label></a>
                         <!-- verticalsplitterER -->
                         <div class="menuapplicationsplit" style="width:139px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px"> </div>
                         <!-- Programs -->
                         <label> <!--needed for 32x32-->
-                            <div class="submenu36" style="width: 142px;" id="menuprograms"
-                                 onmouseover="programsopen()" onmouseout="programsclosed()"> 
+                            <div class="submenu36" style="width: 142px;" id="menuprograms" onmouseover="programsopen()" onmouseout="programsclosed()"> 
                                 <div class="menuprograms"></div>
                                 <label style="margin-left: 2px; height: 36px"> <underline>P</underline>rograms </label>
                             <div class="menuarrow1" style="margin-top:15px; margin-right: 5px" id="menuarrow1"></div></div></label>
                         <!-- Favourites -->
                         <label> <!--needed for 32x32-->
-                            <div class="submenu36" style="width: 142px;" id="menufavourites"
-                                onmouseover="favouritesopen()" onmouseout="favouritesclosed()"> 
+                            <div class="submenu36" style="width: 142px;" id="menufavourites" onmouseover="favouritesopen()" onmouseout="favouritesclosed()"> 
                                 <div class="menufavourites"></div>
                                 <label style="margin-left: 2px; height: 36px"> My F<underline>a</underline>vourites </label>
                             <div class="menuarrow1" style="margin-top:15px; margin-right: 5px" id="menuarrow2"></div></div></label>
                         <!-- Documents -->  
                         <label> <!--needed for 32x32-->
-                            <div class="submenu36" style="width: 142px;" id="menudocuments"
-                                 onmouseover="documentsopen()" onmouseout="documentsclosed()"> 
+                            <div class="submenu36" style="width: 142px;" id="menudocuments" onmouseover="documentsopen()" onmouseout="documentsclosed()"> 
                                 <div class="menudocuments"></div>
                                 <label style="margin-left: 2px; height: 36px"> <underline>D</underline>ocuments </label>
                             <div class="menuarrow1" style="margin-top:15px; margin-right: 5px" id="menuarrow3"></div></div></label>
                         <!-- Settings -->
                         <label> <!--needed for 32x32-->
-                            <div class="submenu36" style="width: 142px;" id="menusettings"
-                                 onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
+                            <div class="submenu36" style="width: 142px;" id="menusettings" onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
                                 <div class="menusettings"></div>
                                 <label style="margin-left: 2px; height: 36px"> <underline>S</underline>ettings </label>
                             <div class="menuarrow1" style="margin-top:15px; margin-right: 5px" id="menuarrow4"></div></div></label>
                         <!-- Find -->
                         <label> <!--needed for 32x32-->
-                            <div class="submenu36" style="width: 142px;" id="menufind"
-                                 onmouseover="findopen()" onmouseout="findclosed()"> 
+                            <div class="submenu36" style="width: 142px;" id="menufind" onmouseover="findopen()" onmouseout="findclosed()"> 
                                 <div class="menufind"></div>
-                                <label style="margin-left: 2px; height: 36px"> <underline>F</underline>ind </label>
+                                <label style="margin-left: 2px; height: 36px;"> <underline>F</underline>ind </label>
                             <div class="menuarrow1" style="margin-top:15px; margin-right: 5px" id="menuarrow5"></div></div></label>
                         <!-- Help -->     
-                        <label> <!--needed for 32x32-->
-                            <a href="https://raw.githubusercontent.com/Thealonic/Thealonic.html/main/opensource"><div class="submenu36" style="width: 142px;" >
+                        <a href="https://raw.githubusercontent.com/Thealonic/Thealonic.html/main/opensource">
+                            <div class="submenu36" style="width: 142px;" >
                                 <div class="menuhelp"></div> <!-- https://github.com/Thealonic/Thealonic.html -->
-                                <label style="margin-left: 2px; height:36px"> <underline>S</underline>ource-code </label></div></a></label>
+                                <label style="margin-left: 2px; height:36px"> <underline>S</underline>ource-code </label></div></a>
                         <!-- Run -->
                         <label> <!--needed for 32x32-->
-                            <a href="https://paypal.me/TheaVanherst"><div class="submenu36" style="width: 142px;" >
-                                <div class="menurun"></div>
+                            <a href="https://paypal.me/TheaVanherst"><div class="submenu36" style="width: 142px;">
+                                <div class="menurun" ></div>
                                 <label style="margin-left: 2px; height:36px"> <underline>S</underline>upport development </label></div></a></label>   
                         <!-- verticalsplitterER -->
                         <div class="menuapplicationsplit" style="width:139px; margin-left: 2px; margin-top: 3px; margin-bottom: 4px"> </div>
                         <!--Log off submenu -->
-                        <label onclick="logoff(); inactiveall(); logonactive(); menuclosed();"> <!--needed for 32x32-->
-                            <div class="submenu36" style="width: 141px;" >
+                        <label onclick="logoff(); shutdownno();"> <!--needed for 32x32-->
+                            <div class="submenu36" style="width: 142px;">
                                 <div class="menulogoff"></div>
                                 <label style="margin-left: 2px; height:36px"> <underline>L</underline>og off </label></div></label>  
                         <!--Log off submenu -->
-                        <label onclick="shutdown(); inactiveall(); shutdownactive(); menuclosed();"> <!--needed for 32x32-->
-                            <div class="submenu36" style="width: 141px;" >
+                        <label onclick="shutdown(); shutdownactive();"> <!--needed for 32x32-->
+                            <div class="submenu36" style="width: 142px;">
                                 <div class="menushutdown"></div>
                                 <label style="margin-left: 2px; height:36px"> Sh<underline>u</underline>tdown </label></div></label>
                         <!-- Startbutton script placement holder -->
