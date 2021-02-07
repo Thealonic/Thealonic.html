@@ -1,20 +1,35 @@
-<div class="container" style="margin-left: -10px; margin-top: 6px;">
+<div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 447px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
+<div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll;">
 <ul>
-<li><strong style="color: var(--atext);">2021 Febuary 6th (210206)</strong>
-<ul>
-<li>Updated startmenu to no longer fully close when accidentally moving your mouse off a submenu, but still closes the submenu and instead, now closes if something else is clicked on, rather than going out of the start menu.</li>
-<li>Very.Unvunny windows now have a minimize button and now minimizable. They can be reopened by closing and reopening through the taskbar.</li>
-<li>Patchnotes now use current active scheme colours alongside update dates having a seperate colour to make update logs easier to read between.</li>
-<li>Like and reblog buttons now use theme colours.</li>
-<li>Date and Time now uses theme colours.</li>
-</ul>
+<li><strong style="color: var(--atext);">2021 Febuary 7th (210207)</strong> <em>- </em>&ldquo;Schemes&rdquo;<em> Patch Update 1</em>
+<ul></ul>
 <ol>
-<li>- Fixed VeryUnvunny task not toggling from active to inactive status on the taskbar when clicked on.</li>
+<li>- Fixed colours of links in the start menu to be tied with the rest of the menus.</li>
 <li>- Fixed a bunch of formatting issues to do with titles in the update log.</li>
 <li>- Fixed a bug where the background colour of the clock in the Date and Time menu was always lightmode.</li>
 <li>- Fixed dropdown menu colour related bugs within the Time and Date interface.</li>
 </ol></li>
-<li><strong style="color: var(--atext);">2021 Febuary 5th (210205) </strong><em>- </em>The &ldquo;Schemes&rdquo;<em> Update</em>
+<li><strong style="color: var(--atext);">2021 Febuary 6th (210206)</strong><em>-&nbsp;</em>&ldquo;Schemes&rdquo;<em> Update 3</em>
+<ul>
+<li>Updated startmenu to no longer fully close when accidentally moving your mouse off a submenu, but still closes the submenu and instead, now closes if something else is clicked on, rather than going out of the start menu.</li>
+<li>Very.Unvunny windows are now minimizable through the titlebar. (reopen by closing and reopening through the taskbar)</li>
+<li><strong>Patch notes updates<br /></strong>
+<ul>
+<li>Patchnotes now use current active scheme colours alongside update dates having a seperate colour to make update logs easier to read between.</li>
+<li>Patchnotes now has a limited size vertical height, in which you scroll down within the window rather than the page height. (A temporary measure until patchnotes are moved to the mainpage.)</li>
+<li>Patchnotes now use better scheme colours alongside other css tweaks.</li>
+</ul>
+</li>
+<li>Like and reblog buttons now uses better theme colours, aposed to being black.</li>
+<li>Time and Date can now act as an inactive window instead of being constantly active.</li>
+<li>Date and Time now uses theme colours.</li>
+<li><em>Optimised theme formatting</em></li>
+</ul>
+<ol>
+<li>- Fixed VeryUnvunny task not toggling from active to inactive status when clicked on through the taskbar.</li>
+<li>- Fixed Date and Time not updating unless it was manually updated.</li>
+</ol></li>
+<li><strong style="color: var(--atext);">2021 Febuary 5th (210205) </strong><em>-&nbsp;</em>&ldquo;Schemes&rdquo;<em> Update 2</em>
 <ul>
 <li><strong>Major overhaul to themes handling.</strong><strong><br /></strong>
 <ul>
@@ -40,7 +55,7 @@
 <li>- Fixed a bug where the hover effect over the currently selected wallpaper wouldn&rsquo;t change after changing to darkmode and back to light mode.</li>
 <li>- Fixed occasional 1 pixel gap between posts and embedding.</li>
 </ol></li>
-<li><strong style="color: var(--atext);">2021 Febuary 4th (210204)<em> <br /></em></strong>
+<li><strong style="color: var(--atext);">2021 Febuary 4th (210204)</strong><em>- </em>&ldquo;Schemes&rdquo;<em> Update 1</em>
 <ul>
 <li><strong>Implimentation of &lsquo;beta&rsquo; themes<br /></strong>
 <ul>
@@ -59,7 +74,6 @@
 <li>- Fixed tons of issues relating to colour variables and how they are assigned for better theme compatibility.</li>
 <li>- Fixed a bug where pressing on the &ldquo;okay&rdquo; button in display properties wouldn&rsquo;t apply any settings but clicking on the text<em><em> would.</em></em></li>
 <li>- Fixed a bug with two buttons on the Display Properties appearance tab being reliant on very early CSS.</li>
-<li><strong>@Devnote;</strong> Themes may take a few days to fully impliment due to issues with posts being reliant on images for dividers and such.</li>
 </ol></li>
 <li><strong style="color: var(--atext);">2021 Febuary 3rd (210203)<em> <br /></em></strong>
 <ul>
