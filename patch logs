@@ -1,15 +1,33 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 447px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll;">
 <ul>
+<li><strong style="color: var(--atext);"><strong style="color: var(--atext);">2021 Febuary 8th (210208) </strong></strong><em>-&nbsp;</em>&ldquo;Schemes&rdquo;<em> Update 4</em>
+<ul>
+<li>Titlebars now have two seperate avaliable colours for titles, active and inactive, both can be adjusted independantly in schemes.</li>
+<li>Scheme previews now update the titlebar font colours and is independant of the rest of the page.</li>
+<li>Scrollbars background colours now update with the scheme, rather than being based on the background it is on.</li>
+<li><strong>2 High Contrast Schemes and 2 Regular schemes added.<br /></strong></li>
+<li><strong>2 Wallpapers added.</strong></li>
+<li>Start button no longer relies on images to display the container.</li>
+</ul>
+<ol>
+<li>- Fixed a minimizing issue with the Disk properties not re-opening after being minimized.</li>
+<li>- Fixed a bug in the scheme preview menu where the scrollbar always had a fixed colour.</li>
+</ol></li>
 <li><strong style="color: var(--atext);">2021 Febuary 7th (210207)</strong> <em>- </em>&ldquo;Schemes&rdquo;<em> Patch Update 1</em>
-<ul></ul>
+<ul>
+<li>Very Unvunny windows are now 200x200 pixels.</li>
+<li>URL based posts now have custom formatting to match post formatting.</li>
+</ul>
 <ol>
 <li>- Fixed colours of links in the start menu to be tied with the rest of the menus.</li>
 <li>- Fixed a bunch of formatting issues to do with titles in the update log.</li>
-<li>- Fixed a bug where the background colour of the clock in the Date and Time menu was always lightmode.</li>
+<li>- Fixed a bug where the background colour of the clock in the Date and Time menu was always in lightmode.</li>
 <li>- Fixed dropdown menu colour related bugs within the Time and Date interface.</li>
+<li>- Fixed Shutdown and Logout menus not starting when launching through startmenu.</li>
+<li>- Fixed a bug where closing disproperties and trying to reopen it through the start menu would only make the task appear on the taskbar.</li>
 </ol></li>
-<li><strong style="color: var(--atext);">2021 Febuary 6th (210206)</strong><em>-&nbsp;</em>&ldquo;Schemes&rdquo;<em> Update 3</em>
+<li><strong style="color: var(--atext);">2021 Febuary 6th (210206) </strong><em>-&nbsp;</em>&ldquo;Schemes&rdquo;<em> Update 3</em>
 <ul>
 <li>Updated startmenu to no longer fully close when accidentally moving your mouse off a submenu, but still closes the submenu and instead, now closes if something else is clicked on, rather than going out of the start menu.</li>
 <li>Very.Unvunny windows are now minimizable through the titlebar. (reopen by closing and reopening through the taskbar)</li>
