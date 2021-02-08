@@ -54,8 +54,8 @@
                     --horisplitter: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/horizontalsplitter.png');
                     --scrollbar: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/scrollbarempty.png');
                     
-                    --white: #ffffff; --lightg: #dfdfdf;  --silver: #c0c0c0; --midgray: #ababab; --gray: #808080; --black: #0a0a0a; --blue: #0000ff;
-                    --prussian: #00207c ; --wincyan: #008080; --yellow: #ffff00; --font: #0000000; --fonttitle: #ffffff; --hover: #ffffff; --atext: #000000;
+                    --white: #ffffff; --lightg: #dfdfdf;  --silver: #c0c0c0; --midgray: #ababab; --gray: #808080; --black: #0a0a0a; --blue: #0000ff; --curactivetitle: #ffffff;
+                    --prussian: #00207c ; --wincyan: #008080; --yellow: #ffff00; --font: #0000000; --fonttitle: #ffffff; --hover: #ffffff; --atext: #000000; --curactivetitle: #ffffff;
                     --taskbarstarttop1: #808080; --taskbarstarttop2: #0a0a0a; --taskbarstartbottom1: #ffffff; --taskbarstartbottom2: #dfdfdf; 
                     --taskbar1top1: #808080; --taskbar1top2: #0a0a0a; --taskbar1bottom1: #ffffff; --taskbar1bottom2: #dfdfdf; 
                     --taskbar2top1: #ffffff; --taskbar2top2: #dfdfdf; --taskbar2bottom1: #808080; --taskbar2bottom2: #0a0a0a; 
@@ -63,8 +63,8 @@
                     
                     --preinactive: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheaderinactive.png');
                     --preactive: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheader.png');
-                    --prewhite: #ffffff; --prelightg: #dfdfdf;  --presilver: #c0c0c0; --premidgray: #ababab; --pregray: #808080; --preblack: #0a0a0a;
-                    --preprussian: #00207c ; --prewincyan: #008080; --preyellow: #ffff00; --prefont: #000000; --prefonttitle: #ffffff; --prehover: #ffffff;
+                    --prewhite: #ffffff; --prelightg: #dfdfdf;  --presilver: #c0c0c0; --premidgray: #ababab; --pregray: #808080; --preblack: #0a0a0a; --preactivetitle: #ffffff;
+                    --preprussian: #00207c ; --prewincyan: #008080; --preyellow: #ffff00; --prefont: #000000; --prefonttitle: #ffffff; --prehover: #ffffff; ----preinactivetitle: #ffffff;
             }
 
 /* Tumblr post handling ------------------------------------------------------------------------------*/
@@ -128,7 +128,7 @@
             /* css for tabs in windows menus */
             .win98tab {             box-shadow:inset -1px 0px var(--black),inset 1px 1px var(--white),inset -2px 0px var(--gray),inset 2px 2px var(--lightg);background:var(--silver);padding:3px; border-radius: 2px; font-size:11px; position: absolute; z-index; 100; color: var(--font);}
             
-            .disabledfont {         font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--gray); text-shadow:1px 1px 0 var(--white);}
+            .disabledfont {         font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--gray); text-shadow:1px 1px 0 var(--lightg);}
             .optionsmenu {          cursor:pointer; height: 17px; width: 100%; background-color:var(--white); color:var(--font); border-style: dotted; border-width: 1px; border-color: var(--white); z-index:4;}    
             .optionsmenu:hover {    cursor:pointer; height: 17px; width: 100%; background-color:var(--prussian); color:var(--hover); border-style: dotted; border-width: 1px; border-color: var(--yellow); z-index:10;}  
             
@@ -168,10 +168,10 @@
             .smallscrollup { background-position: -38px -218px; height: 2px; width: 3px;} .smallscrolldown { background-position: -6px -220px; height: 2px; width: 3px;} 
 
             /* disabled arrow css */
-            .tinyarrowdisableddown {  background-image: var(--spritesheet); height:  3px; width:  4px; background-position: -165px -220px;}
+            .tinyarrowdisableddown {  background-image: var(--spritesheet); height:  3px; width:  4px; background-position: -192px -216px;}
             .smallarrowdisableddown { background-image: var(--spritesheet); height:  4px; width:  6px; background-position: -164px -219px;}
             .arrowdisableddown {      background-image: var(--spritesheet); height: 16px; width: 16px; background-position: -158px -212px; margin-top:-3px; margin-left:-3px;}
-            .tinyarrowdisabledup {    background-image: var(--spritesheet); height:  3px; width:  4px; background-position: -211px -212px;}
+            .tinyarrowdisabledup {    background-image: var(--spritesheet); height:  3px; width:  4px; background-position: -192px -212px;}
             .arrowdisableup {         background-image: var(--spritesheet); height: 16px; width: 16px; background-position: -175px -212px; margin-top:-3px; margin-left:-3px;}
             
             /* alternate arrow css */
@@ -202,9 +202,10 @@
                                height: 18px; width: 79px; margin-right: 5px; margin-top: 2px; float: right;} 
                                     
             /* start menu button toggle */
-            .startbutton {          background-image: var(--spritesheet); height: 22px; width: 54px; margin-left: 2px; margin-top: 2px; background-position:  -54px -36px;}
-            .startmenustartbutton { background-image: var(--spritesheet); height: 22px; width: 54px; margin-left: 2px; margin-top: 2px; background-position:   -0px -36px;}
-            .windowsexplorerlogo {  background-image: var(--spritesheet); height: 21px; width: 38px; background-position: -115px -37px; float:right;}
+            .win98start{            box-shadow:inset -1px -1px var(--taskbarstarttop2), inset 1px 1px var(--taskbarstartbottom2), inset -2px -2px var(--taskbarstarttop1), inset 2px 2px var(--taskbarstartbottom1); 
+                                    background:var(--silver); padding:3px; color:var(--font); height: 16px; width: 50px; margin-left: 2px; margin-top: 2px; margin-right: 2px; font-family:"Pixelated MS Sans Serif"; font-size:11px;}
+            .windowsexplorerlogo {  background-image: var(--spritesheet); margin-top:2px; height: 16px; width: 20px; background-position: -197px -212px; float:right; margin-right:9px;}
+            .windowslogo {          background-image: var(--spritesheet); height: 16px; width: 18px; background-position: -217px -212px;}
 
             /* start menu application icon config */
             .submenu18 {        height: 18px; background-color:var(--white);   color: var(--text); width:100%;} /* general dropdown menus */
@@ -350,7 +351,7 @@
             .content p:last-child { margin-bottom: 0 !important;} .content blockquote:last-child { margin-bottom: 0 !important;} blockquote, ul, ol  { margin: 0 0 0.8em 0;}
             
             /* text Post settings */
-            blockquote { margin-left: 2px; padding-left: 4px; margin-top:-5px; margin-bottom:5px; border-left: 2px solid var(--midgray); border-left: 2px solid var(--silver); } /* lines at the side of posts */
+            blockquote { margin-left: 2px; padding-left: 4px; margin-top:-5px; margin-bottom:5px; border-left: 2px solid var(--midgray); border-left: 2px solid var(--midgray); } /* lines at the side of posts */
             .quote .dash { float: left; padding: 0 2px 0 2px;} .quote .source { float: left;}
             .chat .line:last-of-type { margin-bottom: 0;} .chat ul { padding: 0; list-style: none;} .chat ol { padding: 0; list-style: none;}
             
@@ -370,7 +371,7 @@
             /* tumblr notes formatting */
             .notes { margin-top:0px; text-align:left;} ol.notes { padding: 2px; list-style-type: none; max-height: 320px; width:463px; overflow:auto; margin-top:-6px;} 
             ol.notes li.note img.avatar { vertical-align: -4px; margin-right: 4px; width: 16px; height:16px; margin-top:-2px; margin-bottom;-2px;} ol.notes li.note .answer_content { font-weight: normal;}
-            ol.notes li.note blockquote { padding: 4px 10px; margin: 10px 0px 0px 25px;} ol.notes li.note blockquote a { text-decoration: none;} ul, ol { padding: 0 0 0 18px;} /*infinate scroll*/
+            ol.notes li.note blockquote { padding: 4px 10px; margin: 10px 0px 0px 25px;} ol.notes li.note blockquote a { text-decoration: none; color: var(--blue);} ul, ol { padding: 0 0 0 18px;} /*infinate scroll*/
             
             .tagged { font-size: 9px; opacity: 0.5;}
         </style>
@@ -433,12 +434,12 @@
             <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="catclose(); pyrowindow();"><div class="close"></div></div>
             <div class="win98titlebarbutton" title="Minimize" onclick="catminimize();"> <div class="minimize"></div></div>
             <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
-            <div class="title-bar-98" id="catwindow"> <div class="title-bar-text">💯 BOUNCY CEMENT</div></div><div class="messagewindowbody" style="padding-right:4px"> 
-                <ul class="tree-view" style="width: 100%; height: 100%; padding:2px;"> <img style="max-width: 250px; margin-right:-5px; margin-bottom:-2px; margin-left:-1px; margin-top:-1px; width:200px; height:200px;" id="catimage"></ul>
+            <div class="title-bar-98" id="catwindow"> <div class="title-bar-text" id="cattext">💯 BOUNCY CEMENT</div></div><div class="messagewindowbody" style="padding-right:4px"> 
+                <ul class="tree-view" style="width: 100%; height: 100%; padding:2px;"> <img style="max-width: 250px; margin-right:-5px; margin-bottom:-2px; margin-left:-1px; margin-top:-1px; width:200px; height:200px; background-size: 200px 200px;" id="catimage"></ul>
                 <center><div class="win98buttoninactive" style="width:70px; margin-top: 4px; margin-bottom: 4px;"> <div class="disabledfont" style="margin-top: 2px;">Asshole</div> </div></center></div></div>
         <script>
             var cat = document.getElementById("cat"); catwin = document.getElementById("catwindow");
-            function catactive() { inactiveall(); vunnyactive(); pyroButtonOpen = false; 
+            function catactive() { inactiveall(); vunnyactive(); pyroButtonOpen = false; document.getElementById("cattext").style.color = curactivetitle;
                 currentlayer = currentlayer + 1; cat.style.zIndex = currentlayer; catwin.style.backgroundImage = currentactiveheader;} 
             function catclose() { inactiveall(); pyroButtonOpen = true; window2 = false; pyrotabs = pyrotabs - 1; pyrowindow(); cat.style.marginLeft = "-20000px";}
             function catminimize() { cat.style.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 1; pyrocurrentopen();}
@@ -449,12 +450,12 @@
             <div class="win98titlebarbutton" title="Minimize" onclick="pyrominimize();"> <div class="minimize"></div></div>
             <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
             <div class="title-bar-98" id="pyrowindow"> <div class="title-bar-text" id="pyrotext">💯 Wubba lubba dub dub!</div></div><div class="messagewindowbody" style="padding-right:4px">
-                <ul class="tree-view" style="width: 100%; height: 100%; padding:2px;"> <img style="margin-right:-5px; margin-bottom:-2px; margin-left:-1px; margin-top:-1px; width:200px; height:200px;" id="pyroimage"/></ul>
+                <ul class="tree-view" style="width: 100%; height: 100%; padding:2px;"> <img style="margin-right:-5px; margin-bottom:-2px; margin-left:-1px; margin-top:-1px; width:200px; height:200px; background-size: 200px 200px;" id="pyroimage"/></ul>
                 <center><div class="win98button" style="width:70px; margin-top: 3px;" onclick="pyroshuffle();"> <div class="buttontext" style="margin-top: 2px; cursor:pointer" id="pyrobutton">Definately.</div></div></center></div></div>
         
         <script>
             var pyro = document.getElementById("pyro"); pyrowin = document.getElementById("pyrowindow");
-            function pyroactive() { inactiveall(); vunnyactive(); pyroButtonOpen = false; 
+            function pyroactive() { inactiveall(); vunnyactive(); pyroButtonOpen = false; document.getElementById("pyrotext").style.color = curactivetitle;
                 currentlayer = currentlayer + 1; pyro.style.zIndex = currentlayer; pyrowin.style.backgroundImage = currentactiveheader;} 
             function pyroclose() { inactiveall(); pyroButtonOpen = true; window1 = false; pyrotabs = pyrotabs - 1; pyrowindow(); pyro.style.marginLeft = "-20000px";}
             function pyrominimize() { pyro.style.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 1; pyrocurrentopen();}
@@ -463,7 +464,7 @@
 
 
         <script> 
-            function vunnyactive(){ document.getElementById("taskapp2font").style.color = taskbartextpressed;
+            function vunnyactive(){ document.getElementById("taskapp2font").style.color = taskbartextpressed; 
                 document.getElementById("taskapp2").style.backgroundImage = github + "img/scrollbarempty.png')"; document.getElementById("taskapp2").style.backgroundColor = whit;
                 document.documentElement.style.setProperty('--taskbar2top1', gray); document.documentElement.style.setProperty('--taskbar2top2', blac);
                 document.documentElement.style.setProperty('--taskbar2bottom1', whit); document.documentElement.style.setProperty('--taskbar2bottom2', lightg);}
@@ -480,14 +481,15 @@
              <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:2px; margin-top:2px;" onclick="messageclose()"><div class="close"></div></div>
              <div class="win98titlebarbutton" style="margin-top:2px;" onclick="messagemaximize()"><div class="maximize"></div></div>
              <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU"><div class="win98titlebarbutton" style="margin-top:2px; cursor: default;"> <div class="help"></div> </div> </a> 
-            <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="title-bar-text">🧮 brain go brrrrr</div></div>
+            <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="title-bar-text" id="messagetext">🧮 brain go brrrrr</div></div>
             <div class="window-body" style="margin-right: 4px; margin-top: 5px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
-                <p style="color: var(--blue); margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>16:25pm on Febuary 5th, 2021. [GMT]</label></p>
+                <p style="color: var(--blue); margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>6:22am on Febuary 6th, 2021. [GMT]</label></p>
         </div></div>
         
         <script>
             var message = document.getElementById("message"); messagewin = document.getElementById("messagewindow");
-            function messageactive() { inactiveall(); currentlayer = currentlayer + 1; message.style.zIndex = currentlayer; messagewin.style.backgroundImage = currentactiveheader;} 
+            function messageactive() { inactiveall(); currentlayer = currentlayer + 1; message.style.zIndex = currentlayer; 
+                messagewin.style.backgroundImage = currentactiveheader; document.getElementById("messagetext").style.color = curactivetitle;} 
             function messageclose() { message.style.right = "-100%"; message.style.marginLeft = "-20000px"}
             function messageopen() {message.style.marginLeft = "0px"; message.style.left = "77%"; message.style.top = "62%";
                 currentlayer = currentlayer + 1; message.style.zIndex = currentlayer; messagewin.style.backgroundImage = currentactiveheader;}
@@ -594,7 +596,7 @@
         <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; left: 77%; z-index:5;" onmousedown="diskactive()" id="disk" data-theme="dark">
             <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:2px; margin-top:2px; cursor: pointer;" title="close" onclick="diskclose()"><div class="close"></div></div>
             <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="margin-top:2px" title="help"> <div class="help"></div></div></a> 
-            <div class="title-bar-98" id="diskwindow"> <div class="title-bar-text">📺 Display Properties</div></div>
+            <div class="title-bar-98" id="diskwindow"> <div class="title-bar-text" id="disktext">📺 Display Properties</div></div>
             
             <!--container for the setting window -->
             <div class="win98tab" style="width:71px; height:17px; margin-top:5px; margin-left:  6px; z-index:10" onclick="tabreset(); backgroundtab();" id="backgroundtab"><center><label style="margin-top:1px;">Background</label></center></div>
@@ -697,7 +699,17 @@
                             <div class="optionsmenu" style="width:227px; position: absolute; margin-top:126px; cursor:pointer" onclick="wallpaperoption7(); wallpapercust();">
                                     <div class="menuapplications10" style="margin-top:-1px"></div>
                                         <div class="container" style="width:100%; height:100%;" title="submitted by Millie in the discord server" id="wallpaperoverlay8">
-                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Clouds at Midnight (Submitted by Millie)  </label></div></div></div></ul></fieldset></div>
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Clouds at Midnight (Submitted by Millie) </label></div></div>
+                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:146px; cursor:pointer" onclick="wallpaperoption8(); wallpapercust();">
+                                    <div class="menuapplications10" style="margin-top:-1px"></div>
+                                        <div class="container" style="width:100%; height:100%;" title="submitted by Qhetha in the discord server" id="wallpaperoverlay9">
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Desert Highway (Submitted by Qhetha)  </label></div></div>
+                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:166px; cursor:pointer" onclick="wallpaperoption9(); wallpapercust();">
+                                    <div class="menuapplications10" style="margin-top:-1px"></div>
+                                        <div class="container" style="width:100%; height:100%;" title="Created by Phil-Nye in the discord server" id="wallpaperoverlay10">
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Aesthetic (Created by Phil-Nye)  </label></div></div>
+                                    
+                            </div></ul></fieldset></div>
                         
             <script>
                 var colorwallpaperpicked = "#c0c0c0", currentwallpaper = "", sens = "";
@@ -709,7 +721,8 @@
                     document.getElementById("wallpaperoverlay1").style.backgroundColor = ""; document.getElementById("wallpaperoverlay2").style.backgroundColor = "";
                     document.getElementById("wallpaperoverlay3").style.backgroundColor = ""; document.getElementById("wallpaperoverlay4").style.backgroundColor = "";
                     document.getElementById("wallpaperoverlay5").style.backgroundColor = ""; document.getElementById("wallpaperoverlay6").style.backgroundColor = "";
-                    document.getElementById("wallpaperoverlay7").style.backgroundColor = ""; document.getElementById("wallpaperoverlay8").style.backgroundColor = "";}
+                    document.getElementById("wallpaperoverlay7").style.backgroundColor = ""; document.getElementById("wallpaperoverlay8").style.backgroundColor = "";
+                    document.getElementById("wallpaperoverlay9").style.backgroundColor = ""; document.getElementById("wallpaperoverlay10").style.backgroundColor = "";}
                 function wallpaperoptionnone() { wallpapercurrentreset(); document.getElementById("wallpaperoverlay1").style.backgroundColor = colorwallpaperpicked; currentwallpaper = "none"; wallpaperpreview(); sens = 0} 
                 function wallpaperoption1() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay2").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/wallpaper32.png')"; wallpaperpreview(); sens = 1}
                 function wallpaperoption2() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay3").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/study.png')"; wallpaperpreview(); sens = 2}
@@ -718,12 +731,15 @@
                 function wallpaperoption5() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay6").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/anime.png')"; wallpaperpreview(); sens = 5} 
                 function wallpaperoption6() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay7").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/vinyl.png')"; wallpaperpreview(); sens = 6} 
                 function wallpaperoption7() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay8").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/lynn.png')"; wallpaperpreview(); sens = 7} 
-                        
+                function wallpaperoption8() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay9").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/Untitled-3.jpg')"; wallpaperpreview(); sens = 8} 
+                function wallpaperoption9() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay10").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/Untitled-4.jpg')"; wallpaperpreview(); sens = 9} 
+                
                 function sensupdate() { 
                     if(sens == 0){document.getElementById("wallpaperoverlay1").style.backgroundColor = colorwallpaperpicked;} if(sens == 1){document.getElementById("wallpaperoverlay2").style.backgroundColor = colorwallpaperpicked;}
                     if(sens == 2){document.getElementById("wallpaperoverlay3").style.backgroundColor = colorwallpaperpicked;} if(sens == 3){document.getElementById("wallpaperoverlay4").style.backgroundColor = colorwallpaperpicked;}
                     if(sens == 4){document.getElementById("wallpaperoverlay5").style.backgroundColor = colorwallpaperpicked;} if(sens == 5){document.getElementById("wallpaperoverlay6").style.backgroundColor = colorwallpaperpicked;}
-                    if(sens == 6){document.getElementById("wallpaperoverlay7").style.backgroundColor = colorwallpaperpicked;} if(sens == 7){document.getElementById("wallpaperoverlay8").style.backgroundColor = colorwallpaperpicked;}}
+                    if(sens == 6){document.getElementById("wallpaperoverlay7").style.backgroundColor = colorwallpaperpicked;} if(sens == 7){document.getElementById("wallpaperoverlay8").style.backgroundColor = colorwallpaperpicked;}
+                    if(sens == 8){document.getElementById("wallpaperoverlay9").style.backgroundColor = colorwallpaperpicked;} if(sens == 9){document.getElementById("wallpaperoverlay10").style.backgroundColor = colorwallpaperpicked;}}
             </script>
             
             <!-- --------------------------------------- screensaver tab --------------------------------------- -->
@@ -784,20 +800,20 @@
                     <div class="prewin98post" style="height: 137px; width:300px;">
                         <div class="prewin98titlebarbutton" style="position:absolute; margin-left: 283px; margin-top:1px; cursor: pointer;" title="close"><div class="close"></div></div>
                         <div class="prewin98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="help"></div></div>
-                        <div class="pretitle-bar-posts" style="background-image: var(--preinactive);"> <div class="title-bar-text" style="margin-left:-1px; margin-top:-1px;">💤 Inactive Window</div></div>
+                        <div class="pretitle-bar-posts" style="background-image: var(--preinactive);"> <div class="title-bar-text" style="margin-left:-1px; margin-top:-1px;" id="preinactive">💤 Inactive Window</div></div>
                         <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding: 2px 2px 2px 2px"></div></div>
                     
                     <div class="prewin98post" style="height: 137px; width:300px; margin-top:24px; margin-left:5px">
                         <div class="prewin98titlebarbutton" style="position:absolute; margin-left: 283px; margin-top:1px; cursor: pointer;" title="close"><div class="close"></div></div>
                         <div class="prewin98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="help"></div></div>
-                        <div class="pretitle-bar-posts" style="background-image: var(--preactive);"> <div class="title-bar-text" style="margin-left:-1px; margin-top:-1px;">💯 Active Window</div></div>
+                        <div class="pretitle-bar-posts" style="background-image: var(--preactive);"> <div class="title-bar-text" style="margin-left:-1px; margin-top:-1px;" id="preactive">💯 Active Window</div></div>
                         <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
                             <div class="container" style="margin-top: -2px">
                                 <label style="position:absolute; color:var(--preblack)">Normal</label>
                                 <div class="predisabledfont" style="position:absolute; margin-left:39px; margin-top: -0px;">Disabled</div>
                                 <prefieldset style="position:absolute; margin-left:85px; margin-top:-1px; padding:2px 4px 1px 4px; color:var(--preblack);"> Selected </prefieldset></div>
                             <preul class="tree-view"  style="width:284px; height:82px; margin-left: -3px; margin-top: 18px;">
-                                <div class="container" style="position:absolute; background-color: #c0c0c0; margin-left: 272px; width:16px; height:80px"> </div>
+                                <div class="container" style="position:absolute; background-color: var(--premidgray); margin-left: 272px; width:16px; height:80px"> </div>
                                 <div class="prewin98scroll" style="margin-left: 272px; margin-top:-4px"><div class="scrollup"></div></div>
                                 <div class="prewin98scroll" style="margin-left: 272px; margin-top:70px"><div class="scrolldown"></div></div>
                     </preul></div></div>
@@ -805,7 +821,7 @@
                     <div class="prewin98post" style="height:67px; width:200px; margin-left:20px; margin-top: 100px;">
                         <div class="prewin98titlebarbutton" style="position:absolute; margin-left: 183px; margin-top:1px; cursor: pointer;" title="close"><div class="close"></div></div>
                         <div class="prewin98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="help"></div></div>
-                        <div class="pretitle-bar-posts" style="background-image: var(--preactive);"> <div class="title-bar-text" style="margin-left:-1px; margin-top:-1px;">💬 Message Box</div></div>
+                        <div class="pretitle-bar-posts" style="background-image: var(--preactive);"> <div class="title-bar-text" style="margin-left:-1px; margin-top:-1px;" id="premessage">💬 Message Box</div></div>
                         <div class="messagewindowbody" style="padding:3px; color:var(--text);"> Current active window
                             <center><div class="prewin98button" style="width:60px; margin-top: 4px;"> 
                                 <div class="prebuttontext" style="margin-top: 2px; margin-left:0.5px; cursor:pointer">Ok.</div></div></center>
@@ -825,13 +841,15 @@
                             <div class="drop-down-text" onclick="Octavia()"             id="Octavia"             style="padding:bottom:2px;" >Octavia's Study           </div>
                             <div class="drop-down-text" onclick="girlsdayout()"         id="girlsdayout"         style="padding:bottom:2px;" >A Girls Day Out           </div>
                             <div class="drop-down-text" onclick="milyvean()"            id="milyvean"            style="padding:bottom:2px;" >Clouds at Midnight        </div>
+                            <div class="drop-down-text" onclick="vapourwave()"          id="aesthetic"           style="padding:bottom:2px;" >Aesthetic                 </div>
                             <div class="drop-down-text" onclick="contrastmodescheme1()" id="contrastmodescheme1" style="padding:bottom:2px;" >High Contrast Mode 1      </div>
                             <div class="drop-down-text" onclick="contrastmodescheme2()" id="contrastmodescheme2" style="padding:bottom:2px;" >High Contrast Mode 2      </div> </div></ul>
                             
                     <script>
                         var curcolwhite, curcollightg, curcolsilver, curcolmidgray, curcolgray, curcolblack, curcolblue, curcolprussian, curcolwincyan, curcolyellow, curcolfont, curcolfonttitle, curcolhover, curcolatext, prewhite,
-                            precolwhite, precollightg, precolsilver, precolmidgray, precolgray, precolblack, precolblue, precolprussian, precolwincyan, precolyellow, precolfont, precolfonttitle, precolhover, precolatext, preblack;
-                        var schemedrop = false, themecurrent = "lightmode"; 
+                            precolwhite, precollightg, precolsilver, precolmidgray, precolgray, precolblack, precolblue, precolprussian, precolwincyan, precolyellow, precolfont, precolfonttitle, precolhover, precolatext, preblack,
+                            preinactivetitle, curinactivetitle, preactivetitle, curactivetitle; 
+                        var schemedrop = false, ctoggle = false, themecurrent = "lightmode"; 
                         var docelem = document.documentElement, currentsch = document.getElementById("currentscheme");
                         function schemedropdown(){ if (schemedrop == false) { document.getElementById("scheme").style.marginLeft = "    -2px"; schemedrop = true;
                                             } else if (schemedrop == true){   document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }}
@@ -841,28 +859,58 @@
                         function windows98(){           currentsch.textContent="Windows 98";              cpick12();       wallpaperoption1();    themecurrent = "lightmode"; themeupdate(); precolourupdate(); themepreviewchange();}
                         function evangelionmode(){      currentsch.textContent="Neon Genesis Evangelion"; cpick18();       wallpaperoption4();    themecurrent = "darkmode";  themeupdate(); precolourupdate(); themepreviewchange();}
                         function Octavia(){             currentsch.textContent="Octavia's Study";         cpick17();       wallpaperoption2();    themecurrent = "darkmode";  themeupdate(); precolourupdate(); themepreviewchange();}
-                        function girlsdayout(){         currentsch.textContent="A Girls Day Out";         cpick19();       wallpaperoption5();    themecurrent = "lightmode"; themeupdate(); precolourupdate(); themepreviewchange();}
+                        function girlsdayout(){         currentsch.textContent="A Girls Day Out";         cpick19();       wallpaperoption5();    themecurrent = "tankmode";  themeupdate(); precolourupdate(); themepreviewchange();}
                         function milyvean(){            currentsch.textContent="Clouds at Midnight";      cpick18();       wallpaperoption7();    themecurrent = "lightmode"; themeupdate(); precolourupdate(); themepreviewchange();}
-                        function contrastmodescheme1(){ currentsch.textContent="High Contrast Mode 1";    highcontrast1(); wallpaperoptionnone(); themecurrent = "lightmode"; themeupdate(); precolourupdate(); themepreviewchange();}
-                        function contrastmodescheme2(){ currentsch.textContent="High Contrast Mode 2";    highcontrast2(); wallpaperoptionnone(); themecurrent = "lightmode"; themeupdate(); precolourupdate(); themepreviewchange();}
+                        function vapourwave(){          currentsch.textContent="Aesthetic";               cpick20();       wallpaperoption9();    themecurrent = "neonmode";  themeupdate(); precolourupdate(); themepreviewchange();}
+                        function contrastmodescheme1(){ currentsch.textContent="High Contrast Mode 1";    highcontrast1(); wallpaperoptionnone(); themecurrent = "contrastmode1"; themeupdate(); precolourupdate(); themepreviewchange();}
+                        function contrastmodescheme2(){ currentsch.textContent="High Contrast Mode 2";    highcontrast2(); wallpaperoptionnone(); themecurrent = "contrastmode2"; themeupdate(); precolourupdate(); themepreviewchange();}
 
                         function themeupdate() { 
-                            if (themecurrent == "darkmode"){ darkmode();} 
-                            if (themecurrent == "lightmode"){ lightmode();} 
-                            sensupdate();}
+                            if (themecurrent == "darkmode"){darkmode()} if (themecurrent == "lightmode"){lightmode()} if (themecurrent == "contrastmode1"){contrastmode1()} if (themecurrent == "contrastmode2"){contrastmode2()}
+                            if (themecurrent == "tankmode"){tankmode()} if (themecurrent == "neonmode"){neonmode()} sensupdate();}
                         
-                        function darkmode(){ colorwallpaperpicked = "#292929"; pretaskbartext = "#9f9f9f"; pretaskbartextpressed = "#000";
+                        function darkmode(){ colorwallpaperpicked = "#292929"; pretaskbartext = "#9f9f9f"; pretaskbartextpressed = "#000"; preactivetitle = "#ffffff"; preinactivetitle = "#ffffff";
                             precurrentactiveheader = github + "img/title-bar%20postheader-darkmodeactive.png')"; precurrentinactiveheader = github + "img/title-bar%20postheader-darkmode.png')";
                             curcolwhite = "#545454";   curcollightg = "#9f9f9f"; curcolsilver = "#3f3f3f"; curcolmidgray = "#ababab"; curcolgray = "#292929"; curcolblack = "#000000"; curcolblue = "#fccc39";
                             curcolprussian = "#00207c"; curcolwincyan = "#008080"; curcolyellow = "#c0c0c0"; curcolfont = "#c0c0c0"; curcolfonttitle = "#ffffff"; curcolhover = "#ffffff"; curcolatext = "#ffffff";
-                            docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader);}
-                            
-                        function lightmode(){ colorwallpaperpicked = "#c0c0c0"; pretaskbartext = "#000"; pretaskbartextpressed = "#000";
+                            docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader);
+                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")}
+                        
+                        function tankmode(){ colorwallpaperpicked = "#607060"; pretaskbartext = "#000"; pretaskbartextpressed = "#000"; preactivetitle = "#ffffff"; preinactivetitle = "#607060";
+                            precurrentinactiveheader = github + "img/title-bar%20postheaderinactivetank.png')"; precurrentactiveheader = github + "img/title-bar%20postheaderactivetank.png')";
+                            curcolwhite = "#7d8f7d";   curcollightg = "#607060"; curcolsilver = "#607060"; curcolmidgray = "#404840"; curcolgray = "#404840"; curcolblack = "#0a0a0a"; curcolblue = "#ffffff";
+                            curcolprussian = "#481212" ; curcolwincyan = "#008080"; curcolyellow = "#ffff00"; curcolfont = "#000000"; curcolfonttitle = "#ffffff"; curcolhover = "#ffffff"; curcolatext = "#000000";
+                            docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader);
+                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")}
+                        
+                        function lightmode(){ colorwallpaperpicked = "#c0c0c0"; pretaskbartext = "#000"; pretaskbartextpressed = "#000"; preactivetitle = "#ffffff"; preinactivetitle = "#ffffff";
                             precurrentinactiveheader = github + "img/title-bar%20postheaderinactive.png')"; precurrentactiveheader = github + "img/title-bar%20postheader.png')";
                             curcolwhite = "#ffffff";   curcollightg = "#dfdfdf"; curcolsilver = "#c0c0c0"; curcolmidgray = "#ababab"; curcolgray = "#808080"; curcolblack = "#0a0a0a"; curcolblue = "#0000FF";
                             curcolprussian = "#00207c" ; curcolwincyan = "#008080"; curcolyellow = "#ffff00"; curcolfont = "#000000"; curcolfonttitle = "#ffffff"; curcolhover = "#ffffff"; curcolatext = "#000000";
-                            docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader); precolourupdate(); themepreviewchange();}
+                            docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader);
+                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")}
+                            
+                        function neonmode(){ colorwallpaperpicked = "#a2dbd2"; pretaskbartext = "#000"; pretaskbartextpressed = "#000"; preactivetitle = "#ffffff"; preinactivetitle = "#00554d";
+                            precurrentinactiveheader = github + "img/title-bar%20postheaderneon.png')"; precurrentactiveheader = github + "img/title-bar%20postheaderneonactive.png')";
+                            curcolwhite = "#f7dbd7";   curcollightg = "#fae0e4"; curcolsilver = "#f4c1ca"; curcolmidgray = "#e08998"; curcolgray = "#de4560"; curcolblack = "#0a0a0a"; curcolblue = "#00bfbc";
+                            curcolprussian = "#a2dbd2" ; curcolwincyan = "#008080"; curcolyellow = "#ffff00"; curcolfont = "#000000"; curcolfonttitle = "#ffffff"; curcolhover = "#ffffff"; curcolatext = "#000000";
+                            docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader);
+                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")}
                         
+                        function contrastmode1(){ colorwallpaperpicked = "#0000ff"; pretaskbartext = "#ffffff"; pretaskbartextpressed = "#0000ff"; preactivetitle = "#ffffff"; preinactivetitle = "#000000";
+                            precurrentinactiveheader = github + "img/title-bar%20postheaderinactivecontrast.png')"; precurrentactiveheader = github + "img/title-bar%20postheaderactivecontrast.png')";
+                            curcolwhite = "#000000";   curcollightg = "#dfdfdf"; curcolsilver = "#000000"; curcolmidgray = "#ababab"; curcolgray = "#808080"; curcolblack = "#ffffff"; curcolblue = "#00ffff";
+                            curcolprussian = "#0000ff" ; curcolwincyan = "#008080"; curcolyellow = "#ffff00"; curcolfont = "#ffff00"; curcolfonttitle = "#000000"; curcolhover = "#ffffff"; curcolatext = "#ffffff";
+                            docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader);
+                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")}
+                        
+                        function contrastmode2(){ colorwallpaperpicked = "#00ff00"; pretaskbartext = "#ffffff"; pretaskbartextpressed = "#0000ff"; preactivetitle = "#000000"; preinactivetitle = "#000000";
+                            precurrentinactiveheader = github + "img/title-bar%20postheaderinactivecontrast2.png')"; precurrentactiveheader = github + "img/title-bar%20postheaderactivecontrast2.png')";
+                            curcolwhite = "#000000";   curcollightg = "#dfdfdf"; curcolsilver = "#000000"; curcolmidgray = "#ababab"; curcolgray = "#808080"; curcolblack = "#ffffff"; curcolblue = "#00ff00";
+                            curcolprussian = "#00ff00" ; curcolwincyan = "#008080"; curcolyellow = "#ffff00"; curcolfont = "#ffff00"; curcolfonttitle = "#000000"; curcolhover = "#ffffff"; curcolatext = "#00ff00";
+                            docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader);
+                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")}
+                         
                         function highcontrast1() {  currentcolour = "#00ffff"; fontcolour = "#000"; backcolourpreview(); ctoggle = true; 
                             cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; document.getElementById("iconpreview").style.backgroundColor = "#000";  ap.style.backgroundColor = "#000";}
                         
@@ -873,14 +921,17 @@
                             precolwhite = curcolwhite; precollightg = curcollightg; precolsilver = curcolsilver; precolmidgray = curcolmidgray; precolgray = curcolgray; precolblack = curcolblack; precolblue = curcolblue;
                             precolprussian = curcolprussian; precolwincyan = curcolwincyan; precolyellow = curcolyellow; precolfont = curcolfont; precolfonttitle = curcolfonttitle; precolhover = curcolhover; precolatext = curcolatext;}
                         
-                        function themepreviewchange() { docelem.style.setProperty('--preblue', precolblue);
+                        function themepreviewchange() { 
+                            docelem.style.setProperty('--preblue', precolblue); docelem.style.setProperty('--preactivetitle', preactivetitle); docelem.style.setProperty('--preinactivetitle', preinactivetitle); 
                             docelem.style.setProperty('--prewhite', precolwhite); docelem.style.setProperty('--pregray', precolgray); docelem.style.setProperty('--prelightg', precollightg); 
                             docelem.style.setProperty('--preblack', precolblack); docelem.style.setProperty('--presilver', precolsilver); docelem.style.setProperty('--preprussian', precolprussian);
                             docelem.style.setProperty('--premidgray', precolmidgray); docelem.style.setProperty('--prewincyan', precolwincyan); docelem.style.setProperty('--preyellow', precolyellow); 
                             docelem.style.setProperty('--prefont', precolfont); docelem.style.setProperty('--prefonttitle', precolfonttitle); docelem.style.setProperty('--prehover', precolhover);
-                            docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader);}
+                            docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader);
+                            document.getElementById("preinactive").style.color = preinactivetitle; document.getElementById("premessage").style.color = preactivetitle; document.getElementById("preactive").style.color = preactivetitle;}
                         
-                        function themechange() { currentinactiveheader = precurrentinactiveheader; currentactiveheader = precurrentactiveheader;
+                        function themechange() { currentinactiveheader = precurrentinactiveheader; currentactiveheader = precurrentactiveheader; curactivetitle = preactivetitle; curinactivetitle = preinactivetitle;
+                            docelem.style.setProperty('--curactivetitle', curactivetitle); docelem.style.setProperty('--curinactivetitle', curinactivetitle); 
                             docelem.style.setProperty('--white', curcolwhite); docelem.style.setProperty('--gray', curcolgray); docelem.style.setProperty('--lightg', curcollightg); 
                             docelem.style.setProperty('--black', curcolblack); docelem.style.setProperty('--silver', curcolsilver); docelem.style.setProperty('--prussian', curcolprussian);
                             docelem.style.setProperty('--midgray', curcolmidgray); docelem.style.setProperty('--wincyan', curcolwincyan); docelem.style.setProperty('--yellow', curcolyellow); 
@@ -888,6 +939,8 @@
                             docelem.style.setProperty('--atext', curcolatext); docelem.style.setProperty('--blue', curcolblue);
                             whit = curcolhover; blac = curcolblack; prus = curcolprussian; silv = curcolsilver; yell = curcolyellow; lightg = curcollightg; gray = curcolgray; text = curcolfont; cyan = curcolwincyan;
                             taskbartext = pretaskbartext; taskbartextpressed = pretaskbartextpressed; currentinactiveheader = precurrentinactiveheader; currentactiveheader = precurrentactiveheader; black = curcolfont; white = curcolwhite;
+                            docelem.style.setProperty('--taskbarstarttop1', gray); docelem.style.setProperty('--taskbarstarttop2', blac);
+                        docelem.style.setProperty('--taskbarstartbottom1', white); docelem.style.setProperty('--taskbarstartbottom2', lightg);
                             docelem.style.setProperty('--inactive', currentinactiveheader); docelem.style.setProperty('--active', currentactiveheader); inactiveall(); diskactive(); clocku();}
                     </script>
                         
@@ -946,7 +999,7 @@
                                 <div class="colourselect" style="background-color: #ff00ff" onclick="cpick15()"></div> <div class="colourselect" style="background-color: #aa55aa" onclick="cpick16(); wallpapercust();"></div> <br>
                                 <div class="menuapplicationsplit" style="width:100%; margin-bottom:3px;"> </div>
                                 <div class="colourselect" style="background-color: #a03762" onclick="cpick17()"></div> <div class="colourselect" style="background-color: #001224" onclick="cpick18(); wallpapercust();"></div> 
-                                <div class="colourselect" style="background-color: #590f1e" onclick="cpick19()"></div> <div class="colourselect" style="background-color: #ffdaa3" onclick="cpick20(); wallpapercust();"></div> <br>
+                                <div class="colourselect" style="background-color: #483038" onclick="cpick19()"></div> <div class="colourselect" style="background-color: #ccffff" onclick="cpick20(); wallpapercust();"></div> <br>
                         </div></div> 
                         
                         <script>
@@ -1001,8 +1054,8 @@
                             
                             function cpick17() {  currentcolour = "#a03762"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
                             function cpick18() {  currentcolour = "#001224"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
-                            function cpick19() {  currentcolour = "#590f1e"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
-                            function cpick20() {  currentcolour = "#ffdaa3"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
+                            function cpick19() {  currentcolour = "#483038"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
+                            function cpick20() {  currentcolour = "#ccffff"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
                         </script>
                         
                         <div class="win98buttoninactive" style="position: absolute; margin-left:312px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
@@ -1172,25 +1225,25 @@
         <script> 
             var disk = document.getElementById("disk"); diskwin = document.getElementById("diskwindow");
             function diskactive() { inactiveall(); diskButtonOpen = false;
-                currentlayer = currentlayer + 1; disk.style.zIndex = currentlayer; 
+                disk.style.marginLeft = "0px"; disk.style.marginTop = "0px";
+                currentlayer = currentlayer + 1; disk.style.zIndex = currentlayer; document.getElementById("disktext").style.color = curactivetitle;
                 diskwin.style.backgroundImage = currentactiveheader; document.getElementById("taskapp3font").style.color = taskbartextpressed;
-                document.getElementById("disk").style.marginLeft = "0px";
                 document.getElementById("taskapp3").style.backgroundImage = github + "img/scrollbarempty.png')"; document.getElementById("taskapp3").style.backgroundColor = whit;
                 document.documentElement.style.setProperty('--taskbar3top1', gray); document.documentElement.style.setProperty('--taskbar3top2', blac);
                 document.documentElement.style.setProperty('--taskbar3bottom1', whit); document.documentElement.style.setProperty('--taskbar3bottom2', lightg);}
             function diskopen() { inactiveall(); tabreset(); diskButtonOpen = true;
-                currentlayer = currentlayer + 1; disk.style.zIndex = currentlayer;
+                disk.style.marginLeft = "0px"; disk.style.marginTop = "0px";
+                currentlayer = currentlayer + 1; disk.style.zIndex = currentlayer; document.getElementById("disktext").style.color = curactivetitle;
                 disk.style.marginTop = "0px"; disk.style.left = "77%"; disk.style.top = "13%"; diskwin.style.backgroundImage = currentactiveheader;
-                document.getElementById("disk").style.marginLeft = "0px";
                 document.documentElement.style.setProperty('--taskbar3top1', whit); document.documentElement.style.setProperty('--taskbar3top2', lightg);
                 document.documentElement.style.setProperty('--taskbar3bottom1', gray); document.documentElement.style.setProperty('--taskbar3bottom2', blac);
                 document.getElementById("taskapp3").style.marginLeft = "4px";}
             function diskclose() { inactiveall(); diskButtonOpen = true;
-                disk.style.marginLeft = "-20000px"; disk.style.right = "-100%";
+                disk.style.marginLeft = "-20000px"; disk.style.marginTop = "-20000px"; disk.style.left = "-200%"; 
                 document.getElementById("taskapp3").style.marginLeft = "-20000px"; diskwin.style.backgroundImage = currentinactiveheader;
                 document.documentElement.style.setProperty('--taskbar3top1', whit); document.documentElement.style.setProperty('--taskbar3top2', lightg);
                 document.documentElement.style.setProperty('--taskbar3bottom1', gray); document.documentElement.style.setProperty('--taskbar3bottom2', blac);}
-            function diskminimize() { inactiveall(); diskButtonOpen = true; document.getElementById("disk").style.marginTop = "-20000px";}
+            function diskminimize() { inactiveall(); disk.style.marginLeft = "-20000px"; disk.style.marginTop = "-20000px"; diskButtonOpen = true;}
         </script> 
 <!-- Window box handling ------------------------------------------------------------------------------>
         
@@ -1198,7 +1251,7 @@
         <div class="win98post" style="z-index: 10; margin-left: 200000px; height: 112px; width: 284px; top: 40%; left:  40%;" id="logoff" onmousedown="logonactive();">
             <div class="win98titlebarbutton" style="margin-right:2px; margin-left:2px;" title="close" onclick="logoffno()"><div class="close"></div></div>
             <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" title="help"> <div class="help"></div></div></a> 
-            <div class="title-bar-98" id="logoffwindow"> <div class="title-bar-text">💤 Log off Windows
+            <div class="title-bar-98" id="logoffwindow"> <div class="title-bar-text" id="logofftext">💤 Log off Windows
             </div></div><div class="window-body" style="padding: 13px; margin-top:5px;">
                 <div class="logofficon" style="float: left;"></div> 
                 <label style="margin-top: 5px; margin-left: 24px; cursor:default"> Are you sure you want to log off? </label></div>
@@ -1209,7 +1262,7 @@
         
         <script>
             function logonactive(){ inactiveall();
-                document.getElementById("logoff").style.marginLeft = "0px";
+                document.getElementById("logoff").style.marginLeft = "0px"; document.getElementById("logofftext").style.color = curactivetitle;
                 currentlayer = currentlayer + 1; document.getElementById("logoff").style.zIndex = currentlayer;
                 document.getElementById("logoffwindow").style.backgroundImage = currentactiveheader; }
             function logoff() { logonactive(); document.getElementById("logoff").style.marginLeft = "0px"; document.getElementById("logoff").style.zIndex = "100"; }
@@ -1220,7 +1273,7 @@
         <div class="win98post" style="z-index: 10; margin-left: 200000px; height: 165px; width: 304px; top: 40%; left:  40%;" id="shutdown" onmousedown="shutdownactive();">
             <div class="win98titlebarbutton" style="margin-right:2px; margin-left:2px;" title="close" onclick="diskclose()"><div class="close"></div></div>
             <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" title="help"> <div class="help"></div></div></a> 
-            <div class="title-bar-98" id="shutdownwindow"> <div class="title-bar-text">🔌 Shut Down Windows
+            <div class="title-bar-98" id="shutdownwindow"> <div class="title-bar-text" id="shutdowntext">🔌 Shut Down Windows
             </div></div>
             
             <div class="window-body" style="padding: 10px 10px 10px 10px; margin-top:40px; margin-left-10px; font-family: Arial; font-size: 11px;">
@@ -1246,7 +1299,7 @@
         <script>
             function shutdownactive(){ inactiveall();
                 currentlayer = currentlayer + 1; document.getElementById("shutdown").style.zIndex = currentlayer
-                document.getElementById("shutdownwindow").style.backgroundImage = currentactiveheader; }
+                document.getElementById("shutdownwindow").style.backgroundImage = currentactiveheader; document.getElementById("shutdowntext").style.color = curinactivetitle;}
             function shutdown() {   document.getElementById("shutdown").style.marginLeft = "0px"; document.getElementById("shutdown").style.zIndex = "100"; }
             function shutdownno() { document.getElementById("shutdown").style.marginLeft = "200000px"; document.getElementById("shutdown").style.zIndex = "1"; }
         </script>
@@ -1257,26 +1310,28 @@
             function inactiveall() { var timer = 0
                 if (timer < 1){ timer = timer + 1; 
                     menuclosed();
-                    tumblrButtonOpen = true; 
+                    tumblrButtonOpen = true; document.getElementById("tumblrtext").style.color = curinactivetitle;
                     document.getElementById("postwindow").style.backgroundImage = currentinactiveheader; document.getElementById("taskapp1font").style.color = taskbartext;
                     document.getElementById("taskapp1").style.backgroundImage = "none"; document.getElementById("taskapp1").style.backgroundColor = silv;
                     document.documentElement.style.setProperty('--taskbar1top1', whit); document.documentElement.style.setProperty('--taskbar1top2', lightg);
                     document.documentElement.style.setProperty('--taskbar1bottom1', gray); document.documentElement.style.setProperty('--taskbar1bottom2', blac);
-                    pyroButtonOpen = true;
+                    
+                    pyroButtonOpen = true; document.getElementById("pyrotext").style.color = curinactivetitle; document.getElementById("cattext").style.color = curinactivetitle;
                     pyrowin.style.backgroundImage = currentinactiveheader; catwin.style.backgroundImage = currentinactiveheader; document.getElementById("taskapp2font").style.color = taskbartext;
                     document.getElementById("taskapp2").style.backgroundImage = "none"; document.getElementById("taskapp2").style.backgroundColor = silv;
                     document.documentElement.style.setProperty('--taskbar2top1', whit); document.documentElement.style.setProperty('--taskbar2top2', lightg);
                     document.documentElement.style.setProperty('--taskbar2bottom1', gray); document.documentElement.style.setProperty('--taskbar2bottom2', blac);
-                    diskButtonOpen = true;
+                    
+                    diskButtonOpen = true; document.getElementById("disktext").style.color = curinactivetitle;
                     diskwin.style.backgroundImage = currentinactiveheader; document.getElementById("taskapp3font").style.color = taskbartext;
                     document.getElementById("taskapp3").style.backgroundImage = "none"; document.getElementById("taskapp3").style.backgroundColor = silv;
                     document.documentElement.style.setProperty('--taskbar3top1', whit); document.documentElement.style.setProperty('--taskbar3top2', lightg);
                     document.documentElement.style.setProperty('--taskbar3bottom1', gray); document.documentElement.style.setProperty('--taskbar3bottom2', blac);
                     
-                    messagewin.style.backgroundImage = currentinactiveheader;
-                    docclockwin.style.backgroundImage = currentinactiveheader;
-                    document.getElementById("logoffwindow").style.backgroundImage = currentinactiveheader;
-                    document.getElementById("shutdownwindow").style.backgroundImage = currentinactiveheader;
+                    messagewin.style.backgroundImage = currentinactiveheader; document.getElementById("messagetext").style.color = curinactivetitle;
+                    docclockwin.style.backgroundImage = currentinactiveheader; document.getElementById("disktext").style.color = curinactivetitle;
+                    document.getElementById("logoffwindow").style.backgroundImage = currentinactiveheader; document.getElementById("logofftext").style.color = curinactivetitle;
+                    document.getElementById("shutdownwindow").style.backgroundImage = currentinactiveheader; document.getElementById("shutdowntext").style.color = curinactivetitle;
                     }
                 }
         </script>
@@ -1298,7 +1353,7 @@
         
         <script>
             function tumblractive() { inactiveall(); tumblrButtonOpen = false;
-                currentlayer = currentlayer + 1; document.getElementById("post").style.zIndex = currentlayer;
+                currentlayer = currentlayer + 1; document.getElementById("post").style.zIndex = currentlayer; document.getElementById("tumblrtext").style.color = curactivetitle;
                 document.getElementById("postwindow").style.backgroundImage = currentactiveheader; document.getElementById("taskapp1font").style.color = taskbartextpressed;
                 document.getElementById("taskapp1").style.backgroundImage = github + "img/scrollbarempty.png')"; document.getElementById("taskapp1").style.backgroundColor = whit;
                 document.documentElement.style.setProperty('--taskbar1top1', gray); document.documentElement.style.setProperty('--taskbar1top2', blac);
@@ -1316,14 +1371,14 @@
                     <div class="win98titlebarbutton" title="Minimize" onclick="tumblrminimize();"> <div class="minimize"></div></div>
                     <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" title="Help"> <div class="help"></div></div></a> 
                     <div class="title-bar-98" id="postwindow"> 
-                        <div class="title-bar-text">🍭 very.vunnies on Tumblr - Internet Explorer</div></div>
+                        <div class="title-bar-text" id="tumblrtext">🍭 very.vunnies on Tumblr - Internet Explorer</div></div>
                     <div class="window-body"> 
                         
                         <div class="post-header" style="height: 46px; margin-top:-6px;">
                             <fieldset style="position:absolute; height: 44px; width: 467px; margin-left:-6px; padding:2px;"> 
                                 
                                 <div class="small_seperator" style="margin-top:1px; height:17px;"></div>
-                                <div class="windowsexplorerlogo"></div> <!-- right side of the top container -->
+                                <div class="container" style="width:38px; height:21px; background-color:black; float:right;"><div class="windowsexplorerlogo"></div></div> <!-- right side of the top container -->
                                 <div class="big_seperator" style="float:right; height:21px; margin-top:0px;"></div>
                                 {block:NoteCount} 
                                 <div class="postnote-container" style="float:right; margin-top:4px; margin-right:3.5px;">{NoteCountWithLabel}</div>
@@ -1369,8 +1424,8 @@
                         <div class="filler"></div><div class="filler"></div>
                                 
                         <ul class="tree-view" style="margin-left:-6px; margin-bottom:26px; width: 471px; padding:0px; overflow:hidden; background-color: var(--white)"> 
-                            <div class="scrollbarmiddle" style="margin-left: 2px; height: 100%; width:467px; margin-top:2px; margin-bottom:2px; background-color: var(--white);">
-                                <div class="container"  style="max-width: 451px; background-color:var(--white); overflow:hidden; color:car(--text);"> <!-- 428px wide, 451 including scrollwheel + padding -->
+                            <div class="scrollbarmiddle" style="margin-left: 2px; height: 100%; width:467px; margin-top:2px; margin-bottom:2px; background-color: var(--midgray);">
+                                <div class="container"  style="max-width: 451px; background-color:var(--white); overflow:hidden; color:var(--text);"> <!-- 428px wide, 451 including scrollwheel + padding -->
                                 <!-- Text posts -->
                                     <div class="win98buttonscrollinactive" style="margin-left: 451px;"><div class="arrowdisableup"></div></div>
                                     {block:Text}
@@ -1386,6 +1441,7 @@
                                         <!-- Image caption -->
                                         {block:Caption} 
                                             <div class="content caption" style="padding: 3.5px;"> {Caption} </div> <!-- content -->
+                                            
                                         {/block:Caption}
                                     {/block:Photo}
                                         
@@ -1418,12 +1474,20 @@
                                     {/block:Quote}
                          
                                     {block:Link}
-                                        <div class="container" style="padding: 3.5px;">
-                                            <a href="{URL}" class="title" {Target}> {Name} &rarr; </a>
-                                            {block:Description}
-                                                <div class="content body"> {Description} </div> <!-- desc -->
-                                            {/block:Description}
+                                        <div class="container" style="width:451px; height:84px; background-color: var(--white);">
+                                            <a href="{URL}" class="title" {Target} style="color: var(--blue);"> 
+                                                <div class="container" style="position:absolute; font-family: arial; font-size:14px; font-weight:700; width:367px;">
+                                                <center style="margin-top:31px; margin-left:-50px;">{Name}</center></div>
+                                            </a>
+                                            <div class="container" style="float:right; width:84px; height:84px; background-color: var(--blue); background-size: 84px 84px;
+                                                                          background-image: url('https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/ezgif-2-7dbe0869fce0.gif');"></div>
                                         </div>
+                                        {block:Description}
+                                            <div class="menuapplicationsplit" style="width:451px; margin-bottom:-2px;"> </div>
+                                            <div class="container" style="padding: 3.5px;">
+                                                <div class="content body"> {Description} </div> <!-- desc -->
+                                            </div>
+                                        {/block:Description}
                                     {/block:Link}
                         
                                     {block:Chat}
@@ -1487,7 +1551,6 @@
                                     {PostNotes}
                             </div></ul>
                         {/block:PostNotes}{/block:PermalinkPage}
-                              
 <!-- Bottom post handling ------------------------------------------------------------------------------>
 
                         {block:HasTags}
@@ -1567,15 +1630,20 @@
                 //start button / menu addressing
                 var startButtonOpen = false;
                 function startpress() { if (startButtonOpen == true) { document.getElementById("startmenu").style.marginLeft = "200000px"; startButtonOpen = false;
-                    } else if(startButtonOpen == false) { document.getElementById("startmenu").style.marginLeft = "0px"; startButtonOpen = true; }}
+                        docelem.style.setProperty('--taskbarstarttop1', gray); docelem.style.setProperty('--taskbarstarttop2', blac);
+                        docelem.style.setProperty('--taskbarstartbottom1', white); docelem.style.setProperty('--taskbarstartbottom2', lightg);
+                    } else if(startButtonOpen == false) { document.getElementById("startmenu").style.marginLeft = "0px"; startButtonOpen = true; 
+                    docelem.style.setProperty('--taskbarstarttop1', white); docelem.style.setProperty('--taskbarstarttop2', lightg);
+                        docelem.style.setProperty('--taskbarstartbottom1', blac); docelem.style.setProperty('--taskbarstartbottom2', gray);
+                    }}
                 //start button pressed // start menu window
                 function menuclosed(){ document.getElementById("startmenu").style.marginLeft = "200000px"; startButtonOpen = false; }
             </script> 
             
             <!-- Start button toggle -->
-            <div class="startbutton" id="startbutton" onclick="startpress()"> </div> 
+            <div class="win98start" onclick="startpress()" style="margin-right:4px;"> <div class="windowslogo"></div><div class="title-bar-text" style="position:absolute; margin-left:17.5px; margin-top:-15px; color:var(--text);">Start</div></div>
                 <!-- Start menu closed -->
-            <div class="container" style="position: fixed; bottom: 0%; bottom: 24px; left: 2px;" onmouseleave="">
+            <div class="container" style="position: fixed; bottom: 0%; bottom: 24px;" onmouseleave="">
                 <div class="win98container" id="startmenu" style="width:163px; height: 377px; margin-top:-383px ;margin-left: 200000px"> 
                     <div class="container" style="margin-left: 20px; margin-top: -3px">
                         <!-- windows gradient bar -->
@@ -1651,7 +1719,7 @@
 
 <!-- Programs menu rendering ------------------------------------------------------------------------------>
                         
-                    <div class="win98container" style="margin-left: 20000px; margin-top: -360px; width: 133px; height: 140px" id="programsmenu" 
+                    <div class="win98container" style="margin-left: 20000px; margin-top: -339px; width: 133px; height: 140px" id="programsmenu" 
                         onmouseover="programsopen()" onmouseout="programsclosed()"> 
                         <!-- Accessories -->
                         <div class="submenu20" id="accessories"
@@ -1908,7 +1976,7 @@
         
 <!-- Favourites menu rendering------------------------------------------------------------------------------>
         
-                            <div class="win98container" style="margin-left: 20000px; margin-top: -324px; width: 149px; height:100px" id="favouritesmenu" 
+                            <div class="win98container" style="margin-left: 20000px; margin-top: -303px; width: 149px; height:100px" id="favouritesmenu" 
                                  onmouseover="favouritesopen()" onmouseout="favouritesclosed()"> 
                                 <!-- Channels -->
                                 <div class="submenu20" onmouseover="channelsopen()" onmouseout="channelsclose()" id="channels">
@@ -2033,7 +2101,7 @@
         
 <!-- Documents menu rendering ------------------------------------------------------------------------------>
                         
-                            <div class="win98container" style="margin-left: 20000px; margin-top: -288px; width: 160px; height:108px" id="documentsmenu" 
+                            <div class="win98container" style="margin-left: 20000px; margin-top: -267px; width: 160px; height:108px" id="documentsmenu" 
                                  onmouseover="documentsopen()" onmouseout="documentsclosed()"> 
                                 <!-- My Documents -->
                                 <div class="submenu20">
@@ -2059,7 +2127,7 @@
                      
 <!-- Settings menu rendering ------------------------------------------------------------------------------>
                         
-                            <div class="win98container" style="margin-left: 200000px; margin-top: -252px; width: 160px; height:128px" id="settingsmenu" 
+                            <div class="win98container" style="margin-left: 200000px; margin-top: -231px; width: 160px; height:128px" id="settingsmenu" 
                                  onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
                                 <!-- Control panel -->
                                 <div class="submenu20">
@@ -2105,7 +2173,7 @@
                               
 <!-- Find menu rendering ------------------------------------------------------------------------------>
                                 
-                            <div class="win98container" style="margin-left: 20000px; margin-top: -218px" id="findmenu"
+                            <div class="win98container" style="margin-left: 20000px; margin-top: -197px" id="findmenu"
                                  onmouseover="findopen()"onmouseout="findclosed()";>
                                 <!--Buttons 1-4 -->
                                 <label style="width: 118px;"><div class="submenu20" style="width: 116px; height:20px">
@@ -2164,16 +2232,15 @@
                     // disk window active toggle
                     function task3toggle() {
                         if (diskButtonOpen == false) { diskminimize()
+                        document.getElementById("disk").style.marginLeft = "0px";
                         } else if (diskButtonOpen == true){ diskactive();}} 
                 </script>
                  
                 <div class="clock">
                     <div class="calendar" style="cursor: pointer;" onclick="clockopen();"> </div>
                     <div class="menuentertainment3" style="margin-top:-1px; margin-left:1px;"></div>
-                    <label class="time" style="font-size:11px; color: var(--atext);" id="showClock"> 00:00 am </label>
-                </div>
-            </div>
-        </div>
+                    <label class="time" style="font-size:11px; color: var(--atext);" id="showClock"> 00:00 am </label></div></div>
+    </div>
 
 <!-- On page load handling ------------------------------------------------------------------------------>
         
@@ -2256,7 +2323,6 @@
             function medicm() {cm = medimenu; cms = medisubmenu} function docucm() {cm = documenu; cms = docusubmenu} function settcm() {cm = settmenu; cms = settsubmenu} function acticm() {cm = actimenu; cms = actisubmenu} 
             function findcm() {cm = findmenu; cms = findsubmenu} function starton() {cmbs(); cmw()} function startoff(){cmbp(); cmb()}
 
-            
             function programsopen() {   progcm(); starton(); cms.style.marginLeft = "161px";  document.getElementById("menuarrow1").style.backgroundPosition = aropen}
             function programsclosed() { progcm(); startoff(); document.getElementById("menuarrow1").style.backgroundPosition = arclose; cmd()}
             function accessoriesopen() {  accecm(); starton(); cms.style.marginLeft = "133px"; document.getElementById("submenuarrow2").style.backgroundPosition = aropen}
