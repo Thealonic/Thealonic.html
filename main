@@ -69,194 +69,157 @@
 /* Tumblr post handling ------------------------------------------------------------------------------*/
             
             /* desktop config settings */
-            body { background: repeat fixed; background-size: cover; padding: auto auto auto auto; background-color: var(--wincyan); font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; max-width: 100%; overflow-x: hidden;}
-            #desktop, .navigation { margin: auto auto auto auto; width: 1010px;} /* whole thing */
-            body.permalink_page #desktop, body.permalink_page .navigation { width: 480px;}
-            body.infinite_scrolling .navigation, .inf_scr { display: none;}
+            body {background: repeat fixed; background-size: cover; padding: auto auto auto auto; background-color: var(--wincyan); font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; max-width: 100%; overflow-x: hidden}
+            #desktop, .navigation {margin: auto auto auto auto; width: 1010px;} /* whole thing */
+            body.permalink_page #desktop, body.permalink_page .navigation {width: 480px}
+            body.infinite_scrolling .navigation, .inf_scr {display: none}
 
 /* Desktop setup css ------------------------------------------------------------------------------*/
 
             /* taskbar icon setup */
-            .icons {        margin: 0 0 0 0; padding: -10px; width: 100px; height:100%; float: left; position: fixed; z-index: 1; font-size: 12px;}
-            .icon_label {   padding-top: 6px; padding-bottom: 6px; color: var(--wincyan); text-align: center; cursor: pointer; } /* Icon gaps */
+            .icons { margin: 0 0 0 0; padding: -10px; width: 100px; height:100%; float: left; position: fixed; z-index: 1; font-size: 12px}
+            .icon_label { padding-top: 6px; padding-bottom: 6px; color: var(--wincyan); text-align: center; cursor: pointer} /* Icon gaps */
             
             /* sidebar */
-            .thealonic, .veryvhersty, .twitter, .askicon, .discordlink, .officialfunny, .rct2, .simcity {
-                background-image: var(--desktopsheet); height:  72px; width:  72px; margin-left:14px; cursor: pointer; }
-            .thealonic { background-position:   -0px -0px;}  .simcity {       background-position: -432px -0px;} .veryvhersty { background-position:  -72px -0px;}  .rct2 {       background-position: -360px -0px;}
-            .twitter {   background-position: -144px -0px;}  .officialfunny { background-position: -504px -0px;} .askicon {     background-position: -216px -0px;} .discordlink { background-position: -288px -0px;}
+            .thealonic, .veryvhersty, .twitter, .askicon, .discordlink, .officialfunny, .rct2, .simcity {background-image: var(--desktopsheet); height: 72px; width: 72px; margin-left:14px; cursor: pointer}
+            .thealonic {background-position: -0px -0px} .simcity {background-position: -432px -0px} .veryvhersty {background-position: -72px -0px} .rct2 {background-position: -360px -0px}
+            .twitter {background-position: -144px -0px} .officialfunny {background-position: -504px -0px} .askicon {background-position: -216px -0px} .discordlink {background-position: -288px -0px}
 
-            .thealonicpreview, .veryvherstypreview, .twitterpreview, .askiconpreview, .discordlinkpreview, .officialfunnypreview, .rct2preview, .simcitypreview {
-                                background-image: var(--desktopsheet); height:  36px; width:  36px;}
-            .thealonicpreview {   background-position:   -0px -72px;}  .simcitypreview {       background-position: -214px -72px;} .veryvherstypreview { background-position:  -36px -72px;} .rct2preview {        background-position: -180px -72px;}
-            .twitterpreview {     background-position:  -72px -72px;}  .officialfunnypreview { background-position: -252px -72px;} .askiconpreview {     background-position: -107px -72px;} .discordlinkpreview { background-position: -144px -72px;}
+            .thealonicpreview, .veryvherstypreview, .twitterpreview, .askiconpreview, .discordlinkpreview, .officialfunnypreview, .rct2preview, .simcitypreview {background-image: var(--desktopsheet); height: 36px; width: 36px}
+            .thealonicpreview {background-position: -0px -72px}  .simcitypreview {background-position: -214px -72px} .veryvherstypreview {background-position: -36px -72px} .rct2preview { background-position: -180px -72px}
+            .twitterpreview {background-position: -72px -72px}  .officialfunnypreview {background-position: -252px -72px} .askiconpreview {background-position: -107px -72px} .discordlinkpreview { background-position: -144px -72px}
+            .rct2preview  {background-position: -180px -72px} .officialfunnypreview {background-position: -248px -72px} 
 
 /* Window bar handling ------------------------------------------------------------------------------*/
             
-            .filler { height: 2px; }
+            .filler {height: 2px}
             /* custom css for post windows apposed to the default win98 css */
-            .win98container{        box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; position: absolute; color:var(--font);}
-            .win98post{             box-shadow: inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; position: absolute; color:var(--font);}
-            .title-bar-posts{       font-weight: 700; color: var(--fonttitle); font-size: 11px; background-image: var(--active); height: 18px; width: 100%; background-size: cover;}
-            .title-bar-98{          font-weight: 700; color: var(--fonttitle); font-size: 11px; background-image: var(--inactive); height: 18px; width: 100%; background-size: cover;}
-            .window-body{           margin: 8px; color:var(--font);}
+            .win98container{box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; position: absolute; color:var(--font)}
+            .win98post{box-shadow: inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; position: absolute; color:var(--font)}
+            .title-bar-posts{font-weight: 700; color: var(--fonttitle); font-size: 11px; background-image: var(--active); height: 18px; width: 100%; background-size: cover}
+            .title-bar-98{font-weight: 700; color: var(--fonttitle); font-size: 11px; background-image: var(--inactive); height: 18px; width: 100%; background-size: cover}
+            .window-body{margin: 8px; color:var(--font)}
 
             /* window  post handling */
-            .window {               box-shadow: inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; font-size: 11px; position: absolute; z-index:4}
-            .title-bar-text {       font-weight: 700; color: var(--fonttitle); letter-spacing:0; margin-right:24px; padding:1px 4px 2px 4px; cursor: context-menu;}
-            .win98innerbox {        box-shadow: inset -1px -1px var(--black), inset 1px 1px var(--white), inset -2px -2px var(--gray), inset 2px 2px var(--lightg); background:var(--silver); padding:3px; font-size:11px; position: absolute; color: var(--font);}
-            .messagewindowbody {    margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; color: var(--font);}
+            .window {box-shadow: inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; font-size: 11px; position: absolute; z-index:4}
+            .title-bar-text {font-weight: 700; color: var(--fonttitle); letter-spacing:0; margin-right:24px; padding:1px 4px 2px 4px; cursor: context-menu}
+            .win98innerbox {box-shadow: inset -1px -1px var(--black), inset 1px 1px var(--white), inset -2px -2px var(--gray), inset 2px 2px var(--lightg); background:var(--silver); padding:3px; font-size:11px; position: absolute; color: var(--font)}
+            .messagewindowbody {margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; color: var(--font)}
             
             /* window title bar button handling */
-            .win98titlebarbutton {          width: 10px; height: 8px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); margin-top:2px; padding:3px; }
-            .win98titlebarbutton:active {   width: 10px; height: 8px; float:right; box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); margin-top:2px; padding:3px; }
-            .win98buttonscrollinactive {    width: 10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); margin-left: 1px; position: absolute; padding:3px; }                 
-            .win98buttontitlebarinactive {  width: 10px; height: 8px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); margin-left: 1px; margin-right:1px; margin-top:2px; position: absolute; padding:3px; }
+            .win98titlebarbutton {width: 10px; height: 8px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); margin-top:2px; padding:3px}
+            .win98titlebarbutton:active {width: 10px; height: 8px; float:right; box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); margin-top:2px; padding:3px}
+            .win98buttonscrollinactive {width: 10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); margin-left: 1px; position: absolute; padding:3px}                 
+            .win98buttontitlebarinactive {width: 10px; height: 8px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); margin-left: 1px; margin-right:1px; margin-top:2px; position: absolute; padding:3px}
             
             /* General button handling */
-            .win98button {          box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; height:16px; cursor:pointer;}
-            .win98button:active {   box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); padding:3px; height:16px; cursor:pointer;}
-            .win98buttoninactive {  box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; margin-bottom: 4px; height:16px; cursor:default}
-            .win98buttonpressed {   box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); padding:3px; height:16px; cursor:pointer;}
-            .buttontext {           display:inline-flex; align-items:center; color: var(--prestext)}
+            .win98button { box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; height:16px; cursor:pointer}
+            .win98button:active {box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); padding:3px; height:16px; cursor:pointer}
+            .win98buttoninactive {box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; margin-bottom: 4px; height:16px; cursor:default}
+            .win98buttonpressed {box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); padding:3px; height:16px; cursor:pointer}
+            .buttontext {display:inline-flex; align-items:center; color: var(--prestext)}
             
-            /* scroll buttton css */
-            .win98scroll {          width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; position: absolute;}
-            .win98scroll:active {   width:10px; height: 10px; float:right; box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); padding:3px; margin-top: -1px; margin-left: -1px; position: absolute;}
-            .win98scrollinactive {  width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; position: absolute;}
-            /* css for tabs in windows menus */
-            .win98tab {             box-shadow:inset -1px 0px var(--black),inset 1px 1px var(--white),inset -2px 0px var(--gray),inset 2px 2px var(--lightg);background:var(--silver);padding:3px; border-radius: 2px; font-size:11px; position: absolute; z-index; 100; color: var(--font);}
+            .win98scroll {width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; position: absolute}
+            .win98scroll:active {width:10px; height: 10px; float:right; box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); padding:3px; margin-top: -1px; margin-left: -1px; position: absolute;}
+            .win98scrollinactive {width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; position: absolute}
+            .win98tab {box-shadow:inset -1px 0px var(--black),inset 1px 1px var(--white),inset -2px 0px var(--gray),inset 2px 2px var(--lightg);background:var(--silver);padding:3px; border-radius: 2px; font-size:11px; position: absolute; z-index; 100; color: var(--font)}
             
-            .disabledfont {         font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--gray); text-shadow:1px 1px 0 var(--lightg);}
-            .optionsmenu {          cursor:pointer; height: 17px; width: 100%; background-color:var(--white); color:var(--font); border-style: dotted; border-width: 1px; border-color: var(--white); z-index:4;}    
-            .optionsmenu:hover {    cursor:pointer; height: 17px; width: 100%; background-color:var(--prussian); color:var(--hover); border-style: dotted; border-width: 1px; border-color: var(--yellow); z-index:10;}  
+            .optionsmenu {cursor:pointer; height: 17px; width: 100%; background-color:var(--white); color:var(--font); border-style: dotted; border-width: 1px; border-color: var(--white); z-index:4}    
+            .optionsmenu:hover {cursor:pointer; height: 17px; width: 100%; background-color:var(--prussian); color:var(--hover); border-style: dotted; border-width: 1px; border-color: var(--yellow); z-index:10}  
             
-            .drop-down-menu {       position: absolute; background: var(--white); margin-top: 20px; z-index: 20000000; }
-            .drop-down-text {       height: 11px; width: 100%; padding:2px 3px 1px 2px; background-color:var(--white); color:var(--font)}
-            .drop-down-text:hover { height: 11px; width: 100%; padding:1px 3px 0px 2px; background-color:var(--prussian); color:var(--hover); border-style: dotted; border-width: 1px; border-color: var(--yellow);}
+            .drop-down-menu {position: absolute; background: var(--white); margin-top: 20px; z-index: 20000000}
+            .drop-down-text {height: 11px; width: 100%; padding:2px 3px 1px 2px; background-color:var(--white); color:var(--font)}
+            .drop-down-text:hover {height: 11px; width: 100%; padding:1px 3px 0px 2px; background-color:var(--prussian); color:var(--hover); border-style: dotted; border-width: 1px; border-color: var(--yellow)}
             
-            .colourselect {         height: 12px; width: 12px; padding:2px; background-color:var(--white); box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black);
-                                    border-style: solid; border-width: 1px; border-color:var(--silver); margin-left:-1px; margin-top:-1px; display: inline-block;}
-            .colourselect:hover {   height: 12px; width: 12px; padding:2px; background-color:var(--white); box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--white),inset -2px -2px var(--black),inset 2px 2px var(--black); 
-                                    display: inline-block; border-style: solid; border-width: 1px; border-color: black; margin-left:-1px; margin-top:-1px;}
+            .colourselect {height: 12px; width: 12px; padding:2px; background-color:var(--white); box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black);
+                           border-style: solid; border-width: 1px; border-color:var(--silver); margin-left:-1px; margin-top:-1px; display: inline-block}
+            .colourselect:hover {height: 12px; width: 12px; padding:2px; background-color:var(--white); box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--white),inset -2px -2px var(--black),inset 2px 2px var(--black); 
+                                 display: inline-block; border-style: solid; border-width: 1px; border-color: black; margin-left:-1px; margin-top:-1px}
             
+            .window-menus {box-shadow:inset -1px -1px var(--silver), inset 1px 1px var(--silver); background:var(--silver); padding:3px; padding-left:4px; padding-right:4px; display: inline-block; margin-top:-1px}
+            .window-menus:hover {box-shadow:inset -1px -1px var(--gray), inset 1px 1px var(--lightg)}
+            
+            .disabledfont {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--gray); text-shadow:1px 1px 0 var(--lightg)}
 /* window preview handling ------------------------------------------------------------------------------*/
             
-            .prewin98post{             box-shadow: inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); padding:3px; position: absolute; color: var(--prefont);}
-            .pretitle-bar-posts{       font-weight: 700; color: var(--fonttitle); font-size: 11px; background-image: var(--preactive); height: 18px; width: 100%}
-            .prewin98titlebarbutton {          width: 10px; height: 8px; float:right; box-shadow:inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); margin-top:2px; padding:3px; }
-            .prewin98titlebarbutton:active {   width: 10px; height: 8px; float:right; box-shadow:inset 1px 1px var(--preblack),  inset -1px -1px var(--prewhite), inset -2px -2px var(--prelightg), inset 2px 2px var(--pregray); background:var(--presilver); margin-top:2px; padding:3px; }
-            .prewin98scroll {          width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); padding:3px; position: absolute;}
-            .prewin98scroll:active {   width:10px; height: 10px; float:right; box-shadow:inset 1px 1px var(--preblack),  inset -1px -1px var(--prewhite), inset -2px -2px var(--prelightg), inset 2px 2px var(--pregray); background:var(--presilver); padding:3px; margin-top: -1px; margin-left: -1px; position: absolute;}
-            .predisabledfont {         font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--gray); text-shadow:1px 1px 0 var(--prewhite);}
-            .prewin98button {          box-shadow:inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); padding:3px; height:16px; cursor:pointer; color:var(--prefont);}
-            .prewin98button:active {   box-shadow:inset 1px 1px var(--preblack),  inset -1px -1px var(--prewhite), inset -2px -2px var(--prelightg), inset 2px 2px var(--pregray); background:var(--presilver); padding:3px; height:16px; cursor:pointer; color:var(--prefont);}
-            .prebuttontext {           display:inline-flex; align-items:center; color: var(--prestext)}
-            .predisabledfont {         font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--pregray); text-shadow:1px 1px 0 var(--prewhite);}
-            preul.tree-view { font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: 4px; display: block; background: var(--prewhite); 
-                           box-shadow: inset -1px -1px var(--prewhite),inset 1px 1px var(--pregray),inset -2px -2px var(--prelightg),inset 2px 2px var(--preblack); padding: 6px; margin: 0;}
-            prefieldset{  border: none; box-shadow: inset -1px -1px var(--prewhite), inset 1px 1px var(--pregray), inset -2px -2px var(--pregray), inset 2px 2px var(--prelightg); padding:10px; padding-block-start:8px; margin:0;}
+            .prewin98post{box-shadow: inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); padding:3px; position: absolute; color: var(--prefont)}
+            .pretitle-bar-posts{font-weight: 700; color: var(--fonttitle); font-size: 11px; background-image: var(--preactive); height: 18px; width: 100%}
+            .prewin98titlebarbutton {width: 10px; height: 8px; float:right; box-shadow:inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); margin-top:2px; padding:3px}
+            .prewin98titlebarbutton:active {width: 10px; height: 8px; float:right; box-shadow:inset 1px 1px var(--preblack),  inset -1px -1px var(--prewhite), inset -2px -2px var(--prelightg), inset 2px 2px var(--pregray); background:var(--presilver); margin-top:2px; padding:3px}
+            .prewin98scroll {width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); padding:3px; position: absolute}
+            .prewin98scroll:active {width:10px; height: 10px; float:right; box-shadow:inset 1px 1px var(--preblack),  inset -1px -1px var(--prewhite), inset -2px -2px var(--prelightg), inset 2px 2px var(--pregray); background:var(--presilver); padding:3px; margin-top: -1px; margin-left: -1px; position: absolute}
+            .prewin98button {box-shadow:inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); padding:3px; height:16px; cursor:pointer; color:var(--prefont)}
+            .prewin98button:active {box-shadow:inset 1px 1px var(--preblack),  inset -1px -1px var(--prewhite), inset -2px -2px var(--prelightg), inset 2px 2px var(--pregray); background:var(--presilver); padding:3px; height:16px; cursor:pointer; color:var(--prefont)}
+
+            .prebuttontext {display:inline-flex; align-items:center; color: var(--prestext)}
+            .predisabledfont {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--gray); text-shadow:1px 1px 0 var(--prewhite)}
+            .predisabledfont {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--pregray); text-shadow:1px 1px 0 var(--prewhite)}
+            preul.tree-view {font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: 4px; display: block; background: var(--prewhite); 
+                             box-shadow: inset -1px -1px var(--prewhite),inset 1px 1px var(--pregray),inset -2px -2px var(--prelightg),inset 2px 2px var(--preblack); padding: 6px; margin: 0}
+            prefieldset{ border: none; box-shadow: inset -1px -1px var(--prewhite), inset 1px 1px var(--pregray), inset -2px -2px var(--pregray), inset 2px 2px var(--prelightg); padding:10px; padding-block-start:8px; margin:0}
                   
 /* Window icon handling ------------------------------------------------------------------------------*/
             
-            .help, .minimize, .maximize, .close { background-image: var(--spritesheet); width:12px; height:10px; margin-top: -1px; margin-left: -1px;}
-            .help { background-position: -66px -215px;} .minimize { background-position: -82px -215px;} .maximize { background-position: -98px -215px;} .close { background-position: -114px -215px;}
+            .help, .minimize, .maximize, .close {background-image: var(--spritesheet); width:12px; height:10px; margin-top: -1px; margin-left: -1px}
+            .help {background-position: -66px -215px} .minimize {background-position: -82px -215px} .maximize {background-position: -98px -215px} .close {background-position: -114px -215px}
         
-            .scrollup, .scrollright, .scrolldown, .scrollleft, .cornerpeice, .smallscrollup, .smallscrolldown { background-image: var(--spritesheet); height: 16px; width: 16px; margin-top: -3px; margin-left: -3px;}
-            .scrolldown { background-position: 0px -212px; } .scrollleft { background-position: -16px -212px;} .scrollup { background-position:  -32px -212px; } .scrollright { background-position: -48px -212px;}
-            .smallscrollup { background-position: -38px -218px; height: 2px; width: 3px;} .smallscrolldown { background-position: -6px -220px; height: 2px; width: 3px;} 
+            .scrollup, .scrollright, .scrolldown, .scrollleft, .cornerpeice, .smallscrollup, .smallscrolldown {background-image: var(--spritesheet); height: 16px; width: 16px; margin-top: -3px; margin-left: -3px}
+            .scrolldown {background-position: 0px -212px} .scrollleft { background-position: -16px -212px} .scrollup {background-position:  -32px -212px} .scrollright {background-position: -48px -212px}
+            .smallscrollup {background-position: -38px -218px; height: 2px; width: 3px} .smallscrolldown {background-position: -6px -220px; height: 2px; width: 3px} 
 
-            /* disabled arrow css */
-            .tinyarrowdisableddown {  background-image: var(--spritesheet); height:  3px; width:  4px; background-position: -192px -216px;}
-            .smallarrowdisableddown { background-image: var(--spritesheet); height:  4px; width:  6px; background-position: -164px -219px;}
-            .arrowdisableddown {      background-image: var(--spritesheet); height: 16px; width: 16px; background-position: -158px -212px; margin-top:-3px; margin-left:-3px;}
-            .tinyarrowdisabledup {    background-image: var(--spritesheet); height:  3px; width:  4px; background-position: -192px -212px;}
-            .arrowdisableup {         background-image: var(--spritesheet); height: 16px; width: 16px; background-position: -175px -212px; margin-top:-3px; margin-left:-3px;}
+            .tinyarrowdisableddown, .smallarrowdisableddown, .arrowdisableddown, .tinyarrowdisabledup, .arrowdisableup, .menuarrow1, .tinyarrowdown, .smallarrowdown, .disabledtickbox, .enabledtickbox {background-image: var(--spritesheet)}
+            .tinyarrowdisableddown {height: 3px; width: 4px; background-position: -192px -216px}
+            .smallarrowdisableddown {height: 4px; width: 6px; background-position: -164px -219px}
+            .arrowdisableddown {height: 16px; width: 16px; background-position: -158px -212px; margin-top:-3px; margin-left:-3px}
+            .tinyarrowdisabledup {height: 3px; width: 4px; background-position: -192px -212px}
+            .arrowdisableup {height: 16px; width: 16px; background-position: -175px -212px; margin-top:-3px; margin-left:-3px}
             
-            /* alternate arrow css */
-            .menuarrow1 {               background-image: var(--spritesheet); height:  7px; width:  4px; background-position:  -54px -216px; margin: auto; float: right;}
-            .tinyarrowdown {            background-image: var(--spritesheet); height:  5px; width:  7px; background-position:   -6px -220px; margin: auto; float: right;}
-            .smallarrowdown {           background-image: var(--spritesheet); height:  3px; width:  5px; background-position:   -5px -219px; margin: auto; float: right;}
+            .menuarrow1 {height:  7px; width:  4px; background-position: -54px -216px; margin: auto; float: right}
+            .tinyarrowdown {height:  5px; width:  7px; background-position: -6px -220px; margin: auto; float: right}
+            .smallarrowdown {height:  3px; width:  5px; background-position: -5px -219px; margin: auto; float: right}
             
-            .disabledtickbox {          background-image: var(--spritesheet); height:  7px; width:  7px; background-position: -143px -212px; margin-top:1px; margin-left:1px; position: absolute;}
-            .enabledtickbox {           background-image: var(--spritesheet); height:  7px; width:  7px; background-position: -143px -220px; position: absolute;}
+            .disabledtickbox {height: 7px; width: 7px; background-position: -143px -212px; margin-top:1px; margin-left:1px; position: absolute}
+            .enabledtickbox {height: 7px; width: 7px; background-position: -143px -220px; position: absolute}
             
             /* tumblr post container things */
-            .sidescrollbarmiddlemiddle { height:  2px; width:467px; background-image: var(--windowplacement); background-repeat: repeat-y; overflow:hidden;}
-            .scrollbarmiddle {           height:  2px; width: 16px; background-image: var(--scrollbar); background-repeat: repeat; overflow:hidden; background-color: var(--white)}
-            .verticalsplitter {          background-image: var(--vertsplitter); height: 16px; width: 2px; background-repeat: repeat-y;}
+            .sidescrollbarmiddlemiddle {height:  2px; width:467px; background-image: var(--windowplacement); background-repeat: repeat-y; overflow:hidden;}
+            .scrollbarmiddle {height:  2px; width: 16px; background-image: var(--scrollbar); background-repeat: repeat; overflow:hidden; background-color: var(--white)}
             
 /* Start bar handling ------------------------------------------------------------------------------*/
+            
+            .win98start{ box-shadow:inset -1px -1px var(--taskbarstarttop2), inset 1px 1px var(--taskbarstartbottom2), inset -2px -2px var(--taskbarstarttop1), inset 2px 2px var(--taskbarstartbottom1); 
+                         background:var(--silver); padding:3px; color:var(--font); height: 16px; width: 50px; margin-left: 2px; margin-top: 2px; margin-right: 2px; font-family:"Pixelated MS Sans Serif"; font-size:11px;}
+            .windowsexplorerlogo { background-image: var(--spritesheet); margin-top:2px; height: 16px; width: 20px; background-position: -197px -212px; float:right; margin-right:9px;}
+            .windowslogo { background-image: var(--spritesheet); height: 16px; width: 18px; background-position: -217px -212px;}
 
-            /* taskbar settings */
-            .start_bar { position: fixed; background-color: var(--silver); ; bottom: 0; height: 28px; width: 100%; z-index: 3; font-family:sans-serif; font-size: 12px; margin-left:-8px;}
-            .start_bar .top_border { border-bottom: 1px solid var(--lightg); border-top: 1px solid var(--white);}
-            .big_seperator { float: left; border-left: 1px solid var(--gray); border-right: 1px solid var(--lightg); height: 22px; margin-top: 2px; margin-left: -1px;} /*thin seperator but tall*/
-            .small_seperator { float: left;  border-left: 1px solid var(--white); border-top: 1px solid var(--white); margin-top: 3px; margin-left: 1px; height:17px; /*thin seperator but tall*/
-                                          border-right: 1px solid var(--gray); border-bottom: 1px solid var(--gray); background-color: var(--silver); width: 1px; height: 18px;}
-            .start_bar .time { line-height: 18px; float: right; font-size: 10px; margin-right: 10px;}
-            .taskbaricons {    float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px;}
-
-            .start_bar .tray { box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver);
-                               height: 18px; width: 79px; margin-right: 5px; margin-top: 2px; float: right;} 
-                                    
-            /* start menu button toggle */
-            .win98start{            box-shadow:inset -1px -1px var(--taskbarstarttop2), inset 1px 1px var(--taskbarstartbottom2), inset -2px -2px var(--taskbarstarttop1), inset 2px 2px var(--taskbarstartbottom1); 
-                                    background:var(--silver); padding:3px; color:var(--font); height: 16px; width: 50px; margin-left: 2px; margin-top: 2px; margin-right: 2px; font-family:"Pixelated MS Sans Serif"; font-size:11px;}
-            .windowsexplorerlogo {  background-image: var(--spritesheet); margin-top:2px; height: 16px; width: 20px; background-position: -197px -212px; float:right; margin-right:9px;}
-            .windowslogo {          background-image: var(--spritesheet); height: 16px; width: 18px; background-position: -217px -212px;}
-
-            /* start menu application icon config */
-            .submenu18 {        height: 18px; background-color:var(--white);   color: var(--text); width:100%;} /* general dropdown menus */
-            .submenu20 {        height: 20px; background-color:var(--silver); color: var(--text); width:100%;} /* submneu hovers */
-            .submenu20:hover {  height: 20px; background-color:var(--prussian); color:var(--hover); width:100%;}
-            .submenu36 {        height: 36px; background-color:var(--silver); color: var(--text); width:100%;} /* startmenu hovers */
-            .submenu36:hover {  height: 36px; background-color:var(--prussian); color:var(--hover); width:100%;}
-
-            /* start menu misc */
-            .menuapplicationsplit { background-image: var(--horisplitter); height: 2px; width: 1px;background-repeat: repeat-x;}
-            .windowsstartmenubar {  background-image: var(--spritesheet); height: 159px; width:  21px; background-position: -339px -72px; position:absolute; float: left;}
-
-            /* start menu icon references */
-            .patchnotes,    .menuprograms,  .menudocuments, .menufavourites, .menushutdown, .logofficon,
-            .menusettings,  .menufind,      .menuhelp,      .menurun,        .menulogoff,   .shutdownicon
-            { background-image: var(--spritesheet); margin: auto; float: left; height: 36px; width: 36px;}
-                
-            .patchnotes {       background-position:    0px   0px;} /* Patchnotes */    .menuprograms {     background-position:  -36px   0px;} /* Programs */
-            .menudocuments {    background-position: -108px   0px;} /* Documents */     .menufavourites {   background-position:  -72px   0px;} /* Favourites */
-            .menusettings {     background-position: -144px   0px;} /* Settings */      .menufind {         background-position: -180px   0px;} /* Find */
-            .menuhelp {         background-position: -216px -36px;} /* Help */          .menurun {          background-position: -252px -36px;} /* Run */
-            .menulogoff {       background-position: -288px   0px;} /* Log Off */       .menushutdown {     background-position: -324px   0px;} /* Shut Down */
-            .logofficon {       background-position: -288px -36px;} /* Log Off */       .shutdownicon {     background-position: -324px -36px;} /* Shut Down */
+            .submenu18 {height: 18px; background-color:var(--silver); color: var(--text); width:100%} .submenu18:hover { height: 18px; background-color:var(--prussian); color:var(--hover); width:100%}
+            .submenu20 {height: 20px; background-color:var(--silver); color: var(--text); width:100%} .submenu20:hover {height: 20px; background-color:var(--prussian); color:var(--hover); width:100%}
+            .submenu36 {height: 36px; background-color:var(--silver); color: var(--text); width:100%} .submenu36:hover { height: 36px; background-color:var(--prussian); color:var(--hover); width:100%}
+            
+            .patchnotes, .menuprograms, .menudocuments, .menufavourites, .menushutdown, .logofficon, .menusettings, .menufind, .menuhelp, .menurun, .menulogoff, .shutdownicon{ background-image: var(--spritesheet); margin: auto; float: left; height: 36px; width: 36px;}
+            .patchnotes {background-position:    0px   0px} .menuprograms {background-position: -36px 0px} .menudocuments {background-position: -108px   0px} .menufavourites {background-position: -72px 0px}
+            .menusettings {background-position: -144px   0px} .menufind {background-position: -180px  0px} .menuhelp {background-position: -216px -36px} .menurun {background-position: -252px -36px}
+            .menulogoff {background-position: -288px   0px} .menushutdown {background-position: -324px 0px} .logofficon {background-position: -288px -36px} .shutdownicon {background-position: -324px -36px}
             
             /* start menu submenu icon references */
-            .menuprograms123,   .menuapplications7,     .menucommunications1,   .menusystemtools1,  .taskbaricon1,
-            .menuprograms4,     .menuapplications8,     .menucommunications2,   .menusystemtools2,  .taskbaricon2,
-            .menuprograms5,     .menuapplications9,     .menucommunications3,   .menusystemtools3,  .taskbaricon3,
-            .menuprograms6,     .menuapplications10,    .menucommunications4,   .menusystemtools4,  .taskbaricon4,
-            .menuprograms7,     .menuapplications11,    .explorerlinks          .menusystemtools5,  .calendar,
-            .menufind1,         .menuapplications12,    .menuinternettools1,    .menusystemtools6,  .menufavouritesfolder,
-            .menufind2,         .menuapplications13,    .menuinternettools2,    .menusystemtools7,  .menufavouriteslink,
-            .menufind3,         .menuapplications14,    .menuinternettools3,    .menusystemtools8,  .explorergo,
-            .menufind4,         .menuapplications15,    .menuinternettools4,    .menusystemtools9,  .explorerback,
-            .menugames1,        .menusettings1,         .menuentertainment1,    .menusystemtools10, .menudocumentsfolder,
-            .menugames2,        .menusettings2,         .menuentertainment2,    .menusystemtools11, .menudocumentssound,
-            .menugames3,        .menusettings3,         .menuentertainment3,    .menusystemtools12, .menudocuments1,
-            .menugames4,        .menusettings4,         .menuentertainment4,    .menusystemtools13, .menudocumentssound
-            .menugames3,        .menusettings5,         .menuentertainment5,    .none,
-            .menugames4,        .menusettings6,         .menuentertainment
+            .menuprograms123, .menuprograms4, .menuprograms5, .menuprograms6, .menuprograms7, .menufind1, .menufind2, .menufind3, .menufind4, .menusettings1, .menusettings2, 
+            .menusettings3, .menusettings4, .menusettings5, .menusettings6, .menuapplications7, .menuapplications8, .menuapplications9, .menuapplications10, .menuapplications11, 
+            .menuapplications12, .menuapplications13, .menuapplications14, .menuapplications15, .explorerlinks, .none, .menucommunications1, .menucommunications2, .menucommunications3, 
+            .menucommunications4, .taskbaricon1, .taskbaricon2, .taskbaricon3, .taskbaricon4,  .calendar, .explorergo, .explorerback, .menufavouritesfolder, .menufavouriteslink, 
+            .menusystemtools1, .menusystemtools2, .menusystemtools3, .menusystemtools4, .menusystemtools5, .menusystemtools6, .menusystemtools7, .menusystemtools8, .menusystemtools9, 
+            .menusystemtools10, .menusystemtools11, .menusystemtools12, .menusystemtools13, .menuinternettools1, .menuinternettools2, .menuinternettools3, .menuinternettools4, 
+            .menuentertainment1, .menuentertainment2, .menuentertainment3, .menuentertainment4, .menuentertainment5, .menuentertainment, .menusettings1, .menusettings2, .menusettings3, 
+            .menusettings4, .menusettings5, .menusettings6, .menugames1, .menugames2, .menugames3, .menugames4,  .menudocuments1, .menudocumentssound, .menudocumentsfolder
             { background-image: var(--spritesheet); margin: auto; float: left; height: 20px; width: 20px;}
-
             .menuapplications7 {    background-position:  -20px  -92px;} /* calc */             .menuapplications12 {   background-position:    0px -112px;} /* ask */
             .menuapplications8 {    background-position:  -40px  -92px;} /* img */              .menuapplications13 {   background-position:  -20px -112px;} /* yahoo */
             .menuapplications9 {    background-position:  -60px  -92px;} /* wordpad */          .menuapplications14 {   background-position:  -40px -112px;} /* msn */
             .menuapplications10 {   background-position:  -80px  -92px;} /* paint */            .menuapplications15 {   background-position:  -60px -112px;} /* prodigy */
-            .menuapplications11 {   background-position: -100px  -92px;} /* notepad */
-            .menucommunications1 {  background-position:    0px -132px;} /* Dial Up */          .menuentertainment1 {   background-position:    0px -152px;} /* Cd player */
-            .menucommunications2 {  background-position:  -20px -132px;} /* Hyper terminal */   .menuentertainment2 {   background-position:  -20px -152px;} /* Cd Burner */
-            .menucommunications3 {  background-position:  -40px -132px;} /* Configurations */   .menuentertainment3 {   background-position:  -40px -152px;} /* Cd Recorder */
-            .menucommunications4 {  background-position:  -60px -132px;} /* Phone Dialup */     .menuentertainment4 {   background-position:  -60px -152px;} /* Volume Player */
-                                                                                                .menuentertainment5 {   background-position:  -80px -152px;} /* Media Player */
+            .menuapplications11 {   background-position: -100px  -92px;} /* notepad */          .menuentertainment1 {   background-position:    0px -152px;} /* Cd player */
+            .menucommunications1 {  background-position:    0px -132px;} /* Dial Up */          .menuentertainment2 {   background-position:  -20px -152px;} /* Cd Burner */
+            .menucommunications2 {  background-position:  -20px -132px;} /* Hyper terminal */   .menuentertainment3 {   background-position:  -40px -152px;} /* Cd Recorder */
+            .menucommunications3 {  background-position:  -40px -132px;} /* Configurations */   .menuentertainment4 {   background-position:  -60px -152px;} /* Volume Player */
+            .menucommunications4 {  background-position:  -60px -132px;} /* Phone Dialup */     .menuentertainment5 {   background-position:  -80px -152px;} /* Media Player */
             .menugames1 {           background-position:    0px -172px;} /* Freecell */         .menuinternettools1 {   background-position: -140px  -72px;} /* Internet wizard */
             .menugames2 {           background-position:  -20px -172px;} /* Hearts */           .menuinternettools2 {   background-position: -160px  -72px;} /* Microsoft chat */
             .menugames3 {           background-position:  -40px -172px;} /* Minesweeper */      .menuinternettools3 {   background-position: -180px  -72px;} /* Net meeting */
@@ -264,29 +227,25 @@
             .menusystemtools1 {     background-position: -140px  -92px;} /* character map */    .menusystemtools11 {    background-position: -140px -112px;} /* systeminfo */
             .menusystemtools2 {     background-position: -160px  -92px;} /* clipboard viewer */ .menusystemtools12 {    background-position: -160px -112px;} /* systemmonitor */
             .menusystemtools3 {     background-position: -180px  -92px;} /* disk cleanup */     .menusystemtools13 {    background-position: -180px -112px;} /* welcometowindows */
-            .menusystemtools4 {     background-position: -200px  -92px;} /* disk defrag */
-            .menusystemtools5 {     background-position: -220px  -92px;} /* drive converter */  .menuprograms123 {      background-position: 0px -72px;} /* folder icon */
+            .menusystemtools4 {     background-position: -200px  -92px;} /* disk defrag */      .explorerlinks {        background-position: -211px -222px; height:  5px; width:  4px;}
+            .menusystemtools5 {     background-position: -220px  -92px;} /* drive converter */  .menuprograms123 {      background-position:    0px  -72px;} /* folder icon */
             .menusystemtools6 {     background-position: -240px  -92px;} /* maintain wizard */  .menuprograms4 {        background-position: -140px -132px;} /* internet explorer */
             .menusystemtools7 {     background-position: -260px  -92px;} /* net watcher */      .menuprograms5 {        background-position: -160px -132px;} /* MSDOS */
             .menusystemtools8 {     background-position: -280px  -92px;} /* resource meter */   .menuprograms6 {        background-position: -180px -132px;} /* Outlook Express */
             .menusystemtools9 {     background-position: -300px  -92px;} /* scandisk */         .menuprograms7 {        background-position: -200px -132px;} /* Windows Explorer */
-            .menusystemtools10 {    background-position: -320px  -92px;} /* schedualed tasks */
-                                                                                                .menusettings1 {        background-position: -140px -172px;} /* control panel */
+            .menusystemtools10 {    background-position: -320px  -92px;} /* schedualed tasks */ .menusettings1 {        background-position: -140px -172px;} /* control panel */
             .menudocuments1 {       background-position: -140px -152px;} /* my documents */     .menusettings2 {        background-position: -160px -172px;} /* printers */
             .menudocumentssound {   background-position: -160px -152px;} /* sound files */      .menusettings3 {        background-position: -180px -172px;} /* taskbar */
             .menudocumentsfolder {  background-position: -180px -152px;} /* document file */    .menusettings4 {        background-position: -200px -172px;} /* folder options */
             .menudocumentsdoc {     background-position: -220px -152px;} /* document file */    .menusettings5 {        background-position: -220px -172px;} /* Active desktop */
             .menufavouriteslink {   background-position: -200px -152px;} /* favourates link */  .menusettings6 {        background-position: -240px -172px;} /* windows update */
-            .menufavouritesfolder { background-position: -180px -152px;} /* favourite folder */ 
-                                                                                                .taskbaricon1 {         background-position:    0px -192px;} 
+            .menufavouritesfolder { background-position: -180px -152px;} /* favourite folder */ .taskbaricon1 {         background-position:    0px -192px;} 
             .menufind1 {            background-position: -140px -192px;} /* files or folders */ .taskbaricon2 {         background-position:  -20px -192px; margin-left: 2px;} 
             .menufind2 {            background-position: -160px -192px;} /* computer */         .taskbaricon3 {         background-position:  -40px -192px; margin-left: 2px;} 
             .menufind3 {            background-position: -180px -192px;} /* on the internet */  .taskbaricon4 {         background-position:  -60px -192px; margin-left: 2px;}
             .menufind4 {            background-position: -200px -192px;} /* people */           .calendar {             background-position:  -82px -194px; margin-left: 2px; height: 16px; width: 16px;}
-            
             .explorergo {           background-position: -101px  -72px;}                        .none {                 background-position: -100px -192px;                   height: 18px; width: 18px;}
             .explorerback {         background-position: -121px  -72px;}
-            .explorerlinks {        height:  5px; width:  4px; background-position: -211px  -222px;}
 
             .taskbartask1 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; margin-left: 4px; background:var(--white); padding:2px; color:var(--font); background-repeat: repeat;
                             box-shadow:inset -1px -1px var(--taskbar1bottom2), inset 1px 1px var(--taskbar1top2), inset -2px -2px var(--taskbar1bottom1), inset 2px 2px var(--taskbar1top1); background-image: var(--scrollbar);}
@@ -294,13 +253,26 @@
                             box-shadow:inset -1px -1px var(--taskbar2bottom2), inset 1px 1px var(--taskbar2top2), inset -2px -2px var(--taskbar2bottom1), inset 2px 2px var(--taskbar2top1);}
             .taskbartask3 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; margin-left: 4px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat;
                             box-shadow:inset -1px -1px var(--taskbar3bottom2), inset 1px 1px var(--taskbar3top2), inset -2px -2px var(--taskbar3bottom1), inset 2px 2px var(--taskbar3top1);}
+
+            .big_seperator { float: left; border-left: 1px solid var(--gray); border-right: 1px solid var(--lightg); height: 22px; margin-top: 2px; margin-left: -1px;} /*thin seperator but tall*/
+            .small_seperator { float: left;  border-left: 1px solid var(--white); border-top: 1px solid var(--white); margin-top: 3px; margin-left: 1px; height:17px; /*thin seperator but tall*/
+                               border-right: 1px solid var(--gray); border-bottom: 1px solid var(--gray); background-color: var(--silver); width: 1px; height: 18px;}
+            .menuapplicationsplit { border-bottom: 1px solid var(--white); background-color: var(--gray); height: 1px; width: 1px;}
             
-            .clock{ box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray); padding:2px; float:right; width:96px; height:18px; margin-right:2px; margin-top:2px;}
+            .start_bar { position: fixed; background-color: var(--silver); ; bottom: 0; height: 28px; width: 100%; z-index: 3; font-family:sans-serif; font-size: 12px; margin-left:-8px;}
+            .start_bar .time { line-height: 18px; float: right; font-size: 10px; margin-right: 10px;}
+            .start_bar .top_border { border-bottom: 1px solid var(--lightg); border-top: 1px solid var(--white);}
             .start_bar .time {  line-height: 18px; float: right; font-size: 10px; margin-right: 10px; color:var(--text);}
+            .taskbaricons { float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px;}
+            .windowsstartmenubar { background-image: var(--spritesheet); height: 159px; width:  21px; background-position: -339px -72px; position:absolute; float: left;}
+    
+            .clock{ box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray); padding:2px; float:right; width:96px; height:18px; margin-right:2px; margin-top:2px;}
+            
+            .smalliconscontainer {       width:42px; height:36px; display: inline-block; margin-left:16px; }
             .calendar { float: left; margin-top: 1px; margin-left: 3px;}
             .taskbaricons { float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px;}
             .smalliconscontainer {       width:42px; height:36px; display: inline-block; margin-left:16px; }
-            
+
  /* Message box reference sheets ------------------------------------------------------------------------------*/
 
             .displayboxdisplay {    width:184px; height:169px; background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/display%20window.png')}
@@ -328,15 +300,12 @@
             ul.tree-view details[open] summary { margin-bottom: 0;} 
             ul.tree-view details[open]>summary:before { content: "-"; }
             
-            /* checkboxes */
             .field-row{ display:flex; align-items: center;} .field-row>*+*{ margin-left: 6px;} 
             .field-row-stacked{ display:flex; flex-direction: column;} .field-row-stacked *+*{ margin-top: 6px;}
             
-            a {         color: var(--text); text-decoration: none;} a:hover { text-decoration: underline; color: var(--hover)}
-            span {      background-color: var(--white); color: var(--text);} icon { background-color: var(--wincyan); color: var(--white)}
-            label {     display:inline-flex; align-items: center; color: var(--text);} underline { text-decoration-line: underline;} h3 { font-size: 2rem;}
-            fieldset{  border: none; box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray), inset -2px -2px var(--gray), inset 2px 2px var(--lightg); padding:10px; padding-block-start:8px; margin:0; color:var(--text);}
-            strong {    color: var(--blue)}
+            a {color: var(--text); text-decoration: none} a:hover {text-decoration: underline; color: var(--hover)} strong {color: var(--blue)} h3 {font-size: 2rem} underline {text-decoration-line: underline;}
+            span {background-color: var(--white); color: var(--text)} icon {background-color: var(--wincyan); color: var(--white)} label {display:inline-flex; align-items: center; color: var(--text)} underline {text-decoration-line: underline;}
+            fieldset{border: none; box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray), inset -2px -2px var(--gray), inset 2px 2px var(--lightg); padding:10px; padding-block-start:8px; margin:0; color:var(--text)}
             
 /* tumblr post handling ------------------------------------------------------------------------------*/
             
@@ -349,25 +318,20 @@
             .meta div { margin: 0 0 0.4em 0 !important;} .meta div a { text-decoration: none;} .meta div:last-child { margin-bottom: 0 !important;} /* bottom of posts before footer */
             .content p:last-child { margin-bottom: 0 !important;} .content blockquote:last-child { margin-bottom: 0 !important;} blockquote, ul, ol  { margin: 0 0 0.8em 0;}
             
-            /* text Post settings */
             blockquote { margin-left: 2px; padding-left: 4px; margin-top:-5px; margin-bottom:5px; border-left: 2px solid var(--midgray); border-left: 2px solid var(--midgray); } /* lines at the side of posts */
             .quote .dash { float: left; padding: 0 2px 0 2px;} .quote .source { float: left;}
             .chat .line:last-of-type { margin-bottom: 0;} .chat ul { padding: 0; list-style: none;} .chat ol { padding: 0; list-style: none;}
             
-            /* image Post settings */
             .body img { max-width: 100%; overflow: hidden;} .caption img { max-width: 100%; overflow: hidden;} img.full_image { ,width: 451px; overflow: hidden;}
             .middle img { max-width: 451px; width: 100%; height: 100%; display: block;} a img {border: 0;}
             
-            /* audio Post settings */
             .audio_container { overflow: hidden; position: relative; width: 100px;} .tumblr_audio_player {width: 100%;} .posts .audio .audio_player embed { display: block;}
             .soundcloud_audio_player { width: 100%;} .spotify_audio_player { height: 80px !important; width:100%;}
             .tumblr_video_container {   position: relative; width:auto !important; height:auto !important; padding: auto;}
 
-            /* tumblr likes formatting */
             .like-b { position:relative; display:inline-block; height:1em; line-height:1em; color:var(--text); background-color: var(--silver)} .like-b .like_button iframe { position:absolute; opacity:0; background-color: var(--silver)}
             .like-b .liked + .b { color:inherit;} .like-b .liked + .b:after { content:'d';} .like-b:hover { color:var(--hover); text-decoration-line: underline; } 
 
-            /* tumblr notes formatting */
             .notes { margin-top:0px; text-align:left;} ol.notes { padding: 2px; list-style-type: none; max-height: 320px; width:463px; overflow:auto; margin-top:-6px;} 
             ol.notes li.note img.avatar { vertical-align: -4px; margin-right: 4px; width: 16px; height:16px; margin-top:-2px; margin-bottom;-2px;} ol.notes li.note .answer_content { font-weight: normal;}
             ol.notes li.note blockquote { padding: 4px 10px; margin: 10px 0px 0px 25px;} ol.notes li.note blockquote a { text-decoration: none; color: var(--blue);} ul, ol { padding: 0 0 0 18px;} /*infinate scroll*/
@@ -428,7 +392,7 @@
             function pyrocurrentopen(){ if(pyrocurrentactive == 0){ pyroButtonOpen = false; task2toggle();}}
         </script>
 
-        <div class="win98post" style="z-index: 5; position: fixed; top: 68%; left: 4%;" onmousedown="catactive();" id="cat">
+        <div class="win98post" style="z-index: 5; position: fixed; top: 68%; left: 77px;" onmousedown="catactive();" id="cat">
             <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="catclose(); pyrowindow();"><div class="close"></div></div>
             <div class="win98titlebarbutton" title="Minimize" onclick="catminimize();"> <div class="minimize"></div></div>
             <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
@@ -444,7 +408,7 @@
             function catminimize() { cat.style.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 1; pyrocurrentopen();}
         </script>
 
-        <div class="win98post" style="z-index: 5; position: fixed; top: 58%; left: 12%;" onmousedown="pyroactive();" id="pyro">
+        <div class="win98post" style="z-index: 5; position: fixed; top: 58%; left: 229px;" onmousedown="pyroactive();" id="pyro">
             <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="pyroclose();"><div class="close"></div></div>
             <div class="win98titlebarbutton" title="Minimize" onclick="pyrominimize();"> <div class="minimize"></div></div>
             <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
@@ -476,13 +440,13 @@
 
 <!-- regular message box rendering ------------------------------------------------------------------------------>
 
-        <div class="win98post" style="height: 50px; width:306px; left: 77%; top: 62%; z-index:5;" onmousedown="messageactive();" id="message">
+        <div class="win98post" style="height: 50px; width:306px; top: 62%; left: 1465px; z-index:5;" onmousedown="messageactive();" id="message">
              <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:2px; margin-top:2px;" onclick="messageclose()"><div class="close"></div></div>
              <div class="win98titlebarbutton" style="margin-top:2px;" onclick="messagemaximize()"><div class="maximize"></div></div>
              <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU"><div class="win98titlebarbutton" style="margin-top:2px; cursor: default;"> <div class="help"></div> </div> </a> 
             <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="title-bar-text" id="messagetext">🧮 brain go brrrrr</div></div>
             <div class="window-body" style="margin-right: 4px; margin-top: 5px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
-                <p style="color: var(--blue); margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>6:22am on Febuary 6th, 2021. [GMT]</label></p></div></div>
+                <p style="color: var(--blue); margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>12:30pm on Febuary 10th, 2021. [GMT]</label></p></div></div>
         
         <script>
             var message = document.getElementById("message"); messagewin = document.getElementById("messagewindow");
@@ -583,7 +547,7 @@
         
 <!-- Display properties rendering ------------------------------------------------------------------------------>
             
-        <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; left: 77%; z-index:5;" onmousedown="diskactive()" id="disk" data-theme="dark">
+        <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; left: 1465px; z-index:5;" onmousedown="diskactive()" id="disk" data-theme="dark">
             <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:2px; margin-top:2px; cursor: pointer;" title="close" onclick="diskclose()"><div class="close"></div></div>
             <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="margin-top:2px" title="help"> <div class="help"></div></div></a> 
             <div class="title-bar-98" id="diskwindow"> <div class="title-bar-text" id="disktext">📺 Display Properties</div></div>
@@ -960,13 +924,13 @@
                                 <div class="win98buttoninactive" style="position:absolute; margin-left:1px; margin-top:9px; width:11px; height:2px;"><div class="tinyarrowdisableddown"  style="margin-left:4px;"></div></div></div></ul>
                             
                         <div class="win98buttoninactive" style="position: absolute; margin-left:262px; width:38px; height:17px; margin-top:0px; padding: 2px;" onclick="colourpicker()"> 
-                            <div class="verticalsplitter" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
+                            <div class="big_seperator" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
                             <div class="smallarrowdown" style="position:absolute; margin-left: 31px; margin-top:7px"></div>
                             <div class="container" style="width:20px; height:11px; margin-top: 2px; margin-left: 3px; border:1px solid #000000; background-color: #008080;" id="currentpickedc"></div>
                             
                             <div class="win98post" style="position:absolute; z-index:10000; width:74px; height:96px; padding:5px; margin-top:4px; margin-left:-20000px;" onmouseleave="colourpickerexit()" id="coloursampler">
                                 <div class="win98buttonpressed" style="position: absolute; width:38px; height:17px; margin-left:-5px; margin-top:-26px; padding: 2px;" onclick="colourpicker()"> 
-                                    <div class="verticalsplitter" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
+                                    <div class="big_seperator" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
                                     <div class="smallarrowdown" style="position:absolute; margin-left: 31px; margin-top:7px"></div>
                                     <div class="container" style="width:20px; height:11px; margin-top: 2px; margin-left: 3px; border:1px solid #000000; background-color: #008080;" id="currentpickedo"></div></div>
                                 <div class="colourselect" style="background-color: #ffffff" onclick=" cpick1()"></div> <div class="colourselect" style="background-color: #000000" onclick=" cpick2(); wallpapercust();"></div> 
@@ -1007,12 +971,14 @@
                             function backcolourpreview(){ // changes preview desktop icons background colour + background colours in appearance tab.
                                 document.getElementById("iconpre1").style.backgroundColor = currentcolour; document.getElementById("iconpre2").style.backgroundColor = currentcolour; 
                                 document.getElementById("iconpre3").style.backgroundColor = currentcolour; document.getElementById("iconpre4").style.backgroundColor = currentcolour; 
-                                document.getElementById("iconpre6").style.backgroundColor = currentcolour; document.getElementById("iconpreview").style.backgroundColor = currentcolour;  
+                                document.getElementById("iconpre6").style.backgroundColor = currentcolour; document.getElementById("iconpre7").style.backgroundColor = currentcolour;
+                                document.getElementById("iconpre8").style.backgroundColor = currentcolour; document.getElementById("iconpreview").style.backgroundColor = currentcolour;  
                                 ap.style.backgroundColor = currentcolour; fontcolorsetpreview(); dcb1.style.backgroundColor = currentcolour;  dcb2.style.backgroundColor = currentcolour; }
                             function fontcolorsetpreview(){ // changes preview desktop icons span colour
                                 document.getElementById("iconpre1").style.color = fontcolour; document.getElementById("iconpre2").style.color = fontcolour; 
                                 document.getElementById("iconpre3").style.color = fontcolour; document.getElementById("iconpre4").style.color = fontcolour; 
-                                document.getElementById("iconpre6").style.color = fontcolour;}
+                                document.getElementById("iconpre6").style.color = fontcolour; document.getElementById("iconpre7").style.color = fontcolour;
+                                document.getElementById("iconpre8").style.color = fontcolour;}
                             
                             function cpick1() {   currentcolour = "#ffffff"; fontcolour = "#000"; colourpickerupdate(); document.getElementById("iconpre2").style.backgroundColor = currentcolour;}
                             function cpick2() {   currentcolour = "#000000"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
@@ -1038,7 +1004,7 @@
                         </script>
                         
                         <div class="win98buttoninactive" style="position: absolute; margin-left:312px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
-                            <div class="verticalsplitter" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
+                            <div class="big_seperator" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
                             <div class="smallarrowdisableddown" style="margin-left: 31px; margin-top:7px"></div></div><br><br></div>
                     <!-- line 3 -->
                     <div class="container" style="margin-top:5px;">
@@ -1052,7 +1018,7 @@
                                 <div class="win98buttoninactive" style="position:absolute; margin-top: -4px; margin-left:29px; width:10px; height:11px;"><div class="arrowdisableddown" style="margin-left:-4px;"></div></div></ul>
                         
                         <div class="win98buttoninactive" style="position: absolute; margin-left:262px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
-                            <div class="verticalsplitter" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
+                            <div class="big_seperator" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
                             <div class="smallarrowdisableddown" style="margin-left: 31px; margin-top:7px"></div></div> 
                         
                         <div class="win98buttoninactive" style="position:absolute; margin-top:0px; width:15px; height:15px; margin-left:313px;">
@@ -1062,63 +1028,73 @@
             
             <!-- --------------------------------------- Effects tab --------------------------------------- -->
             <!-- background inner container -->
-            <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="effects">
-                    
+                <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="effects">
                     <fieldset style="width:336px; height:165px; margin-left: 12px; margin-top: 14px;">
                         <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: var(--silver); width:68px; padding: 0px 0px 3px 3px; margin-left:-3px"> Desktop Icons </label>
                         
-                        <ul class="tree-view" style="width:318px; height:88px; margin-top:5px; margin-left:2px; overflow:hidden; background-color: #008080;" id="iconpreview">
-                            <div class="container" style="height:75px;">
-                                <div class="smalliconscontainer" style="margin-left:3px; margin-top:2px;">
-                                    <center><div class="thealonicpreview" id="thealonicpreview"></div>
-                                    <div class="icon_label" style="color:white;"><icon id="iconpre1">
-                                        <label style="max-width:47px;">Thealonic</label>
-                                        <label style="max-width:42px;"> </label></icon></div>
-                                </center></div>
-                                <!-- Button Two -->
-                                <div class="smalliconscontainer">
-                                    <center><div class="veryvherstypreview" id="veryverstyiconpreview"></div>
-                                    <div class="icon_label" style="color:white;"><icon id="iconpre2">
-                                        <label style="max-width:42px;">Very</label>
-                                        <label style="max-width:42px;">Vhersty</label></icon></div>
-                                </center></div>
-                                <!-- Button Three -->
-                                <div class="smalliconscontainer">
-                                    <center><div class="twitterpreview" id="twittericonpreview"></div>
-                                    <div class="icon_label" style="color:white;"><icon id="iconpre3">
-                                        <label style="max-width:42px;">Art</label>
-                                        <label style="max-width:42px;">posting</label></icon></div>
-                                </center></div>
-                                <!-- Button Four -->
-                                {block:AskEnabled}
-                                <div class="smalliconscontainer">
-                                    <center><div class="askiconpreview" id="askiconpreview"></div>
-                                    <div class="icon_label" style="color:white;"><icon id="iconpre4">
-                                        <label style="max-width:42px;">Ask</label>
-                                        <label style="max-width:42px;">mommy</label></icon></div>
-                                </center></div>
-                                {/block:AskEnabled}
-                                <!-- Button Five -->
-                                {block:SubmitEnabled}
-                                <div class="smalliconscontainer">
-                                    <center><div class="submiticonpreview" id="submiticonpreview"></div>
-                                    <div class="icon_label" style="color:white;"><icon id="iconpre5">
-                                        <label style="max-width:42px;">Submissions</label>
-                                        <label style="max-width:42px;"> </label></icon></div>
-                                </center></div>
-                                {/block:SubmitEnabled}
-                                <!-- Button Six -->
-                                <div class="smalliconscontainer">
-                                    <center><div class="discordlinkpreview" id="discordiconpreview"></div>
-                                    <div class="icon_label" style="color:white;"><icon id="iconpre6">
-                                        <label style="max-width:42px;">SGSP</label>
-                                        <label style="max-width:42px;">discord</label></icon></div>
-                                </center></div></div>
-                            
-                            <div class="scrollbarmiddle" style="position:absolute; height:17px; width:310px;"></div>
-                            <div class="win98button" style="position:absolute; margin-left:306px; width:10px; height:11px;"><div class="scrollright" style="margin-left:-3px; margin-top:-2px;"></div></div>
-                            <div class="win98button" style="position:absolute; margin-left:-4px; width:10px; height:11px;"><div class="scrollleft" style="margin-left:-3px; margin-top:-2px;"></div></div></ul>
-                        
+                        <ul class="tree-view" style="width:318px; height:88px; margin-top:5px; margin-left:2px; background-color: #008080;" id="iconpreview">
+                            <div class="container" style="overflow-x: scroll; overflow-y:hidden; margin-left:-5px; width:327px; margin-top:1px;">
+                                <div class="container" style="height:75px; display: inline-block; width:410px; margin-left:5px;">
+                                    <div class="smalliconscontainer" style="margin-left:3px; margin-top:2px;">
+                                        <center><div class="thealonicpreview" id="thealonicpreview"></div>
+                                        <div class="icon_label" style="color:white;"><icon id="iconpre1">
+                                            <label style="max-width:47px;">Thealonic</label>
+                                            <label style="max-width:42px;"> </label></icon></div>
+                                    </center></div>
+                                    <!-- Button Two -->
+                                    <div class="smalliconscontainer">
+                                        <center><div class="veryvherstypreview" id="veryverstyiconpreview"></div>
+                                        <div class="icon_label" style="color:white;"><icon id="iconpre2">
+                                            <label style="max-width:42px;">Very</label>
+                                            <label style="max-width:42px;">Vhersty</label></icon></div>
+                                    </center></div>
+                                    <!-- Button Three -->
+                                    <div class="smalliconscontainer">
+                                        <center><div class="twitterpreview" id="twittericonpreview"></div>
+                                        <div class="icon_label" style="color:white;"><icon id="iconpre3">
+                                            <label style="max-width:42px;">Art</label>
+                                            <label style="max-width:42px;">posting</label></icon></div>
+                                    </center></div>
+                                    <!-- Button Four -->
+                                    {block:AskEnabled}
+                                    <div class="smalliconscontainer">
+                                        <center><div class="askiconpreview" id="askiconpreview"></div>
+                                        <div class="icon_label" style="color:white;"><icon id="iconpre4">
+                                            <label style="max-width:42px; margin-left:1px;">Ask</label>
+                                            <label style="max-width:42px; margin-left:1px;">mommy</label></icon></div>
+                                    </center></div>
+                                    {/block:AskEnabled}
+                                    <!-- Button Five -->
+                                    {block:SubmitEnabled}
+                                    <div class="smalliconscontainer">
+                                        <center><div class="submiticonpreview" id="submiticonpreview"></div>
+                                        <div class="icon_label" style="color:white;"><icon id="iconpre5">
+                                            <label style="max-width:42px;">Submissions</label>
+                                            <label style="max-width:42px;"> </label></icon></div>
+                                    </center></div>
+                                    {/block:SubmitEnabled}
+                                    <!-- Button Six -->
+                                    <div class="smalliconscontainer">
+                                        <center><div class="discordlinkpreview" id="discordiconpreview"></div>
+                                        <div class="icon_label" style="color:white;"><icon id="iconpre6">
+                                            <label style="max-width:42px;">SGSP</label>
+                                            <label style="max-width:42px;">discord</label></icon></div>
+                                    </center></div>
+                                    
+                                    <div class="smalliconscontainer">
+                                        <center><div class="officialfunnypreview" id="discordiconpreview"></div>
+                                        <div class="icon_label" style="color:white;"><icon id="iconpre7">
+                                            <label style="max-width:42px; margin-left:1px;">TOVFV</label>
+                                            <label style="max-width:42px;">Playlist</label></icon></div>
+                                    </center></div>
+                                    
+                                    <div class="smalliconscontainer">
+                                        <center><div class="rct2preview" id="discordiconpreview"></div>
+                                        <div class="icon_label" style="color:white;"><icon id="iconpre8">
+                                            <label style="max-width:42px;">Roller</label>
+                                            <label style="max-width:42px;">Coaster</label></icon></div>
+                                    </center></div></div></div>
+
                         <div class="win98buttoninactive" style="float:right; width:78px; height:18px; margin-top: 10px; margin-right:4px; ">
                             <div class="disabledfont" style="margin-top: 3px; margin-left:12px;"> Default Icon </div></div>
                         <div class="win98buttoninactive" style="float:right; width:78px; height:18px; margin-top: 10px; margin-right:8px; "> 
@@ -1319,7 +1295,7 @@
         
         <div id="desktop" class="container" id="desktop" style="width:1010px; margin-top:20px;">
             {block:Posts}
-                <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-left: 20px; position: absolute; cursor: default" onmousedown="tumblractive()" id="post">
+                <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-left: 20px; {block:PermalinkPage}margin-left: 12.5px; {/block:PermalinkPage}position: absolute; cursor: default" onmousedown="tumblractive()" id="post">
                     <div class="win98titlebarbutton" style="margin-right:2px; margin-left:2px;" title="Close"><div class="close"></div></div>
                     <div class="win98titlebarbutton" title="Maximize" style=""> <div class="maximize"></div></div>
                     <div class="win98titlebarbutton" title="Minimize" onclick="tumblrminimize();"> <div class="minimize"></div></div>
@@ -1341,7 +1317,7 @@
                                 
                                  <!-- Left side of the top container -->
                                 <a href="https://thealonic.tumblr.com/"><div class="container" style="position: absolute; margin-left:2px; height:22px; width:49px;">
-                                    <div class="explorerback" style="margin-left:4.5px;"></div> <div class="reflinkblack" style="margin-top:4px;">Back</div></div></a>
+                                    <div class="explorerback" style="margin-left:4.5px; width:20px; height:20px;"></div> <div class="reflinkblack" style="margin-top:4px;">Back</div></div></a>
                                 <div class="big_seperator" style="position: absolute; margin-left:55px; margin-top:0px; height:21px;"></div> 
                                 <div class="container" style="margin-left:63.5px; margin-top:5px; width:400px;">
                                     {block:RebloggedFrom} 
