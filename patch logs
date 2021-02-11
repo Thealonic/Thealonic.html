@@ -1,18 +1,41 @@
-<div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 447px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
+<div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll;">
 <ul>
-<li><strong style="color: var(--atext);"><strong style="color: var(--atext);">2021 Febuary 8th (210208) </strong></strong><em>-&nbsp;</em>&ldquo;Schemes&rdquo;<em> Update 4</em>
+<li><strong style="color: var(--atext);">2021 Febuary 10th (210210)</strong>
+<ul>
+<li>Random image generator has been readded to Very Unvunnies.</li>
+<li>Very.Unvunny image generator is no longer forced to deal with ONLY 190x190px images like previously, and now downscale to 200x200px regardless of image size.</li>
+<li>Added 50 randomly selectable images to random image generator.</li>
+</ul>
+<ol>
+<li>- Fixed issues with very.unvunny, where random image generator would close the window, but would still alow it to reappear by clicking the taskbar.</li>
+</ol></li>
+<li><strong style="color: var(--atext);">2021 Febuary 10th (210210)</strong>
+<ul>
+<li>Display properties vertical spitters now use scheme css instead of images.</li>
+<li>Horizontal splitters in the startmenu now use scheme css instead of images.</li>
+<li>The desktop icon previews in the appearance tab of display properties now has horizontal scrollability.</li>
+<li>2 new icons in the effects tab of Display Properties.</li>
+<li>Added CSS for window properties to be added in the future.</li>
+</ul>
+<ol>
+<li>- Fixed anti-aliasing problems in the effects tab of the Display Properties window.</li>
+<li>- Fixed pixel alignment of all windows on page load.</li>
+<li>- Fixed pixel alignment on permalink posts.</li>
+</ol></li>
+<li><strong style="color: var(--atext);">2021 Febuary 8th (210208)</strong> <em>-&nbsp;</em>&ldquo;Schemes&rdquo;<em> Update 4</em>
 <ul>
 <li>Titlebars now have two seperate avaliable colours for titles, active and inactive, both can be adjusted independantly in schemes.</li>
 <li>Scheme previews now update the titlebar font colours and is independant of the rest of the page.</li>
 <li>Scrollbars background colours now update with the scheme, rather than being based on the background it is on.</li>
 <li><strong>2 High Contrast Schemes and 2 Regular schemes added.<br /></strong></li>
 <li><strong>2 Wallpapers added.</strong></li>
-<li>Start button no longer relies on images to display the container.</li>
+<li>Start button no longer relies on images to display the container and uses colours that depend on schemes.</li>
 </ul>
 <ol>
 <li>- Fixed a minimizing issue with the Disk properties not re-opening after being minimized.</li>
 <li>- Fixed a bug in the scheme preview menu where the scrollbar always had a fixed colour.</li>
+<li>- Fixed a bug where Very.Vunny windows would not make the task inactive, regardless of all windows being minimized.</li>
 </ol></li>
 <li><strong style="color: var(--atext);">2021 Febuary 7th (210207)</strong> <em>- </em>&ldquo;Schemes&rdquo;<em> Patch Update 1</em>
 <ul>
