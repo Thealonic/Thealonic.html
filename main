@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.16/dist/98.css">
     
     <script> 
-        var github = "url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/";
+        var github = "url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/", currenttask = 1
         $(document).ready(function(){ resizeVideos() }); 
         function resizeVideos() {
            $('.video iframe:not(.tumblr_video_iframe)').each(function(){
@@ -53,6 +53,7 @@
                     --taskbar1top1: #808080; --taskbar1top2: #0a0a0a; --taskbar1bottom1: #ffffff; --taskbar1bottom2: #dfdfdf; 
                     --taskbar2top1: #ffffff; --taskbar2top2: #dfdfdf; --taskbar2bottom1: #808080; --taskbar2bottom2: #0a0a0a; 
                     --taskbar3top1: #ffffff; --taskbar3top2: #dfdfdf; --taskbar3bottom1: #808080; --taskbar3bottom2: #0a0a0a; 
+                    --taskbar4top1: #ffffff; --taskbar4top2: #dfdfdf; --taskbar4bottom1: #808080; --taskbar4bottom2: #0a0a0a; 
                     
                     --preinactive: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheaderinactive.png');
                     --preactive: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheader.png');
@@ -88,9 +89,7 @@
             
             .filler {height: 2px}
             /* custom css for post windows apposed to the default win98 css */
-            .win98container{box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; position: absolute; color:var(--font)}
             .win98post{box-shadow: inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; position: absolute; color:var(--font)}
-            .title-bar-posts{font-weight: 700; color: var(--fonttitle); font-size: 11px; background-image: var(--active); height: 18px; width: 100%; background-size: cover}
             .title-bar-98{font-weight: 700; color: var(--fonttitle); font-size: 11px; background-image: var(--inactive); height: 18px; width: 100%; background-size: cover}
             .window-body{margin: 8px; color:var(--font)}
 
@@ -250,20 +249,21 @@
             .explorergo {           background-position: -101px  -72px; filter: invert(var(--invert))}                      
             .explorerback {         background-position: -121px  -72px; filter: invert(var(--invert))}
 
-            .taskbartask1 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; margin-left: 4px; background:var(--white); padding:2px; color:var(--font); background-repeat: repeat;
+            .taskbartask1 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--white); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; margin-left: 167px;
                             box-shadow:inset -1px -1px var(--taskbar1bottom2), inset 1px 1px var(--taskbar1top2), inset -2px -2px var(--taskbar1bottom1), inset 2px 2px var(--taskbar1top1); background-image: var(--scrollbar);}
-            .taskbartask2 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; margin-left: 4px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat;
+            .taskbartask2 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; margin-left: -20000px;
                             box-shadow:inset -1px -1px var(--taskbar2bottom2), inset 1px 1px var(--taskbar2top2), inset -2px -2px var(--taskbar2bottom1), inset 2px 2px var(--taskbar2top1);}
-            .taskbartask3 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; margin-left: 4px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat;
+            .taskbartask3 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; margin-left: -20000px;
                             box-shadow:inset -1px -1px var(--taskbar3bottom2), inset 1px 1px var(--taskbar3top2), inset -2px -2px var(--taskbar3bottom1), inset 2px 2px var(--taskbar3top1);}
+            .taskbartask4 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; margin-left: -20000px;
+                            box-shadow:inset -1px -1px var(--taskbar4bottom2), inset 1px 1px var(--taskbar4top2), inset -2px -2px var(--taskbar4bottom1), inset 2px 2px var(--taskbar4top1);}
 
             .big_seperator { float: left; border-left: 1px solid var(--gray); border-right: 1px solid var(--lightg); height: 22px; margin-top: 2px; margin-left: -1px;} /*thin seperator but tall*/
             .small_seperator { float: left;  border-left: 1px solid var(--white); border-top: 1px solid var(--white); margin-top: 3px; margin-left: 1px; height:17px; /*thin seperator but tall*/
                                border-right: 1px solid var(--gray); border-bottom: 1px solid var(--gray); background-color: var(--silver); width: 1px; height: 18px;}
             .menuapplicationsplit { border-bottom: 1px solid var(--white); background-color: var(--gray); height: 1px; width: 1px;}
             
-            .start_bar { position: fixed; background-color: var(--silver); ; bottom: 0; height: 28px; width: 100%; z-index: 3; font-family:sans-serif; font-size: 12px; margin-left:-8px;}
-            .start_bar .time { line-height: 18px; float: right; font-size: 10px; margin-right: 10px;}
+            .start_bar { position: fixed; background-color: var(--silver); ; bottom: 0; height: 28px; width: 100%; z-index: 3; font-size: 12px; margin-left:-8px;}
             .start_bar .top_border { border-bottom: 1px solid var(--lightg); border-top: 1px solid var(--white);}
             .start_bar .time {  line-height: 18px; float: right; font-size: 10px; margin-right: 10px; color:var(--text);}
             .taskbaricons { float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px;}
@@ -343,11 +343,10 @@
         </style>
      
 <!-- Page rendering ------------------------------------------------------------------------------>
-    
-    <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" onload="evangelionmode(); backcolourset(); fontcolourset(); wallpaperupdate(); themechange(); tumblractive();">
-
+    <script> function defaultpageload() { evangelionmode(); backcolourset(); fontcolourset(); wallpaperupdate(); themechange() }</script>
+    <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" onload="defaultpageload(); vunnytask(); disktask(); tumblractive();">
 <!-- desktop handling ------------------------------------------------------------------------------>
-
+        
         <!-- Sidebar icons coloumn 1 -->
         <div class="icons" style="max-height:100%; max-width:100%; margin-left:-10px; z-index:1" onclick="menuclosed()">
             <!-- Button one -->
@@ -379,9 +378,8 @@
                 <div class="discordlink"></div><div class="icon_label"><icon id="desktopi5">
                     <label>Self-Governed</label> <label style="margin-left:0.5px;">Shitposters </label></icon></div> </a>
             <!-- Button Seven -->
-            <a href="https://www.youtube.com/playlist?list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU" target="_blank">
-                <div class="officialfunny"></div><div class="icon_label"><icon id="desktopi6">
-                    <label style="margin-left:0.5px;">The Official Very</label> <label style="margin-left:0.5px;">Funny Video Playlist </label></icon></div> </a>
+                <div class="officialfunny" onclick="offvptask()"></div><div class="icon_label"><icon id="desktopi6">
+                    <label style="margin-left:0.5px;">The Official Very</label> <label style="margin-left:0.5px;">Funny Video Playlist </label></icon></div>
             <!-- Button Eight -->
             <a href="https://www.youtube.com/watch?v=W_4uRZFVKPE&t=383s" target="_blank">
                 <div class="rct2"></div><div class="icon_label"><icon id="desktopi8">
@@ -391,11 +389,11 @@
         
         <script>
             var pyrotabs = 2, currentlayer = 5, pyrocurrentactive = 2, window1 = true, window2 = true;
-            function pyrowindow(){ if(pyrotabs == 0){ document.getElementById("taskapp2").style.marginLeft = "-20000px";}}
+            function pyrowindow(){ if(pyrotabs == 0){ document.getElementById("taskapp2").style.marginLeft = "-20000px"; task2on = false; currenttask = currenttask - 1; taskreset();}}
             function pyrocurrentopen(){ if(pyrocurrentactive == 0){ pyroButtonOpen = false; task2toggle();}}
         </script>
 
-        <div class="win98post" style="z-index: 5; position: fixed; top: 68%; left: 77px;" onmousedown="catactive();" id="cat">
+        <div class="win98post" style="position: fixed; margin-left:-20000px;" onmousedown="catactive();" id="cat">
             <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="catclose(); pyrowindow();"><div class="close"></div></div>
             <div class="win98titlebarbutton" title="Minimize" onclick="catminimize();"> <div class="minimize"></div></div>
             <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
@@ -411,7 +409,7 @@
             function catminimize() { cat.style.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 1; pyrocurrentopen();}
         </script>
 
-        <div class="win98post" style="z-index: 5; position: fixed; top: 58%; left: 229px;" onmousedown="pyroactive();" id="pyro">
+        <div class="win98post" style="position: fixed; margin-left:-20000px;" onmousedown="pyroactive();" id="pyro">
             <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="pyroclose();"><div class="close"></div></div>
             <div class="win98titlebarbutton" title="Minimize" onclick="pyrominimize();"> <div class="minimize"></div></div>
             <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
@@ -425,33 +423,29 @@
                 currentlayer = currentlayer + 1; pyro.style.zIndex = currentlayer; pyrowin.style.backgroundImage = currentactiveheader;} 
             function pyroclose() { inactiveall(); pyroButtonOpen = true; window1 = false; pyrotabs = pyrotabs - 1; pyrowindow(); pyro.style.marginLeft = "-20000px";}
             function pyrominimize() { pyro.style.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 1; pyrocurrentopen();}
-        </script>
 
-
-
-        <script> 
             function vunnyactive(){ document.getElementById("taskapp2font").style.color = taskbartextpressed; 
                 document.getElementById("taskapp2").style.backgroundImage = github + "img/scrollbarempty.png')";
                 document.documentElement.style.setProperty('--taskbar2top1', curcolgray); document.documentElement.style.setProperty('--taskbar2top2', curcolblack);
                 document.documentElement.style.setProperty('--taskbar2bottom1', curcolwhite); document.documentElement.style.setProperty('--taskbar2bottom2', curcollightg);}
-            function vunnyopen(){ inactiveall(); pyroactive(); pyrotabs = 2; tick = 3; pyroButtonOpen = false; 
+            function vunnyopen(){ inactiveall(); vunnyactive(); pyroactive(); pyrotabs = 2; tick = 3; pyroButtonOpen = false; 
                 currentlayer = currentlayer + 1; cat.style.zIndex = currentlayer; currentlayer = currentlayer + 1;
                 if (window1 == true){ pyro.style.marginLeft = "0px"; pyro.style.left = "12%"; pyro.style.top = "58%"; document.getElementById("pyro").style.zIndex = currentlayer + 1;}
-                if (window2 == true){ cat.style.marginLeft = "0px"; cat.style.left = "4%"; cat.style.top = "68%"; document.getElementById("pyro").style.zIndex = currentlayer;}
-                document.getElementById("taskapp2").style.marginLeft = "4px";}
+                if (window2 == true){ cat.style.marginLeft = "0px"; cat.style.left = "4%"; cat.style.top = "68%"; document.getElementById("pyro").style.zIndex = currentlayer;}}
             function vunnywindowreset(){ window1 = true; window2 = true; }
             function vunnyminimize(){ inactiveall(); pyro.style.marginLeft = "-20000px"; cat.style.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 2; }
         </script>
 
 <!-- regular message box rendering ------------------------------------------------------------------------------>
 
-        <div class="win98post" style="height: 50px; width:306px; top: 62%; left: 1465px; z-index:5;" onmousedown="messageactive();" id="message">
+        <!-- last updated -->
+        <div class="win98post" style="height: 50px; width:306px; top: 62%; left: 1465px;" onmousedown="messageactive();" id="message">
              <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:2px; margin-top:2px;" onclick="messageclose()"><div class="close"></div></div>
              <div class="win98titlebarbutton" style="margin-top:2px;" onclick="messagemaximize()"><div class="maximize"></div></div>
              <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU"><div class="win98titlebarbutton" style="margin-top:2px; cursor: default;"> <div class="help"></div> </div> </a> 
             <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="title-bar-text" id="messagetext">🧮 brain go brrrrr</div></div>
             <div class="window-body" style="margin-right: 4px; margin-top: 5px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
-                <p style="color: var(--blue); margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>12:30pm on Febuary 10th, 2021. [GMT]</label></p></div></div>
+                <p style="color: var(--blue); margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>18:34pm on Febuary 15th, 2021. [GMT]</label></p></div></div>
         
         <script>
             var message = document.getElementById("message"); messagewin = document.getElementById("messagewindow");
@@ -462,9 +456,32 @@
                 currentlayer = currentlayer + 1; message.style.zIndex = currentlayer; messagewin.style.backgroundImage = currentactiveheader;}
         </script>
         
+        <!-- official very funny video playlist -->
+        <div class="win98post" style="position: fixed; margin-left:-20000px;" onmousedown="offvpactive()" id="offvp">
+            <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="offvpclose()"><div class="close"></div></div>
+            <a href="https://www.youtube.com/playlist?list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU" target="_blank"><div class="win98titlebarbutton" title="Minimize"> <div class="maximize"></div></div></a>
+            <div class="win98titlebarbutton" title="Minimize" onclick="offvpminimize()"> <div class="minimize"></div></div>
+            <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
+            <div class="title-bar-98" id="offvpwindow"> <div class="title-bar-text" id="offvptext">🍰 The Official Very Funny Video Playlist</div></div><div class="messagewindowbody" style="padding-right:4px"> 
+                <ul class="tree-view" style="width: 100%; height: 100%; padding:2px; padding-bottom:0px; margin-right:-4px;">
+                    <iframe width="560" height="315" src="//www.youtube.com/embed/playlist?list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></ul></div></div>
+        
+        <script>
+            var offvp = document.getElementById("offvp"); offvpwin = document.getElementById("offvpwindow");
+            function offvpactive() { inactiveall(); document.getElementById("taskapp4font").style.color = taskbartextpressed; 
+                currentlayer = currentlayer + 1; offvp.style.zIndex = currentlayer; offvpwin.style.backgroundImage = currentactiveheader; offvp.style.marginLeft = "0px"; offvpButtonOpen = false; 
+                document.getElementById("taskapp4").style.backgroundImage = github + "img/scrollbarempty.png')"; document.getElementById("taskapp4").style.backgroundColor = curcolwhite;
+                document.documentElement.style.setProperty('--taskbar4top1', curcolgray); document.documentElement.style.setProperty('--taskbar4top2', curcolblack);
+                document.documentElement.style.setProperty('--taskbar4bottom1', curcolwhite); document.documentElement.style.setProperty('--taskbar4bottom2', curcollightg);} 
+            function offvpclose() {offvp.style.marginLeft = "-20000px"}
+            function offvpopen() { inactiveall(); offvp.style.marginLeft = "0px"; offvp.style.left = "300px"; offvp.style.top = "200px";
+                currentlayer = currentlayer + 1; offvp.style.zIndex = currentlayer; offvpwin.style.backgroundImage = currentactiveheader; offvpactive()}
+            function offvpminimize(){ inactiveall(); offvp.style.marginLeft = "-20000px"; offvpButtonOpen = true;}
+        </script>
+        
 <!-- Time / date properties rendering ------------------------------------------------------------------------------>
         
-        <div class="win98post" style="height: 409px; width: 442px; position: fixed; margin-left:-20000px; z-index:6;" onmousedown="clockactive()" id="clock">
+        <div class="win98post" style="height: 409px; width: 442px; position: fixed; margin-left:-20000px;" onmousedown="clockactive()" id="clock">
             <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:2px; margin-top:2px; cursor: pointer;" title="close" onclick="clockclose()"><div class="close"></div></div>
             <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="margin-top:2px" title="help"> <div class="help"></div></div></a> 
             <div class="title-bar-98" id="clockwindow"> <div class="title-bar-text" style="margin-left:0.5px;">🕑 Time / Date Properties</div></div>
@@ -552,7 +569,7 @@
         
 <!-- Display properties rendering ------------------------------------------------------------------------------>
             
-        <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; left: 1465px; z-index:5;" onmousedown="diskactive()" id="disk" data-theme="dark">
+        <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; left: 1465px; margin-left:-20000px; z-index:5;" onmousedown="diskactive()" id="disk" data-theme="dark">
             <div class="win98titlebarbutton" style="margin-left: 2px; margin-right:2px; margin-top:2px; cursor: pointer;" title="close" onclick="diskclose()"><div class="close"></div></div>
             <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" style="margin-top:2px" title="help"> <div class="help"></div></div></a> 
             <div class="title-bar-98" id="diskwindow"> <div class="title-bar-text" id="disktext">📺 Display Properties</div></div>
@@ -1127,7 +1144,7 @@
                 
                 <!-- display container settings -->
                 <div class="container" style="float: left; margin-top: 12px">
-                    <fieldset style="width:152px; height:39px; margin-left: 12px">
+                    <fieldset style="width:149px; height:39px; margin-left: 12px">
                     
                         <ul class="tree-view" style="position: absolute; width:151px; height: 17px; padding:2px; margin-left:-3px;" onclick="colourdropdown()" onmouseleave="colourexit()">
                             <div class="container" style="padding: 3px 2px 2px 2px;" id="currentcolour">High Colour (16-bit)</div>
@@ -1145,7 +1162,7 @@
                             function sixteenbitcolour(){  document.getElementById("currentcolour").textContent="High Colour (16-bit)";}
                         </script>
                 
-                        <div class="displaycolour" style="position:absolute; margin-top:26px; margin-left: -3px"></div>
+                        <ul class="tree-view" style="position: absolute; width:151px; height: 13px; padding:2px; margin-left:-3px; margin-top:25px;"><div class="displaycolour" style="position:absolute; width:151px;"></div></ul>
                     </fieldset></div>
                 <div class="container" style="float: right; margin-top: 12px">
                     <fieldset style="width:136px; height:39px; margin-right: 10px">
@@ -1180,15 +1197,13 @@
                 document.getElementById("taskapp3").style.backgroundImage = github + "img/scrollbarempty.png')"; document.getElementById("taskapp3").style.backgroundColor = curcolwhite;
                 document.documentElement.style.setProperty('--taskbar3top1', curcolgray); document.documentElement.style.setProperty('--taskbar3top2', curcolblack);
                 document.documentElement.style.setProperty('--taskbar3bottom1', curcolwhite); document.documentElement.style.setProperty('--taskbar3bottom2', curcollightg);}
-            function diskopen() { tabreset(); diskactive(); document.getElementById("taskapp3").style.marginLeft = "4px"; disk.style.left = "1465px"; disk.style.top = "62%";}
-            function diskclose() { inactiveall(); diskButtonOpen = true; disk.style.marginLeft = "-20000px"; disk.style.marginTop = "-20000px"; disk.style.left = "-200%"; 
-                document.getElementById("taskapp3").style.marginLeft = "-20000px"; diskwin.style.backgroundImage = currentinactiveheader;
-                document.documentElement.style.setProperty('--taskbar3top1', curcolwhite); document.documentElement.style.setProperty('--taskbar3top2', curcollightg);
-                document.documentElement.style.setProperty('--taskbar3bottom1', curcolgray); document.documentElement.style.setProperty('--taskbar3bottom2', curcolblack);}
+            function diskopen() { tabreset(); diskactive(); disk.style.left = "1465px"; disk.style.top = "13%";}
+            function diskclose() { inactiveall(); diskButtonOpen = true; disk.style.marginLeft = "-20000px"; disk.style.marginTop = "-20000px"; 
+                document.getElementById("taskapp3").style.marginLeft = "-20000px"; task3on = false; currenttask = currenttask - 1; taskreset();}
             function diskminimize() { inactiveall(); disk.style.marginLeft = "-20000px"; disk.style.marginTop = "-20000px"; diskButtonOpen = true;}
         </script> 
-<!-- Window box handling ------------------------------------------------------------------------------>
         
+<!-- Window box handling ------------------------------------------------------------------------------>
         <!-- Log off window -->
         <div class="win98post" style="z-index: 10; margin-left: 200000px; height: 112px; width: 284px; top: 40%; left:  40%;" id="logoff" onmousedown="logonactive();">
             <div class="win98titlebarbutton" style="margin-right:2px; margin-left:2px;" title="close" onclick="logoffno()"><div class="close"></div></div>
@@ -1264,6 +1279,12 @@
                     document.getElementById("taskapp3").style.backgroundImage = "none"; document.getElementById("taskapp3").style.backgroundColor = silv;
                     document.documentElement.style.setProperty('--taskbar3top1', curcolwhite); document.documentElement.style.setProperty('--taskbar3top2', curcollightg);
                     document.documentElement.style.setProperty('--taskbar3bottom1', curcolgray); document.documentElement.style.setProperty('--taskbar3bottom2', curcolblack);
+                    
+                    offvpButtonOpen = true; document.getElementById("offvptext").style.color = curinactivetitle;
+                    offvpwin.style.backgroundImage = currentinactiveheader; document.getElementById("taskapp4font").style.color = taskbartext;
+                    document.getElementById("taskapp4").style.backgroundImage = "none"; document.getElementById("taskapp4").style.backgroundColor = silv;
+                    document.documentElement.style.setProperty('--taskbar4top1', curcolwhite); document.documentElement.style.setProperty('--taskbar4top2', curcollightg);
+                    document.documentElement.style.setProperty('--taskbar4bottom1', curcolgray); document.documentElement.style.setProperty('--taskbar4bottom2', curcolblack);
                     
                     messagewin.style.backgroundImage = currentinactiveheader; document.getElementById("messagetext").style.color = curinactivetitle;
                     docclockwin.style.backgroundImage = currentinactiveheader; document.getElementById("disktext").style.color = curinactivetitle;
@@ -1411,7 +1432,7 @@
                          
                                     {block:Quote}
                                         <div class="container" style="padding: 3.5px;">
-                                            <div class="content caption" style="margin-left:1px"> "{Quote}" </div> <!-- quote itself -->
+                                            <div class="content caption" style="margin-left:1px;"> "{Quote}" </div> <!-- quote itself -->
                                             {block:Source}
                                                 <div class="content body cf">
                                                     <div class="dash" style="margin-left:2px"> &mdash; </div>
@@ -1605,7 +1626,7 @@
             <div class="win98start" onclick="startpress();" style="margin-right:4px;"> <div class="windowslogo"></div><div class="title-bar-text" style="position:absolute; margin-left:17.5px; margin-top:-15px; color:var(--text);">Start</div></div>
                 <!-- Start menu closed -->
             <div class="container" style="position: fixed; bottom: 0%; bottom: 24px;" onmouseleave="">
-                <div class="win98container" id="startmenu" style="width:163px; height: 377px; margin-top:-383px; margin-left: 200000px"> 
+                <div class="win98post" id="startmenu" style="width:163px; height: 377px; margin-top:-383px; margin-left: 200000px"> 
                     <div class="container" style="margin-left: 20px; margin-top: -3px">
                         <!-- windows gradient bar -->
                         <div class="windowsstartmenubar" style="height:51px; margin-left:-21px; margin-top:3px;"></div>
@@ -1679,7 +1700,7 @@
 
 <!-- Programs menu rendering ------------------------------------------------------------------------------>
                         
-                    <div class="win98container" style="margin-left: 20000px; margin-top: -339px; width: 133px; height: 140px" id="programsmenu" 
+                    <div class="win98post" style="margin-left: 20000px; margin-top: -339px; width: 133px; height: 140px" id="programsmenu" 
                         onmouseover="programsopen()" onmouseout="programsclosed()"> 
                         <!-- Accessories -->
                         <div class="submenu20" id="accessories"
@@ -1715,7 +1736,7 @@
                             <label style="margin-left: 8px; margin-top: 3px"> Windows Explorer </label></div>
                             
                             <!--Accessories submenu -->
-                            <div class="win98container" style="margin-left: 20000px; margin-top:-143px; width:131px; height:220px" id="menuaccessoriessubmenu" 
+                            <div class="win98post" style="margin-left: 20000px; margin-top:-143px; width:131px; height:220px" id="menuaccessoriessubmenu" 
                                  onmouseover="accessoriesopen()" onmouseout="accessoriesclose()"> 
                                 <!-- Communication -->
                                 <div class="submenu20" id="communications"
@@ -1772,7 +1793,7 @@
                                     <div class="menuapplications11"></div>
                                     <label style="margin-left: 8px; margin-top: 3px;"> Wordpad </label></div>
                                     <!-- Communications submenu -->
-                                    <div class="win98container" style="margin-left: 20000px; margin-top:-223px; width:181px; height:80px" id="menucommunicationssubmenu" 
+                                    <div class="win98post" style="margin-left: 20000px; margin-top:-223px; width:181px; height:80px" id="menucommunicationssubmenu" 
                                          onmouseover="communicationsopen()" onmouseout="communicationsclose()"> 
                                         <!-- Dial-up Networking -->
                                         <div class="submenu20">
@@ -1792,7 +1813,7 @@
                                             <label style="margin-left: 8px; margin-top: 3px"> Phone Dialer </label></div></div>
                                             
                                     <!-- Entertainment submenu -->
-                                    <div class="win98container" style="margin-left: 20000px; margin-top:-203px; width:163px; height:100px" id="menuentertainmentsubmenu" 
+                                    <div class="win98post" style="margin-left: 20000px; margin-top:-203px; width:163px; height:100px" id="menuentertainmentsubmenu" 
                                          onmouseover="entertainmentopen()" onmouseout="entertainmentclose()"> 
                                         <!-- Dial-up Networking -->
                                         <div class="submenu20">
@@ -1815,7 +1836,7 @@
                                             <label style="margin-left: 8px; margin-top: 3px"> Windows Media Player </label></div></div>
                                             
                                     <!-- Games submenu -->
-                                    <div class="win98container" style="margin-left: 20000px; margin-top:-183px; width:183px; height:80px" id="gamessubmenu" 
+                                    <div class="win98post" style="margin-left: 20000px; margin-top:-183px; width:183px; height:80px" id="gamessubmenu" 
                                          onmouseover="gamesopen()" onmouseout="gamesclose()"> 
                                         <!-- Dial-up Networking -->
                                         <div class="submenu20">
@@ -1835,7 +1856,7 @@
                                             <label style="margin-left: 8px; margin-top: 3px"> Solitaire </label></div></div>
                                             
                                     <!-- Internet Tools submenu -->
-                                    <div class="win98container" style="margin-left: 20000px; margin-top:-163px; width:183px; height:80px" id="internettoolssubmenu" 
+                                    <div class="win98post" style="margin-left: 20000px; margin-top:-163px; width:183px; height:80px" id="internettoolssubmenu" 
                                          onmouseover="internettoolsopen()" onmouseout="internettoolsclose()"> 
                                         <!-- Connection Wizard -->
                                         <div class="submenu20">
@@ -1855,7 +1876,7 @@
                                             <label style="margin-left: 8px; margin-top: 3px"> Personal Webserver </label></div></div>
                                             
                                     <!-- System Tools submenu -->
-                                    <div class="win98container" style="margin-left: 20000px; margin-top:-143px; width:183px; height:260px" id="systemtoolssubmenu" 
+                                    <div class="win98post" style="margin-left: 20000px; margin-top:-143px; width:183px; height:260px" id="systemtoolssubmenu" 
                                          onmouseover="systemtoolsopen()" onmouseout="systemtoolsclose()"> 
                                         <!-- Character Map -->
                                         <div class="submenu20">
@@ -1912,7 +1933,7 @@
                                 <!-- Application submenu end -->
                                 </div>
                                 <!-- Online Services Submenu -->
-                                <div class="win98container" style="margin-left: 20000px; margin-top:-123px; width:110px; height:60px; " id="onlineservicessubmenu" 
+                                <div class="win98post" style="margin-left: 20000px; margin-top:-123px; width:110px; height:60px; " id="onlineservicessubmenu" 
                                      onmouseover="onlineservicesopen()" onmouseout="onlineservicesclose()"> 
                                     <!-- Ask Jeeves -->
                                     <a href="https://askjeeves.net/" target="_blank" style="cursor:default"> <div class="submenu20"> 
@@ -1928,14 +1949,14 @@
                                         <label style="margin-left: 8px; margin-top: 3px"> MSN </label></div>
                                 </div>
                                 <!-- Startup Submenu -->
-                                <div class="win98container" style="margin-left: 20000px; margin-top:-103px; width:89px; height: 20px;" id="startupsubmenu"
+                                <div class="win98post" style="margin-left: 20000px; margin-top:-103px; width:89px; height: 20px;" id="startupsubmenu"
                                            onmouseover="startupopen()" onmouseout="startupclose()">
                                     <div class="disabledfont" style="margin-left: 20px; margin-top: 3px">(Empty)</div> </div> 
                             </div>
         
 <!-- Favourites menu rendering------------------------------------------------------------------------------>
         
-                            <div class="win98container" style="margin-left: 20000px; margin-top: -303px; width: 149px; height:100px" id="favouritesmenu" 
+                            <div class="win98post" style="margin-left: 20000px; margin-top: -303px; width: 149px; height:100px" id="favouritesmenu" 
                                  onmouseover="favouritesopen()" onmouseout="favouritesclosed()"> 
                                 <!-- Channels -->
                                 <div class="submenu20" onmouseover="channelsopen()" onmouseout="channelsclose()" id="channels">
@@ -1960,11 +1981,11 @@
                                     <div class="menufavouriteslink"></div>
                                     <label style="margin-left: 8px; margin-top: 3px"> Thealonic </label></div></a>
                                 <!-- Channels Submenu -->
-                                <div class="win98container" style="margin-left: 20000px; margin-top: -103px; width:89px; height: 20px;" id="channelssubmenu"
+                                <div class="win98post" style="margin-left: 20000px; margin-top: -103px; width:89px; height: 20px;" id="channelssubmenu"
                                            onmouseover="channelsopen()" onmouseout="channelsclose()">
                                     <div class="disabledfont" style="margin-left: 20px; margin-top: 3px">(Empty)</div> </div>
                                 <!-- links submenu -->
-                                <div class="win98container" style="margin-left: 20000px; margin-top: -83px; width: 149px; height:120px" id="linkssubmenu" 
+                                <div class="win98post" style="margin-left: 20000px; margin-top: -83px; width: 149px; height:120px" id="linkssubmenu" 
                                      onmouseover="linksopen()" onmouseout="linksclose()"> 
                                     <!-- Random links -->
                                     <a href="https://www.instagram.com/veryvhersty/" target="_blank"><div class="submenu20">
@@ -1988,7 +2009,7 @@
                                 <!--links submenu END --> 
                                 </div>
                                 <!-- Media submenu -->
-                                <div class="win98container" style="margin-left: 20000px; margin-top: -203px; width: 138px; height:420px" id="mediasubmenu" 
+                                <div class="win98post" style="margin-left: 20000px; margin-top: -203px; width: 138px; height:420px" id="mediasubmenu" 
                                      onmouseover="mediaopen()" onmouseout="mediaclose()"> 
                                     <!-- Random links -->
                                     <a href="http://www.bbc.co.uk/iplayer" target="_blank"><div class="submenu20">
@@ -2060,7 +2081,7 @@
         
 <!-- Documents menu rendering ------------------------------------------------------------------------------>
                         
-                            <div class="win98container" style="margin-left: 20000px; margin-top: -267px; width: 160px; height:108px" id="documentsmenu" 
+                            <div class="win98post" style="margin-left: 20000px; margin-top: -267px; width: 160px; height:108px" id="documentsmenu" 
                                  onmouseover="documentsopen()" onmouseout="documentsclosed()"> 
                                 <!-- My Documents -->
                                 <div class="submenu20">
@@ -2086,7 +2107,7 @@
                      
 <!-- Settings menu rendering ------------------------------------------------------------------------------>
                         
-                            <div class="win98container" style="margin-left: 200000px; margin-top: -231px; width: 160px; height:128px" id="settingsmenu" 
+                            <div class="win98post" style="margin-left: 200000px; margin-top: -231px; width: 160px; height:128px" id="settingsmenu" 
                                  onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
                                 <!-- Control panel -->
                                 <div class="submenu20">
@@ -2095,7 +2116,7 @@
                                 <!-- Printers -->
                                 <div class="submenu20">
                                     <div class="menusettings2"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px; cursor: pointer;" onclick="diskopen(); backgroundtab(); menuclosed()"> Display Properties </label></div>
+                                    <label style="margin-left: 8px; margin-top: 3px; cursor: pointer;" onclick="backgroundtab(); disktask(); menuclosed()"> Display Properties </label></div>
                                 <!-- Taskbar & Start menu -->
                                 <div class="submenu20">
                                     <div class="menusettings3"></div>
@@ -2116,15 +2137,15 @@
                                     <div class="menusettings6"></div>
                                     <label style="margin-left: 8px; margin-top: 3px"> Windows Update</label></div>
                                 <!-- Activedesktop submenu -->
-                                <div class="win98container" style="margin-left:20000px; margin-top:-50px; width:170px; height:60px" id="activedesktopsubmenu" 
+                                <div class="win98post" style="margin-left:20000px; margin-top:-50px; width:170px; height:60px" id="activedesktopsubmenu" 
                                      onmouseover="settingsactivedesktopopen()" onmouseout="settingsactivedesktopclose()">
                                     <!--Buttons 1-3 -->
                                     <div class="submenu20" style="cursor: pointer;"> 
                                         <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="messageopen(); menuclosed()"> 🧮 brain go brrrrr </label></div>
                                     <div class="submenu20" style="cursor: pointer;"> 
-                                        <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="vunnywindowreset(); vunnyopen(); menuclosed()"> 👿 very.unvunny</label></div>
+                                        <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="vunnytask(); menuclosed()"> 👿 very.unvunny</label></div>
                                     <div class="submenu20" style="cursor: pointer;"> 
-                                        <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="diskopen(); settingstab(); menuclosed()"> 📺 Customise desktop... </label></div>
+                                        <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="settingstab(); disktask(); menuclosed()"> 📺 Customise desktop... </label></div>
                                 <!--Settings submenu END --> 
                                 </div> 
                             <!--Settings menu END -->            
@@ -2132,7 +2153,7 @@
                               
 <!-- Find menu rendering ------------------------------------------------------------------------------>
                                 
-                            <div class="win98container" style="margin-left: 20000px; margin-top: -197px" id="findmenu"
+                            <div class="win98post" style="margin-left: 20000px; margin-top: -197px" id="findmenu"
                                  onmouseover="findopen()"onmouseout="findclosed()";>
                                 <!--Buttons 1-4 -->
                                 <label style="width: 118px;"><div class="submenu20" style="width: 116px; height:20px">
@@ -2160,22 +2181,47 @@
                 <taskbar class="small_seperator" style="cursor:e-resize"> </taskbar>
                 
                 <div class="taskbartask1" style="cursor:pointer;" onmousedown="task1toggle(); menuclosed();" id="taskapp1"> <!--position: absolute; margin-left:172px-->
-                        <div class="title-bar-text" style="font-size: 11px;" id="taskapp1font">🍭 very.vunnies</div></div>
+                        <div class="title-bar-text" style="font-size: 11px; " id="taskapp1font">🍭 very.vunnies</div></div>
                 <div class="taskbartask2" style="cursor:pointer;" onmousedown="task2toggle(); menuclosed();" id="taskapp2"> <!--position: absolute; margin-left:336px-->
                         <div class="title-bar-text" style="font-size: 11px;" id="taskapp2font">👿 very.unvunny</div></div>
                 <div class="taskbartask3" style="cursor:pointer;" onmousedown="task3toggle(); menuclosed();" id="taskapp3"> <!--position: absolute; margin-left:500px-->
-                        <div class="title-bar-text" style="font-size: 11px;" id="taskapp3font">📺 Display Properties</div></div>
+                        <div class="title-bar-text" style="font-size: 11px; " id="taskapp3font">📺 Display Properties</div></div>
+                <div class="taskbartask4" style="cursor:pointer;" onmousedown="task4toggle(); menuclosed();" id="taskapp4"> <!--position: absolute; margin-left:500px-->
+                        <div class="title-bar-text" style="font-size: 11px;" id="taskapp4font">🍰 Very Funny Videos</div></div>
                 
                 
                 <script>
-                    var tumblrButtonOpen = false, pyroButtonOpen = true, diskButtonOpen = true;
+                    var tumblrButtonOpen = false, pyroButtonOpen = true, diskButtonOpen = true; offvpButtonOpen = true;
                     var taskbartext, taskbartextpressed, pretaskbartext, pretaskbartextpressed;
-                    // disk window active toggle
                     function task1toggle() { if (tumblrButtonOpen == false) {tumblrminimize()} else if (tumblrButtonOpen == true){tumblractive()}}
-                    // disk window active toggle
                     function task2toggle(){ if (pyroButtonOpen == false) {vunnyminimize()} else if (pyroButtonOpen == true){vunnyopen()}}
-                    // disk window active toggle
                     function task3toggle() { if (diskButtonOpen == false) {diskminimize()} else if (diskButtonOpen == true){diskactive()}} 
+                    function task4toggle() { if (offvpButtonOpen == false) {offvpminimize()} else if (offvpButtonOpen == true){offvpactive()}} 
+
+                    var task2on = false; task3on = false; task4on = false;
+                    
+                    var unvunnytaskbar = document.getElementById("taskapp2");
+                    function vunnytask(){vunnywindowreset(); vunnyopen(); task2positionopen()}
+                    function task2positionopen(){ if(task2on == false){currenttask = currenttask + 1; unvunnytaskbar.style.marginLeft = (currenttask * 168) + "px"; task2on = true; task2position = (currenttask * 168)} 
+                        tabconsole()}
+                    
+                    var disktaskbar = document.getElementById("taskapp3");
+                    function disktask(){diskopen(); appearancetab(); task3positionopen()}
+                    function task3positionopen(){ if(task3on == false){currenttask = currenttask + 1; disktaskbar.style.marginLeft = (currenttask * 168) + "px"; task3on = true; task3position = (currenttask * 168)} 
+                        tabconsole()}
+                        
+                    var offvptaskbar = document.getElementById("taskapp4");
+                    function offvptask(){offvpopen(); task4positionopen()}
+                    function task4positionopen(){ if(task4on == false){currenttask = currenttask + 1; offvptaskbar.style.marginLeft = (currenttask * 168) + "px"; task4on = true; task4position = (currenttask * 168)} 
+                        tabconsole()}
+
+                    function taskreset(){
+                        if(task2on == false){ if(task3on == true){disktaskbar.style.marginLeft = task3position - 168  + "px"} if(task4on == true){offvptaskbar.style.marginLeft = task4position - 168  + "px"} tabconsole()}
+                        if(task3on == false){ if(task2on == true){unvunnytaskbar.style.marginLeft = task2position - 168  + "px"} if(task3on == true){offvptaskbar.style.marginLeft = task4position - 168  + "px"} tabconsole()}
+                        if(currenttask == 0){ currenttask = 1}
+                    }
+                    
+                    function tabconsole(){ console.log("current tasks active: " + currenttask)}
                 </script>
                  
                 <div class="clock">
@@ -2230,9 +2276,9 @@
             
         // Drag element scripts ------------------------------------------------------------------------------>
             
-            dragElement(document.getElementById("cat")); dragElement(document.getElementById("pyro")); dragElement(document.getElementById("disk")); dragElement(document.getElementById("message"));
+            dragElement(document.getElementById("cat")); dragElement(document.getElementById("pyro")); dragElement(document.getElementById("disk")); dragElement(document.getElementById("message")); 
+            dragElement(document.getElementById("offvp")); dragElement(document.getElementById("rct2"));
             dragElement(document.getElementById("logoff")); dragElement(document.getElementById("shutdown")); dragElement(document.getElementById("clock"));
-                
             function dragElement(elmnt) { var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
             if (document.getElementById(elmnt.id + "window")) { document.getElementById(elmnt.id + "window").onmousedown = dragMouseDown; } else { elmnt.onmousedown = dragMouseDown; }
             function dragMouseDown(e) { //mouse moment grabbing
