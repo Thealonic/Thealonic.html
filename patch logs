@@ -1,9 +1,24 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll;">
 <ul>
-<li><strong style="color: var(--atext);">2021 Febuary 16th (210216)</strong><ol>
-<li>- Fixed taskbar position updating related issues when after closing two windows, any task could get stuck in the 3rd slot due to not updating the X value to refer to the next time the task had to be moved.<strong><strong><br /></strong></strong></li>
+<li><strong style="color: var(--atext);">2021 Febuary 16th (210216)</strong>
+<ul>
+<li><strong>Embedded Media Player Changes</strong><br />
+<ul>
+<li>Official Very Funny Playlist player is now the windows embedded media player.</li>
+<li>Media player now has a dynamic current address header depending on the current video playing.<strong><br /></strong></li>
+<li>Adjusted how the mediaplayer is handled and replaced Iframe with javascript for future expandability.</li>
+<li>Mediaplayer now autoplays on open and auto pauses on window shutdown.</li>
+</ul>
+</li>
+<li>Windows now open on page load, apposed to being already open.</li>
+</ul>
+<ol>
+<li>- Fixed taskbar position updating related issues when after closing two windows, any task could get stuck in the 3rd slot due to not updating the X value to refer to the next time the task had to be moved.</li>
 <li>- Solved issues related to submenus not opening in the start menu.</li>
+<li>- Fixed issues with taskbar colours when a different theme is being previewed in which it would display the previewed theme&rsquo;s colours.</li>
+<li>- Solved potential issues to do with scheme colours in the future.</li>
+<li>- Fixed Very Unvunnies reseting their position to default from clicking on the taskbar.</li>
 </ol></li>
 <li><strong style="color: var(--atext);">2021 Febuary 15th (210215)</strong><br />
 <ul>
@@ -25,9 +40,7 @@
 <li>Windows now open on page load, apposed to being already open.</li>
 </ul>
 <ol>
-<li>- Fixed issues with taskbar colours when a different theme is being previewed in which it would display the previewed theme&rsquo;s colours.</li>
 <li>- Fixed colour related issues with the time and date window.</li>
-<li>- Solved potential issues to do with scheme colours in the future.</li>
 </ol></li>
 <li><strong style="color: var(--atext);">2021 Febuary 11th (210211)</strong>
 <ul>
