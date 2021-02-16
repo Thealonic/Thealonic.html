@@ -378,7 +378,7 @@
                 <div class="discordlink"></div><div class="icon_label"><icon id="desktopi5">
                     <label>Self-Governed</label> <label style="margin-left:0.5px;">Shitposters </label></icon></div> </a>
             <!-- Button Seven -->
-                <div class="officialfunny" onclick="offvptask()"></div><div class="icon_label"><icon id="desktopi6">
+                <div class="officialfunny" onclick="offvptask();"></div><div class="icon_label"><icon id="desktopi6">
                     <label style="margin-left:0.5px;">The Official Very</label> <label style="margin-left:0.5px;">Funny Video Playlist </label></icon></div>
             <!-- Button Eight -->
             <a href="https://www.youtube.com/watch?v=W_4uRZFVKPE&t=383s" target="_blank">
@@ -393,7 +393,7 @@
             function pyrocurrentopen(){ if(pyrocurrentactive == 0){ pyroButtonOpen = false; task2toggle();}}
         </script>
 
-        <div class="win98post" style="position: fixed; margin-left:-20000px;" onmousedown="catactive();" id="cat">
+        <div class="win98post" style="position: fixed; left: 4%; top: 68%; margin-left:-20000px;" onmousedown="catactive();" id="cat">
             <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="catclose();"><div class="close"></div></div>
             <div class="win98titlebarbutton" title="Minimize" onclick="catminimize();"> <div class="minimize"></div></div>
             <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
@@ -404,12 +404,12 @@
         <script>
             var cat = document.getElementById("cat"); catwin = document.getElementById("catwindow");
             function catactive() { inactiveall(); vunnyactive(); pyroButtonOpen = false; document.getElementById("cattext").style.color = curactivetitle;
-                currentlayer = currentlayer + 1; cat.style.zIndex = currentlayer; catwin.style.backgroundImage = currentactiveheader;} 
+                currentlayer = currentlayer + 1; cat.style.zIndex = currentlayer; catwin.style.backgroundImage = currentactiveheader; cat.style.marginLeft = "0px";} 
             function catclose() { inactiveall(); pyroButtonOpen = true; window2 = false; pyrotabs = pyrotabs - 1; pyrowindow(); cat.style.marginLeft = "-20000px";}
             function catminimize() { cat.style.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 1; pyrocurrentopen();}
         </script>
 
-        <div class="win98post" style="position: fixed; margin-left:-20000px;" onmousedown="pyroactive();" id="pyro">
+        <div class="win98post" style="position: fixed; left: 12%; top: 58%; margin-left:-20000px;" onmousedown="pyroactive();" id="pyro">
             <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="pyroclose();"><div class="close"></div></div>
             <div class="win98titlebarbutton" title="Minimize" onclick="pyrominimize();"> <div class="minimize"></div></div>
             <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
@@ -420,7 +420,7 @@
         <script>
             var pyro = document.getElementById("pyro"); pyrowin = document.getElementById("pyrowindow");
             function pyroactive() { inactiveall(); vunnyactive(); pyroButtonOpen = false; document.getElementById("pyrotext").style.color = curactivetitle;
-                currentlayer = currentlayer + 1; pyro.style.zIndex = currentlayer; pyrowin.style.backgroundImage = currentactiveheader;} 
+                currentlayer = currentlayer + 1; pyro.style.zIndex = currentlayer; pyrowin.style.backgroundImage = currentactiveheader; pyro.style.marginLeft = "0px";} 
             function pyroclose() { inactiveall(); pyroButtonOpen = true; window1 = false; pyrotabs = pyrotabs - 1; pyrowindow(); pyro.style.marginLeft = "-20000px";}
             function pyrominimize() { pyro.style.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 1; pyrocurrentopen();}
 
@@ -430,9 +430,10 @@
                 document.documentElement.style.setProperty('--taskbar2bottom1', curcolwhite); document.documentElement.style.setProperty('--taskbar2bottom2', curcollightg);}
             function vunnyopen(){ inactiveall(); vunnyactive(); pyroactive(); pyrotabs = 2; tick = 3; pyroButtonOpen = false; 
                 currentlayer = currentlayer + 1; cat.style.zIndex = currentlayer; currentlayer = currentlayer + 1;
-                if (window1 == true){ pyro.style.marginLeft = "0px"; pyro.style.left = "12%"; pyro.style.top = "58%"; document.getElementById("pyro").style.zIndex = currentlayer + 1;}
-                if (window2 == true){ cat.style.marginLeft = "0px"; cat.style.left = "4%"; cat.style.top = "68%"; document.getElementById("pyro").style.zIndex = currentlayer;}}
+                if (window1 == true){ pyro.style.marginLeft = "0px"; document.getElementById("pyro").style.zIndex = currentlayer + 1;}
+                if (window2 == true){ cat.style.marginLeft = "0px"; document.getElementById("pyro").style.zIndex = currentlayer;}}
             function vunnywindowreset(){ window1 = true; window2 = true; }
+            function vunnypositionreset() { pyro.style.left = "12%"; pyro.style.top = "58%"; cat.style.left = "4%"; cat.style.top = "68%";}
             function vunnyminimize(){ inactiveall(); pyro.style.marginLeft = "-20000px"; cat.style.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 2; }
         </script>
 
@@ -457,15 +458,66 @@
         </script>
         
         <!-- official very funny video playlist -->
-        <div class="win98post" style="position: fixed; margin-left:-20000px;" onmousedown="offvpactive()" id="offvp">
+        <div class="win98post" style="position: fixed; margin-left:-20000px; z-index:100" onmousedown="offvpactive()" id="offvp">
             <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="offvpclose()"><div class="close"></div></div>
             <a href="https://www.youtube.com/playlist?list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU" target="_blank"><div class="win98titlebarbutton" title="Minimize"> <div class="maximize"></div></div></a>
             <div class="win98titlebarbutton" title="Minimize" onclick="offvpminimize()"> <div class="minimize"></div></div>
-            <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
-            <div class="title-bar-98" id="offvpwindow"> <div class="title-bar-text" id="offvptext">🍰 The Official Very Funny Video Playlist</div></div><div class="messagewindowbody" style="padding-right:4px"> 
-                <ul class="tree-view" style="width: 100%; height: 100%; padding:2px; padding-bottom:0px; margin-right:-4px;">
-                    <iframe width="560" height="315" src="//www.youtube.com/embed/playlist?list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></ul></div></div>
-        
+            <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
+            <div class="title-bar-98" id="offvpwindow"> <div class="title-bar-text" id="offvptext">🎬 Windows Embedded Media Player</div></div>
+            <div class="window-body" style="padding:0px;"> 
+            
+            <div class="post-header" style="height: 27px; margin-top:-6px; padding:0px;">
+                <fieldset style="position:absolute; height: 21px; width:562px; margin-left:-7px; padding:2px;">     
+                    <!-- Left side of the top container -->
+                    <div class="small_seperator" style="margin-top:1px; height:17px;"></div> <!-- Left side of the Bottom container -->
+                    <div class="container" style="position:absolute; margin-left:11.5px; margin-top:5px;">A<underline>d</underline>dress</div>
+                    <ul class="tree-view" style="position:absolute; width:393px; height:9px; margin-left:55.5px; overflow:hidden;">
+                        <div class="win98buttontitlebarinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px; width:10px; height:11px;">
+                            <div class="arrowdisableddown" style="margin-left:-4px;"></div></div>
+                        <div class="menufavouriteslink" style="position:absolute; margin-top:-5px; margin-left:-5px;"></div>
+                    <div class="container" style="margin-top:-1px; margin-left:16px;" id="mediaplayer"></div></ul>
+                                
+                    <a href="https//www.youtube.com/embed/playlist?list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU"><div class="container" style="position: absolute; margin-left:462px; height:22px; width:49px;">
+                        <div class="explorergo" style="margin-left:5.5px;"></div> <div class="reflinkblack" style="margin-top:5px;">Go</div></div></a>
+                    <div class="big_seperator" style="position;absolute; height:21px; margin-top:-0px; margin-left:505px;"></div>
+                                
+                    <div class="postlinks-container" style="position: absolute; margin-left:509px; margin-top:-0px; height:22px; width:49px; cursor:pointer;">
+                        <div class="container" style="position: absolute; margin-left:12.5px; margin-top:5px;">Links
+                            <div class="explorerlinks" style="position: absolute; margin-left:27px; margin-top:-14px;"></div>
+                            <div class="explorerlinks" style="position: absolute; margin-left:30px; margin-top:-14px;"></div></div>
+                                         
+                        <div class="win98post" style="position: absolute; width:150px; margin-top:-1px; margin-left:-20000px;" id="tumblrlinkdrop">
+                            <div class="submenu18"><label style="margin-left: 4px; margin-top: 3px"> Generate new image </label></div>
+                            <div class="submenu18"><label style="margin-left: 4px; margin-top: 3px"> Previous image </label></div>
+                            <div class="menuapplicationsplit" style="width:100%; margin-top:1px; margin-bottom:1px;"></div>
+                            <div class="submenu18"><label style="margin-left: 4px; margin-top: 3px"> Set wallpaper as (Tiled) </label></div>
+                            <div class="submenu18"><label style="margin-left: 4px; margin-top: 3px"> Set wallpaper as (Centered) </label></div></div></div></fieldset></div>
+                            
+                <ul class="tree-view" style="width: 560px; height: 100%; padding:2px; padding-bottom:0px; margin-right:-6px; margin-left:-6px; margin-bottom:-5px;">
+                    <div id="player" style="height: 315px; width: 560px; background-color:--black;"></div></ul>
+                    
+                
+        </div></div>
+                
+        <script>
+          // 2. This code loads the IFrame Player API code asynchronously.
+            var tag = document.createElement('script'); tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+            var currentlyplaying = "PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU";; ifplaylist = "playlist?list="
+            function urlupdate(){ document.getElementById("mediaplayer").innerHTML = "www.youtube.com/" + ifplaylist + currentlyplaying}
+            
+            var player;
+            function onYouTubeIframeAPIReady() { player = new YT.Player('player', { 
+                height: '315', width: '560', videoId: '', events: {'onReady': onPlayerReady}, 
+                playerVars: { controls: 0, autoplay: 0, showinfo: 0}})}
+            function onPlayerReady(event) { urlupdate(); event.target.loadPlaylist({list: currentlyplaying, index: 0, suggestedQuality: "small"})}
+            
+            function startVideo() {player.playVideo()}
+            function stopVideo() {player.stopVideo()}
+        </script>
+
+                
         <script>
             var offvp = document.getElementById("offvp"), offvpwin = document.getElementById("offvpwindow");
             function offvpactive() { inactiveall(); document.getElementById("taskapp4font").style.color = taskbartextpressed; 
@@ -473,12 +525,12 @@
                 document.getElementById("taskapp4").style.backgroundImage = github + "img/scrollbarempty.png')"; document.getElementById("taskapp4").style.backgroundColor = curcolwhite;
                 document.documentElement.style.setProperty('--taskbar4top1', curcolgray); document.documentElement.style.setProperty('--taskbar4top2', curcolblack);
                 document.documentElement.style.setProperty('--taskbar4bottom1', curcolwhite); document.documentElement.style.setProperty('--taskbar4bottom2', curcollightg);} 
-            function offvpclose() {offvp.style.marginLeft = "-20000px"; document.getElementById("taskapp4").style.marginLeft = "-20000px"; task4true = false; task4on = false; taskreset();}
+            function offvpclose() {offvp.style.marginLeft = "-20000px"; document.getElementById("taskapp4").style.marginLeft = "-20000px"; task4true = false; task4on = false; taskreset(); stopVideo();}
             function offvpopen() { inactiveall(); offvp.style.marginLeft = "0px"; offvp.style.left = "300px"; offvp.style.top = "200px";
                 currentlayer = currentlayer + 1; offvp.style.zIndex = currentlayer; offvpwin.style.backgroundImage = currentactiveheader; offvpactive()}
             function offvpminimize(){ inactiveall(); offvp.style.marginLeft = "-20000px"; offvpButtonOpen = true}
         </script>
-        
+ 
 <!-- Time / date properties rendering ------------------------------------------------------------------------------>
         
         <div class="win98post" style="height: 409px; width: 442px; position: fixed; margin-left:-20000px;" onmousedown="clockactive()" id="clock">
@@ -1329,8 +1381,7 @@
                     <div class="win98titlebarbutton" title="Maximize" style=""> <div class="maximize"></div></div>
                     <div class="win98titlebarbutton" title="Minimize" onclick="tumblrminimize();"> <div class="minimize"></div></div>
                     <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" title="Help"> <div class="help"></div></div></a> 
-                    <div class="title-bar-98" id="postwindow"> 
-                        <div class="title-bar-text" id="tumblrtext">🍭 very.vunnies on Tumblr - Internet Explorer</div></div>
+                    <div class="title-bar-98" id="postwindow"><div class="title-bar-text" id="tumblrtext">🍭 very.vunnies on Tumblr - Internet Explorer</div></div>
                     <div class="window-body"> 
                         
                         <div class="post-header" style="height: 46px; margin-top:-6px;">
@@ -2145,7 +2196,7 @@
                                     <div class="submenu20" style="cursor: pointer;"> 
                                         <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="messageopen(); menuclosed()"> 🧮 brain go brrrrr </label></div>
                                     <div class="submenu20" style="cursor: pointer;"> 
-                                        <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="vunnytask(); menuclosed()"> 👿 very.unvunny</label></div>
+                                        <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="vunnytask(); vunnypositionreset(); menuclosed()"> 👿 very.unvunny</label></div>
                                     <div class="submenu20" style="cursor: pointer;"> 
                                         <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="settingstab(); disktask(); menuclosed()"> 📺 Customise desktop... </label></div>
                                 <!--Settings submenu END --> 
@@ -2202,7 +2253,7 @@
                     var task2on = false; task3on = false; task4on = false; task2true = true; task3true = true; task4true = true;
                     var task2position, task3position, task4position;
                     var unvunnytaskbar = document.getElementById("taskapp2");   
-                    function vunnytask(){vunnywindowreset(); vunnyopen(); task2positionopen()}
+                    function vunnytask(){vunnywindowreset(); catactive(); pyroactive(); task2positionopen()}
                     function task2positionopen(){ if(task2on == false){currenttask = currenttask + 1; unvunnytaskbar.style.marginLeft = (currenttask * 168) + "px"; task2position = (currenttask * 168)}; tabconsole(); task2on = true;}
                     
                     var disktaskbar = document.getElementById("taskapp3");      
