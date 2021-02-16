@@ -343,7 +343,7 @@
         </style>
      
 <!-- Page rendering ------------------------------------------------------------------------------>
-    <script> function defaultpageload() { evangelionmode(); backcolourset(); fontcolourset(); wallpaperupdate(); themechange() }</script>
+    <script> function defaultpageload() {evangelionmode(); backcolourset(); fontcolourset(); wallpaperupdate(); themechange(); evangelionmode();} </script>
     <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" onload="defaultpageload(); vunnytask(); disktask(); tumblractive();">
 <!-- desktop handling ------------------------------------------------------------------------------>
         
@@ -389,12 +389,12 @@
         
         <script>
             var pyrotabs = 2, currentlayer = 5, pyrocurrentactive = 2, window1 = true, window2 = true;
-            function pyrowindow(){ if(pyrotabs == 0){ document.getElementById("taskapp2").style.marginLeft = "-20000px"; task2on = false; currenttask = currenttask - 1; taskreset();}}
+            function pyrowindow(){ if(pyrotabs == 0){ document.getElementById("taskapp2").style.marginLeft = "-20000px"; task2true = false; task2on = false; taskreset();}}
             function pyrocurrentopen(){ if(pyrocurrentactive == 0){ pyroButtonOpen = false; task2toggle();}}
         </script>
 
         <div class="win98post" style="position: fixed; margin-left:-20000px;" onmousedown="catactive();" id="cat">
-            <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="catclose(); pyrowindow();"><div class="close"></div></div>
+            <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="catclose();"><div class="close"></div></div>
             <div class="win98titlebarbutton" title="Minimize" onclick="catminimize();"> <div class="minimize"></div></div>
             <div class="win98titlebarbutton" style="margin-right: 2px; margin-top: 2px"> <div class="help" onclick="location.href='https://www.youtube.com/watch?v=6BJFnnWVNRU';"></div> </div>
             <div class="title-bar-98" id="catwindow"> <div class="title-bar-text" id="cattext">💯 BOUNCY CEMENT</div></div><div class="messagewindowbody" style="padding-right:4px"> 
@@ -448,7 +448,7 @@
                 <p style="color: var(--blue); margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>18:34pm on Febuary 15th, 2021. [GMT]</label></p></div></div>
         
         <script>
-            var message = document.getElementById("message"); messagewin = document.getElementById("messagewindow");
+            var message = document.getElementById("message"), messagewin = document.getElementById("messagewindow");
             function messageactive() { inactiveall(); currentlayer = currentlayer + 1; message.style.zIndex = currentlayer; 
                 messagewin.style.backgroundImage = currentactiveheader; document.getElementById("messagetext").style.color = curactivetitle;} 
             function messageclose() { message.style.right = "-100%"; message.style.marginLeft = "-20000px"}
@@ -467,16 +467,16 @@
                     <iframe width="560" height="315" src="//www.youtube.com/embed/playlist?list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></ul></div></div>
         
         <script>
-            var offvp = document.getElementById("offvp"); offvpwin = document.getElementById("offvpwindow");
+            var offvp = document.getElementById("offvp"), offvpwin = document.getElementById("offvpwindow");
             function offvpactive() { inactiveall(); document.getElementById("taskapp4font").style.color = taskbartextpressed; 
                 currentlayer = currentlayer + 1; offvp.style.zIndex = currentlayer; offvpwin.style.backgroundImage = currentactiveheader; offvp.style.marginLeft = "0px"; offvpButtonOpen = false; 
                 document.getElementById("taskapp4").style.backgroundImage = github + "img/scrollbarempty.png')"; document.getElementById("taskapp4").style.backgroundColor = curcolwhite;
                 document.documentElement.style.setProperty('--taskbar4top1', curcolgray); document.documentElement.style.setProperty('--taskbar4top2', curcolblack);
                 document.documentElement.style.setProperty('--taskbar4bottom1', curcolwhite); document.documentElement.style.setProperty('--taskbar4bottom2', curcollightg);} 
-            function offvpclose() {offvp.style.marginLeft = "-20000px"}
+            function offvpclose() {offvp.style.marginLeft = "-20000px"; document.getElementById("taskapp4").style.marginLeft = "-20000px"; task4true = false; task4on = false; taskreset();}
             function offvpopen() { inactiveall(); offvp.style.marginLeft = "0px"; offvp.style.left = "300px"; offvp.style.top = "200px";
                 currentlayer = currentlayer + 1; offvp.style.zIndex = currentlayer; offvpwin.style.backgroundImage = currentactiveheader; offvpactive()}
-            function offvpminimize(){ inactiveall(); offvp.style.marginLeft = "-20000px"; offvpButtonOpen = true;}
+            function offvpminimize(){ inactiveall(); offvp.style.marginLeft = "-20000px"; offvpButtonOpen = true}
         </script>
         
 <!-- Time / date properties rendering ------------------------------------------------------------------------------>
@@ -752,7 +752,7 @@
                         <div class="disabledfont" style="position:absolute; margin-left:72px; margin-top:-12px">Wait:</div>
                         <ul class="tree-view" style="position:absolute; width:41px; height:9px; margin-top: -16px; margin-left:101px; background-color:var(--silver)">
                             <div class="container" style="margin-top: -4px; margin-left:27px">
-                                <label style="position:absolute; margin-left: -14px; margin-top: 3px; color:gray;"> 14 </label>
+                                <label style="position:absolute; margin-left: -14px; margin-top: 3px; color:curcolgray;"> 14 </label>
                                 <div class="win98buttoninactive" style="position:absolute; margin-left:1px; margin-top:0px; width:11px; height:2px;"><div class="tinyarrowdisabledup" style="margin-left:4px;"></div></div>
                                 <div class="win98buttoninactive" style="position:absolute; margin-left:1px; margin-top:9px; width:11px; height:2px;"><div class="tinyarrowdisableddown"  style="margin-left:4px;"></div></div>
                         </div></ul>
@@ -827,14 +827,14 @@
                         function schemeexit(){ document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }
                         function wallpapercust() { currentsch.textContent="(Custom)"; }
 
-                        function windows98(){           currentsch.textContent="Windows 98";              cpick12();       wallpaperoption1();    themecurrent = "lightmode"; themeupdate(); precolourupdate(); themepreviewchange();}
-                        function evangelionmode(){      currentsch.textContent="Neon Genesis Evangelion"; cpick18();       wallpaperoption4();    themecurrent = "darkmode";  themeupdate(); precolourupdate(); themepreviewchange();}
-                        function Octavia(){             currentsch.textContent="Octavia's Study";         cpick17();       wallpaperoption2();    themecurrent = "darkmode";  themeupdate(); precolourupdate(); themepreviewchange();}
-                        function girlsdayout(){         currentsch.textContent="A Girls Day Out";         cpick19();       wallpaperoption5();    themecurrent = "tankmode";  themeupdate(); precolourupdate(); themepreviewchange();}
-                        function milyvean(){            currentsch.textContent="Clouds at Midnight";      cpick18();       wallpaperoption7();    themecurrent = "lightmode"; themeupdate(); precolourupdate(); themepreviewchange();}
-                        function vapourwave(){          currentsch.textContent="Aesthetic";               cpick20();       wallpaperoption8();    themecurrent = "neonmode";  themeupdate(); precolourupdate(); themepreviewchange();}
-                        function contrastmodescheme1(){ currentsch.textContent="High Contrast Mode 1";    highcontrast1(); wallpaperoptionnone(); themecurrent = "contrastmode1"; themeupdate(); precolourupdate(); themepreviewchange();}
-                        function contrastmodescheme2(){ currentsch.textContent="High Contrast Mode 2";    highcontrast2(); wallpaperoptionnone(); themecurrent = "contrastmode2"; themeupdate(); precolourupdate(); themepreviewchange();}
+                        function windows98(){           currentsch.textContent="Windows 98";              cpick12();       wallpaperoption1();    themecurrent = "lightmode"; themeupdate(); themepreviewchange();}
+                        function evangelionmode(){      currentsch.textContent="Neon Genesis Evangelion"; cpick18();       wallpaperoption4();    themecurrent = "darkmode";  themeupdate(); themepreviewchange();}
+                        function Octavia(){             currentsch.textContent="Octavia's Study";         cpick17();       wallpaperoption2();    themecurrent = "darkmode";  themeupdate(); themepreviewchange();}
+                        function girlsdayout(){         currentsch.textContent="A Girls Day Out";         cpick19();       wallpaperoption5();    themecurrent = "tankmode";  themeupdate(); themepreviewchange();}
+                        function milyvean(){            currentsch.textContent="Clouds at Midnight";      cpick18();       wallpaperoption7();    themecurrent = "lightmode"; themeupdate(); themepreviewchange();}
+                        function vapourwave(){          currentsch.textContent="Aesthetic";               cpick20();       wallpaperoption8();    themecurrent = "neonmode";  themeupdate(); themepreviewchange();}
+                        function contrastmodescheme1(){ currentsch.textContent="High Contrast Mode 1";    highcontrast1(); wallpaperoptionnone(); themecurrent = "contrastmode1"; themeupdate(); themepreviewchange();}
+                        function contrastmodescheme2(){ currentsch.textContent="High Contrast Mode 2";    highcontrast2(); wallpaperoptionnone(); themecurrent = "contrastmode2"; themeupdate(); themepreviewchange();}
 
                         function themeupdate() { 
                             if (themecurrent == "darkmode"){darkmode()} if (themecurrent == "lightmode"){lightmode()} if (themecurrent == "contrastmode1"){contrastmode1()} if (themecurrent == "contrastmode2"){contrastmode2()}
@@ -842,43 +842,43 @@
                         
                         function darkmode(){ colorwallpaperpicked = "#292929"; pretaskbartext = "#9f9f9f"; pretaskbartextpressed = "#ffffff"; preactivetitle = "#ffffff"; preinactivetitle = "#ffffff";
                             precurrentactiveheader = github + "img/title-bar%20postheader-darkmodeactive.png')"; precurrentinactiveheader = github + "img/title-bar%20postheader-darkmode.png')";
-                            curcolwhite = "#545454";   curcollightg = "#9f9f9f"; curcolsilver = "#3f3f3f"; curcolmidgray = "#ababab"; curcolgray = "#292929"; curcolblack = "#000000"; curcolblue = "#fccc39";
-                            curcolprussian = "#00207c"; curcolwincyan = "#008080"; curcolyellow = "#c0c0c0"; curcolfont = "#c0c0c0"; curcolfonttitle = "#ffffff"; curcolhover = "#ffffff"; curcolatext = "#ffffff";
+                            precolwhite = "#545454";   precollightg = "#9f9f9f"; precolsilver = "#3f3f3f"; precolmidgray = "#ababab"; precolgray = "#292929"; precolblack = "#000000"; precolblue = "#fccc39";
+                            precolprussian = "#00207c"; precolwincyan = "#008080"; precolyellow = "#c0c0c0"; precolfont = "#c0c0c0"; precolfonttitle = "#ffffff"; curcolhover = "#ffffff"; precolatext = "#ffffff";
                             docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 1;
                             docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')");}
                             
                         function tankmode(){ colorwallpaperpicked = "#607060"; pretaskbartext = "#000000"; pretaskbartextpressed = "#000000"; preactivetitle = "#ffffff"; preinactivetitle = "#607060";
                             precurrentinactiveheader = github + "img/title-bar%20postheaderinactivetank.png')"; precurrentactiveheader = github + "img/title-bar%20postheaderactivetank.png')";
-                            curcolwhite = "#7d8f7d";   curcollightg = "#607060"; curcolsilver = "#607060"; curcolmidgray = "#404840"; curcolgray = "#404840"; curcolblack = "#0a0a0a"; curcolblue = "#ffffff";
-                            curcolprussian = "#481212" ; curcolwincyan = "#008080"; curcolyellow = "#ffff00"; curcolfont = "#000000"; curcolfonttitle = "#ffffff"; curcolhover = "#ffffff"; curcolatext = "#000000";
+                            precolwhite = "#7d8f7d";   precollightg = "#607060"; precolsilver = "#607060"; precolmidgray = "#404840"; precolgray = "#404840"; precolblack = "#0a0a0a"; precolblue = "#ffffff";
+                            precolprussian = "#481212" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#000000"; precolfonttitle = "#ffffff"; curcolhover = "#ffffff"; precolatext = "#000000";
                             docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 0;
                             docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')") }
                         
                         function lightmode(){ colorwallpaperpicked = "#c0c0c0"; pretaskbartext = "#000000"; pretaskbartextpressed = "#000000"; preactivetitle = "#ffffff"; preinactivetitle = "#ffffff";
                             precurrentinactiveheader = github + "img/title-bar%20postheaderinactive.png')"; precurrentactiveheader = github + "img/title-bar%20postheader.png')";
-                            curcolwhite = "#ffffff";   curcollightg = "#dfdfdf"; curcolsilver = "#c0c0c0"; curcolmidgray = "#ababab"; curcolgray = "#808080"; curcolblack = "#0a0a0a"; curcolblue = "#0000FF";
-                            curcolprussian = "#00207c" ; curcolwincyan = "#008080"; curcolyellow = "#ffff00"; curcolfont = "#000000"; curcolfonttitle = "#ffffff"; curcolhover = "#ffffff"; curcolatext = "#000000";
+                            precolwhite = "#ffffff";   precollightg = "#dfdfdf"; precolsilver = "#c0c0c0"; precolmidgray = "#ababab"; precolgray = "#808080"; precolblack = "#0a0a0a"; precolblue = "#0000FF";
+                            precolprussian = "#00207c" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#000000"; precolfonttitle = "#ffffff"; precolhover = "#ffffff"; precolatext = "#000000";
                             docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 0;
                             docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")}
                             
                         function neonmode(){ colorwallpaperpicked = "#a2dbd2"; pretaskbartext = "#000000"; pretaskbartextpressed = "#000000"; preactivetitle = "#ffffff"; preinactivetitle = "#00554d";
                             precurrentinactiveheader = github + "img/title-bar%20postheaderneon.png')"; precurrentactiveheader = github + "img/title-bar%20postheaderneonactive.png')";
-                            curcolwhite = "#f7dbd7";   curcollightg = "#fae0e4"; curcolsilver = "#f4c1ca"; curcolmidgray = "#e08998"; curcolgray = "#de4560"; curcolblack = "#0a0a0a"; curcolblue = "#00bfbc";
-                            curcolprussian = "#a2dbd2" ; curcolwincyan = "#008080"; curcolyellow = "#ffff00"; curcolfont = "#000000"; curcolfonttitle = "#ffffff"; curcolhover = "#ffffff"; curcolatext = "#000000";
+                            precolwhite = "#f7dbd7"; precollightg = "#fae0e4"; precolsilver = "#f4c1ca"; precolmidgray = "#e08998"; precolgray = "#de4560"; precolblack = "#0a0a0a"; precolblue = "#00bfbc";
+                            precolprussian = "#a2dbd2" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#000000"; precolfonttitle = "#ffffff"; precolhover = "#ffffff"; precolatext = "#000000";
                             docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 0;
                             docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")}
                         
                         function contrastmode1(){ colorwallpaperpicked = "#0000ff"; pretaskbartext = "#ffffff"; pretaskbartextpressed = "#0000ff"; preactivetitle = "#ffffff"; preinactivetitle = "#000000";
                             precurrentinactiveheader = github + "img/title-bar%20postheaderinactivecontrast.png')"; precurrentactiveheader = github + "img/title-bar%20postheaderactivecontrast.png')";
-                            curcolwhite = "#000000";   curcollightg = "#dfdfdf"; curcolsilver = "#000000"; curcolmidgray = "#ababab"; curcolgray = "#808080"; curcolblack = "#ffffff"; curcolblue = "#00ffff";
-                            curcolprussian = "#0000ff" ; curcolwincyan = "#008080"; curcolyellow = "#ffff00"; curcolfont = "#ffff00"; curcolfonttitle = "#000000"; curcolhover = "#ffffff"; curcolatext = "#ffffff";
+                            precolwhite = "#000000"; precollightg = "#dfdfdf"; precolsilver = "#000000"; precolmidgray = "#ababab"; precolgray = "#808080"; precolblack = "#ffffff"; precolblue = "#00ffff";
+                            precolprussian = "#0000ff" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#ffff00"; precolfonttitle = "#000000"; precolhover = "#ffffff"; precolatext = "#ffffff";
                             docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 1;
                             docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")}
                             
                         function contrastmode2(){ colorwallpaperpicked = "#00ff00"; pretaskbartext = "#ffffff"; pretaskbartextpressed = "#0000ff"; preactivetitle = "#000000"; preinactivetitle = "#000000";
                             precurrentinactiveheader = github + "img/title-bar%20postheaderinactivecontrast2.png')"; precurrentactiveheader = github + "img/title-bar%20postheaderactivecontrast2.png')";
-                            curcolwhite = "#000000";   curcollightg = "#dfdfdf"; curcolsilver = "#000000"; curcolmidgray = "#ababab"; curcolgray = "#808080"; curcolblack = "#ffffff"; curcolblue = "#00ff00";
-                            curcolprussian = "#00ff00" ; curcolwincyan = "#008080"; curcolyellow = "#ffff00"; curcolfont = "#ffff00"; curcolfonttitle = "#000000"; curcolhover = "#ffffff"; curcolatext = "#00ff00";
+                            precolwhite = "#000000";   precollightg = "#dfdfdf"; precolsilver = "#000000"; precolmidgray = "#ababab"; precolgray = "#808080"; precolblack = "#ffffff"; precolblue = "#00ff00";
+                            precolprussian = "#00ff00" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#ffff00"; precolfonttitle = "#000000"; precolhover = "#ffffff"; precolatext = "#00ff00";
                             docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 1;
                             docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")}
                          
@@ -889,8 +889,8 @@
                             cpc.style.backgroundColor = "#000000"; cpo.style.backgroundColor = "#000000"; document.getElementById("iconpreview").style.backgroundColor = "#000000";  ap.style.backgroundColor = "#000000";}
                         
                         function precolourupdate() {
-                            precolwhite = curcolwhite; precollightg = curcollightg; precolsilver = curcolsilver; precolmidgray = curcolmidgray; precolgray = curcolgray; precolblack = curcolblack; precolblue = curcolblue; curinvert = preinvert;
-                            precolprussian = curcolprussian; precolwincyan = curcolwincyan; precolyellow = curcolyellow; precolfont = curcolfont; precolfonttitle = curcolfonttitle; precolhover = curcolhover; precolatext = curcolatext;}
+                            curcolwhite = precolwhite; curcollightg = precollightg; curcolsilver = precolsilver; curcolmidgray = precolmidgray; curcolgray = precolgray; curcolblack = precolblack; curcolblue = precolblue; curinvert = preinvert;
+                            curcolprussian = precolprussian; curcolwincyan = precolwincyan; curcolyellow = precolyellow; curcolfont = precolfont; curcolfonttitle = precolfonttitle; curcolhover = precolhover; curcolatext = precolatext}
                         
                         function themepreviewchange() { docelem.style.setProperty('--preinvert', preinvert);
                             docelem.style.setProperty('--preblue', precolblue); docelem.style.setProperty('--preactivetitle', preactivetitle); docelem.style.setProperty('--preinactivetitle', preinactivetitle); 
@@ -899,19 +899,21 @@
                             docelem.style.setProperty('--premidgray', precolmidgray); docelem.style.setProperty('--prewincyan', precolwincyan); docelem.style.setProperty('--preyellow', precolyellow); 
                             docelem.style.setProperty('--prefont', precolfont); docelem.style.setProperty('--prefonttitle', precolfonttitle); docelem.style.setProperty('--prehover', precolhover);
                             docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader);
-                            document.getElementById("preinactive").style.color = preinactivetitle; document.getElementById("premessage").style.color = preactivetitle; document.getElementById("preactive").style.color = preactivetitle;}
+                            document.getElementById("preinactive").style.color = preinactivetitle; document.getElementById("premessage").style.color = preactivetitle; document.getElementById("preactive").style.color = preactivetitle}
                         
-                        function themechange() { currentinactiveheader = precurrentinactiveheader; currentactiveheader = precurrentactiveheader; curactivetitle = preactivetitle; curinactivetitle = preinactivetitle;
+                        function themechange() { precolourupdate();
+                            currentinactiveheader = precurrentinactiveheader; currentactiveheader = precurrentactiveheader; curactivetitle = preactivetitle; curinactivetitle = preinactivetitle;
                             docelem.style.setProperty('--curactivetitle', curactivetitle); docelem.style.setProperty('--curinactivetitle', curinactivetitle); 
                             docelem.style.setProperty('--white', curcolwhite); docelem.style.setProperty('--gray', curcolgray); docelem.style.setProperty('--lightg', curcollightg); 
                             docelem.style.setProperty('--black', curcolblack); docelem.style.setProperty('--silver', curcolsilver); docelem.style.setProperty('--prussian', curcolprussian);
                             docelem.style.setProperty('--midgray', curcolmidgray); docelem.style.setProperty('--wincyan', curcolwincyan); docelem.style.setProperty('--yellow', curcolyellow); 
                             docelem.style.setProperty('--font', curcolfont); docelem.style.setProperty('--fonttitle', curcolfonttitle); docelem.style.setProperty('--hover', curcolhover);
-                            docelem.style.setProperty('--atext', curcolatext); docelem.style.setProperty('--blue', curcolblue);
+                            docelem.style.setProperty('--atext', curcolatext); docelem.style.setProperty('--blue', curcolblue); 
                             whit = curcolhover; blac = curcolblack; prus = curcolprussian; silv = curcolsilver; yell = curcolyellow; lightg = curcollightg; gray = curcolgray; text = curcolfont; cyan = curcolwincyan;
                             taskbartext = pretaskbartext; taskbartextpressed = pretaskbartextpressed; currentinactiveheader = precurrentinactiveheader; currentactiveheader = precurrentactiveheader; black = curcolfont; white = curcolwhite;
-                            docelem.style.setProperty('--taskbarstarttop1', gray); docelem.style.setProperty('--taskbarstarttop2', blac); docelem.style.setProperty('--taskbarstartbottom1', white); docelem.style.setProperty('--taskbarstartbottom2', lightg);
-                            docelem.style.setProperty('--inactive', currentinactiveheader); docelem.style.setProperty('--active', currentactiveheader); docelem.style.setProperty('--invert', curinvert); inactiveall(); diskactive(); clocku();}
+                            docelem.style.setProperty('--taskbarstarttop1', curcolgray); docelem.style.setProperty('--taskbarstarttop2', curcolblack); 
+                            docelem.style.setProperty('--taskbarstartbottom1', curcolwhite); docelem.style.setProperty('--taskbarstartbottom2', curcollightg);
+                            docelem.style.setProperty('--inactive', currentinactiveheader); docelem.style.setProperty('--active', currentactiveheader); docelem.style.setProperty('--invert', curinvert); inactiveall(); diskactive(); clocku()}
                     </script>
                         
                     <div class="win98buttoninactive" style="position: absolute; margin-left:199px; margin-top: -2px; width:66px; height:18px;"> 
@@ -1199,7 +1201,7 @@
                 document.documentElement.style.setProperty('--taskbar3bottom1', curcolwhite); document.documentElement.style.setProperty('--taskbar3bottom2', curcollightg);}
             function diskopen() { tabreset(); diskactive(); disk.style.left = "1465px"; disk.style.top = "13%";}
             function diskclose() { inactiveall(); diskButtonOpen = true; disk.style.marginLeft = "-20000px"; disk.style.marginTop = "-20000px"; 
-                document.getElementById("taskapp3").style.marginLeft = "-20000px"; task3on = false; currenttask = currenttask - 1; taskreset();}
+                document.getElementById("taskapp3").style.marginLeft = "-20000px"; task3true = false; task3on = false; taskreset();}
             function diskminimize() { inactiveall(); disk.style.marginLeft = "-20000px"; disk.style.marginTop = "-20000px"; diskButtonOpen = true;}
         </script> 
         
@@ -1612,14 +1614,14 @@
                 //start button / menu addressing
                 var startButtonOpen = false;
                 function startpress() { if (startButtonOpen == true) { document.getElementById("startmenu").style.marginLeft = "200000px"; startButtonOpen = false;
-                        docelem.style.setProperty('--taskbarstarttop1', gray); docelem.style.setProperty('--taskbarstarttop2', blac);
-                        docelem.style.setProperty('--taskbarstartbottom1', white); docelem.style.setProperty('--taskbarstartbottom2', lightg);
+                        docelem.style.setProperty('--taskbarstarttop1', curcolgray); docelem.style.setProperty('--taskbarstarttop2', curcolblack);
+                        docelem.style.setProperty('--taskbarstartbottom1', curcolwhite); docelem.style.setProperty('--taskbarstartbottom2', curcollightg);
                     } else if(startButtonOpen == false) { document.getElementById("startmenu").style.marginLeft = "0px"; startButtonOpen = true; 
-                        docelem.style.setProperty('--taskbarstarttop1', white); docelem.style.setProperty('--taskbarstarttop2', lightg);
-                        docelem.style.setProperty('--taskbarstartbottom1', blac); docelem.style.setProperty('--taskbarstartbottom2', gray);}}
+                        docelem.style.setProperty('--taskbarstarttop1', curcolwhite); docelem.style.setProperty('--taskbarstarttop2', curcollightg);
+                        docelem.style.setProperty('--taskbarstartbottom1', curcolblack); docelem.style.setProperty('--taskbarstartbottom2', curcolgray);}}
                 function menuclosed(){ document.getElementById("startmenu").style.marginLeft = "200000px"; startButtonOpen = false;
-                    docelem.style.setProperty('--taskbarstarttop1', gray); docelem.style.setProperty('--taskbarstarttop2', blac);
-                    docelem.style.setProperty('--taskbarstartbottom1', white); docelem.style.setProperty('--taskbarstartbottom2', lightg);}
+                    docelem.style.setProperty('--taskbarstarttop1', curcolgray); docelem.style.setProperty('--taskbarstarttop2', curcolblack);
+                    docelem.style.setProperty('--taskbarstartbottom1', curcolwhite); docelem.style.setProperty('--taskbarstartbottom2', curcollightg);}
             </script> 
             
             <!-- Start button toggle -->
@@ -2191,35 +2193,34 @@
                 
                 
                 <script>
-                    var tumblrButtonOpen = false, pyroButtonOpen = true, diskButtonOpen = true; offvpButtonOpen = true;
-                    var taskbartext, taskbartextpressed, pretaskbartext, pretaskbartextpressed;
+                    var tumblrButtonOpen = false, pyroButtonOpen = true, diskButtonOpen = true, offvpButtonOpen = true;
                     function task1toggle() { if (tumblrButtonOpen == false) {tumblrminimize()} else if (tumblrButtonOpen == true){tumblractive()}}
                     function task2toggle(){ if (pyroButtonOpen == false) {vunnyminimize()} else if (pyroButtonOpen == true){vunnyopen()}}
                     function task3toggle() { if (diskButtonOpen == false) {diskminimize()} else if (diskButtonOpen == true){diskactive()}} 
                     function task4toggle() { if (offvpButtonOpen == false) {offvpminimize()} else if (offvpButtonOpen == true){offvpactive()}} 
 
-                    var task2on = false; task3on = false; task4on = false;
-                    
-                    var unvunnytaskbar = document.getElementById("taskapp2");
+                    var task2on = false; task3on = false; task4on = false; task2true = true; task3true = true; task4true = true;
+                    var task2position, task3position, task4position;
+                    var unvunnytaskbar = document.getElementById("taskapp2");   
                     function vunnytask(){vunnywindowreset(); vunnyopen(); task2positionopen()}
-                    function task2positionopen(){ if(task2on == false){currenttask = currenttask + 1; unvunnytaskbar.style.marginLeft = (currenttask * 168) + "px"; task2on = true; task2position = (currenttask * 168)} 
-                        tabconsole()}
+                    function task2positionopen(){ if(task2on == false){currenttask = currenttask + 1; unvunnytaskbar.style.marginLeft = (currenttask * 168) + "px"; task2position = (currenttask * 168)}; tabconsole(); task2on = true;}
                     
-                    var disktaskbar = document.getElementById("taskapp3");
+                    var disktaskbar = document.getElementById("taskapp3");      
                     function disktask(){diskopen(); appearancetab(); task3positionopen()}
-                    function task3positionopen(){ if(task3on == false){currenttask = currenttask + 1; disktaskbar.style.marginLeft = (currenttask * 168) + "px"; task3on = true; task3position = (currenttask * 168)} 
-                        tabconsole()}
+                    function task3positionopen(){ if(task3on == false){currenttask = currenttask + 1; disktaskbar.style.marginLeft = (currenttask * 168) + "px"; task3position = (currenttask * 168)}; tabconsole(); task3on = true; }
                         
-                    var offvptaskbar = document.getElementById("taskapp4");
+                    var offvptaskbar = document.getElementById("taskapp4");     
                     function offvptask(){offvpopen(); task4positionopen()}
-                    function task4positionopen(){ if(task4on == false){currenttask = currenttask + 1; offvptaskbar.style.marginLeft = (currenttask * 168) + "px"; task4on = true; task4position = (currenttask * 168)} 
-                        tabconsole()}
+                    function task4positionopen(){ if(task4on == false){currenttask = currenttask + 1; offvptaskbar.style.marginLeft = (currenttask * 168) + "px"; task4position = (currenttask * 168)}; tabconsole(); task4on = true;}
 
                     function taskreset(){
-                        if(task2on == false){ if(task3on == true){disktaskbar.style.marginLeft = task3position - 168  + "px"} if(task4on == true){offvptaskbar.style.marginLeft = task4position - 168  + "px"} tabconsole()}
-                        if(task3on == false){ if(task2on == true){unvunnytaskbar.style.marginLeft = task2position - 168  + "px"} if(task3on == true){offvptaskbar.style.marginLeft = task4position - 168  + "px"} tabconsole()}
-                        if(currenttask == 0){ currenttask = 1}
-                    }
+                        if(task2true == false){ if(task2position <= task3position){ if(task3on == true){    disktaskbar.style.marginLeft = (task3position - 168) + "px"; task3position = task3position - 168; console.log("task2false, task3true")}}; 
+                                                if(task2position <= task4position){ if(task4on == true){   offvptaskbar.style.marginLeft = (task4position - 168) + "px"; task4position = task4position - 168; console.log("task2false, task4true")}} task2true = true;}
+                        if(task3true == false){ if(task3position <= task2position){ if(task2on == true){ unvunnytaskbar.style.marginLeft = (task2position - 168) + "px"; task2position = task2position - 168; console.log("task3false, task2true")}}; 
+                                                if(task3position <= task4position){ if(task4on == true){   offvptaskbar.style.marginLeft = (task4position - 168) + "px"; task4position = task4position - 168; console.log("task3false, task4true")}} task3true = true;}
+                        if(task4true == false){ if(task4position <= task2position){ if(task2on == true){ unvunnytaskbar.style.marginLeft = (task2position - 168) + "px"; task2position = task2position - 168; console.log("task4false, task2true")}}; 
+                                                if(task4position <= task3position){ if(task3on == true){    disktaskbar.style.marginLeft = (task3position - 168) + "px"; task3position = task3position - 168; console.log("task4false, task3true")}} task4true = true;}
+                        currenttask = currenttask - 1; tabconsole();}
                     
                     function tabconsole(){ console.log("current tasks active: " + currenttask)}
                 </script>
@@ -2257,7 +2258,7 @@
             ctx.translate(radius, radius); radius = radius * 0.90; setInterval(drawClock, 1000);
             
             function drawClock() { drawFace(ctx, radius); drawTime(ctx, radius)}
-            function drawFace(ctx, radius) { ctx.beginPath(); ctx.arc(0, 0, radius, 0, 2*Math.PI); ctx.fillStyle = silv;ctx.fill();}
+            function drawFace(ctx, radius) { ctx.beginPath(); ctx.arc(0, 0, radius, 0, 2*Math.PI); ctx.fillStyle = curcolsilver; ctx.fill();}
             
             function drawTime(ctx, radius){ 
                 var now = new Date(); hour = now.getHours(); minute = now.getMinutes() + minutemath; second = now.getSeconds();
@@ -2269,15 +2270,15 @@
             
             var hand = 1;
             function drawHand(ctx, pos, length, width) {
-            	if (hand < 3){ ctx.beginPath(); ctx.lineWidth = 2.5; ctx.strokeStyle = cyan;
+            	if (hand < 3){ ctx.beginPath(); ctx.lineWidth = 2.5; ctx.strokeStyle = curcolwincyan;
                   ctx.moveTo(0,0); ctx.rotate(pos); ctx.lineTo(0, -length); ctx.stroke(); ctx.rotate(-pos); hand = hand + 1;
-            	} else { ctx.beginPath(); ctx.lineWidth = 0.5; ctx.strokeStyle = blac; ctx.lineCap = "round"; 
+            	} else { ctx.beginPath(); ctx.lineWidth = 0.5; ctx.strokeStyle = curcolblack; ctx.lineCap = "round"; 
                   ctx.moveTo(0,0); ctx.rotate(pos); ctx.lineTo(0, -length); ctx.stroke(); ctx.rotate(-pos); hand = 1 }}
             
         // Drag element scripts ------------------------------------------------------------------------------>
             
             dragElement(document.getElementById("cat")); dragElement(document.getElementById("pyro")); dragElement(document.getElementById("disk")); dragElement(document.getElementById("message")); 
-            dragElement(document.getElementById("offvp")); dragElement(document.getElementById("rct2"));
+            dragElement(document.getElementById("offvp"));
             dragElement(document.getElementById("logoff")); dragElement(document.getElementById("shutdown")); dragElement(document.getElementById("clock"));
             function dragElement(elmnt) { var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
             if (document.getElementById(elmnt.id + "window")) { document.getElementById(elmnt.id + "window").onmousedown = dragMouseDown; } else { elmnt.onmousedown = dragMouseDown; }
@@ -2300,15 +2301,14 @@
                 medimenu = document.getElementById("media"); medisubmenu = document.getElementById("mediasubmenu"); documenu = document.getElementById("menudocuments"); docusubmenu = document.getElementById("documentsmenu");
                 settmenu = document.getElementById("menusettings"); settsubmenu = document.getElementById("settingsmenu"); actimenu = document.getElementById("activedesktop"); actisubmenu = document.getElementById("activedesktopsubmenu");
                 findmenu = document.getElementById("menufind"); findsubmenu = document.getElementById("findmenu");
-            var whit = "#fff"; blac = "#000"; prus = "#00207c"; silv = "#c0c0c0"; faraw = "200000px"; aropen = "-134px -216px"; arclose = "-54px -216px"; yell = "#ffff00"; lightg = "#dfdfdf";  gray = "#808080"; text = "#000000"; cyan = "#008080"
             
+            var faraw = "200000px"; aropen = "-134px -216px"; arclose = "-54px -216px";
             function cmw() {cm.style.color = whit} function cmb() {cm.style.color = text} function cmd() {cms.style.marginLeft = faraw} function cmbp() {cm.style.backgroundColor = silv} function cmbs() {cm.style.backgroundColor = prus}
             function progcm() {cm = progmenu; cms = progsubmenu} function accecm() {cm = accemenu; cms = accesubmenu} function commcm() {cm = commmenu; cms = commsubmenu} function entecm() {cm = entemenu; cms = entesubmenu} 
             function gamecm() {cm = gamemenu; cms = gamesubmenu} function intecm() {cm = intemenu; cms = intesubmenu} function systcm() {cm = systmenu; cms = systsubmenu} function onlicm() {cm = onlimenu; cms = onlisubmenu} 
             function starcm() {cm = starmenu; cms = starsubmenu} function favocm() {cm = favomenu; cms = favosubmenu} function chancm() {cm = chanmenu; cms = chansubmenu} function linkcm() {cm = linkmenu; cms = linksubmenu} 
             function medicm() {cm = medimenu; cms = medisubmenu} function docucm() {cm = documenu; cms = docusubmenu} function settcm() {cm = settmenu; cms = settsubmenu} function acticm() {cm = actimenu; cms = actisubmenu} 
             function findcm() {cm = findmenu; cms = findsubmenu} function starton() {cmbs(); cmw()} function startoff(){cmbp(); cmb()}
-
             function programsopen() {   progcm(); starton(); cms.style.marginLeft = "161px";  document.getElementById("menuarrow1").style.backgroundPosition = aropen}
             function programsclosed() { progcm(); startoff(); document.getElementById("menuarrow1").style.backgroundPosition = arclose; cmd()}
             function accessoriesopen() {  accecm(); starton(); cms.style.marginLeft = "133px"; document.getElementById("submenuarrow2").style.backgroundPosition = aropen}
