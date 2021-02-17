@@ -1,11 +1,27 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll;">
 <ul>
-<li><strong style="color: var(--atext);">2021 Febuary 16th (210216)</strong>
+<li><strong style="color: var(--atext);">2021 Febuary 17th (210217)</strong><em> - "Media player</em><em>" Update 2<br /></em>
 <ul>
 <li><strong>Embedded Media Player Changes</strong><br />
 <ul>
-<li>Official Very Funny Playlist player is now the windows embedded media player.</li>
+<li>Added player buttons including; Play, Pause, Stop, Previous and Next.</li>
+<li>Added Media Player Footer that updates based on the state the media player is currently in.</li>
+<li>The URL of the current video playing now changes based on the current video in the player.</li>
+</ul>
+</li>
+<li>Display properties monitor-like preview has been changed to no longer rely on colour invert and changed out for a trasnparent body. The inside of the preview has kept it's invertability as it's now a seperate asset.</li>
+<li>Disabled arrows no longer use seperate assets to regular arrows and instead just use the invert filter.</li>
+</ul>
+<ol>
+<li>- Fixed anti-aliasing related issues in the embedded media player.</li>
+<li><em>- Some patches to math done to caculate the taskbar task distances.</em></li>
+</ol></li>
+<li><strong style="color: var(--atext);">2021 Febuary 16th (210216) </strong><em>- "Media player</em><em>" Update 1</em>
+<ul>
+<li><strong>Embedded Media Player Changes</strong><br />
+<ul>
+<li>"Official Very Funny Playlist player" is now the windows embedded media player.</li>
 <li>Media player now has a dynamic current address header depending on the current video playing.<strong><br /></strong></li>
 <li>Adjusted how the mediaplayer is handled and replaced Iframe with javascript for future expandability.</li>
 <li>Mediaplayer now autoplays on open and auto pauses on window shutdown.</li>
@@ -20,7 +36,7 @@
 <li>- Solved potential issues to do with scheme colours in the future.</li>
 <li>- Fixed Very Unvunnies reseting their position to default from clicking on the taskbar.</li>
 </ol></li>
-<li><strong style="color: var(--atext);">2021 Febuary 15th (210215)</strong><br />
+<li><strong style="color: var(--atext);">2021 Febuary 15th (210215)</strong> <em>- "The Taskbar Rehaul Update"</em> <br />
 <ul>
 <li><strong>Dynamic Tasks added.</strong><strong><strong><br /></strong></strong>
 <ul>
@@ -29,7 +45,7 @@
 <li>Tasks now automatically adjust based on tasks being closed and opened.</li>
 </ul>
 </li>
-<li><strong>Official very funny video playlist Window added</strong>
+<li><strong>"Official very funny video playlist" Window added</strong>
 <ul>
 <li>Added embedded window for the &ldquo;Official very funny video playlist&rdquo;, replacing the old redirect.</li>
 <li>Added tabbing functionality to &ldquo;Official very funny video playlist&rdquo; embed through the taskbar and other desktop functions.<strong><br /></strong></li>
