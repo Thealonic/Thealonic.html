@@ -76,11 +76,12 @@
             .icon_label { padding-top: 6px; padding-bottom: 6px; color: var(--wincyan); text-align: center; cursor: pointer} /* Icon gaps */
             
             /* sidebar */
-            .thealonic, .veryvhersty, .twitter, .askicon, .discordlink, .officialfunny, .rct2, .simcity {background-image: var(--desktopsheet); height: 72px; width: 72px; margin-left:14px; cursor: pointer}
+            .thealonic, .veryvhersty, .twitter, .askicon, .discordlink, .officialfunny, .rct2, .simcity, .notepaddesktop {background-image: var(--desktopsheet); height: 72px; width: 72px; margin-left:14px; cursor: pointer}
             .thealonic {background-position: -0px -0px} .simcity {background-position: -432px -0px} .veryvhersty {background-position: -72px -0px} .rct2 {background-position: -360px -0px}
             .twitter {background-position: -144px -0px} .officialfunny {background-position: -504px -0px} .askicon {background-position: -216px -0px} .discordlink {background-position: -288px -0px}
+            .notepaddesktop {background-position: -576px -0px}
 
-            .thealonicpreview, .veryvherstypreview, .twitterpreview, .askiconpreview, .discordlinkpreview, .officialfunnypreview, .rct2preview, .simcitypreview {background-image: var(--desktopsheet); height: 36px; width: 36px}
+            .thealonicpreview, .veryvherstypreview, .twitterpreview, .askiconpreview, .discordlinkpreview, .officialfunnypreview, .rct2preview, .simcitypreview{background-image: var(--desktopsheet); height: 36px; width: 36px}
             .thealonicpreview {background-position: -0px -72px}  .simcitypreview {background-position: -214px -72px} .veryvherstypreview {background-position: -36px -72px} .rct2preview { background-position: -180px -72px}
             .twitterpreview {background-position: -72px -72px}  .officialfunnypreview {background-position: -252px -72px} .askiconpreview {background-position: -107px -72px} .discordlinkpreview { background-position: -144px -72px}
             .rct2preview  {background-position: -180px -72px} .officialfunnypreview {background-position: -248px -72px} 
@@ -169,11 +170,11 @@
             .smallscrollup {background-position: -38px -218px; height: 2px; width: 3px} .smallscrolldown {background-position: -6px -220px; height: 2px; width: 3px} 
 
             .tinyarrowdisableddown, .smallarrowdisableddown, .arrowdisableddown, .tinyarrowdisabledup, .arrowdisableup, .menuarrow1, .tinyarrowdown, .smallarrowdown, .disabledtickbox, .enabledtickbox {background-image: var(--spritesheet); filter: invert(var(--invert))}
-            .tinyarrowdisableddown {height: 3px; width: 4px; background-position: -192px -216px}
-            .smallarrowdisableddown {height: 4px; width: 6px; background-position: -164px -219px}
-            .arrowdisableddown {height: 16px; width: 16px; background-position: -158px -212px; margin-top:-3px; margin-left:-3px}
-            .tinyarrowdisabledup {height: 3px; width: 4px; background-position: -192px -212px}
-            .arrowdisableup {height: 16px; width: 16px; background-position: -175px -212px; margin-top:-3px; margin-left:-3px;}
+            .tinyarrowdisableddown {height: 3px; width: 4px; background-position: -6px -220px; filter: invert(0.5);}
+            .smallarrowdisableddown {height: 4px; width: 6px; background-position: -5px -219px; filter: invert(0.5);}
+            .arrowdisableddown {height: 16px; width: 16px; background-position: 1px -212px; filter: invert(0.5); margin-top:-3px; margin-left:-3px}
+            .tinyarrowdisabledup {height: 2px; width: 3px; background-position: -38px -218px; filter: invert(0.5);}
+            .arrowdisableup {height: 16px; width: 16px; background-position: -32px -212px; filter: invert(0.5); margin-top:-3px; margin-left:-3px;}
             
             .menuarrow1 {height:  7px; width:  4px; background-position: -54px -216px; margin: auto; float: right}
             .tinyarrowdown {height:  5px; width:  7px; background-position: -6px -220px; margin: auto; float: right;}
@@ -190,8 +191,8 @@
             
             .win98start{ box-shadow:inset -1px -1px var(--taskbarstarttop2), inset 1px 1px var(--taskbarstartbottom2), inset -2px -2px var(--taskbarstarttop1), inset 2px 2px var(--taskbarstartbottom1); 
                          background:var(--silver); padding:3px; color:var(--font); height: 16px; width: 50px; margin-left: 2px; margin-top: 2px; margin-right: 2px; font-family:"Pixelated MS Sans Serif"; font-size:11px;}
-            .windowsexplorerlogo { background-image: var(--spritesheet); margin-top:2px; height: 16px; width: 20px; background-position: -197px -212px; float:right; margin-right:9px;}
-            .windowslogo { background-image: var(--spritesheet); height: 16px; width: 18px; background-position: -217px -212px;}
+            .windowsexplorerlogo { background-image: var(--spritesheet); margin-top:2px; height: 16px; width: 20px; background-position: -158px -212px; float:right; margin-right:9px;}
+            .windowslogo { background-image: var(--spritesheet); height: 16px; width: 18px; background-position: -178px -212px;}
 
             .submenu18 {height: 18px; background-color:var(--silver); color: var(--text); width:100%} .submenu18:hover { height: 18px; background-color:var(--prussian); color:var(--hover); width:100%}
             .submenu20 {height: 20px; background-color:var(--silver); color: var(--text); width:100%} .submenu20:hover {height: 20px; background-color:var(--prussian); color:var(--hover); width:100%}
@@ -228,7 +229,7 @@
             .menusystemtools1 {     background-position: -140px  -92px;} /* character map */    .menusystemtools11 {    background-position: -140px -112px;} /* systeminfo */
             .menusystemtools2 {     background-position: -160px  -92px;} /* clipboard viewer */ .menusystemtools12 {    background-position: -160px -112px;} /* systemmonitor */
             .menusystemtools3 {     background-position: -180px  -92px;} /* disk cleanup */     .menusystemtools13 {    background-position: -180px -112px;} /* welcometowindows */
-            .menusystemtools4 {     background-position: -200px  -92px;} /* disk defrag */      .explorerlinks {        background-position: -192px -222px; height:  5px; width:  4px; filter: invert(var(--invert))}
+            .menusystemtools4 {     background-position: -200px  -92px;} /* disk defrag */      .explorerlinks {        background-position: -153px -222px; height:  5px; width:  4px; filter: invert(var(--invert))}
             .menusystemtools5 {     background-position: -220px  -92px;} /* drive converter */  .menuprograms123 {      background-position:    0px  -72px;} /* folder icon */
             .menusystemtools6 {     background-position: -240px  -92px;} /* maintain wizard */  .menuprograms4 {        background-position: -140px -132px;} /* internet explorer */
             .menusystemtools7 {     background-position: -260px  -92px;} /* net watcher */      .menuprograms5 {        background-position: -160px -132px;} /* MSDOS */
@@ -278,12 +279,21 @@
 
 /* Message box reference sheets ------------------------------------------------------------------------------*/
 
-            .displayboxdisplay {    width:184px; height:169px; filter: invert(var(--invert)); background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/display%20window.png');}
+            .displayboxdisplay {    width:184px; height:169px; background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/display%20window.png');}
             .displaycolour {        width:153px; height: 13px; background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/display%20colour.png'); z-index:20; }
-            .displaycolourback {    width:152px; height:132px; margin-top:37px; z-index:1; background-size: auto; background-size: 152px 132px;}
-            .displaycolourbackb {   width:152px; height:132px; margin-top:37px; z-index:1; background-size: auto; background-size: 152px 132px; background-color: #008080;}
+            .displayboxdisplayde {  filter: invert(var(--invert)); width:173px; height:169px; background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/display%20window2.png'); z-index:21;  }
+            .displaycolourback {    width:152px; height:112px; margin-top:27px; z-index:1; background-size: auto; background-size: 152px 132px;}
+            .displaycolourbackb {   width:152px; height:112px; margin-top:37px; z-index:1; background-size: auto; background-size: 152px 132px; background-color: #008080;}
             .energysaving {         width: 71px; height: 42px; background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/energy.png')}
             .currentclock {         width:127px; height:127px; background-image: url('https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/clock.png')}
+            
+            .playbutton, .pausebutton, .stopbutton, .ejectbutton, .nextbutton, .fastforwardbutton, .rewindbutton, .previousbutton 
+            { background-image: var(--spritesheet); height: 13px; width: 13px; margin: 6px; float: left; filter: invert(var(--invert)); cursor:pointer;}
+            .playbutton { background-position: -198px -213px} .pausebutton { background-position: -211px -213px;} .stopbutton { background-position: -225px -213px;} .ejectbutton { background-position: -266px -213px;}
+            .fastforwardbutton { background-position: -253px -213px; width: 9px; } .rewindbutton { background-position: -241px -213px; width: 9px; } 
+            .previousbutton { background-position: -237px -213px;} .nextbutton { background-position: -252px -213px;}
+            
+/* Formatting ref css ------------------------------------------------------------------------------*/
             
             .reflinkblack { color: var(--atext); } .reflinkblack:hover { color: var(--blue); text-decoration-line: underline; }
             
@@ -309,6 +319,7 @@
             a {color: var(--text); text-decoration: none} a:hover {text-decoration: underline; color: var(--hover)} strong {color: var(--blue)} h3 {font-size: 2rem} underline {text-decoration-line: underline;}
             span {background-color: var(--white); color: var(--text)} icon {background-color: var(--wincyan); color: var(--white)} label {display:inline-flex; align-items: center; color: var(--text)} underline {text-decoration-line: underline;}
             fieldset{border: none; box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray), inset -2px -2px var(--gray), inset 2px 2px var(--lightg); padding:10px; padding-block-start:8px; margin:0; color:var(--text)}
+            .wieldset{box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray); margin:0; background-color:var(--silver); padding:2px}
             
 /* tumblr post handling ------------------------------------------------------------------------------*/
             
@@ -378,12 +389,17 @@
                 <div class="discordlink"></div><div class="icon_label"><icon id="desktopi5">
                     <label>Self-Governed</label> <label style="margin-left:0.5px;">Shitposters </label></icon></div> </a>
             <!-- Button Seven -->
-                <div class="officialfunny" onclick="offvptask();"></div><div class="icon_label"><icon id="desktopi6">
+                <div class="officialfunny" onclick="offvptask(); urlupdate();"></div><div class="icon_label"><icon id="desktopi6">
                     <label style="margin-left:0.5px;">The Official Very</label> <label style="margin-left:0.5px;">Funny Video Playlist </label></icon></div>
             <!-- Button Eight -->
             <a href="https://www.youtube.com/watch?v=W_4uRZFVKPE&t=383s" target="_blank">
                 <div class="rct2"></div><div class="icon_label"><icon id="desktopi8">
-                    <label>Roller Coaster</label> <label style="margin-left:0.5px;">Tycoon 2</label></icon></div></a></div></head>
+                    <label>Roller Coaster</label> <label style="margin-left:0.5px;">Tycoon 2</label></icon></div></a>
+            <!-- Button Eight 
+                <div class="notepaddesktop"></div><div class="icon_label"><icon id="desktopi9">
+                    <label>Readme.txt</label></icon></div>-->
+               
+</div></head>
 
 <!-- VUNNY message box rendering ------------------------------------------------------------------------------>
         
@@ -470,19 +486,13 @@
                 <fieldset style="position:absolute; height: 21px; width:562px; margin-left:-7px; padding:2px;">     
                     <!-- Left side of the top container -->
                     <div class="small_seperator" style="margin-top:1px; height:17px;"></div> <!-- Left side of the Bottom container -->
-                    <div class="container" style="position:absolute; margin-left:11.5px; margin-top:5px;">A<underline>d</underline>dress</div>
-                    <ul class="tree-view" style="position:absolute; width:393px; height:9px; margin-left:55.5px; overflow:hidden;">
-                        <div class="win98buttontitlebarinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px; width:10px; height:11px;">
-                            <div class="arrowdisableddown" style="margin-left:-4px;"></div></div>
+                    <div class="container" style="position:absolute; margin-left:11px; margin-top:5px;">A<underline>d</underline>dress</div>
+                    <ul class="tree-view" style="position:absolute; width:443px; height:9px; margin-left:55px; overflow:hidden;">
                         <div class="menufavouriteslink" style="position:absolute; margin-top:-5px; margin-left:-5px;"></div>
                     <div class="container" style="margin-top:-1px; margin-left:16px;" id="mediaplayer"></div></ul>
                                 
-                    <a href="https//www.youtube.com/embed/playlist?list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU"><div class="container" style="position: absolute; margin-left:462px; height:22px; width:49px;">
-                        <div class="explorergo" style="margin-left:5.5px;"></div> <div class="reflinkblack" style="margin-top:5px;">Go</div></div></a>
-                    <div class="big_seperator" style="position;absolute; height:21px; margin-top:-0px; margin-left:505px;"></div>
-                                
                     <div class="postlinks-container" style="position: absolute; margin-left:509px; margin-top:-0px; height:22px; width:49px; cursor:pointer;">
-                        <div class="container" style="position: absolute; margin-left:12.5px; margin-top:5px;">Links
+                        <div class="container" style="position: absolute; margin-left:12px; margin-top:5px;">Links
                             <div class="explorerlinks" style="position: absolute; margin-left:27px; margin-top:-14px;"></div>
                             <div class="explorerlinks" style="position: absolute; margin-left:30px; margin-top:-14px;"></div></div>
                                          
@@ -495,26 +505,47 @@
                             
                 <ul class="tree-view" style="width: 560px; height: 100%; padding:2px; padding-bottom:0px; margin-right:-6px; margin-left:-6px; margin-bottom:-5px;">
                     <div id="player" style="height: 315px; width: 560px; background-color:--black;"></div></ul>
+                
+                <div class="container" style="height:50px; width:100%;">
+                    <div class="wieldset" style="width:550px; height:4px; margin-top:12px; margin-left:-2px; margin-bottom:3px;"></div>
                     
+                    
+                    <div class="playbutton" onclick="startVideo()"></div><div class="pausebutton" onclick="pauseVideo()"></div><div class="stopbutton" onclick="stopVideo()"></div> 
+                    <div class="big_seperator" style="height:18px; margin-top:4px;"></div>
+                    <div class="previousbutton" onclick="previousVideo(); setTimeout(statedVideo(), 1000)"></div><div class="rewindbutton" style="filter: invert(0.5)"></div>
+                    <div class="fastforwardbutton" style="filter: invert(0.5)"></div><div class="nextbutton" onclick="nextVideo(); urlupdate()"></div>
+                    <div class="big_seperator" style="height:18px; margin-top:4px;"></div>
+                    <div class="ejectbutton" style="filter: invert(0.5)"></div>
+                    <div class="big_seperator" style="height:18px; margin-top:4px;"></div>
+                    
+                    <ul></ul>
+                </div>
+                
+                <ul class="tree-view" style="width:554px; height:12px; margin:-6px; margin-top:-10px; background-color: var(--black)" id="playertext"></ul> 
                 
         </div></div>
                 
         <script>
           // 2. This code loads the IFrame Player API code asynchronously.
             var tag = document.createElement('script'); tag.src = "https://www.youtube.com/iframe_api";
-            var firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-            var currentlyplaying = "PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU";; ifplaylist = "playlist?list="
-            function urlupdate(){ document.getElementById("mediaplayer").innerHTML = "www.youtube.com/" + ifplaylist + currentlyplaying}
+            var firstScriptTag = document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
             
             var player;
+            
             function onYouTubeIframeAPIReady() { player = new YT.Player('player', { 
                 height: '315', width: '560', videoId: '', events: {'onReady': onPlayerReady}, 
                 playerVars: { controls: 0, autoplay: 0, showinfo: 0}})}
-            function onPlayerReady(event) { urlupdate(); event.target.loadPlaylist({list: currentlyplaying, index: 0, suggestedQuality: "small"})}
+            function onPlayerReady(event) { urlupdate(); event.target.loadPlaylist({list: "PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU", index: 0, suggestedQuality: "small"})}
             
-            function startVideo() {player.playVideo()}
-            function stopVideo() {player.stopVideo()}
+            var playertext = document.getElementById("playertext")
+            function startVideo() {player.playVideo(); playertext.textContent = "Playing";} function statedVideo() {setTimeout(function() {playertext.textContent = "Playing";}, 2500)} 
+            function pauseVideo() {player.pauseVideo(); pausedVideo()} function pausedVideo() {setTimeout(function() {playertext.textContent = "Paused";}, 200)}
+            function stopVideo() {player.stopVideo(); stoppedVideo()} function stoppedVideo() {setTimeout(function() {playertext.textContent = "Stopped";}, 200)}
+            function previousVideo() {player.previousVideo(); playertext.textContent = "Playing previous video"; statedVideo(); urlupdate()}
+            function nextVideo() {player.nextVideo(); playertext.textContent = "Playing next video"; statedVideo(); urlupdate()}
+            
+            function playerurlupdate(){ currentlyplaying = player.getVideoUrl(); currentlyplaying = currentlyplaying.replace("https://www.", '')} var ifplaylist = "playlist?list="
+            function urlupdate(){ playerurlupdate(); document.getElementById("mediaplayer").innerHTML = currentlyplaying}
         </script>
 
                 
@@ -659,10 +690,12 @@
             
             <!-- --------------------------------------- background tab --------------------------------------- -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:9" id="background">
-                <center style="margin-top:12px"><div class="displaycolourback" id="dcb1"><div class="displayboxdisplay" style="margin-left:-16px; margin-top:-20px;"></div></div></center>
+                <div class="displayboxdisplay" style="position:absolute; margin-left:98px; margin-top: 10px;"></div>
+                <div class="displayboxdisplayde" style="position:absolute; margin-left:98px; margin-top: 10px;"></div>
+                <center><div class="displaycolourback" id="dcb1"></div></center>
                     
                     <!-- display container settings -->
-                <fieldset style="width:336px; height:125px; margin-left: 12px; margin-top: 49px;">
+                <fieldset style="width:336px; height:125px; margin-left: 12px; margin-top: 55px;">
                     <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: var(--silver); width:52px; padding: 0px 0px 3px 3px; margin-left:-3px"> Wallpaper </label>
                     <label style="margin-top:8px; color: black">Select a HTML document or picture:</label>
                     
@@ -740,9 +773,9 @@
             <script>
                 var colorwallpaperpicked = "#c0c0c0", currentwallpaper = "", sens = "";
                 function wallpaperupdate(){ document.getElementById("body").style.backgroundImage = currentwallpaper; 
-                    dcb1.style.backgroundImage = currentwallpaper; dcb2.style.backgroundImage = currentwallpaper;}
+                    dcb1.style.backgroundImage = currentwallpaper; dcb2.style.backgroundImage = currentwallpaper; dcb3.style.backgroundImage = currentwallpaper;}
                 function wallpaperpreview(){ document.getElementById("apperancepreview").style.backgroundImage = currentwallpaper; document.getElementById("iconpreview").style.backgroundImage = currentwallpaper;
-                    dcb1.style.backgroundImage = currentwallpaper; dcb2.style.backgroundImage = currentwallpaper;}
+                    dcb1.style.backgroundImage = currentwallpaper; dcb2.style.backgroundImage = currentwallpaper; dcb3.style.backgroundImage = currentwallpaper;}
                 function wallpapercurrentreset() { 
                     document.getElementById("wallpaperoverlay1").style.backgroundColor = ""; document.getElementById("wallpaperoverlay2").style.backgroundColor = "";
                     document.getElementById("wallpaperoverlay3").style.backgroundColor = ""; document.getElementById("wallpaperoverlay4").style.backgroundColor = "";
@@ -770,7 +803,9 @@
             
             <!-- --------------------------------------- screensaver tab --------------------------------------- -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="screensaver">
-                <center style="margin-top:12px"><div class="displaycolourback" id="dcb2"><div class="displayboxdisplay" style="margin-left:-16px; margin-top:-20px;"></div></div></center>
+                <div class="displayboxdisplay" style="position:absolute; margin-left:98px; margin-top: 10px;"></div>
+                <div class="displayboxdisplayde" style="position:absolute; margin-left:98px; margin-top: 10px;"></div>
+                <center><div class="displaycolourback" id="dcb2"></div></center>
                     
                     <fieldset style="width:336px; height:50px; margin-left: 12px; margin-top: 49px;">
                         <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: var(--silver); width:64px; padding: 0px 0px 3px 3px; margin-left:-3px"> Screen Saver </label>
@@ -1193,7 +1228,9 @@
             
             <!-- --------------------------------------- settings tab --------------------------------------- -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="settings">
-                <center style="margin-top:12px"><div class="displaycolourbackb" id="dcb3"><div class="displayboxdisplay" style="margin-left:-16px; margin-top:-20px;"></div></div></center>
+                <div class="displayboxdisplay" style="position:absolute; margin-left:98px; margin-top: 20px;"></div>
+                <div class="displayboxdisplayde" style="position:absolute; margin-left:98px; margin-top: 20px;"></div>
+                <center><div class="displaycolourbackb" id="dcb3" style="margin-top"></div></center>
                 <p style="margin-left:14px; margin-top:58px;" > Display: <br> Default Monitor on DisplayPort - Standard PCI Graphics Adapter (XGA) </p>
                 
                 <!-- display container settings -->
@@ -2240,7 +2277,7 @@
                 <div class="taskbartask3" style="cursor:pointer;" onmousedown="task3toggle(); menuclosed();" id="taskapp3"> <!--position: absolute; margin-left:500px-->
                         <div class="title-bar-text" style="font-size: 11px; " id="taskapp3font">📺 Display Properties</div></div>
                 <div class="taskbartask4" style="cursor:pointer;" onmousedown="task4toggle(); menuclosed();" id="taskapp4"> <!--position: absolute; margin-left:500px-->
-                        <div class="title-bar-text" style="font-size: 11px;" id="taskapp4font">🍰 Very Funny Videos</div></div>
+                        <div class="title-bar-text" style="font-size: 11px;" id="taskapp4font">🎬 Media Player</div></div>
                 
                 
                 <script>
@@ -2250,28 +2287,29 @@
                     function task3toggle() { if (diskButtonOpen == false) {diskminimize()} else if (diskButtonOpen == true){diskactive()}} 
                     function task4toggle() { if (offvpButtonOpen == false) {offvpminimize()} else if (offvpButtonOpen == true){offvpactive()}} 
 
-                    var task2on = false; task3on = false; task4on = false; task2true = true; task3true = true; task4true = true;
+                    var task2on = false; task3on = false; task4on = false; 
+                    var task2true = true; task3true = true; task4true = true;
                     var task2position, task3position, task4position;
                     var unvunnytaskbar = document.getElementById("taskapp2");   
                     function vunnytask(){vunnywindowreset(); catactive(); pyroactive(); task2positionopen()}
-                    function task2positionopen(){ if(task2on == false){currenttask = currenttask + 1; unvunnytaskbar.style.marginLeft = (currenttask * 168) + "px"; task2position = (currenttask * 168)}; tabconsole(); task2on = true;}
+                    function task2positionopen(){ if(task2on == false){currenttask = currenttask + 1; unvunnytaskbar.style.marginLeft = (currenttask * 168) + "px"; task2position = (currenttask * 168)}; tabconsole(); task2on = true}
                     
                     var disktaskbar = document.getElementById("taskapp3");      
                     function disktask(){diskopen(); appearancetab(); task3positionopen()}
-                    function task3positionopen(){ if(task3on == false){currenttask = currenttask + 1; disktaskbar.style.marginLeft = (currenttask * 168) + "px"; task3position = (currenttask * 168)}; tabconsole(); task3on = true; }
+                    function task3positionopen(){ if(task3on == false){currenttask = currenttask + 1; disktaskbar.style.marginLeft = (currenttask * 168) + "px"; task3position = (currenttask * 168)}; tabconsole(); task3on = true}
                         
                     var offvptaskbar = document.getElementById("taskapp4");     
                     function offvptask(){offvpopen(); task4positionopen()}
-                    function task4positionopen(){ if(task4on == false){currenttask = currenttask + 1; offvptaskbar.style.marginLeft = (currenttask * 168) + "px"; task4position = (currenttask * 168)}; tabconsole(); task4on = true;}
+                    function task4positionopen(){ if(task4on == false){currenttask = currenttask + 1; offvptaskbar.style.marginLeft = (currenttask * 168) + "px"; task4position = (currenttask * 168)}; tabconsole(); task4on = true}
 
                     function taskreset(){
-                        if(task2true == false){ if(task2position <= task3position){ if(task3on == true){    disktaskbar.style.marginLeft = (task3position - 168) + "px"; task3position = task3position - 168; console.log("task2false, task3true")}}; 
-                                                if(task2position <= task4position){ if(task4on == true){   offvptaskbar.style.marginLeft = (task4position - 168) + "px"; task4position = task4position - 168; console.log("task2false, task4true")}} task2true = true;}
-                        if(task3true == false){ if(task3position <= task2position){ if(task2on == true){ unvunnytaskbar.style.marginLeft = (task2position - 168) + "px"; task2position = task2position - 168; console.log("task3false, task2true")}}; 
-                                                if(task3position <= task4position){ if(task4on == true){   offvptaskbar.style.marginLeft = (task4position - 168) + "px"; task4position = task4position - 168; console.log("task3false, task4true")}} task3true = true;}
-                        if(task4true == false){ if(task4position <= task2position){ if(task2on == true){ unvunnytaskbar.style.marginLeft = (task2position - 168) + "px"; task2position = task2position - 168; console.log("task4false, task2true")}}; 
-                                                if(task4position <= task3position){ if(task3on == true){    disktaskbar.style.marginLeft = (task3position - 168) + "px"; task3position = task3position - 168; console.log("task4false, task3true")}} task4true = true;}
-                        currenttask = currenttask - 1; tabconsole();}
+                        if(task2true == false){ if(task2position <= task3position){ if(task3on == true){ task3position = task3position - 168;    disktaskbar.style.marginLeft = task3position + "px"; console.log("task2false, task3true")}}
+                                                if(task2position <= task4position){ if(task4on == true){ task4position = task4position - 168;   offvptaskbar.style.marginLeft = task4position + "px"; console.log("task2false, task4true")}} task2true = true;}
+                        if(task3true == false){ if(task3position <= task2position){ if(task2on == true){ task2position = task2position - 168; unvunnytaskbar.style.marginLeft = task2position + "px"; console.log("task3false, task2true")}}
+                                                if(task3position <= task4position){ if(task4on == true){ task4position = task4position - 168;   offvptaskbar.style.marginLeft = task4position + "px"; console.log("task3false, task4true")}} task3true = true;}
+                        if(task4true == false){ if(task4position <= task2position){ if(task2on == true){ task2position = task2position - 168; unvunnytaskbar.style.marginLeft = task2position + "px"; console.log("task4false, task2true")}} 
+                                                if(task4position <= task3position){ if(task3on == true){ task3position = task3position - 168;    disktaskbar.style.marginLeft = task3position + "px"; console.log("task4false, task3true")}} task4true = true;}
+                        currenttask = currenttask - 1; tabconsole()}
                     
                     function tabconsole(){ console.log("current tasks active: " + currenttask)}
                 </script>
