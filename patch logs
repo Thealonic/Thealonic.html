@@ -1,27 +1,71 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll;">
 <ul>
-<li><strong style="color: var(--atext);">2021 Febuary 17th (210217)</strong><em> - "Media player</em><em>" Update 2<br /></em>
+<li><strong style="color: var(--atext);">2021 Febuary 20th (210218)</strong> <em>- &ldquo;Media player&rdquo; Update 4</em>
 <ul>
 <li><strong>Embedded Media Player Changes</strong><br />
 <ul>
-<li>Added player buttons including; Play, Pause, Stop, Previous and Next.</li>
-<li>Added Media Player Footer that updates based on the state the media player is currently in.</li>
-<li>The URL of the current video playing now changes based on the current video in the player.</li>
+<li>Added links dropdown menu which includes the current playlist link (if there is any) and original video source.</li>
+<li>Rewind and fastforward times can now be changed through the Links dropdown menu in incriments of 5 seconds.</li>
+<li>Video skip times are now capped between 5 seconds and 60.</li>
+<li>Fastforwarding or rewinding now updates the video timeline.</li>
+<li>If a video does not belong in a playlist, the Previous and Next video buttons are disabled and grayed out.</li>
+<li>Added more statuses in the console alongside fake delays to emulate windows processing.</li>
+<li><em>Media handling optimisation.</em></li>
 </ul>
 </li>
-<li>Display properties monitor-like preview has been changed to no longer rely on colour invert and changed out for a trasnparent body. The inside of the preview has kept it's invertability as it's now a seperate asset.</li>
+<li>Replaced the Help Button redirect on windows with the Embedded Media Player Instructional Video, which will brind up the mediaplayer with included video.</li>
+</ul>
+<ol>
+<li>- Fast forwarding past the duration of the video now plays the next video instead of moving the progression bar along and THEN skipping to the next video.</li>
+<li>- Skipping to the next or previous video now resets the timeline before playing instead of waiting for youtube to push a timestamp update.</li>
+<li><em>- Fixed graphical imperfections with the taskbar icon dividers.</em></li>
+<li><em>- Fixed a few bugs to do with addressing handles that don&rsquo;t exist yet.</em></li>
+</ol></li>
+<li><strong style="color: var(--atext);">2021 Febuary 18th (210218)</strong> <em>- &ldquo;Media player</em><em>&rdquo; Update 3.1</em>
+<ul>
+<li><strong>Embedded Media Player Changes</strong><br />
+<ul>
+<li><em>Windows Embedded media player now has seperate play functions for videos and playlists</em>, allowing easier addition of videos.</li>
+<li>RCT2 Desktop redirect now changes the current video in the Embedded media player to Merry-Go-Round music. <em>(More of these to come)</em></li>
+<li><strong>Added progression bar to state the current video time.</strong></li>
+<li><strong>Added fast forward and rewind button functionality</strong> based on 10 second intervals which will later be adjustable.</li>
+<li>The address bar including the HTML link of videos is now shorted by not including the current playlist inside the URL.</li>
+<li><strong>Added a shuffle feature</strong> which will be applied to the current playlist when activated and reset back to the disabled state when selecting other videos. Enabling shuffle will visually change the state of the shuffle button alongside stating in the media player state, held in the footer.</li>
+<li>Swapped out jank media player states in the footer and tied it closer to the Youtube API.</li>
+<li><em>Media handling optimisation.</em></li>
+</ul>
+</li>
+</ul>
+<ol>
+<li><em>- Fixed a bug where themes could make the&nbsp; text unreadable in the footer of the Embedded Media Player.</em></li>
+<li><em>- Fixed tons of issues with container endings.</em></li>
+<li><em>- Fixed high contrast modes making the footer text in the media player unreadable due to making the background the same colour as the text</em>.</li>
+</ol></li>
+<li><strong style="color: var(--atext);">2021 Febuary 17th (210217)</strong><em> - &ldquo;Media player</em><em>&rdquo; Update 2<br /></em>
+<ul>
+<li><strong>Embedded Media Player Changes</strong><br />
+<ul>
+<li>Added player buttons alongside functionality including; Play, Pause, Stop, Previous and Next, clicking on them will do their respective jobs.</li>
+<li>Added Media Player Footer that updates based on the state the media player is currently in. Eg. playing, skipping video.</li>
+<li>Added post header to include the current URL of the video.</li>
+<li>The URL of the current video playing now changes based on the current video in the player.</li>
+<li>Clicking &ldquo;Go&rdquo; in the window header will redirect to the original video alongside any featured playlist it&rsquo;s currently in.</li>
+</ul>
+</li>
+<li>Display properties monitor-like preview has been changed to no longer rely on colour invert and changed out for a trasnparent body. The inside of the preview has kept it&rsquo;s invertability as it&rsquo;s now a seperate asset.</li>
 <li>Disabled arrows no longer use seperate assets to regular arrows and instead just use the invert filter.</li>
 </ul>
 <ol>
 <li>- Fixed anti-aliasing related issues in the embedded media player.</li>
 <li><em>- Some patches to math done to caculate the taskbar task distances.</em></li>
+<li><em>- Fixed titlebar text not changing colour when currently active.</em></li>
 </ol></li>
-<li><strong style="color: var(--atext);">2021 Febuary 16th (210216) </strong><em>- "Media player</em><em>" Update 1</em>
+<li><strong style="color: var(--atext);">2021 Febuary 16th (210216) </strong><em>- &ldquo;Media player</em><em>&rdquo; Update 1</em>
 <ul>
 <li><strong>Embedded Media Player Changes</strong><br />
 <ul>
-<li>"Official Very Funny Playlist player" is now the windows embedded media player.</li>
+<li>&ldquo;Official Very Funny Playlist player&rdquo; is now the windows embedded media player.</li>
 <li>Media player now has a dynamic current address header depending on the current video playing.<strong><br /></strong></li>
 <li>Adjusted how the mediaplayer is handled and replaced Iframe with javascript for future expandability.</li>
 <li>Mediaplayer now autoplays on open and auto pauses on window shutdown.</li>
@@ -36,7 +80,7 @@
 <li>- Solved potential issues to do with scheme colours in the future.</li>
 <li>- Fixed Very Unvunnies reseting their position to default from clicking on the taskbar.</li>
 </ol></li>
-<li><strong style="color: var(--atext);">2021 Febuary 15th (210215)</strong> <em>- "The Taskbar Rehaul Update"</em> <br />
+<li><strong style="color: var(--atext);">2021 Febuary 15th (210215)</strong> <em>- &ldquo;The Taskbar Rehaul Update&rdquo;</em> <br />
 <ul>
 <li><strong>Dynamic Tasks added.</strong><strong><strong><br /></strong></strong>
 <ul>
@@ -45,7 +89,7 @@
 <li>Tasks now automatically adjust based on tasks being closed and opened.</li>
 </ul>
 </li>
-<li><strong>"Official very funny video playlist" Window added</strong>
+<li><strong>&ldquo;Official very funny video playlist&rdquo; Window added</strong>
 <ul>
 <li>Added embedded window for the &ldquo;Official very funny video playlist&rdquo;, replacing the old redirect.</li>
 <li>Added tabbing functionality to &ldquo;Official very funny video playlist&rdquo; embed through the taskbar and other desktop functions.<strong><br /></strong></li>
