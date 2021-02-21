@@ -407,9 +407,9 @@
         <script>
             var cat = document.getElementById("cat"); catwin = document.getElementById("catwindow");
             function catactive() { inactiveall(); vunnyactive(); pyroButtonOpen = false; document.getElementById("cattext").style.color = curactivetitle;
-                currentlayer = currentlayer + 1; cat.style.zIndex = currentlayer; catwin.style.backgroundImage = currentactiveheader; cat.style.marginLeft = "0px";} 
-            function catclose() { inactiveall(); pyroButtonOpen = true; window2 = false; pyrotabs = pyrotabs - 1; pyrowindow(); cat.style.marginLeft = "-20000px";}
-            function catminimize() { cat.style.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 1; pyrocurrentopen();}
+                currentlayer = currentlayer + 1; cat.style.zIndex = currentlayer; catwin.style.backgroundImage = currentactiveheader; cat.style.marginLeft = "0px"} 
+            function catclose() { inactiveall(); pyroButtonOpen = true; window2 = false; pyrotabs = pyrotabs - 1; pyrowindow(); cat.style.marginLeft = "-20000px"}
+            function catminimize() { cat.style.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 1; pyrocurrentopen()}
         </script>
 
         <div class="win98post" style="position: fixed; left: 12%; top: 58%; margin-left:-20000px;" onmousedown="pyroactive();" id="pyro">
@@ -423,27 +423,29 @@
         <script>
             var pyro = document.getElementById("pyro"); pyrowin = document.getElementById("pyrowindow");
             function pyroactive() { inactiveall(); vunnyactive(); pyroButtonOpen = false; document.getElementById("pyrotext").style.color = curactivetitle;
-                currentlayer = currentlayer + 1; pyro.style.zIndex = currentlayer; pyrowin.style.backgroundImage = currentactiveheader; pyro.style.marginLeft = "0px";} 
-            function pyroclose() { inactiveall(); pyroButtonOpen = true; window1 = false; pyrotabs = pyrotabs - 1; pyrowindow(); pyro.style.marginLeft = "-20000px";}
-            function pyrominimize() { pyro.style.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 1; pyrocurrentopen();}
+                currentlayer = currentlayer + 1; pyro.style.zIndex = currentlayer; pyrowin.style.backgroundImage = currentactiveheader; pyro.style.marginLeft = "0px"} 
+            function pyroclose() { inactiveall(); pyroButtonOpen = true; window1 = false; pyrotabs = pyrotabs - 1; pyrowindow(); pyro.style.marginLeft = "-20000px"}
+            function pyrominimize() { pyro.style.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 1; pyrocurrentopen()}
         </script>
         
         <script>
             var pyrotabs = 2, currentlayer = 5, pyrocurrentactive = 2, window1 = true, window2 = true;
-            function pyrowindow(){ if(pyrotabs == 0){ document.getElementById("taskapp2").style.marginLeft = "-20000px"; task2true = false; task2on = false; taskreset();}}
-            function pyrocurrentopen(){ if(pyrocurrentactive == 0){ pyroButtonOpen = false; task2toggle();}}
+            function pyrowindow(){ if(pyrotabs == 0){ document.getElementById("taskapp2").style.marginLeft = "-20000px"; task2true = false; task2on = false; taskreset()}}
+            function pyrocurrentopen(){ if(pyrocurrentactive == 0){ pyroButtonOpen = false; task2toggle()}}
         
             function vunnyactive(){ document.getElementById("taskapp2font").style.color = taskbartextpressed; 
                 document.getElementById("taskapp2").style.backgroundImage = github + "img/scrollbarempty.png')";
                 document.documentElement.style.setProperty('--taskbar2top1', curcolgray); document.documentElement.style.setProperty('--taskbar2top2', curcolblack);
-                document.documentElement.style.setProperty('--taskbar2bottom1', curcolwhite); document.documentElement.style.setProperty('--taskbar2bottom2', curcollightg);}
-            function vunnyopen(){ inactiveall(); vunnyactive(); pyroactive(); pyrotabs = 2; tick = 3; pyroButtonOpen = false; 
+                document.documentElement.style.setProperty('--taskbar2bottom1', curcolwhite); document.documentElement.style.setProperty('--taskbar2bottom2', curcollightg)}
+            function vunnyopen(){ inactiveall(); vunnyactive(); pyroactive(); pyrotabs = 2; pyroButtonOpen = false; 
                 currentlayer = currentlayer + 1; cat.style.zIndex = currentlayer; currentlayer = currentlayer + 1;
                 if (window1 == true){ pyro.style.marginLeft = "0px"; document.getElementById("pyro").style.zIndex = currentlayer + 1;}
-                if (window2 == true){ cat.style.marginLeft = "0px"; document.getElementById("pyro").style.zIndex = currentlayer;}}
-            function vunnywindowreset(){ window1 = true; window2 = true; }
-            function vunnypositionreset() { pyro.style.left = "12%"; pyro.style.top = "58%"; cat.style.left = "4%"; cat.style.top = "68%";}
-            function vunnyminimize(){ inactiveall(); pyro.style.marginLeft = "-20000px"; cat.style.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 2; }
+                if (window2 == true){ cat.style.marginLeft = "0px"; document.getElementById("pyro").style.zIndex = currentlayer}}
+            function vunnywindowreset(){ window1 = true; window2 = true; tick = 3;
+                if (tick == 3) { document.getElementById("pyroimage").style.backgroundImage = github + "img/windows/ezgif-2-c475330a8091.gif')";
+                                 document.getElementById("catimage").style.backgroundImage = github + "img/windows/Untitled-5.jpg')"}}
+            function vunnypositionreset() {pyro.style.left = "12%"; pyro.style.top = "58%"; cat.style.left = "4%"; cat.style.top = "68%"}
+            function vunnyminimize(){ inactiveall(); pyro.style.marginLeft = "-20000px"; cat.style.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 2}
         </script>
 
 <!-- regular message box rendering ------------------------------------------------------------------------------>
@@ -454,21 +456,21 @@
              <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
              <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="title-bar-text" id="messagetext">🧮 brain go brrrrr</div></div>
              <div class="window-body" style="margin-right: 4px; margin-top: 5px; margin-bottom: 3px; padding:2px">
-                <p style="color: var(--blue); margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>23:20pm on Febuary 18th, 2021. [GMT]</label></p></div>
+                <p style="color: var(--blue); margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>20:45pm on Febuary 21th, 2021. [GMT]</label></p></div>
         </div>
         
         <script>
             var message = document.getElementById("message"), messagewin = document.getElementById("messagewindow");
             function messageactive() { inactiveall(); currentlayer = currentlayer + 1; message.style.zIndex = currentlayer; 
-                messagewin.style.backgroundImage = currentactiveheader; document.getElementById("messagetext").style.color = curactivetitle;} 
+                messagewin.style.backgroundImage = currentactiveheader; document.getElementById("messagetext").style.color = curactivetitle} 
             function messageclose(){message.style.right = "-100%"; message.style.marginLeft = "-20000px"}
             function messageopen(){message.style.marginLeft = "0px"; message.style.left = "77%"; message.style.top = "62%";
-                currentlayer = currentlayer + 1; message.style.zIndex = currentlayer; messagewin.style.backgroundImage = currentactiveheader;}
+                currentlayer = currentlayer + 1; message.style.zIndex = currentlayer; messagewin.style.backgroundImage = currentactiveheader}
         </script>
         
 <!-- Embedded Media Player ------------------------------------------------------------------------------>
         
-        <div class="win98post" style="position: fixed; margin-left:-20000px; left: 300px; top: 200px; z-index:100" onmousedown="embedactive()" id="embed">
+        <div class="win98post" style="position: fixed; margin-left:-20000px; left: 300px; top: 200px;" onmousedown="embedactive()" id="embed">
             <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="embedclose()"><div class="close"></div></div>
             <a href="" target="_blank" id="embeddedmedialink"><div class="win98titlebarbutton" title="Minimize"> <div class="maximize"></div></div></a>
             <div class="win98titlebarbutton" title="Minimize" onclick="embedminimize()"> <div class="minimize"></div></div>
@@ -511,9 +513,9 @@
                 <script>
                     var videolinksdrop = false, videolink = document.getElementById("tumblrlinkdrop")
                     function videolinkdropdown(){ 
-                               if (videolinksdrop == false) {videolink.style.marginLeft = "50px"; videolinksdrop = true;
-                        } else if (videolinksdrop == true){videolink.style.marginLeft = "-20000px"; videolinksdrop = false; }}
-                    function videolinkdropdownclose(){videolink.style.marginLeft = "-20000px"; videolinksdrop = false; }
+                               if (videolinksdrop == false) {videolink.style.marginLeft = "50px"; videolinksdrop = true
+                        } else if (videolinksdrop == true){videolink.style.marginLeft = "-20000px"; videolinksdrop = false}}
+                    function videolinkdropdownclose(){videolink.style.marginLeft = "-20000px"; videolinksdrop = false}
                 </script>
  
                 <ul class="tree-view" style="width: 560px; height: 100%; padding:2px; padding-bottom:0px; margin-right:-6px; margin-left:-6px; margin-bottom:-5px;">
@@ -540,85 +542,84 @@
                 
         <script>
             var embed = document.getElementById("embed"), embedwin = document.getElementById("embedwindow");
-            function embedactive() { inactiveall(); document.getElementById("taskapp4font").style.color = taskbartextpressed; document.getElementById("embedtext").style.color = curactivetitle;
+            function embedactive() {inactiveall(); document.getElementById("taskapp4font").style.color = taskbartextpressed; document.getElementById("embedtext").style.color = curactivetitle;
                 currentlayer = currentlayer + 1; embed.style.zIndex = currentlayer; embedwin.style.backgroundImage = currentactiveheader; embed.style.marginLeft = "0px"; embedButtonOpen = false; 
                 document.getElementById("taskapp4").style.backgroundImage = github + "img/scrollbarempty.png')"; document.getElementById("taskapp4").style.backgroundColor = curcolwhite; 
                 document.documentElement.style.setProperty('--taskbar4top1', curcolgray); document.documentElement.style.setProperty('--taskbar4top2', curcolblack);
-                document.documentElement.style.setProperty('--taskbar4bottom1', curcolwhite); document.documentElement.style.setProperty('--taskbar4bottom2', curcollightg);} 
-            function embedclose() {embed.style.marginLeft = "-20000px"; document.getElementById("taskapp4").style.marginLeft = "-20000px"; task4true = false; task4on = false; taskreset(); stopVideo();}
-            function embedopen() { inactiveall(); embed.style.marginLeft = "0px";}
-            function embedpositionreset() { embed.style.left = "300px"; embed.style.top = "200px"; currentlayer = currentlayer + 1; embed.style.zIndex = currentlayer; embedwin.style.backgroundImage = currentactiveheader; embedactive()}
-            function embedminimize(){ inactiveall(); embed.style.marginLeft = "-20000px"; embedButtonOpen = true}
+                document.documentElement.style.setProperty('--taskbar4bottom1', curcolwhite); document.documentElement.style.setProperty('--taskbar4bottom2', curcollightg)} 
+            function embedclose() {embed.style.marginLeft = "-20000px"; document.getElementById("taskapp4").style.marginLeft = "-20000px"; task4true = false; task4on = false; taskreset(); stopVideo()}
+            function embedopen() {inactiveall(); embed.style.marginLeft = "0px"; currentlayer = currentlayer + 1; embed.style.zIndex = currentlayer}
+            function embedpositionreset() {embed.style.left = "300px"; embed.style.top = "200px"; currentlayer = currentlayer + 1; embed.style.zIndex = currentlayer; embedwin.style.backgroundImage = currentactiveheader; embedactive()}
+            function embedminimize(){inactiveall(); embed.style.marginLeft = "-20000px"; embedButtonOpen = true}
 
             function progress(percent, $element) {
                 var progressBarWidth = percent * $element.width() / 100;
-                $element.find('div').animate({ width: progressBarWidth }, {duration: 10});}
+                $element.find('div').animate({ width: progressBarWidth }, {duration: 10})}
             
-            var currentskiptime = 10, shuffle = false, shuffletext = "", currentplaylist = "", currentlyplaying = "";
+            var currentskiptime = 10; var shuffle = false; var shuffletext = "", currentplaylist = "", currentlyplaying = "";
             
             var tag = document.createElement('script'); tag.src = "https://www.youtube.com/iframe_api"; var player; var mytimer
             var firstScriptTag = document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-            function onYouTubeIframeAPIReady() { $('#progressBar').show(); player = new YT.Player('player', { 
-                height: '315', width: '560', videoId: '', events: {'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange, 'onError': onPlayerError},
-                playerVars: { controls: 0, autoplay: 0, modestbranding:1, showinfo: 0, disablekb: 0}})}
-            function onPlayerReady(event) { urlupdate(); event.target.loadPlaylist({list: "", index: 0, suggestedQuality: "small"})}
+            function onYouTubeIframeAPIReady() {$('#progressBar').show(); 
+                player = new YT.Player('player', { height: '315', width: '560', videoId: '', 
+                events: {'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange, 'onError': onPlayerError},
+                playerVars: {controls: 0, autoplay: 0, modestbranding:1, showinfo: 0, disablekb: 0}})}
+            function onPlayerReady(event) {urlupdate(); event.target.loadPlaylist({list: "", index: 0, suggestedQuality: "small"})}
             
             var playertext = document.getElementById("playertext");
             function startVideo() {player.playVideo()} function pauseVideo() {player.pauseVideo()} function stopVideo() {player.stopVideo()} 
-            function previousVideo() { if(currentplaylist !== ""){playstateupdatereset(); player.previousVideo(); playertext.textContent = "Playing previous video";}}
-            function nextVideo() { if(currentplaylist !== ""){playstateupdatereset(); player.nextVideo(); playertext.textContent = "Playing next video";}}
-            function forwardVideo() { player.seekTo((player.getCurrentTime() + currentskiptime)); playertext.textContent = "Skipped " + currentskiptime + " seconds ahead"; playstateupdateforward()} 
-            function rewindVideo() { player.seekTo((player.getCurrentTime() - currentskiptime)); playertext.textContent = "Rewinded " + currentskiptime + " seconds"; playstateupdatebackward()}
+            function previousVideo() {if(currentplaylist !== ""){player.previousVideo(); playertext.textContent = "Playing previous video"}}
+            function nextVideo() {if(currentplaylist !== ""){player.nextVideo(); playertext.textContent = "Playing next video"}}
+            function forwardVideo() {player.seekTo((player.getCurrentTime() + currentskiptime)); playertext.textContent = "Skipped " + currentskiptime + " seconds ahead"; playstateupdateforward()} 
+            function rewindVideo() {player.seekTo((player.getCurrentTime() - currentskiptime)); playertext.textContent = "Rewinded " + currentskiptime + " seconds"; playstateupdatebackward()}
             
-            function speedincrease5(){ if(currentskiptime < 30){ currentskiptime = currentskiptime + 5;}}
-            function speeddecrease5(){ if(currentskiptime > 5){ currentskiptime = currentskiptime - 5;}}
+            function speedincrease5(){if(currentskiptime < 30){currentskiptime = currentskiptime + 5;}} 
+            function speeddecrease5(){if(currentskiptime > 5){currentskiptime = currentskiptime - 5;}}
             
             function shuffleVideo() { 
-                if(shuffle == true){player.setShuffle(false); shuffle = false; docelem.style.setProperty('--shuffleinvert', 0.5); shuffletext = "";} 
+                if(shuffle == true){player.setShuffle(false); shuffle = false; docelem.style.setProperty('--shuffleinvert', 0.5); shuffletext = ""} 
                 else if(shuffle == false){player.setShuffle(true); shuffle = true; docelem.style.setProperty('--shuffleinvert', shuffleflop); shuffletext = "Shuffle Enabled : "}}
 
             function playerurlupdate(){currentlyplaying = player.getVideoUrl(); currentlyplaying = currentlyplaying.replace(currentplaylist, '')} 
-            function urlupdate(){ document.getElementById("mediaplayer").innerHTML = currentlyplaying; 
-                document.getElementById("youtubelink").href = "https://www." + currentlyplaying; document.getElementById("embeddedmedialink").href = "https://www." + currentlyplaying
+            function urlupdate(){document.getElementById("mediaplayer").innerHTML = currentlyplaying; 
+                document.getElementById("youtubelink").href = "https://www." + currentlyplaying; document.getElementById("embeddedmedialink").href = "https://www." + currentlyplaying;
                 if(currentplaylist !== ""){document.getElementById("playlistlink").href = "https://www.youtube.com/playlist?" + currentplaylist} else {document.getElementById("playlistlink").href = ""}
-                document.getElementById("videolink").href = currentlyplaying; document.getElementById("videoandplaylistlink").href = player.getVideoUrl();}
+                document.getElementById("videolink").href = currentlyplaying; document.getElementById("videoandplaylistlink").href = player.getVideoUrl()}
             
             function playerupdate() { setTimeout(function() {playerurlupdate(); urlupdate(); player.playVideo()}, 100);
-                if(currentplaylist !== ""){ if(preinvert == 1){ document.getElementById("nextbuttonembed").style.filter="invert(100%)"; document.getElementById("previousbuttonembed").style.filter="invert(100%)"; 
-                    } else { document.getElementById("nextbuttonembed").style.filter="invert(0%)"; document.getElementById("previousbuttonembed").style.filter="invert(0%)";}
-                } else { document.getElementById("nextbuttonembed").style.filter="invert(50%)"; document.getElementById("previousbuttonembed").style.filter="invert(50%)";}}
+                if(currentplaylist !== ""){ 
+                    if(preinvert == 1){document.getElementById("nextbuttonembed").style.filter="invert(100%)"; document.getElementById("previousbuttonembed").style.filter="invert(100%)"; 
+                    } else {document.getElementById("nextbuttonembed").style.filter="invert(0%)"; document.getElementById("previousbuttonembed").style.filter="invert(0%)"}
+                } else {document.getElementById("nextbuttonembed").style.filter="invert(50%)"; document.getElementById("previousbuttonembed").style.filter="invert(50%)"}}
             
-            function twilightload() { embedtask(); shuffle = true; shuffleVideo(); videolinkdropdownclose(); currentplaylist = ""; player.loadVideoById({'videoId':'6BJFnnWVNRU','startSeconds': 0}); playertext.textContent = "Asking Twilight Sparkle for help."; playerupdate()}
-            function ovfvpload(){ embedtask(); shuffle = true; shuffleVideo(); videolinkdropdownclose(); currentplaylist = "list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU&"; player.loadPlaylist({'list':"PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU", 'index': 0}); playertext.textContent = "Playing 'The Official Very Funny Video Playlist'."; playerupdate()}
-            function rct2load(){ embedtask(); shuffle = true; shuffleVideo(); videolinkdropdownclose(); currentplaylist = ""; player.loadVideoById({'videoId':'W_4uRZFVKPE','startSeconds': 985}); playertext.textContent = "Playing 'Roller Coaster Tycoon 2: Merry-Go-Round Music'"; playerupdate()}
+            function twilightload() {embedtask(); shuffle = true; shuffleVideo(); videolinkdropdownclose(); currentplaylist = ""; 
+                player.loadVideoById({'videoId':'6BJFnnWVNRU','startSeconds': 0}); playertext.textContent = "Asking Twilight Sparkle for help."; playerupdate()}
+            function ovfvpload(){embedtask(); shuffle = true; shuffleVideo(); videolinkdropdownclose(); currentplaylist = "list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU&"; 
+                player.loadPlaylist({'list':"PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU", 'index': 0}); playertext.textContent = "Playing 'The Official Very Funny Video Playlist'."; playerupdate()}
+            function rct2load(){embedtask(); shuffle = true; shuffleVideo(); videolinkdropdownclose(); currentplaylist = ""; 
+                player.loadVideoById({'videoId':'W_4uRZFVKPE','startSeconds': 985}); playertext.textContent = "Playing 'Roller Coaster Tycoon 2: Merry-Go-Round Music'"; playerupdate()}
             
-            function playstateupdateforward() { var totaltimeplayer = player.getDuration(); 
+            function playstateupdateforward() {var totaltimeplayer = player.getDuration(); 
                 var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime() + currentskiptime; if( totaltimeplayer > playerCurrentTime){
                 var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))} else {nextVideo()}}
-            function playstateupdatebackward() { var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime() - currentskiptime
-                    var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))}
-            function playstateupdatereset() { var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime() - player.getCurrentTime()
-                    var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))}
+            function playstateupdatebackward() {var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime() - currentskiptime
+                var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))}
 
             function changeplayerstate(playerStatus) {
-                if (playerStatus == -1) { setTimeout(function() {playertext.textContent = shuffletext + "Stopped";}, 200)
-                } else if (playerStatus == 0) { setTimeout(function() {playertext.textContent = shuffletext + "Ended";}, 200)
-                } else if (playerStatus == 1) { setTimeout(function() {playertext.textContent = shuffletext + "Playing";}, 2500)
-                } else if (playerStatus == 2) { setTimeout(function() {playertext.textContent = shuffletext + "Paused";}, 200)
+                if (playerStatus == -1) { setTimeout(function() {playertext.textContent = shuffletext + "Stopped"}, 200)
+                } else if (playerStatus == 0) { setTimeout(function() {playertext.textContent = shuffletext + "Ended"}, 200)
+                } else if (playerStatus == 1) { setTimeout(function() {playertext.textContent = shuffletext + "Playing"}, 500)
+                } else if (playerStatus == 2) { setTimeout(function() {playertext.textContent = shuffletext + "Paused"}, 200)
                 } else if (playerStatus == 3) { playerupdate(); setTimeout(function() {playertext.textContent = shuffletext + "Buffering";}, 200)
-                } else if (playerStatus == 5) { setTimeout(function() {playertext.textContent = shuffletext + "Queued";}, 200)}}
-            function onPlayerError(event) {player.nextVideo(); setTimeout(function() { playertext.textContent = "Youtube loading error on previous video, video has been skipped." },1500)}
+                } else if (playerStatus == 5) { setTimeout(function() {playertext.textContent = shuffletext + "Queued"}, 200)}}
+            function onPlayerError(event) {player.nextVideo(); setTimeout(function() { playertext.textContent = "Youtube loading error on previous video, video has been skipped."},1500)}
 
             function onPlayerStateChange(event) { changeplayerstate(event.data);
-                if (event.data == YT.PlayerState.PLAYING) { 
-                    var currenttime = player.getCurrentTime(); var playerTotalTime = player.getDuration();
-                    if(currenttime < 1){playstateupdatereset()}
+                if (event.data == YT.PlayerState.PLAYING) { var playerTotalTime = player.getDuration();
                     mytimer = setInterval(function() { 
-                        var playerCurrentTime = player.getCurrentTime(); var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100;
-                        if(playerTimeDifference > 100){ playerTimeDifference = 100 };
-                        progress(playerTimeDifference, $('#progressBar'))}, 100);        
-                } else { clearTimeout(mytimer)}}
+                        var playerCurrentTime = player.getCurrentTime(); var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; 
+                        progress(playerTimeDifference, $('#progressBar'))}, 100)} else {clearTimeout(mytimer)}}
         </script>
         
 <!-- Time / date properties rendering ------------------------------------------------------------------------------>
@@ -650,21 +651,21 @@
                     <script>
                         var monthdrop = false; realmonth = true; //month dropdown toggle and year toggle
                         //IF statement for the month dropdown box being open or closed
-                        function monthmenu(){ if (desktopdrop == false) { document.getElementById("monthmenu").style.marginLeft = "-2px"; desktopdrop = true; clocku();
-                                       } else if (desktopdrop == true){ document.getElementById("monthmenu").style.marginLeft = "-200000px"; desktopdrop = false;}}
-                        function monthmenuclose() { document.getElementById("monthmenu").style.marginLeft = "-200000px"; desktopdrop = false;} 
+                        function monthmenu(){if (desktopdrop == false) {document.getElementById("monthmenu").style.marginLeft = "-2px"; desktopdrop = true; clocku()
+                            } else if (desktopdrop == true) {document.getElementById("monthmenu").style.marginLeft = "-200000px"; desktopdrop = false}}
+                        function monthmenuclose() {document.getElementById("monthmenu").style.marginLeft = "-200000px"; desktopdrop = false} 
                         //month updaters when clicked and overrides the calender
-                        function jan() { realmonth = false; month = "January"; clocku();} function feb() { realmonth = false; month = "Febuary"; clocku();} function mar() { realmonth = false; month = "March"; clocku();}
-                        function apr() { realmonth = false; month = "April"; clocku();} function may() { realmonth = false; month = "May"; clocku();} function jun() { realmonth = false; month = "June"; clocku();}
-                        function jul() { realmonth = false; month = "July"; clocku();} function aug() { realmonth = false; month = "August"; clocku();} function sep() { realmonth = false; month = "September"; clocku();}
-                        function oct() { realmonth = false; month = "October"; clocku();} function nov() { realmonth = false; month = "November"; clocku();} function dec() { realmonth = false; month = "December"; clocku();}
+                        function jan() {realmonth = false; month = "January"; clocku()} function feb() {realmonth = false; month = "Febuary"; clocku()} function mar() {realmonth = false; month = "March"; clocku()}
+                        function apr() {realmonth = false; month = "April"; clocku()} function may() {realmonth = false; month = "May"; clocku()} function jun() {realmonth = false; month = "June"; clocku()}
+                        function jul() {realmonth = false; month = "July"; clocku()} function aug() {realmonth = false; month = "August"; clocku()} function sep() {realmonth = false; month = "September"; clocku()}
+                        function oct() {realmonth = false; month = "October"; clocku()} function nov() {realmonth = false; month = "November"; clocku()} function dec() {realmonth = false; month = "December"; clocku()}
                         
                         function monthyearclear() { monthdropdefa(); yeardropbackfa();} //cleans out the background color for the container of the dropdown menu
                         // dropdown menu container box updater to make the background darkblue after selecting an option
-                        function monthdropback() { document.getElementById("month").style.backgroundColor = prus; document.getElementById("month").style.color = whit; document.getElementById("month").style.borderColor = yell }
-                        function monthdropdefa() { document.getElementById("month").style.backgroundColor = white; document.getElementById("month").style.color = black; document.getElementById("month").style.borderColor = white }
-                        function yeardropback() { document.getElementById("year").style.backgroundColor = prus; document.getElementById("year").style.color = whit; document.getElementById("year").style.borderColor = yell }
-                        function yeardropbackfa() { document.getElementById("year").style.backgroundColor = white; document.getElementById("year").style.color = black; document.getElementById("year").style.borderColor = white }
+                        function monthdropback() {document.getElementById("month").style.backgroundColor = prus; document.getElementById("month").style.color = whit; document.getElementById("month").style.borderColor = yell}
+                        function monthdropdefa() {document.getElementById("month").style.backgroundColor = white; document.getElementById("month").style.color = black; document.getElementById("month").style.borderColor = white}
+                        function yeardropback() {document.getElementById("year").style.backgroundColor = prus; document.getElementById("year").style.color = whit; document.getElementById("year").style.borderColor = yell}
+                        function yeardropbackfa() {document.getElementById("year").style.backgroundColor = white; document.getElementById("year").style.color = black; document.getElementById("year").style.borderColor = white}
                     </script> 
                             
                     <ul class="tree-view"  style="position: absolute; width:158px; height: 126px; padding:2px; margin-top:45px; margin-left:1px;"></ul></fieldset>
@@ -690,22 +691,22 @@
         
         <script>
             var docclock = document.getElementById("clock"); docclockwin = document.getElementById("clockwindow"); 
-            function clockactive() { inactiveall(); currentlayer = currentlayer + 1; docclock.style.zIndex = currentlayer; docclockwin.style.backgroundImage = currentactiveheader;}
-            function clockclose() { inactiveall(); docclock.style.marginLeft = "-20000px"; docclock.style.right = "-100%"; monthdropdefa(); yeardropbackfa();}
-            function clockopen() { clockactive(); docclock.style.left = "75%"; docclock.style.top = "50%"; docclock.style.marginLeft = "0px"; clocku();}
+            function clockactive() {inactiveall(); currentlayer = currentlayer + 1; docclock.style.zIndex = currentlayer; docclockwin.style.backgroundImage = currentactiveheader}
+            function clockclose() {inactiveall(); docclock.style.marginLeft = "-20000px"; docclock.style.right = "-100%"; monthdropdefa(); yeardropbackfa()}
+            function clockopen() {clockactive(); docclock.style.left = "75%"; docclock.style.top = "50%"; docclock.style.marginLeft = "0px"; clocku()}
             
             var da = new Date(), monthArr = ["January", "February","March", "April", "May", "June", "July", "August", "September", "October", "November","December"]; realmonth = true; 
             var yearmath = 0, daymath = 0, minutemath = 0, hourmath = 0;
             
-            if (minutemath > 60){ minutemath - 60; hourmath + 1;} if(minutemath < 0){ minutemath + 60; hourmath - 1;}
-            if (hourmath > 24){ hourmath - 24; daymath + 1;} if(hourmath < 0){ hourmath + 24; daymath - 1;}
+            if (minutemath > 60){minutemath - 60; hourmath + 1;} if(minutemath < 0){ minutemath + 60; hourmath - 1}
+            if (hourmath > 24){hourmath - 24; daymath + 1;} if(hourmath < 0){ hourmath + 24; daymath - 1}
             
-            function clocku(){ date = da.getDate() + daymath; year = da.getFullYear() + yearmath; 
-                               if(realmonth == true){monthno = da.getMonth(); month = monthArr[monthno]};
-                 document.getElementById("month").innerHTML = month; document.getElementById("year").innerHTML = year; }
+            function clocku(){date = da.getDate() + daymath; year = da.getFullYear() + yearmath; 
+                if(realmonth == true){monthno = da.getMonth(); month = monthArr[monthno]};
+                document.getElementById("month").innerHTML = month; document.getElementById("year").innerHTML = year}
                  
-            function minuteadd() { minutemath = minutemath + 1; clocku()}   function minutesub() { minutemath = minutemath - 1; clocku()}
-            function houradd() { hourmath = hourmath + 1; clocku()}         function hoursub() { hourmath = hourmath - 1; clocku()}
+            function minuteadd() {minutemath = minutemath + 1; clocku()}   function minutesub() {minutemath = minutemath - 1; clocku()}
+            function houradd() {hourmath = hourmath + 1; clocku()}         function hoursub() {hourmath = hourmath - 1; clocku()}
             function yearadd() {yearmath = yearmath + 1; clocku()}          function yearsub() {yearmath = yearmath - 1; clocku()}
         </script>
         
@@ -727,24 +728,24 @@
             var a = document.getElementById("backgroundtab"); var b = document.getElementById("screenSavertab"); var c = document.getElementById("appearancetab"); 
             var d = document.getElementById("effectstab"); var e = document.getElementById("settingstab");
             
-                function tabreset(){ document.getElementById("effects").style.zIndex = 2; document.getElementById("settings").style.zIndex = 2;
+                function tabreset(){document.getElementById("effects").style.zIndex = 2; document.getElementById("settings").style.zIndex = 2;
                     document.getElementById("background").style.zIndex = 2; document.getElementById("screensaver").style.zIndex = 2; document.getElementById("appearance").style.zIndex = 2; 
                     a.style.width = "63px"; a.style.height = "16px"; a.style.marginTop = "6px"; a.style.marginLeft = " 11px"; a.style.zIndex = 1; // first tab // aa
                     b.style.width = "68px"; b.style.height = "16px"; b.style.marginTop = "6px"; b.style.marginLeft = " 80px"; b.style.zIndex = 1; // second tab // bb
                     c.style.width = "65px"; c.style.height = "16px"; c.style.marginTop = "6px"; c.style.marginLeft = "154px"; c.style.zIndex = 1; // third tab // cc
                     d.style.width = "38px"; d.style.height = "16px"; d.style.marginTop = "6px"; d.style.marginLeft = "225px"; d.style.zIndex = 1; // fourth tab // dd 
-                    e.style.width = "45px"; e.style.height = "16px"; e.style.marginTop = "6px"; e.style.marginLeft = "269px"; e.style.zIndex = 1;}// fifth tab // ee
+                    e.style.width = "45px"; e.style.height = "16px"; e.style.marginTop = "6px"; e.style.marginLeft = "269px"; e.style.zIndex = 1}// fifth tab // ee
             
-                function backgroundtab(){ document.getElementById("background").style.zIndex = 9; // first tab
-                    a.style.zIndex = 10; a.style.width = "71px"; a.style.marginLeft = "6px"; a.style.marginTop = "5px"; a.style.height = "17px";}
-                function screensavertab(){ document.getElementById("screensaver").style.zIndex = 9; // first tab
-                    b.style.zIndex = 10; b.style.width = "72px"; b.style.marginLeft = "78px"; b.style.marginTop = "5px"; b.style.height = "17px";}
-                function appearancetab(){ document.getElementById("appearance").style.zIndex = 9; // first tab
-                    c.style.zIndex = 10; c.style.width = "69px"; c.style.marginLeft = "152px"; c.style.marginTop = "5px"; c.style.height = "17px";}
-                function effectstab(){ document.getElementById("effects").style.zIndex = 9;// first tab
-                    d.style.zIndex = 10; d.style.width = "42px"; d.style.marginLeft = "223px"; d.style.marginTop = "5px"; d.style.height = "17px";}
-                function settingstab(){ document.getElementById("settings").style.zIndex = 9; // fifth tab
-                    e.style.zIndex = 10; e.style.width = "51px"; e.style.marginLeft = "267px"; e.style.marginTop = "5px"; e.style.height = "17px";}
+                function backgroundtab(){document.getElementById("background").style.zIndex = 9; // first tab
+                    a.style.zIndex = 10; a.style.width = "71px"; a.style.marginLeft = "6px"; a.style.marginTop = "5px"; a.style.height = "17px"}
+                function screensavertab(){document.getElementById("screensaver").style.zIndex = 9; // first tab
+                    b.style.zIndex = 10; b.style.width = "72px"; b.style.marginLeft = "78px"; b.style.marginTop = "5px"; b.style.height = "17px"}
+                function appearancetab(){document.getElementById("appearance").style.zIndex = 9; // first tab
+                    c.style.zIndex = 10; c.style.width = "69px"; c.style.marginLeft = "152px"; c.style.marginTop = "5px"; c.style.height = "17px"}
+                function effectstab(){document.getElementById("effects").style.zIndex = 9;// first tab
+                    d.style.zIndex = 10; d.style.width = "42px"; d.style.marginLeft = "223px"; d.style.marginTop = "5px"; d.style.height = "17px"}
+                function settingstab(){document.getElementById("settings").style.zIndex = 9; // fifth tab
+                    e.style.zIndex = 10; e.style.width = "51px"; e.style.marginLeft = "267px"; e.style.marginTop = "5px"; e.style.height = "17px"}
             </script>
             
             <!-- --------------------------------------- background tab --------------------------------------- -->
@@ -777,12 +778,12 @@
                                 
                     <script>
                         var desktopdrop = false;
-                        function desktopdropdown(){ if (desktopdrop == false) { document.getElementById("desktopmode").style.marginLeft = "-2px"; desktopdrop = true;
-                                             } else if (desktopdrop == true){ document.getElementById("desktopmode").style.marginLeft = "-20000px"; desktopdrop = false; }}
-                        function desktopexit(){ document.getElementById("desktopmode").style.marginLeft = "-20000px"; desktopdrop = false; }
-                        function centeritem(){ document.getElementById("currentdesktopmode").textContent = "Center";}
-                        function spanitem(){ document.getElementById("currentdesktopmode").textContent = "Span";}
-                        function stretchitem(){ document.getElementById("currentdesktopmode").textContent = "Stretch";}
+                        function desktopdropdown(){if (desktopdrop == false) {document.getElementById("desktopmode").style.marginLeft = "-2px"; desktopdrop = true
+                                             } else if (desktopdrop == true){document.getElementById("desktopmode").style.marginLeft = "-20000px"; desktopdrop = false}}
+                        function desktopexit(){document.getElementById("desktopmode").style.marginLeft = "-20000px"; desktopdrop = false}
+                        function centeritem(){document.getElementById("currentdesktopmode").textContent = "Center"}
+                        function spanitem(){document.getElementById("currentdesktopmode").textContent = "Span"}
+                        function stretchitem(){document.getElementById("currentdesktopmode").textContent = "Stretch"}
                     </script>
                 
                     <ul class="tree-view" style="width:240px; height:86px; margin-top: 2px; margin-left:4px;">
@@ -833,33 +834,33 @@
                         
             <script>
                 var colorwallpaperpicked = "#c0c0c0", currentwallpaper = "", sens = "";
-                function wallpaperupdate(){ document.getElementById("body").style.backgroundImage = currentwallpaper; 
-                    dcb1.style.backgroundImage = currentwallpaper; dcb2.style.backgroundImage = currentwallpaper; dcb3.style.backgroundImage = currentwallpaper;}
-                function wallpaperpreview(){ document.getElementById("apperancepreview").style.backgroundImage = currentwallpaper; document.getElementById("iconpreview").style.backgroundImage = currentwallpaper;
-                    dcb1.style.backgroundImage = currentwallpaper; dcb2.style.backgroundImage = currentwallpaper; dcb3.style.backgroundImage = currentwallpaper;}
+                function wallpaperupdate(){document.getElementById("body").style.backgroundImage = currentwallpaper; 
+                    dcb1.style.backgroundImage = currentwallpaper; dcb2.style.backgroundImage = currentwallpaper; dcb3.style.backgroundImage = currentwallpaper}
+                function wallpaperpreview(){document.getElementById("apperancepreview").style.backgroundImage = currentwallpaper; document.getElementById("iconpreview").style.backgroundImage = currentwallpaper;
+                    dcb1.style.backgroundImage = currentwallpaper; dcb2.style.backgroundImage = currentwallpaper; dcb3.style.backgroundImage = currentwallpaper}
                 function wallpapercurrentreset() { 
                     document.getElementById("wallpaperoverlay1").style.backgroundColor = ""; document.getElementById("wallpaperoverlay2").style.backgroundColor = "";
                     document.getElementById("wallpaperoverlay3").style.backgroundColor = ""; document.getElementById("wallpaperoverlay4").style.backgroundColor = "";
                     document.getElementById("wallpaperoverlay5").style.backgroundColor = ""; document.getElementById("wallpaperoverlay6").style.backgroundColor = "";
                     document.getElementById("wallpaperoverlay7").style.backgroundColor = ""; document.getElementById("wallpaperoverlay8").style.backgroundColor = "";
-                    document.getElementById("wallpaperoverlay9").style.backgroundColor = ""; document.getElementById("wallpaperoverlay10").style.backgroundColor = "";}
-                function wallpaperoptionnone() { wallpapercurrentreset(); document.getElementById("wallpaperoverlay1").style.backgroundColor = colorwallpaperpicked; currentwallpaper = "none"; wallpaperpreview(); sens = 0} 
-                function wallpaperoption1() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay2").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/wallpaper32.png')"; wallpaperpreview(); sens = 1}
-                function wallpaperoption2() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay3").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/study.png')"; wallpaperpreview(); sens = 2}
-                function wallpaperoption3() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay4").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/startrek.png')"; wallpaperpreview(); sens = 3} 
-                function wallpaperoption4() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay5").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/unknown.png')"; wallpaperpreview(); sens = 4} 
-                function wallpaperoption5() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay6").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/anime.png')"; wallpaperpreview(); sens = 5} 
-                function wallpaperoption6() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay7").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/vinyl.png')"; wallpaperpreview(); sens = 6} 
-                function wallpaperoption7() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay8").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/lynn.png')"; wallpaperpreview(); sens = 7} 
-                function wallpaperoption8() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay9").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/Untitled-3.jpg')"; wallpaperpreview(); sens = 8} 
-                function wallpaperoption9() {    wallpapercurrentreset(); document.getElementById("wallpaperoverlay10").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/Untitled-4.jpg')"; wallpaperpreview(); sens = 9} 
+                    document.getElementById("wallpaperoverlay9").style.backgroundColor = ""; document.getElementById("wallpaperoverlay10").style.backgroundColor = ""}
+                function wallpaperoptionnone() {wallpapercurrentreset(); document.getElementById("wallpaperoverlay1").style.backgroundColor = colorwallpaperpicked; currentwallpaper = "none"; wallpaperpreview(); sens = 0} 
+                function wallpaperoption1() {wallpapercurrentreset(); document.getElementById("wallpaperoverlay2").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/wallpaper32.png')"; wallpaperpreview(); sens = 1}
+                function wallpaperoption2() {wallpapercurrentreset(); document.getElementById("wallpaperoverlay3").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/study.png')"; wallpaperpreview(); sens = 2}
+                function wallpaperoption3() {wallpapercurrentreset(); document.getElementById("wallpaperoverlay4").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/startrek.png')"; wallpaperpreview(); sens = 3} 
+                function wallpaperoption4() {wallpapercurrentreset(); document.getElementById("wallpaperoverlay5").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/unknown.png')"; wallpaperpreview(); sens = 4} 
+                function wallpaperoption5() {wallpapercurrentreset(); document.getElementById("wallpaperoverlay6").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/anime.png')"; wallpaperpreview(); sens = 5} 
+                function wallpaperoption6() {wallpapercurrentreset(); document.getElementById("wallpaperoverlay7").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/vinyl.png')"; wallpaperpreview(); sens = 6} 
+                function wallpaperoption7() {wallpapercurrentreset(); document.getElementById("wallpaperoverlay8").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/lynn.png')"; wallpaperpreview(); sens = 7} 
+                function wallpaperoption8() {wallpapercurrentreset(); document.getElementById("wallpaperoverlay9").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/Untitled-3.jpg')"; wallpaperpreview(); sens = 8} 
+                function wallpaperoption9() {wallpapercurrentreset(); document.getElementById("wallpaperoverlay10").style.backgroundColor = colorwallpaperpicked; currentwallpaper = github + "img/wallpapers/Untitled-4.jpg')"; wallpaperpreview(); sens = 9} 
                 
                 function sensupdate() { 
-                    if(sens == 0){document.getElementById("wallpaperoverlay1").style.backgroundColor = colorwallpaperpicked;} if(sens == 1){document.getElementById("wallpaperoverlay2").style.backgroundColor = colorwallpaperpicked;}
-                    if(sens == 2){document.getElementById("wallpaperoverlay3").style.backgroundColor = colorwallpaperpicked;} if(sens == 3){document.getElementById("wallpaperoverlay4").style.backgroundColor = colorwallpaperpicked;}
-                    if(sens == 4){document.getElementById("wallpaperoverlay5").style.backgroundColor = colorwallpaperpicked;} if(sens == 5){document.getElementById("wallpaperoverlay6").style.backgroundColor = colorwallpaperpicked;}
-                    if(sens == 6){document.getElementById("wallpaperoverlay7").style.backgroundColor = colorwallpaperpicked;} if(sens == 7){document.getElementById("wallpaperoverlay8").style.backgroundColor = colorwallpaperpicked;}
-                    if(sens == 8){document.getElementById("wallpaperoverlay9").style.backgroundColor = colorwallpaperpicked;} if(sens == 9){document.getElementById("wallpaperoverlay10").style.backgroundColor = colorwallpaperpicked;}}
+                    if(sens == 0){document.getElementById("wallpaperoverlay1").style.backgroundColor = colorwallpaperpicked;} if(sens == 1){document.getElementById("wallpaperoverlay2").style.backgroundColor = colorwallpaperpicked}
+                    if(sens == 2){document.getElementById("wallpaperoverlay3").style.backgroundColor = colorwallpaperpicked;} if(sens == 3){document.getElementById("wallpaperoverlay4").style.backgroundColor = colorwallpaperpicked}
+                    if(sens == 4){document.getElementById("wallpaperoverlay5").style.backgroundColor = colorwallpaperpicked;} if(sens == 5){document.getElementById("wallpaperoverlay6").style.backgroundColor = colorwallpaperpicked}
+                    if(sens == 6){document.getElementById("wallpaperoverlay7").style.backgroundColor = colorwallpaperpicked;} if(sens == 7){document.getElementById("wallpaperoverlay8").style.backgroundColor = colorwallpaperpicked}
+                    if(sens == 8){document.getElementById("wallpaperoverlay9").style.backgroundColor = colorwallpaperpicked;} if(sens == 9){document.getElementById("wallpaperoverlay10").style.backgroundColor = colorwallpaperpicked}}
             </script>
             
             <!-- --------------------------------------- screensaver tab --------------------------------------- -->
@@ -883,10 +884,10 @@
                         
                         <script>
                             var screensaverdrop = false;
-                            function screensaverdropdown(){ if (screensaverdrop == false) { document.getElementById("thescreensaver").style.marginLeft = "-2px"; screensaverdrop = true;
-                                                     } else if (screensaverdrop == true){ document.getElementById("thescreensaver").style.marginLeft = "-20000px"; screensaverdrop = false; }}
-                            function none(){ document.getElementById("currentscreensaver").textContent="(none)";}
-                            function screensaverdropdownclose(){ document.getElementById("thescreensaver").style.marginLeft = "-20000px"; screensaverdrop = false; }
+                            function screensaverdropdown(){if (screensaverdrop == false) {document.getElementById("thescreensaver").style.marginLeft = "-2px"; screensaverdrop = true
+                                                     } else if (screensaverdrop == true){document.getElementById("thescreensaver").style.marginLeft = "-20000px"; screensaverdrop = false}}
+                            function none(){document.getElementById("currentscreensaver").textContent="(none)";}
+                            function screensaverdropdownclose(){document.getElementById("thescreensaver").style.marginLeft = "-20000px"; screensaverdrop = false}
                         </script>
                         
                         <div class="win98buttoninactive" style="position: absolute; margin-left:182px; margin-top: 1px; width:66px; height:18px;"> 
@@ -987,77 +988,77 @@
                             preinactivetitle, curinactivetitle, preactivetitle, curactivetitle, preinvert, curinvert;
                         var schemedrop = false, ctoggle = false, themecurrent = "lightmode";
                         var docelem = document.documentElement, currentsch = document.getElementById("currentscheme");
-                        function schemedropdown(){ if (schemedrop == false) { document.getElementById("scheme").style.marginLeft = "    -2px"; schemedrop = true;
-                                            } else if (schemedrop == true){   document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }}
-                        function schemeexit(){ document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }
-                        function wallpapercust() { currentsch.textContent="(Custom)"; }
+                        function schemedropdown(){ if (schemedrop == false) {document.getElementById("scheme").style.marginLeft = "    -2px"; schemedrop = true;
+                                            } else if (schemedrop == true){document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false}}
+                        function schemeexit(){document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false; }
+                        function wallpapercust() {currentsch.textContent="(Custom)"}
 
-                        function windows98(){           currentsch.textContent="Windows 98";              cpick12();       wallpaperoption1();    themecurrent = "lightmode"; themeupdate(); themepreviewchange();}
-                        function evangelionmode(){      currentsch.textContent="Neon Genesis Evangelion"; cpick18();       wallpaperoption4();    themecurrent = "darkmode";  themeupdate(); themepreviewchange();}
-                        function Octavia(){             currentsch.textContent="Octavia's Study";         cpick17();       wallpaperoption2();    themecurrent = "darkmode";  themeupdate(); themepreviewchange();}
-                        function girlsdayout(){         currentsch.textContent="A Girls Day Out";         cpick19();       wallpaperoption5();    themecurrent = "tankmode";  themeupdate(); themepreviewchange();}
-                        function milyvean(){            currentsch.textContent="Clouds at Midnight";      cpick18();       wallpaperoption7();    themecurrent = "lightmode"; themeupdate(); themepreviewchange();}
-                        function vapourwave(){          currentsch.textContent="Aesthetic";               cpick20();       wallpaperoption8();    themecurrent = "neonmode";  themeupdate(); themepreviewchange();}
-                        function contrastmodescheme1(){ currentsch.textContent="High Contrast Mode 1";    highcontrast1(); wallpaperoptionnone(); themecurrent = "contrastmode1"; themeupdate(); themepreviewchange();}
-                        function contrastmodescheme2(){ currentsch.textContent="High Contrast Mode 2";    highcontrast2(); wallpaperoptionnone(); themecurrent = "contrastmode2"; themeupdate(); themepreviewchange();}
+                        function windows98(){           currentsch.textContent="Windows 98";              cpick12();       wallpaperoption1();    themecurrent = "lightmode"; themeupdate(); themepreviewchange()}
+                        function evangelionmode(){      currentsch.textContent="Neon Genesis Evangelion"; cpick18();       wallpaperoption4();    themecurrent = "darkmode";  themeupdate(); themepreviewchange()}
+                        function Octavia(){             currentsch.textContent="Octavia's Study";         cpick17();       wallpaperoption2();    themecurrent = "darkmode";  themeupdate(); themepreviewchange()}
+                        function girlsdayout(){         currentsch.textContent="A Girls Day Out";         cpick19();       wallpaperoption5();    themecurrent = "tankmode";  themeupdate(); themepreviewchange()}
+                        function milyvean(){            currentsch.textContent="Clouds at Midnight";      cpick18();       wallpaperoption7();    themecurrent = "lightmode"; themeupdate(); themepreviewchange()}
+                        function vapourwave(){          currentsch.textContent="Aesthetic";               cpick20();       wallpaperoption8();    themecurrent = "neonmode";  themeupdate(); themepreviewchange()}
+                        function contrastmodescheme1(){ currentsch.textContent="High Contrast Mode 1";    highcontrast1(); wallpaperoptionnone(); themecurrent = "contrastmode1"; themeupdate(); themepreviewchange()}
+                        function contrastmodescheme2(){ currentsch.textContent="High Contrast Mode 2";    highcontrast2(); wallpaperoptionnone(); themecurrent = "contrastmode2"; themeupdate(); themepreviewchange()}
 
                         function themeupdate() { 
                             if (themecurrent == "darkmode"){darkmode()} if (themecurrent == "lightmode"){lightmode()} if (themecurrent == "contrastmode1"){contrastmode1()} if (themecurrent == "contrastmode2"){contrastmode2()}
-                            if (themecurrent == "tankmode"){tankmode()} if (themecurrent == "neonmode"){neonmode()} sensupdate();}
+                            if (themecurrent == "tankmode"){tankmode()} if (themecurrent == "neonmode"){neonmode()} sensupdate()}
                         
-                        function darkmode(){ colorwallpaperpicked = "#292929"; pretaskbartext = "#9f9f9f"; pretaskbartextpressed = "#ffffff"; preactivetitle = "#ffffff"; preinactivetitle = "#ffffff";
+                        function darkmode(){colorwallpaperpicked = "#292929"; pretaskbartext = "#9f9f9f"; pretaskbartextpressed = "#ffffff"; preactivetitle = "#ffffff"; preinactivetitle = "#ffffff";
                             precurrentactiveheader = github + "img/title-bar%20postheader-darkmodeactive.png')"; precurrentinactiveheader = github + "img/title-bar%20postheader-darkmode.png')";
                             precolwhite = "#545454";   precollightg = "#9f9f9f"; precolsilver = "#3f3f3f"; precolmidgray = "#ababab"; precolgray = "#292929"; precolblack = "#000000"; precolblue = "#fccc39";
                             precolprussian = "#00207c"; precolwincyan = "#008080"; precolyellow = "#c0c0c0"; precolfont = "#c0c0c0"; precolfonttitle = "#ffffff"; curcolhover = "#ffffff"; precolatext = "#ffffff";
                             docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 1; shuffleflop = 1;
-                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')");}
+                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")}
                             
-                        function tankmode(){ colorwallpaperpicked = "#607060"; pretaskbartext = "#000000"; pretaskbartextpressed = "#000000"; preactivetitle = "#ffffff"; preinactivetitle = "#607060";
+                        function tankmode(){colorwallpaperpicked = "#607060"; pretaskbartext = "#000000"; pretaskbartextpressed = "#000000"; preactivetitle = "#ffffff"; preinactivetitle = "#607060";
                             precurrentinactiveheader = github + "img/title-bar%20postheaderinactivetank.png')"; precurrentactiveheader = github + "img/title-bar%20postheaderactivetank.png')";
                             precolwhite = "#7d8f7d";   precollightg = "#607060"; precolsilver = "#607060"; precolmidgray = "#404840"; precolgray = "#404840"; precolblack = "#0a0a0a"; precolblue = "#ffffff";
                             precolprussian = "#481212" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#000000"; precolfonttitle = "#ffffff"; curcolhover = "#ffffff"; precolatext = "#000000";
                             docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 0; shuffleflop = 0; 
-                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')") }
+                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")}
                         
-                        function lightmode(){ colorwallpaperpicked = "#c0c0c0"; pretaskbartext = "#000000"; pretaskbartextpressed = "#000000"; preactivetitle = "#ffffff"; preinactivetitle = "#ffffff";
+                        function lightmode(){colorwallpaperpicked = "#c0c0c0"; pretaskbartext = "#000000"; pretaskbartextpressed = "#000000"; preactivetitle = "#ffffff"; preinactivetitle = "#ffffff";
                             precurrentinactiveheader = github + "img/title-bar%20postheaderinactive.png')"; precurrentactiveheader = github + "img/title-bar%20postheader.png')";
                             precolwhite = "#ffffff";   precollightg = "#dfdfdf"; precolsilver = "#c0c0c0"; precolmidgray = "#ababab"; precolgray = "#808080"; precolblack = "#0a0a0a"; precolblue = "#0000FF";
                             precolprussian = "#00207c" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#000000"; precolfonttitle = "#ffffff"; precolhover = "#ffffff"; precolatext = "#000000";
                             docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 0; shuffleflop = 0;
                             docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")}
                             
-                        function neonmode(){ colorwallpaperpicked = "#a2dbd2"; pretaskbartext = "#000000"; pretaskbartextpressed = "#000000"; preactivetitle = "#ffffff"; preinactivetitle = "#00554d";
+                        function neonmode(){colorwallpaperpicked = "#a2dbd2"; pretaskbartext = "#000000"; pretaskbartextpressed = "#000000"; preactivetitle = "#ffffff"; preinactivetitle = "#00554d";
                             precurrentinactiveheader = github + "img/title-bar%20postheaderneon.png')"; precurrentactiveheader = github + "img/title-bar%20postheaderneonactive.png')";
                             precolwhite = "#f7dbd7"; precollightg = "#fae0e4"; precolsilver = "#f4c1ca"; precolmidgray = "#e08998"; precolgray = "#de4560"; precolblack = "#0a0a0a"; precolblue = "#00bfbc";
                             precolprussian = "#a2dbd2" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#000000"; precolfonttitle = "#ffffff"; precolhover = "#ffffff"; precolatext = "#000000";
                             docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 0; shuffleflop = 0;
                             docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")}
                         
-                        function contrastmode1(){ colorwallpaperpicked = "#0000ff"; pretaskbartext = "#ffffff"; pretaskbartextpressed = "#0000ff"; preactivetitle = "#ffffff"; preinactivetitle = "#000000";
+                        function contrastmode1(){colorwallpaperpicked = "#0000ff"; pretaskbartext = "#ffffff"; pretaskbartextpressed = "#0000ff"; preactivetitle = "#ffffff"; preinactivetitle = "#000000";
                             precurrentinactiveheader = github + "img/title-bar%20postheaderinactivecontrast.png')"; precurrentactiveheader = github + "img/title-bar%20postheaderactivecontrast.png')";
                             precolwhite = "#000000"; precollightg = "#dfdfdf"; precolsilver = "#000000"; precolmidgray = "#ababab"; precolgray = "#808080"; precolblack = "#ffffff"; precolblue = "#00ffff";
                             precolprussian = "#0000ff" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#ffff00"; precolfonttitle = "#000000"; precolhover = "#ffffff"; precolatext = "#ffffff";
                             docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 1; shuffleflop = 1;
                             docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")}
                             
-                        function contrastmode2(){ colorwallpaperpicked = "#00ff00"; pretaskbartext = "#ffffff"; pretaskbartextpressed = "#0000ff"; preactivetitle = "#000000"; preinactivetitle = "#000000";
+                        function contrastmode2(){colorwallpaperpicked = "#00ff00"; pretaskbartext = "#ffffff"; pretaskbartextpressed = "#0000ff"; preactivetitle = "#000000"; preinactivetitle = "#000000";
                             precurrentinactiveheader = github + "img/title-bar%20postheaderinactivecontrast2.png')"; precurrentactiveheader = github + "img/title-bar%20postheaderactivecontrast2.png')";
                             precolwhite = "#000000";   precollightg = "#dfdfdf"; precolsilver = "#000000"; precolmidgray = "#ababab"; precolgray = "#808080"; precolblack = "#ffffff"; precolblue = "#00ff00";
                             precolprussian = "#00ff00" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#ffff00"; precolfonttitle = "#000000"; precolhover = "#ffffff"; precolatext = "#00ff00";
                             docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 1; shuffleflop = 1;
                             docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")}
                          
-                        function highcontrast1() {  currentcolour = "#00ffff"; fontcolour = "#000000"; backcolourpreview(); ctoggle = true; 
-                            cpc.style.backgroundColor = "#000000"; cpo.style.backgroundColor = "#000000"; document.getElementById("iconpreview").style.backgroundColor = "#000000";  ap.style.backgroundColor = "#000000";}
+                        function highcontrast1() {currentcolour = "#00ffff"; fontcolour = "#000000"; backcolourpreview(); ctoggle = true; 
+                            cpc.style.backgroundColor = "#000000"; cpo.style.backgroundColor = "#000000"; document.getElementById("iconpreview").style.backgroundColor = "#000000";  ap.style.backgroundColor = "#000000"}
                         
                         function highcontrast2() {  currentcolour = "#00ff00"; fontcolour = "#000000"; backcolourpreview(); ctoggle = true; 
-                            cpc.style.backgroundColor = "#000000"; cpo.style.backgroundColor = "#000000"; document.getElementById("iconpreview").style.backgroundColor = "#000000";  ap.style.backgroundColor = "#000000";}
+                            cpc.style.backgroundColor = "#000000"; cpo.style.backgroundColor = "#000000"; document.getElementById("iconpreview").style.backgroundColor = "#000000";  ap.style.backgroundColor = "#000000"}
                         
                         function precolourupdate() {
                             curcolwhite = precolwhite; curcollightg = precollightg; curcolsilver = precolsilver; curcolmidgray = precolmidgray; curcolgray = precolgray; curcolblack = precolblack; curcolblue = precolblue; curinvert = preinvert;
                             curcolprussian = precolprussian; curcolwincyan = precolwincyan; curcolyellow = precolyellow; curcolfont = precolfont; curcolfonttitle = precolfonttitle; curcolhover = precolhover; curcolatext = precolatext}
                         
-                        function themepreviewchange() { docelem.style.setProperty('--preinvert', preinvert);
+                        function themepreviewchange() {docelem.style.setProperty('--preinvert', preinvert);
                             docelem.style.setProperty('--preblue', precolblue); docelem.style.setProperty('--preactivetitle', preactivetitle); docelem.style.setProperty('--preinactivetitle', preinactivetitle); 
                             docelem.style.setProperty('--prewhite', precolwhite); docelem.style.setProperty('--pregray', precolgray); docelem.style.setProperty('--prelightg', precollightg); 
                             docelem.style.setProperty('--preblack', precolblack); docelem.style.setProperty('--presilver', precolsilver); docelem.style.setProperty('--preprussian', precolprussian);
@@ -1066,7 +1067,7 @@
                             docelem.style.setProperty('--preinactive', precurrentinactiveheader); docelem.style.setProperty('--preactive', precurrentactiveheader);
                             document.getElementById("preinactive").style.color = preinactivetitle; document.getElementById("premessage").style.color = preactivetitle; document.getElementById("preactive").style.color = preactivetitle}
                         
-                        function themechange() { precolourupdate();
+                        function themechange() {precolourupdate(); if(shuffle == false){docelem.style.setProperty('--shuffleinvert', 0.5)} else if(shuffle == true){docelem.style.setProperty('--shuffleinvert', shuffleflop)}
                             currentinactiveheader = precurrentinactiveheader; currentactiveheader = precurrentactiveheader; curactivetitle = preactivetitle; curinactivetitle = preinactivetitle;
                             docelem.style.setProperty('--curactivetitle', curactivetitle); docelem.style.setProperty('--curinactivetitle', curinactivetitle); 
                             docelem.style.setProperty('--white', curcolwhite); docelem.style.setProperty('--gray', curcolgray); docelem.style.setProperty('--lightg', curcollightg); 
@@ -1079,7 +1080,7 @@
                             docelem.style.setProperty('--taskbarstarttop1', curcolgray); docelem.style.setProperty('--taskbarstarttop2', curcolblack); 
                             docelem.style.setProperty('--taskbarstartbottom1', curcolwhite); docelem.style.setProperty('--taskbarstartbottom2', curcollightg);
                             docelem.style.setProperty('--inactive', currentinactiveheader); docelem.style.setProperty('--active', currentactiveheader); docelem.style.setProperty('--invert', curinvert); 
-                            inactiveall(); diskactive(); clocku(); playerupdate();}
+                            inactiveall(); diskactive(); clocku(); playerupdate()}
                     </script>
                         
                     <div class="win98buttoninactive" style="position: absolute; margin-left:199px; margin-top: -2px; width:66px; height:18px;"> 
@@ -1104,10 +1105,10 @@
                                 
                         <script>
                             var itemdrop = false;
-                            function itemdropdown(){ if (itemdrop == false) { document.getElementById("item").style.marginLeft = "-2px"; itemdrop = true
-                                              } else if (itemdrop == true){ document.getElementById("item").style.marginLeft = "-20000px"; itemdrop = false}}
-                            function itemexit(){ document.getElementById("item").style.marginLeft = "-20000px"; schemedrop = false}
-                            function desktopitem(){ document.getElementById("desktopitem").textContent="Desktop"}</script>
+                            function itemdropdown(){if (itemdrop == false) {document.getElementById("item").style.marginLeft = "-2px"; itemdrop = true
+                                              } else if (itemdrop == true){document.getElementById("item").style.marginLeft = "-20000px"; itemdrop = false}}
+                            function itemexit(){document.getElementById("item").style.marginLeft = "-20000px"; schemedrop = false}
+                            function desktopitem(){document.getElementById("desktopitem").textContent="Desktop"}</script>
                             
                         <ul class="tree-view" style="position:absolute; width:41px; height:9px; margin-left:199px; background-color: var(--silver);">
                             <div class="container" style="margin-top: -4px; margin-left:27px">
@@ -1147,55 +1148,55 @@
                                 desktop4 = document.getElementById("desktopi4"); desktop5 = document.getElementById("desktopi5"); desktop6 = document.getElementById("desktopi6"); 
                                 desktop8 = document.getElementById("desktopi8"); desktop9 = document.getElementById("desktopi9"); 
                             
-                            function colourpickerupdate(){ cpc.style.backgroundColor = currentcolour; cpo.style.backgroundColor = currentcolour; }
-                            function colourpicker(){ if (colourpicked == false){ document.getElementById("coloursampler").style.marginLeft = "    -2px"; colourpicked =  true;
-                                              } else if (colourpicked == true ){ document.getElementById("coloursampler").style.marginLeft = "-20000px"; colourpicked = false; }}
-                            function colourpickerexit() { document.getElementById("coloursampler").style.marginLeft = "-20000px"; colourpicked = false; }
+                            function colourpickerupdate(){cpc.style.backgroundColor = currentcolour; cpo.style.backgroundColor = currentcolour}
+                            function colourpicker(){ if (colourpicked == false){document.getElementById("coloursampler").style.marginLeft = "    -2px"; colourpicked =  true
+                                              } else if (colourpicked == true ){document.getElementById("coloursampler").style.marginLeft = "-20000px"; colourpicked = false}}
+                            function colourpickerexit() {document.getElementById("coloursampler").style.marginLeft = "-20000px"; colourpicked = false}
 
                             function backcolourset(){ //changes desktop icon span colour + backround colour.
                                 desktop1.style.backgroundColor = currentcolour; desktop2.style.backgroundColor = currentcolour; desktop3.style.backgroundColor = currentcolour;
                                 desktop4.style.backgroundColor = currentcolour; desktop5.style.backgroundColor = currentcolour; desktop6.style.backgroundColor = currentcolour;
                                 desktop8.style.backgroundColor = currentcolour; document.body.style.backgroundColor = currentcolour;
-                                if(ctoggle == true){ document.body.style.backgroundColor = "#000"; document.getElementById("iconpreview").style.backgroundColor = "#000";
-                                                     cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; ap.style.backgroundColor = "#000";}} 
+                                if(ctoggle == true){document.body.style.backgroundColor = "#000"; document.getElementById("iconpreview").style.backgroundColor = "#000";
+                                                    cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; ap.style.backgroundColor = "#000"}} 
                             function fontcolourset(){ // changes desktop icon text color;
                                 desktop1.style.color = fontcolour; desktop2.style.color = fontcolour; desktop3.style.color = fontcolour;
                                 desktop4.style.color = fontcolour; desktop5.style.color = fontcolour; desktop6.style.color = fontcolour;
-                                desktop8.style.color = fontcolour;}
+                                desktop8.style.color = fontcolour}
                                 
                             function backcolourpreview(){ // changes preview desktop icons background colour + background colours in appearance tab.
                                 document.getElementById("iconpre1").style.backgroundColor = currentcolour; document.getElementById("iconpre2").style.backgroundColor = currentcolour; 
                                 document.getElementById("iconpre3").style.backgroundColor = currentcolour; document.getElementById("iconpre4").style.backgroundColor = currentcolour; 
                                 document.getElementById("iconpre6").style.backgroundColor = currentcolour; document.getElementById("iconpre7").style.backgroundColor = currentcolour;
                                 document.getElementById("iconpre8").style.backgroundColor = currentcolour; document.getElementById("iconpreview").style.backgroundColor = currentcolour;  
-                                ap.style.backgroundColor = currentcolour; fontcolorsetpreview(); dcb1.style.backgroundColor = currentcolour;  dcb2.style.backgroundColor = currentcolour; }
+                                ap.style.backgroundColor = currentcolour; fontcolorsetpreview(); dcb1.style.backgroundColor = currentcolour;  dcb2.style.backgroundColor = currentcolour}
                             function fontcolorsetpreview(){ // changes preview desktop icons span colour
                                 document.getElementById("iconpre1").style.color = fontcolour; document.getElementById("iconpre2").style.color = fontcolour; 
                                 document.getElementById("iconpre3").style.color = fontcolour; document.getElementById("iconpre4").style.color = fontcolour; 
                                 document.getElementById("iconpre6").style.color = fontcolour; document.getElementById("iconpre7").style.color = fontcolour;
-                                document.getElementById("iconpre8").style.color = fontcolour;}
+                                document.getElementById("iconpre8").style.color = fontcolour}
                             
-                            function cpick1() {   currentcolour = "#ffffff"; fontcolour = "#000"; colourpickerupdate(); document.getElementById("iconpre2").style.backgroundColor = currentcolour;}
-                            function cpick2() {   currentcolour = "#000000"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
-                            function cpick3() {   currentcolour = "#c2c6ca"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
-                            function cpick4() {   currentcolour = "#85898d"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
-                            function cpick5() {   currentcolour = "#ff0000"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
-                            function cpick6() {   currentcolour = "#aa0055"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
-                            function cpick7() {   currentcolour = "#ffff00"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
-                            function cpick8() {   currentcolour = "#aaaa55"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
-                            function cpick9() {   currentcolour = "#00ff00"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
-                            function cpick10() {  currentcolour = "#00aa55"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
-                            function cpick11() {  currentcolour = "#00ffff"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
-                            function cpick12() {  currentcolour = "#008080"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
-                            function cpick13() {  currentcolour = "#0000ff"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
-                            function cpick14() {  currentcolour = "#0000aa"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
-                            function cpick15() {  currentcolour = "#ff00ff"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
-                            function cpick16() {  currentcolour = "#aa55aa"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
+                            function cpick1() { currentcolour = "#ffffff"; fontcolour = "#000"; colourpickerupdate(); document.getElementById("iconpre2").style.backgroundColor = currentcolour}
+                            function cpick2() { currentcolour = "#000000"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
+                            function cpick3() { currentcolour = "#c2c6ca"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
+                            function cpick4() { currentcolour = "#85898d"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
+                            function cpick5() { currentcolour = "#ff0000"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
+                            function cpick6() { currentcolour = "#aa0055"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
+                            function cpick7() { currentcolour = "#ffff00"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
+                            function cpick8() { currentcolour = "#aaaa55"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
+                            function cpick9() { currentcolour = "#00ff00"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
+                            function cpick10() {currentcolour = "#00aa55"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
+                            function cpick11() {currentcolour = "#00ffff"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
+                            function cpick12() {currentcolour = "#008080"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
+                            function cpick13() {currentcolour = "#0000ff"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
+                            function cpick14() {currentcolour = "#0000aa"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
+                            function cpick15() {currentcolour = "#ff00ff"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
+                            function cpick16() {currentcolour = "#aa55aa"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
                             
-                            function cpick17() {  currentcolour = "#a03762"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
-                            function cpick18() {  currentcolour = "#001224"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
-                            function cpick19() {  currentcolour = "#483038"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
-                            function cpick20() {  currentcolour = "#ccffff"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview();}
+                            function cpick17() {currentcolour = "#a03762"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
+                            function cpick18() {currentcolour = "#001224"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
+                            function cpick19() {currentcolour = "#483038"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
+                            function cpick20() {currentcolour = "#ccffff"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
                         </script>
                         
                         <div class="win98buttoninactive" style="position: absolute; margin-left:312px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
@@ -1338,10 +1339,10 @@
 
                         <script>
                             var colourdrop = false;
-                            function colourdropdown(){ if (colourdrop == false){ document.getElementById("colour").style.marginLeft = "    -2px"; colourdrop =  true;
-                                                } else if (colourdrop ==  true){ document.getElementById("colour").style.marginLeft = "-20000px"; colourdrop = false; }}
-                            function colourexit(){ document.getElementById("colour").style.marginLeft = "-20000px"; colourdrop = false; }
-                            function sixteenbitcolour(){  document.getElementById("currentcolour").textContent="High Colour (16-bit)";}
+                            function colourdropdown(){if (colourdrop == false){document.getElementById("colour").style.marginLeft = "    -2px"; colourdrop =  true
+                                                } else if (colourdrop ==  true){document.getElementById("colour").style.marginLeft = "-20000px"; colourdrop = false}}
+                            function colourexit(){document.getElementById("colour").style.marginLeft = "-20000px"; colourdrop = false}
+                            function sixteenbitcolour(){document.getElementById("currentcolour").textContent="High Colour (16-bit)"}
                         </script>
                 
                         <ul class="tree-view" style="position: absolute; width:151px; height: 13px; padding:2px; margin-left:-3px; margin-top:25px;"><div class="displaycolour" style="position:absolute; width:151px;"></div></ul>
@@ -1374,16 +1375,16 @@
         
         <script> 
             var disk = document.getElementById("disk"); diskwin = document.getElementById("diskwindow");
-            function diskactive() { inactiveall(); diskButtonOpen = false; disk.style.marginLeft = "0px"; disk.style.marginTop = "0px";
+            function diskactive() {inactiveall(); diskButtonOpen = false; disk.style.marginLeft = "0px"; disk.style.marginTop = "0px";
                 currentlayer = currentlayer + 1; disk.style.zIndex = currentlayer; document.getElementById("disktext").style.color = curactivetitle;
                 diskwin.style.backgroundImage = currentactiveheader; document.getElementById("taskapp3font").style.color = taskbartextpressed;
                 document.getElementById("taskapp3").style.backgroundImage = github + "img/scrollbarempty.png')"; document.getElementById("taskapp3").style.backgroundColor = curcolwhite;
                 document.documentElement.style.setProperty('--taskbar3top1', curcolgray); document.documentElement.style.setProperty('--taskbar3top2', curcolblack);
-                document.documentElement.style.setProperty('--taskbar3bottom1', curcolwhite); document.documentElement.style.setProperty('--taskbar3bottom2', curcollightg);}
-            function diskopen() { tabreset(); diskactive(); disk.style.left = "1465px"; disk.style.top = "13%";}
-            function diskclose() { inactiveall(); diskButtonOpen = true; disk.style.marginLeft = "-20000px"; disk.style.marginTop = "-20000px"; 
-                document.getElementById("taskapp3").style.marginLeft = "-20000px"; task3true = false; task3on = false; taskreset();}
-            function diskminimize() { inactiveall(); disk.style.marginLeft = "-20000px"; disk.style.marginTop = "-20000px"; diskButtonOpen = true;}
+                document.documentElement.style.setProperty('--taskbar3bottom1', curcolwhite); document.documentElement.style.setProperty('--taskbar3bottom2', curcollightg)}
+            function diskopen() {tabreset(); diskactive(); disk.style.left = "1465px"; disk.style.top = "13%"}
+            function diskclose() {inactiveall(); diskButtonOpen = true; disk.style.marginLeft = "-20000px"; disk.style.marginTop = "-20000px"; 
+                document.getElementById("taskapp3").style.marginLeft = "-20000px"; task3true = false; task3on = false; taskreset()}
+            function diskminimize() {inactiveall(); disk.style.marginLeft = "-20000px"; disk.style.marginTop = "-20000px"; diskButtonOpen = true}
         </script> 
         
 <!-- Window box handling ------------------------------------------------------------------------------>
@@ -1401,11 +1402,11 @@
         </div>
         
         <script>
-            function logonactive(){ inactiveall(); currentlayer = currentlayer + 1; document.getElementById("logoff").style.zIndex = currentlayer;
+            function logonactive(){inactiveall(); currentlayer = currentlayer + 1; document.getElementById("logoff").style.zIndex = currentlayer;
                 document.getElementById("logoff").style.marginLeft = "0px"; document.getElementById("logofftext").style.color = curactivetitle;
-                document.getElementById("logoffwindow").style.backgroundImage = currentactiveheader; }
-            function logoff() { logonactive(); document.getElementById("logoff").style.marginLeft = "0px"; document.getElementById("logoff").style.zIndex = "100"; }
-            function logoffno() { document.getElementById("logoff").style.marginLeft = "200000px"; document.getElementById("logoff").style.zIndex = "1"; }
+                document.getElementById("logoffwindow").style.backgroundImage = currentactiveheader}
+            function logoff() {logonactive(); document.getElementById("logoff").style.marginLeft = "0px"; document.getElementById("logoff").style.zIndex = "100"}
+            function logoffno() {document.getElementById("logoff").style.marginLeft = "200000px"; document.getElementById("logoff").style.zIndex = "1"}
         </script>
 
         <!-- shut down window -->
@@ -1440,16 +1441,16 @@
         </div>
         
         <script>
-            function shutdownactive(){ inactiveall(); currentlayer = currentlayer + 1; document.getElementById("shutdown").style.zIndex = currentlayer
+            function shutdownactive(){inactiveall(); currentlayer = currentlayer + 1; document.getElementById("shutdown").style.zIndex = currentlayer
                 document.getElementById("shutdownwindow").style.backgroundImage = currentactiveheader; document.getElementById("shutdowntext").style.color = curinactivetitle}
-            function shutdown() { document.getElementById("shutdown").style.marginLeft = "0px"; document.getElementById("shutdown").style.zIndex = "100"}
-            function shutdownno() { document.getElementById("shutdown").style.marginLeft = "200000px"; document.getElementById("shutdown").style.zIndex = "1"}
+            function shutdown() {document.getElementById("shutdown").style.marginLeft = "0px"; document.getElementById("shutdown").style.zIndex = "100"}
+            function shutdownno() {document.getElementById("shutdown").style.marginLeft = "200000px"; document.getElementById("shutdown").style.zIndex = "1"}
         </script>
 
 <!-- message box inactive toggle ------------------------------------------------------------------------------>
         <script>    
-            function inactiveall() { var timer = 0
-                if (timer < 1){ timer = timer + 1; menuclosed();
+            function inactiveall() {var timer = 0
+                if (timer < 1){timer = timer + 1; menuclosed();
                     tumblrButtonOpen = true; document.getElementById("tumblrtext").style.color = curinactivetitle;
                     document.getElementById("postwindow").style.backgroundImage = currentinactiveheader; document.getElementById("taskapp1font").style.color = taskbartext;
                     document.getElementById("taskapp1").style.backgroundImage = "none"; document.getElementById("taskapp1").style.backgroundColor = silv;
@@ -1477,7 +1478,7 @@
                     messagewin.style.backgroundImage = currentinactiveheader; document.getElementById("messagetext").style.color = curinactivetitle;
                     docclockwin.style.backgroundImage = currentinactiveheader; document.getElementById("disktext").style.color = curinactivetitle;
                     document.getElementById("logoffwindow").style.backgroundImage = currentinactiveheader; document.getElementById("logofftext").style.color = curinactivetitle;
-                    document.getElementById("shutdownwindow").style.backgroundImage = currentinactiveheader; document.getElementById("shutdowntext").style.color = curinactivetitle; }}
+                    document.getElementById("shutdownwindow").style.backgroundImage = currentinactiveheader; document.getElementById("shutdowntext").style.color = curinactivetitle}}
         </script>
         
 <!-- Windows 98 desktop handling ------------------------------------------------------------------------------>
@@ -1773,8 +1774,6 @@
                 r_text[35] = "yeah I like ASS"; r_text[36] = "FUCK HARDER SNAKE"; r_text[37] = "Korean Border"; r_text[38] = ":)"; r_text[39] = "It seems today"; 
   
             var randomNum = Math.floor(Math.random() * myPix.length), randomNum2 = 0, tick = 3, beforehand = "💯 ";
-            if (tick == 3) { document.getElementById("pyroimage").style.backgroundImage = github + "img/windows/ezgif-2-c475330a8091.gif')";
-                             document.getElementById("catimage").style.backgroundImage = github + "img/windows/Untitled-5.jpg')";}
             function pyroshuffle(){
                 if (tick !== 0){ randomNum2 = Math.floor(Math.random() * myPix.length);
                     if(randomNum2 !== randomNum){randomNum = randomNum2
@@ -2515,7 +2514,7 @@
             function gamesclose() { gamecm(); startoff(); document.getElementById("menuarrow14").style.backgroundPosition = arclose; cmd()}
             function internettoolsopen() {  intecm(); starton(); cms.style.marginLeft = "130px"; document.getElementById("menuarrow15").style.backgroundPosition = aropen}
             function internettoolsclose() { intecm(); startoff(); document.getElementById("menuarrow15").style.backgroundPosition = arclose; cmd()}
-            function systemtoolsopen() {  systcm(); starton(); cms.style.marginLeft = "130px"; document.getElementById("menuarrow16").style.backgroundPosition = aropen}
+            function systemtoolsopen() {  systcm(); starton(); cms.style.marginLeft = "130px"; document.getElementById("menuarrow16").style.backgroundPosition = aropen; cms.style.marginTop = "-163px"; }
             function systemtoolsclose() { systcm(); startoff(); document.getElementById("menuarrow16").style.backgroundPosition = arclose; cmd()}
             function onlineservicesopen() {  onlicm(); starton(); cms.style.marginLeft = "133px"; document.getElementById("submenuarrow3").style.backgroundPosition = aropen}
             function onlineservicesclose() { onlicm(); startoff(); document.getElementById("submenuarrow3").style.backgroundPosition = arclose; cmd()}
@@ -2527,13 +2526,13 @@
             function channelsclose() { chancm(); startoff(); document.getElementById("submenuarrow21").style.backgroundPosition = arclose; cmd()}
             function linksopen() {  linkcm(); starton(); cms.style.marginLeft = "148px"; document.getElementById("submenuarrow22").style.backgroundPosition = aropen}
             function linksclose() { linkcm(); startoff(); document.getElementById("submenuarrow22").style.backgroundPosition = arclose; cmd()}
-            function mediaopen() {  medicm(); starton(); cms.style.marginLeft = "148px"; document.getElementById("submenuarrow23").style.backgroundPosition = aropen}
+            function mediaopen() {  medicm(); starton(); cms.style.marginLeft = "148px"; cms.style.marginTop = "-243px"; document.getElementById("submenuarrow23").style.backgroundPosition = aropen}
             function mediaclose() { medicm(); startoff(); document.getElementById("submenuarrow23").style.backgroundPosition = arclose; cmd()}
             function documentsopen() {   docucm(); starton(); cms.style.marginLeft = "161px"; document.getElementById("menuarrow3").style.backgroundPosition = aropen}
             function documentsclosed() { docucm(); startoff(); document.getElementById("menuarrow3").style.backgroundPosition = arclose; cmd()}
             function settingsopen() {   settcm(); starton(); cms.style.marginLeft = "161px"; document.getElementById("menuarrow4").style.backgroundPosition = aropen}
             function settingsclosed() { settcm(); startoff(); document.getElementById("menuarrow4").style.backgroundPosition = arclose; cmd()}
-            function settingsactivedesktopopen() { acticm(); starton(); cms.style.marginLeft = "158px"; document.getElementById("submenuarrow31").style.backgroundPosition = aropen}
+            function settingsactivedesktopopen() { acticm(); starton(); document.getElementById("submenuarrow31").style.backgroundPosition = aropen; cms.style.marginLeft = "158px";}
             function settingsactivedesktopclose() { acticm(); startoff(); document.getElementById("submenuarrow31").style.backgroundPosition = arclose; cmd()}
             function findopen() {   findcm(); starton(); cms.style.marginLeft = "161px"; document.getElementById("menuarrow5").style.backgroundPosition = aropen}
             function findclosed() { findcm(); startoff(); document.getElementById("menuarrow5").style.backgroundPosition = arclose; cmd()}
