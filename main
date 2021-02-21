@@ -552,7 +552,7 @@
 
             function progress(percent, $element) {
                 var progressBarWidth = percent * $element.width() / 100;
-                $element.find('div').animate({ width: progressBarWidth });}
+                $element.find('div').animate({ width: progressBarWidth }, {duration: 10});}
             
             var currentskiptime = 10, shuffle = false, shuffletext = "", currentplaylist = "", currentlyplaying = "";
             
@@ -608,16 +608,16 @@
                 } else if (playerStatus == 2) { setTimeout(function() {playertext.textContent = shuffletext + "Paused";}, 200)
                 } else if (playerStatus == 3) { playerupdate(); setTimeout(function() {playertext.textContent = shuffletext + "Buffering";}, 200)
                 } else if (playerStatus == 5) { setTimeout(function() {playertext.textContent = shuffletext + "Queued";}, 200)}}
-
             function onPlayerError(event) {player.nextVideo(); setTimeout(function() { playertext.textContent = "Youtube loading error on previous video, video has been skipped." },1500)}
 
             function onPlayerStateChange(event) { changeplayerstate(event.data);
                 if (event.data == YT.PlayerState.PLAYING) { 
-                    var playerTotalTime = player.getDuration();
-                    mytimer = setInterval(function() { var playerCurrentTime = player.getCurrentTime();
-                        var playerTimeDifference = ((playerCurrentTime / playerTotalTime) * 100) + 1;
+                    var currenttime = player.getCurrentTime(); var playerTotalTime = player.getDuration();
+                    if(currenttime < 1){playstateupdatereset()}
+                    mytimer = setInterval(function() { 
+                        var playerCurrentTime = player.getCurrentTime(); var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100;
                         if(playerTimeDifference > 100){ playerTimeDifference = 100 };
-                        progress(playerTimeDifference, $('#progressBar'))}, 1000);        
+                        progress(playerTimeDifference, $('#progressBar'))}, 100);        
                 } else { clearTimeout(mytimer)}}
         </script>
         
@@ -1078,7 +1078,8 @@
                             taskbartext = pretaskbartext; taskbartextpressed = pretaskbartextpressed; currentinactiveheader = precurrentinactiveheader; currentactiveheader = precurrentactiveheader; black = curcolfont; white = curcolwhite;
                             docelem.style.setProperty('--taskbarstarttop1', curcolgray); docelem.style.setProperty('--taskbarstarttop2', curcolblack); 
                             docelem.style.setProperty('--taskbarstartbottom1', curcolwhite); docelem.style.setProperty('--taskbarstartbottom2', curcollightg);
-                            docelem.style.setProperty('--inactive', currentinactiveheader); docelem.style.setProperty('--active', currentactiveheader); docelem.style.setProperty('--invert', curinvert); inactiveall(); diskactive(); clocku()}
+                            docelem.style.setProperty('--inactive', currentinactiveheader); docelem.style.setProperty('--active', currentactiveheader); docelem.style.setProperty('--invert', curinvert); 
+                            inactiveall(); diskactive(); clocku(); playerupdate();}
                     </script>
                         
                     <div class="win98buttoninactive" style="position: absolute; margin-left:199px; margin-top: -2px; width:66px; height:18px;"> 
