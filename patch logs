@@ -1,9 +1,26 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll;">
 <ul>
-<li><strong style="color: var(--atext);">2021 Febuary 20th (210218)</strong> <em>- &ldquo;Media player&rdquo; Update 4</em>
+<li><strong style="color: var(--atext);">2021 Febuary 21th (210221)</strong><br />
 <ul>
-<li><strong>Embedded Media Player Changes</strong><br />
+<li>Media Player Changes<br />
+<ul>
+<li><strong>The timeline now updates 10 times a second apposed to once.</strong></li>
+<li>Timeline no longer has an animation cycle to seem snappier and responsive.</li>
+<li>Clicking on links in the media player now creates a new tab instead of redirecting the current page.</li>
+</ul>
+</li>
+<li>- Optimised window layering.<em><br /></em></li>
+</ul>
+<ol>
+<li><em>- Fixed a graphical issue where the media player skip video buttons wouldn&rsquo;t update colour on theme change.</em></li>
+<li><em>- Fixed a graphical bug where changing theme wouldn't change the colour of the shuffle button until the next video was played.</em></li>
+<li><em>- Changing theme no longer enforces the Embedded Media Player to play.</em></li>
+<li><em>- Fixed graphic glitches in Media Player timeline when skipping videos.</em></li>
+</ol></li>
+<li><strong style="color: var(--atext);">2021 Febuary 20th (210220)</strong> <em>- &ldquo;Media player&rdquo; Update 4</em>
+<ul>
+<li><strong>Media Player Accessability changes </strong><br />
 <ul>
 <li>Added links dropdown menu which includes the current playlist link (if there is any) and original video source.</li>
 <li>Rewind and fastforward times can now be changed through the Links dropdown menu in incriments of 5 seconds.</li>
@@ -24,7 +41,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2021 Febuary 18th (210218)</strong> <em>- &ldquo;Media player</em><em>&rdquo; Update 3.1</em>
 <ul>
-<li><strong>Embedded Media Player Changes</strong><br />
+<li><strong>Major Embedded Media Player updates</strong><br />
 <ul>
 <li><em>Windows Embedded media player now has seperate play functions for videos and playlists</em>, allowing easier addition of videos.</li>
 <li>RCT2 Desktop redirect now changes the current video in the Embedded media player to Merry-Go-Round music. <em>(More of these to come)</em></li>
@@ -44,7 +61,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2021 Febuary 17th (210217)</strong><em> - &ldquo;Media player</em><em>&rdquo; Update 2<br /></em>
 <ul>
-<li><strong>Embedded Media Player Changes</strong><br />
+<li><strong>Embedded Media Player</strong><strong> functionality additions</strong>
 <ul>
 <li>Added player buttons alongside functionality including; Play, Pause, Stop, Previous and Next, clicking on them will do their respective jobs.</li>
 <li>Added Media Player Footer that updates based on the state the media player is currently in. Eg. playing, skipping video.</li>
@@ -63,7 +80,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2021 Febuary 16th (210216) </strong><em>- &ldquo;Media player</em><em>&rdquo; Update 1</em>
 <ul>
-<li><strong>Embedded Media Player Changes</strong><br />
+<li><strong>Embedded Media Player functionality additions</strong><br />
 <ul>
 <li>&ldquo;Official Very Funny Playlist player&rdquo; is now the windows embedded media player.</li>
 <li>Media player now has a dynamic current address header depending on the current video playing.<strong><br /></strong></li>
