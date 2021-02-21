@@ -360,7 +360,7 @@
      
 <!-- Page rendering ------------------------------------------------------------------------------>
     <script> function defaultpageload() {evangelionmode(); backcolourset(); fontcolourset(); wallpaperupdate(); themechange(); evangelionmode();} </script>
-    <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" onload="defaultpageload(); vunnytask(); disktask(); tumblractive(); stopVideo();">
+    <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" onload="defaultpageload(); vunnytask(); disktask(); tumblractive();">
 <!-- desktop handling ------------------------------------------------------------------------------>
         
         <!-- Sidebar icons coloumn 1 -->
@@ -454,7 +454,7 @@
              <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
              <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="title-bar-text" id="messagetext">🧮 brain go brrrrr</div></div>
              <div class="window-body" style="margin-right: 4px; margin-top: 5px; margin-bottom: 3px; padding:2px">
-                <p style="color: var(--blue); margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>22:14pm on Febuary 17th, 2021. [GMT]</label></p></div>
+                <p style="color: var(--blue); margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>23:20pm on Febuary 18th, 2021. [GMT]</label></p></div>
         </div>
         
         <script>
@@ -496,27 +496,26 @@
                                 <div class="explorerlinks" style="position: absolute; margin-left:30px; margin-top:-14px;"></div></div>
                                     
                             <div class="win98post" style="position: absolute; width:150px; margin-left:-20000px;" id="tumblrlinkdrop" onmouseleave="videolinkdropdownclose()">
-                                <a href="" id="videolink"><div class="submenu18"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Current video URL </label></div></a>
                                 <a href="" id="playlistlink"><div class="submenu18"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Playlist URL </label></div></a>
+                                <a href="" id="videolink"><div class="submenu18"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Current video URL </label></div></a>
+                                <a href="" id="videoandplaylistlink"><div class="submenu18"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer">Video and Playlist URL</label></div></a>
                                 <div class="menuapplicationsplit" style="width:100%; margin-top:1px; margin-bottom:1px;"></div>
-                                
+                                <div class="submenu18" onclick="nextVideo()"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Skip to next video </label></div>
+                                <div class="submenu18" onclick="previousVideo()"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Skip to previous video </label></div>
                                 <div class="menuapplicationsplit" style="width:100%; margin-top:1px; margin-bottom:1px;"></div>
                                 <div class="submenu18" onclick="speedincrease5()"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Increase jump speed by 5 </label></div>
                                 <div class="submenu18" onclick="speeddecrease5()"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Decrease jump speed by 5 </label></div>
-                            </div>
-                        </div>
-                        
-                        <script>
-                            var videolinksdrop = false, videolink = document.getElementById("tumblrlinkdrop")
-                            function videolinkdropdown(){ 
-                                if (videolinksdrop == false) {videolink.style.marginLeft = "50px"; videolinksdrop = true;
-                                } else if (videolinksdrop == true){videolink.style.marginLeft = "-20000px"; videolinksdrop = false; }}
-                            function videolinkdropdownclose(){videolink.style.marginLeft = "-20000px"; videolinksdrop = false; }
-                        </script>
-                        
+                        </div></div>
                     </fieldset>
                 </div>
-                        
+                <script>
+                    var videolinksdrop = false, videolink = document.getElementById("tumblrlinkdrop")
+                    function videolinkdropdown(){ 
+                               if (videolinksdrop == false) {videolink.style.marginLeft = "50px"; videolinksdrop = true;
+                        } else if (videolinksdrop == true){videolink.style.marginLeft = "-20000px"; videolinksdrop = false; }}
+                    function videolinkdropdownclose(){videolink.style.marginLeft = "-20000px"; videolinksdrop = false; }
+                </script>
+ 
                 <ul class="tree-view" style="width: 560px; height: 100%; padding:2px; padding-bottom:0px; margin-right:-6px; margin-left:-6px; margin-bottom:-5px;">
                     <div id="player" style="height: 315px; width: 560px; background-color:--black;"></div></ul>
                     
@@ -526,10 +525,10 @@
                     <div class="buttons" style="margin-top:3px; margin-bottom:2px">
                         <div class="playbutton" onclick="startVideo()"></div><div class="pausebutton" onclick="pauseVideo()"></div><div class="stopbutton" onclick="stopVideo()"></div> 
                         <div class="big_seperator" style="height:18px; margin-top:4px"></div>
-                        <div class="previousbutton" onclick="previousVideo()"></div>
+                        <div class="previousbutton" onclick="previousVideo()" id="previousbuttonembed"></div>
                         <div class="rewindbutton" onclick="rewindVideo()"></div>
                         <div class="fastforwardbutton" onclick="forwardVideo()"></div>
-                        <div class="nextbutton" onclick="nextVideo()"></div>
+                        <div class="nextbutton" onclick="nextVideo()" id="nextbuttonembed"></div>
                         <div class="big_seperator" style="height:18px; margin-top:4px;"></div>
                         <div class="shufflebutton" onclick="shuffleVideo()" style="filter: invert(var(--shuffleinvert));"></div>
                         <div class="big_seperator" style="height:18px; margin-top:4px;"></div></div></div>
@@ -561,14 +560,14 @@
             var firstScriptTag = document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
             function onYouTubeIframeAPIReady() { $('#progressBar').show(); player = new YT.Player('player', { 
-                height: '315', width: '560', videoId: '', events: {'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange}, 
+                height: '315', width: '560', videoId: '', events: {'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange, 'onError': onPlayerError},
                 playerVars: { controls: 0, autoplay: 0, modestbranding:1, showinfo: 0, disablekb: 0}})}
             function onPlayerReady(event) { urlupdate(); event.target.loadPlaylist({list: "", index: 0, suggestedQuality: "small"})}
             
             var playertext = document.getElementById("playertext");
             function startVideo() {player.playVideo()} function pauseVideo() {player.pauseVideo()} function stopVideo() {player.stopVideo()} 
-            function previousVideo() {playstateupdatereset(); player.previousVideo(); playertext.textContent = "Playing previous video";} 
-            function nextVideo() {playstateupdatereset(); player.nextVideo(); playertext.textContent = "Playing next video";}
+            function previousVideo() { if(currentplaylist !== ""){playstateupdatereset(); player.previousVideo(); playertext.textContent = "Playing previous video";}}
+            function nextVideo() { if(currentplaylist !== ""){playstateupdatereset(); player.nextVideo(); playertext.textContent = "Playing next video";}}
             function forwardVideo() { player.seekTo((player.getCurrentTime() + currentskiptime)); playertext.textContent = "Skipped " + currentskiptime + " seconds ahead"; playstateupdateforward()} 
             function rewindVideo() { player.seekTo((player.getCurrentTime() - currentskiptime)); playertext.textContent = "Rewinded " + currentskiptime + " seconds"; playstateupdatebackward()}
             
@@ -583,12 +582,16 @@
             function urlupdate(){ document.getElementById("mediaplayer").innerHTML = currentlyplaying; 
                 document.getElementById("youtubelink").href = "https://www." + currentlyplaying; document.getElementById("embeddedmedialink").href = "https://www." + currentlyplaying
                 if(currentplaylist !== ""){document.getElementById("playlistlink").href = "https://www.youtube.com/playlist?" + currentplaylist} else {document.getElementById("playlistlink").href = ""}
-                document.getElementById("videolink").href = currentlyplaying;}
+                document.getElementById("videolink").href = currentlyplaying; document.getElementById("videoandplaylistlink").href = player.getVideoUrl();}
             
-            function playerupdate() { setTimeout(function() {playerurlupdate(); urlupdate(); player.playVideo()}, 100)}
-            function twilightload() { embedtask(); shuffle = true; shuffleVideo(); currentplaylist = ""; player.loadVideoById({'videoId':'6BJFnnWVNRU','startSeconds': 0}); playertext.textContent = "Asking Twilight Sparkle for help."; playerupdate()}
-            function ovfvpload(){ embedtask(); shuffle = true; shuffleVideo(); currentplaylist = "list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU&"; player.loadPlaylist({'list':"PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU", 'index': 0}); playertext.textContent = "Playing 'The Official Very Funny Video Playlist'."; playerupdate()}
-            function rct2load(){ embedtask(); shuffle = true; shuffleVideo(); currentplaylist = ""; player.loadVideoById({'videoId':'W_4uRZFVKPE','startSeconds': 985}); playertext.textContent = "Playing 'Roller Coaster Tycoon 2: Merry-Go-Round Music'"; playerupdate()}
+            function playerupdate() { setTimeout(function() {playerurlupdate(); urlupdate(); player.playVideo()}, 100);
+                if(currentplaylist !== ""){ if(preinvert == 1){ document.getElementById("nextbuttonembed").style.filter="invert(100%)"; document.getElementById("previousbuttonembed").style.filter="invert(100%)"; 
+                    } else { document.getElementById("nextbuttonembed").style.filter="invert(0%)"; document.getElementById("previousbuttonembed").style.filter="invert(0%)";}
+                } else { document.getElementById("nextbuttonembed").style.filter="invert(50%)"; document.getElementById("previousbuttonembed").style.filter="invert(50%)";}}
+            
+            function twilightload() { embedtask(); shuffle = true; shuffleVideo(); videolinkdropdownclose(); currentplaylist = ""; player.loadVideoById({'videoId':'6BJFnnWVNRU','startSeconds': 0}); playertext.textContent = "Asking Twilight Sparkle for help."; playerupdate()}
+            function ovfvpload(){ embedtask(); shuffle = true; shuffleVideo(); videolinkdropdownclose(); currentplaylist = "list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU&"; player.loadPlaylist({'list':"PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU", 'index': 0}); playertext.textContent = "Playing 'The Official Very Funny Video Playlist'."; playerupdate()}
+            function rct2load(){ embedtask(); shuffle = true; shuffleVideo(); videolinkdropdownclose(); currentplaylist = ""; player.loadVideoById({'videoId':'W_4uRZFVKPE','startSeconds': 985}); playertext.textContent = "Playing 'Roller Coaster Tycoon 2: Merry-Go-Round Music'"; playerupdate()}
             
             function playstateupdateforward() { var totaltimeplayer = player.getDuration(); 
                 var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime() + currentskiptime; if( totaltimeplayer > playerCurrentTime){
@@ -597,7 +600,7 @@
                     var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))}
             function playstateupdatereset() { var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime() - player.getCurrentTime()
                     var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))}
-            
+
             function changeplayerstate(playerStatus) {
                 if (playerStatus == -1) { setTimeout(function() {playertext.textContent = shuffletext + "Stopped";}, 200)
                 } else if (playerStatus == 0) { setTimeout(function() {playertext.textContent = shuffletext + "Ended";}, 200)
@@ -606,14 +609,16 @@
                 } else if (playerStatus == 3) { playerupdate(); setTimeout(function() {playertext.textContent = shuffletext + "Buffering";}, 200)
                 } else if (playerStatus == 5) { setTimeout(function() {playertext.textContent = shuffletext + "Queued";}, 200)}}
 
+            function onPlayerError(event) {player.nextVideo(); setTimeout(function() { playertext.textContent = "Youtube loading error on previous video, video has been skipped." },1500)}
+
             function onPlayerStateChange(event) { changeplayerstate(event.data);
                 if (event.data == YT.PlayerState.PLAYING) { 
                     var playerTotalTime = player.getDuration();
                     mytimer = setInterval(function() { var playerCurrentTime = player.getCurrentTime();
-                        var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100;
+                        var playerTimeDifference = ((playerCurrentTime / playerTotalTime) * 100) + 1;
+                        if(playerTimeDifference > 100){ playerTimeDifference = 100 };
                         progress(playerTimeDifference, $('#progressBar'))}, 1000);        
                 } else { clearTimeout(mytimer)}}
-            
         </script>
         
 <!-- Time / date properties rendering ------------------------------------------------------------------------------>
