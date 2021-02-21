@@ -30,8 +30,7 @@
                $(this).parents('.tumblr_video_container').css({ 
                    width: Math.floor($(this).width() * ( scale + 1 ) / 2), height: Math.floor($(this).height() * ( scale + 1 ) / 2)})})}
         
-        var cal = 5;
-        function calupdate(){cal = cal + 1}
+        var cal = 5; function calupdate(){cal = cal + 1}
     </script>
     <head>
         <meta name="description" value="{MetaDescription}" /><link rel="shortcut icon" href="{Favicon}"/><meta charset="utf-8" />
@@ -489,7 +488,7 @@
                             <div class="menufavouriteslink" style="position:absolute; margin-top:-5px; margin-left:-5px;"></div>
                         <div class="container" style="margin-top:-1px; margin-left:16px;" id="mediaplayer"></div></ul>
                         
-                        <a href="#" id="youtubelink"><div class="container" style="position: absolute; margin-left:467px; height:22px; width:49px;">
+                        <a href="#" id="youtubelink" target="_blank"><div class="container" style="position: absolute; margin-left:467px; height:22px; width:49px;">
                             <div class="explorergo" style="margin-left:5.5px;"></div> <div class="reflinkblack" style="margin-top:5px;">Go</div></div></a>
                         
                         <div class="big_seperator" style="position: absolute; margin-left:514px; margin-top:0px; height:21px;"></div> 
@@ -500,9 +499,9 @@
                                 <div class="explorerlinks" style="position: absolute; margin-left:30px; margin-top:-14px;"></div></div>
                                     
                             <div class="win98post" style="position: absolute; width:150px; margin-left:-20000px;" id="tumblrlinkdrop" onmouseleave="videolinkdropdownclose()">
-                                <a href="" id="playlistlink"><div class="submenu18"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Playlist URL </label></div></a>
-                                <a href="" id="videolink"><div class="submenu18"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Current video URL </label></div></a>
-                                <a href="" id="videoandplaylistlink"><div class="submenu18"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer">Video and Playlist URL</label></div></a>
+                                <a href="" id="playlistlink" target="_blank"><div class="submenu18"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Playlist URL </label></div></a>
+                                <a href="" id="videolink" target="_blank"><div class="submenu18"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Current video URL </label></div></a>
+                                <a href="" id="videoandplaylistlink" target="_blank"><div class="submenu18"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer">Video and Playlist URL</label></div></a>
                                 <div class="menuapplicationsplit" style="width:100%; margin-top:1px; margin-bottom:1px;"></div>
                                 <div class="submenu18" onclick="nextVideo()"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Skip to next video </label></div>
                                 <div class="submenu18" onclick="previousVideo()"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Skip to previous video </label></div>
@@ -589,7 +588,7 @@
                 if(currentplaylist !== ""){document.getElementById("playlistlink").href = "https://www.youtube.com/playlist?" + currentplaylist} else {document.getElementById("playlistlink").href = ""}
                 document.getElementById("videolink").href = currentlyplaying; document.getElementById("videoandplaylistlink").href = player.getVideoUrl()}
             
-            function playerupdate() { setTimeout(function() {playerurlupdate(); urlupdate(); player.playVideo()}, 100);
+            function playerupdate() { setTimeout(function() {playerurlupdate(); urlupdate()}, 100);
                 if(currentplaylist !== ""){ 
                     if(preinvert == 1){document.getElementById("nextbuttonembed").style.filter="invert(100%)"; document.getElementById("previousbuttonembed").style.filter="invert(100%)"; 
                     } else {document.getElementById("nextbuttonembed").style.filter="invert(0%)"; document.getElementById("previousbuttonembed").style.filter="invert(0%)"}
