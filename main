@@ -320,8 +320,11 @@
             .field-row{ display:flex; align-items: center;} .field-row>*+*{ margin-left: 6px;} 
             .field-row-stacked{ display:flex; flex-direction: column;} .field-row-stacked *+*{ margin-top: 6px;}
             
-            a {color: var(--text); text-decoration: none} a:hover {text-decoration: underline; color: var(--hover)} strong {color: var(--blue)} h3 {font-size: 2rem} underline {text-decoration-line: underline;}
-            span {background-color: var(--white); color: var(--text)} icon {background-color: var(--wincyan); color: var(--white)} label {display:inline-flex; align-items: center; color: var(--text)} underline {text-decoration-line: underline;}
+            a {color: var(--text); text-decoration: none} a:hover {text-decoration: underline; color: var(--hover)} 
+            strong {color: var(--blue)} h3 {font-size: 2rem} underline {text-decoration-line: underline;}
+            span {background-color: var(--white); color: var(--text)} icon {background-color: var(--wincyan); color: var(--white)} 
+            label {display:inline-flex; align-items: center; color: var(--text)} underline {text-decoration-line: underline;}
+            labc { margin-left: 4px; margin-top: 4px; } labs { margin-left: 2px; height:36px; margin-top:12px;}
             fieldset{border: none; box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray), inset -2px -2px var(--gray), inset 2px 2px var(--lightg); padding:10px; padding-block-start:8px; margin:0; color:var(--text)}
             .wieldset{box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray); margin:0; background-color:var(--silver); padding:2px}
             
@@ -457,7 +460,7 @@
              <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
              <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="title-bar-text" id="messagetext">🧮 brain go brrrrr</div></div>
              <div class="window-body" style="margin-right: 4px; margin-top: 5px; margin-bottom: 3px; padding:2px">
-                <p style="color: var(--blue); margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>20:45pm on Febuary 21th, 2021. [GMT]</label></p></div>
+                <p style="color: var(--blue); margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>22:10pm on Febuary 21th, 2021. [GMT]</label></p></div>
         </div>
         
         <script>
@@ -553,11 +556,13 @@
             function embedpositionreset() {embed.style.left = "300px"; embed.style.top = "200px"; calupdate(); embed.style.zIndex = cal; embedwin.style.backgroundImage = currentactiveheader; embedactive()}
             function embedminimize(){inactiveall(); embed.style.marginLeft = "-20000px"; embedButtonOpen = true}
 
+            function videoclear() { shuffle = true; shuffleVideo(); }
+            
             function progress(percent, $element) {
                 var progressBarWidth = percent * $element.width() / 100;
                 $element.find('div').animate({ width: progressBarWidth }, {duration: 10})}
             
-            var currentskiptime = 10; var shuffle = false; var shuffletext = "", currentplaylist = "", currentlyplaying = "Undefined";
+            var currentskiptime = 10; var shuffle = false; var shuffletext = "", currentplaylist = "", currentlyplaying = "";
             
             var tag = document.createElement('script'); tag.src = "https://www.youtube.com/iframe_api"; var player; var mytimer
             var firstScriptTag = document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -569,7 +574,7 @@
             function onPlayerReady(event) {urlupdate(); event.target.loadPlaylist({list: "", index: 0, suggestedQuality: "small"})}
             
             var playertext = document.getElementById("playertext");
-            function startVideo() {player.playVideo()} function pauseVideo() {player.pauseVideo()} function stopVideo() {player.stopVideo()} 
+            function startVideo() {player.playVideo()} function pauseVideo() {player.pauseVideo()} function stopVideo() {setTimeout(function() {player.stopVideo()}, 500);} 
             function previousVideo() {if(currentplaylist !== ""){player.previousVideo(); playertext.textContent = "Playing previous video"}}
             function nextVideo() {if(currentplaylist !== ""){player.nextVideo(); playertext.textContent = "Playing next video"}}
             function forwardVideo() {player.seekTo((player.getCurrentTime() + currentskiptime)); playertext.textContent = "Skipped " + currentskiptime + " seconds ahead"; playstateupdateforward()} 
@@ -583,27 +588,28 @@
                 else if(shuffle == false){player.setShuffle(true); shuffle = true; docelem.style.setProperty('--shuffleinvert', shuffleflop); shuffletext = "Shuffle Enabled : "}}
 
             function playerurlupdate(){currentlyplaying = player.getVideoUrl(); currentlyplaying = currentlyplaying.replace(currentplaylist, '')} 
-            function urlupdate(){document.getElementById("mediaplayer").innerHTML = currentlyplaying; 
+            function urlupdate(){ document.getElementById("mediaplayer").innerHTML = currentlyplaying; 
                 document.getElementById("youtubelink").href = "https://www." + currentlyplaying; document.getElementById("embeddedmedialink").href = "https://www." + currentlyplaying;
                 if(currentplaylist !== ""){document.getElementById("playlistlink").href = "https://www.youtube.com/playlist?" + currentplaylist} else {document.getElementById("playlistlink").href = ""}
                 document.getElementById("videolink").href = currentlyplaying; document.getElementById("videoandplaylistlink").href = player.getVideoUrl()}
             
-            function playerupdate() { setTimeout(function() {playerurlupdate(); urlupdate()}, 100);
+            function playerupdate() { playerurlupdate(); setTimeout(function() {urlupdate()}, 100);
                 if(currentplaylist !== ""){ 
-                    if(preinvert == 1){document.getElementById("nextbuttonembed").style.filter="invert(100%)"; document.getElementById("previousbuttonembed").style.filter="invert(100%)"; 
+                    if(preinvert == 1){document.getElementById("nextbuttonembed").style.filter="invert(100%)"; document.getElementById("previousbuttonembed").style.filter="invert(100%)"
                     } else {document.getElementById("nextbuttonembed").style.filter="invert(0%)"; document.getElementById("previousbuttonembed").style.filter="invert(0%)"}
                 } else {document.getElementById("nextbuttonembed").style.filter="invert(50%)"; document.getElementById("previousbuttonembed").style.filter="invert(50%)"}}
             
             function twilightload() {embedtask(); shuffle = true; shuffleVideo(); videolinkdropdownclose(); currentplaylist = ""; 
-                player.loadVideoById({'videoId':'6BJFnnWVNRU','startSeconds': 0}); playertext.textContent = "Asking Twilight Sparkle for help."; playerupdate()}
-            function ovfvpload(){embedtask(); shuffle = true; shuffleVideo(); videolinkdropdownclose(); currentplaylist = "list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU&"; 
-                player.loadPlaylist({'list':"PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU", 'index': 0}); playertext.textContent = "Playing 'The Official Very Funny Video Playlist'."; playerupdate()}
+                player.loadVideoById({'videoId':'6BJFnnWVNRU','startSeconds': 0}); playertext.textContent = "Asking Twilight Sparkle for help."; stopVideo()}
+            function ovfvpload(){shuffle = true; shuffleVideo(); videolinkdropdownclose(); currentplaylist = "list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU&"; 
+                player.loadPlaylist({'list':"PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU", 'index': 0}); playertext.textContent = "Playing 'The Official Very Funny Video Playlist'."; stopVideo()}
             function rct2load(){embedtask(); shuffle = true; shuffleVideo(); videolinkdropdownclose(); currentplaylist = ""; 
-                player.loadVideoById({'videoId':'W_4uRZFVKPE','startSeconds': 985}); playertext.textContent = "Playing 'Roller Coaster Tycoon 2: Merry-Go-Round Music'"; playerupdate()}
+                player.loadVideoById({'videoId':'W_4uRZFVKPE','startSeconds': 985}); playertext.textContent = "Playing 'Roller Coaster Tycoon 2: Merry-Go-Round Music'"; stopVideo()}
+            function startmenuembed(){embedtask(); shuffle = true; shuffleVideo(); videolinkdropdownclose(); currentplaylist = "";
+                player.loadVideoById({'videoId':'T6fqtJbVoFI','startSeconds': 0}); playertext.textContent = "Opening Windows Embedded Mediaplayer"; embedpositionreset(); stopVideo()}
 
-            function playstateupdateforward() {var totaltimeplayer = player.getDuration(); 
-                var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime() + currentskiptime; if(totaltimeplayer > playerCurrentTime){
-                var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))} else {nextVideo()}}
+            function playstateupdateforward() {var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime() + currentskiptime;
+                if(playerTotalTime > playerCurrentTime){ var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))} else {nextVideo()}}
             function playstateupdatebackward() {var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime() - currentskiptime
                 var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))}
 
@@ -1066,7 +1072,9 @@
                             docelem.style.setProperty('--premidgray', precolmidgray); docelem.style.setProperty('--prewincyan', precolwincyan); docelem.style.setProperty('--preyellow', precolyellow); 
                             docelem.style.setProperty('--prefont', precolfont); docelem.style.setProperty('--prefonttitle', precolfonttitle); docelem.style.setProperty('--prehover', precolhover);
                             docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precurrentactiveheader);
-                            document.getElementById("preinactive").style.color = preinactivetitle; document.getElementById("premessage").style.color = preactivetitle; document.getElementById("preactive").style.color = preactivetitle}
+                            document.getElementById("preinactive").style.color = preinactivetitle; document.getElementById("preactive").style.color = preactivetitle
+                            document.getElementById("premessage").style.color = preactivetitle; console.log("Theme preview loaded")
+                        }
                         
                         function themechange() {precolourupdate(); if(shuffle == false){docelem.style.setProperty('--shuffleinvert', 0.5)} else if(shuffle == true){docelem.style.setProperty('--shuffleinvert', shuffleflop)}
                             curinactivehead = precurinactivehead; currentactiveheader = precurrentactiveheader; curactivetitle = preactivetitle; curinactivetitle = preinactivetitle;
@@ -1081,7 +1089,7 @@
                             docelem.style.setProperty('--taskbarstarttop1', curcolgray); docelem.style.setProperty('--taskbarstarttop2', curcolblack); 
                             docelem.style.setProperty('--taskbarstartbottom1', curcolwhite); docelem.style.setProperty('--taskbarstartbottom2', curcollightg);
                             docelem.style.setProperty('--inactive', curinactivehead); docelem.style.setProperty('--active', currentactiveheader); docelem.style.setProperty('--invert', curinvert); 
-                            inactiveall(); diskactive(); clocku(); playerupdate()}
+                            inactiveall(); diskactive(); clocku(); playerupdate(); console.log("Theme Loaded")}
                     </script>
                         
                     <div class="win98buttoninactive" style="position: absolute; margin-left:199px; margin-top: -2px; width:66px; height:18px;"> 
@@ -1370,7 +1378,7 @@
                         <div class="buttontext" style="margin-top: 2px; margin-left:22px; cursor:pointer"> Apply </div></div>
             <div class="win98button" style="position:absolute; width:70px; margin-top: 395px; margin-left:234px;" onclick="diskclose()">
                     <div class="buttontext" style="margin-top: 2px; margin-left:18px; cursor:pointer">Cancel</div></div>
-            <div class="win98button" style="position:absolute; width:70px; margin-top: 395px; margin-left:152px;" onclick="diskclose(); wallpaperupdate(); backcolourset(); fontcolourset(); themechange();">
+            <div class="win98button" style="position:absolute; width:70px; margin-top: 395px; margin-left:152px;" onclick="wallpaperupdate(); backcolourset(); fontcolourset(); themechange(); diskclose()">
                     <div class="buttontext" style="margin-top: 2px; margin-left:25px; cursor:pointer">Okay</div></div>
         </div>
         
@@ -1831,7 +1839,7 @@
                         <a href="https://thealonic.tumblr.com/patch-notes" onclick="menuclosed();"><label style="margin-top:3px;">
                             <div class="submenu36" style="width: 141px; height:36px">
                                 <div class="patchnotes"></div>
-                                <label style="margin-left: 2px; height: 36px" > <underline>U</underline>pdate log </label>
+                                <label><labs><underline>U</underline>pdate log </labs></label>
                         </div></label></a>
                         <!-- verticalsplitterER -->
                         <div class="menuapplicationsplit" style="width:139px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px"> </div>
@@ -1839,54 +1847,54 @@
                         <label> <!--needed for 32x32-->
                             <div class="submenu36" style="width: 142px;" id="menuprograms" onmouseover="programsopen()" onmouseout="programsclosed()"> 
                                 <div class="menuprograms"></div>
-                                <label style="margin-left: 2px; height: 36px"> <underline>P</underline>rograms </label>
+                                <label><labs><underline>P</underline>rograms </labs></label>
                             <div class="menuarrow1" style="margin-top:15px; margin-right: 5px" id="menuarrow1"></div></div></label>
                         <!-- Favourites -->
                         <label> <!--needed for 32x32-->
                             <div class="submenu36" style="width: 142px;" id="menufavourites" onmouseover="favouritesopen()" onmouseout="favouritesclosed()"> 
                                 <div class="menufavourites"></div>
-                                <label style="margin-left: 2px; height: 36px"> My F<underline>a</underline>vourites </label>
+                                <label><labs>My F<underline>a</underline>vourites </labs></label>
                             <div class="menuarrow1" style="margin-top:15px; margin-right: 5px" id="menuarrow2"></div></div></label>
                         <!-- Documents -->  
                         <label> <!--needed for 32x32-->
                             <div class="submenu36" style="width: 142px;" id="menudocuments" onmouseover="documentsopen()" onmouseout="documentsclosed()"> 
                                 <div class="menudocuments"></div>
-                                <label style="margin-left: 2px; height: 36px"> <underline>D</underline>ocuments </label>
+                                <label><labs><underline>D</underline>ocuments </labs></label>
                             <div class="menuarrow1" style="margin-top:15px; margin-right: 5px" id="menuarrow3"></div></div></label>
                         <!-- Settings -->
                         <label> <!--needed for 32x32-->
                             <div class="submenu36" style="width: 142px;" id="menusettings" onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
                                 <div class="menusettings"></div>
-                                <label style="margin-left: 2px; height: 36px"> <underline>S</underline>ettings </label>
+                                <label><labs><underline>S</underline>ettings </labs></label>
                             <div class="menuarrow1" style="margin-top:15px; margin-right: 5px" id="menuarrow4"></div></div></label>
                         <!-- Find -->
                         <label> <!--needed for 32x32-->
                             <div class="submenu36" style="width: 142px;" id="menufind" onmouseover="findopen()" onmouseout="findclosed()"> 
                                 <div class="menufind"></div>
-                                <label style="margin-left: 2px; height: 36px;"> <underline>F</underline>ind </label>
+                                <label><labs><underline>F</underline>ind </labs></label>
                             <div class="menuarrow1" style="margin-top:15px; margin-right: 5px" id="menuarrow5"></div></div></label>
                         <!-- Help -->     
                         <a href="https://raw.githubusercontent.com/Thealonic/Thealonic.html/main/opensource">
                             <div class="submenu36" style="width: 142px;" >
                                 <div class="menuhelp"></div> <!-- https://github.com/Thealonic/Thealonic.html -->
-                                <label style="margin-left: 2px; height:36px"> <underline>S</underline>ource-code </label></div></a>
+                                <label><labs><underline>S</underline>ource-code </labs></label></div></a>
                         <!-- Run -->
                         <label> <!--needed for 32x32-->
                             <a href="https://paypal.me/TheaVanherst"><div class="submenu36" style="width: 142px;">
                                 <div class="menurun" ></div>
-                                <label style="margin-left: 2px; height:36px"> <underline>S</underline>upport development </label></div></a></label>   
+                                <label><labs><underline>S</underline>upport development </labs></label></div></a></label>   
                         <!-- verticalsplitterER -->
                         <div class="menuapplicationsplit" style="width:139px; margin-left: 2px; margin-top: 3px; margin-bottom: 4px"> </div>
                         <!--Log off submenu -->
                         <label onclick="logoff(); shutdownno();"> <!--needed for 32x32-->
                             <div class="submenu36" style="width: 142px;">
                                 <div class="menulogoff"></div>
-                                <label style="margin-left: 2px; height:36px"> <underline>L</underline>og off </label></div></label>  
+                                <label><labs><underline>L</underline>og off </labs></label></div></label>  
                         <!--Log off submenu -->
                         <label onclick="shutdown(); shutdownactive();"> <!--needed for 32x32-->
                             <div class="submenu36" style="width: 142px;">
                                 <div class="menushutdown"></div>
-                                <label style="margin-left: 2px; height:36px"> Sh<underline>u</underline>tdown </label></div></label>
+                                <label><labs>Sh<underline>u</underline>tdown </labs></label></div></label>
                         <!-- Startbutton script placement holder -->
                         <div class="startmenustartbutton" style="margin-left: -23px; margin-top: 3px" onclick="startpress()"></div></div>
 
@@ -1898,34 +1906,34 @@
                         <div class="submenu20" id="accessories"
                             onmouseover="accessoriesopen()" onmouseout="accessoriesclose()">
                             <div class="menuprograms123"></div> 
-                            <label style="margin-left: 8px; margin-top: 3px"> Accessories  </label>
+                            <label><labc> Accessories  </labc></label>
                             <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow2"></div></div>
                         <!-- Online Services -->
                         <div class="submenu20" id="onlineservices"
                             onmouseover="onlineservicesopen()" onmouseout="onlineservicesclose()"> 
                             <div class="menuprograms123" id="onlineservices"></div>
-                            <label style="margin-left: 8px; margin-top: 3px"> Online Services </label>
+                            <label><labc> Online Services </labc></label>
                             <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow3"></div></div>
                         <!-- Startup -->
                         <div class="submenu20" id="startup"
                              onmouseover="startupopen()" onmouseout="startupclose()">
                             <div class="menuprograms123"></div>
-                            <label style="margin-left: 8px; margin-top: 3px"> Startup </label>
+                            <label><labc> Startup </labc></label>
                             <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow4"></div></div>
                         <!-- Internet Explorer -->
                         <div class="submenu20"><div class="menuprograms4"></div>
-                            <label style="margin-left: 8px; margin-top: 3px"> Internet Explorer </label></div>
+                            <label><labc> Internet Explorer </labc></label></div>
                         <!-- MS-DOS Prompt -->
                         <div class="submenu20">
                             <div class="menuprograms5"></div>
-                            <label style="margin-left: 8px; margin-top: 3px"> MS-DOS Prompt </label></div>
+                            <label><labc> MS-DOS Prompt </labc></label></div>
                         <!-- Outlook Express -->
                         <div class="submenu20">
                             <div class="menuprograms6"></div>
                             <label style="margin-left: 8px; margin-top: 3px;"> Outlook Express </label></div>
                         <!-- indows Explorer -->
                         <div class="submenu20"><div class="menuprograms7"></div>
-                            <label style="margin-left: 8px; margin-top: 3px"> Windows Explorer </label></div>
+                            <label><labc> Windows Explorer </labc></label></div>
                             
                             <!--Accessories submenu -->
                             <div class="win98post" style="margin-left: 20000px; margin-top:-143px; width:131px; height:220px" id="menuaccessoriessubmenu" 
@@ -1934,75 +1942,75 @@
                                 <div class="submenu20" id="communications"
                                      onmouseover="communicationsopen()" onmouseout="communicationsclose();">
                                     <div class="menuprograms123"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px"> Communication </label>
+                                    <label><labc> Communication </labc></label>
                                         <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="menuarrow12"></div></div>
                                 <!-- Entertainment -->
                                 <div class="submenu20" id="entertainment"
                                      onmouseover="entertainmentopen()" onmouseout="entertainmentclose()">
                                     <div class="menuprograms123"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px"> Entertainment </label>
+                                    <label><labc> Entertainment </labc></label>
                                         <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="menuarrow13"></div></div>
                                 <!-- Games -->
                                 <div class="submenu20" id="games"
                                      onmouseover="gamesopen()" onmouseout="gamesclose()">
                                     <div class="menuprograms123"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px"> Games </label>
+                                    <label><labc> Games </labc></label>
                                     <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="menuarrow14"></div></div>
                                 <!-- Internet Tools -->
                                 <div class="submenu20" id="internettools"
                                      onmouseover="internettoolsopen()" onmouseout="internettoolsclose()">
                                     <div class="menuprograms123"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px"> Internet Tools </label>
+                                    <label><labc> Internet Tools </labc></label>
                                         <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="menuarrow15"></div></div>
                                 <!-- System Tools -->
                                 <div class="submenu20" id="systemtools"
                                      onmouseover="systemtoolsopen()" onmouseout="systemtoolsclose()">
                                     <div class="menuprograms123"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px"> System Tools </label>
+                                    <label><labc> System Tools </labc></label>
                                         <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="menuarrow16"></div></div>
                                 <!-- Address book -->
                                 <div class="submenu20">
                                     <div class="menufind4"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px;"> Address book </label></div>
+                                    <label><labc> Address book </labc></label></div>
                                 <!-- Calculator -->
                                 <div class="submenu20">
                                     <div class="menuapplications7"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px;"> Calculator </label></div>
+                                    <label><labc> Calculator </labc></label></div>
                                 <!-- Imaging -->
                                 <div class="submenu20">
                                     <div class="menuapplications8"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px;"> Imaging </label></div>
+                                    <label><labc> Imaging </labc></label></div>
                                 <!-- Notepad -->
                                 <div class="submenu20">
                                     <div class="menuapplications9"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px;"> Notepad </label></div>
+                                    <label><labc> Notepad </labc></label></div>
                                 <!-- Paint -->
                                 <div class="submenu20">
                                     <div class="menuapplications10"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px;"> Paint </label></div>
+                                    <label><labc> Paint </labc></label></div>
                                 <!-- Wordpad -->
                                 <div class="submenu20">
                                     <div class="menuapplications11"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px;"> Wordpad </label></div>
+                                    <label><labc> Wordpad </labc></label></div>
                                     <!-- Communications submenu -->
                                     <div class="win98post" style="margin-left: 20000px; margin-top:-223px; width:181px; height:80px" id="menucommunicationssubmenu" 
                                          onmouseover="communicationsopen()" onmouseout="communicationsclose()"> 
                                         <!-- Dial-up Networking -->
                                         <div class="submenu20">
                                             <div class="menucommunications1"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Dial-up Networking </label></div>
+                                            <label><labc> Dial-up Networking </labc></label></div>
                                         <!-- Hyper Terminal -->
                                         <div class="submenu20">
                                             <div class="menucommunications2"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Hyper Terminal </label></div>
+                                            <label><labc> Hyper Terminal </labc></label></div>
                                         <!-- Configuration Wizard -->
                                         <div class="submenu20">
                                             <div class="menucommunications3"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> ISDN Configuration Wizard </label></div>
+                                            <label><labc> ISDN Configuration Wizard </labc></label></div>
                                         <!-- Phone Dialer -->
                                         <div class="submenu20">
                                             <div class="menucommunications4"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Phone Dialer </label></div></div>
+                                            <label><labc> Phone Dialer </labc></label></div></div>
                                             
                                     <!-- Entertainment submenu -->
                                     <div class="win98post" style="margin-left: 20000px; margin-top:-203px; width:163px; height:100px" id="menuentertainmentsubmenu" 
@@ -2010,22 +2018,22 @@
                                         <!-- Dial-up Networking -->
                                         <div class="submenu20">
                                             <div class="menuentertainment1"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> CD Player </label></div>
+                                            <label><labc> CD Player </labc></label></div>
                                         <!-- Hyper Terminal -->
                                         <div class="submenu20">
                                             <div class="menuentertainment2"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Interactive CD Player </label></div>
+                                            <label><labc> Interactive CD Player </labc></label></div>
                                         <!-- Configuration Wizard -->
                                         <div class="submenu20">
                                             <div class="menuentertainment3"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Sound Recorder </label></div>
+                                            <label><labc> Sound Recorder </labc></label></div>
                                         <!-- Phone Dialer -->
                                         <div class="submenu20">
                                             <div class="menuentertainment4"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Volume Control </label></div>
-                                        <div class="submenu20">
+                                            <label><labc> Volume Control </labc></label></div>
+                                        <div class="submenu20" onclick="startmenuembed()">
                                             <div class="menuentertainment5"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Windows Media Player </label></div></div>
+                                            <label><labc> Windows Embedded Media Player </labc></label></div></div>
                                             
                                     <!-- Games submenu -->
                                     <div class="win98post" style="margin-left: 20000px; margin-top:-183px; width:183px; height:80px" id="gamessubmenu" 
@@ -2033,19 +2041,19 @@
                                         <!-- Dial-up Networking -->
                                         <div class="submenu20">
                                             <div class="menugames1"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Freecell </label></div>
+                                            <label><labc> Freecell </labc></label></div>
                                         <!-- Hyper Terminal -->
                                         <div class="submenu20">
                                             <div class="menugames2"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Hearts </label></div>
+                                            <label><labc> Hearts </labc></label></div>
                                         <!-- Configuration Wizard -->
                                         <div class="submenu20">
                                             <div class="menugames3"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Minesweeper </label></div>
+                                            <label><labc> Minesweeper </labc></label></div>
                                         <!-- Phone Dialer -->
                                         <div class="submenu20">
                                             <div class="menugames4"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Solitaire </label></div></div>
+                                            <label><labc> Solitaire </labc></label></div></div>
                                             
                                     <!-- Internet Tools submenu -->
                                     <div class="win98post" style="margin-left: 20000px; margin-top:-163px; width:183px; height:80px" id="internettoolssubmenu" 
@@ -2053,19 +2061,19 @@
                                         <!-- Connection Wizard -->
                                         <div class="submenu20">
                                             <div class="menuinternettools1"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Internet Connection Wizard </label></div>
+                                            <label><labc> Internet Connection Wizard </labc></label></div>
                                         <!-- Microsoft Chat -->
                                         <div class="submenu20">
                                             <div class="menuinternettools2"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Microsoft Chat </label></div>
+                                            <label><labc> Microsoft Chat </labc></label></div>
                                         <!-- NetMeeting -->
                                         <div class="submenu20">
                                             <div class="menuinternettools3"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> NetMeeting </label></div>
+                                            <label><labc> NetMeeting </labc></label></div>
                                         <!-- Personal Webserver -->
                                         <div class="submenu20">
                                             <div class="menuinternettools4"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Personal Webserver </label></div></div>
+                                            <label><labc> Personal Webserver </labc></label></div></div>
                                             
                                     <!-- System Tools submenu -->
                                     <div class="win98post" style="margin-left: 20000px; margin-top:-143px; width:183px; height:260px" id="systemtoolssubmenu" 
@@ -2073,55 +2081,55 @@
                                         <!-- Character Map -->
                                         <div class="submenu20">
                                             <div class="menusystemtools1"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Character Map </label></div>
+                                            <label><labc> Character Map </labc></label></div>
                                         <!-- Clipboard Viewer -->
                                         <div class="submenu20">
                                             <div class="menusystemtools2"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Clipboard Viewer </label></div>
+                                            <label><labc> Clipboard Viewer </labc></label></div>
                                         <!-- Disk Cleanup -->
                                         <div class="submenu20">
                                             <div class="menusystemtools3"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Disk Cleanup </label></div>
+                                            <label><labc> Disk Cleanup </labc></label></div>
                                         <!-- Disk Defragment -->
                                         <div class="submenu20">
                                             <div class="menusystemtools4"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Disk Defragmenter </label></div>
+                                            <label><labc> Disk Defragmenter </labc></label></div>
                                         <!-- Drive Converter -->
                                         <div class="submenu20">
                                             <div class="menusystemtools5"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Drive Converter (FAT32) </label></div>
+                                            <label><labc> Drive Converter (FAT32) </labc></label></div>
                                         <!-- Maintenance Wizard -->
                                         <div class="submenu20">
                                             <div class="menusystemtools6"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Maintenance Wizard </label></div>
+                                            <label><labc> Maintenance Wizard </labc></label></div>
                                         <!-- Net Watcher -->
                                         <div class="submenu20">
                                             <div class="menusystemtools7"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Net Watcher </label></div>
+                                            <label><labc> Net Watcher </labc></label></div>
                                         <!-- Resource Monitor -->
                                         <div class="submenu20">
                                             <div class="menusystemtools8"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Resource Monitor </label></div>
+                                            <label><labc> Resource Monitor </labc></label></div>
                                         <!-- Scandisk -->
                                         <div class="submenu20">
                                             <div class="menusystemtools9"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Scandisk </label></div>
+                                            <label><labc> Scandisk </labc></label></div>
                                         <!-- Scheduled Tasks -->
                                         <div class="submenu20">
                                             <div class="menusystemtools10"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Scheduled Tasks </label></div>
+                                            <label><labc> Scheduled Tasks </labc></label></div>
                                         <!-- NetMeeting -->
                                         <div class="submenu20">
                                             <div class="menusystemtools11"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> System Information </label></div>
+                                            <label><labc> System Information </labc></label></div>
                                         <!-- System Monitor -->
                                         <div class="submenu20">
                                             <div class="menusystemtools12"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> System Monitor </label></div>
+                                            <label><labc> System Monitor </label></div>
                                         <!-- Welcome to Windows -->
                                         <div class="submenu20">
                                             <div class="menusystemtools13"></div>
-                                            <label style="margin-left: 8px; margin-top: 3px"> Welcome to Windows </label></div></div>
+                                            <label><labc> Welcome to Windows </labc></label></div></div>
                                 <!-- Application submenu end -->
                                 </div>
                                 <!-- Online Services Submenu -->
@@ -2130,15 +2138,15 @@
                                     <!-- Ask Jeeves -->
                                     <a href="https://askjeeves.net/" target="_blank" style="cursor:default"> <div class="submenu20"> 
                                         <div class="menuapplications12"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Ask Jeeves </label> </div> </a>
+                                        <label><labc> Ask Jeeves </labc></label> </div> </a>
                                     <!-- Yahoo! Mail -->
                                     <a href="https://uk.yahoo.com/" target="_blank" style="cursor:default"> <div class="submenu20">
                                         <div class="menuapplications13"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Yahoo! Mail </label> </div> </a>
+                                        <label><labc> Yahoo! Mail </labc></label> </div> </a>
                                     <!-- MSN -->
                                     <div class="submenu20">
                                         <div class="menuapplications14"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> MSN </label></div>
+                                        <label><labc> MSN </labc></label></div>
                                 </div>
                                 <!-- Startup Submenu -->
                                 <div class="win98post" style="margin-left: 20000px; margin-top:-103px; width:89px; height: 20px;" id="startupsubmenu"
@@ -2153,25 +2161,25 @@
                                 <!-- Channels -->
                                 <div class="submenu20" onmouseover="channelsopen()" onmouseout="channelsclose()" id="channels">
                                     <div class="menufavouritesfolder"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px"> Channels </label>
+                                    <label><labc> Channels </labc></label>
                                         <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow21"></div></div>
                                 <!-- Links -->
                                 <div class="submenu20" onmouseover="linksopen()" onmouseout="linksclose()" id="links">
                                     <div class="menufavouritesfolder"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px"> Links </label>
+                                    <label><labc> Links </labc></label>
                                         <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow22"></div></div>
                                 <!-- Media -->
                                 <div class="submenu20" onmouseover="mediaopen()" onmouseout="mediaclose()" id="media">
                                     <div class="menufavouritesfolder"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px"> Media </label>
+                                    <label><labc> Media </labc></label>
                                         <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow23"></div></div>
                                 <!-- Random links -->
                                 <a href="https://veryvhersty.tumblr.com/" target="_blank"> <div class="submenu20">
                                     <div class="menufavouriteslink"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px"> Very.Versty </label></div></a>
+                                    <label><labc> Very.Versty </labc></label></div></a>
                                 <a href="hhttps://thealonic.tumblr.com/" target="_blank"><div class="submenu20">
                                     <div class="menufavouriteslink"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px"> Thealonic </label></div></a>
+                                    <label><labc> Thealonic </labc></label></div></a>
                                 <!-- Channels Submenu -->
                                 <div class="win98post" style="margin-left: 20000px; margin-top: -103px; width:89px; height: 20px;" id="channelssubmenu"
                                            onmouseover="channelsopen()" onmouseout="channelsclose()">
@@ -2182,22 +2190,22 @@
                                     <!-- Random links -->
                                     <a href="https://www.instagram.com/veryvhersty/" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Instagram </label></div></a>
+                                        <label><labc> Instagram </labc></label></div></a>
                                     <a href="https://steamcommunity.com/id/TheaVanherst/" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Steam Account </label></div></a>
+                                        <label><labc> Steam Account </labc></label></div></a>
                                     <a href="https://steamcommunity.com/id/VoreMom" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Steam Alt </label></div></a>
+                                        <label><labc> Steam Alt </labc></label></div></a>
                                     <a href="https://soundcloud.com/veryvhersty" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Soundcloud </label></div></a>
+                                        <label><labc> Soundcloud </labc></label></div></a>
                                     <a href="https://twitter.com/VeryVhersty" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Twitter </label></div></a>
+                                        <label><labc> Twitter </labc></label></div></a>
                                     <a href="https://www.youtube.com/channel/UCqbZe2XMkd98nXu_dUlObKA" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Youtube </label></div></a>
+                                        <label><labc> Youtube </labc></label></div></a>
                                 <!--links submenu END --> 
                                 </div>
                                 <!-- Media submenu -->
@@ -2206,67 +2214,67 @@
                                     <!-- Random links -->
                                     <a href="https://www.bbc.co.uk/iplayer" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> BBC iPlayer </label></div></a>
+                                        <label><labc> BBC iPlayer </labc></label></div></a>
                                     <a href="https://www.youtube.com/?gl=GB&hl=en-GB" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Youtube </label></div></a>
+                                        <label><labc> Youtube </labc></label></div></a>
                                     <a href="https://soundcloud.com/veryvhersty" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Soundcloud </label></div></a>
+                                        <label><labc> Soundcloud </labc></label></div></a>
                                     <a href="https://instagram.com/veryvhersty" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Instagram </label></div></a>
+                                        <label><labc> Instagram </labc></label></div></a>
                                     <a href="https://csgostash.com/" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> CSGO Stash </label></div></a>
+                                        <label><labc> CSGO Stash </labc></label></div></a>
                                     <a href="https://www.etsy.com" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Etsy </label></div></a>
+                                        <label><labc> Etsy </labc></label></div></a>
                                     <a href="https://stackoverflow.com/" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> StackOverflow </label></div></a>
+                                        <label><labc> StackOverflow </labc></label></div></a>
                                     <a href="https://w2g.tv/" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Watch2Togtether </label></div></a>
+                                        <label><labc> Watch2Togtether </labc></label></div></a>
                                     <a href="https://www.google.com/drive/" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Google Drive </label></div></a>
+                                        <label><labc> Google Drive </labc></label></div></a>
                                     <a href="https://www.nexusmods.com/" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Nexus Mods </label></div></a>
+                                        <label><labc> Nexus Mods </labc></label></div></a>
                                     <a href="https://bandcamp.com/" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Bandcamp </label></div></a>
+                                        <label><labc> Bandcamp </labc></label></div></a>
                                     <a href="https://twitter.com/?lang=en" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Twitter </label></div></a>
+                                        <label><labc> Twitter </labc></label></div></a>
                                     <a href="hhttps://www.facebook.com/" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Facebook </label></div></a>
+                                        <label><labc> Facebook </labc></label></div></a>
                                     <a href="https://www.mediafire.com" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Mediafire </label></div></a>
+                                        <label><labc> Mediafire </labc></label></div></a>
                                     <a href="https://www.scan.co.uk/" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Scan </label></div></a>
+                                        <label><labc> Scan </labc></label></div></a>
                                     <a href="https://discordapp.com" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Discord </label></div></a>
+                                        <label><labc> Discord </labc></label></div></a>
                                     <a href="https://www.paypal.com/" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Paypal </label></div></a>
+                                        <label><labc> Paypal </labc></label></div></a>
                                     <a href="https://www.tumblr.com/dashboard" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Tumblr </label></div></a>
+                                        <label><labc> Tumblr </labc></label></div></a>
                                     <a href="https://github.com/" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Github </label></div></a>
+                                        <label><labc> Github </labc></label></div></a>
                                     <a href="https://colorsupplyyy.com/app/" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> Colour Supply </label></div></a>
+                                        <label><labc> Colour Supply </labc></label></div></a>
                                     <a href="https://ezgif.com/" target="_blank"><div class="submenu20">
                                         <div class="menufavouriteslink"></div>
-                                        <label style="margin-left: 8px; margin-top: 3px"> EzGif </label></div></a>
+                                        <label><labc> EzGif </labc></label></div></a>
                                 <!--Media submenu END --> 
                                 </div>
                             </div>
@@ -2278,22 +2286,22 @@
                                 <!-- My Documents -->
                                 <div class="submenu20">
                                     <div class="menudocuments1"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px"> My Documents </label></div>
+                                    <label><labc> My Documents </labc></label></div>
                                 <div class="menuapplicationsplit" style="margin-left: 2px; margin-top: 3px; width:156px"> </div>
                                 <!-- Audio files -->
                                 <div class="submenu20" style="margin-top:3px">
                                     <div class="menudocumentssound"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px"> Chimes.wav </label></div>
+                                    <label><labc> Chimes.wav </labc></label></div>
                                 <div class="submenu20">
                                     <div class="menudocumentssound"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px"> Braden+.wav </label></div>
+                                    <label><labc> Braden+.wav </labc></label></div>
                                 <div class="submenu20">
                                     <div class="menudocumentssound"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px"> OurHeartlessMaster.wav </label></div>
+                                    <label><labc> OurHeartlessMaster.wav </labc></label></div>
                                 <!-- Document files -->
                                 <a href="https://raw.githubusercontent.com/Thealonic/Thealonic.html/main/040121"><div class="submenu20">
                                     <div class="menudocumentsdoc"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px"> Thealonic.doc </label></div></a>
+                                    <label><labc> Thealonic.doc </labc></label></div></a>
                             <!--Documents submenu END --> 
                             </div>
                      
@@ -2304,30 +2312,30 @@
                                 <!-- Control panel -->
                                 <div class="submenu20">
                                     <div class="menusettings1"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px"> Control panel </label></div>
+                                    <label><labc> Control panel </labc></label></div>
                                 <!-- Printers -->
                                 <div class="submenu20">
                                     <div class="menusettings2"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px; cursor: pointer;" onclick="backgroundtab(); disktask(); menuclosed()"> Display Properties </label></div>
+                                    <label onclick="backgroundtab(); disktask(); menuclosed()"><labc> Display Properties </labc></label></div>
                                 <!-- Taskbar & Start menu -->
                                 <div class="submenu20">
                                     <div class="menusettings3"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px"> Taskbar & Start menu </label></div>
+                                    <label><labc> Taskbar & Start menu </labc></label></div>
                                 <!-- Folder options -->
                                 <div class="submenu20">
                                     <div class="menusettings4"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px"> Folder options... </label></div>
+                                    <label><labc> Folder options... </labc></label></div>
                                 <!-- Active desktop -->
                                 <div class="submenu20" onmouseover="settingsactivedesktopopen();" onmouseout="settingsactivedesktopclose();" id="activedesktop">
                                     <div class="menusettings5"></div> 
-                                    <label style="margin-left: 8px; margin-top: 3px"> Active desktop </label> 
+                                    <label><labc> Active desktop </labc></label> 
                                         <div class="menuarrow1" style="margin-right:6px; margin-top: 7px" id="submenuarrow31"></div></div>
                                 <!-- verticalsplitterER -->
                                 <div class="menuapplicationsplit" style="width: 156px; margin-left: 2px; margin-top:3px; margin-bottom:2px"></div>
                                 <!--Folder options -->
                                 <div class="submenu20" style="margin-top: 3px">
                                     <div class="menusettings6"></div>
-                                    <label style="margin-left: 8px; margin-top: 3px"> Windows Update</label></div>
+                                    <label><labc> Windows Update</label></div>
                                 <!-- Activedesktop submenu -->
                                 <div class="win98post" style="margin-left:20000px; margin-top:-50px; width:170px; height:60px" id="activedesktopsubmenu" 
                                      onmouseover="settingsactivedesktopopen()" onmouseout="settingsactivedesktopclose()">
@@ -2336,8 +2344,6 @@
                                         <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="messageopen(); menuclosed()"> 🧮 brain go brrrrr </label></div>
                                     <div class="submenu20" style="cursor: pointer;"> 
                                         <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="vunnytask(); vunnypositionreset(); menuclosed()"> 👿 very.unvunny</label></div>
-                                    <div class="submenu20" style="cursor: pointer;"> 
-                                        <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="settingstab(); disktask(); menuclosed()"> 📺 Customise desktop... </label></div>
                                 <!--Settings submenu END --> 
                                 </div> 
                             <!--Settings menu END -->            
@@ -2349,13 +2355,13 @@
                                  onmouseover="findopen()"onmouseout="findclosed()";>
                                 <!--Buttons 1-4 -->
                                 <label style="width: 118px;"><div class="submenu20" style="width: 116px; height:20px">
-                                    <div class="menufind1"></div><label style="margin-left: 8px; margin-top: 3px"> Files or folders...</label></div></label>
+                                    <div class="menufind1"></div><label><labc> Files or folders...</labc></label></div></label>
                                 <label style="width: 118px;"><div class="submenu20" style="width: 116px; height:20px">
-                                        <div class="menufind2"></div><label style="margin-left: 8px; margin-top: 3px"> Computer...</label></div></label>
+                                        <div class="menufind2"></div><label><labc> Computer...</labc></label></div></label>
                                 <label style="width: 118px;"><div class="submenu20" style="width: 116px; height:20px">
-                                        <div class="menufind3"></div><label style="margin-left: 8px; margin-top: 3px"> On the Internet...</label></div></label>
+                                        <div class="menufind3"></div><label><labc> On the Internet...</labc></label></div></label>
                                 <label style="width: 118px;"><div class="submenu20" style="width: 116px; height:20px">
-                                        <div class="menufind4"></div><label style="margin-left: 8px; margin-top: 3px"> People</label></div></label>     
+                                        <div class="menufind4"></div><label><labc> People</labc></label></div></label>     
                             </div>
             </div></div>
  
