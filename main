@@ -29,14 +29,11 @@
                $(this).css({ 'transform': 'scale(' + scale + ')', 'margin': 250 * ( scale - 1 ) + 'px' });
                $(this).parents('.tumblr_video_container').css({ 
                    width: Math.floor($(this).width() * ( scale + 1 ) / 2), height: Math.floor($(this).height() * ( scale + 1 ) / 2)})})}
-        
         var cal = 5; function calupdate(){cal = cal + 1}
     </script>
+    
     <head>
         <meta name="description" value="{MetaDescription}" /><link rel="shortcut icon" href="{Favicon}"/><meta charset="utf-8" />
-        
-<!-- CSS Scripts ------------------------------------------------------------------------------>
-        
         <!-- Setup -->
         <style type="text/css">
             :root { --spritesheet: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png');
@@ -62,18 +59,15 @@
                     --prewhite: #ffffff; --prelightg: #dfdfdf;  --presilver: #c0c0c0; --premidgray: #ababab; --pregray: #808080; --preblack: #0a0a0a; --preactivetitle: #ffffff;
                     --preprussian: #00207c ; --prewincyan: #008080; --preyellow: #ffff00; --prefont: #000000; --prefonttitle: #ffffff; --prehover: #ffffff; ----preinactivetitle: #ffffff;
                     
-                    --invert: 0; --preinvert: 0; --shuffleinvert: 0.5;
-            }
+                    --invert: 0; --preinvert: 0; --shuffleinvert: 0.5}
 
-            /* Tumblr post handling ------------------------------------------------------------------------------*/
-            
             /* desktop config settings */
             body {background: repeat fixed; background-size: cover; padding: auto auto auto auto; background-color: var(--wincyan); font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; max-width: 100%; overflow-x: hidden}
             #desktop, .navigation {margin: auto auto auto auto; width: 1010px;} /* whole thing */
             body.permalink_page #desktop, body.permalink_page .navigation {width: 480px}
             body.infinite_scrolling .navigation, .inf_scr {display: none}
 
-            /* Desktop setup css ------------------------------------------------------------------------------*/
+/* Desktop setup css ------------------------------------------------------------------------------*/
 
             /* taskbar icon setup */
             .icons { margin: 0 0 0 0; padding: -10px; width: 100px; height:100%; float: left; position: fixed; z-index: 1; font-size: 12px}
@@ -90,7 +84,7 @@
             .twitterpreview {background-position: -72px -72px}  .officialfunnypreview {background-position: -252px -72px} .askiconpreview {background-position: -107px -72px} .discordlinkpreview { background-position: -144px -72px}
             .rct2preview  {background-position: -180px -72px} .officialfunnypreview {background-position: -248px -72px} 
 
-            /* Window bar handling ------------------------------------------------------------------------------*/
+/* Window bar handling ------------------------------------------------------------------------------*/
             
             .filler {height: 2px}
             /* custom css for post windows apposed to the default win98 css */
@@ -463,7 +457,7 @@
              <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
              <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="title-bar-text" id="messagetext">🧮 brain go brrrrr</div></div>
              <div class="window-body" style="margin-right: 4px; margin-top: 5px; margin-bottom: 3px; padding:2px">
-                <p style="color: var(--blue); margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>05:32pm on Febuary 22th, 2021. [GMT]</label></p></div>
+                <p style="color: var(--blue); margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>03:20pm on Febuary 23th, 2021. [GMT]</label></p></div>
         </div>
         
         <script>
@@ -605,12 +599,41 @@
             
             function playerupdate() {playerurlupdate(); setTimeout(function() {urlupdate()}, 100); shufflecolour()}
             
+            //desktop icons
             function twilightload() {embedtask(); shuffle = true; shuffleVideo(); videolinkdropdownclose(); currentplaylist = ""; 
                 player.loadVideoById({'videoId':'6BJFnnWVNRU','startSeconds': 0}); playertext.textContent = "Asking Twilight Sparkle for help.";}
             function rct2load(){embedtask(); shuffle = true; shuffleVideo(); videolinkdropdownclose(); currentplaylist = ""; 
                 player.loadVideoById({'videoId':'W_4uRZFVKPE','startSeconds': 985}); playertext.textContent = "Playing 'Roller Coaster Tycoon 2: Merry-Go-Round Music'";}
             function startmenuembed(){embedtask(); shuffle = true; shuffleVideo(); videolinkdropdownclose(); currentplaylist = "";
                 player.loadVideoById({'videoId':'T6fqtJbVoFI','startSeconds': 0}); playertext.textContent = "Opening Windows Embedded Mediaplayer"; stopVideo()}
+
+            //my playlists
+            function ovfvpload(){currentplaylist = "list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU&"; shuffle = true; playlistlaunch(); 
+                player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'The Official Very Funny Video Playlist'."}
+            function gabetousleload(){currentplaylist = "list=PLNcem2Adr0D5EH7Mk01PRQ8_wJ08MuyR2&"; shuffle = false; playlistlaunch(); 
+                player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Gabetousle'."}
+            function mylittleponyload(){currentplaylist = "list=PLNcem2Adr0D7erFZoWmkMgN_eSO5qBcYF&"; shuffle = false; playlistlaunch(); 
+                player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'The My Little Pony playlist of My Little Pony songs about some little ponies'."}
+                
+            //music playlists         
+            function Crossload(){currentplaylist = "list=OLAK5uy_mUH9mXeJdOroDCgBIUlj5EIkI2dnl77bo&"; shuffle = true; playlistlaunch(); 
+                player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Cross' by Justice."}
+            function AudioVideoDiscoload(){currentplaylist = "list=OLAK5uy_lzrGRfM-k_Ncx_VVvZp5NXsVaT4s5daWs&"; shuffle = true; playlistlaunch(); 
+                player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Audio, Video, Disco' by Justice."}
+            function Womanload(){currentplaylist = "list=OLAK5uy_kCIRvtVuXqD5LTUQzqTFS7fZ309yTPd-k&"; shuffle = true; playlistlaunch(); 
+                player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Cross' by Justice."}
+            function worldsload(){currentplaylist = "list=PLAZNU5fM7FIAndWHF8KXqy5wJzG1D5pkF&"; shuffle = true; playlistlaunch(); 
+                player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Worlds' by Porter Robinson."}
+            function natureload(){currentplaylist = "list=PLAZNU5fM7FIC4ruXQhKjpuvP0AByhc0bl&"; shuffle = true; playlistlaunch(); 
+                player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Nature' by Porter Robinson."}
+            function virtualselfload(){currentplaylist = "list=OLAK5uy_mvDmPc6xhsOD8ZsY-FsKLO-d4LlWFRWe0&"; shuffle = true; playlistlaunch(); 
+                player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Virtual Self' by Porter Robinson."}
+                
+            //veryvhersty tab
+            function win98load(){currentplaylist = "list=PLNcem2Adr0D6ZaukKoeuIDd_F64cVdR6n&"; shuffle = true; playlistlaunch(); 
+                player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Windows 98 Development'."}
+            function csgoload(){currentplaylist = "list=PLNcem2Adr0D6hVLogqdDGWVISRhFp7drV&"; shuffle = true; playlistlaunch(); 
+                player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Thea's CSGO Videos'."}
 
             function playstateupdateforward() {var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime() + currentskiptime;
                 if(playerTotalTime > playerCurrentTime){ var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))} else {nextVideo()}}
@@ -1683,8 +1706,8 @@
                         </a></div>
                         
                         <div class="filler"></div><div class="filler"></div><div class="filler"></div><div class="filler"></div>
-                            
-                            <!-- blogger container + recolour -->
+                        
+                        <!-- blogger container + recolour -->
                         <div class="content body" style="margin-left: -6px; margin-right: -6px; margin-top: -15px; margin-bottom: -6px; width:455px; height:18px; cursor:default;"> 
                             <div class="container">
                                 <fieldset style="width:346px; height:1px;">
@@ -1701,7 +1724,10 @@
                                     
                                 <div class="container" style="position: absolute; width: 23px; height: 2px; margin-left: 428px; margin-top: -19px; cursor:default;">
                                     <fieldset style="position: absolute; width:100%; height:1px;"></fieldset></div>
-                </div></div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             {/block:Posts}
         </div>
         
@@ -1760,7 +1786,7 @@
         </script>
         
         {block:NextPage} <div class="container" style="height:50px;"></div> {/block:NextPage}
-        {block:PostNotes} <div class="container" style="height:10px;"></div> {/block:PostNotes} <!-- THIS PREVENTS REDIRECTS BEING CUT OFF
+        {block:PostNotes} <div class="container" style="height:10px;"></div> {/block:PostNotes}
         
 <!-- Taskbar Rendering ------------------------------------------------------------------------------>
         
@@ -1769,7 +1795,6 @@
             <div class="top_border"></div> <!-- top line render-->
             
             <script>   
-                //start button / menu addressing
                 var startButtonOpen = false;
                 function startpress() { if (startButtonOpen == true) { document.getElementById("startmenu").style.marginLeft = "200000px"; startButtonOpen = false;
                         docelem.style.setProperty('--taskbarstarttop1', curcolgray); docelem.style.setProperty('--taskbarstarttop2', curcolblack);
@@ -1783,7 +1808,9 @@
             </script> 
             
             <!-- Start button toggle -->
-            <div class="win98start" onclick="startpress();" style="margin-right:4px;"> <div class="windowslogo"></div><div class="title-bar-text" style="position:absolute; margin-left:17.5px; margin-top:-15px; color:var(--text);">Start</div></div>
+            <div class="win98start" onclick="startpress();" style="margin-right:4px;"> 
+                <div class="windowslogo"></div><div class="title-bar-text" style="position:absolute; margin-left:17.5px; margin-top:-15px; color:var(--text);">Start</div>
+            </div>
                 <!-- Start menu closed -->
             <div class="container" style="position: fixed; bottom: 0%; bottom: 24px;" onmouseleave="">
                 <div class="win98post" id="startmenu" style="width:163px; height: 377px; margin-top:-383px; margin-left: 200000px"> 
@@ -1800,7 +1827,8 @@
                             <div class="submenu36" style="width: 141px; height:36px">
                                 <div class="patchnotes"></div>
                                 <label><labs><underline>U</underline>pdate log </labs></label>
-                        </div></label></a>
+                            </div></label>
+                        </a>
                         <!-- verticalsplitterER -->
                         <div class="menuapplicationsplit" style="width:139px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px"> </div>
                         <!-- Programs -->
@@ -1847,8 +1875,7 @@
                         <label onclick="logoff(); shutdownno();"> <!--needed for 32x32-->
                             <div class="submenu36" style="width: 142px;">
                                 <div class="menulogoff"></div><label><labs><underline>L</underline>og off </labs></label></div></label>  
-                        <!-- Startbutton script placement holder -->
-                        <div class="startmenustartbutton" style="margin-left: -23px; margin-top: 3px" onclick="startpress()"></div></div>
+                    </div>
 
 <!-- Programs menu rendering ------------------------------------------------------------------------------>
                         
@@ -1880,384 +1907,364 @@
                             <div class="menuprograms7"></div><label><labc> Windows Explorer </labc></label></div>
                             
                             <!--Accessories submenu -->
-                            <div class="win98post" style="margin-left: 20000px; margin-top:-143px; width:131px; height:220px" id="menuaccessoriessubmenu" 
-                                 onmouseover="accessoriesopen()" onmouseout="accessoriesclose()"> 
-                                <!-- Communication -->
-                                <div class="submenu20" id="communications" onmouseover="communicationsopen()" onmouseout="communicationsclose();">
-                                    <div class="menuprograms123"></div><label><labc> Communication </labc></label>
-                                        <div class="smenuarrow" id="menuarrow12"></div></div>
-                                <!-- Entertainment -->
-                                <div class="submenu20" id="entertainment" onmouseover="entertainmentopen()" onmouseout="entertainmentclose()">
-                                    <div class="menuprograms123"></div><label><labc> Entertainment </labc></label>
-                                        <div class="smenuarrow" id="menuarrow13"></div></div>
-                                <!-- Games -->
-                                <div class="submenu20" id="games" onmouseover="gamesopen()" onmouseout="gamesclose()">
-                                    <div class="menuprograms123"></div><label><labc> Games </labc></label>
-                                    <div class="smenuarrow" id="menuarrow14"></div></div>
-                                <!-- Internet Tools -->
-                                <div class="submenu20" id="internettools" onmouseover="internettoolsopen()" onmouseout="internettoolsclose()">
-                                    <div class="menuprograms123"></div><label><labc> Internet Tools </labc></label>
-                                        <div class="smenuarrow" id="menuarrow15"></div></div>
-                                <!-- System Tools -->
-                                <div class="submenu20" id="systemtools" onmouseover="systemtoolsopen()" onmouseout="systemtoolsclose()">
-                                    <div class="menuprograms123"></div><label><labc> System Tools </labc></label>
-                                        <div class="smenuarrow" id="menuarrow16"></div></div>
-                                <!-- Address book -->
+                        <div class="win98post" style="margin-left: 20000px; margin-top:-143px; width:131px; height:220px" id="menuaccessoriessubmenu" 
+                             onmouseover="accessoriesopen()" onmouseout="accessoriesclose()"> 
+                            <!-- Communication -->
+                            <div class="submenu20" id="communications" onmouseover="communicationsopen()" onmouseout="communicationsclose();">
+                                <div class="menuprograms123"></div><label><labc> Communication </labc></label>
+                                    <div class="smenuarrow" id="menuarrow12"></div></div>
+                            <!-- Entertainment -->
+                            <div class="submenu20" id="entertainment" onmouseover="entertainmentopen()" onmouseout="entertainmentclose()">
+                                <div class="menuprograms123"></div><label><labc> Entertainment </labc></label>
+                                    <div class="smenuarrow" id="menuarrow13"></div></div>
+                            <!-- Games -->
+                            <div class="submenu20" id="games" onmouseover="gamesopen()" onmouseout="gamesclose()">
+                                <div class="menuprograms123"></div><label><labc> Games </labc></label>
+                                <div class="smenuarrow" id="menuarrow14"></div></div>
+                            <!-- Internet Tools -->
+                            <div class="submenu20" id="internettools" onmouseover="internettoolsopen()" onmouseout="internettoolsclose()">
+                                <div class="menuprograms123"></div><label><labc> Internet Tools </labc></label>
+                                    <div class="smenuarrow" id="menuarrow15"></div></div>
+                            <!-- System Tools -->
+                            <div class="submenu20" id="systemtools" onmouseover="systemtoolsopen()" onmouseout="systemtoolsclose()">
+                                <div class="menuprograms123"></div><label><labc> System Tools </labc></label>
+                                    <div class="smenuarrow" id="menuarrow16"></div></div>
+                            <!-- Address book -->
+                            <div class="submenu20">
+                                <div class="menufind4"></div><label><labc> Address book </labc></label></div>
+                            <!-- Calculator -->
+                            <div class="submenu20">
+                                <div class="menuapplications7"></div><label><labc> Calculator </labc></label></div>
+                            <!-- Imaging -->
+                            <div class="submenu20">
+                                <div class="menuapplications8"></div><label><labc> Imaging </labc></label></div>
+                            <!-- Notepad -->
+                            <div class="submenu20">
+                                <div class="menuapplications9"></div><label><labc> Notepad </labc></label></div>
+                            <!-- Paint -->
+                            <div class="submenu20">
+                                <div class="menuapplications10"></div><label><labc> Paint </labc></label></div>
+                            <!-- Wordpad -->
+                            <div class="submenu20">
+                                <div class="menuapplications11"></div><label><labc> Wordpad </labc></label></div>
+                                
+                            <!-- Communications submenu -->
+                            <div class="win98post" style="margin-left: 20000px; margin-top:-223px; width:181px; height:80px" id="menucommunicationssubmenu" 
+                                onmouseover="communicationsopen()" onmouseout="communicationsclose()"> 
+                                <!-- Dial-up Networking -->
                                 <div class="submenu20">
-                                    <div class="menufind4"></div><label><labc> Address book </labc></label></div>
-                                <!-- Calculator -->
+                                    <div class="menucommunications1"></div><label><labc> Dial-up Networking </labc></label></div>
+                                <!-- Hyper Terminal -->
                                 <div class="submenu20">
-                                    <div class="menuapplications7"></div><label><labc> Calculator </labc></label></div>
-                                <!-- Imaging -->
+                                    <div class="menucommunications2"></div><label><labc> Hyper Terminal </labc></label></div>
+                                <!-- Configuration Wizard -->
                                 <div class="submenu20">
-                                    <div class="menuapplications8"></div><label><labc> Imaging </labc></label></div>
-                                <!-- Notepad -->
+                                    <div class="menucommunications3"></div><label><labc> ISDN Configuration Wizard </labc></label></div>
+                                <!-- Phone Dialer -->
                                 <div class="submenu20">
-                                    <div class="menuapplications9"></div><label><labc> Notepad </labc></label></div>
-                                <!-- Paint -->
-                                <div class="submenu20">
-                                    <div class="menuapplications10"></div><label><labc> Paint </labc></label></div>
-                                <!-- Wordpad -->
-                                <div class="submenu20">
-                                    <div class="menuapplications11"></div><label><labc> Wordpad </labc></label></div>
-                                    <!-- Communications submenu -->
-                                    <div class="win98post" style="margin-left: 20000px; margin-top:-223px; width:181px; height:80px" id="menucommunicationssubmenu" 
-                                         onmouseover="communicationsopen()" onmouseout="communicationsclose()"> 
-                                        <!-- Dial-up Networking -->
-                                        <div class="submenu20">
-                                            <div class="menucommunications1"></div><label><labc> Dial-up Networking </labc></label></div>
-                                        <!-- Hyper Terminal -->
-                                        <div class="submenu20">
-                                            <div class="menucommunications2"></div><label><labc> Hyper Terminal </labc></label></div>
-                                        <!-- Configuration Wizard -->
-                                        <div class="submenu20">
-                                            <div class="menucommunications3"></div><label><labc> ISDN Configuration Wizard </labc></label></div>
-                                        <!-- Phone Dialer -->
-                                        <div class="submenu20">
-                                            <div class="menucommunications4"></div><label><labc> Phone Dialer </labc></label></div></div>
+                                    <div class="menucommunications4"></div><label><labc> Phone Dialer </labc></label></div>
+                            </div>
                                             
-                                    <!-- Entertainment submenu -->
-                                    <div class="win98post" style="margin-left: 20000px; margin-top:-203px; width:203px; height:100px" id="menuentertainmentsubmenu" 
-                                         onmouseover="entertainmentopen()" onmouseout="entertainmentclose()"> 
-                                        <!-- Dial-up Networking -->
-                                        <div class="submenu20">
-                                            <div class="menuentertainment1"></div><label><labc> CD Player </labc></label></div>
-                                        <!-- Hyper Terminal -->
-                                        <div class="submenu20">
-                                            <div class="menuentertainment2"></div><label><labc> Interactive CD Player </labc></label></div>
-                                        <!-- Configuration Wizard -->
-                                        <div class="submenu20">
-                                            <div class="menuentertainment3"></div><label><labc> Sound Recorder </labc></label></div>
-                                        <!-- Phone Dialer -->
-                                        <div class="submenu20">
-                                            <div class="menuentertainment4"></div><label><labc> Volume Control </labc></label></div>
-                                        <div class="submenu20" onclick="startmenuembed()">
-                                            <div class="menuentertainment5"></div><label><labc> Windows Embedded Media Player </labc></label></div></div>
+                            <!-- Entertainment submenu -->
+                            <div class="win98post" style="margin-left: 20000px; margin-top:-203px; width:203px; height:100px" id="menuentertainmentsubmenu" 
+                                 onmouseover="entertainmentopen()" onmouseout="entertainmentclose()"> 
+                                <!-- Dial-up Networking -->
+                                <div class="submenu20">
+                                    <div class="menuentertainment1"></div><label><labc> CD Player </labc></label></div>
+                                <!-- Hyper Terminal -->
+                                <div class="submenu20">
+                                    <div class="menuentertainment2"></div><label><labc> Interactive CD Player </labc></label></div>
+                                <!-- Configuration Wizard -->
+                                <div class="submenu20">
+                                    <div class="menuentertainment3"></div><label><labc> Sound Recorder </labc></label></div>
+                                <!-- Phone Dialer -->
+                                <div class="submenu20">
+                                    <div class="menuentertainment4"></div><label><labc> Volume Control </labc></label></div>
+                                <div class="submenu20" onclick="startmenuembed()">
+                                    <div class="menuentertainment5"></div><label><labc> Windows Embedded Media Player </labc></label></div>
+                            </div>
                                             
-                                    <!-- Games submenu -->
-                                    <div class="win98post" style="margin-left: 20000px; margin-top:-183px; width:183px; height:80px" id="gamessubmenu" 
-                                         onmouseover="gamesopen()" onmouseout="gamesclose()"> 
-                                        <!-- Dial-up Networking -->
-                                        <div class="submenu20">
-                                            <div class="menugames1"></div><label><labc> Freecell </labc></label></div>
-                                        <!-- Hyper Terminal -->
-                                        <div class="submenu20">
-                                            <div class="menugames2"></div><label><labc> Hearts </labc></label></div>
-                                        <!-- Configuration Wizard -->
-                                        <div class="submenu20">
-                                            <div class="menugames3"></div><label><labc> Minesweeper </labc></label></div>
-                                        <!-- Phone Dialer -->
-                                        <div class="submenu20">
-                                            <div class="menugames4"></div><label><labc> Solitaire </labc></label></div></div>
+                            <!-- Games submenu -->
+                            <div class="win98post" style="margin-left: 20000px; margin-top:-183px; width:183px; height:80px" id="gamessubmenu" 
+                                onmouseover="gamesopen()" onmouseout="gamesclose()"> 
+                                <!-- Dial-up Networking -->
+                                <div class="submenu20">
+                                    <div class="menugames1"></div><label><labc> Freecell </labc></label></div>
+                                <!-- Hyper Terminal -->
+                                <div class="submenu20">
+                                    <div class="menugames2"></div><label><labc> Hearts </labc></label></div>
+                                <!-- Configuration Wizard -->
+                                <div class="submenu20">
+                                    <div class="menugames3"></div><label><labc> Minesweeper </labc></label></div>
+                                <!-- Phone Dialer -->
+                                <div class="submenu20">
+                                    <div class="menugames4"></div><label><labc> Solitaire </labc></label></div>
+                            </div>
                                             
-                                    <!-- Internet Tools submenu -->
-                                    <div class="win98post" style="margin-left: 20000px; margin-top:-163px; width:183px; height:80px" id="internettoolssubmenu" 
-                                         onmouseover="internettoolsopen()" onmouseout="internettoolsclose()"> 
-                                        <!-- Connection Wizard -->
-                                        <div class="submenu20">
-                                            <div class="menuinternettools1"></div><label><labc> Internet Connection Wizard </labc></label></div>
-                                        <!-- Microsoft Chat -->
-                                        <div class="submenu20">
-                                            <div class="menuinternettools2"></div><label><labc> Microsoft Chat </labc></label></div>
-                                        <!-- NetMeeting -->
-                                        <div class="submenu20">
-                                            <div class="menuinternettools3"></div><label><labc> NetMeeting </labc></label></div>
-                                        <!-- Personal Webserver -->
-                                        <div class="submenu20">
-                                            <div class="menuinternettools4"></div><label><labc> Personal Webserver </labc></label></div></div>
+                            <!-- Internet Tools submenu -->
+                            <div class="win98post" style="margin-left: 20000px; margin-top:-163px; width:183px; height:80px" id="internettoolssubmenu" 
+                                 onmouseover="internettoolsopen()" onmouseout="internettoolsclose()"> 
+                                <!-- Connection Wizard -->
+                                <div class="submenu20">
+                                    <div class="menuinternettools1"></div><label><labc> Internet Connection Wizard </labc></label></div>
+                                <!-- Microsoft Chat -->
+                                <div class="submenu20">
+                                    <div class="menuinternettools2"></div><label><labc> Microsoft Chat </labc></label></div>
+                                <!-- NetMeeting -->
+                                <div class="submenu20">
+                                    <div class="menuinternettools3"></div><label><labc> NetMeeting </labc></label></div>
+                                <!-- Personal Webserver -->
+                                <div class="submenu20">
+                                    <div class="menuinternettools4"></div><label><labc> Personal Webserver </labc></label></div>
+                            </div>
                                             
-                                    <!-- System Tools submenu -->
-                                    <div class="win98post" style="margin-left: 20000px; margin-top:-143px; width:183px; height:260px" id="systemtoolssubmenu" 
-                                         onmouseover="systemtoolsopen()" onmouseout="systemtoolsclose()"> 
-                                        <!-- Character Map -->
-                                        <div class="submenu20">
-                                            <div class="menusystemtools1"></div><label><labc> Character Map </labc></label></div>
-                                        <!-- Clipboard Viewer -->
-                                        <div class="submenu20">
-                                            <div class="menusystemtools2"></div><label><labc> Clipboard Viewer </labc></label></div>
-                                        <!-- Disk Cleanup -->
-                                        <div class="submenu20">
-                                            <div class="menusystemtools3"></div><label><labc> Disk Cleanup </labc></label></div>
-                                        <!-- Disk Defragment -->
-                                        <div class="submenu20">
-                                            <div class="menusystemtools4"></div><label><labc> Disk Defragmenter </labc></label></div>
-                                        <!-- Drive Converter -->
-                                        <div class="submenu20">
-                                            <div class="menusystemtools5"></div><label><labc> Drive Converter (FAT32) </labc></label></div>
-                                        <!-- Maintenance Wizard -->
-                                        <div class="submenu20">
-                                            <div class="menusystemtools6"></div><label><labc> Maintenance Wizard </labc></label></div>
-                                        <!-- Net Watcher -->
-                                        <div class="submenu20">
-                                            <div class="menusystemtools7"></div><label><labc> Net Watcher </labc></label></div>
-                                        <!-- Resource Monitor -->
-                                        <div class="submenu20">
-                                            <div class="menusystemtools8"></div><label><labc> Resource Monitor </labc></label></div>
-                                        <!-- Scandisk -->
-                                        <div class="submenu20">
-                                            <div class="menusystemtools9"></div><label><labc> Scandisk </labc></label></div>
-                                        <!-- Scheduled Tasks -->
-                                        <div class="submenu20">
-                                            <div class="menusystemtools10"></div><label><labc> Scheduled Tasks </labc></label></div>
-                                        <!-- NetMeeting -->
-                                        <div class="submenu20">
-                                            <div class="menusystemtools11"></div><label><labc> System Information </labc></label></div>
-                                        <!-- System Monitor -->
-                                        <div class="submenu20">
-                                            <div class="menusystemtools12"></div><label><labc> System Monitor </label></div>
-                                        <!-- Welcome to Windows -->
-                                        <div class="submenu20">
-                                            <div class="menusystemtools13"></div><label><labc> Welcome to Windows </labc></label></div></div>
-                                </div>
+                            <!-- System Tools submenu -->
+                            <div class="win98post" style="margin-left: 20000px; margin-top:-143px; width:183px; height:260px" id="systemtoolssubmenu" 
+                                 onmouseover="systemtoolsopen()" onmouseout="systemtoolsclose()"> 
+                                <!-- Character Map -->
+                                <div class="submenu20">
+                                    <div class="menusystemtools1"></div><label><labc> Character Map </labc></label></div>
+                                <!-- Clipboard Viewer -->
+                                <div class="submenu20">
+                                    <div class="menusystemtools2"></div><label><labc> Clipboard Viewer </labc></label></div>
+                                <!-- Disk Cleanup -->
+                                <div class="submenu20">
+                                    <div class="menusystemtools3"></div><label><labc> Disk Cleanup </labc></label></div>
+                                <!-- Disk Defragment -->
+                                <div class="submenu20">
+                                    <div class="menusystemtools4"></div><label><labc> Disk Defragmenter </labc></label></div>
+                                <!-- Drive Converter -->
+                                <div class="submenu20">
+                                    <div class="menusystemtools5"></div><label><labc> Drive Converter (FAT32) </labc></label></div>
+                                <!-- Maintenance Wizard -->
+                                <div class="submenu20">
+                                    <div class="menusystemtools6"></div><label><labc> Maintenance Wizard </labc></label></div>
+                                <!-- Net Watcher -->
+                                <div class="submenu20">
+                                    <div class="menusystemtools7"></div><label><labc> Net Watcher </labc></label></div>
+                                <!-- Resource Monitor -->
+                                <div class="submenu20">
+                                    <div class="menusystemtools8"></div><label><labc> Resource Monitor </labc></label></div>
+                                <!-- Scandisk -->
+                                <div class="submenu20">
+                                    <div class="menusystemtools9"></div><label><labc> Scandisk </labc></label></div>
+                                <!-- Scheduled Tasks -->
+                                <div class="submenu20">
+                                    <div class="menusystemtools10"></div><label><labc> Scheduled Tasks </labc></label></div>
+                                <!-- NetMeeting -->
+                                <div class="submenu20">
+                                    <div class="menusystemtools11"></div><label><labc> System Information </labc></label></div>
+                                <!-- System Monitor -->
+                                <div class="submenu20">
+                                    <div class="menusystemtools12"></div><label><labc> System Monitor </label></div>
+                                <!-- Welcome to Windows -->
+                                <div class="submenu20">
+                                    <div class="menusystemtools13"></div><label><labc> Welcome to Windows </labc></label></div>
+                            </div>
+                        </div>
                                 
                                 <!-- Online Services Submenu -->
-                                <div class="win98post" style="margin-left: 20000px; margin-top:-123px; width:110px; height:60px; " id="onlineservicessubmenu" 
-                                     onmouseover="onlineservicesopen()" onmouseout="onlineservicesclose()"> 
-                                    <!-- Ask Jeeves -->
-                                    <a href="https://askjeeves.net/" target="_blank" style="cursor:default"> <div class="submenu20"> 
-                                        <div class="menuapplications12"></div><label><labc> Ask Jeeves </labc></label> </div> </a>
-                                    <!-- Yahoo! Mail -->
-                                    <a href="https://uk.yahoo.com/" target="_blank" style="cursor:default"> <div class="submenu20">
-                                        <div class="menuapplications13"></div><label><labc> Yahoo! Mail </labc></label> </div> </a>
-                                    <!-- MSN -->
-                                    <div class="submenu20">
-                                        <div class="menuapplications14"></div><label><labc> MSN </labc></label></div>
-                                </div>
+                        <div class="win98post" style="margin-left: 20000px; margin-top:-123px; width:110px; height:60px; " id="onlineservicessubmenu" 
+                            onmouseover="onlineservicesopen()" onmouseout="onlineservicesclose()"> 
+                            <!-- Ask Jeeves -->
+                            <a href="https://askjeeves.net/" target="_blank" style="cursor:default"> <div class="submenu20"> 
+                                <div class="menuapplications12"></div><label><labc> Ask Jeeves </labc></label> </div> </a>
+                            <!-- Yahoo! Mail -->
+                            <a href="https://uk.yahoo.com/" target="_blank" style="cursor:default"> <div class="submenu20">
+                                <div class="menuapplications13"></div><label><labc> Yahoo! Mail </labc></label> </div> </a>
+                            <!-- MSN -->
+                            <div class="submenu20">
+                                <div class="menuapplications14"></div><label><labc> MSN </labc></label></div>
+                        </div>
                                 
                                 <!-- Startup Submenu -->
-                                <div class="win98post" style="margin-left: 20000px; margin-top:-103px; width:89px; height: 20px;" id="startupsubmenu"
-                                           onmouseover="startupopen()" onmouseout="startupclose()">
-                                    <div class="disabledfont" style="margin-left: 20px; margin-top: 3px">(Empty)</div> 
-                                </div> 
-                            </div>
+                        <div class="win98post" style="margin-left: 20000px; margin-top:-103px; width:89px; height: 20px;" id="startupsubmenu"
+                            onmouseover="startupopen()" onmouseout="startupclose()">
+                            <div class="disabledfont" style="margin-left: 20px; margin-top: 3px">(Empty)</div> 
+                        </div> 
+                    </div>
         
 <!-- Favourites menu rendering------------------------------------------------------------------------------>
         
-                            <div class="win98post" style="margin-left: 20000px; margin-top: -303px; width: 149px; height:80px" id="favouritesmenu" 
-                                 onmouseover="favouritesopen()" onmouseout="favouritesclosed()"> 
-                                <!-- Channels -->
-                                <div class="submenu20" onmouseover="channelsopen()" onmouseout="channelsclose()" id="channels">
-                                    <div class="menufavouritesfolder"></div><label><labc> Channels </labc></label>
-                                        <div class="smenuarrow" id="submenuarrow21"></div></div>
-                                <!-- Links -->
-                                <div class="submenu20" onmouseover="linksopen()" onmouseout="linksclose()" id="links">
-                                    <div class="menufavouritesfolder"></div><label><labc> Funnies </labc></label>
-                                        <div class="smenuarrow" id="submenuarrow22"></div></div>
-                                <!-- Media -->
-                                <div class="submenu20" onmouseover="mediaopen()" onmouseout="mediaclose()" id="media">
-                                    <div class="menufavouritesfolder"></div><label><labc> Music Playlists </labc></label>
-                                        <div class="smenuarrow" id="submenuarrow23"></div></div>
-                                <!-- Undefined --> 
-                                <a href="hhttps://thealonic.tumblr.com/" target="_blank"><div class="submenu20">
-                                    <div class="menufavouriteslink"></div><label><labc> Thealonic </labc></label></div></a>
-                                <!-- Channels Submenu -->
-                                <div class="win98post" style="margin-left: 20000px; margin-top: -83px; width:89px; height: 20px;" id="channelssubmenu"
-                                     onmouseover="channelsopen()" onmouseout="channelsclose()">
-                                    <div class="disabledfont" style="margin-left: 20px; margin-top: 3px">(Empty)</div> </div>
-                                    
-                                <!-- links submenu -->
-                                <div class="win98post" style="margin-left: 20000px; margin-top: -63px; width: 228px; height:60px" id="linkssubmenu" 
-                                     onmouseover="linksopen()" onmouseout="linksclose()"> 
-                                    <div class="submenu20" onclick="ovfvpload()">
-                                        <div class="menufavouriteslink"></div>
-                                        <label><labc>The Official Very Funny Video Playlist</labc></label></div></a>
-                                    <script>function ovfvpload(){currentplaylist = "list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU&"; shuffle = true; playlistlaunch(); 
-                                        player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'The Official Very Funny Video Playlist'."}</script>
-                                    
-                                    <div class="submenu20" onclick="csgoload()">
-                                        <div class="menufavouriteslink"></div>
-                                        <label><labc>CSGO Funny Moments</labc></label></div>
-                                        
-                                    <div class="submenu20" onclick="">
-                                        <div class="menudocumentssound"></div>
-                                        <label><labc>The 787 Survival Challange</labc></label></div>
-                                <!--links submenu END --> 
-                                </div>
+                    <div class="win98post" style="margin-left: 20000px; margin-top: -303px; width: 149px; height:80px" id="favouritesmenu" 
+                        onmouseover="favouritesopen()" onmouseout="favouritesclosed()"> 
+                        <!-- Channels -->
+                        <div class="submenu20" onmouseover="channelsopen()" onmouseout="channelsclose()" id="channels">
+                            <div class="menufavouritesfolder"></div><label><labc> Channels </labc></label>
+                                <div class="smenuarrow" id="submenuarrow21"></div></div>
+                        <!-- Links -->
+                        <div class="submenu20" onmouseover="linksopen()" onmouseout="linksclose()" id="links">
+                            <div class="menufavouritesfolder"></div><label><labc> Funnies </labc></label>
+                                <div class="smenuarrow" id="submenuarrow22"></div></div>
+                        <!-- Media -->
+                        <div class="submenu20" onmouseover="mediaopen()" onmouseout="mediaclose()" id="media">
+                            <div class="menufavouritesfolder"></div><label><labc> Music Playlists </labc></label>
+                                <div class="smenuarrow" id="submenuarrow23"></div></div>
+                        <!-- Undefined --> 
+                        <a href="hhttps://thealonic.tumblr.com/" target="_blank"><div class="submenu20">
+                            <div class="menufavouriteslink"></div><label><labc> Thealonic </labc></label></div></a>
+                        <!-- Channels Submenu -->
+                        <div class="win98post" style="margin-left: 20000px; margin-top: -83px; width:89px; height: 20px;" id="channelssubmenu"
+                            onmouseover="channelsopen()" onmouseout="channelsclose()">
+                            <div class="disabledfont" style="margin-left: 20px; margin-top: 3px">(Empty)</div> </div>
                                 
-                                <!-- Music submenu -->
-                                <div class="win98post" style="margin-left: 20000px; margin-top: -43px; width: 160px; height:195px" id="mediasubmenu" 
-                                     onmouseover="mediaopen()" onmouseout="mediaclose()"> 
-                                    <div class="submenu20" onclick="gabetousleload()">
-                                        <div class="menuentertainment5"></div>
-                                        <label><labc>Gabetousle</labc></label></div>
-                                    <script>function gabetousleload(){currentplaylist = "list=PLNcem2Adr0D5EH7Mk01PRQ8_wJ08MuyR2&"; shuffle = false; playlistlaunch(); 
-                                        player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Gabetousle'."}</script> 
-                                    
-                                    <div class="submenu20" onclick="gabetousleload()">
-                                        <div class="menudocumentssound"></div>
-                                        <label><labc>Rocking, Rollin n' Boneing.</labc></label></div>
+                            <!-- links submenu -->
+                        <div class="win98post" style="margin-left: 20000px; margin-top: -63px; width: 228px; height:60px" id="linkssubmenu" 
+                             onmouseover="linksopen()" onmouseout="linksclose()"> 
+                            <div class="submenu20" onclick="ovfvpload()">
+                                <div class="menufavouriteslink"></div>
+                                <label><labc>The Official Very Funny Video Playlist</labc></label></div></a>
+                            
+                            <div class="submenu20" onclick="csgoload()">
+                                <div class="menufavouriteslink"></div>
+                                <label><labc>CSGO Funny Moments</labc></label></div>
                                         
-                                    <div class="submenu20" onclick="mylittleponyload()">
-                                        <div class="menuentertainment5"></div>
-                                        <label><labc>The My Little Pony playlist</labc></label></div>
-                                    <script>function mylittleponyload(){currentplaylist = "list=PLNcem2Adr0D7erFZoWmkMgN_eSO5qBcYF&"; shuffle = false; playlistlaunch(); 
-                                        player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'The My Little Pony playlist of My Little Pony songs about some little ponies'."}</script>
+                            <div class="submenu20" onclick="">
+                                <div class="menudocumentssound"></div>
+                                <label><labc>The 787 Survival Challange</labc></label></div>
+                        </div>
+                                
+                        <!-- Music submenu -->
+                        <div class="win98post" style="margin-left: 20000px; margin-top: -43px; width: 160px; height:195px" id="mediasubmenu" 
+                             onmouseover="mediaopen()" onmouseout="mediaclose()"> 
+                            <div class="submenu20" onclick="gabetousleload()">
+                                <div class="menuentertainment5"></div>
+                                <label><labc>Gabetousle</labc></label></div>
+                            <div class="submenu20" onclick="gabetousleload()">
+                                <div class="menudocumentssound"></div>
+                                <label><labc>Rocking, Rollin n' Boneing.</labc></label></div>
+                            <div class="submenu20" onclick="mylittleponyload()">
+                                <div class="menuentertainment5"></div>
+                                <label><labc>The My Little Pony playlist</labc></label></div>
                                         
-                                    <div class="startmenusplitter"></div>
+                            <div class="startmenusplitter"></div>
 
-                                    <div class="submenu20" onclick="Crossload()">
-                                        <div class="menuentertainment5"></div>
-                                        <label><labc>Justice - Cross</labc></label></div>
-                                    <script>function Crossload(){currentplaylist = "list=OLAK5uy_mUH9mXeJdOroDCgBIUlj5EIkI2dnl77bo&"; shuffle = true; playlistlaunch(); 
-                                        player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Cross' by Justice."}</script>
-                                    <div class="submenu20" onclick="AudioVideoDiscoload()">
-                                        <div class="menuentertainment5"></div>
-                                        <label><labc>Justice - Audio, Video, Disco</labc></label></div>
-                                    <script>function AudioVideoDiscoload(){currentplaylist = "list=OLAK5uy_lzrGRfM-k_Ncx_VVvZp5NXsVaT4s5daWs&"; shuffle = true; playlistlaunch(); 
-                                        player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Audio, Video, Disco' by Justice."}</script>
-                                    <div class="submenu20" onclick="Womanload()">
-                                        <div class="menuentertainment5"></div>
-                                        <label><labc>Justice - Woman</labc></label></div>
-                                    <script>function Womanload(){currentplaylist = "list=OLAK5uy_kCIRvtVuXqD5LTUQzqTFS7fZ309yTPd-k&"; shuffle = true; playlistlaunch(); 
-                                        player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Cross' by Justice."}</script>
+                            <div class="submenu20" onclick="Crossload()">
+                                <div class="menuentertainment5"></div>
+                                <label><labc>Justice - Cross</labc></label></div>
+                            <div class="submenu20" onclick="AudioVideoDiscoload()">
+                                <div class="menuentertainment5"></div>
+                                <label><labc>Justice - Audio, Video, Disco</labc></label></div>
+                            <div class="submenu20" onclick="Womanload()">
+                                <div class="menuentertainment5"></div>
+                                <label><labc>Justice - Woman</labc></label></div>
 
-                                    <div class="startmenusplitter"></div>
+                            <div class="startmenusplitter"></div>
                                     
-                                    <div class="submenu20" onclick="virtualselfload()">
-                                        <div class="menuentertainment5"></div>
-                                        <label><labc>Porter Robinson - Virtual Self</labc></label></div>
-                                    <script>function virtualselfload(){currentplaylist = "list=OLAK5uy_mvDmPc6xhsOD8ZsY-FsKLO-d4LlWFRWe0&"; shuffle = true; playlistlaunch(); 
-                                        player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Virtual Self' by Porter Robinson."}</script>
-                                    <div class="submenu20" onclick="natureload()">
-                                        <div class="menuentertainment5"></div>
-                                        <label><labc>Porter Robinson - Nature</labc></label></div>
-                                    <script>function natureload(){currentplaylist = "list=PLAZNU5fM7FIC4ruXQhKjpuvP0AByhc0bl&"; shuffle = true; playlistlaunch(); 
-                                        player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Nature' by Porter Robinson."}</script>
-                                    <div class="submenu20" onclick="worldsload()">
-                                        <div class="menuentertainment5"></div>
-                                        <label><labc>Porter Robinson - worlds</labc></label></div>
-                                    <script>function worldsload(){currentplaylist = "list=PLAZNU5fM7FIAndWHF8KXqy5wJzG1D5pkF&"; shuffle = true; playlistlaunch(); 
-                                        player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Nature' by Porter Robinson."}</script>
-                                <!--Media submenu END --> 
-                                </div>
-                            </div>
-        
+                            <div class="submenu20" onclick="virtualselfload()">
+                                <div class="menuentertainment5"></div>
+                                <label><labc>Porter Robinson - Virtual Self</labc></label></div>
+                            <div class="submenu20" onclick="natureload()">
+                                <div class="menuentertainment5"></div>
+                                <label><labc>Porter Robinson - Nature</labc></label></div>
+                            <div class="submenu20" onclick="worldsload()">
+                                <div class="menuentertainment5"></div>
+                                <label><labc>Porter Robinson - worlds</labc></label></div>
+                        </div>
+                    </div>
+
 <!-- Documents menu rendering ------------------------------------------------------------------------------>
                         
-                            <div class="win98post" style="margin-left: 20000px; margin-top: -267px; width: 160px; height:108px" id="documentsmenu" 
-                                 onmouseover="documentsopen()" onmouseout="documentsclosed()"> 
-                                <!-- My Documents -->
-                                <div class="submenu20">
-                                    <div class="menudocuments1"></div>
-                                    <label><labc> My Documents </labc></label></div>
-                                <div class="startmenusplitter"> </div>
-                                <!-- VeryVhersty -->
-                                <div class="submenu20" onmouseover="vherstyopen()" onmouseout="vherstyclose()" id="vherstymenu">
-                                    <div class="menufavouritesfolder"></div><label><labc> Very Vhersty </labc></label>
-                                        <div class="smenuarrow" id="submenuarrow24"></div></div>
-                                <div class="submenu20">
-                                    <div class="menudocumentssound"></div>
-                                    <label><labc> Braden+.wav </labc></label></div>
-                                <div class="submenu20">
-                                    <div class="menudocumentssound"></div>
-                                    <label><labc> OurHeartlessMaster.wav </labc></label></div>
-                                <!-- Document files -->
-                                <a href="https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/main" target="_blank"><div class="submenu20">
-                                    <div class="menudocumentsdoc"></div>
-                                    <label><labc> Thealonic.doc </labc></label></div></a>
-                                
-                                <div class="win98post" style="margin-left: 20000px; margin-top: -83px; width: 160px; height:67px" id="vherstysubmenu" 
-                                     onmouseover="vherstyopen()" onmouseout="vherstyclose()"> 
-                                    <a href="https://veryvhersty.tumblr.com/" target="_blank"><div class="submenu20">
-                                        <div class="menufavouriteslink"></div>
-                                        <label><labc> Vhersty </labc></label></div></a>
+                    <div class="win98post" style="margin-left: 20000px; margin-top: -267px; width: 160px; height:108px" id="documentsmenu" 
+                         onmouseover="documentsopen()" onmouseout="documentsclosed()"> 
+                        <!-- My Documents -->
+                        <div class="submenu20">
+                            <div class="menudocuments1"></div>
+                            <label><labc> My Documents </labc></label></div>
+                        <div class="startmenusplitter"> </div>
+                        <!-- VeryVhersty -->
+                        <div class="submenu20" onmouseover="vherstyopen()" onmouseout="vherstyclose()" id="vherstymenu">
+                            <div class="menufavouritesfolder"></div><label><labc> Very Vhersty </labc></label>
+                                <div class="smenuarrow" id="submenuarrow24"></div></div>
+                        <div class="submenu20">
+                            <div class="menudocumentssound"></div>
+                            <label><labc> Braden+.wav </labc></label></div>
+                        <div class="submenu20">
+                            <div class="menudocumentssound"></div>
+                            <label><labc> OurHeartlessMaster.wav </labc></label></div>
+                        <!-- Document files -->
+                        <a href="https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/main" target="_blank"><div class="submenu20">
+                            <div class="menudocumentsdoc"></div>
+                            <label><labc> Thealonic.doc </labc></label></div></a>
+                            
+                        <div class="win98post" style="margin-left: 20000px; margin-top: -83px; width: 160px; height:67px" id="vherstysubmenu" 
+                             onmouseover="vherstyopen()" onmouseout="vherstyclose()"> 
+                            <a href="https://veryvhersty.tumblr.com/" target="_blank"><div class="submenu20">
+                                <div class="menufavouriteslink"></div>
+                                <label><labc> Vhersty </labc></label></div></a>
                                         
-                                    <div class="startmenusplitter"></div>
-                                    
-                                    <div class="submenu20" onclick="win98load()">
-                                        <div class="menufavouriteslink"></div>
-                                        <label><labc>Windows 98 Development</labc></label></div>
-                                    <script>function win98load(){currentplaylist = "list=PLNcem2Adr0D6ZaukKoeuIDd_F64cVdR6n&"; shuffle = true; playlistlaunch(); 
-                                        player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Gabetousle'."}</script> 
-                                    
-                                    <div class="submenu20" onclick="csgoload()">
-                                        <div class="menufavouriteslink"></div>
-                                        <label><labc>CSGO Funny Moments</labc></label></div>
-                                    <script>function csgoload(){currentplaylist = "list=PLNcem2Adr0D6hVLogqdDGWVISRhFp7drV&"; shuffle = true; playlistlaunch(); 
-                                        player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Gabetousle'."}</script> 
-                                </div>
-                            <!--Documents submenu END --> 
-                            </div>
+                            <div class="startmenusplitter"></div>
+                                
+                            <div class="submenu20" onclick="win98load()">
+                                <div class="menufavouriteslink"></div>
+                                <label><labc>Windows 98 Development</labc></label></div>
+                            <div class="submenu20" onclick="csgoload()">
+                                <div class="menufavouriteslink"></div>
+                                <label><labc>CSGO Funny Moments</labc></label></div>
+                        </div>
+                    <!--Documents submenu END --> 
+                    </div>
                      
 <!-- Settings menu rendering ------------------------------------------------------------------------------>
                         
-                            <div class="win98post" style="margin-left: 200000px; margin-top: -231px; width: 160px; height:128px" id="settingsmenu" 
-                                 onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
-                                <!-- Control panel -->
-                                <div class="submenu20">
-                                    <div class="menusettings1"></div>
-                                    <label><labc> Control panel </labc></label></div>
-                                <!-- Printers -->
-                                <div class="submenu20">
-                                    <div class="menusettings2"></div>
-                                    <label onclick="backgroundtab(); disktask(); menuclosed()"><labc> Display Properties </labc></label></div>
-                                <!-- Taskbar & Start menu -->
-                                <div class="submenu20">
-                                    <div class="menusettings3"></div>
-                                    <label><labc> Taskbar & Start menu </labc></label></div>
-                                <!-- Folder options -->
-                                <div class="submenu20">
-                                    <div class="menusettings4"></div>
-                                    <label><labc> Folder options... </labc></label></div>
-                                <!-- Active desktop -->
-                                <div class="submenu20" onmouseover="settingsactivedesktopopen();" onmouseout="settingsactivedesktopclose();" id="activedesktop">
-                                    <div class="menusettings5"></div> 
-                                    <label><labc> Active desktop </labc></label> 
-                                        <div class="smenuarrow" id="submenuarrow31"></div></div>
-                                <!-- verticalsplitterER -->
-                                <div class="startmenusplitter"></div>
-                                <!--Folder options -->
-                                <div class="submenu20" style="margin-top: 3px">
-                                    <div class="menusettings6"></div>
-                                    <label><labc> Windows Update</label></div>
-                                <!-- Activedesktop submenu -->
-                                <div class="win98post" style="margin-left:20000px; margin-top:-50px; width:170px; height:40px" id="activedesktopsubmenu" 
-                                     onmouseover="settingsactivedesktopopen()" onmouseout="settingsactivedesktopclose()">
-                                    <!--Buttons 1-3 -->
-                                    <div class="submenu20" style="cursor: pointer;"> 
-                                        <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="messageopen(); menuclosed()"> 🧮 brain go brrrrr </label></div>
-                                    <div class="submenu20" style="cursor: pointer;"> 
-                                        <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="vunnytask(); vunnypositionreset(); menuclosed()"> 👿 very.unvunny</label></div>
-                                <!--Settings submenu END --> 
-                                </div> 
-                            <!--Settings menu END -->            
-                            </div>
+                    <div class="win98post" style="margin-left: 200000px; margin-top: -231px; width: 160px; height:128px" id="settingsmenu" 
+                         onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
+                        <!-- Control panel -->
+                        <div class="submenu20">
+                            <div class="menusettings1"></div>
+                            <label><labc> Control panel </labc></label></div>
+                        <!-- Printers -->
+                        <div class="submenu20">
+                            <div class="menusettings2"></div>
+                            <label onclick="backgroundtab(); disktask(); menuclosed()"><labc> Display Properties </labc></label></div>
+                        <!-- Taskbar & Start menu -->
+                        <div class="submenu20">
+                            <div class="menusettings3"></div>
+                            <label><labc> Taskbar & Start menu </labc></label></div>
+                        <!-- Folder options -->
+                        <div class="submenu20">
+                            <div class="menusettings4"></div>
+                            <label><labc> Folder options... </labc></label></div>
+                        <!-- Active desktop -->
+                        <div class="submenu20" onmouseover="settingsactivedesktopopen();" onmouseout="settingsactivedesktopclose();" id="activedesktop">
+                            <div class="menusettings5"></div> 
+                            <label><labc> Active desktop </labc></label> 
+                                <div class="smenuarrow" id="submenuarrow31"></div></div>
+                        <!-- verticalsplitterER -->
+                        <div class="startmenusplitter"></div>
+                        <!--Folder options -->
+                        <div class="submenu20" style="margin-top: 3px">
+                            <div class="menusettings6"></div>
+                            <label><labc> Windows Update</label></div>
+                        <!-- Activedesktop submenu -->
+                        <div class="win98post" style="margin-left:20000px; margin-top:-50px; width:170px; height:40px" id="activedesktopsubmenu" 
+                             onmouseover="settingsactivedesktopopen()" onmouseout="settingsactivedesktopclose()">
+                            <!--Buttons 1-3 -->
+                            <div class="submenu20" style="cursor: pointer;"> 
+                                <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="messageopen(); menuclosed()"> 🧮 brain go brrrrr </label></div>
+                            <div class="submenu20" style="cursor: pointer;"> 
+                                <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="vunnytask(); vunnypositionreset(); menuclosed()"> 👿 very.unvunny</label></div>
+                        <!--Settings submenu END --> 
+                        </div> 
+                    <!--Settings menu END -->            
+                    </div>
                               
 <!-- Find menu rendering ------------------------------------------------------------------------------>
                                 
-                            <div class="win98post" style="margin-left: 20000px; margin-top: -197px" id="findmenu"
-                                 onmouseover="findopen()"onmouseout="findclosed()";>
-                                <!--Buttons 1-4 -->
-                                <label style="width: 118px;"><div class="submenu20" style="width: 116px; height:20px">
-                                    <div class="menufind1"></div><label><labc> Files or folders...</labc></label></div></label>
-                                <label style="width: 118px;"><div class="submenu20" style="width: 116px; height:20px">
-                                        <div class="menufind2"></div><label><labc> Computer...</labc></label></div></label>
-                                <label style="width: 118px;"><div class="submenu20" style="width: 116px; height:20px">
-                                        <div class="menufind3"></div><label><labc> On the Internet...</labc></label></div></label>
-                                <label style="width: 118px;"><div class="submenu20" style="width: 116px; height:20px">
-                                        <div class="menufind4"></div><label><labc> People</labc></label></div></label>     
-                            </div>
-            </div></div>
+                    <div class="win98post" style="margin-left: 20000px; margin-top: -197px" id="findmenu"
+                         onmouseover="findopen()"onmouseout="findclosed()";>
+                        <!--Buttons 1-4 -->
+                        <label style="width: 118px;"><div class="submenu20" style="width: 116px; height:20px">
+                            <div class="menufind1"></div><label><labc> Files or folders...</labc></label></div></label>
+                        <label style="width: 118px;"><div class="submenu20" style="width: 116px; height:20px">
+                            <div class="menufind2"></div><label><labc> Computer...</labc></label></div></label>
+                        <label style="width: 118px;"><div class="submenu20" style="width: 116px; height:20px">
+                            <div class="menufind3"></div><label><labc> On the Internet...</labc></label></div></label>
+                        <label style="width: 118px;"><div class="submenu20" style="width: 116px; height:20px">
+                            <div class="menufind4"></div><label><labc> People</labc></label></div></label>     
+                    </div>
+                </div>
+            </div>
  
 <!-- Taskbar Rendering  ------------------------------------------------------------------------------>
         
@@ -2322,8 +2329,10 @@
                 <div class="clock">
                     <div class="calendar" style="cursor: pointer;" onclick="clockopen();"> </div>
                     <div class="menuentertainment3" style="margin-top:-1px; margin-left:1px;"></div>
-                    <label class="time" style="font-size:11px; color: var(--atext);" id="showClock"> 00:00 am </label></div></div>
-    </div>
+                    <label class="time" style="font-size:11px; color: var(--atext);" id="showClock"> 00:00 am </label>
+                </div>
+            </div>
+        </div>
 
 <!-- On page load handling ------------------------------------------------------------------------------>
         
@@ -2440,4 +2449,5 @@
             function vherstyopen() {   vhercm(); starton(); cms.style.marginLeft = "161px"; document.getElementById("submenuarrow24").style.backgroundPosition = aropen}
             function vherstyclose() { vhercm(); startoff(); document.getElementById("submenuarrow24").style.backgroundPosition = arclose; cmd()}
         </script>
-</body></html>
+    </body>
+</html>
