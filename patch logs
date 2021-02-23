@@ -1,26 +1,50 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll;">
 <ul>
+<li><strong style="color: var(--atext);">2021 Febuary 22th (210222) </strong>- "Start Menu Cleanup" Update<strong style="color: var(--atext);"><br /></strong>
+<ul>
+<li>Added Windows Embedded Media player to the start menu.</li>
+<li><strong>Removed Shut Down button from startmenu alongside matching UI.&nbsp;</strong>This is due to outdated / old css I don't know how to fix alongside not really required as log out has the same functionality.</li>
+<li>Mounting playlists into the Embedded Mediaplayer is now easier.</li>
+<li><strong>Start Menu Changes;</strong>
+<ul>
+<li>Changed out all the links under the Media submenu in the startmenu for Embedded Media Player calls, alongside (soon to be added) Embedded Music Player. Additionally changing the focus of the submenu to custom playlists rather than random links.</li>
+<li>The Channels Submenu is now a collection of playlists from online artists and creators apposed to being emprt.</li>
+<li>Swapped out the Links submenu for a collection of personalised playlists.</li>
+<li>Added a personal collection of my videos and playlists under Documents.</li>
+<li><strong>Optimised All CSS for the Start Menu.</strong> (Both in size and handling)</li>
+</ul>
+</li>
+<li>Optimised window layering.<em><br /></em></li>
+</ul>
+<ol>
+<li>- Embedded Media Player loading tweaks.</li>
+<li>- Fixed a start menu bug where changing theme would retain the previous theme's colours in the startmenu.</li>
+<li>- Fixed issues with optimisations from yesterday&rsquo;s start menu fixes.</li>
+<li><em>- Fixed Embedded Media URL showing the playlist link in the address bar on load.</em></li>
+<li><em>- Fixed a bug where if the video from the Embedded Media Player isn&rsquo;t not loaded, it would cause other default windows to also not load in.</em></li>
+</ol></li>
 <li><strong style="color: var(--atext);">2021 Febuary 21th (210221)</strong><br />
 <ul>
-<li>Media Player Changes<br />
+<li>Media Player Changes;
 <ul>
 <li><strong>The timeline now updates 10 times a second apposed to once.</strong></li>
 <li>Timeline no longer has an animation cycle to seem snappier and responsive.</li>
 <li>Clicking on links in the media player now creates a new tab instead of redirecting the current page.</li>
 </ul>
 </li>
-<li>- Optimised window layering.<em><br /></em></li>
+<li>Optimised window layering.<em><br /></em></li>
 </ul>
 <ol>
+<li>- Patch note fixes now have two seperate types. Italic: meaning, a bug fix. Regular: meaning optimisations or other adjustments.</li>
 <li><em>- Fixed a graphical issue where the media player skip video buttons wouldn&rsquo;t update colour on theme change.</em></li>
-<li><em>- Fixed a graphical bug where changing theme wouldn't change the colour of the shuffle button until the next video was played.</em></li>
+<li><em>- Fixed a graphical bug where changing theme wouldn&rsquo;t change the colour of the shuffle button until the next video was played.</em></li>
 <li><em>- Changing theme no longer enforces the Embedded Media Player to play.</em></li>
 <li><em>- Fixed graphic glitches in Media Player timeline when skipping videos.</em></li>
 </ol></li>
 <li><strong style="color: var(--atext);">2021 Febuary 20th (210220)</strong> <em>- &ldquo;Media player&rdquo; Update 4</em>
 <ul>
-<li><strong>Media Player Accessability changes </strong><br />
+<li><strong>Media Player Accessability changes;</strong><br />
 <ul>
 <li>Added links dropdown menu which includes the current playlist link (if there is any) and original video source.</li>
 <li>Rewind and fastforward times can now be changed through the Links dropdown menu in incriments of 5 seconds.</li>
@@ -41,7 +65,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2021 Febuary 18th (210218)</strong> <em>- &ldquo;Media player</em><em>&rdquo; Update 3.1</em>
 <ul>
-<li><strong>Major Embedded Media Player updates</strong><br />
+<li><strong>Major Embedded Media Player updates;</strong><br />
 <ul>
 <li><em>Windows Embedded media player now has seperate play functions for videos and playlists</em>, allowing easier addition of videos.</li>
 <li>RCT2 Desktop redirect now changes the current video in the Embedded media player to Merry-Go-Round music. <em>(More of these to come)</em></li>
@@ -61,7 +85,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2021 Febuary 17th (210217)</strong><em> - &ldquo;Media player</em><em>&rdquo; Update 2<br /></em>
 <ul>
-<li><strong>Embedded Media Player</strong><strong> functionality additions</strong>
+<li><strong>Embedded Media Player</strong><strong> functionality additions;</strong>
 <ul>
 <li>Added player buttons alongside functionality including; Play, Pause, Stop, Previous and Next, clicking on them will do their respective jobs.</li>
 <li>Added Media Player Footer that updates based on the state the media player is currently in. Eg. playing, skipping video.</li>
@@ -80,7 +104,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2021 Febuary 16th (210216) </strong><em>- &ldquo;Media player</em><em>&rdquo; Update 1</em>
 <ul>
-<li><strong>Embedded Media Player functionality additions</strong><br />
+<li><strong>Embedded Media Player functionality additions;</strong><br />
 <ul>
 <li>&ldquo;Official Very Funny Playlist player&rdquo; is now the windows embedded media player.</li>
 <li>Media player now has a dynamic current address header depending on the current video playing.<strong><br /></strong></li>
@@ -91,22 +115,22 @@
 <li>Windows now open on page load, apposed to being already open.</li>
 </ul>
 <ol>
-<li>- Fixed taskbar position updating related issues when after closing two windows, any task could get stuck in the 3rd slot due to not updating the X value to refer to the next time the task had to be moved.</li>
-<li>- Solved issues related to submenus not opening in the start menu.</li>
-<li>- Fixed issues with taskbar colours when a different theme is being previewed in which it would display the previewed theme&rsquo;s colours.</li>
-<li>- Solved potential issues to do with scheme colours in the future.</li>
-<li>- Fixed Very Unvunnies reseting their position to default from clicking on the taskbar.</li>
+<li><em>- Fixed taskbar position updating related issues when after closing two windows, any task could get stuck in the 3rd slot due to not updating the X value to refer to the next time the task had to be moved.</em></li>
+<li><em>- Solved issues related to submenus not opening in the start menu.</em></li>
+<li><em>- Fixed issues with taskbar colours when a different theme is being previewed in which it would display the previewed theme&rsquo;s colours.</em></li>
+<li><em>- Solved potential issues to do with scheme colours in the future.</em></li>
+<li><em>- Fixed Very Unvunnies reseting their position to default from clicking on the taskbar.</em></li>
 </ol></li>
 <li><strong style="color: var(--atext);">2021 Febuary 15th (210215)</strong> <em>- &ldquo;The Taskbar Rehaul Update&rdquo;</em> <br />
 <ul>
-<li><strong>Dynamic Tasks added.</strong><strong><strong><br /></strong></strong>
+<li><strong>Dynamic Tasks added;</strong><strong><strong><br /></strong></strong>
 <ul>
 <li>Tasks opened will now go to the furthest most left it can go apposed to being predetermined.</li>
 <li>Tasks are now in order of when the task is launched.</li>
 <li>Tasks now automatically adjust based on tasks being closed and opened.</li>
 </ul>
 </li>
-<li><strong>&ldquo;Official very funny video playlist&rdquo; Window added</strong>
+<li><strong>&ldquo;Official very funny video playlist&rdquo; Window added;</strong>
 <ul>
 <li>Added embedded window for the &ldquo;Official very funny video playlist&rdquo;, replacing the old redirect.</li>
 <li>Added tabbing functionality to &ldquo;Official very funny video playlist&rdquo; embed through the taskbar and other desktop functions.<strong><br /></strong></li>
@@ -117,7 +141,7 @@
 <li>Windows now open on page load, apposed to being already open.</li>
 </ul>
 <ol>
-<li>- Fixed colour related issues with the time and date window.</li>
+<li><em>- Fixed colour related issues with the time and date window.</em></li>
 </ol></li>
 <li><strong style="color: var(--atext);">2021 Febuary 11th (210211)</strong>
 <ul>
@@ -128,9 +152,9 @@
 <li>Icons being used for titlebar icons and scrollbars in the preview window of Display Properties now has seperate assets to allow preview of asset invertability assosiated with different schemes.</li>
 </ul>
 <ol>
-<li>- Fixed issues with very.unvunny, where random image generator would close the window, but would still alow it to reappear by clicking the taskbar.</li>
-<li>- Fixed bugs with windows not being able to be reopened through the start menu.</li>
-<li>- Fixed visual bugs with &ldquo;links&rdquo; at the header of posts</li>
+<li><em>- Fixed issues with very.unvunny, where random image generator would close the window, but would still alow it to reappear by clicking the taskbar.</em></li>
+<li><em>- Fixed bugs with windows not being able to be reopened through the start menu.</em></li>
+<li><em>- Fixed visual bugs with &ldquo;links&rdquo; at the header of posts</em></li>
 </ol></li>
 <li><strong style="color: var(--atext);">2021 Febuary 10th (210210)</strong>
 <ul>
@@ -141,9 +165,9 @@
 <li>Added CSS for window properties to be added in the future.</li>
 </ul>
 <ol>
-<li>- Fixed anti-aliasing problems in the effects tab of the Display Properties window.</li>
-<li>- Fixed pixel alignment of all windows on page load.</li>
-<li>- Fixed pixel alignment on permalink posts.</li>
+<li><em>- Fixed anti-aliasing problems in the effects tab of the Display Properties window.</em></li>
+<li><em>- Fixed pixel alignment of all windows on page load.</em></li>
+<li><em>- Fixed pixel alignment on permalink posts.</em></li>
 </ol></li>
 <li><strong style="color: var(--atext);">2021 Febuary 8th (210208)</strong> <em>-&nbsp;</em>&ldquo;Schemes&rdquo;<em> Update 4</em>
 <ul>
@@ -155,9 +179,9 @@
 <li>Start button no longer relies on images to display the container and uses colours that depend on schemes.</li>
 </ul>
 <ol>
-<li>- Fixed a minimizing issue with the Disk properties not re-opening after being minimized.</li>
-<li>- Fixed a bug in the scheme preview menu where the scrollbar always had a fixed colour.</li>
-<li>- Fixed a bug where Very.Vunny windows would not make the task inactive, regardless of all windows being minimized.</li>
+<li><em>- Fixed a minimizing issue with the Disk properties not re-opening after being minimized.</em></li>
+<li><em>- Fixed a bug in the scheme preview menu where the scrollbar always had a fixed colour.</em></li>
+<li><em>- Fixed a bug where Very.Vunny windows would not make the task inactive, regardless of all windows being minimized.</em></li>
 </ol></li>
 <li><strong style="color: var(--atext);">2021 Febuary 7th (210207)</strong> <em>- </em>&ldquo;Schemes&rdquo;<em> Patch Update 1</em>
 <ul>
@@ -165,18 +189,18 @@
 <li>URL based posts now have custom formatting to match post formatting.</li>
 </ul>
 <ol>
-<li>- Fixed colours of links in the start menu to be tied with the rest of the menus.</li>
-<li>- Fixed a bunch of formatting issues to do with titles in the update log.</li>
-<li>- Fixed a bug where the background colour of the clock in the Date and Time menu was always in lightmode.</li>
-<li>- Fixed dropdown menu colour related bugs within the Time and Date interface.</li>
-<li>- Fixed Shutdown and Logout menus not starting when launching through startmenu.</li>
-<li>- Fixed a bug where closing disproperties and trying to reopen it through the start menu would only make the task appear on the taskbar.</li>
+<li><em>- Fixed colours of links in the start menu to be tied with the rest of the menus.</em></li>
+<li><em>- Fixed a bunch of formatting issues to do with titles in the update log.</em></li>
+<li><em>- Fixed a bug where the background colour of the clock in the Date and Time menu was always in lightmode.</em></li>
+<li><em>- Fixed dropdown menu colour related bugs within the Time and Date interface.</em></li>
+<li><em>- Fixed Shutdown and Logout menus not starting when launching through startmenu.</em></li>
+<li><em>- Fixed a bug where closing disproperties and trying to reopen it through the start menu would only make the task appear on the taskbar.</em></li>
 </ol></li>
 <li><strong style="color: var(--atext);">2021 Febuary 6th (210206) </strong><em>-&nbsp;</em>&ldquo;Schemes&rdquo;<em> Update 3</em>
 <ul>
 <li>Updated startmenu to no longer fully close when accidentally moving your mouse off a submenu, but still closes the submenu and instead, now closes if something else is clicked on, rather than going out of the start menu.</li>
 <li>Very.Unvunny windows are now minimizable through the titlebar. (reopen by closing and reopening through the taskbar)</li>
-<li><strong>Patch notes updates<br /></strong>
+<li><strong>Patch notes updates;<br /></strong>
 <ul>
 <li>Patchnotes now use current active scheme colours alongside update dates having a seperate colour to make update logs easier to read between.</li>
 <li>Patchnotes now has a limited size vertical height, in which you scroll down within the window rather than the page height. (A temporary measure until patchnotes are moved to the mainpage.)</li>
@@ -204,7 +228,7 @@
 <li><em>Theme handling optimisations.<strong><br /></strong></em></li>
 </ul>
 </li>
-<li><strong>Page forming overhaul.</strong>
+<li><strong>Page forming overhaul;</strong>
 <ul>
 <li>Taskbar button script rehaul.</li>
 <li>Window handling and calling is now more efficent.</li>
@@ -220,7 +244,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2021 Febuary 4th (210204)</strong><em>- </em>&ldquo;Schemes&rdquo;<em> Update 1</em>
 <ul>
-<li><strong>Implimentation of &lsquo;beta&rsquo; themes<br /></strong>
+<li><strong>Implimentation of &lsquo;beta&rsquo; themes;<br /></strong>
 <ul>
 <li><strong>Added &ldquo;Dark Mode&rdquo; theme&nbsp;</strong> under &ldquo;octavia&rdquo; in the presets.<strong><br /></strong></li>
 <li>Added setup for additional themes in the future.</li>
@@ -263,7 +287,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2021 Febuary 1st (210201)<em> <strong><br /></strong></em></strong>
 <ul>
-<li><strong>Added &ldquo;Time and Date&rdquo; menu</strong><strong><br /></strong>
+<li><strong>Added &ldquo;Time and Date&rdquo; menu;</strong><strong><br /></strong>
 <ul>
 <li>Clicking on the Calender at the bottom right corner will bring up the &ldquo;Time and Date&rdquo; menu.</li>
 <li>Added current month with adjustability.</li>
@@ -278,7 +302,7 @@
 </li>
 <li><strong style="color: var(--atext);">2021 January 31st (210131)</strong><em> - &ldquo;The Customisation Update&rdquo; extention 1<strong><br /></strong></em>
 <ul>
-<li><strong>Desktop theme adjustments<br /></strong>
+<li><strong>Desktop theme adjustments;<br /></strong>
 <ul>
 <li>Selecting a wallpaper now has an overlay after clicking to imply current active wallpaper.</li>
 <li>Selecting a wallpaper no longer changes the desktop, until &ldquo;Apply&rdquo; is pressed, but is previewable through the Display Properties</li>
@@ -303,7 +327,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2021 January 30th (210130)</strong><em> - &ldquo;The debug update&rdquo;</em><br />
 <ul>
-<li>Page loading optimisations<strong><br /></strong>
+<li>Page loading optimisations;<strong><br /></strong>
 <ul>
 <li>Reference links to images and website assets are no longer being done by discord and now are sourced by github.</li>
 <li>Slimmed down required CSS to format desktop icons.</li>
@@ -357,14 +381,14 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2021 January 25th (210125)</strong>-<em> &ldquo;</em><em><em>The </em>Customization </em><em><em>Update</em>&rdquo;<strong><br /></strong></em>
 <ul>
-<li>Updated desktop handing<strong><br /></strong>
+<li>Updated desktop handing;<strong><br /></strong>
 <ul>
 <li><strong>Tumblr posts are now minimizeable.</strong></li>
 <li>Display properties is now minimizable.</li>
 <li>Windows are now fixed relative to the desktop, rather than being absolute.</li>
 </ul>
 </li>
-<li><strong>Updated Display properties CSS<br /></strong>
+<li><strong>Updated Display properties CSS;<br /></strong>
 <ul>
 <li><strong>Added background colour menu with 16 basic colours, and 4 colours directly picked to match themes.</strong></li>
 <li>Added background colour changing functionality. (This will also adjust previews in the appearance and effects tabs)</li>
@@ -391,7 +415,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2021 January 24th (210124)</strong><br />
 <ul>
-<li>Updated Display properties CSS<strong><br /></strong>
+<li>Updated Display properties CSS;<strong><br /></strong>
 <ul>
 <li>Finished the visuals of the &ldquo;Effects&rdquo; tab. (full functionality to be added later)</li>
 <li>The effects tab has a preview of desktop icons which are in sync to the desktop background and background colour set.</li>
@@ -412,7 +436,7 @@
 <li><strong style="color: var(--atext);">2021 January 23rd (210123)<br /></strong>
 <ul>
 <li><strong>Added changable desktop wallpapers.</strong></li>
-<li>Updated Display properties CSS<strong><br /></strong>
+<li>Updated Display properties CSS;<strong><br /></strong>
 <ul>
 <li>Added background changing functionality under the &ldquo;background&rdquo; tab.</li>
 <li>Added background colourchanging functionality under the &ldquo;appearance&rdquo; tab.</li>
@@ -427,7 +451,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2021 January 22nd (210122)</strong><br />
 <ul>
-<li><strong>Updated Display properties CSS<br /></strong>
+<li><strong>Updated Display properties CSS;<br /></strong>
 <ul>
 <li>Swapped out Background tab scroll bar within the display properties window with an inactive one.</li>
 <li>Revamped the checkbox CSS with custom CSS for easier functionability and easier attatchments to scripts.</li>
@@ -455,7 +479,7 @@
 <ul>
 <li>The footer of posts now shows where the post was reblogged from, and who was the original poster, rather than just who it was posted by.</li>
 <li>Posts created by Thealonic now include &ldquo;Posted by;&rdquo; and link to Thealonic&rsquo;s twitter account.</li>
-<li>Revamped page CSS<strong><br /></strong>
+<li>Revamped page CSS;<strong><br /></strong>
 <ul>
 <li>Taskbars are now globally referenced and using said references.</li>
 <li>Disabled text is now less jank and easier to position.</li>
@@ -479,7 +503,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2021 January 18th (210118)<br /></strong>
 <ul>
-<li><strong>Revamped Tumblr Post Headers<br /></strong>
+<li><strong>Revamped Tumblr Post Headers;<br /></strong>
 <ul>
 <li>Permalink redirects are now also assigned to the &ldquo;Go&rdquo; button, next to the post URL.</li>
 <li>Added a &ldquo;Search bar&rdquo; at the top of posts to replace the post IDs that use to be at the footer of every post.</li>
@@ -514,7 +538,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2021 January 16th (210116)<strong><br /></strong></strong>
 <ul>
-<li>Display properties window updates<strong><br /></strong>
+<li>Display properties window updates;<strong><br /></strong>
 <ul>
 <li>Finalised&nbsp; &ldquo;Appearance&rdquo; tab</li>
 </ul>
@@ -531,7 +555,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2021 January 15th (210115)<br /></strong>
 <ul>
-<li><strong>Display properties window updates<br /></strong>
+<li><strong>Display properties window updates;<br /></strong>
 <ul>
 <li>Tabs are now fully functionable</li>
 <li>Added the &ldquo;Backgrounds&rdquo; tab</li>
@@ -552,7 +576,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2021 January 14th (210114)</strong> <em>- The &ldquo;Ease of use&rdquo; update.</em>
 <ul>
-<li>Display properties window updates<strong><br /></strong>
+<li>Display properties window updates;<strong><br /></strong>
 <ul>
 <li>The window is now clickable and dragable.</li>
 <li>Now has a functioning task on the taskbar, allowing proper tabbing between tasks.</li>
@@ -562,7 +586,7 @@
 </li>
 <li>Active Desktop has been changed around to contain default windows that can be brought back up.</li>
 <li>Post headers are now slimmer.</li>
-<li>Window logistic updates
+<li>Window logistic updates;
 <ul>
 <li>&ldquo;Brain go brr&rdquo; and &ldquo;Very.unvunny&rdquo; can be found under &ldquo;active desktop&rdquo; or through the &ldquo;active desktop&rdquo; icon on the taskbar, if the window is closed it can be brought back to the desktop there, otherwise will become the active task. (Settings &gt; Active desktop)</li>
 <li>&ldquo;Brain go brr&rdquo; can now be closed through the titlebar.</li>
@@ -589,7 +613,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2021 January 13th (210113) </strong><em>- &ldquo;The alt-tab&rdquo; update.</em><br />
 <ul>
-<li><strong>Major Taskbar tasks overhaul</strong>
+<li><strong>Major Taskbar tasks overhaul;</strong>
 <ul>
 <li>tabbing backend has been completely redone and resolved all taskbar based alt-tabbing issues.</li>
 <li>Post taskbar back end has been redone.</li>
@@ -597,7 +621,7 @@
 <li>Clicking on &ldquo;Very.Unvunny&rdquo; on the taskbar when the task is inactive, now goes through a set of order prioritisation to determine the window that should be focused.</li>
 </ul>
 </li>
-<li>&ldquo;Bloody ell&rsquo; chums&rdquo; window adjustments<br />
+<li>&ldquo;Bloody ell&rsquo; chums&rdquo; window adjustments;<br />
 <ul>
 <li>Added more images to the image pool.</li>
 <li>The button in &ldquo;Bloody Ell&rsquo; Chums&rdquo; now cycles through 4 sets of text.</li>
@@ -614,7 +638,7 @@
 <li><strong style="color: var(--atext);">2021 January 12th (210112)</strong><br />
 <ul>
 <li>Adjusted Tumblr CSS to present threads between users closer together, taking up less horizontal room as a result.</li>
-<li>Message Box Changes</li>
+<li>Message Box Changes;</li>
 <ul>
 <li>&ldquo;Bloody Ell&rsquo; Chums&rdquo; now generates a random image on page load with designated text.</li>
 <li>Pressing on &ldquo;Bloody Ell&rsquo; Chums&rdquo;&rsquo;s button will result in selecting a random image a total of 4 times, and will close the message box on the 5th press.</li>
@@ -653,7 +677,7 @@
 </li>
 <li><strong style="color: var(--atext);">2021 January 8th (210108)<br /></strong>
 <ul>
-<li>Start Menu Changes</li>
+<li>Start Menu Changes;</li>
 <ul>
 <li>Start menu submenu arrows are using the spritesheet as a reference point.</li>
 <li>Start menu button is now using the spritesheet as a reference point.</li>
@@ -680,7 +704,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2021 January 6th (210106)</strong><br />
 <ul>
-<li>Spritesheet changes.</li>
+<li>Spritesheet changes;</li>
 <ul>
 <li><strong>Spritesheet is now a global reference on the page.</strong></li>
 <li>Added Start Menu submenus icons to the sprite sheet.</li>
@@ -709,7 +733,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2021 January 4th (210104)<em><br /></em></strong>
 <ul>
-<li>Start menu Changes</li>
+<li>Start menu Changes;</li>
 <ul>
 <li>Replaced &ldquo;Help&rdquo; button with &ldquo;Source Code&rdquo; where you can view the current version of the mark-up that runs the blog. (This will be updated every few days)</li>
 <li>Replaced a &ldquo;Run&rdquo; with a &ldquo;Donation&rdquo; button to support Thealonic page development.</li>
@@ -725,7 +749,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2021 January 3rd (210103)</strong><br />
 <ul>
-<li>Embedded post changes</li>
+<li>Embedded post changes;</li>
 <ul>
 <li>Fake scrollbar has been visually patched on posts.</li>
 <li>&ldquo;Notes&rdquo; spacing has been patched.</li>
@@ -756,7 +780,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2020 december 23rd (231220)</strong><em> &ndash; &ldquo;The postponed update&rdquo;<strong><strong><br /></strong></strong></em>
 <ul>
-<li><strong>Major title bar rework</strong></li>
+<li><strong>Major title bar rework;</strong></li>
 <ul>
 <li>Redesigned titlebars completely to be more accurate to windows 98.</li>
 <li>Clicking from one window to another now changes the titlebar from being inactive to active depending on the window you&rsquo;re clicking on or off.</li>
@@ -772,7 +796,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2020 december 22nd (201222) </strong><em>&ndash; &ldquo;Start menu&rdquo; Update<strong><strong><br /></strong></strong></em>
 <ul>
-<li>Start Menu updates</li>
+<li>Start Menu updates;</li>
 <ul>
 <li>Added &ldquo;Communications&rdquo; submenu.</li>
 <li>Added &ldquo;Entertainment&rdquo; submenu.</li>
@@ -789,7 +813,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2020 december 21st (201221)<strong><br /></strong></strong>
 <ul>
-<li>Major Start Menu updates</li>
+<li>Major Start Menu updates;</li>
 <ul>
 <li>Added &ldquo;Channels&rdquo; submenu.</li>
 <li>Added &ldquo;Links&rdquo; submenu.</li>
@@ -808,7 +832,7 @@
 <li>Startmenu framework has been reworked for better loading times and to fix bugs to do with conflicting containers.</li>
 <li>The startmenu no longer relies on a url reference in order to summon the menu, only the sidebar gradient.</li>
 </ul>
-<li><strong>Post container overhaul</strong></li>
+<li><strong>Post container overhaul;</strong></li>
 <ul>
 <li>Completely reworked CSS for post scroll bars.</li>
 <li>Post containers now have functioning buttons for the scroll bar.</li>
@@ -824,7 +848,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2020 december 19th (201219) </strong><br />
 <ul>
-<li><strong>Major Start Menu overhaul</strong></li>
+<li><strong>Major Start Menu overhaul;</strong></li>
 <ul>
 <li>Start Menu containers no longer rely on URL references to generate a backdrop for each menu and / or submenu.</li>
 <li>Start Menu has been adjusted on the back end to make loading more efficent and page size down.</li>
@@ -848,7 +872,7 @@
 <li><strong style="color: var(--atext);">2020 december 18th (201218)</strong>
 <ul>
 <li>Added a loading screen inbetween the logged out screen and the homepage.</li>
-<li>More additions to the Start Menu</li>
+<li>More additions to the Start Menu;</li>
 <ul>
 <li>Added &ldquo;Programs&rdquo; submenu.</li>
 <li>Start menu now changes cursor to &ldquo;pointer&rdquo; when hovered.</li>
@@ -869,7 +893,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2020 december 17th (201217)</strong>
 <ul>
-<li><strong>Major Start Menu overhaul</strong></li>
+<li><strong>Major Start Menu overhaul;</strong></li>
 <ul>
 <li>Added &ldquo;Active desktop" submenu.</li>
 <li>Going into submenus now activates the button that keeps the submenu open, this also includes submenus.</li>
@@ -889,7 +913,7 @@
 </li>
 <li><strong style="color: var(--atext);">2020 december 16th (201216)</strong>
 <ul>
-<li><strong>Major &ldquo;Start Menu&rdquo; additions</strong></li>
+<li><strong>Major &ldquo;Start Menu&rdquo; additions;</strong></li>
 <ul>
 <li>&ldquo;Run&rdquo; button added.</li>
 <li>&ldquo;Find&rdquo; button added alongside a new submenu.</li>
@@ -899,7 +923,7 @@
 <li>&ldquo;Programs&rdquo; button added with a placement holder submenu.</li>
 </ul>
 <li>Changed bottom scrollbar to include the bottom right corner, aposed to the side scrollbar.</li>
-<li><strong>Logout menu adjustments</strong></li>
+<li><strong>Logout menu adjustments;</strong></li>
 <ul>
 <li>&ldquo;Logout&rdquo; screen has been replaced with the &ldquo;Shut down&rdquo; menu.</li>
 <li>&ldquo;Shut Down&rdquo; button added.</li>
@@ -917,7 +941,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2020 december 15th (201215)</strong>
 <ul>
-<li><strong>Complete Scrollbar Revamp</strong></li>
+<li><strong>Complete Scrollbar Revamp;</strong></li>
 <ul>
 <li>The scrollbar has now been broken down into 11 sections, opposed to the previous 7 sections for easier compatibility for clicking.</li>
 <li>Horizontal and vertical scroll bar now has 6 parts each, 3 between them including; top / left side, middle, bottom / right side.</li>
@@ -927,7 +951,7 @@
 <li>Scrollbar containment adjustments.</li>
 </ul>
 <li>Added &ldquo;hover&rdquo; effect to pressable buttons, such as the Titlebar maximize shows &ldquo;maximize&rdquo; when hovered over.</li>
-<li><strong>Major Start Menu addtions &amp; adjustments.</strong></li>
+<li><strong>Major Start Menu addtions &amp; adjustments;</strong></li>
 <ul>
 <li>Added &ldquo;Log off&rdquo; button which creates a &ldquo;log off&rdquo; menu.</li>
 <li>Horizontal and vertical scroll bar now has 6 parts each, 3 between them including; top / left side, middle, bottom / right side.</li>
@@ -944,7 +968,7 @@
 </li>
 <li><strong style="color: var(--atext);">2020 december 14th (201214)</strong>
 <ul>
-<li><strong>Post window rework</strong></li>
+<li><strong>Post window rework;</strong></li>
 <ul>
 <li>Complete rehaul of how posts are contained and displayed.</li>
 <li>Vertical scroll bar has been added.</li>
@@ -962,7 +986,7 @@
 </li>
 <li><strong style="color: var(--atext);">2020 december 12th (201212)</strong>
 <ul>
-<li><strong>Major Start Menu changes</strong></li>
+<li><strong>Major Start Menu changes;</strong></li>
 <ul>
 <li>Button hover effect added.</li>
 <li>Start menu now has the ability to have submenus.</li>
@@ -973,7 +997,7 @@
 <li>Startmenu is now nolonger hidden by removing the image refferal addresses from buttons / start menus.</li>
 <li>Fixed a start menu button glitch appearing, regardless of the menu not being there due to previous hover effect.</li>
 </ul>
-<li><strong>Video post changes<br /></strong></li>
+<li><strong>Video post changes;<br /></strong></li>
 <ul>
 <li>Video margin adjusted from vertical to horizontal to take up less space.</li>
 <li>Videos now overflow outside of the message box to fix black bars.</li>
@@ -983,7 +1007,7 @@
 </li>
 <li><strong style="color: var(--atext);">2020 december 10th (201210)</strong>
 <ul>
-<li>Message boxes now have an easier to add backend</li>
+<li>Message boxes now have an easier to add backend;</li>
 <ul>
 <li>&ldquo;Last updated&rdquo; box re-added.</li>
 <li>&ldquo;bloody ell&rsquo; chums&rdquo; message box re-added.</li>
@@ -991,11 +1015,11 @@
 <li>Adjustments to message box placements since removal</li>
 </ul>
 <li>Unique post page redirects have been finished.</li>
-<li>Patch notes added</li>
+<li>Patch notes added;</li>
 <ul>
 <li>&nbsp;Patch notes updated from Dec 1st to Dec 10th.</li>
 </ul>
-<li>Start menu adjustments.</li>
+<li>Start menu adjustments;</li>
 <ul>
 <li>Start menu buttons added.</li>
 <li>Start menu buttons are now individual assets.</li>
@@ -1013,7 +1037,7 @@
 <li><strong>Start menu has been added.</strong></li>
 <li>Taskbar now has individually clickable icons.</li>
 <li>Bottom task bar applications are now individual buttons.</li>
-<li>Post boxes have been adjusted</li>
+<li>Post boxes have been adjusted;</li>
 <ul>
 <li>Photoset handling has been patched.</li>
 <li>Each post has now got the type of post it is at the bottom of said post.</li>
@@ -1042,7 +1066,7 @@
 </li>
 <li><strong style="color: var(--atext);">2020 december 7th (201207)</strong>
 <ul>
-<li><strong>Source posts have been patched</strong></li>
+<li><strong>Source posts have been patched;</strong></li>
 <ul>
 <li>Question posts patched &amp; adjusted.</li>
 <li>Video posts have new backend containers for proper scaling.</li>
@@ -1059,7 +1083,7 @@
 <li><strong style="color: var(--atext);">2020 december 6th (201206)</strong>
 <ul>
 <li>Discord embeded window has been removed to just be the base discord embed.</li>
-<li>Multiple desktop icons adjustments</li>
+<li>Multiple desktop icons adjustments;</li>
 <ul>
 <li>&ldquo;SimCity 4&rdquo; icon added.</li>
 <li>&ldquo;Roller Coaster Tycoon 2&rdquo; icon adjusted.</li>
@@ -1077,7 +1101,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2020 december 5th (201205)</strong>
 <ul>
-<li>New desktop icons added</li>
+<li>New desktop icons added;</li>
 <ul>
 <li>&ldquo;Roller Coaster Tycoon 2&rdquo; icon added.</li>
 <li>&ldquo;Red Alert 2&rdquo; icon Added.</li>
@@ -1100,7 +1124,7 @@
 </ol></li>
 <li><strong style="color: var(--atext);">2020 december 4th (201204)</strong>
 <ul>
-<li><strong>Major taskbar adjustments</strong></li>
+<li><strong>Major taskbar adjustments;</strong></li>
 <ul>
 <li>Titlebars now have clickable functions.</li>
 <li>Nameplates have been reworked.</li>
@@ -1108,14 +1132,14 @@
 <li>Name plates have been renamed.</li>
 </ul>
 <li>All posts are now embedded with a treeview, representative of win98.</li>
-<li>Message boxes use new framework</li>
+<li>Message boxes use new framework;</li>
 <ul>
 <li>Videos have tons of scaling issues.</li>
 <li>Images don&rsquo;t embed properly.</li>
 <li>Buttons no longer work until new scripts.</li>
 </ul>
 <li>Current bugs with how message boxes are displayed with posts.</li>
-<li>Backend adjustments and rework</li>
+<li>Backend adjustments and rework;</li>
 <ul>
 <li>Removed tons of conflicting CSS styles.</li>
 <li>Removed a bunch of old scripts.</li>
@@ -1125,7 +1149,7 @@
 </li>
 <li><strong style="color: var(--atext);">2020 december 3rd (201203)</strong>
 <ul>
-<li><strong>backend adjustments and rework</strong>
+<li><strong>backend adjustments and rework;</strong>
 <ul>
 <li>Backend code has been sorted and organised</li>
 <li>General script organisation and refrence links</li>
