@@ -1832,49 +1832,39 @@
                         <!-- verticalsplitterER -->
                         <div class="menuapplicationsplit" style="width:139px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px"> </div>
                         <!-- Programs -->
-                        <label> <!--needed for 32x32-->
-                            <div class="submenu36" style="width: 142px;" id="menuprograms" onmouseover="programsopen()" onmouseout="programsclosed()"> 
-                                <div class="menuprograms"></div>
-                                <label><labs><underline>P</underline>rograms </labs></label>
-                            <div class="lmenuarrow" id="menuarrow1"></div></div></label>
+                        <label><div class="submenu36" style="width: 142px;" id="menuprograms" onmouseover="programsopen()" onmouseout="programsclosed()"> 
+                            <div class="menuprograms"></div><label><labs><underline>P</underline>rograms </labs></label>
+                                <div class="lmenuarrow" id="menuarrow1"></div></div></label>
                         <!-- Favourites -->
-                        <label> <!--needed for 32x32-->
-                            <div class="submenu36" style="width: 142px;" id="menufavourites" onmouseover="favouritesopen()" onmouseout="favouritesclosed()"> 
-                                <div class="menufavourites"></div><label><labs>My F<underline>a</underline>vourites </labs></label>
-                            <div class="lmenuarrow" id="menuarrow2"></div></div></label>
+                        <label><div class="submenu36" style="width: 142px;" id="menufavourites" onmouseover="favouritesopen()" onmouseout="favouritesclosed()"> 
+                            <div class="menufavourites"></div><label><labs>My F<underline>a</underline>vourites </labs></label>
+                                <div class="lmenuarrow" id="menuarrow2"></div></div></label>
                         <!-- Documents -->  
-                        <label> <!--needed for 32x32-->
-                            <div class="submenu36" style="width: 142px;" id="menudocuments" onmouseover="documentsopen()" onmouseout="documentsclosed()"> 
-                                <div class="menudocuments"></div><label><labs><underline>D</underline>ocuments </labs></label>
-                            <div class="lmenuarrow" id="menuarrow3"></div></div></label>
+                        <label><div class="submenu36" style="width: 142px;" id="menudocuments" onmouseover="documentsopen()" onmouseout="documentsclosed()"> 
+                            <div class="menudocuments"></div><label><labs><underline>D</underline>ocuments </labs></label>
+                                <div class="lmenuarrow" id="menuarrow3"></div></div></label>
                         <!-- Settings -->
-                        <label> <!--needed for 32x32-->
-                            <div class="submenu36" style="width: 142px;" id="menusettings" onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
-                                <div class="menusettings"></div><label><labs><underline>S</underline>ettings </labs></label>
-                            <div class="lmenuarrow" id="menuarrow4"></div></div></label>
+                        <label><div class="submenu36" style="width: 142px;" id="menusettings" onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
+                            <div class="menusettings"></div><label><labs><underline>S</underline>ettings </labs></label>
+                                <div class="lmenuarrow" id="menuarrow4"></div></div></label>
                         <!-- Find -->
-                        <label> <!--needed for 32x32-->
-                            <div class="submenu36" style="width: 142px;" id="menufind" onmouseover="findopen()" onmouseout="findclosed()"> 
-                                <div class="menufind"></div><label><labs><underline>F</underline>ind </labs></label>
-                            <div class="lmenuarrow" id="menuarrow5"></div></div></label>
+                        <label><div class="submenu36" style="width: 142px;" id="menufind" onmouseover="findopen()" onmouseout="findclosed()"> 
+                            <div class="menufind"></div><label><labs><underline>F</underline>ind </labs></label>
+                                <div class="lmenuarrow" id="menuarrow5"></div></div></label>
                         <!--command console submenu -->
-                        <label> <!--needed for 32x32-->
-                            <div class="submenu36" style="width: 142px;">
-                                <div class="menushutdown"></div><label><labs><underline>R</underline>un</labs></label></div></label>
+                        <label><div class="submenu36" style="width: 142px;">
+                            <div class="menushutdown"></div><label><labs><underline>R</underline>un</labs></label></div></label>
                         <!-- verticalsplitterER -->
-                        <div class="menuapplicationsplit" style="width:139px; margin-left: 2px; margin-top: 3px; margin-bottom: 4px"> </div>
-                        <!-- source code -->     
-                        <a href="https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/main">
-                            <div class="submenu36" style="width: 142px;" >
-                                <div class="menuhelp"></div><label><labs><underline>S</underline>ource-code </labs></label></div></a>
+                        <div class="menuapplicationsplit" style="width:139px; margin-left: 2px; margin-top: 3px; margin-bottom: 4px"></div>
+                        <!-- source code -->  
+                        <label><a href="https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/main"><div class="submenu36" style="width: 142px;">
+                                <div class="menuhelp"></div><label><labs><underline>S</underline>ource-code </labs></label></div></a></label>
                         <!-- support development -->
-                        <label> <!--needed for 32x32-->
-                            <a href="https://paypal.me/TheaVanherst"><div class="submenu36" style="width: 142px;">
-                                <div class="menurun" ></div><label><labs><underline>S</underline>upport development </labs></label></div></a></label>   
+                        <label><a href="https://paypal.me/TheaVanherst"><div class="submenu36" style="width: 142px;">
+                            <div class="menurun" ></div><label><labs><underline>S</underline>upport development </labs></label></div></a></label>   
                         <!--Log off submenu -->
-                        <label onclick="logoff(); shutdownno();"> <!--needed for 32x32-->
-                            <div class="submenu36" style="width: 142px;">
-                                <div class="menulogoff"></div><label><labs><underline>L</underline>og off </labs></label></div></label>  
+                        <label><div class="submenu36" style="width: 142px;" onclick="logoff(); shutdownno();">
+                            <div class="menulogoff"></div><label><labs><underline>L</underline>og off </labs></label></div></label>  
                     </div>
 
 <!-- Programs menu rendering ------------------------------------------------------------------------------>
@@ -2112,54 +2102,42 @@
                         <div class="win98post" style="margin-left: 20000px; margin-top: -63px; width: 228px; height:60px" id="linkssubmenu" 
                              onmouseover="linksopen()" onmouseout="linksclose()"> 
                             <div class="submenu20" onclick="ovfvpload()">
-                                <div class="menufavouriteslink"></div>
-                                <label><labc>The Official Very Funny Video Playlist</labc></label></div></a>
+                                <div class="menufavouriteslink"></div><label><labc>The Official Very Funny Video Playlist</labc></label></div></a>
                             
                             <div class="submenu20" onclick="csgoload()">
-                                <div class="menufavouriteslink"></div>
-                                <label><labc>CSGO Funny Moments</labc></label></div>
+                                <div class="menufavouriteslink"></div><label><labc>CSGO Funny Moments</labc></label></div>
                                         
                             <div class="submenu20" onclick="">
-                                <div class="menudocumentssound"></div>
-                                <label><labc>The 787 Survival Challange</labc></label></div>
+                                <div class="menudocumentssound"></div><label><labc>The 787 Survival Challange</labc></label></div>
                         </div>
                                 
                         <!-- Music submenu -->
                         <div class="win98post" style="margin-left: 20000px; margin-top: -43px; width: 160px; height:195px" id="mediasubmenu" 
                              onmouseover="mediaopen()" onmouseout="mediaclose()"> 
                             <div class="submenu20" onclick="gabetousleload()">
-                                <div class="menuentertainment5"></div>
-                                <label><labc>Gabetousle</labc></label></div>
+                                <div class="menuentertainment5"></div><label><labc>Gabetousle</labc></label></div>
                             <div class="submenu20" onclick="gabetousleload()">
-                                <div class="menudocumentssound"></div>
-                                <label><labc>Rocking, Rollin n' Boneing.</labc></label></div>
+                                <div class="menudocumentssound"></div><label><labc>Rocking, Rollin n' Boneing.</labc></label></div>
                             <div class="submenu20" onclick="mylittleponyload()">
-                                <div class="menuentertainment5"></div>
-                                <label><labc>The My Little Pony playlist</labc></label></div>
+                                <div class="menuentertainment5"></div><label><labc>The My Little Pony playlist</labc></label></div>
                                         
                             <div class="startmenusplitter"></div>
 
                             <div class="submenu20" onclick="Crossload()">
-                                <div class="menuentertainment5"></div>
-                                <label><labc>Justice - Cross</labc></label></div>
+                                <div class="menuentertainment5"></div><label><labc>Justice - Cross</labc></label></div>
                             <div class="submenu20" onclick="AudioVideoDiscoload()">
-                                <div class="menuentertainment5"></div>
-                                <label><labc>Justice - Audio, Video, Disco</labc></label></div>
+                                <div class="menuentertainment5"></div><label><labc>Justice - Audio, Video, Disco</labc></label></div>
                             <div class="submenu20" onclick="Womanload()">
-                                <div class="menuentertainment5"></div>
-                                <label><labc>Justice - Woman</labc></label></div>
+                                <div class="menuentertainment5"></div><label><labc>Justice - Woman</labc></label></div>
 
                             <div class="startmenusplitter"></div>
                                     
                             <div class="submenu20" onclick="virtualselfload()">
-                                <div class="menuentertainment5"></div>
-                                <label><labc>Porter Robinson - Virtual Self</labc></label></div>
+                                <div class="menuentertainment5"></div><label><labc>Porter Robinson - Virtual Self</labc></label></div>
                             <div class="submenu20" onclick="natureload()">
-                                <div class="menuentertainment5"></div>
-                                <label><labc>Porter Robinson - Nature</labc></label></div>
+                                <div class="menuentertainment5"></div><label><labc>Porter Robinson - Nature</labc></label></div>
                             <div class="submenu20" onclick="worldsload()">
-                                <div class="menuentertainment5"></div>
-                                <label><labc>Porter Robinson - worlds</labc></label></div>
+                                <div class="menuentertainment5"></div><label><labc>Porter Robinson - worlds</labc></label></div>
                         </div>
                     </div>
 
@@ -2169,38 +2147,31 @@
                          onmouseover="documentsopen()" onmouseout="documentsclosed()"> 
                         <!-- My Documents -->
                         <div class="submenu20">
-                            <div class="menudocuments1"></div>
-                            <label><labc> My Documents </labc></label></div>
+                            <div class="menudocuments1"></div><label><labc> My Documents </labc></label></div>
                         <div class="startmenusplitter"> </div>
                         <!-- VeryVhersty -->
                         <div class="submenu20" onmouseover="vherstyopen()" onmouseout="vherstyclose()" id="vherstymenu">
                             <div class="menufavouritesfolder"></div><label><labc> Very Vhersty </labc></label>
                                 <div class="smenuarrow" id="submenuarrow24"></div></div>
                         <div class="submenu20">
-                            <div class="menudocumentssound"></div>
-                            <label><labc> Braden+.wav </labc></label></div>
+                            <div class="menudocumentssound"></div><label><labc> Braden+.wav </labc></label></div>
                         <div class="submenu20">
-                            <div class="menudocumentssound"></div>
-                            <label><labc> OurHeartlessMaster.wav </labc></label></div>
+                            <div class="menudocumentssound"></div><label><labc> OurHeartlessMaster.wav </labc></label></div>
                         <!-- Document files -->
                         <a href="https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/main" target="_blank"><div class="submenu20">
-                            <div class="menudocumentsdoc"></div>
-                            <label><labc> Thealonic.doc </labc></label></div></a>
+                            <div class="menudocumentsdoc"></div><label><labc> Thealonic.doc </labc></label></div></a>
                             
                         <div class="win98post" style="margin-left: 20000px; margin-top: -83px; width: 160px; height:67px" id="vherstysubmenu" 
                              onmouseover="vherstyopen()" onmouseout="vherstyclose()"> 
                             <a href="https://veryvhersty.tumblr.com/" target="_blank"><div class="submenu20">
-                                <div class="menufavouriteslink"></div>
-                                <label><labc> Vhersty </labc></label></div></a>
+                                <div class="menufavouriteslink"></div><label><labc> Vhersty </labc></label></div></a>
                                         
                             <div class="startmenusplitter"></div>
                                 
                             <div class="submenu20" onclick="win98load()">
-                                <div class="menufavouriteslink"></div>
-                                <label><labc>Windows 98 Development</labc></label></div>
+                                <div class="menufavouriteslink"></div><label><labc>Windows 98 Development</labc></label></div>
                             <div class="submenu20" onclick="csgoload()">
-                                <div class="menufavouriteslink"></div>
-                                <label><labc>CSGO Funny Moments</labc></label></div>
+                                <div class="menufavouriteslink"></div><label><labc>CSGO Funny Moments</labc></label></div>
                         </div>
                     <!--Documents submenu END --> 
                     </div>
@@ -2211,39 +2182,29 @@
                          onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
                         <!-- Control panel -->
                         <div class="submenu20">
-                            <div class="menusettings1"></div>
-                            <label><labc> Control panel </labc></label></div>
+                            <div class="menusettings1"></div><label><labc> Control panel </labc></label></div>
                         <!-- Printers -->
                         <div class="submenu20">
-                            <div class="menusettings2"></div>
-                            <label onclick="backgroundtab(); disktask(); menuclosed()"><labc> Display Properties </labc></label></div>
+                            <div class="menusettings2"></div><label onclick="backgroundtab(); disktask(); menuclosed()"><labc> Display Properties </labc></label></div>
                         <!-- Taskbar & Start menu -->
                         <div class="submenu20">
-                            <div class="menusettings3"></div>
-                            <label><labc> Taskbar & Start menu </labc></label></div>
+                            <div class="menusettings3"></div><label><labc> Taskbar & Start menu </labc></label></div>
                         <!-- Folder options -->
                         <div class="submenu20">
-                            <div class="menusettings4"></div>
-                            <label><labc> Folder options... </labc></label></div>
+                            <div class="menusettings4"></div><label><labc> Folder options... </labc></label></div>
                         <!-- Active desktop -->
                         <div class="submenu20" onmouseover="settingsactivedesktopopen();" onmouseout="settingsactivedesktopclose();" id="activedesktop">
-                            <div class="menusettings5"></div> 
-                            <label><labc> Active desktop </labc></label> 
+                            <div class="menusettings5"></div><label><labc> Active desktop </labc></label> 
                                 <div class="smenuarrow" id="submenuarrow31"></div></div>
                         <!-- verticalsplitterER -->
                         <div class="startmenusplitter"></div>
                         <!--Folder options -->
                         <div class="submenu20" style="margin-top: 3px">
-                            <div class="menusettings6"></div>
-                            <label><labc> Windows Update</label></div>
+                            <div class="menusettings6"></div><label><labc> Windows Update</label></div>
                         <!-- Activedesktop submenu -->
-                        <div class="win98post" style="margin-left:20000px; margin-top:-50px; width:170px; height:40px" id="activedesktopsubmenu" 
-                             onmouseover="settingsactivedesktopopen()" onmouseout="settingsactivedesktopclose()">
-                            <!--Buttons 1-3 -->
-                            <div class="submenu20" style="cursor: pointer;"> 
-                                <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="messageopen(); menuclosed()"> 🧮 brain go brrrrr </label></div>
-                            <div class="submenu20" style="cursor: pointer;"> 
-                                <label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="vunnytask(); vunnypositionreset(); menuclosed()"> 👿 very.unvunny</label></div>
+                        <div class="win98post" style="margin-left:20000px; margin-top:-50px; width:170px; height:40px" id="activedesktopsubmenu" onmouseover="settingsactivedesktopopen()" onmouseout="settingsactivedesktopclose()">
+                            <div class="submenu20" style="cursor: pointer;"><label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="messageopen(); menuclosed()"> 🧮 brain go brrrrr </label></div>
+                            <div class="submenu20" style="cursor: pointer;"><label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="vunnytask(); vunnypositionreset(); menuclosed()"> 👿 very.unvunny</label></div>
                         <!--Settings submenu END --> 
                         </div> 
                     <!--Settings menu END -->            
