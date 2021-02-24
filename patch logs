@@ -1,10 +1,27 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
-<div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll;">
+<div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll; padding-right: 4px;">
 <ul>
-<li><strong style="color: var(--atext);">2021 Febuary 22th (210222) </strong>- "Start Menu Cleanup" Update<strong style="color: var(--atext);"><br /></strong>
+<li><strong style="color: var(--atext);">2021 Febuary 24th (210224)</strong>
+<ul>
+<li>Media Player Changes;
+<ul>
+<li><strong>Added Full Screen functionality </strong>which can be toggled through pressing Maximize on the titlebar.</li>
+<li>Changing to fullscreen mode expands the address bar to include the playlist URL and will shorten it when restoring down.</li>
+<li>Added temporary volume adjustment.</li>
+</ul>
+</li>
+<li><strong>Added Patchnotes as a desktop task rather than a page redirect.</strong></li>
+<li>Tumblr post titlebar changes have been disabled until optimisation solutions are found.</li>
+<li>Added a icon toggle for being able to restore down windows after maximizing.</li>
+</ul>
+<ol>
+<li>- Fixed a couple of issues with the URL bar in the Media Player.</li>
+<li>- Fixed some bugs with the shuffle button in the Media Player.</li>
+</ol></li>
+<li><strong style="color: var(--atext);">2021 Febuary 23th (210223) </strong>- &ldquo;Start Menu Cleanup&rdquo; Update<strong style="color: var(--atext);"><br /></strong>
 <ul>
 <li>Added Windows Embedded Media player to the start menu.</li>
-<li><strong>Removed Shut Down button from startmenu alongside matching UI.&nbsp;</strong>This is due to outdated / old css I don't know how to fix alongside not really required as log out has the same functionality.</li>
+<li><strong>Removed Shut Down button from startmenu</strong> alongside matching UI.&nbsp;This is due to outdated / old css I don&rsquo;t know how to fix alongside not really required as log out has the same functionality.</li>
 <li>Mounting playlists into the Embedded Mediaplayer is now easier.</li>
 <li><strong>Start Menu Changes;</strong>
 <ul>
@@ -19,7 +36,7 @@
 </ul>
 <ol>
 <li>- Embedded Media Player loading tweaks.</li>
-<li>- Fixed a start menu bug where changing theme would retain the previous theme's colours in the startmenu.</li>
+<li>- Fixed a start menu bug where changing theme would retain the previous theme&rsquo;s colours in the startmenu.</li>
 <li>- Fixed issues with optimisations from yesterday&rsquo;s start menu fixes.</li>
 <li><em>- Fixed Embedded Media URL showing the playlist link in the address bar on load.</em></li>
 <li><em>- Fixed a bug where if the video from the Embedded Media Player isn&rsquo;t not loaded, it would cause other default windows to also not load in.</em></li>
