@@ -59,6 +59,7 @@
                     --prewhite: #ffffff; --prelightg: #dfdfdf;  --presilver: #c0c0c0; --premidgray: #ababab; --pregray: #808080; --preblack: #0a0a0a; --preactivetitle: #ffffff;
                     --preprussian: #00207c ; --prewincyan: #008080; --preyellow: #ffff00; --prefont: #000000; --prefonttitle: #ffffff; --prehover: #ffffff; ----preinactivetitle: #ffffff;
                     
+                    --slider: 550px;
                     --invert: 0; --preinvert: 0; --shuffleinvert: 0.5}
 
             /* desktop config settings */
@@ -229,7 +230,7 @@
             .menusystemtools1 {     background-position: -140px  -92px;} /* character map */    .menusystemtools11 {    background-position: -140px -112px;} /* systeminfo */
             .menusystemtools2 {     background-position: -160px  -92px;} /* clipboard viewer */ .menusystemtools12 {    background-position: -160px -112px;} /* systemmonitor */
             .menusystemtools3 {     background-position: -180px  -92px;} /* disk cleanup */     .menusystemtools13 {    background-position: -180px -112px;} /* welcometowindows */
-            .menusystemtools4 {     background-position: -200px  -92px;} /* disk defrag */      .explorerlinks {        background-position: -153px -222px; height:  5px; width:  4px; filter: invert(var(--invert))}
+            .menusystemtools4 {     background-position: -200px  -92px;} /* disk defrag */      .explorerlinks {        background-position: -153px -222px; height:  5px; width:  4px; margin-top:-14px; filter: invert(var(--invert))}
             .menusystemtools5 {     background-position: -220px  -92px;} /* drive converter */  .menuprograms123 {      background-position:    0px  -72px;} /* folder icon */
             .menusystemtools6 {     background-position: -240px  -92px;} /* maintain wizard */  .menuprograms4 {        background-position: -140px -132px;} /* internet explorer */
             .menusystemtools7 {     background-position: -260px  -92px;} /* net watcher */      .menuprograms5 {        background-position: -160px -132px;} /* MSDOS */
@@ -288,11 +289,12 @@
             .energysaving {         width: 71px; height: 42px; background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/energy.png')}
             .currentclock {         width:127px; height:127px; background-image: url('https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/clock.png')}
             
-            .playbutton, .pausebutton, .stopbutton, .shufflebutton, .nextbutton, .fastforwardbutton, .rewindbutton, .previousbutton 
+            .playbutton, .pausebutton, .stopbutton, .shufflebutton, .nextbutton, .fastforwardbutton, .rewindbutton, .previousbutton, .volumeup, .volumedown
             { background-image: var(--spritesheet); height: 13px; width: 13px; margin: 6px; float: left; filter: invert(var(--invert)); cursor:pointer;}
             .playbutton { background-position: -198px -213px} .pausebutton { background-position: -211px -213px;} .stopbutton { background-position: -225px -213px;} .shufflebutton { background-position: -266px -213px; width:17px;}
             .fastforwardbutton { background-position: -253px -213px; width: 9px; } .rewindbutton { background-position: -241px -213px; width: 9px; } 
             .previousbutton { background-position: -237px -213px;} .nextbutton { background-position: -252px -213px;}
+            .volumeup { background-position: -284px -215px; height: 9px; width: 9px} .volumedown { background-position: -293px -215px; height: 9px; width: 9px}
             
 /* Formatting ref css ------------------------------------------------------------------------------*/
             
@@ -356,7 +358,7 @@
             
             .tagged { font-size: 9px; opacity: 0.5;}
             
-            #progressBar { width: 550px; height: 6px; background-color: var(--silver); display: none; margin-top: 1px;}
+            #progressBar { width: var(--slider); height: 6px; background-color: var(--silver); display: none; margin-top: 1px;}
             #progressBar div { height: 100%; width: 0; background-color: var(--atext)}
         </style>
      
@@ -457,7 +459,7 @@
              <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
              <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="title-bar-text" id="messagetext">🧮 brain go brrrrr</div></div>
              <div class="window-body" style="margin-right: 4px; margin-top: 5px; margin-bottom: 3px; padding:2px">
-                <p style="color: var(--blue); margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>03:20pm on Febuary 23th, 2021. [GMT]</label></p></div>
+                <p style="color: var(--blue); margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <style="color: black"><label>04:20pm on Febuary 23th, 2021. [GMT]</label></p></div>
         </div>
         
         <script>
@@ -473,30 +475,26 @@
         
         <div class="win98post" style="position: fixed; margin-left:-20000px; left: 300px; top: 200px;" onmousedown="embedactive()" id="embed">
             <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="embedclose()"><div class="close"></div></div>
-            <a href="" target="_blank" id="embeddedmedialink"><div class="win98titlebarbutton" title="Minimize"> <div class="maximize"></div></div></a>
+            <div class="win98titlebarbutton" title="Minimize" onclick="fullscreenembed()" id="embedmaxtitle"> <div class="maximize" id="embedmaximize"></div></div>
             <div class="win98titlebarbutton" title="Minimize" onclick="embedminimize()"> <div class="minimize"></div></div>
             <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
             <div class="title-bar-98" id="embedwindow"> <div class="title-bar-text" id="embedtext">🎬 Windows Embedded Media Player</div></div>
             <div class="window-body" style="padding:0px;"> 
             
                 <div class="post-header" style="height: 27px; margin-top:-6px; padding:0px;">
-                    <fieldset style="position:absolute; height: 21px; width:562px; margin-left:-7px; padding:2px;">     
+                    <fieldset style="position:absolute; height: 21px; width:562px; margin-left:-7px; padding:2px;" id="playerfs">     
                         <!-- Left side of the top container -->
                         <div class="small_seperator" style="margin-top:1px; height:17px;"></div> <!-- Left side of the Bottom container -->
                         <div class="container" style="position:absolute; margin-left:11px; margin-top:5px;">A<underline>d</underline>dress</div>
-                        <ul class="tree-view" style="position:absolute; width:400px; height:9px; margin-left:55px; overflow:hidden;">
+                        <ul class="tree-view" style="position:absolute; width:400px; height:9px; margin-left:55px; overflow:hidden;" id="playertv">
                             <div class="menufavouriteslink" style="position:absolute; margin-top:-5px; margin-left:-5px;"></div>
                         <div class="container" style="margin-top:-1px; margin-left:16px;" id="mediaplayer"></div></ul>
-                        
-                        <a href="#" id="youtubelink" target="_blank"><div class="container" style="position: absolute; margin-left:467px; height:22px; width:49px;">
-                            <div class="explorergo" style="margin-left:5.5px;"></div> <div class="reflinkblack" style="margin-top:5px;">Go</div></div></a>
-                        
-                        <div class="big_seperator" style="position: absolute; margin-left:514px; margin-top:0px; height:21px;"></div> 
-                        
-                        <div class="postlinks-container" style="position: absolute; margin-left:512px; height:22px; width:52px; cursor:pointer;" onclick="videolinkdropdown()">
+
+                        <div class="postlinks-container" style="float:right; height:22px; width:52px; cursor:pointer;" onclick="videolinkdropdown()">
                             <div class="container" style="position: absolute; margin-left:12px; margin-top:5px;">Links
-                                <div class="explorerlinks" style="position: absolute; margin-left:27px; margin-top:-14px;"></div>
-                                <div class="explorerlinks" style="position: absolute; margin-left:30px; margin-top:-14px;"></div></div>
+                                <div class="explorerlinks" style="position: absolute; margin-left:27px;"></div>
+                                <div class="explorerlinks" style="position: absolute; margin-left:30px;"></div>
+                            </div>
                                     
                             <div class="win98post" style="position: absolute; width:150px; margin-left:-20000px;" id="tumblrlinkdrop" onmouseleave="videolinkdropdownclose()">
                                 <a href="" id="playlistlink" target="_blank"><div class="submenu18"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Playlist URL </label></div></a>
@@ -506,24 +504,23 @@
                                 <div class="submenu18" onclick="nextVideo()"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Skip to next video </label></div>
                                 <div class="submenu18" onclick="previousVideo()"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Skip to previous video </label></div>
                                 <div class="menuapplicationsplit" style="width:100%; margin-top:1px; margin-bottom:1px;"></div>
-                                <div class="submenu18" onclick="speedincrease5()"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Increase jump speed by 5 </label></div>
-                                <div class="submenu18" onclick="speeddecrease5()"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Decrease jump speed by 5 </label></div>
+                                <div class="submenu18" onclick="speedincrease5(); videolinkdropdown(); speedupdate()"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Increase jump speed by 5 </label></div>
+                                <div class="submenu18" onclick="speeddecrease5(); videolinkdropdown(); speedupdate()"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Decrease jump speed by 5 </label></div>
+                                <div class="menuapplicationsplit" style="width:100%; margin-top:1px; margin-bottom:1px;"></div>
                         </div></div>
+                        
+                        <div class="big_seperator" style="float:right; margin-right:-4px; margin-top:0px; height:21px;"></div> 
+                        
+                        <a href="#" id="youtubelink" target="_blank"><div class="container" style="float:right; height:22px; width:49px; margin-right:-6px;">
+                            <div class="explorergo" style="margin-left:5.5px;"></div> <div class="reflinkblack" style="margin-top:5px;">Go</div></div></a>
                     </fieldset>
                 </div>
-                <script>
-                    var videolinksdrop = false, videolink = document.getElementById("tumblrlinkdrop")
-                    function videolinkdropdown(){ 
-                               if (videolinksdrop == false) {videolink.style.marginLeft = "50px"; videolinksdrop = true
-                        } else if (videolinksdrop == true){videolink.style.marginLeft = "-20000px"; videolinksdrop = false}}
-                    function videolinkdropdownclose(){videolink.style.marginLeft = "-20000px"; videolinksdrop = false}
-                </script>
- 
-                <ul class="tree-view" style="width: 560px; height: 100%; padding:2px; padding-bottom:0px; margin-right:-6px; margin-left:-6px; margin-bottom:-5px;">
+
+                <ul class="tree-view" style="width: 560px; height: 100%; padding:2px; padding-bottom:0px; margin-right:-6px; margin-left:-6px; margin-bottom:-5px;" id="playerul">
                     <div id="player" style="height: 315px; width: 560px; background-color:--black;"></div></ul>
-                    
+ 
                 <div class="container" style="height:56px; width:100%;">
-                    <div class="wieldset" style="width:550px; height:4px; margin-top:12px; margin-left:-2px; ">
+                    <div class="wieldset" style="width:550px; height:4px; margin-top:12px; margin-left:-2px;" id="playerws">
                         <div class="container" style="position:absolute; margin-top:-2px; margin-left:-1px;"><div class="video_progressbar"><div id="progressBar"><div></div></div></div>
                     <div class="buttons" style="margin-top:3px; margin-bottom:2px">
                         <div class="playbutton" onclick="startVideo()"></div><div class="pausebutton" onclick="pauseVideo()"></div><div class="stopbutton" onclick="stopVideo()"></div> 
@@ -535,13 +532,25 @@
                         <div class="big_seperator" style="height:18px; margin-top:4px;"></div>
                         <div class="shufflebutton" onclick="shuffleVideo()" style="filter: invert(var(--shuffleinvert));"></div>
                         <div class="big_seperator" style="height:18px; margin-top:4px;"></div></div></div>
+                    
+                    <div class="container" style="float:right; margin-top:11px;">
+                        <div class="menuentertainment3" style="margin-right:9px" onclick="videomute()"></div>
+                        <div class="volumedown" style="position: absolute; margin-left: 22px; margin-top:12px" onclick="videovolumedown()"></div>
+                        <div class="volumeup" style="position: absolute; margin-left: 22px; margin-top:0px" onclick="videovolumeup()"></div>
+                    </div>
 
-                    <ul class="tree-view" style="width:552px; height:12px; margin:-6px; margin-top:36px; background-color: var(--alwaysblack); color:var(--alwayswhite)" id="playertext"></ul> 
+                    <ul class="tree-view" style="width:552px; height:12px; margin:-6px; margin-top:36px; background-color: var(--alwaysblack); color:var(--alwayswhite)" id="playertext"></ul>
+                    <div class="container" style="float:right; margin-top:-12px;" id="playerspeed"></div>
                 </div></div>
             </div>
         </div>
                 
         <script>
+            var videolinksdrop = false, videolink = document.getElementById("tumblrlinkdrop");
+            function videolinkdropdown(){ if (videolinksdrop == false) {videolink.style.marginLeft = "50px"; videolinksdrop = true
+                } else if (videolinksdrop == true){videolink.style.marginLeft = "-20000px"; videolinksdrop = false}}
+            function videolinkdropdownclose(){videolink.style.marginLeft = "-20000px"; videolinksdrop = false}
+        
             var embed = document.getElementById("embed"), embedwin = document.getElementById("embedwindow");
             function embedactive() {inactiveall(); document.getElementById("taskapp4font").style.color = taskbartextpressed; document.getElementById("embedtext").style.color = curactivetitle;
                 calupdate(); embed.style.zIndex = cal; embedwin.style.backgroundImage = currentactiveheader; embed.style.marginLeft = "0px"; embedButtonOpen = false; 
@@ -552,8 +561,13 @@
             function embedopen() {inactiveall(); embed.style.marginLeft = "0px"; calupdate(); embed.style.zIndex = cal}
             function embedpositionreset() {embed.style.left = "300px"; embed.style.top = "200px"; calupdate(); embed.style.zIndex = cal; embedwin.style.backgroundImage = currentactiveheader; embedactive()}
             function embedminimize(){inactiveall(); embed.style.marginLeft = "-20000px"; embedButtonOpen = true}
-
-            function videoclear() { shuffle = true; shuffleVideo(); }
+            
+            var videovol = 100;
+            function videomute() { if(player.isMuted()){player.unMute()} else {player.mute()}}
+            function videovolumedown() { if(videovol > 0){videovol = videovol - 20; player.setVolume(videovol)}}
+            function videovolumeup() { if(videovol < 100){videovol = videovol + 20; player.setVolume(videovol)}}
+            
+            function videoclear() {shuffle = true; shuffleVideo()}
             
             function progress(percent, $element) {
                 var progressBarWidth = percent * $element.width() / 100;
@@ -577,69 +591,81 @@
             function forwardVideo() {player.seekTo((player.getCurrentTime() + currentskiptime)); playertext.textContent = "Skipped " + currentskiptime + " seconds ahead"; playstateupdateforward()} 
             function rewindVideo() {player.seekTo((player.getCurrentTime() - currentskiptime)); playertext.textContent = "Rewinded " + currentskiptime + " seconds"; playstateupdatebackward()}
             
-            function playlistlaunch(){embedtask(); shuffleVideo(); player.loadVideoById({'videoId':'','startSeconds': 0}); 
+            function playlistlaunch(){embedtask(); player.loadVideoById({'videoId':'','startSeconds': 0}); 
                 loadPlaylist = currentplaylist; loadPlaylist = loadPlaylist.replace("list=", '');  loadPlaylist = loadPlaylist.replace("&", '')}
             
+            var playerspeed = document.getElementById("playerspeed");
             function speedincrease5(){if(currentskiptime < 30){currentskiptime = currentskiptime + 5;}} 
             function speeddecrease5(){if(currentskiptime > 5){currentskiptime = currentskiptime - 5;}}
+            function speedupdate(){ playerspeed.textContext = currentskiptime;}
             
             function shuffleVideo(){ 
                 if(shuffle == true){player.setShuffle(false); shuffle = false; docelem.style.setProperty('--shuffleinvert', 0.5); shuffletext = ""} 
                 else if(shuffle == false){player.setShuffle(true); shuffle = true; docelem.style.setProperty('--shuffleinvert', shuffleflop); shuffletext = "Shuffle Enabled : "}}
             function shufflecolour(){ if(currentplaylist !== ""){ 
                     if(preinvert == 1){document.getElementById("nextbuttonembed").style.filter="invert(100%)"; document.getElementById("previousbuttonembed").style.filter="invert(100%)"
-                    } else {document.getElementById("nextbuttonembed").style.filter="invert(0%)"; document.getElementById("previousbuttonembed").style.filter="invert(0%)"}
+                    } else if(preinvert == 0) {document.getElementById("nextbuttonembed").style.filter="invert(0%)"; document.getElementById("previousbuttonembed").style.filter="invert(0%)"}
                 } else {document.getElementById("nextbuttonembed").style.filter="invert(50%)"; document.getElementById("previousbuttonembed").style.filter="invert(50%)"}}
 
-            function playerurlupdate(){currentlyplaying = player.getVideoUrl(); currentlyplaying = currentlyplaying.replace(currentplaylist, '')} 
-            function urlupdate(){ document.getElementById("mediaplayer").innerHTML = currentlyplaying; 
-                document.getElementById("youtubelink").href = "https://www." + currentlyplaying; document.getElementById("embeddedmedialink").href = "https://www." + currentlyplaying;
+            function playerurlupdate(){currentlyplaying = currentlyplaying.replace(currentplaylist, '')} 
+            function urlupdate(){ document.getElementById("mediaplayer").innerHTML = currentlyplaying; document.getElementById("youtubelink").href = "https://www." + currentlyplaying;
                 if(currentplaylist !== ""){document.getElementById("playlistlink").href = "https://www.youtube.com/playlist?" + currentplaylist} else {document.getElementById("playlistlink").href = ""}
                 document.getElementById("videolink").href = currentlyplaying; document.getElementById("videoandplaylistlink").href = player.getVideoUrl()}
             
-            function playerupdate() {playerurlupdate(); setTimeout(function() {urlupdate()}, 100); shufflecolour()}
+            function playerupdate() {currentlyplaying = player.getVideoUrl(); if(fullscreenactive == false){playerurlupdate()} urlupdate(); shufflecolour()}
+            
+            var fullscreenactive = false; var embedmaximize = document.getElementById("embedmaximize");
+            function fullscreenembed(){ if(fullscreenactive == false){ fullscreenactive = true; playerupdate();
+                document.getElementById("player").style.width = "1066px"; document.getElementById("player").style.height = "600px"; playertext.style.width = "1058px"; document.getElementById("playerws").style.width = "1056px";
+                document.getElementById("playerul").style.width = "1066px"; document.getElementById("playerfs").style.width = "1068px"; document.getElementById("playertv").style.width = "908px";
+                docelem.style.setProperty('--slider', "1056px"); embedmaximize.style.backgroundPosition = "-303px -215px"; document.getElementById("embedmaxtitle").title = "Restore down"; playstateupdate()
+            } else { fullscreenactive = false; playerupdate()
+                document.getElementById("player").style.width = "560px"; document.getElementById("player").style.height = "315px"; playertext.style.width = "552px"; document.getElementById("playerws").style.width = "550px";
+                document.getElementById("playerul").style.width = "560px"; document.getElementById("playerfs").style.width = "562px"; document.getElementById("playertv").style.width = "400px";
+                docelem.style.setProperty('--slider', "550px"); embedmaximize.style.backgroundPosition = "-98px -215px"; document.getElementById("embedmaxtitle").title = "Maximize"; playstateupdate()}}
             
             //desktop icons
-            function twilightload() {embedtask(); shuffle = true; shuffleVideo(); videolinkdropdownclose(); currentplaylist = ""; 
+            function twilightload() {embedtask(); videoclear(); videolinkdropdownclose(); currentplaylist = ""; 
                 player.loadVideoById({'videoId':'6BJFnnWVNRU','startSeconds': 0}); playertext.textContent = "Asking Twilight Sparkle for help.";}
-            function rct2load(){embedtask(); shuffle = true; shuffleVideo(); videolinkdropdownclose(); currentplaylist = ""; 
+            function rct2load(){embedtask(); videoclear(); videolinkdropdownclose(); currentplaylist = ""; 
                 player.loadVideoById({'videoId':'W_4uRZFVKPE','startSeconds': 985}); playertext.textContent = "Playing 'Roller Coaster Tycoon 2: Merry-Go-Round Music'";}
-            function startmenuembed(){embedtask(); shuffle = true; shuffleVideo(); videolinkdropdownclose(); currentplaylist = "";
+            function startmenuembed(){embedtask(); videoclear(); videolinkdropdownclose(); currentplaylist = "";
                 player.loadVideoById({'videoId':'T6fqtJbVoFI','startSeconds': 0}); playertext.textContent = "Opening Windows Embedded Mediaplayer"; stopVideo()}
 
             //my playlists
-            function ovfvpload(){currentplaylist = "list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU&"; shuffle = true; playlistlaunch(); 
+            function ovfvpload(){currentplaylist = "list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU&"; videoclear(); playlistlaunch(); 
                 player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'The Official Very Funny Video Playlist'."}
-            function gabetousleload(){currentplaylist = "list=PLNcem2Adr0D5EH7Mk01PRQ8_wJ08MuyR2&"; shuffle = false; playlistlaunch(); 
+            function gabetousleload(){currentplaylist = "list=PLNcem2Adr0D5EH7Mk01PRQ8_wJ08MuyR2&"; videoclear(); playlistlaunch(); 
                 player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Gabetousle'."}
-            function mylittleponyload(){currentplaylist = "list=PLNcem2Adr0D7erFZoWmkMgN_eSO5qBcYF&"; shuffle = false; playlistlaunch(); 
+            function mylittleponyload(){currentplaylist = "list=PLNcem2Adr0D7erFZoWmkMgN_eSO5qBcYF&"; videoclear(); playlistlaunch(); 
                 player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'The My Little Pony playlist of My Little Pony songs about some little ponies'."}
                 
             //music playlists         
-            function Crossload(){currentplaylist = "list=OLAK5uy_mUH9mXeJdOroDCgBIUlj5EIkI2dnl77bo&"; shuffle = true; playlistlaunch(); 
+            function Crossload(){currentplaylist = "list=OLAK5uy_mUH9mXeJdOroDCgBIUlj5EIkI2dnl77bo&"; videoclear(); playlistlaunch(); 
                 player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Cross' by Justice."}
-            function AudioVideoDiscoload(){currentplaylist = "list=OLAK5uy_lzrGRfM-k_Ncx_VVvZp5NXsVaT4s5daWs&"; shuffle = true; playlistlaunch(); 
+            function AudioVideoDiscoload(){currentplaylist = "list=OLAK5uy_lzrGRfM-k_Ncx_VVvZp5NXsVaT4s5daWs&"; videoclear(); playlistlaunch(); 
                 player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Audio, Video, Disco' by Justice."}
-            function Womanload(){currentplaylist = "list=OLAK5uy_kCIRvtVuXqD5LTUQzqTFS7fZ309yTPd-k&"; shuffle = true; playlistlaunch(); 
+            function Womanload(){currentplaylist = "list=OLAK5uy_kCIRvtVuXqD5LTUQzqTFS7fZ309yTPd-k&"; videoclear(); playlistlaunch(); 
                 player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Cross' by Justice."}
-            function worldsload(){currentplaylist = "list=PLAZNU5fM7FIAndWHF8KXqy5wJzG1D5pkF&"; shuffle = true; playlistlaunch(); 
+            function worldsload(){currentplaylist = "list=PLAZNU5fM7FIAndWHF8KXqy5wJzG1D5pkF&"; videoclear(); playlistlaunch(); 
                 player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Worlds' by Porter Robinson."}
-            function natureload(){currentplaylist = "list=PLAZNU5fM7FIC4ruXQhKjpuvP0AByhc0bl&"; shuffle = true; playlistlaunch(); 
+            function natureload(){currentplaylist = "list=PLAZNU5fM7FIC4ruXQhKjpuvP0AByhc0bl&"; videoclear(); playlistlaunch(); 
                 player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Nature' by Porter Robinson."}
-            function virtualselfload(){currentplaylist = "list=OLAK5uy_mvDmPc6xhsOD8ZsY-FsKLO-d4LlWFRWe0&"; shuffle = true; playlistlaunch(); 
+            function virtualselfload(){currentplaylist = "list=OLAK5uy_mvDmPc6xhsOD8ZsY-FsKLO-d4LlWFRWe0&"; videoclear(); playlistlaunch(); 
                 player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Virtual Self' by Porter Robinson."}
                 
             //veryvhersty tab
-            function win98load(){currentplaylist = "list=PLNcem2Adr0D6ZaukKoeuIDd_F64cVdR6n&"; shuffle = true; playlistlaunch(); 
+            function win98load(){currentplaylist = "list=PLNcem2Adr0D6ZaukKoeuIDd_F64cVdR6n&"; videoclear(); playlistlaunch(); 
                 player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Windows 98 Development'."}
-            function csgoload(){currentplaylist = "list=PLNcem2Adr0D6hVLogqdDGWVISRhFp7drV&"; shuffle = true; playlistlaunch(); 
+            function csgoload(){currentplaylist = "list=PLNcem2Adr0D6hVLogqdDGWVISRhFp7drV&"; videoclear(); playlistlaunch(); 
                 player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Thea's CSGO Videos'."}
 
             function playstateupdateforward() {var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime() + currentskiptime;
                 if(playerTotalTime > playerCurrentTime){ var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))} else {nextVideo()}}
-            function playstateupdatebackward() {var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime() - currentskiptime
+            function playstateupdatebackward() {var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime() - currentskiptime;
                 var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))}
-            
+            function playstateupdate(){ var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime();
+                var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))}
             
             function playstate() {playertext.textContent = shuffletext + "Playing"}
             function changeplayerstate(playerStatus) {
@@ -655,7 +681,8 @@
                 if (event.data == YT.PlayerState.PLAYING) { var playerTotalTime = player.getDuration();
                     mytimer = setInterval(function() { 
                         var playerCurrentTime = player.getCurrentTime(); var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; 
-                        progress(playerTimeDifference, $('#progressBar'))}, 100)} else {clearTimeout(mytimer)}}
+                        if (playerCurrentTime < playerTotalTime){
+                        progress(playerTimeDifference, $('#progressBar'))}}, 100)} else {clearTimeout(mytimer)}}
         </script>
         
 <!-- Time / date properties rendering ------------------------------------------------------------------------------>
@@ -1446,7 +1473,8 @@
             function inactiveall() {var timer = 0
                 if (timer < 1){timer = timer + 1; menuclosed();
                     tumblrButtonOpen = true; document.getElementById("tumblrtext").style.color = curinactivetitle;
-                    document.getElementById("postwindow").style.backgroundImage = curinactivehead; document.getElementById("taskapp1font").style.color = taskbartext;
+                    //for (var i = 0; i < post.length; i++) {post[i].childNodes[4].style.backgroundImage = curinactivehead}; //unoptimised as shit until able to find a proper caller
+                    document.getElementById("taskapp1font").style.color = taskbartext;
                     document.getElementById("taskapp1").style.backgroundImage = "none"; document.getElementById("taskapp1").style.backgroundColor = silv;
                     document.documentElement.style.setProperty('--taskbar1top1', curcolwhite); document.documentElement.style.setProperty('--taskbar1top2', curcollightg);
                     document.documentElement.style.setProperty('--taskbar1bottom1', curcolgray); document.documentElement.style.setProperty('--taskbar1bottom2', curcolblack);
@@ -1491,7 +1519,7 @@
         
         <div id="desktop" class="container" id="desktop" style="width:1010px; margin-top:20px;">
             {block:Posts}
-                <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-left: 20px; {block:PermalinkPage}margin-left: 12.5px; {/block:PermalinkPage}position: absolute; cursor: default" onmousedown="tumblractive()" id="post">
+                <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-left: 20px; {block:PermalinkPage}margin-left: 12.5px; {/block:PermalinkPage}position: absolute" onmousedown="tumblractive()">
                     <div class="win98titlebarbutton" style="margin-right:2px; margin-left:2px;" title="Close"><div class="close"></div></div>
                     <div class="win98titlebarbutton" title="Maximize" style=""> <div class="maximize"></div></div>
                     <div class="win98titlebarbutton" title="Minimize" onclick="tumblrminimize();"> <div class="minimize"></div></div>
@@ -1732,15 +1760,18 @@
         </div>
         
         <script>
-            var post = document.getElementById("post"), postwin = document.getElementById("postwindow"), desktop = document.getElementById("desktop");
+            var post = document.getElementById("desktop").children, postwin = document.getElementById("postwindow"), desktop = document.getElementById("desktop");
+             $("#desktop").delegate('div', 'click', function () {console.log( $(this).index() )});
             function tumblractive() { inactiveall(); tumblrButtonOpen = false;
                 desktop.style.left = "0px"; document.body.style.overflowY = "scroll";
-                calupdate(); post.style.zIndex = cal; document.getElementById("tumblrtext").style.color = curactivetitle;
-                postwin.style.backgroundImage = currentactiveheader; document.getElementById("taskapp1font").style.color = taskbartextpressed;
+                calupdate(); document.getElementById("tumblrtext").style.color = curactivetitle;
+                
+                //for (var i = 0; i < post.length; i++) {post[i].childNodes[4].style.backgroundImage = currentactiveheader} 
+                
+                document.getElementById("taskapp1font").style.color = taskbartextpressed;
                 tumblrtaskbar.style.backgroundImage = github + "img/scrollbarempty.png')";
                 document.documentElement.style.setProperty('--taskbar1top1', curcolgray); document.documentElement.style.setProperty('--taskbar1top2', curcolblack);
                 document.documentElement.style.setProperty('--taskbar1bottom1', curcolwhite); document.documentElement.style.setProperty('--taskbar1bottom2', curcollightg)}
-                
             function tumblrminimize() { tumblrButtonOpen = true; inactiveall(); 
                 desktop.style.left = "-20000px"; document.body.style.overflowY = "hidden";}
         </script>
