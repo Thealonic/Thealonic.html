@@ -685,6 +685,23 @@
                         progress(playerTimeDifference, $('#progressBar'))}}, 100)} else {clearTimeout(mytimer)}}
         </script>
         
+<!-- Patchnotes update  ------------------------------------------------------------------------------>
+
+        <div class="window" style="width: 475px; margin-bottom: 20px; margin-left: 20px; position: absolute; z-index:100; margin-left:-20000px;" id="note">
+            <div class="win98titlebarbutton" style="margin-right:2px; margin-left:2px;" title="Close"><div class="close"></div></div>
+            <div class="win98titlebarbutton" title="Minimize" onclick="tumblrminimize();"> <div class="minimize"></div></div>
+            <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
+            <div class="title-bar-98" id="postwindow"><div class="title-bar-text" id="tumblrtext">🍭 very.vunnies on Tumblr - Internet Explorer</div></div>
+            <div class="window-body">
+                <ul class="tree-view" style="margin-left:-6px; margin-top:-5px; width: 473px; padding:0px; padding-bottom:5px; padding-top:1px;"> 
+                    <div class="container" style="width:453px; margin-left: -2px; margin-top:-7px;"><patchnotes></patchnotes></div></ul>
+            </div>
+        </div>
+        
+        <script>
+            $.get('https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/patch%20logs', function(data) { $( "patchnotes" ).last().html( data ); }, 'text');
+        </script>
+        
 <!-- Time / date properties rendering ------------------------------------------------------------------------------>
 
         <div class="win98post" style="height: 409px; width: 442px; position: fixed; margin-left:-20000px;" onmousedown="clockactive()" id="clock">
@@ -1761,13 +1778,11 @@
         
         <script>
             var post = document.getElementById("desktop").children, postwin = document.getElementById("postwindow"), desktop = document.getElementById("desktop");
-             $("#desktop").delegate('div', 'click', function () {console.log( $(this).index() )});
+             //$("#desktop").delegate('div', 'click', function () {console.log( $(this).index() )});
             function tumblractive() { inactiveall(); tumblrButtonOpen = false;
                 desktop.style.left = "0px"; document.body.style.overflowY = "scroll";
                 calupdate(); document.getElementById("tumblrtext").style.color = curactivetitle;
-                
                 //for (var i = 0; i < post.length; i++) {post[i].childNodes[4].style.backgroundImage = currentactiveheader} 
-                
                 document.getElementById("taskapp1font").style.color = taskbartextpressed;
                 tumblrtaskbar.style.backgroundImage = github + "img/scrollbarempty.png')";
                 document.documentElement.style.setProperty('--taskbar1top1', curcolgray); document.documentElement.style.setProperty('--taskbar1top2', curcolblack);
@@ -2373,7 +2388,7 @@
         // Drag element scripts ------------------------------------------------------------------------------>
             
             dragElement(document.getElementById("cat")); dragElement(document.getElementById("pyro")); dragElement(document.getElementById("disk")); dragElement(document.getElementById("message")); 
-            dragElement(document.getElementById("embed"));
+            dragElement(document.getElementById("embed")); dragElement(document.getElementById("note"));
             dragElement(document.getElementById("logoff")); dragElement(document.getElementById("clock"));
             function dragElement(elmnt) { var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
             if (document.getElementById(elmnt.id + "window")) { document.getElementById(elmnt.id + "window").onmousedown = dragMouseDown; } else { elmnt.onmousedown = dragMouseDown; }
