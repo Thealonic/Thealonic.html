@@ -1,9 +1,28 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll; padding-right: 4px;">
 <ul>
-<li><strong style="color: var(--atext);">2021 Febuary 25th (210225)</strong> - "The Patch Notes" Update.<strong style="color: var(--atext);"><br /></strong>
+<li><strong  style="color: var(--atext);">2021 Febuary 26th (210226)<br /></strong>
 <ul>
-<li><strong>"Last updated" has been changed to Patch Notes.</strong><br />
+<li>&ldquo;Last updated&rdquo; has been changed to Patch Notes.<br />
+<ul>
+<li>Patchnotes now has task functionality on the taskbar.</li>
+<li>Restoring down the patchnotes will remove the taskbar functionality and retain the functions of the Last Updated message box.</li>
+</ul>
+</li>
+<li>Wallpaper loading check optimisations.</li>
+<li>Added backend page documentation.<br /><ol>
+<li><em>Added tons of global referal references which can be looked up through the readme.</em></li>
+<li><em>Added tons of local references that refer to eachother in the backend.</em></li>
+<li><em>- </em>Added documentation for the taskbar.</li>
+<li>- Added documentation for the display properties.functionality</li>
+<li>- Added documentation for the Message boxes</li>
+</ol></li>
+<li>Adjusted mediaplayer time skipping.</li>
+</ul>
+</li>
+<li><strong style="color: var(--atext);">2021 Febuary 25th (210225)</strong> - &ldquo;The Patch Notes&rdquo; Update.<strong style="color: var(--atext);"><br /></strong>
+<ul>
+<li><strong>&ldquo;Last updated&rdquo; has been changed to Patch Notes.</strong><br />
 <ul>
 <li>Last Updated is now fixed relative to the screen rather than the page.</li>
 <li>Added Maximize button to show the page patch notes.</li>
@@ -14,11 +33,12 @@
 </ul>
 </li>
 <li>Tumblr post CSS &amp; Loading optimisations.</li>
-<li>Some message box optimisation.</li>
 </ul>
 <ol>
 <li><em>- </em>Added documentation for themes.</li>
-<li>- <em>Fixed a potential bug with titlebar text updating when it shouldn't.</em></li>
+<li>- General CSS Optimisations.</li>
+<li>Optimised how uncalling other windows is handled.</li>
+<li>- <em>Fixed a potential bug with titlebar text updating when it shouldn&rsquo;t.</em></li>
 </ol></li>
 <li><strong style="color: var(--atext);">2021 Febuary 24th (210224)</strong>
 <ul>
