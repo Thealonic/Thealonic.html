@@ -1,6 +1,17 @@
-# Thealonic.html
+                                       .uef^"                                             .~uOOOOu+~.    
+                     ...     ..      :d88E                     .u    .     .xn!~%x.      Z8F      `8N.  
+                  :~""888h.:^"888:   `888E          .uuu     .d88B :@8c   x888' '888.   d88L       98E  
+                X888n. 8888X  ?888>   888E~?888L :888'8888.   4888>'88"  8888l   X8888  "88888888NNu.   
+                  `*88 8888~ x88x.    888E  888E 8888.+"      4888>      `8888  :88888X  .zf""*8888888L 
+                 ..<"  88*`  88888X   888E  888E 8888L       .d888L .+     `"**~ 88888> d8F      ^%888E 
+                  :888888H.    `%88> m888N= 888>  "88888%       "Y"      '8888>  8888~  '%N.       d*"  
+                 <  `"888888:    X"   `Y"   888     "YP'                  888"  :88%       ^"====="`    
+                       %888888x.-`         J88"                            ^^"==^""                      
+                        '""**""            @%                                                           
+                                         :"                                                             
+                       <!--https://twitter.com/VeryVhersty // https://veryvhersty.tumblr.com/-->
+                       
 I'll add to this at some point
-
 
 Global look-up documentation:
 #ref5000: changes current wallpaper background colour
