@@ -39,4 +39,4 @@ Global look-up documentation:
 #ref1028: Changes taskbar to active.
 #ref1029: Closes the window by moving margin-left to -20000px and deactivating the taskbar.
 #ref1030: Closes the window by moving margin-left to -20000px
-#ref1031: Resets positional values through left and up for said window.
+#ref1031: Resets positional values through left and up for said window. 
