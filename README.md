@@ -13,7 +13,7 @@
                        
 I'll add to this at some point
 
-Global look-up documentation:
+Global look-up documentation (Please view in RAW format):
 #ref5000: changes current wallpaper background colour
 #ref5001: changes taskbar text colour and active header colour if active or unactive
 #ref5002: changes header background images through github directs
