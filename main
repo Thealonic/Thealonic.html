@@ -1,18 +1,17 @@
 <!--                                                              
-                                       .uef^"                                              u+=~~~+u.    
-                     ...     ..      :d88E                     .u    .     .xn!~%x.      z8F      `8N.  
-                  :~""888h.:^"888:   `888E            .u     .d88B :@8c   x888   888.   d88L       98E  
-                 8X   `8888X  8888>   888E .z8k    ud8888.  ="8888f8888r X8888   8888:  98888bu.. .@*   
-                X888n. 8888X  ?888>   888E~?888L :888'8888.   4888>'88"  88888   X8888  "88888888NNu.   
-                '88888 8888X   ?**h.  888E  888E d888 '88%"   4888> '    88888   88888>  "*8888888888i  
-                  `*88 8888~ x88x.    888E  888E 8888.+"      4888>      `8888  :88888X  .zf""*8888888L 
-                 ..<"  88*`  88888X   888E  888E 8888L       .d888L .+     `"**~ 88888> d8F      ^%888E 
-                    ..XC.    `*8888k  888E  888E '8888c. .+  ^"8888*"     .xx.   88888  88>        `88~ 
-                  :888888H.    `%88> m888N= 888>  "88888%       "Y"      '8888>  8888~  '%N.       d*"  
-                 <  `"888888:    X"   `Y"   888     "YP'                  888"  :88%       ^"====="`    
-                       %888888x.-`         J88"                            ^"===""                      
+                                       .uef^"                                            .u+=~~~+u.    
+                     ...     ..      :d88E                    .u    .     .xn!~%x.      z8F      `8N.  
+                  :~""888h.:^"888:   `888E            .u    .d88B :@8c   x888   888.   d88L       98E  
+                 8X   `8888X  8888>   888E .z8k    ud8888. ="8888f8888r X8888   8888:  98888bu.. .@*   
+                X888n. 8888X  ?888>   888E~?888L :888'8888. 4888>'88"   88888   X8888  "88888888NNu.   
+                '88888 8888X   ?**h.  888E  888E d888 '88%" 4888> '     88888   88888>  "*8888888888i  
+                  `*88 8888~ x88x.    888E  888E 8888.+"    4888>       `8888   88888X  .zf""*8888888L 
+                 ..<"  88*`  88888X   888E  888E 8888L     .d888L .+      `"**~ 88888> d8F      ^%888E 
+                  :888888H.    `%88> m888N= 888>  "88888%    "Y"        '8888>  8888~  '%N.       d*"  
+                 <  `"888888:    X"   `Y"   888     "YP'                 888"  :88%       ^"====="`    
+                       %888888x.-`         J88"                           ^"===""                      
                          ""**""            @%                                                           
-                                         :"                                                             
+                                          :"                                                             
                        <!--https://twitter.com/VeryVhersty // https://veryvhersty.tumblr.com/-->
 
 <!-- Script setup ------------------------------------------------------------------------------>
@@ -36,14 +35,14 @@
                $(this).parents('.tumblr_video_container').css({ 
                    width: Math.floor($(this).width() * ( scale + 1 ) / 2), height: Math.floor($(this).height() * ( scale + 1 ) / 2)})})}
               
-        var github = "url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/"
-        var readme = "//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/README.md"
-        var updateon = "08:08am on Febuary 25th, 2021. [GMT]"; 
+        var github = "url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/";
+        var readme = "//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/README.md";
+        var updateon = "18:19pm on Febuary 26th, 2021. [GMT]"; 
         var updatedfrom = "Thea Vanherst";
         var currenttask = 1, cal = 5;
         
         function calupdate(){inactiveall(); cal = cal + 1}
-        function latestupdate() { document.getElementById("lastupdate").textContent = updateon; document.getElementById("updatedby").textContent = updatedfrom; }
+        function latestupdate() {document.getElementById("lastupdate").textContent = updateon; document.getElementById("updatedby").textContent = updatedfrom}
     </script>
     
     <head>
@@ -339,7 +338,14 @@
             
             a {color: var(--text); text-decoration: none} a:hover {text-decoration: underline; color: var(--hover)} 
             strong {color: var(--blue)} h3 {font-size: 2rem} 
-            console {padding:0px; margin:0px; display: block; margin-left: 0; margin-right: 0; white-space: pre-wrap; font-family: monospace;}
+            console {padding:0px; margin:-2px; display: block; margin-left: 0; margin-right: 0; letter-spacing: -1px; white-space: pre-wrap; font-family: monospace;}
+            consolr {padding:0px; margin:-2px; display: block; margin-left: 0; margin-right: 0; letter-spacing: -1px; white-space: pre-wrap; font-family: monospace; color:tomato}
+            consolo {padding:0px; margin:-2px; display: block; margin-left: 0; margin-right: 0; letter-spacing: -1px; white-space: pre-wrap; font-family: monospace; color:orange}
+            consolc {padding:0px; margin:-2px; display: block; margin-left: 0; margin-right: 0; letter-spacing: -1px; white-space: pre-wrap; font-family: monospace; color:cyan}
+            consolv {padding:0px; margin:-2px; display: block; margin-left: 0; margin-right: 0; letter-spacing: -1px; white-space: pre-wrap; font-family: monospace; color:violet}
+            consols {padding:0px; margin:-2px; display: block; margin-left: 0; margin-right: 0; letter-spacing: -1px; white-space: pre-wrap; font-family: monospace; color:silver}
+            consolb {padding:0px; margin:-2px; display: block; margin-left: 0; margin-right: 0; letter-spacing: -1px; white-space: pre-wrap; font-family: monospace; color:blue}
+            consolg {padding:0px; margin:-2px; display: block; margin-left: 0; margin-right: 0; letter-spacing: -1px; white-space: pre-wrap; font-family: monospace; color:#00FF00}
             
             underline {text-decoration-line: underline;}
             span {background-color: var(--white); color: var(--text)} 
@@ -635,38 +641,39 @@
                 events: {'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange, 'onError': onPlayerError}, //assigns events to functions #ref0040, #ref0041
                 playerVars: {controls: 0, autoplay: 0, modestbranding:1, showinfo: 0, disablekb: 0}})} //player settings
             function onPlayerReady(event) {urlupdate(); event.target.loadPlaylist({list: "", index: 0, suggestedQuality: "small"})} //#ref0040
-            
-            var playertext = document.getElementById("playertext"); playerspeed = document.getElementById("playerspeed"); //#ref5014
+
+            var playertext = document.getElementById("playertext"), playerspeed = document.getElementById("playerspeed"); //#ref5014
             //basic player functionality.
             function startVideo() {player.playVideo()} function pauseVideo() {player.pauseVideo()} function stopVideo() {player.stopVideo()} //#ref0051, #ref0052, #ref0053
             function previousVideo() {if(currentplaylist !== ""){player.previousVideo(); playertext.textContent = "Playing previous video"}} //#ref0045: Plays the previous video IF there is a playlist.
             function nextVideo() {if(currentplaylist !== ""){player.nextVideo(); playertext.textContent = "Playing next video"}} //#ref0048: Plays the next video IF there is a playlist.
             //fast forward and rewind functionality
             function forwardVideo() {if(currentskiptime < 30){currentskiptime = currentskiptime + 5; player.seekTo((player.getCurrentTime() + currentskiptime)); //#ref0047: skips time forward based on #ref0048
-                playertext.textContent = "Skipped " + currentskiptime + " seconds ahead"; playstateupdateforward(); playerspeed.textContext = currentskiptime; videolinkdropdown();} //States current time of #ref0048 with #ref0049
+                playertext.textContent = "Skipped " + currentskiptime + " seconds ahead"; playstateupdateforward(); playerspeed.textContext = currentskiptime; videolinkdropdown()}} //States current time of #ref0048 with #ref0049
             function rewindVideo() {if(currentskiptime > 5){currentskiptime = currentskiptime - 5; player.seekTo((player.getCurrentTime() - currentskiptime)); //#ref0046: skips time forward based on #ref0048
-                playertext.textContent = "Rewinded " + currentskiptime + " seconds"; playstateupdatebackward(); playerspeed.textContext = currentskiptime; videolinkdropdown();} //States current time of #ref0048 with #ref0049
-            
+                playertext.textContent = "Rewinded " + currentskiptime + " seconds"; playstateupdatebackward(); playerspeed.textContext = currentskiptime; videolinkdropdown()}} //States current time of #ref0048 with #ref0049
+
             function playlistlaunch(){embedtask(); player.loadVideoById({'videoId':'','startSeconds': 0});
                 loadPlaylist = currentplaylist; loadPlaylist = loadPlaylist.replace("list=", '');  loadPlaylist = loadPlaylist.replace("&", '')} 
+                
+            var fullscreenactive = false; var embedmaximize = document.getElementById("embedmaximize");
+            function playerupdate() {currentlyplaying = player.getVideoUrl(); if(fullscreenactive == false){playerurlupdate()} urlupdate(); shufflecolour()}
             
             //shuffle settings for #ref2003
             function shuffleVideo(){ //#ref0043, boolean to check shuffle state.
                 if(shuffle == true){player.setShuffle(false); shuffle = false; docelem.style.setProperty('--shuffleinvert', 0.5); shuffletext = ""} //shuffle mode disabled, adjusts #ref0044, and clears #ref0045
                 else if(shuffle == false){player.setShuffle(true); shuffle = true; docelem.style.setProperty('--shuffleinvert', shuffleflop); shuffletext = "Shuffle Enabled : "}} //shuffle mode enabled, adjusts #ref0044 and states mode with #ref0045
-            
+
             //prevents #ref0044 from being enabled without a playlist, and changes colour depending on status and theme.
             function shufflecolour(){ if(currentplaylist !== ""){ //check for playlist through #ref0050
                     if(preinvert == 1){document.getElementById("nextbuttonembed").style.filter="invert(100%)"; document.getElementById("previousbuttonembed").style.filter="invert(100%)" //Icon adjustment for darkmode enabled for #ref0044.
                     } else if(preinvert == 0) {document.getElementById("nextbuttonembed").style.filter="invert(0%)"; document.getElementById("previousbuttonembed").style.filter="invert(0%)"}  //Icon adjustment for lightmode enabled for #ref0044.
                 } else {document.getElementById("nextbuttonembed").style.filter="invert(50%)"; document.getElementById("previousbuttonembed").style.filter="invert(50%)"}} //turns #ref0044 off if there's no playlist loaded.
             
-            //updates player URL of currently playing
-            function playerurlupdate(){currentlyplaying = currentlyplaying.replace(currentplaylist, '')} //updates player URL of currently playing if no playlist is loaded.
+            function playerurlupdate(){currentlyplaying = currentlyplaying.replace(currentplaylist, '')} 
             function urlupdate(){ document.getElementById("mediaplayer").innerHTML = currentlyplaying; document.getElementById("youtubelink").href = "https://www." + currentlyplaying;
                 if(currentplaylist !== ""){document.getElementById("playlistlink").href = "https://www.youtube.com/playlist?" + currentplaylist} else {document.getElementById("playlistlink").href = ""}
                 document.getElementById("videolink").href = currentlyplaying; document.getElementById("videoandplaylistlink").href = player.getVideoUrl()}
-            
             function playerupdate() {currentlyplaying = player.getVideoUrl(); if(fullscreenactive == false){playerurlupdate()} urlupdate(); shufflecolour()}
             
             var fullscreenactive = false; var embedmaximize = document.getElementById("embedmaximize");
@@ -678,7 +685,7 @@
                 document.getElementById("player").style.width = "560px"; document.getElementById("player").style.height = "315px"; playertext.style.width = "552px"; document.getElementById("playerws").style.width = "550px";
                 document.getElementById("playerul").style.width = "560px"; document.getElementById("playerfs").style.width = "562px"; document.getElementById("playertv").style.width = "400px";
                 docelem.style.setProperty('--slider', "550px"); embedmaximize.style.backgroundPosition = "-98px -215px"; document.getElementById("embedmaxtitle").title = "Maximize"; playstateupdate()}}
-            
+                
             //desktop icons
             function twilightload() {embedtask(); videoclear(); videolinkdropdownclose(); currentplaylist = ""; 
                 player.loadVideoById({'videoId':'6BJFnnWVNRU','startSeconds': 0}); playertext.textContent = "Asking Twilight Sparkle for help.";}
@@ -686,7 +693,6 @@
                 player.loadVideoById({'videoId':'W_4uRZFVKPE','startSeconds': 985}); playertext.textContent = "Playing 'Roller Coaster Tycoon 2: Merry-Go-Round Music'";}
             function startmenuembed(){embedtask(); videoclear(); videolinkdropdownclose(); currentplaylist = "";
                 player.loadVideoById({'videoId':'T6fqtJbVoFI','startSeconds': 0}); playertext.textContent = "Opening Windows Embedded Mediaplayer"; stopVideo()}
-
             //my playlists
             function ovfvpload(){currentplaylist = "list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU&"; videoclear(); playlistlaunch(); 
                 player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'The Official Very Funny Video Playlist'."}
@@ -694,7 +700,6 @@
                 player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Gabetousle'."}
             function mylittleponyload(){currentplaylist = "list=PLNcem2Adr0D7erFZoWmkMgN_eSO5qBcYF&"; videoclear(); playlistlaunch(); 
                 player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'The My Little Pony playlist of My Little Pony songs about some little ponies'."}
-                
             //music playlists         
             function Crossload(){currentplaylist = "list=OLAK5uy_mUH9mXeJdOroDCgBIUlj5EIkI2dnl77bo&"; videoclear(); playlistlaunch(); 
                 player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Cross' by Justice."}
@@ -715,7 +720,7 @@
             function csgoload(){currentplaylist = "list=PLNcem2Adr0D6hVLogqdDGWVISRhFp7drV&"; videoclear(); playlistlaunch(); 
                 player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Thea's CSGO Videos'."}
 
-            function playstateupdateforward() {var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime() + currentskiptime;
+            function playstateupdateforward() { var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime() + currentskiptime;
                 if(playerTotalTime > playerCurrentTime){ var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))} else {nextVideo()}} //if #ref0038 > 100, skip video.
             function playstateupdatebackward() {var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime() - currentskiptime;
                 var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))} //enforces #ref0038 update
@@ -738,7 +743,8 @@
                     mytimer = setInterval(function() { 
                         var playerCurrentTime = player.getCurrentTime(); var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; 
                         if (playerCurrentTime < playerTotalTime){
-                        progress(playerTimeDifference, $('#progressBar'))}}, 100)} else {clearTimeout(mytimer)}} //#ref0038
+                        progress(playerTimeDifference, $('#progressBar'))}}, 100)
+                } else {clearTimeout(mytimer)}} //#ref0038
         </script>
        
 <!-- Latest updates message box ------------------------------------------------------------------------------>
@@ -903,28 +909,74 @@
 
 <!-- Voreware box rendering ------------------------------------------------------------------------------>
 
-        <div class="win98post" style="z-index:100; margin-left: -20000px" onmousedown="vorewareactive();" id="voreware"> <!--#ref2007-->
+        <div class="win98post" style="z-index:100; margin-left: -20000px; width: 495px; min-height:290px" onmousedown="vorewareactive();" id="voreware"> <!--#ref2007-->
             <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="vorewareclose()"><div class="close"></div></div>
             <div class="win98titlebarbutton" style="margin-top:2px;" onclick="vorewareactive()"><div class="restore"></div></div>
             <div class="win98titlebarbutton" title="Minimize" onclick="vorewareminimize();"> <div class="minimize"></div></div>
             <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
-            <div class="title-bar-98" id="vorewarewindow"> <div class="title-bar-text" id="vorewaretext">🎱 VOREWARE</div></div>
+            <div class="title-bar-98" id="vorewarewindow"> <div class="title-bar-text" id="vorewaretext">🎱 𝐕𝐎𝐑𝐄𝐖𝐀𝐑𝐄</div></div>
             <div class="window-body" style="margin:2px">
-                <ul class="tree-view" style="background-color: var(--alwaysblack); color: var(--alwayswhite)">
-                    <console id="line01"></console><console id="line02"></console><console id="line03"></console><console id="line04"></console><console id="line05"></console><console id="line06"></console>
+                <ul class="tree-view" style="background-color: var(--alwaysblack); color: var(--alwayswhite); min-height:260px">
+                    <console id="line01"></console><console id="line02"></console><consolv id="line03"></consolv><consolv id="line04"></consolv><consolv id="line05"></consolv>
+                    <consolv id="line06"></consolv><console id="line07"></console><consolb id="line08"></consolb><consolc id="line09"></consolc><console id="line10"></console>
+                    <consols id="line11"></consols><console id="line12"></console><console id="line13"></console><console id="line14"></console><console id="line15"></console>
+                    <console id="line16"></console><console id="line17"></console><console id="line18"></console><console id="line19"></console><consolv id="line20"></consolv>
+                    <console id="line21"></console><consols id="line22"></consols><console id="line23"></console><console id="line24"></console><consolr id="line25"></consolr>
+                    <consolo id="line26"></consolo><console id="line27"></console><console id="line28"></console><consolr id="line29"></consolr><console id="line30"></console>
+                    <console id="line31"></console><consolr id="line32"></consolr><console id="line33"></console><console id="line34"></console><consolr id="line35"></consolr>
+                    <consolo id="line36"></consolo><console id="line37"></console><console id="line38"></console><consolr id="line39"></consolr><consolo id="line40"></consolo>
+                    <console id="line41"></console><console id="line42"></console><consolr id="line43"></consolr><console id="line44"></console><console id="line45"></console>
+                    <consols id="line46"></consols><console id="line47"></console><console id="line48"></console><consolg id="line49"></consolg><consolr id="line50"></consolr>
+                    <console id="line51"></console><console id="line52"></console><consolr id="line53"></consolr><console id="line54"></console><console id="line55"></console>
+                    <console id="line56"></console><consolr id="line57"></consolr><consolg id="line58"></consolg><consolb id="line59"></consolb><console id="line60"></console>
+                    <console id="line61"></console><consols id="line62"></consols><console id="line63"></console><console id="line64"></console><console id="line65"></console>
+                    <console id="line66"></console><consolr id="line67">
                 </ul>
             </div>
         </div>
         
         <script>
             function vorewareclose(){ 
-                setTimeout(function() {document.getElementById("list01").innerHTML = "!please wait, currently loading;"}, 500);
-                setTimeout(function() {document.getElementById("list02").innerHTML = " "}, 500);
-                setTimeout(function() {document.getElementById("list03").innerHTML = "?88   d8P d8888b   88bd88b d8888b ?88   d8P  d8P d888b8b    88bd88b d8888b"}, 3000);
-                setTimeout(function() {document.getElementById("list04").innerHTML = "d88  d8P'd8P' ?88  88P'  `d8b_,dP d88  d8P' d8P'd8P' ?88    88P'  `d8b_,dP"}, 3000);
-                setTimeout(function() {document.getElementById("list05").innerHTML = "?8b ,88' 88b  d88 d88     88b     ?8b ,88b ,88' 88b  ,88b  d88     88b    "}, 3000);
-                setTimeout(function() {document.getElementById("list06").innerHTML = "`?888P'  `?8888P'd88'     `?888P' `?888P'888P'  `?88P'`88bd88'     `?888P'"}, 3000);
-            }
+                setTimeout(function() {document.getElementById("line01").innerHTML = "!please wait, currently loading;"}, 500);
+                setTimeout(function() {document.getElementById("line02").innerHTML = " "}, 500);
+                setTimeout(function() {document.getElementById("line03").innerHTML = "! ?88   d8P d8888b   88bd88b d8888b ?88   d8P  d8P d888b8b    88bd88b d8888b tm"}, 3000);
+                setTimeout(function() {document.getElementById("line04").innerHTML = "! d88  d8P'd8P' ?88  88P'  `d8b_,dP d88  d8P' d8P'd8P' ?88    88P'  `d8b_,dP"}, 3000);
+                setTimeout(function() {document.getElementById("line05").innerHTML = "! ?8b ,88' 88b  d88 d88     88b     ?8b ,88b ,88' 88b  ,88b  d88     88b    "}, 3000);
+                setTimeout(function() {document.getElementById("line06").innerHTML = "! `?888P'  `?8888P'd88'     `?888P' `?888P'888P'  `?88P'`88bd88'     `?888P'"}, 3000);
+                setTimeout(function() {document.getElementById("line07").innerHTML = " "}, 3000);
+                setTimeout(function() {document.getElementById("line08").innerHTML = "!Client ID: [56 4F 52  45 57 41 52 45]"}, 3200);
+                setTimeout(function() {document.getElementById("line09").innerHTML = "!Version 0.12"; document.getElementById("line10").innerHTML = " "}, 3800);
+                setTimeout(function() {document.getElementById("line11").innerHTML = ">>>> Offsets; <<<<"; document.getElementById("line12").innerHTML = " "}, 6000);
+                setTimeout(function() {document.getElementById("line13").innerHTML = "Localplayer = 0xc5b85c  / EntityList  = 0x4c380dc"}, 6400);
+                setTimeout(function() {document.getElementById("line14").innerHTML = "Glowobject  = 0x5177db0 / ForceJump   = 0x50dad7c"}, 6500);
+                setTimeout(function() {document.getElementById("line15").innerHTML = "Viewangles  = 0x4f10    / ClientState = 0x0x586a74"; document.getElementById("line17").innerHTML = " "}, 6600);
+                setTimeout(function() {document.getElementById("line20").innerHTML = "!Voreware Loaded!"; document.getElementById("line21").innerHTML = " "}, 8900);
+                setTimeout(function() {document.getElementById("line22").innerHTML = ">>>> Default Configs; <<<<"; document.getElementById("line23").innerHTML = " "}, 9500);
+                setTimeout(function() {document.getElementById("line24").innerHTML = "F1; Trigger [v1.1]:"; document.getElementById("line25").innerHTML = "FALSE";
+                                       document.getElementById("line26").innerHTML = "ALT [VM_MENU]"; document.getElementById("line27").innerHTML = " "}, 10200);
+                setTimeout(function() {document.getElementById("line28").innerHTML = "F1; Glow [v1.0_A]:"; document.getElementById("line29").innerHTML = "FALSE";
+                                       document.getElementById("line30").innerHTML = " "}, 10400);
+                setTimeout(function() {document.getElementById("line31").innerHTML = "F1; Radar [v1.1_A]:"; document.getElementById("line32").innerHTML = "FALSE";
+                                       document.getElementById("line33").innerHTML = " "}, 10600);
+                setTimeout(function() {document.getElementById("line34").innerHTML = "F1; AutoPistol [v0.8]:"; document.getElementById("line35").innerHTML = "FALSE";
+                                       document.getElementById("line36").innerHTML = "RMOUSE [VKRBUTTON]"; document.getElementById("line37").innerHTML = " "}, 10800);
+                setTimeout(function() {document.getElementById("line38").innerHTML = "F1; Bhop [v1.0]:"; document.getElementById("line39").innerHTML = "FALSE";
+                                       document.getElementById("line40").innerHTML = "SPACE [VK_SPACE]"; document.getElementById("line41").innerHTML = " "}, 11000);
+                setTimeout(function() {document.getElementById("line42").innerHTML = "F1; FOV [v0.8]:"; document.getElementById("line43").innerHTML = "FALSE";
+                                       document.getElementById("line44").innerHTML = " "}, 11200);
+                setTimeout(function() {document.getElementById("line46").innerHTML = ">>>> Glow [v1.2b] Debug <<<<"; document.getElementById("line47").innerHTML = " "}, 11900);
+                setTimeout(function() {document.getElementById("line48").innerHTML = "DEFAULT GLOW INDICATIONS"; document.getElementById("line49").innerHTML = "[001c] #39FF14: ENEMY IS VISIBLE";
+                                       document.getElementById("line50").innerHTML = "[110a] #FF0000: ENEMY NOT VISIBLE"; document.getElementById("line51").innerHTML = "[001c] WHITE: TEAMMATE"
+                                       document.getElementById("line52").innerHTML = " "}, 12000); 
+                setTimeout(function() {document.getElementById("line53").innerHTML = "[VK_NUMPAD8] Opacity Increase"; document.getElementById("line54").innerHTML = "[VK_NUMPAD2] Opacity Increase";
+                                       document.getElementById("line55").innerHTML = " "}, 12200); 
+                setTimeout(function() {document.getElementById("line56").innerHTML = "GLOW ALTERATION BINDS"; document.getElementById("line57").innerHTML = "[VK_NUMPAD7 - / VK_NUMPAD9 +]";
+                                       document.getElementById("line58").innerHTML = "[VK_NUMPAD4 - / VK_NUMPAD8 +]"; document.getElementById("line59").innerHTML = "[VK_NUMPAD1 - / VK_NUMPAD3 +]"
+                                       document.getElementById("line60").innerHTML = "[VK_NUMPAD5] MODE SWITCH"; document.getElementById("line61").innerHTML = " "}, 13000); 
+                setTimeout(function() {document.getElementById("line62").innerHTML = ">>>> DEBUG CONSOLE; <<<"; document.getElementById("line63").innerHTML = " ";
+                                       document.getElementById("line64").innerHTML = " "; document.getElementById("line65").innerHTML = " ";
+                                       document.getElementById("line66").innerHTML = " "; document.getElementById("line67").innerHTML = " "; 
+                                       document.getElementById("line01").innerHTML = "";}, 14000)}
         </script>
         
 <!-- Display properties rendering ------------------------------------------------------------------------------>
@@ -2401,9 +2453,9 @@
                         <div class="startmenusplitter"></div>
                         <!--Folder options -->
                         <div class="submenu20" style="margin-top: 3px">
-                            <div class="menusettings6"></div><label><labc> Windows Update</label></div>
+                            <div class="menusettings6"></div><label><labc>Windows Update</labc></label></div>
                         <!-- Activedesktop submenu -->
-                        <div class="win98post" style="margin-left:20000px; margin-top:-50px; width:170px; height:40px" id="activedesktopsubmenu" onmouseover="settingsactivedesktopopen()" onmouseout="settingsactivedesktopclose()">
+                        <div class="win98post" style="margin-left:-20000px; margin-top:-50px; width:170px; height:40px" id="activedesktopsubmenu" onmouseover="settingsactivedesktopopen()" onmouseout="settingsactivedesktopclose()">
                             <div class="submenu20" style="cursor: pointer;"><label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="messageopen(); menuclosed()"> 🧮 brain go brrrrr </label></div>
                             <div class="submenu20" style="cursor: pointer;"><label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="vunnytask(); vunnypositionreset(); menuclosed()"> 👿 very.unvunny</label></div>
                         <!--Settings submenu END --> 
@@ -2416,14 +2468,14 @@
                     <div class="win98post" style="margin-left: 20000px; margin-top: -192px" id="findmenu"
                          onmouseover="findopen()"onmouseout="findclosed()";>
                         <!--Buttons 1-4 -->
-                        <label style="width: 118px;"><div class="submenu20" style="width: 116px; height:20px">
-                            <div class="menufind1"></div><label><labc> Files or folders...</labc></label></div></label>
-                        <label style="width: 118px;"><div class="submenu20" style="width: 116px; height:20px">
-                            <div class="menufind2"></div><label><labc> Computer...</labc></label></div></label>
-                        <label style="width: 118px;"><div class="submenu20" style="width: 116px; height:20px">
-                            <div class="menufind3"></div><label><labc> On the Internet...</labc></label></div></label>
-                        <label style="width: 118px;"><div class="submenu20" style="width: 116px; height:20px">
-                            <div class="menufind4"></div><label><labc> People</labc></label></div></label>     
+                        <div class="submenu20" style="width: 116px; height:20px">
+                            <div class="menufind1"></div><label><labc> Files or folders...</labc></label></div>
+                        <div class="submenu20" style="width: 116px; height:20px">
+                            <div class="menufind2"></div><label><labc> Computer...</labc></label></div>
+                        <div class="submenu20" style="width: 116px; height:20px">
+                            <div class="menufind3"></div><label><labc> On the Internet...</labc></label></div>
+                        <div class="submenu20" style="width: 116px; height:20px">
+                            <div class="menufind4"></div><label><labc> People</labc></label></div>
                     </div>
                 </div>
             </div>
