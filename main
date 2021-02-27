@@ -557,8 +557,8 @@
                                 <div class="submenu18" onclick="nextVideo()"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Skip to next video </label></div>
                                 <div class="submenu18" onclick="previousVideo()"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Skip to previous video </label></div>
                                 <div class="menuapplicationsplit" style="width:100%; margin-top:1px; margin-bottom:1px;"></div>
-                                <div class="submenu18" onclick="forwardVideo();"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Increase jump speed by 5 </label></div> <!--increases #ref0048 by 5-->
-                                <div class="submenu18" onclick="rewindVideo();"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Decrease jump speed by 5 </label></div> <!--decreases #ref0048 by 5-->
+                                <div class="submenu18" onclick="increaseskip(); videolinkdropdown()"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Increase jump speed by 5 </label></div> <!--increases #ref0048 by 5-->
+                                <div class="submenu18" onclick="decreaseskip(); videolinkdropdown()"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Decrease jump speed by 5 </label></div> <!--decreases #ref0048 by 5-->
                                 <div class="menuapplicationsplit" style="width:100%; margin-top:1px; margin-bottom:1px;"></div>
                         </div></div>
                         
@@ -648,10 +648,13 @@
             function previousVideo() {if(currentplaylist !== ""){player.previousVideo(); playertext.textContent = "Playing previous video"}} //#ref0045: Plays the previous video IF there is a playlist.
             function nextVideo() {if(currentplaylist !== ""){player.nextVideo(); playertext.textContent = "Playing next video"}} //#ref0048: Plays the next video IF there is a playlist.
             //fast forward and rewind functionality
-            function forwardVideo() {if(currentskiptime < 30){currentskiptime = currentskiptime + 5; player.seekTo((player.getCurrentTime() + currentskiptime)); //#ref0047: skips time forward based on #ref0048
-                playertext.textContent = "Skipped " + currentskiptime + " seconds ahead"; playstateupdateforward(); playerspeed.textContext = currentskiptime; videolinkdropdown()}} //States current time of #ref0048 with #ref0049
-            function rewindVideo() {if(currentskiptime > 5){currentskiptime = currentskiptime - 5; player.seekTo((player.getCurrentTime() - currentskiptime)); //#ref0046: skips time forward based on #ref0048
-                playertext.textContent = "Rewinded " + currentskiptime + " seconds"; playstateupdatebackward(); playerspeed.textContext = currentskiptime; videolinkdropdown()}} //States current time of #ref0048 with #ref0049
+            function forwardVideo() { player.seekTo((player.getCurrentTime() + currentskiptime)); //#ref0047: skips time forward based on #ref0048
+                playertext.textContent = "Skipped " + currentskiptime + " seconds ahead"; playstateupdateforward(); playerspeed.textContext = currentskiptime;} //States current time of #ref0048 with #ref0049
+            function rewindVideo() { player.seekTo((player.getCurrentTime() - currentskiptime)); //#ref0046: skips time forward based on #ref0048
+                playertext.textContent = "Rewinded " + currentskiptime + " seconds"; playstateupdatebackward(); playerspeed.textContext = currentskiptime;} //States current time of #ref0048 with #ref0049
+
+            function increaseskip() { if(currentskiptime < 120){currentskiptime = currentskiptime + 5;}}
+            function decreaseskip() { if(currentskiptime > 5){currentskiptime = currentskiptime - 5;}}
 
             function playlistlaunch(){embedtask(); player.loadVideoById({'videoId':'','startSeconds': 0});
                 loadPlaylist = currentplaylist; loadPlaylist = loadPlaylist.replace("list=", '');  loadPlaylist = loadPlaylist.replace("&", '')} 
@@ -936,47 +939,72 @@
         </div>
         
         <script>
+            var arrayOfWords;
+            fetch('https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/Voreware%20Config')
+            .then(res => res.text()) .then(data => {arrayOfWords = data.split('\n')})
+        
             function vorewareclose(){ 
-                setTimeout(function() {document.getElementById("line01").innerHTML = "!please wait, currently loading;"}, 500);
-                setTimeout(function() {document.getElementById("line02").innerHTML = " "}, 500);
-                setTimeout(function() {document.getElementById("line03").innerHTML = "! ?88   d8P d8888b   88bd88b d8888b ?88   d8P  d8P d888b8b    88bd88b d8888b tm"}, 3000);
-                setTimeout(function() {document.getElementById("line04").innerHTML = "! d88  d8P'd8P' ?88  88P'  `d8b_,dP d88  d8P' d8P'd8P' ?88    88P'  `d8b_,dP"}, 3000);
-                setTimeout(function() {document.getElementById("line05").innerHTML = "! ?8b ,88' 88b  d88 d88     88b     ?8b ,88b ,88' 88b  ,88b  d88     88b    "}, 3000);
-                setTimeout(function() {document.getElementById("line06").innerHTML = "! `?888P'  `?8888P'd88'     `?888P' `?888P'888P'  `?88P'`88bd88'     `?888P'"}, 3000);
-                setTimeout(function() {document.getElementById("line07").innerHTML = " "}, 3000);
-                setTimeout(function() {document.getElementById("line08").innerHTML = "!Client ID: [56 4F 52  45 57 41 52 45]"}, 3200);
-                setTimeout(function() {document.getElementById("line09").innerHTML = "!Version 0.12"; document.getElementById("line10").innerHTML = " "}, 3800);
-                setTimeout(function() {document.getElementById("line11").innerHTML = ">>>> Offsets; <<<<"; document.getElementById("line12").innerHTML = " "}, 6000);
-                setTimeout(function() {document.getElementById("line13").innerHTML = "Localplayer = 0xc5b85c  / EntityList  = 0x4c380dc"}, 6400);
-                setTimeout(function() {document.getElementById("line14").innerHTML = "Glowobject  = 0x5177db0 / ForceJump   = 0x50dad7c"}, 6500);
-                setTimeout(function() {document.getElementById("line15").innerHTML = "Viewangles  = 0x4f10    / ClientState = 0x0x586a74"; document.getElementById("line17").innerHTML = " "}, 6600);
-                setTimeout(function() {document.getElementById("line20").innerHTML = "!Voreware Loaded!"; document.getElementById("line21").innerHTML = " "}, 8900);
-                setTimeout(function() {document.getElementById("line22").innerHTML = ">>>> Default Configs; <<<<"; document.getElementById("line23").innerHTML = " "}, 9500);
-                setTimeout(function() {document.getElementById("line24").innerHTML = "F1; Trigger [v1.1]:"; document.getElementById("line25").innerHTML = "FALSE";
-                                       document.getElementById("line26").innerHTML = "ALT [VM_MENU]"; document.getElementById("line27").innerHTML = " "}, 10200);
-                setTimeout(function() {document.getElementById("line28").innerHTML = "F1; Glow [v1.0_A]:"; document.getElementById("line29").innerHTML = "FALSE";
-                                       document.getElementById("line30").innerHTML = " "}, 10400);
-                setTimeout(function() {document.getElementById("line31").innerHTML = "F1; Radar [v1.1_A]:"; document.getElementById("line32").innerHTML = "FALSE";
-                                       document.getElementById("line33").innerHTML = " "}, 10600);
-                setTimeout(function() {document.getElementById("line34").innerHTML = "F1; AutoPistol [v0.8]:"; document.getElementById("line35").innerHTML = "FALSE";
-                                       document.getElementById("line36").innerHTML = "RMOUSE [VKRBUTTON]"; document.getElementById("line37").innerHTML = " "}, 10800);
-                setTimeout(function() {document.getElementById("line38").innerHTML = "F1; Bhop [v1.0]:"; document.getElementById("line39").innerHTML = "FALSE";
-                                       document.getElementById("line40").innerHTML = "SPACE [VK_SPACE]"; document.getElementById("line41").innerHTML = " "}, 11000);
-                setTimeout(function() {document.getElementById("line42").innerHTML = "F1; FOV [v0.8]:"; document.getElementById("line43").innerHTML = "FALSE";
-                                       document.getElementById("line44").innerHTML = " "}, 11200);
-                setTimeout(function() {document.getElementById("line46").innerHTML = ">>>> Glow [v1.2b] Debug <<<<"; document.getElementById("line47").innerHTML = " "}, 11900);
-                setTimeout(function() {document.getElementById("line48").innerHTML = "DEFAULT GLOW INDICATIONS"; document.getElementById("line49").innerHTML = "[001c] #39FF14: ENEMY IS VISIBLE";
-                                       document.getElementById("line50").innerHTML = "[110a] #FF0000: ENEMY NOT VISIBLE"; document.getElementById("line51").innerHTML = "[001c] WHITE: TEAMMATE"
-                                       document.getElementById("line52").innerHTML = " "}, 12000); 
-                setTimeout(function() {document.getElementById("line53").innerHTML = "[VK_NUMPAD8] Opacity Increase"; document.getElementById("line54").innerHTML = "[VK_NUMPAD2] Opacity Increase";
-                                       document.getElementById("line55").innerHTML = " "}, 12200); 
-                setTimeout(function() {document.getElementById("line56").innerHTML = "GLOW ALTERATION BINDS"; document.getElementById("line57").innerHTML = "[VK_NUMPAD7 - / VK_NUMPAD9 +]";
-                                       document.getElementById("line58").innerHTML = "[VK_NUMPAD4 - / VK_NUMPAD8 +]"; document.getElementById("line59").innerHTML = "[VK_NUMPAD1 - / VK_NUMPAD3 +]"
-                                       document.getElementById("line60").innerHTML = "[VK_NUMPAD5] MODE SWITCH"; document.getElementById("line61").innerHTML = " "}, 13000); 
-                setTimeout(function() {document.getElementById("line62").innerHTML = ">>>> DEBUG CONSOLE; <<<"; document.getElementById("line63").innerHTML = " ";
-                                       document.getElementById("line64").innerHTML = " "; document.getElementById("line65").innerHTML = " ";
-                                       document.getElementById("line66").innerHTML = " "; document.getElementById("line67").innerHTML = " "; 
-                                       document.getElementById("line01").innerHTML = "";}, 14000)}
+                setTimeout(function() {document.getElementById("line01").innerHTML = arrayOfWords[0]}, arrayOfWords[60]);
+                setTimeout(function() {document.getElementById("line02").innerHTML = arrayOfWords[1]}, arrayOfWords[61]);
+                setTimeout(function() {document.getElementById("line03").innerHTML = arrayOfWords[2]}, arrayOfWords[62]);
+                setTimeout(function() {document.getElementById("line04").innerHTML = arrayOfWords[3]}, arrayOfWords[63]);
+                setTimeout(function() {document.getElementById("line05").innerHTML = arrayOfWords[4]}, arrayOfWords[64]);
+                setTimeout(function() {document.getElementById("line06").innerHTML = arrayOfWords[5]}, arrayOfWords[65]);
+                setTimeout(function() {document.getElementById("line07").innerHTML = arrayOfWords[6]}, arrayOfWords[66]);
+                setTimeout(function() {document.getElementById("line08").innerHTML = arrayOfWords[7]}, arrayOfWords[67]);
+                setTimeout(function() {document.getElementById("line09").innerHTML = arrayOfWords[8]}, arrayOfWords[68]);
+                setTimeout(function() {document.getElementById("line10").innerHTML = arrayOfWords[9]}, arrayOfWords[69]);
+                setTimeout(function() {document.getElementById("line11").innerHTML = arrayOfWords[10]}, arrayOfWords[70]);
+                setTimeout(function() {document.getElementById("line12").innerHTML = arrayOfWords[11]}, arrayOfWords[71]);
+                setTimeout(function() {document.getElementById("line13").innerHTML = arrayOfWords[12]}, arrayOfWords[72]);
+                setTimeout(function() {document.getElementById("line14").innerHTML = arrayOfWords[13]}, arrayOfWords[73]);
+                setTimeout(function() {document.getElementById("line15").innerHTML = arrayOfWords[14]}, arrayOfWords[74]);
+                setTimeout(function() {document.getElementById("line16").innerHTML = arrayOfWords[15]}, arrayOfWords[75]);
+                setTimeout(function() {document.getElementById("line17").innerHTML = arrayOfWords[16]}, arrayOfWords[76]);
+                setTimeout(function() {document.getElementById("line18").innerHTML = arrayOfWords[17]}, arrayOfWords[77]);
+                setTimeout(function() {document.getElementById("line19").innerHTML = arrayOfWords[18]}, arrayOfWords[78]);
+                setTimeout(function() {document.getElementById("line20").innerHTML = arrayOfWords[19]}, arrayOfWords[79]);
+                setTimeout(function() {document.getElementById("line21").innerHTML = arrayOfWords[20]}, arrayOfWords[80]);
+                setTimeout(function() {document.getElementById("line22").innerHTML = arrayOfWords[21]}, arrayOfWords[81]);
+                setTimeout(function() {document.getElementById("line23").innerHTML = arrayOfWords[22]}, arrayOfWords[82]);
+                setTimeout(function() {document.getElementById("line24").innerHTML = arrayOfWords[23]}, arrayOfWords[83]);
+                setTimeout(function() {document.getElementById("line25").innerHTML = arrayOfWords[24]}, arrayOfWords[84]);
+                setTimeout(function() {document.getElementById("line26").innerHTML = arrayOfWords[25]}, arrayOfWords[85]);
+                setTimeout(function() {document.getElementById("line27").innerHTML = arrayOfWords[26]}, arrayOfWords[86]);
+                setTimeout(function() {document.getElementById("line28").innerHTML = arrayOfWords[27]}, arrayOfWords[87]);
+                setTimeout(function() {document.getElementById("line29").innerHTML = arrayOfWords[28]}, arrayOfWords[88]);
+                setTimeout(function() {document.getElementById("line30").innerHTML = arrayOfWords[29]}, arrayOfWords[89]);
+                setTimeout(function() {document.getElementById("line31").innerHTML = arrayOfWords[30]}, arrayOfWords[90]);
+                setTimeout(function() {document.getElementById("line32").innerHTML = arrayOfWords[31]}, arrayOfWords[91]);
+                setTimeout(function() {document.getElementById("line33").innerHTML = arrayOfWords[32]}, arrayOfWords[92]);
+                setTimeout(function() {document.getElementById("line34").innerHTML = arrayOfWords[33]}, arrayOfWords[93]);
+                setTimeout(function() {document.getElementById("line35").innerHTML = arrayOfWords[34]}, arrayOfWords[94]);
+                setTimeout(function() {document.getElementById("line36").innerHTML = arrayOfWords[35]}, arrayOfWords[95]);
+                setTimeout(function() {document.getElementById("line37").innerHTML = arrayOfWords[36]}, arrayOfWords[96]);
+                setTimeout(function() {document.getElementById("line38").innerHTML = arrayOfWords[37]}, arrayOfWords[97]);
+                setTimeout(function() {document.getElementById("line39").innerHTML = arrayOfWords[38]}, arrayOfWords[98]);
+                setTimeout(function() {document.getElementById("line40").innerHTML = arrayOfWords[39]}, arrayOfWords[99]);
+                setTimeout(function() {document.getElementById("line41").innerHTML = arrayOfWords[40]}, arrayOfWords[100]);
+                setTimeout(function() {document.getElementById("line42").innerHTML = arrayOfWords[41]}, arrayOfWords[101]); 
+                setTimeout(function() {document.getElementById("line43").innerHTML = arrayOfWords[42]}, arrayOfWords[102]);
+                setTimeout(function() {document.getElementById("line44").innerHTML = arrayOfWords[43]}, arrayOfWords[103]);  
+                setTimeout(function() {document.getElementById("line45").innerHTML = arrayOfWords[44]}, arrayOfWords[104]); 
+                setTimeout(function() {document.getElementById("line46").innerHTML = arrayOfWords[45]}, arrayOfWords[105]); 
+                setTimeout(function() {document.getElementById("line47").innerHTML = arrayOfWords[46]}, arrayOfWords[106]); 
+                setTimeout(function() {document.getElementById("line48").innerHTML = arrayOfWords[47]}, arrayOfWords[107]); 
+                setTimeout(function() {document.getElementById("line49").innerHTML = arrayOfWords[48]}, arrayOfWords[108]);
+                setTimeout(function() {document.getElementById("line50").innerHTML = arrayOfWords[49]}, arrayOfWords[109]);
+                setTimeout(function() {document.getElementById("line51").innerHTML = arrayOfWords[50]}, arrayOfWords[110]); 
+                setTimeout(function() {document.getElementById("line52").innerHTML = arrayOfWords[51]}, arrayOfWords[111]); 
+                setTimeout(function() {document.getElementById("line53").innerHTML = arrayOfWords[52]}, arrayOfWords[112]); 
+                setTimeout(function() {document.getElementById("line54").innerHTML = arrayOfWords[53]}, arrayOfWords[113]); 
+                setTimeout(function() {document.getElementById("line55").innerHTML = arrayOfWords[54]}, arrayOfWords[114]); 
+                setTimeout(function() {document.getElementById("line56").innerHTML = arrayOfWords[55]}, arrayOfWords[115]); 
+                setTimeout(function() {document.getElementById("line57").innerHTML = arrayOfWords[56]}, arrayOfWords[116]); 
+                setTimeout(function() {document.getElementById("line58").innerHTML = arrayOfWords[57]}, arrayOfWords[117]); 
+                setTimeout(function() {document.getElementById("line59").innerHTML = arrayOfWords[58]}, arrayOfWords[118]); 
+                setTimeout(function() {document.getElementById("line60").innerHTML = arrayOfWords[59]}, arrayOfWords[119]); 
+            }
         </script>
         
 <!-- Display properties rendering ------------------------------------------------------------------------------>
@@ -1281,13 +1309,13 @@
                         function contrastmodescheme2(){ currentsch.textContent="High Contrast Mode 2";    highcontrast2(); wallpaperoptionnone(); tcontrastmode2(); themepreviewchange()} //#ref0031 wallpaper #ref0022
                         function wallpapercust() {      currentsch.textContent="(Custom)"} //changes text on current active theme to "custom" #ref0023
 
-                        //#ref5000: changes current wallpaper background colour
-                        //#ref5001: changes taskbar text colour and active header colour if active or unactive
-                        //#ref5002: changes header background images through github directs
-                        //#ref5003: changes current theme active colours for desktop windows and store them into preview colours to be applied later through #ref0001
-                        //#ref5004: changes current header background colour from var //#ref5002, and changes the current invert status for icons such as minimize, help, ect.
-                        //#ref5005: makes adjustments to different spritesheets if alternate versions are needed, usually just the same by default.
-                        //#ref5026: Variable storage for colours to be applied later.
+                        //#ref5000a: changes current wallpaper background colour
+                        //#ref5001a: changes taskbar text colour and active header colour if active or unactive
+                        //#ref5002a: changes header background images through github directs
+                        //#ref5003a: changes current theme active colours for desktop windows and store them into preview colours to be applied later through #ref0001
+                        //#ref5004a: changes current header background colour from var //#ref5002, and changes the current invert status for icons such as minimize, help, ect.
+                        //#ref5005a: makes adjustments to different spritesheets if alternate versions are needed, usually just the same by default.
+                        //#ref5026a: Variable storage for colours to be applied later.
                         
                         function darkmode(){ //changes preview theme to darkmode
                             cwpp = "#292929"; //#ref5000
@@ -2637,8 +2665,8 @@
                 e = e || window.event; e.preventDefault(); pos3 = e.clientX; pos4 = e.clientY;
                 document.onmouseup = closeDragElement; document.onmousemove = elementDrag; }
             function elementDrag(e) { e = e || window.event;  e.preventDefault();
-               pos1 = pos3 - e.clientX; pos2 = pos4 - e.clientY; pos3 = e.clientX; pos4 = e.clientY;
-                elmnt.style.top = (elmnt.offsetTop - pos2) + "px"; elmnt.style.left = (elmnt.offsetLeft - pos1) + "px"; }
+               pos1 = pos3 - e.clientX; pos2 = pos4 - e.clientY; pos3 = e.clientX; pos4 = e.clientY;  //if(pos1 < 0){pos1 = 0}
+               elmnt.style.top = elmnt.offsetTop - pos2 + "px"; elmnt.style.left = (elmnt.offsetLeft - pos1) + "px"; } //if(elmnt.offsetTop < 0){elmnt.style.top = elmnt.offsetTop - pos2}
             function closeDragElement() { document.onmouseup = null; document.onmousemove = null; }}
         
 //-- Startmenu script handling ------------------------------------------------------------------------------>
