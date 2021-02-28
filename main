@@ -37,7 +37,7 @@
               
         var github = "url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/";
         var readme = "//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/README.md";
-        var updateon = "18:19pm on Febuary 26th, 2021. [GMT]"; 
+        var updateon = "18:12pm on Febuary 27th, 2021. [GMT]"; 
         var updatedfrom = "Thea Vanherst";
         var currenttask = 1, cal = 5;
         
@@ -67,6 +67,7 @@
                     --taskbar3top1: #ffffff; --taskbar3top2: #dfdfdf; --taskbar3bottom1: #808080; --taskbar3bottom2: #0a0a0a; 
                     --taskbar4top1: #ffffff; --taskbar4top2: #dfdfdf; --taskbar4bottom1: #808080; --taskbar4bottom2: #0a0a0a; 
                     --taskbar5top1: #ffffff; --taskbar5top2: #dfdfdf; --taskbar5bottom1: #808080; --taskbar5bottom2: #0a0a0a;
+                    --taskbar6top1: #ffffff; --taskbar6top2: #dfdfdf; --taskbar6bottom1: #808080; --taskbar6bottom2: #0a0a0a;
                     
                     --preinactive: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheaderinactive.png');
                     --preactive: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheader.png');
@@ -148,6 +149,7 @@
             .window-menus:hover {box-shadow:inset -1px -1px var(--gray), inset 1px 1px var(--lightg)}
             
             .disabledfont {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--gray); text-shadow:1px 1px 0 var(--lightg)}
+            .tagged { font-size: 9px; opacity: 0.5;}
             
 /* window preview handling ------------------------------------------------------------------------------*/
             
@@ -276,7 +278,9 @@
                             box-shadow:inset -1px -1px var(--taskbar4bottom2), inset 1px 1px var(--taskbar4top2), inset -2px -2px var(--taskbar4bottom1), inset 2px 2px var(--taskbar4top1);}
             .taskbartask5 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; margin-left: -20000px;
                             box-shadow:inset -1px -1px var(--taskbar5bottom2), inset 1px 1px var(--taskbar5top2), inset -2px -2px var(--taskbar5bottom1), inset 2px 2px var(--taskbar5top1);}
-
+            .taskbartask6 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; margin-left: -20000px;
+                            box-shadow:inset -1px -1px var(--taskbar6bottom2), inset 1px 1px var(--taskbar6top2), inset -2px -2px var(--taskbar6bottom1), inset 2px 2px var(--taskbar6top1);}
+            
             .big_seperator { float: left; border-left: 1px solid var(--gray); border-right: 1px solid var(--lightg); height: 22px; margin-top: 2px; margin-left: -1px} /*thin seperator but tall*/
             .small_seperator { float: left;  border-left: 1px solid var(--white); border-top: 1px solid var(--white); margin-top: 3px; margin-left: 1px; height:17px; /*thin seperator but tall*/
                                border-right: 1px solid var(--gray); border-bottom: 1px solid var(--gray); background-color: var(--silver); width: 1px; height: 18px}
@@ -375,19 +379,23 @@
             .body img { max-width: 100%; overflow: hidden;} .caption img { max-width: 100%; overflow: hidden;} img.full_image { ,width: 451px; overflow: hidden;}
             .middle img { max-width: 451px; width: 100%; height: 100%; display: block;} a img {border: 0;}
             
-            .audio_container { overflow: hidden; position: relative; width: 100px;} .tumblr_audio_player {width: 100%;} .posts .audio .audio_player embed { display: block;}
+            .audio_container { overflow: hidden; position: relative; width: 100px;} 
+            .tumblr_audio_player {width: 100%;} .posts .audio .audio_player embed { display: block;}
             .soundcloud_audio_player { width: 100%;} .spotify_audio_player { height: 80px !important; width:100%;}
             .tumblr_video_container {   position: relative; width:auto !important; height:auto !important; padding: auto;}
 
-            .like-b { position:relative; display:inline-block; height:1em; line-height:1em; color:var(--text); background-color: var(--silver)} .like-b .like_button iframe { position:absolute; opacity:0; background-color: var(--silver)}
+            .like-b { position:relative; display:inline-block; height:1em; line-height:1em; color:var(--text); background-color: var(--silver)} 
+            .like-b .like_button iframe { position:absolute; opacity:0; background-color: var(--silver)}
             .like-b .liked + .b { color:inherit;} .like-b .liked + .b:after { content:'d';} .like-b:hover { color:var(--hover); text-decoration-line: underline; } 
 
             .notes { margin-top:0px; text-align:left;} ol.notes { padding: 2px; list-style-type: none; max-height: 320px; width:463px; overflow:auto; margin-top:-6px;} 
             ol.notes li.note img.avatar { vertical-align: -4px; margin-right: 4px; width: 16px; height:16px; margin-top:-2px; margin-bottom;-2px;} ol.notes li.note .answer_content { font-weight: normal;}
             ol.notes li.note blockquote { padding: 4px 10px; margin: 10px 0px 0px 25px;} ol.notes li.note blockquote a { text-decoration: none; color: var(--blue);} ul, ol { padding: 0 0 0 18px;} /*infinate scroll*/
             
-            .tagged { font-size: 9px; opacity: 0.5;}
-            
+            input[type=text] { width: 100%; background-color:var(--alwaysblack); color:var(--alwayswhite); padding:0px; cursor: default; 
+                padding:0px; margin-left:-5px; display: block; margin-left: 0; margin-right: 0; letter-spacing: -1px; white-space: pre-wrap; font-family: monospace;
+                box-shadow: 0px solid var(--alwaysblack), 0px solid var(--alwaysblack), 0px solid var(--alwaysblack), 0px solid var(--alwaysblack);}
+
             #progressBar { width: var(--slider); height: 6px; background-color: var(--silver); display: none; margin-top: 1px;}
             #progressBar div { height: 100%; width: 0; background-color: var(--atext)}
         </style>
@@ -912,98 +920,71 @@
 
 <!-- Voreware box rendering ------------------------------------------------------------------------------>
 
-        <div class="win98post" style="z-index:100; margin-left: -20000px; width: 495px; min-height:290px" onmousedown="vorewareactive();" id="voreware"> <!--#ref2007-->
-            <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="vorewareclose()"><div class="close"></div></div>
-            <div class="win98titlebarbutton" style="margin-top:2px;" onclick="vorewareactive()"><div class="restore"></div></div>
-            <div class="win98titlebarbutton" title="Minimize" onclick="vorewareminimize();"> <div class="minimize"></div></div>
+        <div class="win98post" style="z-index:100; margin-left: -20000px; width: 495px; max-height:900px;" onmousedown="promptactive();" id="prompt"> <!--#ref2007-->
+            <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="promptclose()"><div class="close"></div></div>
+            <div class="win98titlebarbutton" title="Minimize" onclick="promptminimize();"> <div class="minimize"></div></div>
             <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
-            <div class="title-bar-98" id="vorewarewindow"> <div class="title-bar-text" id="vorewaretext">🎱 𝐕𝐎𝐑𝐄𝐖𝐀𝐑𝐄</div></div>
+            <div class="title-bar-98" id="promptwindow"> <div class="title-bar-text" id="promptText">🎱 Command Prompt</div></div>
             <div class="window-body" style="margin:2px">
-                <ul class="tree-view" style="background-color: var(--alwaysblack); color: var(--alwayswhite); min-height:260px">
-                    <console id="line01"></console><console id="line02"></console><consolv id="line03"></consolv><consolv id="line04"></consolv><consolv id="line05"></consolv>
-                    <consolv id="line06"></consolv><console id="line07"></console><consolb id="line08"></consolb><consolc id="line09"></consolc><console id="line10"></console>
-                    <consols id="line11"></consols><console id="line12"></console><console id="line13"></console><console id="line14"></console><console id="line15"></console>
-                    <console id="line16"></console><console id="line17"></console><console id="line18"></console><console id="line19"></console><consolv id="line20"></consolv>
-                    <console id="line21"></console><consols id="line22"></consols><console id="line23"></console><console id="line24"></console><consolr id="line25"></consolr>
-                    <consolo id="line26"></consolo><console id="line27"></console><console id="line28"></console><consolr id="line29"></consolr><console id="line30"></console>
-                    <console id="line31"></console><consolr id="line32"></consolr><console id="line33"></console><console id="line34"></console><consolr id="line35"></consolr>
-                    <consolo id="line36"></consolo><console id="line37"></console><console id="line38"></console><consolr id="line39"></consolr><consolo id="line40"></consolo>
-                    <console id="line41"></console><console id="line42"></console><consolr id="line43"></consolr><console id="line44"></console><console id="line45"></console>
-                    <consols id="line46"></consols><console id="line47"></console><console id="line48"></console><consolg id="line49"></consolg><consolr id="line50"></consolr>
-                    <console id="line51"></console><console id="line52"></console><consolr id="line53"></consolr><console id="line54"></console><console id="line55"></console>
-                    <console id="line56"></console><consolr id="line57"></consolr><consolg id="line58"></consolg><consolb id="line59"></consolb><console id="line60"></console>
-                    <console id="line61"></console><consols id="line62"></consols><console id="line63"></console><console id="line64"></console><console id="line65"></console>
-                    <console id="line66"></console><consolr id="line67">
+                <ul class="tree-view" style="background-color: var(--alwaysblack); color: var(--alwayswhite); max-height:865px; padding-bottom:-3px;">
+                    <div style="overflow-y: scroll; margin-right: -4px; margin-top: -5px; max-height:861px; min-height:240px;">
+                        <div style="margin-top:5px;">
+                            <console id="currentact"></console>
+                            <input type="text" id="prompttext" style="margin-top: -5px;"  autocomplete="off"> 
+                            <button id="promptin" onclick="consoleinput()" value="" style="margin-left:-20000px"></button>
+                    </div></div>
                 </ul>
-            </div>
-        </div>
+        </div></div>
         
         <script>
-            var arrayOfWords;
-            fetch('https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/Voreware%20Config')
-            .then(res => res.text()) .then(data => {arrayOfWords = data.split('\n')})
+            var prompt = document.getElementById("prompt"), promptwin = document.getElementById("promptwindow"); //#ref5014
+            function promptactive() {calupdate(); prompt.style.zIndex = cal;
+                document.getElementById("taskapp6font").style.color = taskbartextpressed; document.getElementById("prompttext").style.color = curactivetitle;
+                promptwin.style.backgroundImage = currentactiveheader; prompt.style.marginLeft = "0px"; promptButtonOpen = false; 
+                document.getElementById("taskapp6").style.backgroundImage = github + "img/scrollbarempty.png')"; document.getElementById("taskapp6").style.backgroundColor = curcolwhite; //#ref5028
+                document.documentElement.style.setProperty('--taskbar6top1', curcolgray); document.documentElement.style.setProperty('--taskbar6top2', curcolblack); //#ref5028
+                document.documentElement.style.setProperty('--taskbar6bottom1', curcolwhite); document.documentElement.style.setProperty('--taskbar6bottom2', curcollightg)} //#ref5028
+            function promptclose() {prompt.style.marginLeft = "-20000px"; document.getElementById("taskapp6").style.marginLeft = "-20000px"; task6true = false; task6on = false; taskreset()}
+            function promptpositionreset() {calupdate(); prompt.style.left = "300px"; prompt.style.top = "200px"; prompt.style.zIndex = cal; promptwin.style.backgroundImage = currentactiveheader; promptactive()}
+            function promptminimize(){inactiveall(); prompt.style.marginLeft = "-20000px"; promptButtonOpen = true}
         
-            function vorewareclose(){ 
-                setTimeout(function() {document.getElementById("line01").innerHTML = arrayOfWords[0]}, arrayOfWords[60]);
-                setTimeout(function() {document.getElementById("line02").innerHTML = arrayOfWords[1]}, arrayOfWords[61]);
-                setTimeout(function() {document.getElementById("line03").innerHTML = arrayOfWords[2]}, arrayOfWords[62]);
-                setTimeout(function() {document.getElementById("line04").innerHTML = arrayOfWords[3]}, arrayOfWords[63]);
-                setTimeout(function() {document.getElementById("line05").innerHTML = arrayOfWords[4]}, arrayOfWords[64]);
-                setTimeout(function() {document.getElementById("line06").innerHTML = arrayOfWords[5]}, arrayOfWords[65]);
-                setTimeout(function() {document.getElementById("line07").innerHTML = arrayOfWords[6]}, arrayOfWords[66]);
-                setTimeout(function() {document.getElementById("line08").innerHTML = arrayOfWords[7]}, arrayOfWords[67]);
-                setTimeout(function() {document.getElementById("line09").innerHTML = arrayOfWords[8]}, arrayOfWords[68]);
-                setTimeout(function() {document.getElementById("line10").innerHTML = arrayOfWords[9]}, arrayOfWords[69]);
-                setTimeout(function() {document.getElementById("line11").innerHTML = arrayOfWords[10]}, arrayOfWords[70]);
-                setTimeout(function() {document.getElementById("line12").innerHTML = arrayOfWords[11]}, arrayOfWords[71]);
-                setTimeout(function() {document.getElementById("line13").innerHTML = arrayOfWords[12]}, arrayOfWords[72]);
-                setTimeout(function() {document.getElementById("line14").innerHTML = arrayOfWords[13]}, arrayOfWords[73]);
-                setTimeout(function() {document.getElementById("line15").innerHTML = arrayOfWords[14]}, arrayOfWords[74]);
-                setTimeout(function() {document.getElementById("line16").innerHTML = arrayOfWords[15]}, arrayOfWords[75]);
-                setTimeout(function() {document.getElementById("line17").innerHTML = arrayOfWords[16]}, arrayOfWords[76]);
-                setTimeout(function() {document.getElementById("line18").innerHTML = arrayOfWords[17]}, arrayOfWords[77]);
-                setTimeout(function() {document.getElementById("line19").innerHTML = arrayOfWords[18]}, arrayOfWords[78]);
-                setTimeout(function() {document.getElementById("line20").innerHTML = arrayOfWords[19]}, arrayOfWords[79]);
-                setTimeout(function() {document.getElementById("line21").innerHTML = arrayOfWords[20]}, arrayOfWords[80]);
-                setTimeout(function() {document.getElementById("line22").innerHTML = arrayOfWords[21]}, arrayOfWords[81]);
-                setTimeout(function() {document.getElementById("line23").innerHTML = arrayOfWords[22]}, arrayOfWords[82]);
-                setTimeout(function() {document.getElementById("line24").innerHTML = arrayOfWords[23]}, arrayOfWords[83]);
-                setTimeout(function() {document.getElementById("line25").innerHTML = arrayOfWords[24]}, arrayOfWords[84]);
-                setTimeout(function() {document.getElementById("line26").innerHTML = arrayOfWords[25]}, arrayOfWords[85]);
-                setTimeout(function() {document.getElementById("line27").innerHTML = arrayOfWords[26]}, arrayOfWords[86]);
-                setTimeout(function() {document.getElementById("line28").innerHTML = arrayOfWords[27]}, arrayOfWords[87]);
-                setTimeout(function() {document.getElementById("line29").innerHTML = arrayOfWords[28]}, arrayOfWords[88]);
-                setTimeout(function() {document.getElementById("line30").innerHTML = arrayOfWords[29]}, arrayOfWords[89]);
-                setTimeout(function() {document.getElementById("line31").innerHTML = arrayOfWords[30]}, arrayOfWords[90]);
-                setTimeout(function() {document.getElementById("line32").innerHTML = arrayOfWords[31]}, arrayOfWords[91]);
-                setTimeout(function() {document.getElementById("line33").innerHTML = arrayOfWords[32]}, arrayOfWords[92]);
-                setTimeout(function() {document.getElementById("line34").innerHTML = arrayOfWords[33]}, arrayOfWords[93]);
-                setTimeout(function() {document.getElementById("line35").innerHTML = arrayOfWords[34]}, arrayOfWords[94]);
-                setTimeout(function() {document.getElementById("line36").innerHTML = arrayOfWords[35]}, arrayOfWords[95]);
-                setTimeout(function() {document.getElementById("line37").innerHTML = arrayOfWords[36]}, arrayOfWords[96]);
-                setTimeout(function() {document.getElementById("line38").innerHTML = arrayOfWords[37]}, arrayOfWords[97]);
-                setTimeout(function() {document.getElementById("line39").innerHTML = arrayOfWords[38]}, arrayOfWords[98]);
-                setTimeout(function() {document.getElementById("line40").innerHTML = arrayOfWords[39]}, arrayOfWords[99]);
-                setTimeout(function() {document.getElementById("line41").innerHTML = arrayOfWords[40]}, arrayOfWords[100]);
-                setTimeout(function() {document.getElementById("line42").innerHTML = arrayOfWords[41]}, arrayOfWords[101]); 
-                setTimeout(function() {document.getElementById("line43").innerHTML = arrayOfWords[42]}, arrayOfWords[102]);
-                setTimeout(function() {document.getElementById("line44").innerHTML = arrayOfWords[43]}, arrayOfWords[103]);  
-                setTimeout(function() {document.getElementById("line45").innerHTML = arrayOfWords[44]}, arrayOfWords[104]); 
-                setTimeout(function() {document.getElementById("line46").innerHTML = arrayOfWords[45]}, arrayOfWords[105]); 
-                setTimeout(function() {document.getElementById("line47").innerHTML = arrayOfWords[46]}, arrayOfWords[106]); 
-                setTimeout(function() {document.getElementById("line48").innerHTML = arrayOfWords[47]}, arrayOfWords[107]); 
-                setTimeout(function() {document.getElementById("line49").innerHTML = arrayOfWords[48]}, arrayOfWords[108]);
-                setTimeout(function() {document.getElementById("line50").innerHTML = arrayOfWords[49]}, arrayOfWords[109]);
-                setTimeout(function() {document.getElementById("line51").innerHTML = arrayOfWords[50]}, arrayOfWords[110]); 
-                setTimeout(function() {document.getElementById("line52").innerHTML = arrayOfWords[51]}, arrayOfWords[111]); 
-                setTimeout(function() {document.getElementById("line53").innerHTML = arrayOfWords[52]}, arrayOfWords[112]); 
-                setTimeout(function() {document.getElementById("line54").innerHTML = arrayOfWords[53]}, arrayOfWords[113]); 
-                setTimeout(function() {document.getElementById("line55").innerHTML = arrayOfWords[54]}, arrayOfWords[114]); 
-                setTimeout(function() {document.getElementById("line56").innerHTML = arrayOfWords[55]}, arrayOfWords[115]); 
-                setTimeout(function() {document.getElementById("line57").innerHTML = arrayOfWords[56]}, arrayOfWords[116]); 
-                setTimeout(function() {document.getElementById("line58").innerHTML = arrayOfWords[57]}, arrayOfWords[117]); 
-                setTimeout(function() {document.getElementById("line59").innerHTML = arrayOfWords[58]}, arrayOfWords[118]); 
-                setTimeout(function() {document.getElementById("line60").innerHTML = arrayOfWords[59]}, arrayOfWords[119]); 
+            var config, currentconfigfile, inprompt = "", loaded; //global varable storage.
+            var setone, settwo, line = 1; //varables to read how many lines are in the config.
+            var consoleout = document.getElementById("currentact"); //console output
+            var consolein = document.getElementById("prompttext").value //current line in console
+            var prompttitle = document.getElementById("prompttext");
+            
+            function configupdate() { fetch(currentconfigfile).then(res => res.text()) .then(data => {config = data.split('\n')})} //config preset reading and updating through clearing line lengths.
+            function vorewareconfig() { 
+                currentconfigfile = 'https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/voreware-config';
+                fetch(currentconfigfile).then(res => res.text()) .then(data => {config = data.split('\n')})} //loads voreware config
+            function clearconfig() { currentconfigfile = ''; configrun();}
+            //enter button read function
+            document.getElementById("prompttext").addEventListener("keyup", function(event) { //button listener while prompt text is active.
+                if (event.keyCode === 13) { event.preventDefault(); document.getElementById("promptin").click(); }}); //listens for the enter key
+            
+            function println() {inprompt = inprompt + "\n"; consoleout.innerHTML = inprompt} //prints a new line in the console.
+            function loadedln() {inprompt = inprompt + "Loaded " + loaded; println()} //prints the current loaded config after typing in said config.
+            
+            function consoleinput(){ var consolein = document.getElementById("prompttext").value; console.log(consolein); document.getElementById('prompttext').value = "";
+                if (consolein == "load voreware.dll") {vorewareconfig(); loaded = "voreware.dll"; loadedln();} //config voreware
+
+
+                else if (consolein == "run") {configupdate(); inprompt = "currently running " + loaded + "\n"; println(); consoleupdate();} 
+                else if (consolein == "clear") {configupdate(); inprompt = "clear"; println(); prompttitle.textContent = "🎱 Command Prompt"; while (loadedconfig--) {window.clearTimeout(loadedconfig)};} 
+                else {  inprompt = inprompt + "'" + consolein + "' is not recognised as an internal or external command, \n operable program or batch file."; println(); println(); clearconfig()}
+            }
+
+            function consoleupdate(){ 
+                var configlength = config.length; console.log(configlength); console.log(config);
+                var configset = 0; var configfixed = (configlength - 2)/ 2;
+                for(let configloop = 0; configloop < configfixed; configloop++){ 
+                    loadedconfig = setTimeout(function() { 
+                        var configtext = config[configloop]; inprompt = inprompt + configtext; println(); }, config[configset])
+                    configset = configloop + (configlength - 2)/ 2;
+                    console.log("config loop:" + configloop); console.log("config set:" + configset); console.log("config fixed:" + configfixed);
+                }
+                prompttitle.textContent = config[config.length - 2];
             }
         </script>
         
@@ -1780,10 +1761,16 @@
                 
                 noteButtonOpen = true; document.getElementById("notetext").style.color = curinactivetitle;
                 notewin.style.backgroundImage = curinactivehead; document.getElementById("taskapp5font").style.color = taskbartext;
-                document.getElementById("taskapp4").style.backgroundImage = "none"; document.getElementById("taskapp5").style.backgroundColor = silv;
+                document.getElementById("taskapp5").style.backgroundImage = "none"; document.getElementById("taskapp5").style.backgroundColor = silv;
                 document.documentElement.style.setProperty('--taskbar5top1', curcolwhite); document.documentElement.style.setProperty('--taskbar5top2', curcollightg);
                 document.documentElement.style.setProperty('--taskbar5bottom1', curcolgray); document.documentElement.style.setProperty('--taskbar5bottom2', curcolblack);
-                 
+                
+                promptButtonOpen = true; document.getElementById("prompttext").style.color = curinactivetitle;
+                promptwin.style.backgroundImage = curinactivehead; document.getElementById("taskapp6font").style.color = taskbartext;
+                document.getElementById("taskapp6").style.backgroundImage = "none"; document.getElementById("taskapp6").style.backgroundColor = silv;
+                document.documentElement.style.setProperty('--taskbar6top1', curcolwhite); document.documentElement.style.setProperty('--taskbar6top2', curcollightg);
+                document.documentElement.style.setProperty('--taskbar6bottom1', curcolgray); document.documentElement.style.setProperty('--taskbar6bottom2', curcolblack);
+                
                 messagewin.style.backgroundImage = curinactivehead; document.getElementById("messagetext").style.color = curinactivetitle;
                 notewin.style.backgroundImage = curinactivehead; document.getElementById("notetext").style.color = curinactivetitle;
                 docclockwin.style.backgroundImage = curinactivehead; document.getElementById("disktext").style.color = curinactivetitle}}
@@ -2168,7 +2155,7 @@
                         <div class="submenu20"><div class="menuprograms4"></div>
                             <label><labc> Internet Explorer </labc></label></div>
                         <!-- MS-DOS Prompt -->
-                        <div class="submenu20">
+                        <div class="submenu20" onclick="prompttask()">
                             <div class="menuprograms5"></div><label><labc> MS-DOS Prompt </labc></label></div>
                         <!-- Outlook Express -->
                         <div class="submenu20">
@@ -2532,6 +2519,8 @@
                         <div class="title-bar-text" style="font-size: 11px;" id="taskapp4font">🎬 Media Player</div></div>
                 <div class="taskbartask5" style="cursor:pointer;" onmousedown="task5toggle(); menuclosed();" id="taskapp5"> 
                         <div class="title-bar-text" style="font-size: 11px;" id="taskapp5font">🧮 Patch Notes</div></div>
+                <div class="taskbartask6" style="cursor:pointer;" onmousedown="task6toggle(); menuclosed();" id="taskapp6"> 
+                        <div class="title-bar-text" style="font-size: 11px;" id="taskapp6font">🎱 Command Prompt</div></div>
                 
                 <script>
                     var tumblrButtonOpen = false, pyroButtonOpen = true, diskButtonOpen = true, embedButtonOpen = true, patchnotesButtonOpen = true; //toggle states for #ref5013
@@ -2539,11 +2528,12 @@
                     function task2toggle(){ if (pyroButtonOpen == false) {vunnyminimize()} else if (pyroButtonOpen == true){vunnyopen()}} //#ref5013
                     function task3toggle() { if (diskButtonOpen == false) {diskminimize()} else if (diskButtonOpen == true){diskactive()}} //#ref5013
                     function task4toggle() { if (embedButtonOpen == false) {embedminimize()} else if (embedButtonOpen == true){embedactive()}} //#ref5013
-                    function task5toggle() { if (embedButtonOpen == false) {patchnoteminimize()} else if (embedButtonOpen == true){patchnotesactive()}} //#ref5013
+                    function task5toggle() { if (patchnotesButtonOpen == false) {patchnoteminimize()} else if (patchnotesButtonOpen == true){patchnotesactive()}} //#ref5013
+                    function task6toggle() { if (promptButtonOpen == false) {promptminimize()} else if (promptButtonOpen == true){promptactive()}} //#ref5013
 
-                    var task2on = false, task3on = false, task4on = false, task5on = false; //check to compare if other windows than the current one being deactivated to update.
-                    var task2true = true, task3true = true, task4true = true, task5true = true; //a check for if the current window is active on the taskbar
-                    var task2pos, task3pos, task4pos, task5pos; //positional values of the tasks on the taskbar.
+                    var task2on = false, task3on = false, task4on = false, task5on = false, task6on = false;//check to compare if other windows than the current one being deactivated to update.
+                    var task2true = true, task3true = true, task4true = true, task5true = true, task6true = false;//a check for if the current window is active on the taskbar
+                    var task2pos, task3pos, task4pos, task5pos, task6pos; //positional values of the tasks on the taskbar.
                     
                     //#ref5006; assigns varable to taskbar grabbing //#ref5006
                     //#ref5007: opens the task, resets window position and enables the taskbar. //#ref5007
@@ -2572,31 +2562,45 @@
                     var patchnotestaskbar = document.getElementById("taskapp5"); //#ref5006
                     function patchnotestask(){messageclose(); patchnotesopen(); task5posopen()} //#ref5007
                     function task5posopen(){ if(task5on == false){currenttask = currenttask + 1; patchnotestaskbar.style.marginLeft = (currenttask * 168) + "px"; task5pos = (currenttask * 168)}; tabconsole(); task5on = true} //#ref5008
-
+                    
+                    var prompttaskbar = document.getElementById("taskapp6"); //#ref5006
+                    function prompttask(){promptactive(); task6posopen()} //#ref5007
+                    function task6posopen(){ if(task6on == false){currenttask = currenttask + 1; prompttaskbar.style.marginLeft = (currenttask * 168) + "px"; task6pos = (currenttask * 168)}; tabconsole(); task6on = true} //#ref5008
+                    
                     function taskreset(){ //updates the current values of the tasks in order from left to right if a task is removed from the list.
                         if(task2true == false){ //current task 2        { if(task2on == true){ task2pos = task2pos - 170;    unvunnytaskbar.style.marginLeft = task2pos + "px"; console.log("task2false, task2true")}} //#ref5010
                                                 if(task2pos <= task3pos){ if(task3on == true){ task3pos = task3pos - 170;       disktaskbar.style.marginLeft = task3pos + "px"; console.log("task2false, task3true")}} //#ref5009
                                                 if(task2pos <= task4pos){ if(task4on == true){ task4pos = task4pos - 170;      embedtaskbar.style.marginLeft = task4pos + "px"; console.log("task2false, task4true")}} //#ref5009
-                                                if(task2pos <= task5pos){ if(task5on == true){ task5pos = task5pos - 170; patchnotestaskbar.style.marginLeft = task3pos + "px"; console.log("task2false, task5true")}} //#ref5009
+                                                if(task2pos <= task5pos){ if(task5on == true){ task5pos = task5pos - 170; patchnotestaskbar.style.marginLeft = task5pos + "px"; console.log("task2false, task5true")}} //#ref5009
+                                                if(task2pos <= task6pos){ if(task6on == true){ task6pos = task6pos - 170;     prompttaskbar.style.marginLeft = task6pos + "px"; console.log("task2false, task6true")}} //#ref5009
                                                 task2true = true;} //#ref5011
                                                 
                         if(task3true == false){ if(task3pos <= task2pos){ if(task2on == true){ task2pos = task2pos - 170;    unvunnytaskbar.style.marginLeft = task2pos + "px"; console.log("task3false, task2true")}} //#ref5009
                                                 //current task 3        { if(task3on == true){ task3pos = task3pos - 170;       disktaskbar.style.marginLeft = task3pos + "px"; console.log("task3false, task3true")}} //#ref5010
                                                 if(task3pos <= task4pos){ if(task4on == true){ task4pos = task4pos - 170;      embedtaskbar.style.marginLeft = task4pos + "px"; console.log("task3false, task4true")}} //#ref5009
-                                                if(task3pos <= task5pos){ if(task5on == true){ task5pos = task5pos - 170; patchnotestaskbar.style.marginLeft = task3pos + "px"; console.log("task3false, task5true")}} //#ref5009
+                                                if(task3pos <= task5pos){ if(task5on == true){ task5pos = task5pos - 170; patchnotestaskbar.style.marginLeft = task5pos + "px"; console.log("task3false, task5true")}} //#ref5009
+                                                if(task3pos <= task6pos){ if(task6on == true){ task6pos = task6pos - 170;     prompttaskbar.style.marginLeft = task6pos + "px"; console.log("task3false, task6true")}} //#ref5009
                                                 task3true = true;} //#ref5011
                                                 
                         if(task4true == false){ if(task4pos <= task2pos){ if(task2on == true){ task2pos = task2pos - 170;    unvunnytaskbar.style.marginLeft = task2pos + "px"; console.log("task4false, task2true")}} //#ref5009
                                                 if(task4pos <= task3pos){ if(task3on == true){ task3pos = task3pos - 170;       disktaskbar.style.marginLeft = task3pos + "px"; console.log("task4false, task3true")}} //#ref5009
                                                 //current task 4        { if(task4on == true){ task4pos = task4pos - 170;      embedtaskbar.style.marginLeft = task4pos + "px"; console.log("task4false, task4true")}} //#ref5010
-                                                if(task4pos <= task5pos){ if(task5on == true){ task5pos = task5pos - 170; patchnotestaskbar.style.marginLeft = task3pos + "px"; console.log("task4false, task5true")}} //#ref5009
+                                                if(task4pos <= task5pos){ if(task5on == true){ task5pos = task5pos - 170; patchnotestaskbar.style.marginLeft = task5pos + "px"; console.log("task4false, task5true")}} //#ref5009
+                                                if(task4pos <= task6pos){ if(task6on == true){ task6pos = task6pos - 170;     prompttaskbar.style.marginLeft = task6pos + "px"; console.log("task4false, task6true")}} //#ref5009
                                                 task4true = true;} //#ref5011
                                                 
-                        if(task5true == false){ if(task5pos <= task2pos){ if(task2on == true){ task2pos = task2pos - 170;    unvunnytaskbar.style.marginLeft = task2pos + "px"; console.log("task6false, task2true")}} //#ref5009
-                                                if(task5pos <= task3pos){ if(task3on == true){ task3pos = task3pos - 170;       disktaskbar.style.marginLeft = task3pos + "px"; console.log("task6false, task3true")}} //#ref5009
+                        if(task5true == false){ if(task5pos <= task2pos){ if(task2on == true){ task2pos = task2pos - 170;    unvunnytaskbar.style.marginLeft = task2pos + "px"; console.log("task5false, task2true")}} //#ref5009
+                                                if(task5pos <= task3pos){ if(task3on == true){ task3pos = task3pos - 170;       disktaskbar.style.marginLeft = task3pos + "px"; console.log("task5false, task3true")}} //#ref5009
                                                 if(task5pos <= task4pos){ if(task4on == true){ task4pos = task4pos - 170;      embedtaskbar.style.marginLeft = task4pos + "px"; console.log("task5false, task4true")}} //#ref5009
-                                                //current task 5        { if(task5on == true){ task5pos = task5pos - 170; patchnotestaskbar.style.marginLeft = task3pos + "px"; console.log("task6false, task5true")}} //#ref5010
+                                                //current task 5        { if(task5on == true){ task5pos = task5pos - 170; patchnotestaskbar.style.marginLeft = task5pos + "px"; console.log("task5false, task5true")}} //#ref5010
+                                                if(task5pos <= task6pos){ if(task6on == true){ task6pos = task6pos - 170;     prompttaskbar.style.marginLeft = task6pos + "px"; console.log("task5false, task6true")}} //#ref5009
                                                 task5true = true;} //#ref5011
+                        if(task6true == false){ if(task6pos <= task2pos){ if(task2on == true){ task2pos = task2pos - 170;    unvunnytaskbar.style.marginLeft = task2pos + "px"; console.log("task6false, task2true")}} //#ref5009
+                                                if(task6pos <= task3pos){ if(task3on == true){ task3pos = task3pos - 170;       disktaskbar.style.marginLeft = task3pos + "px"; console.log("task6false, task3true")}} //#ref5009
+                                                if(task6pos <= task4pos){ if(task4on == true){ task4pos = task4pos - 170;      embedtaskbar.style.marginLeft = task4pos + "px"; console.log("task6false, task4true")}} //#ref5009
+                                                if(task6pos <= task5pos){ if(task5on == true){ task5pos = task5pos - 170; patchnotestaskbar.style.marginLeft = task5pos + "px"; console.log("task6false, task5true")}} //#ref5010
+                                                //current task 6        { if(task6on == true){ task6pos = task6pos - 170;     prompttaskbar.style.marginLeft = task6pos + "px"; console.log("task6false, task6true")}} //#ref5009
+                                                task6true = true;} //#ref5011
                         currenttask = currenttask - 1; tabconsole()} //#ref5012
                     
                     function tabconsole(){ console.log("current tasks active: " + currenttask)}
@@ -2625,10 +2629,10 @@
             
             function updateClock(){
                 var mins = da.getMinutes() + minutemath; var hrs = da.getHours() + hourmath; var ext = "AM";
-                if(hrs > 12){ var ext = "PM"; var hrs = hrs - parseInt(12); }
-                if(hrs < 10){ var hrs = "0"+hrs; } if(mins < 10){ var mins = "0"+mins; }
+                if(hrs > 12){ var ext = "PM"; var hrs = hrs - parseInt(12)}
+                if(hrs < 10){ var hrs = "0"+hrs} if(mins < 10){ var mins = "0"+mins}
                 var currentTime = hrs + ":" + mins + " " + ext;
-                $('#showClock').html(currentTime); }
+                $('#showClock').html(currentTime)}
                 
 //-- clock for clockbox ------------------------------------------------------------------------------>
                 
@@ -2637,7 +2641,7 @@
             ctx.translate(radius, radius); radius = radius * 0.90; setInterval(drawClock, 1000);
             
             function drawClock() { drawFace(ctx, radius); drawTime(ctx, radius)}
-            function drawFace(ctx, radius) { ctx.beginPath(); ctx.arc(0, 0, radius, 0, 2*Math.PI); ctx.fillStyle = curcolsilver; ctx.fill();}
+            function drawFace(ctx, radius) { ctx.beginPath(); ctx.arc(0, 0, radius, 0, 2*Math.PI); ctx.fillStyle = curcolsilver; ctx.fill()}
             
             function drawTime(ctx, radius){ 
                 var now = new Date(); hour = now.getHours(); minute = now.getMinutes() + minutemath; second = now.getSeconds();
@@ -2650,24 +2654,24 @@
             var hand = 1;
             function drawHand(ctx, pos, length, width) {
             	if (hand < 3){ ctx.beginPath(); ctx.lineWidth = 2.5; ctx.strokeStyle = curcolwincyan;
-                  ctx.moveTo(0,0); ctx.rotate(pos); ctx.lineTo(0, -length); ctx.stroke(); ctx.rotate(-pos); hand = hand + 1;
+                  ctx.moveTo(0,0); ctx.rotate(pos); ctx.lineTo(0, -length); ctx.stroke(); ctx.rotate(-pos); hand = hand + 1
             	} else { ctx.beginPath(); ctx.lineWidth = 0.5; ctx.strokeStyle = curcolblack; ctx.lineCap = "round"; 
-                  ctx.moveTo(0,0); ctx.rotate(pos); ctx.lineTo(0, -length); ctx.stroke(); ctx.rotate(-pos); hand = 1 }}
+                  ctx.moveTo(0,0); ctx.rotate(pos); ctx.lineTo(0, -length); ctx.stroke(); ctx.rotate(-pos); hand = 1}}
             
         // Drag element scripts ------------------------------------------------------------------------------>
             
             dragElement(document.getElementById("cat")); dragElement(document.getElementById("pyro")); dragElement(document.getElementById("disk")); dragElement(document.getElementById("message")); 
-            dragElement(document.getElementById("embed")); dragElement(document.getElementById("note")); dragElement(document.getElementById("voreware"))
+            dragElement(document.getElementById("embed")); dragElement(document.getElementById("note")); dragElement(document.getElementById("prompt"))
             dragElement(document.getElementById("logoff")); dragElement(document.getElementById("clock"));
             function dragElement(elmnt) { var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-            if (document.getElementById(elmnt.id + "window")) { document.getElementById(elmnt.id + "window").onmousedown = dragMouseDown; } else { elmnt.onmousedown = dragMouseDown; }
+            if (document.getElementById(elmnt.id + "window")) {document.getElementById(elmnt.id + "window").onmousedown = dragMouseDown} else { elmnt.onmousedown = dragMouseDown}
             function dragMouseDown(e) { //mouse moment grabbing
                 e = e || window.event; e.preventDefault(); pos3 = e.clientX; pos4 = e.clientY;
-                document.onmouseup = closeDragElement; document.onmousemove = elementDrag; }
+                document.onmouseup = closeDragElement; document.onmousemove = elementDrag}
             function elementDrag(e) { e = e || window.event;  e.preventDefault();
                pos1 = pos3 - e.clientX; pos2 = pos4 - e.clientY; pos3 = e.clientX; pos4 = e.clientY;  //if(pos1 < 0){pos1 = 0}
-               elmnt.style.top = elmnt.offsetTop - pos2 + "px"; elmnt.style.left = (elmnt.offsetLeft - pos1) + "px"; } //if(elmnt.offsetTop < 0){elmnt.style.top = elmnt.offsetTop - pos2}
-            function closeDragElement() { document.onmouseup = null; document.onmousemove = null; }}
+               elmnt.style.top = (elmnt.offsetTop - pos2) + "px"; elmnt.style.left = (elmnt.offsetLeft - pos1) + "px"} //if(elmnt.offsetTop < 0){elmnt.style.top = elmnt.offsetTop - pos2}
+            function closeDragElement() {document.onmouseup = null; document.onmousemove = null}}
         
 //-- Startmenu script handling ------------------------------------------------------------------------------>
             
