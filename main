@@ -37,7 +37,7 @@
               
         var github = "url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/";
         var readme = "//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/README.md";
-        var updateon = "16:05pm on Febuary 28th, 2021. [GMT]"; 
+        var updateon = "17:11pm on Febuary 29th, 2021. [GMT]"; 
         var updatedfrom = "Thea Vanherst";
         var currenttask = 1, cal = 5;
         
@@ -950,9 +950,9 @@
         
             var datestring;
             function promptrestart(){inprompt = ""; datestring = updateon.replace("pm on Febuary","").replace(". [GMT]","").replace(":","").replace("th, ","").replace("rd, ","").replace("nd, ","").replace("st, ","").replace(" ",""); 
-                inprompt = "Vher98 [Version 0.6." + datestring + "]\n(c) 2021 Very Vhersty. All Rights Reserved.\nDeveloper console; use at your own risk."; println()}
+                inprompt = "Vher98 [Version 0.6." + datestring + "]\n(c) 2021 Very Vhersty. All Rights Reserved.\nDeveloper console; use at your own risk.\n"; println()}
         
-            var config, currentconfigfile, inprompt = "", loaded; //global varable storage.
+            var config, loadedconfig, currentconfigfile, inprompt = "", loaded; //global varable storage.
             var setone, settwo, line = 1; //varables to read how many lines are in the config.
             var consoleout = document.getElementById("currentact"); //console output
             var consolein = document.getElementById("prompttext").value //current line in console
@@ -962,77 +962,91 @@
             function htmlupdate() { $.get(currentconfigfile, function(data) {inprompt = inprompt + data;}, 'text')}
             document.getElementById("prompttext").addEventListener("keyup", function(event) { //button listener while prompt text is active.
                 if (event.keyCode === 13) { event.preventDefault(); document.getElementById("promptin").click(); }}); //listens for the enter key
+
+            function println() {inprompt = inprompt + "\n"; consoleout.innerHTML = inprompt;} 
+            function wordln(){inprompt = inprompt + consolein; println();}
             
-            function getln(){inprompt = inprompt + "Getting..."; println()}
+            function getln(){wordln(); inprompt = inprompt + "Getting..."; println()}
             function fetchln(){inprompt = inprompt + "Fetching..."; println()}
-            function println() {inprompt = inprompt + "\n"; consoleout.innerHTML = inprompt} //prints a new line in the console.
-            function wordln(){println(); inprompt = inprompt + consolein; println() }
-            
-            function loadedln() {inprompt = inprompt + "Loaded " + loaded; println()} //prints the current loaded config after typing in said config.
-            function doneln(){inprompt = inprompt + "Done."; println()}
+            function runln(){inprompt = inprompt + "Running" + function2 + function3; println()}
+            function loadedln() {loaded = word1 ; inprompt = inprompt + "Loaded " + loaded; println(); println(); } 
+            function doneln(){inprompt = inprompt + "Done."; println(); println();}
 
             function clearprompt(){word1 = ""; word2 = ""; word3 = ""; loaded = ""; currentconfigfile = ""; while (loadedconfig--) {window.clearTimeout(loadedconfig)}}
             
-            function consoleinput(){ 
-                consolein = document.getElementById("prompttext").value; document.getElementById('prompttext').value = ""; 
+            function consoleinput(){ consolein = document.getElementById("prompttext").value; document.getElementById('prompttext').value = ""; 
                 console.log(consolein); consoleread()}
             
-            function namestorage(){ word2 = function2; currentconfigfile = word1 + word3 + word2; loaded = word2 + filetype}
-            
-            function configempt(){ inprompt = inprompt + "current config is not recognised as an internal or external command."; println(); clearconfig()}
-            function runningln(){ inprompt = inprompt + "currently running " + loaded + ""; println();}
+            function namestorage(){ wordln(); word2 = function2; currentconfigfile = word1 + word3 + word2; loaded = word2 + filetype}
+            function configempt(){ wordln(); inprompt = inprompt + "current config is not recognised as an internal or external command."; println(); clearconfig()}
+            function runningln(){ wordln(); inprompt = inprompt + "currently running " + loaded + ""; println();}
             
             var word1, word2, word3, filetype;
             function consoleread(){
-                function1 = "", function2 = "", function3 = ""; var array = consolein.split(' '), function1 = array[0];
-                if (array.length == 2){ function2 = array[1]; var arrra = function2.split('.'), function2 = arrra[0], function3 = arrra[1]}
+                function1 = ""; function2 = ""; function3 = "";
+                var array = consolein.split(' '), function1 = array[0];
+                if (array.length == 2){ function2 = array[1]; 
+                    var arrra = function2.split('.'), function2 = arrra[0], function3 = arrra[1]}
                 
-                if(function1 == "config"){word1 = "https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/configs/"; wordln();}
-                else if (function1 == "load"){currentconfigfile = consolein.replace('load ',''); loaded = currentconfigfile; loadedln()}
+                if(function1 == "config/load"){word1 = "https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/configs/"; wordln()}
+                else if (function1 == "raw"){word1 = consolein.replace('load ',''); wordln()}
+                else if (function1 == "load"){word1 = "https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/"; wordln()}
 
-                if(function3 == "dll"){ word3 = "print_"; filetype = ".dll"}
-                else if(function3 == "html"){ word3 = "art_"; filetype = ".html"}
+                if(function2 == "read"){ word3 = "README" }
+
+                if(function3 == "dll"){ word3 = "print_"; filetype = ".dll" }
+                else if(function3 == "html"){ word3 = "art_"; filetype = ".html" }
+                else if(function3 == "me"){word2 = ".md" }
 
                 if (function1 && function2 && function3){ if (function1 !== "load"){
                     word2 = function2; currentconfigfile = word1 + word3 + word2; loaded = word2 + filetype; loadedln()}} 
                 
+                else if (function1 == "mount"){
+                     wordln(); currentconfigfile = word1 + word3 + word2; config = currentconfigfile; loaded = currentconfigfile; loadedln();}
+                
+                else if (function1 == "flush"){
+                     wordln(); word1 = ""; word2 = ""; word1 = ""; inprompt = inprompt + "Flushed."; println();}
+    
                 else if (function1 == "get"){ 
                     if(config.length !== 0){
-                        $.get(currentconfigfile, function(data) { inprompt = inprompt + $("console").html( data ); }, 'text')}
+                         wordln(); $.get(currentconfigfile, function(data) { inprompt = inprompt + $("console").html( data ); }, 'text')}
                     else { configempt()}}
                     
                 else if (function1 == "fetch") { 
                     if(config.length !== 0){ 
-                        fetch(currentconfigfile).then(res => res.text()) .then(data => {config = data.split('\n')}); fetchln(); doneln()} 
+                         wordln(); fetch(currentconfigfile).then(res => res.text()) .then(data => {config = data.split('\n')}); fetchln(); doneln()} 
                     else { configempt()}}
                     
+                else if (function1 == "status"){
+                     wordln(); inprompt = inprompt + "current: " + word1 + word3 + word2; println(); println()}
+                    
                 else if (function1 == "run") { 
+                    wordln(); runln();
                     if(config.length !== 0){ 
-                        let configlength = config.length; let configset = 0;
-                        if (function2 !== ""){ var configfixed = config.length; } else { var configfixed = (configlength - 2)/ 2}
+                        let configlength = config.length; let configset = 0; var configloop = 0;
+                        
+                        if (function2 !== ""){ var configfixed = config.length; } 
+                        else { var configfixed = (configlength - 2)/ 2 }
                         console.log(configlength); console.log(config)
-                                
-                        if (function2 !== ""){ 
-                            configset = function2; promptText.textContent = "🎱 Command Prompt"} 
-                        else { 
-                            configset = configloop + (configlength - 2)/ 2; promptText.textContent = config[config.length - 2] }
-                            
+                        console.log(configfixed); console.log(function2)
+                        
                         for(let configloop = 0; configloop < configfixed; configloop++){ 
-                            loadedconfig = setTimeout(function() { var configtext = config[configloop]; inprompt = inprompt + configtext; println(); }, config[configset])}}
-                    else {configempt();}}
+                            loadedconfig = setTimeout(function() { 
+                                var configtext = config[configloop]; inprompt = inprompt + configtext; println(); }, config[configset])
+                                if (function2 !== ""){ configset = configset + function2; promptText.textContent = "🎱 Command Prompt"} 
+                                else { configset = configloop + (configlength - 2)/ 2; promptText.textContent = config[config.length - 2] }}}
+                                
+                    else { configempt() }}
+                    
                 else if (function1 == "clear") { 
                     inprompt = "clear"; println(); prompttitle.textContent = "🎱 Command Prompt"; clearprompt();}
                     
                 else if(word2 == ""){
-                    inprompt = inprompt + "'" + function1 + "' is not recognised as an internal or external command."; println(); clearconfig()} 
+                    wordln(); inprompt = inprompt + "Error F01: " + "'" + function1 + "' is not recognised as an internal or external command."; println(); println(); clearconfig()} 
                 else if (word3 == ""){
-                    inprompt = inprompt + "'" + function2 + "' is not recognised as a valid file type."; println(); clearconfig()}
+                    wordln(); inprompt = inprompt + "Error F02: " + "'" + function2 + "' is not recognised as a valid file type."; println(); println(); clearconfig()}
                 else { 
-                    inprompt = inprompt + "'" + function1 + "' is not recognised as an internal or external command."; println(); clearconfig()}
-                
-                console.log("functions: " + function1 + function2 + function3);
-                console.log("words: " + word1 + word3 + word2);
-                console.log("config: " + currentconfigfile);
+                    wordln(); inprompt = inprompt + "Error F03: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println(); clearconfig()}
             }
         </script>
         
