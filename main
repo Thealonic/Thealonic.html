@@ -37,7 +37,7 @@
               
         var github = "url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/";
         var readme = "//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/README.md";
-        var updateon = "18:12pm on Febuary 27th, 2021. [GMT]"; 
+        var updateon = "16:05pm on Febuary 28th, 2021. [GMT]"; 
         var updatedfrom = "Thea Vanherst";
         var currenttask = 1, cal = 5;
         
@@ -352,7 +352,7 @@
             consolg {padding:0px; margin:-2px; display: block; margin-left: 0; margin-right: 0; letter-spacing: -1px; white-space: pre-wrap; font-family: monospace; color:#00FF00}
             
             underline {text-decoration-line: underline;}
-            span {background-color: var(--white); color: var(--text)} 
+            span {background-color: var(--white); color: var(--text);} 
             icon {background-color: var(--wincyan); color: var(--white)} 
             label {display:inline-flex; align-items: center; color: var(--text)} 
             underline {text-decoration-line: underline;}
@@ -404,7 +404,7 @@
 <!-- Page rendering ------------------------------------------------------------------------------>
     <script> function defaultpageload() {evangelionmode(); backcolourset(); fontcolourset(); wallpaperupdate(); themechange(); evangelionmode();} </script>
     <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" 
-          onload="latestupdate(); defaultpageload(); messageopen(); vunnytask(); vunnypositionreset(); disktask(); tumblractive();">
+          onload="latestupdate(); promptrestart(); defaultpageload(); messageopen(); vunnytask(); vunnypositionreset(); disktask(); tumblractive();">
     
 <!-- desktop handling ------------------------------------------------------------------------------>
         <!-- Sidebar icons coloumn 1 -->
@@ -920,7 +920,7 @@
 
 <!-- Voreware box rendering ------------------------------------------------------------------------------>
 
-        <div class="win98post" style="z-index:100; margin-left: -20000px; width: 495px; max-height:900px;" onmousedown="promptactive();" id="prompt"> <!--#ref2007-->
+        <div class="win98post" style="z-index:100; margin-left: -20000px; min-width: 500px; max-width: 910px; max-height:900px;" onmousedown="promptactive();" id="prompt"> <!--#ref2007-->
             <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="promptclose()"><div class="close"></div></div>
             <div class="win98titlebarbutton" title="Minimize" onclick="promptminimize();"> <div class="minimize"></div></div>
             <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
@@ -929,7 +929,7 @@
                 <ul class="tree-view" style="background-color: var(--alwaysblack); color: var(--alwayswhite); max-height:865px; padding-bottom:-3px;">
                     <div style="overflow-y: scroll; margin-right: -4px; margin-top: -5px; max-height:861px; min-height:240px;">
                         <div style="margin-top:5px;">
-                            <console id="currentact"></console>
+                            <console id="currentact" style="width:100%; line-height:1"></console>
                             <input type="text" id="prompttext" style="margin-top: -5px;"  autocomplete="off"> 
                             <button id="promptin" onclick="consoleinput()" value="" style="margin-left:-20000px"></button>
                     </div></div>
@@ -944,47 +944,79 @@
                 document.getElementById("taskapp6").style.backgroundImage = github + "img/scrollbarempty.png')"; document.getElementById("taskapp6").style.backgroundColor = curcolwhite; //#ref5028
                 document.documentElement.style.setProperty('--taskbar6top1', curcolgray); document.documentElement.style.setProperty('--taskbar6top2', curcolblack); //#ref5028
                 document.documentElement.style.setProperty('--taskbar6bottom1', curcolwhite); document.documentElement.style.setProperty('--taskbar6bottom2', curcollightg)} //#ref5028
-            function promptclose() {prompt.style.marginLeft = "-20000px"; document.getElementById("taskapp6").style.marginLeft = "-20000px"; task6true = false; task6on = false; taskreset()}
+            function promptclose() {prompt.style.marginLeft = "-20000px"; document.getElementById("taskapp6").style.marginLeft = "-20000px"; task6true = false; task6on = false; taskreset(); promptrestart()}
             function promptpositionreset() {calupdate(); prompt.style.left = "300px"; prompt.style.top = "200px"; prompt.style.zIndex = cal; promptwin.style.backgroundImage = currentactiveheader; promptactive()}
             function promptminimize(){inactiveall(); prompt.style.marginLeft = "-20000px"; promptButtonOpen = true}
+        
+            var datestring;
+            function promptrestart(){inprompt = ""; datestring = updateon.replace("pm on Febuary","").replace(". [GMT]","").replace(":","").replace("th, ","").replace("rd, ","").replace("nd, ","").replace("st, ","").replace(" ",""); 
+                inprompt = "Vher98 [Version 0.6." + datestring + "]\n(c) 2021 Very Vhersty. All Rights Reserved.\n \nDeveloper console; use at your own risk."; println()}
         
             var config, currentconfigfile, inprompt = "", loaded; //global varable storage.
             var setone, settwo, line = 1; //varables to read how many lines are in the config.
             var consoleout = document.getElementById("currentact"); //console output
             var consolein = document.getElementById("prompttext").value //current line in console
             var prompttitle = document.getElementById("prompttext");
-            
-            function configupdate() { fetch(currentconfigfile).then(res => res.text()) .then(data => {config = data.split('\n')})} //config preset reading and updating through clearing line lengths.
-            function vorewareconfig() { 
-                currentconfigfile = 'https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/voreware-config';
-                fetch(currentconfigfile).then(res => res.text()) .then(data => {config = data.split('\n')})} //loads voreware config
-            function clearconfig() { currentconfigfile = ''; configrun();}
+            var function1, function2, function3, consolein;
+
+            function htmlupdate() { $.get(currentconfigfile, function(data) {inprompt = inprompt + data;}, 'text')}
+            function clearconfig() { currentconfigfile = '#';}
             //enter button read function
             document.getElementById("prompttext").addEventListener("keyup", function(event) { //button listener while prompt text is active.
                 if (event.keyCode === 13) { event.preventDefault(); document.getElementById("promptin").click(); }}); //listens for the enter key
             
+            function getln(){inprompt = inprompt + "Getting..."; println()}
+            function fetchln(){inprompt = inprompt + "Fetching..."; println()}
             function println() {inprompt = inprompt + "\n"; consoleout.innerHTML = inprompt} //prints a new line in the console.
-            function loadedln() {inprompt = inprompt + "Loaded " + loaded; println()} //prints the current loaded config after typing in said config.
             
-            function consoleinput(){ var consolein = document.getElementById("prompttext").value; console.log(consolein); document.getElementById('prompttext').value = "";
-                if (consolein == "load voreware.dll") {vorewareconfig(); loaded = "voreware.dll"; loadedln();} //config voreware
+            function doneln(){inprompt = inprompt + "Done."; println()}
+            function loadedln() {inprompt = inprompt + "Loaded " + loaded; println()} //prints the current loaded config after typing in said config.
+            function wordln(){inprompt = inprompt + consolein; println() }
+            function clearprompt(){word1 = ""; word2 = ""; word3 = ""; while (loadedconfig--) {window.clearTimeout(loadedconfig)}}
+            
+            function consoleinput(){ consolein = document.getElementById("prompttext").value; document.getElementById('prompttext').value = ""; 
+                console.log(consolein); consoleread();}
+            
+            function namestorage(){ word2 = function2; currentconfigfile = word1 + word3 + word2; loaded = word2 + filetype;}
+            
+            var word1, word2, word3, filetype;
+            function consoleread(){
+                function1 = "", function2 = "", function3 = "";
+                var array = consolein.split(' '), function1 = array[0];
+                if (array.length == 2){ function2 = array[1]
+                var arrra = function2.split('.'), function2 = arrra[0], function3 = arrra[1];}
+                
+                if(function1 == "config"){word1 = "https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/configs/"; wordln();}
+                else if (function1 == "load"){currentconfigfile = consolein.replace('load ',''); loadedln()}
 
+                if(function3 == "dll"){ word3 = "print_"; filetype = ".dll"}
+                else if(function3 == "html"){ word3 = "art_"; filetype = ".html"}
 
-                else if (consolein == "run") {configupdate(); inprompt = "currently running " + loaded + "\n"; println(); consoleupdate();} 
-                else if (consolein == "clear") {configupdate(); inprompt = "clear"; println(); prompttitle.textContent = "🎱 Command Prompt"; while (loadedconfig--) {window.clearTimeout(loadedconfig)};} 
-                else {  inprompt = inprompt + "'" + consolein + "' is not recognised as an internal or external command, \n operable program or batch file."; println(); println(); clearconfig()}
-            }
+                if (function1 && function2 && function3){ if (function1 !== "load"){
+                    word2 = function2; currentconfigfile = word1 + word3 + word2; loaded = word2 + filetype; loadedln()}} 
+                
+                else if (function1 == "get"){ $.get(currentconfigfile, function(data) { $("console").html( data ); }, 'text')}
+                else if (function1 == "fetch") { fetch(currentconfigfile).then(res => res.text()) .then(data => {config = data.split('\n')}); fetchln(); doneln()}
+                else if (function1 == "run") { inprompt = inprompt + "currently running " + loaded + ""; println(); 
+                    if ( config == ""){ inprompt = inprompt + "No current config has been loaded."} else {
+                        let configlength = config.length; let configset = 0;
+                        if (function2 !== ""){ var configfixed = config.length; } else { var configfixed = (configlength - 2)/ 2}
+                        console.log(configlength); console.log(config)
+                            
+                        if (function2 !== ""){ configset = function2; promptText.textContent = "🎱 Command Prompt"} 
+                        else { configset = configloop + (configlength - 2)/ 2; promptText.textContent = config[config.length - 2] }
+                            
+                        for(let configloop = 0; configloop < configfixed; configloop++){ 
+                            loadedconfig = setTimeout(function() { var configtext = config[configloop]; inprompt = inprompt + configtext; println(); }, config[configset])}}}
+                else if (function1 == "clear") { inprompt = "clear"; println(); prompttitle.textContent = "🎱 Command Prompt"; clearprompt();}
 
-            function consoleupdate(){ 
-                var configlength = config.length; console.log(configlength); console.log(config);
-                var configset = 0; var configfixed = (configlength - 2)/ 2;
-                for(let configloop = 0; configloop < configfixed; configloop++){ 
-                    loadedconfig = setTimeout(function() { 
-                        var configtext = config[configloop]; inprompt = inprompt + configtext; println(); }, config[configset])
-                    configset = configloop + (configlength - 2)/ 2;
-                    console.log("config loop:" + configloop); console.log("config set:" + configset); console.log("config fixed:" + configfixed);
-                }
-                prompttitle.textContent = config[config.length - 2];
+                else if(word2 == ""){inprompt = inprompt + "'" + function1 + "' is not recognised as an internal or external command."; println(); clearconfig()} 
+                else if (word3 == ""){inprompt = inprompt + "'" + function2 + "' is not recognised as a valid file type."; println(); clearconfig()}
+                else { inprompt = inprompt + "'" + function1 + "' is not recognised as an internal or external command."; println(); clearconfig()}
+                
+                console.log("functions: " + function1 + function2 + function3);
+                console.log("words: " + word1 + word3 + word2);
+                console.log("config: " + currentconfigfile);
             }
         </script>
         
@@ -1980,8 +2012,8 @@
                         <div style="z-index:100; width:100px; float:right; margin-right:-5px">
                             <a class="like-b" href="{ReblogURL}" target="_blank" style="float:right; margin-top:-22px; margin-right:1.5px;">reblog</a>
                             <div class="big_seperator" style="float: right; margin-left: 3px; margin-right: 3px; margin-top:-25px; margin-right:34px; height:17px;"></div>
-                            <a class="like-b" href="#" style="float:right; margin-top:-22px; margin-right:38.5px;">{LikeButton}
-                                <div class="b" style="background-color: var(--silver); padding: 0px 2px 2px 6px; margin-left:-4px">like</div>
+                            <!--<a class="like-b" href="#" style="float:right; margin-top:-22px; margin-right:38.5px;">{LikeButton}
+                            <div class="b" style="background-color: var(--silver); padding: 0px 2px 2px 6px; margin-left:-4px">like</div>-->
                         </a></div>
                         
                         <div class="filler"></div><div class="filler"></div><div class="filler"></div><div class="filler"></div>
@@ -2621,9 +2653,10 @@
                 var infScr = $('body').hasClass('infinite_scrolling'); twoCol = $('body').hasClass('two_column'); $container = $('#desktop');
                 if( infScr && twoCol ){ $container.imagesLoaded(function(){ $container.masonry({ itemSelector: '.window'}) });
                     $container.infinitescroll({ itemSelector: '.window'}, function( newElements ) {
-                        var $newElems = $( newElements ).css({ opacity: 0 }); $newElemsIDs = $newElems.map(function () { return this.id; }).get();
-                        Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
-                        $newElems.imagesLoaded(function(){ $container.masonry( 'appended', $newElems, true ); $newElems.animate({ opacity: 1 })})
+                        var $newElems = $( newElements ).css({ opacity: 0 }); 
+                        var $newElemsIDs = $newElems.map(function () { return this.id; }).get();
+                        //Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
+                        $newElems.imagesLoaded(function(){ $container.masonry( 'appended', $newElems, true )})
                         $newElems.find('.video').each( function() { resizeVideos() })})}
                 window.setInterval(updateClock(), 6000); updateClock()});
             
