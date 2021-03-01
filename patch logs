@@ -8,10 +8,21 @@
 <li>Functions are handled as seperate entities to the function name.</li>
 <li>Command prompt can now read file types.</li>
 <li>Added the "get" function to print out instant temporary HTML/CSS embedding.</li>
-<li><strong>Added "load" function</strong> which can drag HTML/CSS into the command prompt to load custom scripts.</li>
+<li><strong>Added "raw" function</strong> which can drag HTML/CSS into the command prompt to load custom scripts.</li>
+<li><strong>Added new functions</strong><br />
+<ul>
+<li>Added "load" function which you can access resources from Vher98.</li>
+<li>Added "config" function to address the Vher98 config folder.</li>
+<li>Added "flush" function to clean out function storage.</li>
+<li>Added "status" which calls the concurrent functions.</li>
+<li>Added "mount" function to store pages.</li>
+</ul>
+</li>
+<li>Added 1 test config file for testing purposes, said file can be ran</li>
 <li>The "run" function can now have en enforced render time.</li>
 <li>"fetch" command has been rehauled.<strong><br /></strong></li>
-<li>Added "clear" and ability to empty varables.</li>
+<li>Changed "run" function to "push" for text based commands.</li>
+<li>"clear" now empty loaded varables.</li>
 <li><strong>Script files can now read font colour and background colour.</strong></li>
 <li>Added 3 new scripts.</li>
 </ul>
