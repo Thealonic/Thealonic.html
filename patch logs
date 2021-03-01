@@ -1,7 +1,26 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll; padding-right: 4px;">
 <ul>
-<li><strong style="color: var(--atext);">2021 Febuary 28th (210228) - The &ldquo;Command Prompt&rdquo; Update<br /></strong>
+<li><strong>2021 Febuary 28th (210229) </strong><em>- "Prompt" Update 1</em><strong><br /></strong>
+<ul>
+<li><strong>&ldquo;Command Prompt&rdquo; Additions</strong><br />
+<ul>
+<li>Functions are handled as seperate entities to the function name.</li>
+<li>Command prompt can now read file types.</li>
+<li>Added the "get" function to print out instant temporary HTML/CSS embedding.</li>
+<li><strong>Added "load" function</strong> which can drag HTML/CSS into the command prompt to load custom scripts.</li>
+<li>The "run" function can now have en enforced render time.</li>
+<li>"fetch" command has been rehauled.<strong><br /></strong></li>
+<li>Added "clear" and ability to empty varables.</li>
+<li><strong>Script files can now read font colour and background colour.</strong></li>
+</ul>
+<ol>
+<li>- Added warning to command prompt</li>
+</ol></li>
+<li>Added 1 test config file for testing purposes, said file can be ran</li>
+</ul>
+</li>
+<li><strong style="color: var(--atext);">2021 Febuary 28th (210228) <em>- The &ldquo;Command Prompt&rdquo; Update</em><br /></strong>
 <ul>
 <li><strong>Added the &ldquo;Command Prompt&rdquo;</strong><br />
 <ul>
@@ -16,7 +35,7 @@
 <li>Added 1 test config file for testing purposes, said file can be ran through the command prompt.</li>
 <li><strong>Added Config Files</strong><br />
 <ul>
-<li>Config files can now print through the command prompt.</li>
+<li>Config files can now print through the command prompt and have the ability to manually program line print timings.</li>
 <li>Added the ability to change window titles.</li>
 </ul>
 </li>
