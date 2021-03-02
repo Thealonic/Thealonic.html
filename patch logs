@@ -15,18 +15,23 @@
 <li><strong>"Fetch" function has been changed to address chaining</strong>, so seperate things can be mounted and the same time to be applied differently.</li>
 <li>Functions are more accurate to what they mean.</li>
 <li>Incorrect functions will now give more accurate debug prompts.</li>
-<li>More functions can now be chained at the same time aposed to just 3.</li>
+<li><strong>More functions can now be chained at the same time aposed to just 3.</strong></li>
 <li>The "get" command has been changed to be able to render any loaded functions aposed to forcing a page load and has been changed to address chaining.</li>
+<li>Added "custom" function which allows adjustments to variables, colour settings and background settings.</li>
 </ul>
 </li>
+<li>The command prompt can now have colour changes based on the "colour" command.</li>
 <li>Simplified the command prompt to no longer require file types.</li>
 <li><em>Slightly decreased the vertical height.</em></li>
-<li><em>Added more stability.</em></li>
+<li><em>Added a limiter to how long the "console in" string can be.</em></li>
 </ul>
 </li>
-<li>Removed Like button to decrease page loading.</li>
 </ul>
-</li>
+<ol>
+<li><em>- Fixed issues with variables not being flushed or emptied properly.</em></li>
+<li><em>- Fixed tons of variable checks.</em></li>
+<li><em>- Added more stability.</em></li>
+</ol></li>
 <li><strong>2021 March 1st (210301) </strong><em>- &ldquo;Prompt&rdquo; Update 1</em><strong><br /></strong>
 <ul>
 <li><strong>&ldquo;Command Prompt&rdquo; Additions</strong><br />
