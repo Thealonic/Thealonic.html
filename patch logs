@@ -1,28 +1,54 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll; padding-right: 4px;">
 <ul>
-<li><strong>2021 Febuary 28th (210229) </strong><em>- "Prompt" Update 1</em><strong><br /></strong>
+<li><strong>2021 March 1st (210301) </strong><em>- &ldquo;Prompt&rdquo; Update 2</em><strong><strong><br /></strong></strong>
+<ul>
+<li><strong>&ldquo;Command Prompt&rdquo; Rehaul</strong><br />
+<ul>
+<li><strong>Major overhaul to functions</strong><br />
+<ul>
+<li>Functions are now all seperated by spaces.</li>
+<li><strong>Functions now rely on chaining seperate functions, instead of simply mentioning the function.</strong> Which means different functions within the tree can now do totally different jobs.</li>
+<li>The "Mount" function is now dedicated to storage page urls into functions.</li>
+<li>Adjusted how local files can be addressed and now can navigate functions.</li>
+<li>Changed the "run" function to "run default". "Run (time)" still functions as a regular time.</li>
+<li><strong>"Fetch" function has been changed to address chaining</strong>, so seperate things can be mounted and the same time to be applied differently.</li>
+<li>Functions are more accurate to what they mean.</li>
+<li>Incorrect functions will now give more accurate debug prompts.</li>
+<li>More functions can now be chained at the same time aposed to just 3.</li>
+<li>The "get" command has been changed to be able to render any loaded functions aposed to forcing a page load and has been changed to address chaining.</li>
+</ul>
+</li>
+<li>Simplified the command prompt to no longer require file types.</li>
+<li><em>Slightly decreased the vertical height.</em></li>
+<li><em>Added more stability.</em></li>
+</ul>
+</li>
+<li>Removed Like button to decrease page loading.</li>
+</ul>
+</li>
+<li><strong>2021 March 1st (210301) </strong><em>- &ldquo;Prompt&rdquo; Update 1</em><strong><br /></strong>
 <ul>
 <li><strong>&ldquo;Command Prompt&rdquo; Additions</strong><br />
 <ul>
 <li>Functions are handled as seperate entities to the function name.</li>
 <li>Command prompt can now read file types.</li>
-<li>Added the "get" function to print out instant temporary HTML/CSS embedding.</li>
-<li><strong>Added "raw" function</strong> which can drag HTML/CSS into the command prompt to load custom scripts.</li>
+<li>Added the &ldquo;get&rdquo; function to print out instant temporary HTML/CSS embedding.</li>
+<li><strong>Added &ldquo;raw&rdquo; function</strong> which can drag HTML/CSS into the command prompt to load custom scripts.</li>
 <li><strong>Added new functions</strong><br />
 <ul>
-<li>Added "load" function which you can access resources from Vher98.</li>
-<li>Added "config" function to address the Vher98 config folder.</li>
-<li>Added "flush" function to clean out function storage.</li>
-<li>Added "status" which calls the concurrent functions.</li>
-<li>Added "mount" function to store pages.</li>
+<li>Added &ldquo;load&rdquo; function which you can access resources from Vher98.</li>
+<li>Added &ldquo;config&rdquo; function to address the Vher98 config folder.</li>
+<li>Added &ldquo;flush&rdquo; function to clean out function storage.</li>
+<li>Added &ldquo;status&rdquo; which calls the concurrent functions.</li>
+<li>Added &ldquo;mount&rdquo; function to store pages.</li>
 </ul>
 </li>
 <li>Added 1 test config file for testing purposes, said file can be ran</li>
-<li>The "run" function can now have en enforced render time.</li>
-<li>"fetch" command has been rehauled.<strong><br /></strong></li>
-<li>Changed "run" function to "push" for text based commands.</li>
-<li>"clear" now empty loaded varables.</li>
+<li>The &ldquo;run&rdquo; function can now have en enforced render time.</li>
+<li>&ldquo;fetch&rdquo; command has been rehauled.<strong><br /></strong></li>
+<li>Changed &ldquo;run&rdquo; function to &ldquo;push&rdquo; for text based commands.</li>
+<li>&ldquo;clear&rdquo; now empty loaded varables.</li>
 <li><strong>Script files can now read font colour and background colour.</strong></li>
 <li>Added 3 new scripts.</li>
 </ul>
