@@ -37,7 +37,7 @@
               
         var github = "url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/";
         var readme = "//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/README.md";
-        var updateon = "17:11pm on Febuary 29th, 2021. [GMT]"; 
+        var updateon = "18:53pm on Febuary 29th, 2021. [GMT]"; 
         var updatedfrom = "Thea Vanherst";
         var currenttask = 1, cal = 5;
         
@@ -966,13 +966,7 @@
             function println() {inprompt = inprompt + "\n"; consoleout.innerHTML = inprompt;} 
             function wordln(){inprompt = inprompt + consolein; println();}
             
-            function getln(){wordln(); inprompt = inprompt + "Getting..."; println()}
-            function fetchln(){inprompt = inprompt + "Fetching..."; println()}
-            function runln(){inprompt = inprompt + "Running" + function2 + function3; println()}
             function loadedln() {loaded = word1 ; inprompt = inprompt + "Loaded " + loaded; println(); println(); } 
-            function doneln(){inprompt = inprompt + "Done."; println(); println();}
-
-            function clearprompt(){word1 = ""; word2 = ""; word3 = ""; loaded = ""; currentconfigfile = ""; while (loadedconfig--) {window.clearTimeout(loadedconfig)}}
             
             function consoleinput(){ consolein = document.getElementById("prompttext").value; document.getElementById('prompttext').value = ""; 
                 console.log(consolein); consoleread()}
@@ -981,72 +975,141 @@
             function configempt(){ wordln(); inprompt = inprompt + "current config is not recognised as an internal or external command."; println(); clearconfig()}
             function runningln(){ wordln(); inprompt = inprompt + "currently running " + loaded + ""; println();}
             
-            var word1, word2, word3, filetype;
+            var word1 = "", word2 = "", word3 = "", word4 = "", currunning = "";
             function consoleread(){
-                function1 = ""; function2 = ""; function3 = "";
-                var array = consolein.split(' '), function1 = array[0];
-                if (array.length == 2){ function2 = array[1]; 
-                    var arrra = function2.split('.'), function2 = arrra[0], function3 = arrra[1]}
+                function1 = ""; function2 = ""; function3 = ""; function4 = ""; function5 = "";
+                var array = consolein.split(' '), function1 = array[0], function2 = array[1], function3 = array[2], function4 = array[3], function5 = array[4];
                 
-                if(function1 == "config/load"){word1 = "https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/configs/"; wordln()}
-                else if (function1 == "raw"){word1 = consolein.replace('load ',''); wordln()}
-                else if (function1 == "load"){word1 = "https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/"; wordln()}
-
-                if(function2 == "read"){ word3 = "README" }
-
-                if(function3 == "dll"){ word3 = "print_"; filetype = ".dll" }
-                else if(function3 == "html"){ word3 = "art_"; filetype = ".html" }
-                else if(function3 == "me"){word2 = ".md" }
-
-                if (function1 && function2 && function3){ if (function1 !== "load"){
-                    word2 = function2; currentconfigfile = word1 + word3 + word2; loaded = word2 + filetype; loadedln()}} 
+                wordln(); 
                 
-                else if (function1 == "mount"){
-                     wordln(); currentconfigfile = word1 + word3 + word2; config = currentconfigfile; loaded = currentconfigfile; loadedln();}
-                
-                else if (function1 == "flush"){
-                     wordln(); word1 = ""; word2 = ""; word1 = ""; inprompt = inprompt + "Flushed."; println();}
-    
-                else if (function1 == "get"){ 
-                    if(config.length !== 0){
-                         wordln(); $.get(currentconfigfile, function(data) { inprompt = inprompt + $("console").html( data ); }, 'text')}
-                    else { configempt()}}
+                if (function1 == "mount"){
+                    inprompt = inprompt + "Mounting " 
+                    if(function2 !== ""){
+                        inprompt = inprompt + function2 + " "}
+                    if(function3 !== ""){
+                        inprompt = inprompt + function3 + " "}
+                    if(function4 !== ""){
+                        inprompt = inprompt + function4}
+                    println(); println();
                     
-                else if (function1 == "fetch") { 
-                    if(config.length !== 0){ 
-                         wordln(); fetch(currentconfigfile).then(res => res.text()) .then(data => {config = data.split('\n')}); fetchln(); doneln()} 
-                    else { configempt()}}
+                    if(function2 == "local"){
+                        word1 = "https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/";
+                        if(function3 == "config"){ 
+                            word2 = "configs/"; word3 = function4;
+                            loaded = word1 + word2 + word3 + word4;
+                        } else if(function3 == "img"){
+                            word2 = "img/";
+                            word3 = function4;
+                            loaded = word1 + word2 + word3 + word4;
+                        } else if(function3 !== ""){
+                            word2 = function3;
+                            loaded = word1 + word2 + word3 + word4;
+                        } else {
+                            inprompt = inprompt + "Error 301: " + "'" + function3 + "' is not recognised as an internal file or folder."; println(); println() }
+                        loaded = word1 + word2 + word3 + word4;
+                    } else if (function2 !== "") {
+                        var temp1 = "", temp2 = "";
+                        var temp = function2.split('.'), temp1 = temp[0], temp2 = temp[1];
+                        if(temp1 == "https://www" || temp1 == "www"){
+                            word1 = function2;
+                            loaded = word1 + word2 + word3 + word4;
+                        } else {
+                            inprompt = inprompt + "Error 206: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() }
+                    } else {
+                        inprompt = inprompt + "Error 201: " + "'" + function1 + "' is not recognised as an internal file or folder."; println(); println() }
+                    console.log(word1 + word2 + word3 + word4)
                     
-                else if (function1 == "status"){
-                     wordln(); inprompt = inprompt + "current: " + word1 + word3 + word2; println(); println()}
+                } else if (function1 == "load") {
+                    if(loaded !== ""){
+                        inprompt = inprompt + "Loaded current config to buffer."; println(); println();
+                        config = loaded;
+                        currentconfigfile = loaded;
+                    } else {
+                       inprompt = inprompt + "Error 205: " + "'" + loaded + "' is not a valid config."; println(); println() }
+                       
+                } else if (function1 == "fetch") { 
+                    if(function2 == "mount"){
+                        if(loaded !== ""){
+                            inprompt = inprompt + "Fetching " + loaded; println();
+                            fetch(currentconfigfile).then(res => res.text()) .then(data => {config = data.split('\n')});
+                            inprompt = inprompt + "Done."; println(); println();
+                        } else {
+                            inprompt = inprompt + "Error 203: " + "'" + loaded + "' is not a valid config."; 
+                            println(); println() }
+                    } else{
+                        inprompt = inprompt + "Error 202: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() }
+                        
+                } else if (function1 == "status"){
+                    inprompt = inprompt + "current: "
+                    if(word1 !== ""){
+                        inprompt = inprompt + word1 + " "}
+                    if(word2 !== ""){
+                        inprompt = inprompt + word2 + " "}
+                    if(word3 !== ""){
+                        inprompt = inprompt + word3 + " "}
+                    if(word4 !== ""){
+                        inprompt = inprompt + word4}
+                    if(function2 == "run"){
+                        inprompt = inprompt + currunning }
+                    println(); println()
                     
-                else if (function1 == "run") { 
-                    wordln(); runln();
+                } else if (function1 == "flush"){
+                    if(function2 !== ""){
+                        if (function2 == "function1"){
+                            word1 = ""; inprompt = inprompt + "Flushed " + function2 + "."; println(); println();
+                        } else if (function2 == "function2"){
+                            word2 = ""; inprompt = inprompt + "Flushed " + function2 + "."; println(); println();
+                        } else if (function2 == "function3"){
+                            word3 = ""; inprompt = inprompt + "Flushed " + function2 + "."; println(); println();
+                        } else if (function2 == "function4"){
+                            word4 = ""; inprompt = inprompt + "Flushed " + function2 + "."; println(); println();
+                        } else if (function2 == "run"){
+                            while (loadedconfig--) { window.clearTimeout(loadedconfig) };
+                            currunning = ""; inprompt = inprompt + "Flushed run."; println(); println();
+                        } else if (config !== ""){
+                            config = ""; currentconfigfile = "";
+                            inprompt = inprompt + "Flushed current loaded config."; println(); println()
+                        } else {
+                            inprompt = inprompt + "Error 204: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() }
+                    } else {
+                        word1 = ""; word2 = ""; word1 = ""; inprompt = inprompt + "Flushed."; println(); println()}
+                        
+                } else if (function1 == "get"){
+                    if(function2 == "mount"){
+                        if(config.length !== 0){
+                            $.get(currentconfigfile, function(data) { inprompt = inprompt + $("console").html( data ); }, 'text')} 
+                    } else {
+                        inprompt = inprompt + "Error 205: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() }
+                        
+                } else if (function1 == "print") {
+                    if(word4 !== ""){
+                        currunning = " " + word4
+                    } else {
+                        currunning = " undefined" }
+                    inprompt = inprompt + "Printing " + currunning; println()
                     if(config.length !== 0){ 
                         let configlength = config.length; let configset = 0; var configloop = 0;
-                        
-                        if (function2 !== ""){ var configfixed = config.length; } 
-                        else { var configfixed = (configlength - 2)/ 2 }
-                        console.log(configlength); console.log(config)
-                        console.log(configfixed); console.log(function2)
-                        
+                        if(function2 == "default"){
+                            var configfixed = (configlength - 2)/ 2 
+                        } else if (function2 !== ""){ 
+                            var configfixed = config.length } 
                         for(let configloop = 0; configloop < configfixed; configloop++){ 
                             loadedconfig = setTimeout(function() { 
-                                var configtext = config[configloop]; inprompt = inprompt + configtext; println(); }, config[configset])
-                                if (function2 !== ""){ configset = configset + function2; promptText.textContent = "🎱 Command Prompt"} 
-                                else { configset = configloop + (configlength - 2)/ 2; promptText.textContent = config[config.length - 2] }}}
-                                
-                    else { configempt() }}
-                    
-                else if (function1 == "clear") { 
-                    inprompt = "clear"; println(); prompttitle.textContent = "🎱 Command Prompt"; clearprompt();}
-                    
-                else if(word2 == ""){
-                    wordln(); inprompt = inprompt + "Error F01: " + "'" + function1 + "' is not recognised as an internal or external command."; println(); println(); clearconfig()} 
-                else if (word3 == ""){
-                    wordln(); inprompt = inprompt + "Error F02: " + "'" + function2 + "' is not recognised as a valid file type."; println(); println(); clearconfig()}
-                else { 
-                    wordln(); inprompt = inprompt + "Error F03: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println(); clearconfig()}
+                                var configtext = config[configloop]; inprompt = inprompt + configtext; println();}, config[configset])
+                                if (function2 !== ""){ configset = configset + function2; promptText.textContent = "🎱 Command Prompt"
+                                } else { configset = configloop + (configlength - 2)/ 2; promptText.textContent = config[config.length - 2] }
+                        }
+                    } else {
+                        inprompt = inprompt + "Error 006: Run " + "'" + config + "' is not recognised as an internal or external command."; println(); println() }
+                        
+                } else if (function1 == "clear") { 
+                    if(function2 == ""){
+                        inprompt = "clear"; println(); prompttitle.textContent = "🎱 Command Prompt"; 
+                    } else {
+                        inprompt = inprompt + "Error 101: " + "'" + function1 + "' is not recognised as an internal or external command."; println(); println() }
+                        
+                } else {
+                    inprompt = inprompt + "Error 100: " + "'" + function1 + "' is not recognised as an internal or external command."; println(); println() }
             }
         </script>
         
@@ -1206,7 +1269,7 @@
                 function wallpaperoption3() {   wpcr(); wpo4.style.backgroundColor = cwpp; curwp = github + "img/wallpapers/startrek.png')"; wpp()} //#ref5019 for #ref0007
                 function wallpaperoption4() {   wpcr(); wpo5.style.backgroundColor = cwpp; curwp = github + "img/wallpapers/unknown.png')"; wpp()} //#ref5019 for #ref0008
                 function wallpaperoption5() {   wpcr(); wpo6.style.backgroundColor = cwpp; curwp = github + "img/wallpapers/anime.png')"; wpp()} //#ref5019 for #ref0009
-                function wallpaperoption6() {   wpcr(); wpo7.style.backgroundColor = cwpp; curwp = github + "img/wallpapers/vinyl.png')"; wpp()} //#ref5019 for #ref0010
+                function wallpaperoption6() {   wpcr(); wpo7.style.backgroundColor = cwpp; curwp = github + "img/wallpapers/vinyl.gif')"; wpp()} //#ref5019 for #ref0010
                 function wallpaperoption7() {   wpcr(); wpo8.style.backgroundColor = cwpp; curwp = github + "img/wallpapers/lynn.png')"; wpp()} //#ref5019 for #ref0011
                 function wallpaperoption8() {   wpcr(); wpo9.style.backgroundColor = cwpp; curwp = github + "img/wallpapers/Untitled-3.jpg')"; wpp()} //#ref5019 for #ref0012
                 function wallpaperoption9() {   wpcr(); wpo10.style.backgroundColor = cwpp; curwp = github + "img/wallpapers/Untitled-4.jpg')"; wpp()} //#ref5019 for #ref0013
