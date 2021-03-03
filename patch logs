@@ -1,7 +1,38 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll; padding-right: 4px;">
 <ul>
-<li><strong>2021 March 1st (210301) </strong><em>- &ldquo;Prompt&rdquo; Update 2</em><strong><strong><br /></strong></strong>
+<li><strong>2021 March 2st (210301)</strong> <em>- &ldquo;Prompt&rdquo; Update 2a</em><br />
+<ul>
+<li>Command Prompt Updates<strong><br /></strong>
+<ul>
+<li>Some windows can now be reset to their default position alongside a few other debug settings using the "reset" function.</li>
+<li><strong>You can now import both video and playlist urls.</strong></li>
+<li>Changes to functions<br />
+<ul>
+<li>Added a limit to how long functions can be.</li>
+<li>Added the ability to import plain ascii // html</li>
+<li><strong>Added the "player" function, which addresses commands to the embedded media player.</strong></li>
+<li>The "get" function can now load any temporary pages based on URL through the "url" function.</li>
+<li>Added "console" function to get current console settings. Current functions are somewhat limited such as pulling the current string length in the command prompt.</li>
+<li>Adjustments to the "mount" function in order to call urls.</li>
+</ul>
+</li>
+<li>Added more error codes.</li>
+<li>Added more local configs.</li>
+</ul>
+</li>
+<li>Some adjustments to display properties in order to optimise window functionality. (This will take a while to roll out fully)</li>
+<li><strong>Plenty of back-end updates</strong><br />
+<ul>
+<li>Tons of javascript optimisations.</li>
+<li>Tons of CSS optimisations</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>- Fixed a few issues related to the command prompt.</li>
+</ol></li>
+<li><strong>2021 March 2st (210301) </strong><em>- &ldquo;Prompt&rdquo; Update 2</em><strong><strong><br /></strong></strong>
 <ul>
 <li><strong>&ldquo;Command Prompt&rdquo; Rehaul</strong><br />
 <ul>
@@ -9,21 +40,21 @@
 <ul>
 <li>Functions are now all seperated by spaces.</li>
 <li><strong>Functions now rely on chaining seperate functions, instead of simply mentioning the function.</strong> Which means different functions within the tree can now do totally different jobs.</li>
-<li>The "Mount" function is now dedicated to storage page urls into functions.</li>
+<li>The &ldquo;Mount&rdquo; function is now dedicated to storage page urls into functions.</li>
 <li>Adjusted how local files can be addressed and now can navigate functions.</li>
-<li>Changed the "run" function to "run default". "Run (time)" still functions as a regular time.</li>
-<li><strong>"Fetch" function has been changed to address chaining</strong>, so seperate things can be mounted and the same time to be applied differently.</li>
+<li>Changed the &ldquo;run&rdquo; function to &ldquo;run default&rdquo;. &ldquo;Run (time)&rdquo; still functions as a regular time.</li>
+<li><strong>&ldquo;Fetch&rdquo; function has been changed to address chaining</strong>, so seperate things can be mounted and the same time to be applied differently.</li>
 <li>Functions are more accurate to what they mean.</li>
 <li>Incorrect functions will now give more accurate debug prompts.</li>
 <li><strong>More functions can now be chained at the same time aposed to just 3.</strong></li>
-<li>The "get" command has been changed to be able to render any loaded functions aposed to forcing a page load and has been changed to address chaining.</li>
-<li>Added "custom" function which allows adjustments to variables, colour settings and background settings.</li>
+<li>The &ldquo;get&rdquo; command has been changed to be able to render any loaded functions aposed to forcing a page load and has been changed to address chaining.</li>
+<li>Added &ldquo;custom&rdquo; function which allows adjustments to variables, colour settings and background settings.</li>
 </ul>
 </li>
-<li>The command prompt can now have colour changes based on the "colour" command.</li>
+<li>The command prompt can now have colour changes based on the &ldquo;colour&rdquo; command.</li>
 <li>Simplified the command prompt to no longer require file types.</li>
 <li><em>Slightly decreased the vertical height.</em></li>
-<li><em>Added a limiter to how long the "console in" string can be.</em></li>
+<li><em>Added a limiter to how long the &ldquo;console in&rdquo; string can be.</em></li>
 </ul>
 </li>
 </ul>
