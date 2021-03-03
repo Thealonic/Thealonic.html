@@ -13,6 +13,69 @@
                        
 I'll add to this at some point
 
+.d88b                                         8    888b.                            w   
+8P    .d8b. 8d8b.d8b. 8d8b.d8b. .d88 8d8b. .d88    8  .8 8d8b .d8b. 8d8b.d8b. 88b. w8ww 
+8b    8' .8 8P Y8P Y8 8P Y8P Y8 8  8 8P Y8 8  8    8wwP' 8P   8' .8 8P Y8P Y8 8  8  8   
+`Y88P `Y8P' 8   8   8 8   8   8 `Y88 8   8 `Y88    8     8    `Y8P' 8   8   8 88P'  Y8P 
+                                                                              8         
+
+$console
+### length               : Will calculate the current character count and state said count.
+### split       + string : Splits the current string in the command prompt based on a character, limited to two strings*.
+
+player
+### video       + string : loads video based on url.
+### playlist    + string : loads playlist based on url.
+### push        + string : pushes video to player based on id
+### reset                : Resets the command prompt to it's default state.
+### fullscreen + Boolean : vhange the fullscreen status.
+
+$custom
+### console
+   + background + string : changes the prompt background colour based on string insert.
+         + text + string : changes the prompt text colour based on string insert.
+### root        + string : enforces a root variable to an inserted value.
+### var         + string : enforces a variable to an inserted value.
+### refresh              : enforces a scheme refresh.
+
+mount                     
+### local                : store the local directory into the mount directory.
+       + config + string : add 'config/' to the local to the current directory.
+          + img + string : add 'img/' to the local to the current directory.
+       https:// + string : adds a custom url as the focused directory.
+
+load                     : loads the mount directory into the loaded configuration.
+
+fetch
+### mount                : splits the current config into seperate lines.
+
+status                   : will state the currently loaded variables stored.
+### config               : states the current config loaded from the load command.
+### mount                : states four varables currently stored from the mount command.
+
+flush                    : flushes all variables currently active in the prompt.
+### function1            : flushes the first function if one is loaded.
+### function2            : flushes the second function if one is loaded.
+### function3            : flushes the third function if one is loaded.
+### function4            : flushes the fourth function if one is loaded.
+### config               : flushes the current config loaded.
+### run                  : flushes the current running script.
+
+get
+### readme               : prints out the readme.
+### url         + string : prints out the html of a loaded url.
+!                        : default command to clear the 'get' command without printing.
+
+print         + interger : prints the currently mounted config based on inserted time in ms.
+### default              : prints out the currently mounted based on preprogrammed times in the mounted config.
+
+clear                    : clears the current active text in the command prompt.
+              
+888b.           8                   8    888b.        d8b 
+8wwwP .d88 .d8b 8.dP .d88b 8d8b. .d88    8  .8 .d88b  8'  
+8   b 8  8 8    88b  8.dP' 8P Y8 8  8    8wwK' 8.dP' w8ww 
+888P' `Y88 `Y8P 8 Yb `Y88P 8   8 `Y88    8  Yb `Y88P  8   
+
 Global look-up documentation (Please view in RAW format):
 #ref5000: changes current wallpaper background colour
 #ref5001: changes taskbar text colour and active header colour if active or unactive
