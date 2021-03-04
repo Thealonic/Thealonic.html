@@ -37,9 +37,8 @@
               
         var github = "url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/";
         var readme = "//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/README.md";
-        var updateon = "16:13pm on March 2nd, 2021. [GMT]"; 
-        var updatedfrom = "Thea Vanherst";
-        var currenttask = 1, cal = 5;
+        var updateon = "16:13pm on March 2nd, 2021. [GMT]", updatedfrom = "Thea Vanherst";
+        var currenttask = 1, cal = 5, docelem = document.documentElement
         
         function calupdate(){inactiveall(); cal = cal + 1}
         function latestupdate() {document.getElementById("lastupdate").textContent = updateon; document.getElementById("updatedby").textContent = updatedfrom}
@@ -474,10 +473,8 @@
         </div>
 
         <script>
-            var cat = document.getElementById("cat").style; catwin = document.getElementById("catwindow").style; //#ref5014  #ref2000
-            function catactive() { calupdate(); cat.zIndex = cal; vunnyactive(); //#ref5027 + //#ref5028 / //#ref0033
-                pyroButtonOpen = false; document.getElementById("cattext").style.color = curactivetitle; //#ref5027
-                catwin.backgroundImage = currentactiveheader; cat.marginLeft = "0px"} //#ref5027
+            var cat = document.getElementById("cat").style; catwin = document.getElementById("catwindow").style; cattext = document.getElementById("cattext").style;//#ref5014  #ref2000
+            function catactive() { calupdate(); cat.zIndex = cal; vunnyactive(); pyroButtonOpen = false; cattext.color = curactivetitle; catwin.backgroundImage = currentactiveheader; cat.marginLeft = "0px"} //#ref5027 + //#ref5028 / //#ref0033
             function catclose() { inactiveall(); pyroButtonOpen = true; window2 = false; pyrotabs = pyrotabs - 1; pyrowindow(); cat.marginLeft = "-20000px"} //#ref5029
             function catminimize() { cat.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 1; pyrocurrentopen()} //#ref5030
         </script>
@@ -499,11 +496,8 @@
         </div>
         
         <script>
-            var pyro = document.getElementById("pyro").style; pyrowin = document.getElementById("pyrowindow").style; //#ref5014 #ref2001
-            var pyroimg = document.getElementById("pyroimage").style, pyrotxt = document.getElementById("pyrotext").style
-            function pyroactive() { calupdate(); pyro.zIndex = cal; vunnyactive(); //#ref5027.1 + //#ref5028 / //#ref0033
-                pyroButtonOpen = false; pyrotext.style.color = curactivetitle; //#ref5027.2
-                pyrowin.backgroundImage = currentactiveheader; pyro.marginLeft = "0px"} //#ref5027.3
+            var pyro = document.getElementById("pyro").style, pyrowin = document.getElementById("pyrowindow").style, pyroimg = document.getElementById("pyroimage").style, pyrotxt = document.getElementById("pyrotext").style //#ref5014 #ref2001
+            function pyroactive() { calupdate(); pyro.zIndex = cal; vunnyactive(); pyroButtonOpen = false; pyrotext.style.color = curactivetitle; pyrowin.backgroundImage = currentactiveheader; pyro.marginLeft = "0px"} //#ref5027 + //#ref5028 / //#ref0033
             function pyroclose() { inactiveall(); pyroButtonOpen = true; window1 = false; pyrotabs = pyrotabs - 1; pyrowindow(); pyro.marginLeft = "-20000px"} //#ref5029
             function pyrominimize() { pyro.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 1; pyrocurrentopen()} //#ref5030
         </script>
@@ -512,21 +506,20 @@
             //Amount of windows #ref0036, current active windows #ref0035, boolean valdation for window 1 and 2 #ref0034
             var pyrotabs = 2, pyrocurrentactive = 2, window1 = true, window2 = true;
             //#ref0036; math check for the amount of windows for #ref2000 & #ref2001 to be OPEN, if none, closes taskbar.
-            function pyrowindow(){ if(pyrotabs == 0){ document.getElementById("taskapp2").style.marginLeft = "-20000px"; task2true = false; task2on = false; taskreset()}} 
+            function pyrowindow(){ if(pyrotabs == 0){ unvunnytaskbar.marginLeft = "-20000px"; task2true = false; task2on = false; taskreset()}} 
             //#ref0035 math check for the amount of windows for #ref2000 & #ref2001 to be ACTIVE, if none, closes taskbar.
             function pyrocurrentopen(){ if(pyrocurrentactive == 0){ pyroButtonOpen = false; task2toggle()}}
             
             function vunnyactive(){ //#ref0033
-                document.getElementById("taskapp2").style.backgroundImage = github + "img/scrollbarempty.png')"; document.getElementById("taskapp2font").style.color = taskbartextpressed; //#ref5028
-                document.documentElement.style.setProperty('--taskbar2top1', curcolgray); document.documentElement.style.setProperty('--taskbar2top2', curcolblack); //#ref5028
-                document.documentElement.style.setProperty('--taskbar2bottom1', curcolwhite); document.documentElement.style.setProperty('--taskbar2bottom2', curcollightg)} //#ref5028
+                unvunnytaskbar.backgroundImage = github + "img/scrollbarempty.png')"; taskapp2font.color = taskbartextpressed; //#ref5028
+                docelem.style.setProperty('--taskbar2top1', curcolgray); docelem.style.setProperty('--taskbar2top2', curcolblack); 
+                docelem.style.setProperty('--taskbar2bottom1', curcolwhite); docelem.style.setProperty('--taskbar2bottom2', curcollightg)} //#ref5028
             function vunnyopen(){ calupdate(); vunnyactive(); pyroactive(); pyrotabs = 2; pyroButtonOpen = false; //#ref5027.1 + Enables max amount of Vunny windows. #ref0034
                 if (window1 == true){ pyro.marginLeft = "0px"; pyro.zIndex = cal + 1;} //Positions Pyro window to the desktop.
                 if (window2 == true){ cat.marginLeft = "0px"; pyro.zIndex = cal}} //Positions Cat window to the desktop.
             //Resets images on windows for the random image function for #ref2000 & #ref2001
             function vunnywindowreset(){ window1 = true; window2 = true; tick = 3; //sets both #ref2000 & #ref2001 to being active on the screen, resets the random image generator.
-                if (tick == 3) { pyroimg.backgroundImage = github + "img/windows/ezgif-2-c475330a8091.gif')"; //default image
-                                 document.getElementById("catimage").style.backgroundImage = github + "img/windows/Untitled-5.jpg')"}} //default image
+                if (tick == 3) { pyroimg.backgroundImage = github + "img/windows/ezgif-2-c475330a8091.gif')"; document.getElementById("catimage").style.backgroundImage = github + "img/windows/Untitled-5.jpg')"}} //default image
             function vunnypositionreset() {pyro.left = "12%"; pyro.top = "58%"; cat.left = "4%"; cat.top = "68%"} //#ref5031 for #ref2000 & #ref2001
             function vunnyminimize(){ inactiveall(); pyro.marginLeft = "-20000px"; cat.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 2} //#ref5030 for #ref2000 & #ref2001
         </script>
@@ -608,17 +601,15 @@
                 
         <script>
             var videolinksdrop = false, videolink = document.getElementById("tumblrlinkdrop").style; 
-            function videolinkdropdown(){ if (videolinksdrop == false) {videolink.marginLeft = "50px"; videolinksdrop = true
-                } else if (videolinksdrop == true){videolink.marginLeft = "-20000px"; videolinksdrop = false}}
+            function videolinkdropdown(){ if (videolinksdrop == false) {videolink.marginLeft = "50px"; videolinksdrop = true } else if (videolinksdrop == true){videolink.marginLeft = "-20000px"; videolinksdrop = false}}
             function videolinkdropdownclose(){videolink.marginLeft = "-20000px"; videolinksdrop = false}
             
-            var embed = document.getElementById("embed").style, embedwin = document.getElementById("embedwindow").style; //#ref5014
+            var embed = document.getElementById("embed").style, embedwin = document.getElementById("embedwindow").style; embedtext = document.getElementById("embedtext").style; //#ref5014
             function embedactive() {calupdate(); embed.zIndex = cal; embedwin.backgroundImage = currentactiveheader; embed.marginLeft = "0px"; embedButtonOpen = false; 
-                document.getElementById("taskapp4font").style.color = taskbartextpressed; document.getElementById("embedtext").style.color = curactivetitle;
-                document.getElementById("taskapp4").style.backgroundImage = github + "img/scrollbarempty.png')"; document.getElementById("taskapp4").style.backgroundColor = curcolwhite; //#ref5028
-                document.documentElement.style.setProperty('--taskbar4top1', curcolgray); document.documentElement.style.setProperty('--taskbar4top2', curcolblack); //#ref5028
-                document.documentElement.style.setProperty('--taskbar4bottom1', curcolwhite); document.documentElement.style.setProperty('--taskbar4bottom2', curcollightg)} //#ref5028
-            function embedclose() {embed.marginLeft = "-20000px"; document.getElementById("taskapp4").style.marginLeft = "-20000px"; task4true = false; task4on = false; taskreset(); stopVideo()}
+                taskapp4font.color = taskbartextpressed; embedtext.color = curactivetitle; embedtaskbar.backgroundImage = github + "img/scrollbarempty.png')"; embedtaskbar.backgroundColor = curcolwhite; //#ref5028
+                docelem.style.setProperty('--taskbar4top1', curcolgray); docelem.style.setProperty('--taskbar4top2', curcolblack); 
+                docelem.style.setProperty('--taskbar4bottom1', curcolwhite); docelem.style.setProperty('--taskbar4bottom2', curcollightg)} //#ref5028
+            function embedclose() {embed.marginLeft = "-20000px"; embedtaskbar.marginLeft = "-20000px"; task4true = false; task4on = false; taskreset(); stopVideo()}
             function embedpositionreset() {calupdate(); embed.left = "300px"; embed.top = "200px"; embed.zIndex = cal; embedwin.backgroundImage = currentactiveheader; embedactive()}
             function embedminimize(){inactiveall(); embed.marginLeft = "-20000px"; embedButtonOpen = true}
             
@@ -634,12 +625,15 @@
                 var progressBarWidth = percent * $element.width() / 100; //progressbar = (progress percentage * width of player / 100).
                 $element.find('div').animate({ width: progressBarWidth }, {duration: 10})} //pushes updates for //#ref0039
             
-                //#ref0048                //#ref0043           //#ref0045        //#ref0050            //#ref0054             //#ref0055
-            var currentskiptime = 10; var shuffle = false; var shuffletext = "", currentplaylist = "", currentlyplaying = "", loadPlaylist = ""; 
+                //#ref0048                //#ref0043           //#ref0045                                  //#ref0050            //#ref0054             //#ref0055
+            var currentskiptime = 10; var shuffle = false; var shuffletext = "", fullscreenactive = false, currentplaylist = "", currentlyplaying = "", loadPlaylist = ""; 
+            
+            var embedmaximize = document.getElementById("embedmaximize"), embedtitle = document.getElementById("embedmaxtitle");
+            var playerspeed = document.getElementById("playerspeed"), playerst = document.getElementById("player").style, playertv = document.getElementById("playertv").style;
+            var playerul = document.getElementById("playerul").style, playerfs = document.getElementById("playerfs").style, playerws = document.getElementById("playerws").style;
             
             var tag = document.createElement('script'); tag.src = "https://www.youtube.com/iframe_api"; //#ref5014
-            var player; var mytimer
-            var firstScriptTag = document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+            var player, mytimer, firstScriptTag = document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
             function onYouTubeIframeAPIReady() {$('#progressBar').show(); //when player is ready, load #ref0038
                 player = new YT.Player('player', { height: '315', width: '560', videoId: '', //generates widths of player and clears video ID
@@ -647,7 +641,6 @@
                 playerVars: {controls: 0, autoplay: 0, modestbranding:1, showinfo: 0, disablekb: 0}})} //player settings
             function onPlayerReady(event) {urlupdate(); event.target.loadPlaylist({list: "", index: 0, suggestedQuality: "small"})} //#ref0040
 
-            var playertext = document.getElementById("playertext"), playerspeed = document.getElementById("playerspeed"); //#ref5014
             //basic player functionality.
             function startVideo() {player.playVideo()} function pauseVideo() {player.pauseVideo()} function stopVideo() {player.stopVideo()} //#ref0051, #ref0052, #ref0053
             function previousVideo() {if(currentplaylist !== ""){player.previousVideo(); playertext.textContent = "Playing previous video"}} //#ref0045: Plays the previous video IF there is a playlist.
@@ -664,7 +657,6 @@
             function playlistlaunch(){embedtask(); player.loadVideoById({'videoId':'','startSeconds': 0});
                 loadPlaylist = currentplaylist; loadPlaylist = loadPlaylist.replace("list=", '');  loadPlaylist = loadPlaylist.replace("&", '')} 
                 
-            var fullscreenactive = false; var embedmaximize = document.getElementById("embedmaximize");
             function playerupdate() {currentlyplaying = player.getVideoUrl(); if(fullscreenactive == false){playerurlupdate()} urlupdate(); shufflecolour()}
             
             //shuffle settings for #ref2003
@@ -673,10 +665,10 @@
                 else if(shuffle == false){player.setShuffle(true); shuffle = true; docelem.style.setProperty('--shuffleinvert', shuffleflop); shuffletext = "Shuffle Enabled : "}} //shuffle mode enabled, adjusts #ref0044 and states mode with #ref0045
 
             //prevents #ref0044 from being enabled without a playlist, and changes colour depending on status and theme.
+            var nextbutton = document.getElementById("nextbuttonembed").style, previousbutton = document.getElementById("previousbuttonembed").style
             function shufflecolour(){ if(currentplaylist !== ""){ //check for playlist through #ref0050
-                    if(preinvert == 1){document.getElementById("nextbuttonembed").style.filter="invert(100%)"; document.getElementById("previousbuttonembed").style.filter="invert(100%)" //Icon adjustment for darkmode enabled for #ref0044.
-                    } else if(preinvert == 0) {document.getElementById("nextbuttonembed").style.filter="invert(0%)"; document.getElementById("previousbuttonembed").style.filter="invert(0%)"}  //Icon adjustment for lightmode enabled for #ref0044.
-                } else {document.getElementById("nextbuttonembed").style.filter="invert(50%)"; document.getElementById("previousbuttonembed").style.filter="invert(50%)"}} //turns #ref0044 off if there's no playlist loaded.
+                if(preinvert == 1){nextbutton.filter="invert(100%)"; previousbutton.filter="invert(100%)" } else if(preinvert == 0) {dnextbutton.filter="invert(0%)"; previousbutton.filter="invert(0%)"}  //Icon adjustment for lightmode enabled for #ref0044.
+                } else {nextbutton.filter="invert(50%)"; previousbutton.filter="invert(50%)"}} //turns #ref0044 off if there's no playlist loaded.
             
             function playerurlupdate(){currentlyplaying = currentlyplaying.replace(currentplaylist, '')} 
             function urlupdate(){ document.getElementById("mediaplayer").innerHTML = currentlyplaying; document.getElementById("youtubelink").href = "https://www." + currentlyplaying;
@@ -684,15 +676,11 @@
                 document.getElementById("videolink").href = currentlyplaying; document.getElementById("videoandplaylistlink").href = player.getVideoUrl()}
             function playerupdate() {currentlyplaying = player.getVideoUrl(); if(fullscreenactive == false){playerurlupdate()} urlupdate(); shufflecolour()}
             
-            var fullscreenactive = false; var embedmaximize = document.getElementById("embedmaximize");
-            function fullscreenembed(){ if(fullscreenactive == false){ fullscreenactive = true; playerupdate();
-                document.getElementById("player").style.width = "1066px"; document.getElementById("player").style.height = "600px"; playertext.style.width = "1058px"; document.getElementById("playerws").style.width = "1056px";
-                document.getElementById("playerul").style.width = "1066px"; document.getElementById("playerfs").style.width = "1068px"; document.getElementById("playertv").style.width = "908px";
-                docelem.style.setProperty('--slider', "1056px"); embedmaximize.style.backgroundPosition = "-303px -215px"; document.getElementById("embedmaxtitle").title = "Restore down"; playstateupdate()
-            } else { fullscreenactive = false; playerupdate()
-                document.getElementById("player").style.width = "560px"; document.getElementById("player").style.height = "315px"; playertext.style.width = "552px"; document.getElementById("playerws").style.width = "550px";
-                document.getElementById("playerul").style.width = "560px"; document.getElementById("playerfs").style.width = "562px"; document.getElementById("playertv").style.width = "400px";
-                docelem.style.setProperty('--slider', "550px"); embedmaximize.style.backgroundPosition = "-98px -215px"; document.getElementById("embedmaxtitle").title = "Maximize"; playstateupdate()}}
+            function fullscreenembed(){ 
+                if(fullscreenactive == false){ fullscreenactive = true; playerupdate(); docelem.style.setProperty('--slider', "1056px"); embedmaximize.style.backgroundPosition = "-303px -215px"; embedtitle.title = "Restore down"; playstateupdate()
+                playerst.width = "1066px"; playerst.height = "600px"; playertext.style.width = "1058px"; playerws.width = "1056px"; playerul.width = "1066px"; playerfs.width = "1068px"; playertv.width = "908px";
+            } else { fullscreenactive = false; playerupdate(); docelem.style.setProperty('--slider', "550px"); embedmaximize.style.backgroundPosition = "-98px -215px"; embedtitle.title = "Maximize"; playstateupdate()
+                playerst.width = "560px"; playerst.height = "315px"; playertext.style.width = "552px"; playerws.width = "550px"; playerul.width = "560px"; playerfs.width = "562px"; playertv.width = "400px";}}
                 
             //desktop icons
             function twilightload() {embedtask(); videoclear(); videolinkdropdownclose(); currentplaylist = ""; 
@@ -816,11 +804,10 @@
             
             var notes = document.getElementById("note").style, notewin = document.getElementById("notewindow").style, notetext = document.getElementById("notetext").style; //#ref5014
             function patchnotesactive() {calupdate(); notewin.backgroundImage = currentactiveheader; notetext.color = curactivetitle; note.style.zIndex = cal; 
-                document.getElementById("taskapp5font").style.color = taskbartextpressed; patchnotesButtonOpen = false; 
-                document.getElementById("taskapp5").style.backgroundImage = github + "img/scrollbarempty.png')"; document.getElementById("taskapp5").style.backgroundColor = curcolwhite; 
-                document.documentElement.style.setProperty('--taskbar5top1', curcolgray); document.documentElement.style.setProperty('--taskbar5top2', curcolblack);
-                document.documentElement.style.setProperty('--taskbar5bottom1', curcolwhite); document.documentElement.style.setProperty('--taskbar5bottom2', curcollightg)}
-            function patchnotesclose() {note.style.marginLeft = "-20000px"; document.getElementById("taskapp5").style.marginLeft = "-20000px"; task5true = false; task5on = false; taskreset()}
+                taskapp5font.color = taskbartextpressed; patchnotesButtonOpen = false; patchnotestaskbar.backgroundImage = github + "img/scrollbarempty.png')"; patchnotestaskbar.backgroundColor = curcolwhite; 
+                docelem.style.setProperty('--taskbar5top1', curcolgray); docelem.style.setProperty('--taskbar5top2', curcolblack);
+                docelem.style.setProperty('--taskbar5bottom1', curcolwhite); docelem.style.setProperty('--taskbar5bottom2', curcollightg)}
+            function patchnotesclose() {note.style.marginLeft = "-20000px"; patchnotestaskbar.marginLeft = "-20000px"; task5true = false; task5on = false; taskreset()}
             function patchnotesopen() {calupdate(); note.style.zIndex = cal; note.style.marginLeft = "0px"; note.style.left = "67%"; note.style.top = "4%"; patchnotesactive();
                 $.get('https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/patch%20logs', function(data) { $( "patchnotes" ).last().html( data ); }, 'text')}
             function patchnoteminimize() {note.style.marginLeft = "-20000px"}
@@ -853,11 +840,10 @@
                         <div class="win98button" style="position:absolute; margin-top: -8px; margin-left:61px; width:9px; height:2px;" onclick="yearsub(); yeardropback(); monthdropdefa() "><div class="smallscrolldown" style="margin-left:3px; margin-top:0px;"></div></div></ul>
                         
                     <script>
-                        var monthdrop = false; realmonth = true; //month dropdown toggle and year toggle
+                        var monthdrop = false; realmonth = true; monthmenu = document.getElementById("monthmenu").style //month dropdown toggle and year toggle
                         //IF statement for the month dropdown box being open or closed
-                        function monthmenu(){if (desktopdrop == false) {document.getElementById("monthmenu").style.marginLeft = "-2px"; desktopdrop = true; clocku()
-                            } else if (desktopdrop == true) {document.getElementById("monthmenu").style.marginLeft = "-200000px"; desktopdrop = false}}
-                        function monthmenuclose() {document.getElementById("monthmenu").style.marginLeft = "-200000px"; desktopdrop = false} 
+                        function monthmenu(){if (desktopdrop == false) {monthmenu.marginLeft = "-2px"; desktopdrop = true; clocku()} else if (desktopdrop == true) {monthmenu.marginLeft = "-200000px"; desktopdrop = false}}
+                        function monthmenuclose() {monthmenu.marginLeft = "-200000px"; desktopdrop = false} 
                         //month updaters when clicked and overrides the calender
                         function jan() {realmonth = false; month = "January"; clocku()} function feb() {realmonth = false; month = "Febuary"; clocku()} function mar() {realmonth = false; month = "March"; clocku()}
                         function apr() {realmonth = false; month = "April"; clocku()} function may() {realmonth = false; month = "May"; clocku()} function jun() {realmonth = false; month = "June"; clocku()}
@@ -921,7 +907,7 @@
             <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="promptclose()"><div class="close"></div></div>
             <div class="win98titlebarbutton" title="Minimize" onclick="promptminimize();"> <div class="minimize"></div></div>
             <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
-            <div class="title-bar-98" id="promptwindow"> <div class="title-bar-text" id="promptText">🎱 Command Prompt</div></div>
+            <div class="title-bar-98" id="promptwindow"> <div class="title-bar-text" id="prompttitle">🎱 Command Prompt</div></div>
             <div class="window-body" style="margin:2px">
                 <ul class="tree-view" style="background-color: var(--consoleback); color: var(--consoletext); max-height:865px; padding-bottom:-3px;">
                     <div style="overflow-y: scroll; margin-right: -4px; margin-top: -5px; max-height:821px; min-height:240px;">
@@ -934,14 +920,12 @@
         </div></div>
         
         <script>
-            var prompt = document.getElementById("prompt").style, promptwin = document.getElementById("promptwindow").style; //#ref5014
-            function promptactive() {calupdate(); prompt.zIndex = cal;
-                document.getElementById("taskapp6font").style.color = taskbartextpressed; document.getElementById("prompttext").color = curactivetitle;
-                promptwin.backgroundImage = currentactiveheader; prompt.marginLeft = "0px"; promptButtonOpen = false; 
-                document.getElementById("taskapp6").style.backgroundImage = github + "img/scrollbarempty.png')"; document.getElementById("taskapp6").style.backgroundColor = curcolwhite; //#ref5028
-                document.documentElement.style.setProperty('--taskbar6top1', curcolgray); document.documentElement.style.setProperty('--taskbar6top2', curcolblack); //#ref5028
-                document.documentElement.style.setProperty('--taskbar6bottom1', curcolwhite); document.documentElement.style.setProperty('--taskbar6bottom2', curcollightg)} //#ref5028
-            function promptclose() {prompt.marginLeft = "-20000px"; document.getElementById("taskapp6").style.marginLeft = "-20000px"; task6true = false; task6on = false; taskreset(); promptrestart()}
+            var prompt = document.getElementById("prompt").style, promptwin = document.getElementById("promptwindow").style, prompttitle = document.getElementById("prompttitle").style;//#ref5014
+            function promptactive() {calupdate(); prompt.zIndex = cal; taskapp6font.style.color = taskbartextpressed; prompttitle.color = curactivetitle;
+                promptwin.backgroundImage = currentactiveheader; prompt.marginLeft = "0px"; promptButtonOpen = false; prompttaskbar.backgroundImage = github + "img/scrollbarempty.png')"; prompttaskbar.backgroundColor = curcolwhite; //#ref5028
+                docelem.style.setProperty('--taskbar6top1', curcolgray); docelem.style.setProperty('--taskbar6top2', curcolblack); //#ref5028
+                docelem.style.setProperty('--taskbar6bottom1', curcolwhite); docelem.style.setProperty('--taskbar6bottom2', curcollightg)} //#ref5028
+            function promptclose() {prompt.marginLeft = "-20000px"; prompttaskbar.marginLeft = "-20000px"; task6true = false; task6on = false; taskreset(); promptrestart()}
             function promptpositionreset() {calupdate(); prompt.left = "300px"; prompt.top = "200px"; prompt.zIndex = cal; promptwin.backgroundImage = currentactiveheader; promptactive()}
             function promptminimize(){inactiveall(); prompt.marginLeft = "-20000px"; promptButtonOpen = true}
         
@@ -953,21 +937,19 @@
             var setone, settwo, line = 1; //varables to read how many lines are in the config.
             var consoleout = document.getElementById("currentact"); //console output
             var consolein = document.getElementById("prompttext").value //current line in console
-            var prompttitle = document.getElementById("prompttext");
+            var prompttitle = document.getElementById("prompttitle");
             var function1, function2, function3, consolein;
 
             function htmlupdate() { $.get(config, function(data) {inprompt = inprompt + data;}, 'text')}
             document.getElementById("prompttext").addEventListener("keyup", function(event) { //button listener while prompt text is active.
                 if (event.keyCode === 13) { event.preventDefault(); document.getElementById("promptin").click(); }}); //listens for the enter key
-
+            function consoleinput(){ consolein = document.getElementById("prompttext").value; consoleread(); document.getElementById("prompttext").value = ""; }
+            
             function println() {inprompt = inprompt + "\n"; consoleout.innerHTML = inprompt;} 
             function wordln(){inprompt = inprompt + consolein; println();}
             function loadedln() {loaded = word1 ; inprompt = inprompt + "Loaded " + loaded; println(); println(); } 
-            
-            function consoleinput(){ consolein = document.getElementById("prompttext").value; console.log(consolein); consoleread(); document.getElementById("prompttext").value = ""; }
 
-            var consoleback = "#000", consoletext = "#fff";
-            var word1, word2, word3, word4, word5, currunning = undefined;
+            var consoleback = "#000", consoletext = "#fff", word1, word2, word3, word4, word5, currunning = undefined;
             function consoleread(){ function1 = undefined; function2 = undefined; function3 = undefined; function4 = undefined; function5 = undefined;
                 var array = consolein.split(' '), function1 = array[0], function2 = array[1], function3 = array[2], function4 = array[3], function5 = array[4];
 
@@ -984,8 +966,7 @@
                             inprompt = temp1; println();
                             inprompt = temp2; println(); println();
                         } else {
-                            inprompt = inprompt + "Error 102: " + "'" + function1 + "' is not recognised as an internal or external command."; println(); println()
-                        }
+                            inprompt = inprompt + "Error 102: " + "'" + function1 + "' is not recognised as an internal or external command."; println(); println()}
                         
                     } else if (function1 == "player"){
                         if(function4 == undefined){
@@ -1003,8 +984,7 @@
                                     currentplaylist = word4; videoclear(); playlistlaunch();
                                     player.loadPlaylist({'list':currentplaylist, 'index': 0}); playerupdate(); playertext.textContent = "Playing playlist url:" + word4
                                     inprompt = inprompt + "Playing playlist:" + word4; println(); println()
-                                } else {
-                                    inprompt = inprompt + "Error 208: " + "'" + function3 + "' is not recognised as a valid playlist URL."; println(); println() }
+                                } else { inprompt = inprompt + "Error 208: " + "'" + function3 + "' is not recognised as a valid playlist URL."; println(); println() }
                             } else if (function2 == "push"){
                                 if(function3.length == 11){
                                     var consolevideo = function3; videoclear(); playlistlaunch();
@@ -1014,21 +994,15 @@
                                     currentplaylist = function3; videoclear(); playlistlaunch();
                                     player.loadPlaylist({'list':currentplaylist, 'index': 0}); playerupdate(); playertext.textContent = "Playing playlist id:" + function3
                                     inprompt = inprompt + "Playing playlist id: " + function3; println(); println()
-                                } else {
-                                    inprompt = inprompt + "Error 311: " + "'" + function3 + "' is not a valid string length"; println(); println() }
-                            } else if (function2 == "reset"){
-                                embedpositionreset()
+                                } else { inprompt = inprompt + "Error 311: " + "'" + function3 + "' is not a valid string length"; println(); println() }
                             } else if (function2 == "fullscreen"){
                                 if (function3 == "true"){
                                     fullscreenactive = false; fullscreenembed()
                                 } else if (function3 == "false"){
                                     fullscreenactive = true; fullscreenembed()
-                                } else {
-                                    inprompt = inprompt + "Error 310: " + "'" + function3 + "' is not recognised as an internal function"; println(); println() }
-                            } else {
-                                inprompt = inprompt + "Error 301: " + "'" + function3 + "' is not recognised as an internal function"; println(); println() }
-                        } else { 
-                            inprompt = inprompt + "Error 406: " + "'" + function3 + " " + function4 + "' is not recognised as an internal function"; println(); println() }
+                                } else { inprompt = inprompt + "Error 310: " + "'" + function3 + "' is not recognised as an internal function"; println(); println() }
+                            } else { inprompt = inprompt + "Error 301: " + "'" + function3 + "' is not recognised as an internal function"; println(); println() }
+                        } else { inprompt = inprompt + "Error 406: " + "'" + function3 + " " + function4 + "' is not recognised as an internal function"; println(); println() }
                           
                     } else if (function1 == "custom"){
                         if( function2 == "console"){
@@ -1038,18 +1012,15 @@
                             } else if (function3 == "text"){
                                 inprompt = inprompt + "Text color set to: " + function4; println(); println();
                                 consoletext = function4; docelem.style.setProperty('--consoletext', consoletext)
-                            } else {
-                                inprompt = inprompt + "Error 202: " + "'" + function2 + "' is not recognised as a valid address."; println(); println()}
+                            } else { inprompt = inprompt + "Error 202: " + "'" + function2 + "' is not recognised as a valid address."; println(); println()}
                         } else if (function2 == "root"){
                                 inprompt = inprompt + "Setting " + function3 + " to: " + function4; println(); println();
                                 docelem.style.setProperty('--' + function3, function4)
                         } else if (function2 == "var"){
                                 inprompt = inprompt + "Setting " + function3 + " to: " + function4; println(); println();
                                 docelem.style.setProperty(function3, function4)
-                        } else if (function2 == "refresh"){
-                            themechange()
-                        } else {
-                            inprompt = inprompt + "Error 402: " + "'" + function3 + " " + function4 + "' is not recognised as a valid colour."; println(); println()}
+                        } else if (function2 == "refresh"){ themechange()
+                        } else { inprompt = inprompt + "Error 402: " + "'" + function3 + " " + function4 + "' is not recognised as a valid colour."; println(); println()}
                             
                     } else if (function1 == "mount"){
                         inprompt = inprompt + "Mounting " 
@@ -1073,36 +1044,23 @@
                             } else if(function4 !== undefined){
                                 word2 = function3;
                                 loaded = word1 + word2;
-                            } else {
-                                inprompt = inprompt + "Error 301: " + "'" + function3 + "' is not recognised as an internal file or folder."; println(); println() }
+                            } else { inprompt = inprompt + "Error 301: " + "'" + function3 + "' is not recognised as an internal file or folder."; println(); println() }
                         } else if (function2 !== undefined) {
                             var temp = function2.split(':').split('.'), temp1 = temp[0], temp2 = temp[1];
                             if(temp1 == "https" || temp1 == "www" || temp1 == "https://www"){
                                 word1 = function2;
                                 loaded = word1 + word2 + word3 + word4;
-                            } else {
-                                inprompt = inprompt + "Error 206: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() }
-                        } else {
-                            inprompt = inprompt + "Error 201: " + "'" + function1 + "' is not recognised as an internal file or folder."; println(); println() }
-
-                    } else if (function1 == "load") {
-                        if(loaded !== undefined){
-                            inprompt = inprompt + "Loaded current config to buffer."; println(); println();
-                            config = loaded;
-                        } else {
-                           inprompt = inprompt + "Error 205: " + "'" + loaded + "' is not a valid config."; println(); println() }
+                            } else { inprompt = inprompt + "Error 206: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() }
+                        } else { inprompt = inprompt + "Error 201: " + "'" + function1 + "' is not recognised as an internal file or folder."; println(); println() }
                            
                     } else if (function1 == "fetch") { 
+                        inprompt = inprompt + "Loaded current config to buffer."; println(); config = loaded;
                         if(function2 == "mount"){
                             if(loaded !== undefined){
                                 inprompt = inprompt + "Fetching " + loaded; println();
                                 fetch(config).then(res => res.text()) .then(data => {config = data.split('\n')});
                                 inprompt = inprompt + "Done."; println(); println();
-                            } else {
-                                inprompt = inprompt + "Error 203: " + "'" + loaded + "' is not a valid config."; 
-                                println(); println() }
-                        } else{
-                            inprompt = inprompt + "Error 202: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() }
+                            } else { inprompt = inprompt + "Error 203: " + "'" + loaded + "' is not a valid config."; println(); println() }}
                             
                     } else if (function1 == "status"){
                         if(function2 == undefined){
@@ -1119,13 +1077,9 @@
                                 inprompt = inprompt + currunning }
                             println(); println()
                         } else if (function2 == "config"){
-                            if(config == config){
-                                inprompt = inprompt + config; println();
-                            } else {
-                                inprompt = inprompt + config; println();
-                                inprompt = inprompt + config; println(); println() }
-                        } else if (function2 == "load"){
-                            inprompt = inprompt + loaded; println(); println() }
+                            if(config == config){ inprompt = inprompt + config; println();
+                            } else { inprompt = inprompt + config; println(); inprompt = inprompt + config; println(); println() }
+                        } else if (function2 == "load"){ inprompt = inprompt + loaded; println(); println() }
                         
                     } else if (function1 == "flush"){
                         if(function2 !== undefined){
@@ -1140,13 +1094,9 @@
                             } else if (function2 == "run"){
                                 while (loadedconfig--) { window.clearTimeout(loadedconfig) };
                                 currunning = undefined; inprompt = inprompt + "Flushed run."; println(); println();
-                            } else if (config !== undefined){
-                                config = undefined;
-                                inprompt = inprompt + "Flushed current loaded config."; println(); println()
-                            } else {
-                                inprompt = inprompt + "Error 204: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() }
-                        } else {
-                            word1 = undefined; word2 = undefined; word1 = undefined; inprompt = inprompt + "Flushed."; println(); println()}
+                            } else if (config !== undefined){ config = undefined; inprompt = inprompt + "Flushed current loaded config."; println(); println()
+                            } else { inprompt = inprompt + "Error 204: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() }
+                        } else { word1 = undefined; word2 = undefined; word1 = undefined; inprompt = inprompt + "Flushed."; println(); println()}
                             
                     } else if (function1 == "get"){
                         if(function3 == undefined){
@@ -1156,27 +1106,20 @@
                             } else if(config.length !== 0){
                                 if(function2 == "mount"){
                                     $.get(config, function(data) { inprompt = inprompt + $("console").html( data ); }, 'text')
-                                } else {
-                                    inprompt = inprompt + "Error 208: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() }
-                            } else {
-                                inprompt = inprompt + "Error 207: no current config is loaded."; println(); println() }
+                                } else { inprompt = inprompt + "Error 208: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() }
+                            } else { inprompt = inprompt + "Error 207: no current config is loaded."; println(); println() }
                         } else if (function2 == "url"){
                             if (function3 !== undefined) {
                                 var temp = function3.split(':'), temp1 = temp[0], temp2 = temp[1];
                                 if(temp1 == "https"){
                                     $.get(function3, function(data) { inprompt = inprompt + $("console").html( data ); }, 'text')
-                                } else {
-                                    inprompt = inprompt + "Error 211: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() }
-                            } else {
-                                inprompt = inprompt + "Error 212: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() } 
-                        } else {
-                            inprompt = inprompt + "Error 312: " + "'" + function2 + " " + function3 + "' is not recognised as a valid colour."; println(); println()}
+                                } else { inprompt = inprompt + "Error 211: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() }
+                            } else { inprompt = inprompt + "Error 212: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() } 
+                        } else { inprompt = inprompt + "Error 312: " + "'" + function2 + " " + function3 + "' is not recognised as a valid colour."; println(); println()}
                             
                     } else if (function1 == "print") {
-                        if(function3 !== undefined){
-                            currunning = " " + word4
-                        } else {
-                            currunning = " undefined" }
+                        if(function3 !== undefined){ currunning = " " + word4
+                        } else { currunning = " undefined" }
                         inprompt = inprompt + "Printing " + currunning; println()
                         if(config.length !== 0){ 
                             let configlength = config.length; let configset = 0; var configloop = 0;
@@ -1188,30 +1131,32 @@
                                 loadedconfig = setTimeout(function() { 
                                     var configtext = config[configloop]; inprompt = inprompt + configtext; println();}, config[configset])
                                     if (function2 !== undefined){ configset = configset + function2; promptText.textContent = "🎱 Command Prompt"
-                                    } else { configset = configloop + (configlength - 2)/ 2; promptText.textContent = config[config.length - 2] }
-                            }
-                        } else {
-                            inprompt = inprompt + "Error 006: Run " + "'" + config + "' is not recognised as an internal or external command."; println(); println() }
+                                    } else { configset = configloop + (configlength - 2)/ 2; promptText.textContent = config[config.length - 2] }}
+                        } else {inprompt = inprompt + "Error 006: Run " + "'" + config + "' is not recognised as an internal or external command."; println(); println() }
+                     
+                    } else if (function1 == "reset") {
+                        if(function2 == "player"){  embedpositionreset()
+                        } else if (function2 == "vunny"){ vunnywindowreset()
+                        } else if (function2 == "disk"){ diskopen()
+                        } else if (function2 == "prompt"){ promptpositionreset()
+                        } else if (function2 == "inactive"){ inactiveall()
+                        } else if (function2 == "patchnotes"){ patchnotesopen() 
+                        } else { inprompt = inprompt + "Error 217: Run " + "'" + config + "' is not recognised as an internal or external command."; println(); println()}
                             
                     } else if (function1 == "clear") { 
-                        if(function2 == undefined){
-                            inprompt = "clear"; println(); prompttitle.textContent = "🎱 Command Prompt"; 
-                        } else {
-                            inprompt = inprompt + "Error 101: " + "'" + function1 + "' is not recognised as an internal or external command."; println(); println() }
+                        if(function2 == undefined){ inprompt = "clear"; println(); prompttitle.textContent = "🎱 Command Prompt"; 
+                        } else { inprompt = inprompt + "Error 101: " + "'" + function1 + "' is not recognised as an internal or external command."; println(); println() }
                             
                     } else if (function1 == "!") {
-                        if (config !== undefined){
-                            config = undefined; println()
-                        } else {
-                            inprompt = inprompt + "Error 105: no config is currently loaded."; println(); println() }
+                        if (config !== undefined){ config = undefined; println()
+                        } else { inprompt = inprompt + "Error 105: no config is currently loaded."; println(); println() }
                             
-                    } else {
-                        inprompt = inprompt + "Error 100: " + "'" + function1 + "' is not recognised as an internal or external command."; println(); println() }
+                    } else { inprompt = inprompt + "Error 100: " + "'" + function1 + "' is not recognised as an internal or external command."; println(); println() }
+                    
                 } else {
                     if (function1.includes("!DOCTYPE")){ 
                         inprompt = inprompt + "Enjoy your ascii!"; println(); println();
-                    } else { inprompt = inprompt + "Error 000: Input string is too long."; println();println();}
-                }
+                    } else { inprompt = inprompt + "Error 000: Input string is too long."; println();println();}}
             }
         </script>
         
@@ -1461,7 +1406,7 @@
                             precolwhite, precollightg, precolsilver, precolmidgray, precolgray, precolblack, precolblue, precolprussian, precolwincyan, precolyellow, precolfont, precolfonttitle, precolhover, precolatext, preblack, //#ref5026 //#ref5003
                             preinactivetitle, curinactivetitle, preactivetitle, curactivetitle, preinvert, curinvert; //#ref5026 //#ref5003
                         var schemedrop = false, ctoggle = false, themecurrent = "lightmode"; //#ref5022
-                        var docelem = document.documentElement, currentsch = document.getElementById("currentscheme"); //#ref5014
+                        var currentsch = document.getElementById("currentscheme"); //#ref5014
                         //dropdown menu for schemes, #ref0000
                         function schemedropdown(){ if (schemedrop == false) {document.getElementById("scheme").style.marginLeft = "    -2px"; schemedrop = true; //#ref5023
                                             } else if (schemedrop == true){document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false}} //#ref5024
@@ -1619,9 +1564,8 @@
                         </ul>
                                 
                         <script>
-                            var itemdrop = false; //#ref5022 
-                            function itemdropdown(){if (itemdrop == false) {document.getElementById("item").style.marginLeft = "-2px"; itemdrop = true  //#ref5023
-                                              } else if (itemdrop == true){document.getElementById("item").style.marginLeft = "-20000px"; itemdrop = false}}  //#ref5024
+                            var itemdrop = false; item = document.getElementById("item").style //#ref5022 
+                            function itemdropdown(){if (itemdrop == false) {item.marginLeft = "-2px"; itemdrop = true} else if (itemdrop == true){item.marginLeft = "-20000px"; itemdrop = false}} //#ref5023 //#ref5024
                             function itemexit(){document.getElementById("item").style.marginLeft = "-20000px"; schemedrop = false}  //#ref5025
                             function desktopitem(){document.getElementById("desktopitem").textContent="Desktop"} //#ref0032 
                         </script>
@@ -1889,16 +1833,14 @@
             //#ref5017: resets the index of all tabs to prevent weird z-index or positional bugs.
             //#ref5018: changes to the current tab and adjusts height and width to overlap / prioritise the tab
  
-            var disk = document.getElementById("disk").style; diskwin = document.getElementById("diskwindow").style;
-            function diskactive() {calupdate(); diskButtonOpen = false; disk.marginLeft = "0px"; disk.marginTop = "0px";
-                disk.zIndex = cal; document.getElementById("disktext").style.color = curactivetitle;
-                diskwin.backgroundImage = currentactiveheader; document.getElementById("taskapp3font").style.color = taskbartextpressed;
-                document.getElementById("taskapp3").style.backgroundImage = github + "img/scrollbarempty.png')"; document.getElementById("taskapp3").style.backgroundColor = curcolwhite;
-                document.documentElement.style.setProperty('--taskbar3top1', curcolgray); document.documentElement.style.setProperty('--taskbar3top2', curcolblack);
-                document.documentElement.style.setProperty('--taskbar3bottom1', curcolwhite); document.documentElement.style.setProperty('--taskbar3bottom2', curcollightg)}
+            var disk = document.getElementById("disk").style; diskwin = document.getElementById("diskwindow").style, disktext = document.getElementById("disktext").style;
+            function diskactive() {calupdate(); diskButtonOpen = false; disk.marginLeft = "0px"; disk.marginTop = "0px"; disk.zIndex = cal; 
+                disktext.color = curactivetitle; diskwin.backgroundImage = currentactiveheader; taskapp3font.color = taskbartextpressed;
+                disktaskbar.backgroundImage = github + "img/scrollbarempty.png')"; disktaskbar.backgroundColor = curcolwhite;
+                docelem.style.setProperty('--taskbar3top1', curcolgray); docelem.style.setProperty('--taskbar3top2', curcolblack);
+                docelem.style.setProperty('--taskbar3bottom1', curcolwhite); docelem.style.setProperty('--taskbar3bottom2', curcollightg)}
             function diskopen() {tabreset(); diskactive(); disk.left = "1465px"; disk.top = "13%"}
-            function diskclose() {inactiveall(); diskButtonOpen = true; disk.marginLeft = "-20000px"; disk.marginTop = "-20000px"; 
-                document.getElementById("taskapp3").style.marginLeft = "-20000px"; task3true = false; task3on = false; taskreset()}
+            function diskclose() {inactiveall(); diskButtonOpen = true; disk.marginLeft = "-20000px"; disk.marginTop = "-20000px"; disktaskbar.marginLeft = "-20000px"; task3true = false; task3on = false; taskreset()}
             function diskminimize() {inactiveall(); disk.marginLeft = "-20000px"; disk.marginTop = "-20000px"; diskButtonOpen = true}
             
             //#ref5014
@@ -1936,56 +1878,49 @@
         </div>
         
         <script>
-            function logonactive(){calupdate(); document.getElementById("logoff").style.zIndex = cal;
-                document.getElementById("logoff").style.marginLeft = "0px"; document.getElementById("logofftext").style.color = curactivetitle;
-                document.getElementById("logoffwindow").style.backgroundImage = currentactiveheader}
-            function logoff() {logonactive(); document.getElementById("logoff").style.marginLeft = "0px"; document.getElementById("logoff").style.zIndex = "100"}
-            function logoffno() {document.getElementById("logoff").style.marginLeft = "200000px"; document.getElementById("logoff").style.zIndex = "1"}
+            var logoff = document.getElementById("logoff").style; var logoffwin = document.getElementById("logoffwindow").style; var logofftext = document.getElementById("logofftext").style;
+            function logonactive(){calupdate(); logoff.style.zIndex = cal; logoff.style.marginLeft = "0px"; logofftext .color = curactivetitle; logoffwin.backgroundImage = currentactiveheader}
+            function logoff() {logonactive(); logoff.marginLeft = "0px"; logoff.zIndex = "100"}
+            function logreset() { logoff.left = "40%"; logoff.top = "40%"; logonactive()}
+            function logoffno() { logoff.marginLeft = "200000px"; logoff.zIndex = "1"}
         </script>
 
 <!-- message box inactive toggle ------------------------------------------------------------------------------>
         <script>    
-            function inactiveall() { var timer = 0; if (timer < 1){timer = 1; menuclosed();
-                tumblrButtonOpen = true; document.getElementById("tumblrtext").style.color = curinactivetitle;
+            function inactiveall() { var timer = 0; if (timer < 1){timer = 1; menuclosed(); tumblrButtonOpen = true; posttext.color = curinactivetitle;
                 //for (var i = 0; i < post.length; i++) {post[i].childNodes[4].style.backgroundImage = curinactivehead}; //unoptimised as shit until able to find a proper caller
-                document.getElementById("taskapp1font").style.color = taskbartext;
-                document.getElementById("taskapp1").style.backgroundImage = "none"; document.getElementById("taskapp1").style.backgroundColor = silv;
-                document.documentElement.style.setProperty('--taskbar1top1', curcolwhite); document.documentElement.style.setProperty('--taskbar1top2', curcollightg);
-                document.documentElement.style.setProperty('--taskbar1bottom1', curcolgray); document.documentElement.style.setProperty('--taskbar1bottom2', curcolblack);
+                taskapp1font.color = taskbartext; tumblrtaskbar.backgroundImage = "none"; tumblrtaskbar.backgroundColor = silv;
+                docelem.style.setProperty('--taskbar1top1', curcolwhite); docelem.style.setProperty('--taskbar1top2', curcollightg);
+                docelem.style.setProperty('--taskbar1bottom1', curcolgray); docelem.style.setProperty('--taskbar1bottom2', curcolblack);
                 
-                pyroButtonOpen = true; pyrotxt.color = curinactivetitle; document.getElementById("cattext").style.color = curinactivetitle;
-                pyrowin.backgroundImage = curinactivehead; catwin.backgroundImage = curinactivehead; document.getElementById("taskapp2font").style.color = taskbartext;
-                document.getElementById("taskapp2").style.backgroundImage = "none"; document.getElementById("taskapp2").style.backgroundColor = silv;
-                document.documentElement.style.setProperty('--taskbar2top1', curcolwhite); document.documentElement.style.setProperty('--taskbar2top2', curcollightg);
-                document.documentElement.style.setProperty('--taskbar2bottom1', curcolgray); document.documentElement.style.setProperty('--taskbar2bottom2', curcolblack);
+                pyroButtonOpen = true; pyrotxt.color = curinactivetitle; cattext.color = curinactivetitle; pyrowin.backgroundImage = curinactivehead; catwin.backgroundImage = curinactivehead; 
+                taskapp2font.color = taskbartext; unvunnytaskbar.backgroundImage = "none"; unvunnytaskbar.backgroundColor = silv;
+                docelem.style.setProperty('--taskbar2top1', curcolwhite); docelem.style.setProperty('--taskbar2top2', curcollightg);
+                docelem.style.setProperty('--taskbar2bottom1', curcolgray); docelem.style.setProperty('--taskbar2bottom2', curcolblack);
                 
-                diskButtonOpen = true; document.getElementById("disktext").style.color = curinactivetitle;
-                diskwin.backgroundImage = curinactivehead; document.getElementById("taskapp3font").style.color = taskbartext;
-                document.getElementById("taskapp3").style.backgroundImage = "none"; document.getElementById("taskapp3").style.backgroundColor = silv;
-                document.documentElement.style.setProperty('--taskbar3top1', curcolwhite); document.documentElement.style.setProperty('--taskbar3top2', curcollightg);
-                document.documentElement.style.setProperty('--taskbar3bottom1', curcolgray); document.documentElement.style.setProperty('--taskbar3bottom2', curcolblack);
+                diskButtonOpen = true; disktext.color = curinactivetitle; diskwin.backgroundImage = curinactivehead; 
+                taskapp3font.color = taskbartext; disktaskbar.backgroundImage = "none"; disktaskbar.backgroundColor = silv;
+                docelem.style.setProperty('--taskbar3top1', curcolwhite); docelem.style.setProperty('--taskbar3top2', curcollightg);
+                docelem.style.setProperty('--taskbar3bottom1', curcolgray); docelem.style.setProperty('--taskbar3bottom2', curcolblack);
                     
-                embedButtonOpen = true; document.getElementById("embedtext").style.color = curinactivetitle;
-                embedwin.backgroundImage = curinactivehead; document.getElementById("taskapp4font").style.color = taskbartext;
-                document.getElementById("taskapp4").style.backgroundImage = "none"; document.getElementById("taskapp4").style.backgroundColor = silv;
-                document.documentElement.style.setProperty('--taskbar4top1', curcolwhite); document.documentElement.style.setProperty('--taskbar4top2', curcollightg);
-                document.documentElement.style.setProperty('--taskbar4bottom1', curcolgray); document.documentElement.style.setProperty('--taskbar4bottom2', curcolblack);
+                embedButtonOpen = true; document.getElementById("embedtext").style.color = curinactivetitle; embedwin.backgroundImage = curinactivehead; 
+                taskapp4font.color = taskbartext; embedtaskbar.backgroundImage = "none"; embedtaskbar.backgroundColor = silv;
+                docelem.style.setProperty('--taskbar4top1', curcolwhite); docelem.style.setProperty('--taskbar4top2', curcollightg);
+                docelem.style.setProperty('--taskbar4bottom1', curcolgray); docelem.style.setProperty('--taskbar4bottom2', curcolblack);
                 
-                noteButtonOpen = true; document.getElementById("notetext").style.color = curinactivetitle;
-                notewin.backgroundImage = curinactivehead; document.getElementById("taskapp5font").style.color = taskbartext;
-                document.getElementById("taskapp5").style.backgroundImage = "none"; document.getElementById("taskapp5").style.backgroundColor = silv;
-                document.documentElement.style.setProperty('--taskbar5top1', curcolwhite); document.documentElement.style.setProperty('--taskbar5top2', curcollightg);
-                document.documentElement.style.setProperty('--taskbar5bottom1', curcolgray); document.documentElement.style.setProperty('--taskbar5bottom2', curcolblack);
+                noteButtonOpen = true; notetext.color = curinactivetitle; notewin.backgroundImage = curinactivehead; 
+                taskapp5font.color = taskbartext; patchnotestaskbar.backgroundImage = "none"; patchnotestaskbar.backgroundColor = silv;
+                docelem.style.setProperty('--taskbar5top1', curcolwhite); docelem.style.setProperty('--taskbar5top2', curcollightg);
+                docelem.style.setProperty('--taskbar5bottom1', curcolgray); docelem.style.setProperty('--taskbar5bottom2', curcolblack);
                 
-                promptButtonOpen = true; document.getElementById("prompttext").style.color = curinactivetitle;
-                promptwin.backgroundImage = curinactivehead; document.getElementById("taskapp6font").style.color = taskbartext;
-                document.getElementById("taskapp6").style.backgroundImage = "none"; document.getElementById("taskapp6").style.backgroundColor = silv;
-                document.documentElement.style.setProperty('--taskbar6top1', curcolwhite); document.documentElement.style.setProperty('--taskbar6top2', curcollightg);
-                document.documentElement.style.setProperty('--taskbar6bottom1', curcolgray); document.documentElement.style.setProperty('--taskbar6bottom2', curcolblack);
+                promptButtonOpen = true; prompttitle.color = curinactivetitle; promptwin.backgroundImage = curinactivehead; 
+                taskapp6font.color = taskbartext; prompttaskbar.backgroundImage = "none"; prompttaskbar.backgroundColor = silv;
+                docelem.style.setProperty('--taskbar6top1', curcolwhite); docelem.style.setProperty('--taskbar6top2', curcollightg);
+                docelem.style.setProperty('--taskbar6bottom1', curcolgray); docelem.style.setProperty('--taskbar6bottom2', curcolblack);
                 
-                messagewin.backgroundImage = curinactivehead; document.getElementById("messagetext").style.color = curinactivetitle;
-                notewin.backgroundImage = curinactivehead; document.getElementById("notetext").style.color = curinactivetitle;
-                docclockwin.backgroundImage = curinactivehead; document.getElementById("disktext").style.color = curinactivetitle}}
+                messagewin.backgroundImage = curinactivehead; messagetext.color = curinactivetitle;
+                notewin.backgroundImage = curinactivehead; notetext.color = curinactivetitle;
+                docclockwin.backgroundImage = curinactivehead; disktext.color = curinactivetitle}}
         </script>
         
 <!-- Windows 98 desktop handling ------------------------------------------------------------------------------>
@@ -2215,18 +2150,14 @@
         </div>
         
         <script>
-            var post = document.getElementById("desktop").children, postwin = document.getElementById("postwindow"), desktop = document.getElementById("desktop");
+            var post = document.getElementById("desktop").children, postwin = document.getElementById("postwindow"), desktop = document.getElementById("desktop").style; posttext = document.getElementById("tumblrtext").style;
              //$("#desktop").delegate('div', 'click', function () {console.log( $(this).index() )});
-            function tumblractive() {calupdate(); tumblrButtonOpen = false;
-                desktop.style.left = "0px"; document.body.style.overflowY = "scroll";
-                document.getElementById("tumblrtext").style.color = curactivetitle;
+            function tumblractive() {calupdate(); tumblrButtonOpen = false; desktop.left = "0px"; document.body.style.overflowY = "scroll"; posttext.color = curactivetitle;
                 //for (var i = 0; i < post.length; i++) {post[i].childNodes[4].style.backgroundImage = currentactiveheader} 
-                document.getElementById("taskapp1font").style.color = taskbartextpressed;
-                tumblrtaskbar.backgroundImage = github + "img/scrollbarempty.png')";
-                document.documentElement.style.setProperty('--taskbar1top1', curcolgray); document.documentElement.style.setProperty('--taskbar1top2', curcolblack);
-                document.documentElement.style.setProperty('--taskbar1bottom1', curcolwhite); document.documentElement.style.setProperty('--taskbar1bottom2', curcollightg)}
-            function tumblrminimize() { tumblrButtonOpen = true; inactiveall(); 
-                desktop.style.left = "-20000px"; document.body.style.overflowY = "hidden";}
+                taskapp1font.color = taskbartextpressed; tumblrtaskbar.backgroundImage = github + "img/scrollbarempty.png')";
+                docelem.style.setProperty('--taskbar1top1', curcolgray); docelem.style.setProperty('--taskbar1top2', curcolblack);
+                docelem.style.setProperty('--taskbar1bottom1', curcolwhite); docelem.style.setProperty('--taskbar1bottom2', curcollightg)}
+            function tumblrminimize() { tumblrButtonOpen = true; inactiveall(); desktop.left = "-20000px"; document.body.style.overflowY = "hidden";}
         </script>
         
 <!-- Additional Page Rendering ------------------------------------------------------------------------------>
@@ -2313,12 +2244,10 @@
                                 <div class="lmenuarrow" id="menuarrow3"></div></div></label>
                         <!-- Settings -->
                         <label><div class="submenu36" style="width: 142px;" id="menusettings" onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
-                            <div class="menusettings"></div><label><labs><underline>S</underline>ettings </labs></label>
-                                <div class="lmenuarrow" id="menuarrow4"></div></div></label>
+                            <div class="menusettings"></div><label><labs><underline>S</underline>ettings </labs></label><div class="lmenuarrow" id="menuarrow4"></div></div></label>
                         <!-- Find -->
                         <label><div class="submenu36" style="width: 142px;" id="menufind" onmouseover="findopen()" onmouseout="findclosed()"> 
-                            <div class="menufind"></div><label><labs><underline>F</underline>ind </labs></label>
-                                <div class="lmenuarrow" id="menuarrow5"></div></div></label>
+                            <div class="menufind"></div><label><labs><underline>F</underline>ind </labs></label><div class="lmenuarrow" id="menuarrow5"></div></div></label>
                         <!--command console submenu -->
                         <label><div class="submenu36" style="width: 142px;">
                             <div class="menushutdown"></div><label><labs><underline>R</underline>un</labs></label></div></label>
@@ -2326,7 +2255,7 @@
                         <div class="menuapplicationsplit" style="width:139px; margin-left: 2px; margin-top: 3px; margin-bottom: 4px"></div>
                         <!-- source code -->  
                         <label><a href="https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/main"><div class="submenu36" style="width: 142px;">
-                                <div class="menuhelp"></div><label><labs><underline>S</underline>ource-code </labs></label></div></a></label>
+                            <div class="menuhelp"></div><label><labs><underline>S</underline>ource-code </labs></label></div></a></label>
                         <!-- support development -->
                         <label><a href="https://paypal.me/TheaVanherst"><div class="submenu36" style="width: 142px;">
                             <div class="menurun" ></div><label><labs><underline>S</underline>upport development </labs></label></div></a></label>   
@@ -2341,28 +2270,18 @@
                         onmouseover="programsopen()" onmouseout="programsclosed()"> 
                         <!-- Accessories -->
                         <div class="submenu20" id="accessories" onmouseover="accessoriesopen()" onmouseout="accessoriesclose()">
-                            <div class="menuprograms123"></div><label><labc> Accessories  </labc></label>
-                            <div class="smenuarrow" id="submenuarrow2"></div></div>
+                            <div class="menuprograms123"></div><label><labc> Accessories  </labc></label><div class="smenuarrow" id="submenuarrow2"></div></div>
                         <!-- Online Services -->
                         <div class="submenu20" id="onlineservices" onmouseover="onlineservicesopen()" onmouseout="onlineservicesclose()"> 
-                            <div class="menuprograms123" id="onlineservices"></div><label><labc> Online Services </labc></label>
-                            <div class="smenuarrow" id="submenuarrow3"></div></div>
+                            <div class="menuprograms123" id="onlineservices"></div><label><labc> Online Services </labc></label><div class="smenuarrow" id="submenuarrow3"></div></div>
                         <!-- Startup -->
                         <div class="submenu20" id="startup" onmouseover="startupopen()" onmouseout="startupclose()">
-                            <div class="menuprograms123"></div><label><labc> Startup </labc></label>
-                            <div class="smenuarrow" id="submenuarrow4"></div></div>
-                        <!-- Internet Explorer -->
-                        <div class="submenu20"><div class="menuprograms4"></div>
-                            <label><labc> Internet Explorer </labc></label></div>
-                        <!-- MS-DOS Prompt -->
-                        <div class="submenu20" onclick="prompttask()">
-                            <div class="menuprograms5"></div><label><labc> MS-DOS Prompt </labc></label></div>
-                        <!-- Outlook Express -->
-                        <div class="submenu20">
-                            <div class="menuprograms6"></div><label><labc> Outlook Express </labc></label></div>
-                        <!-- indows Explorer -->
-                        <div class="submenu20">
-                            <div class="menuprograms7"></div><label><labc> Windows Explorer </labc></label></div>
+                            <div class="menuprograms123"></div><label><labc> Startup </labc></label><div class="smenuarrow" id="submenuarrow4"></div></div>
+                            
+                        <div class="submenu20"><div class="menuprograms4"></div><label><labc> Internet Explorer </labc></label></div>
+                        <div class="submenu20" onclick="prompttask()"><div class="menuprograms5"></div><label><labc> MS-DOS Prompt </labc></label></div>
+                        <div class="submenu20"><div class="menuprograms6"></div><label><labc> Outlook Express </labc></label></div>
+                        <div class="submenu20"><div class="menuprograms7"></div><label><labc> Windows Explorer </labc></label></div>
                             
                             <!--Accessories submenu -->
                         <div class="win98post" style="margin-left: 20000px; margin-top:-143px; width:131px; height:220px" id="menuaccessoriessubmenu" 
@@ -2373,169 +2292,82 @@
                                     <div class="smenuarrow" id="menuarrow12"></div></div>
                             <!-- Entertainment -->
                             <div class="submenu20" id="entertainment" onmouseover="entertainmentopen()" onmouseout="entertainmentclose()">
-                                <div class="menuprograms123"></div><label><labc> Entertainment </labc></label>
-                                    <div class="smenuarrow" id="menuarrow13"></div></div>
+                                <div class="menuprograms123"></div><label><labc> Entertainment </labc></label><div class="smenuarrow" id="menuarrow13"></div></div>
                             <!-- Games -->
                             <div class="submenu20" id="games" onmouseover="gamesopen()" onmouseout="gamesclose()">
-                                <div class="menuprograms123"></div><label><labc> Games </labc></label>
-                                <div class="smenuarrow" id="menuarrow14"></div></div>
+                                <div class="menuprograms123"></div><label><labc> Games </labc></label><div class="smenuarrow" id="menuarrow14"></div></div>
                             <!-- Internet Tools -->
                             <div class="submenu20" id="internettools" onmouseover="internettoolsopen()" onmouseout="internettoolsclose()">
-                                <div class="menuprograms123"></div><label><labc> Internet Tools </labc></label>
-                                    <div class="smenuarrow" id="menuarrow15"></div></div>
+                                <div class="menuprograms123"></div><label><labc> Internet Tools </labc></label><div class="smenuarrow" id="menuarrow15"></div></div>
                             <!-- System Tools -->
                             <div class="submenu20" id="systemtools" onmouseover="systemtoolsopen()" onmouseout="systemtoolsclose()">
-                                <div class="menuprograms123"></div><label><labc> System Tools </labc></label>
-                                    <div class="smenuarrow" id="menuarrow16"></div></div>
-                            <!-- Address book -->
-                            <div class="submenu20">
-                                <div class="menufind4"></div><label><labc> Address book </labc></label></div>
-                            <!-- Calculator -->
-                            <div class="submenu20">
-                                <div class="menuapplications7"></div><label><labc> Calculator </labc></label></div>
-                            <!-- Imaging -->
-                            <div class="submenu20">
-                                <div class="menuapplications8"></div><label><labc> Imaging </labc></label></div>
-                            <!-- Notepad -->
-                            <div class="submenu20">
-                                <div class="menuapplications9"></div><label><labc> Notepad </labc></label></div>
-                            <!-- Paint -->
-                            <div class="submenu20">
-                                <div class="menuapplications10"></div><label><labc> Paint </labc></label></div>
-                            <!-- Wordpad -->
-                            <div class="submenu20">
-                                <div class="menuapplications11"></div><label><labc> Wordpad </labc></label></div>
+                                <div class="menuprograms123"></div><label><labc> System Tools </labc></label><div class="smenuarrow" id="menuarrow16"></div></div>
+
+                            <div class="submenu20"><div class="menufind4"></div><label><labc> Address book </labc></label></div>
+                            <div class="submenu20"><div class="menuapplications7"></div><label><labc> Calculator </labc></label></div>
+                            <div class="submenu20"><div class="menuapplications8"></div><label><labc> Imaging </labc></label></div>
+                            <div class="submenu20"><div class="menuapplications9"></div><label><labc> Notepad </labc></label></div>
+                            <div class="submenu20"><div class="menuapplications10"></div><label><labc> Paint </labc></label></div>
+                            <div class="submenu20"><div class="menuapplications11"></div><label><labc> Wordpad </labc></label></div>
                                 
-                            <!-- Communications submenu -->
                             <div class="win98post" style="margin-left: 20000px; margin-top:-223px; width:181px; height:80px" id="menucommunicationssubmenu" 
                                 onmouseover="communicationsopen()" onmouseout="communicationsclose()"> 
-                                <!-- Dial-up Networking -->
-                                <div class="submenu20">
-                                    <div class="menucommunications1"></div><label><labc> Dial-up Networking </labc></label></div>
-                                <!-- Hyper Terminal -->
-                                <div class="submenu20">
-                                    <div class="menucommunications2"></div><label><labc> Hyper Terminal </labc></label></div>
-                                <!-- Configuration Wizard -->
-                                <div class="submenu20">
-                                    <div class="menucommunications3"></div><label><labc> ISDN Configuration Wizard </labc></label></div>
-                                <!-- Phone Dialer -->
-                                <div class="submenu20">
-                                    <div class="menucommunications4"></div><label><labc> Phone Dialer </labc></label></div>
+                                <div class="submenu20"><div class="menucommunications1"></div><label><labc> Dial-up Networking </labc></label></div>
+                                <div class="submenu20"><div class="menucommunications2"></div><label><labc> Hyper Terminal </labc></label></div>
+                                <div class="submenu20"><div class="menucommunications3"></div><label><labc> ISDN Configuration Wizard </labc></label></div>
+                                <div class="submenu20"><div class="menucommunications4"></div><label><labc> Phone Dialer </labc></label></div>
                             </div>
                                             
-                            <!-- Entertainment submenu -->
                             <div class="win98post" style="margin-left: 20000px; margin-top:-203px; width:203px; height:100px" id="menuentertainmentsubmenu" 
                                  onmouseover="entertainmentopen()" onmouseout="entertainmentclose()"> 
-                                <!-- Dial-up Networking -->
-                                <div class="submenu20">
-                                    <div class="menuentertainment1"></div><label><labc> CD Player </labc></label></div>
-                                <!-- Hyper Terminal -->
-                                <div class="submenu20">
-                                    <div class="menuentertainment2"></div><label><labc> Interactive CD Player </labc></label></div>
-                                <!-- Configuration Wizard -->
-                                <div class="submenu20">
-                                    <div class="menuentertainment3"></div><label><labc> Sound Recorder </labc></label></div>
-                                <!-- Phone Dialer -->
-                                <div class="submenu20">
-                                    <div class="menuentertainment4"></div><label><labc> Volume Control </labc></label></div>
-                                <div class="submenu20" onclick="startmenuembed()">
-                                    <div class="menuentertainment5"></div><label><labc> Windows Embedded Media Player </labc></label></div>
+                                <div class="submenu20"><div class="menuentertainment1"></div><label><labc> CD Player </labc></label></div>
+                                <div class="submenu20"><div class="menuentertainment2"></div><label><labc> Interactive CD Player </labc></label></div>
+                                <div class="submenu20"><div class="menuentertainment3"></div><label><labc> Sound Recorder </labc></label></div>
+                                <div class="submenu20"><div class="menuentertainment4"></div><label><labc> Volume Control </labc></label></div>
+                                <div class="submenu20" onclick="startmenuembed()"><div class="menuentertainment5"></div><label><labc> Windows Embedded Media Player </labc></label></div>
                             </div>
                                             
-                            <!-- Games submenu -->
                             <div class="win98post" style="margin-left: 20000px; margin-top:-183px; width:183px; height:80px" id="gamessubmenu" 
                                 onmouseover="gamesopen()" onmouseout="gamesclose()"> 
-                                <!-- Dial-up Networking -->
-                                <div class="submenu20">
-                                    <div class="menugames1"></div><label><labc> Freecell </labc></label></div>
-                                <!-- Hyper Terminal -->
-                                <div class="submenu20">
-                                    <div class="menugames2"></div><label><labc> Hearts </labc></label></div>
-                                <!-- Configuration Wizard -->
-                                <div class="submenu20">
-                                    <div class="menugames3"></div><label><labc> Minesweeper </labc></label></div>
-                                <!-- Phone Dialer -->
-                                <div class="submenu20">
-                                    <div class="menugames4"></div><label><labc> Solitaire </labc></label></div>
+                                <div class="submenu20"><div class="menugames1"></div><label><labc> Freecell </labc></label></div>
+                                <div class="submenu20"><div class="menugames2"></div><label><labc> Hearts </labc></label></div>
+                                <div class="submenu20"><div class="menugames3"></div><label><labc> Minesweeper </labc></label></div>
+                                <div class="submenu20"><div class="menugames4"></div><label><labc> Solitaire </labc></label></div>
                             </div>
                                             
-                            <!-- Internet Tools submenu -->
                             <div class="win98post" style="margin-left: 20000px; margin-top:-163px; width:183px; height:80px" id="internettoolssubmenu" 
                                  onmouseover="internettoolsopen()" onmouseout="internettoolsclose()"> 
-                                <!-- Connection Wizard -->
-                                <div class="submenu20">
-                                    <div class="menuinternettools1"></div><label><labc> Internet Connection Wizard </labc></label></div>
-                                <!-- Microsoft Chat -->
-                                <div class="submenu20">
-                                    <div class="menuinternettools2"></div><label><labc> Microsoft Chat </labc></label></div>
-                                <!-- NetMeeting -->
-                                <div class="submenu20">
-                                    <div class="menuinternettools3"></div><label><labc> NetMeeting </labc></label></div>
-                                <!-- Personal Webserver -->
-                                <div class="submenu20">
-                                    <div class="menuinternettools4"></div><label><labc> Personal Webserver </labc></label></div>
+                                <div class="submenu20"><div class="menuinternettools1"></div><label><labc> Internet Connection Wizard </labc></label></div>
+                                <div class="submenu20"><div class="menuinternettools2"></div><label><labc> Microsoft Chat </labc></label></div>
+                                <div class="submenu20"><div class="menuinternettools3"></div><label><labc> NetMeeting </labc></label></div>
+                                <div class="submenu20"><div class="menuinternettools4"></div><label><labc> Personal Webserver </labc></label></div>
                             </div>
                                             
-                            <!-- System Tools submenu -->
                             <div class="win98post" style="margin-left: 20000px; margin-top:-143px; width:183px; height:260px" id="systemtoolssubmenu" 
                                  onmouseover="systemtoolsopen()" onmouseout="systemtoolsclose()"> 
-                                <!-- Character Map -->
-                                <div class="submenu20">
-                                    <div class="menusystemtools1"></div><label><labc> Character Map </labc></label></div>
-                                <!-- Clipboard Viewer -->
-                                <div class="submenu20">
-                                    <div class="menusystemtools2"></div><label><labc> Clipboard Viewer </labc></label></div>
-                                <!-- Disk Cleanup -->
-                                <div class="submenu20">
-                                    <div class="menusystemtools3"></div><label><labc> Disk Cleanup </labc></label></div>
-                                <!-- Disk Defragment -->
-                                <div class="submenu20">
-                                    <div class="menusystemtools4"></div><label><labc> Disk Defragmenter </labc></label></div>
-                                <!-- Drive Converter -->
-                                <div class="submenu20">
-                                    <div class="menusystemtools5"></div><label><labc> Drive Converter (FAT32) </labc></label></div>
-                                <!-- Maintenance Wizard -->
-                                <div class="submenu20">
-                                    <div class="menusystemtools6"></div><label><labc> Maintenance Wizard </labc></label></div>
-                                <!-- Net Watcher -->
-                                <div class="submenu20">
-                                    <div class="menusystemtools7"></div><label><labc> Net Watcher </labc></label></div>
-                                <!-- Resource Monitor -->
-                                <div class="submenu20">
-                                    <div class="menusystemtools8"></div><label><labc> Resource Monitor </labc></label></div>
-                                <!-- Scandisk -->
-                                <div class="submenu20">
-                                    <div class="menusystemtools9"></div><label><labc> Scandisk </labc></label></div>
-                                <!-- Scheduled Tasks -->
-                                <div class="submenu20">
-                                    <div class="menusystemtools10"></div><label><labc> Scheduled Tasks </labc></label></div>
-                                <!-- NetMeeting -->
-                                <div class="submenu20">
-                                    <div class="menusystemtools11"></div><label><labc> System Information </labc></label></div>
-                                <!-- System Monitor -->
-                                <div class="submenu20">
-                                    <div class="menusystemtools12"></div><label><labc> System Monitor </label></div>
-                                <!-- Welcome to Windows -->
-                                <div class="submenu20">
-                                    <div class="menusystemtools13"></div><label><labc> Welcome to Windows </labc></label></div>
+                                <div class="submenu20"><div class="menusystemtools1"></div><label><labc> Character Map </labc></label></div>
+                                <div class="submenu20"><div class="menusystemtools2"></div><label><labc> Clipboard Viewer </labc></label></div>
+                                <div class="submenu20"><div class="menusystemtools3"></div><label><labc> Disk Cleanup </labc></label></div>
+                                <div class="submenu20"><div class="menusystemtools4"></div><label><labc> Disk Defragmenter </labc></label></div>
+                                <div class="submenu20"><div class="menusystemtools5"></div><label><labc> Drive Converter (FAT32) </labc></label></div>
+                                <div class="submenu20"><div class="menusystemtools6"></div><label><labc> Maintenance Wizard </labc></label></div>
+                                <div class="submenu20"><div class="menusystemtools7"></div><label><labc> Net Watcher </labc></label></div>
+                                <div class="submenu20"><div class="menusystemtools8"></div><label><labc> Resource Monitor </labc></label></div>
+                                <div class="submenu20"><div class="menusystemtools9"></div><label><labc> Scandisk </labc></label></div>
+                                <div class="submenu20"><div class="menusystemtools10"></div><label><labc> Scheduled Tasks </labc></label></div>
+                                <div class="submenu20"><div class="menusystemtools11"></div><label><labc> System Information </labc></label></div>
+                                <div class="submenu20"><div class="menusystemtools12"></div><label><labc> System Monitor </label></div>
+                                <div class="submenu20"><div class="menusystemtools13"></div><label><labc> Welcome to Windows </labc></label></div>
                             </div>
                         </div>
                                 
-                                <!-- Online Services Submenu -->
                         <div class="win98post" style="margin-left: 20000px; margin-top:-123px; width:110px; height:60px; " id="onlineservicessubmenu" 
                             onmouseover="onlineservicesopen()" onmouseout="onlineservicesclose()"> 
-                            <!-- Ask Jeeves -->
-                            <a href="https://askjeeves.net/" target="_blank" style="cursor:default"> <div class="submenu20"> 
-                                <div class="menuapplications12"></div><label><labc> Ask Jeeves </labc></label> </div> </a>
-                            <!-- Yahoo! Mail -->
-                            <a href="https://uk.yahoo.com/" target="_blank" style="cursor:default"> <div class="submenu20">
-                                <div class="menuapplications13"></div><label><labc> Yahoo! Mail </labc></label> </div> </a>
-                            <!-- MSN -->
-                            <div class="submenu20">
-                                <div class="menuapplications14"></div><label><labc> MSN </labc></label></div>
+                            <div class="submenu20"><div class="menuapplications12"></div><label><labc> Ask Jeeves </labc></label></div>
+                            <div class="submenu20"><div class="menuapplications13"></div><label><labc> Yahoo! Mail </labc></label></div>
+                            <div class="submenu20"><div class="menuapplications14"></div><label><labc> MSN </labc></label></div>
                         </div>
                                 
-                                <!-- Startup Submenu -->
                         <div class="win98post" style="margin-left: 20000px; margin-top:-103px; width:89px; height: 20px;" id="startupsubmenu"
                             onmouseover="startupopen()" onmouseout="startupclose()">
                             <div class="disabledfont" style="margin-left: 20px; margin-top: 3px">(Empty)</div> 
@@ -2548,16 +2380,13 @@
                         onmouseover="favouritesopen()" onmouseout="favouritesclosed()"> 
                         <!-- Channels -->
                         <div class="submenu20" onmouseover="channelsopen()" onmouseout="channelsclose()" id="channels">
-                            <div class="menufavouritesfolder"></div><label><labc> Channels </labc></label>
-                                <div class="smenuarrow" id="submenuarrow21"></div></div>
-                        <!-- Links -->
+                            <div class="menufavouritesfolder"></div><label><labc> Channels </labc></label><div class="smenuarrow" id="submenuarrow21"></div></div>
+                                
                         <div class="submenu20" onmouseover="linksopen()" onmouseout="linksclose()" id="links">
-                            <div class="menufavouritesfolder"></div><label><labc> Funnies </labc></label>
-                                <div class="smenuarrow" id="submenuarrow22"></div></div>
+                            <div class="menufavouritesfolder"></div><label><labc> Funnies </labc></label><div class="smenuarrow" id="submenuarrow22"></div></div>
                         <!-- Media -->
                         <div class="submenu20" onmouseover="mediaopen()" onmouseout="mediaclose()" id="media">
-                            <div class="menufavouritesfolder"></div><label><labc> Music Playlists </labc></label>
-                                <div class="smenuarrow" id="submenuarrow23"></div></div>
+                            <div class="menufavouritesfolder"></div><label><labc> Music Playlists </labc></label><div class="smenuarrow" id="submenuarrow23"></div></div>
                         <!-- Undefined --> 
                         <a href="hhttps://thealonic.tumblr.com/" target="_blank"><div class="submenu20">
                             <div class="menufavouriteslink"></div><label><labc> Thealonic </labc></label></div></a>
@@ -2569,43 +2398,25 @@
                             <!-- links submenu -->
                         <div class="win98post" style="margin-left: 20000px; margin-top: -63px; width: 228px; height:60px" id="linkssubmenu" 
                              onmouseover="linksopen()" onmouseout="linksclose()"> 
-                            <div class="submenu20" onclick="ovfvpload()">
-                                <div class="menufavouriteslink"></div><label><labc>The Official Very Funny Video Playlist</labc></label></div></a>
-                            
-                            <div class="submenu20" onclick="csgoload()">
-                                <div class="menufavouriteslink"></div><label><labc>CSGO Funny Moments</labc></label></div>
-                                        
-                            <div class="submenu20" onclick="">
-                                <div class="menudocumentssound"></div><label><labc>The 787 Survival Challange</labc></label></div>
+                            <div class="submenu20" onclick="ovfvpload()"><div class="menufavouriteslink"></div><label><labc>The Official Very Funny Video Playlist</labc></label></div></a>
+                            <div class="submenu20" onclick="csgoload()"><div class="menufavouriteslink"></div><label><labc>CSGO Funny Moments</labc></label></div>
+                            <div class="submenu20" onclick=""><div class="menudocumentssound"></div><label><labc>The 787 Survival Challange</labc></label></div>
                         </div>
                                 
                         <!-- Music submenu -->
                         <div class="win98post" style="margin-left: 20000px; margin-top: -43px; width: 160px; height:195px" id="mediasubmenu" 
                              onmouseover="mediaopen()" onmouseout="mediaclose()"> 
-                            <div class="submenu20" onclick="gabetousleload()">
-                                <div class="menuentertainment5"></div><label><labc>Gabetousle</labc></label></div>
-                            <div class="submenu20" onclick="gabetousleload()">
-                                <div class="menudocumentssound"></div><label><labc>Rocking, Rollin n' Boneing.</labc></label></div>
-                            <div class="submenu20" onclick="mylittleponyload()">
-                                <div class="menuentertainment5"></div><label><labc>The My Little Pony playlist</labc></label></div>
-                                        
+                            <div class="submenu20" onclick="gabetousleload()"><div class="menuentertainment5"></div><label><labc>Gabetousle</labc></label></div>
+                            <div class="submenu20" onclick="gabetousleload()"><div class="menudocumentssound"></div><label><labc>Rocking, Rollin n' Boneing.</labc></label></div>
+                            <div class="submenu20" onclick="mylittleponyload()"><div class="menuentertainment5"></div><label><labc>The My Little Pony playlist</labc></label></div>
                             <div class="startmenusplitter"></div>
-
-                            <div class="submenu20" onclick="Crossload()">
-                                <div class="menuentertainment5"></div><label><labc>Justice - Cross</labc></label></div>
-                            <div class="submenu20" onclick="AudioVideoDiscoload()">
-                                <div class="menuentertainment5"></div><label><labc>Justice - Audio, Video, Disco</labc></label></div>
-                            <div class="submenu20" onclick="Womanload()">
-                                <div class="menuentertainment5"></div><label><labc>Justice - Woman</labc></label></div>
-
+                            <div class="submenu20" onclick="Crossload()"><div class="menuentertainment5"></div><label><labc>Justice - Cross</labc></label></div>
+                            <div class="submenu20" onclick="AudioVideoDiscoload()"><div class="menuentertainment5"></div><label><labc>Justice - Audio, Video, Disco</labc></label></div>
+                            <div class="submenu20" onclick="Womanload()"><div class="menuentertainment5"></div><label><labc>Justice - Woman</labc></label></div>
                             <div class="startmenusplitter"></div>
-                                    
-                            <div class="submenu20" onclick="virtualselfload()">
-                                <div class="menuentertainment5"></div><label><labc>Porter Robinson - Virtual Self</labc></label></div>
-                            <div class="submenu20" onclick="natureload()">
-                                <div class="menuentertainment5"></div><label><labc>Porter Robinson - Nature</labc></label></div>
-                            <div class="submenu20" onclick="worldsload()">
-                                <div class="menuentertainment5"></div><label><labc>Porter Robinson - worlds</labc></label></div>
+                            <div class="submenu20" onclick="virtualselfload()"><div class="menuentertainment5"></div><label><labc>Porter Robinson - Virtual Self</labc></label></div>
+                            <div class="submenu20" onclick="natureload()"><div class="menuentertainment5"></div><label><labc>Porter Robinson - Nature</labc></label></div>
+                            <div class="submenu20" onclick="worldsload()"><div class="menuentertainment5"></div><label><labc>Porter Robinson - worlds</labc></label></div>
                         </div>
                     </div>
 
@@ -2614,21 +2425,18 @@
                     <div class="win98post" style="margin-left: 20000px; margin-top: -264px; width: 160px; height:108px" id="documentsmenu" 
                          onmouseover="documentsopen()" onmouseout="documentsclosed()"> 
                         <!-- My Documents -->
-                        <div class="submenu20">
-                            <div class="menudocuments1"></div><label><labc> My Documents </labc></label></div>
+                        <div class="submenu20"><div class="menudocuments1"></div><label><labc> My Documents </labc></label></div>
                         <div class="startmenusplitter"> </div>
-                        <!-- VeryVhersty -->
+                        
                         <div class="submenu20" onmouseover="vherstyopen()" onmouseout="vherstyclose()" id="vherstymenu">
-                            <div class="menufavouritesfolder"></div><label><labc> Very Vhersty </labc></label>
-                                <div class="smenuarrow" id="submenuarrow24"></div></div>
-                        <div class="submenu20">
-                            <div class="menudocumentssound"></div><label><labc> Braden+.wav </labc></label></div>
-                        <div class="submenu20">
-                            <div class="menudocumentssound"></div><label><labc> OurHeartlessMaster.wav </labc></label></div>
-                        <!-- Document files -->
+                            <div class="menufavouritesfolder"></div><label><labc> Very Vhersty </labc></label><div class="smenuarrow" id="submenuarrow24"></div></div>
+                            
+                        <div class="submenu20"><div class="menudocumentssound"></div><label><labc> Braden+.wav </labc></label></div>
+                        <div class="submenu20"><div class="menudocumentssound"></div><label><labc> OurHeartlessMaster.wav </labc></label></div>
+                        
                         <a href="https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/main" target="_blank"><div class="submenu20">
                             <div class="menudocumentsdoc"></div><label><labc> Thealonic.doc </labc></label></div></a>
-                            
+
                         <div class="win98post" style="margin-left: 20000px; margin-top: -83px; width: 160px; height:67px" id="vherstysubmenu" 
                              onmouseover="vherstyopen()" onmouseout="vherstyclose()"> 
                             <a href="https://veryvhersty.tumblr.com/" target="_blank"><div class="submenu20">
@@ -2636,10 +2444,8 @@
                                         
                             <div class="startmenusplitter"></div>
                                 
-                            <div class="submenu20" onclick="win98load()">
-                                <div class="menufavouriteslink"></div><label><labc>Windows 98 Development</labc></label></div>
-                            <div class="submenu20" onclick="csgoload()">
-                                <div class="menufavouriteslink"></div><label><labc>CSGO Funny Moments</labc></label></div>
+                            <div class="submenu20" onclick="win98load()"><div class="menufavouriteslink"></div><label><labc>Windows 98 Development</labc></label></div>
+                            <div class="submenu20" onclick="csgoload()"><div class="menufavouriteslink"></div><label><labc>CSGO Funny Moments</labc></label></div>
                         </div>
                     <!--Documents submenu END --> 
                     </div>
@@ -2649,17 +2455,10 @@
                     <div class="win98post" style="margin-left: 200000px; margin-top: -228px; width: 160px; height:128px" id="settingsmenu" 
                          onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
                         <!-- Control panel -->
-                        <div class="submenu20">
-                            <div class="menusettings1"></div><label><labc> Control panel </labc></label></div>
-                        <!-- Printers -->
-                        <div class="submenu20">
-                            <div class="menusettings2"></div><label onclick="backgroundtab(); disktask(); menuclosed()"><labc> Display Properties </labc></label></div>
-                        <!-- Taskbar & Start menu -->
-                        <div class="submenu20">
-                            <div class="menusettings3"></div><label><labc> Taskbar & Start menu </labc></label></div>
-                        <!-- Folder options -->
-                        <div class="submenu20">
-                            <div class="menusettings4"></div><label><labc> Folder options... </labc></label></div>
+                        <div class="submenu20"><div class="menusettings1"></div><label><labc> Control panel </labc></label></div>
+                        <div class="submenu20"><div class="menusettings2"></div><label onclick="backgroundtab(); disktask(); menuclosed()"><labc> Display Properties </labc></label></div>
+                        <div class="submenu20"><div class="menusettings3"></div><label><labc> Taskbar & Start menu </labc></label></div>
+                        <div class="submenu20"><div class="menusettings4"></div><label><labc> Folder options... </labc></label></div>
                         <!-- Active desktop -->
                         <div class="submenu20" onmouseover="settingsactivedesktopopen();" onmouseout="settingsactivedesktopclose();" id="activedesktop">
                             <div class="menusettings5"></div><label><labc> Active desktop </labc></label> 
@@ -2667,37 +2466,28 @@
                         <!-- verticalsplitterER -->
                         <div class="startmenusplitter"></div>
                         <!--Folder options -->
-                        <div class="submenu20" style="margin-top: 3px">
-                            <div class="menusettings6"></div><label><labc>Windows Update</labc></label></div>
+                        <div class="submenu20" style="margin-top: 3px"><div class="menusettings6"></div><label><labc>Windows Update</labc></label></div>
                         <!-- Activedesktop submenu -->
                         <div class="win98post" style="margin-left:-20000px; margin-top:-50px; width:170px; height:40px" id="activedesktopsubmenu" onmouseover="settingsactivedesktopopen()" onmouseout="settingsactivedesktopclose()">
                             <div class="submenu20" style="cursor: pointer;"><label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="messageopen(); menuclosed()"> 🧮 brain go brrrrr </label></div>
                             <div class="submenu20" style="cursor: pointer;"><label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="vunnytask(); vunnypositionreset(); menuclosed()"> 👿 very.unvunny</label></div>
-                        <!--Settings submenu END --> 
                         </div> 
-                    <!--Settings menu END -->            
                     </div>
                               
 <!-- Find menu rendering ------------------------------------------------------------------------------>
                                 
                     <div class="win98post" style="margin-left: 20000px; margin-top: -192px" id="findmenu"
                          onmouseover="findopen()"onmouseout="findclosed()";>
-                        <!--Buttons 1-4 -->
-                        <div class="submenu20" style="width: 116px; height:20px">
-                            <div class="menufind1"></div><label><labc> Files or folders...</labc></label></div>
-                        <div class="submenu20" style="width: 116px; height:20px">
-                            <div class="menufind2"></div><label><labc> Computer...</labc></label></div>
-                        <div class="submenu20" style="width: 116px; height:20px">
-                            <div class="menufind3"></div><label><labc> On the Internet...</labc></label></div>
-                        <div class="submenu20" style="width: 116px; height:20px">
-                            <div class="menufind4"></div><label><labc> People</labc></label></div>
+                        <div class="submenu20" style="width: 116px; height:20px"><div class="menufind1"></div><label><labc> Files or folders...</labc></label></div>
+                        <div class="submenu20" style="width: 116px; height:20px"><div class="menufind2"></div><label><labc> Computer...</labc></label></div>
+                        <div class="submenu20" style="width: 116px; height:20px"><div class="menufind3"></div><label><labc> On the Internet...</labc></label></div>
+                        <div class="submenu20" style="width: 116px; height:20px"><div class="menufind4"></div><label><labc> People</labc></label></div>
                     </div>
                     
 <!-- startmenu scripts + end ------------------------------------------------------------------------------>
             
             <script>   
-                var startButtonOpen = false;
-                var startmenu = document.getElementById("startmenu").style;
+                var startButtonOpen = false, startmenu = document.getElementById("startmenu").style;
                 function startpress() { if (startButtonOpen == true) { startmenu.marginLeft = "200000px"; startButtonOpen = false;
                         docelem.style.setProperty('--taskbarstarttop1', curcolgray); docelem.style.setProperty('--taskbarstarttop2', curcolblack);
                         docelem.style.setProperty('--taskbarstartbottom1', curcolwhite); docelem.style.setProperty('--taskbarstartbottom2', curcollightg);
@@ -2761,26 +2551,25 @@
                     //#ref5012: removes a task from the current amount of active tasks.
                     //#ref5013: toggle checks to see if the current task is focused or unfocused. Only one can be active at a time.
                     
-                    var tumblrtaskbar = document.getElementById("taskapp1").style; //#ref5006
-                    //no functions for this are needed as it's always open
+                    var tumblrtaskbar = document.getElementById("taskapp1").style, taskapp1font = document.getElementById("taskapp1font").style //#ref5006 //no functions for this are needed as it's always open
                     
-                    var unvunnytaskbar = document.getElementById("taskapp2").style; //#ref5006 
+                    var unvunnytaskbar = document.getElementById("taskapp2").style, taskapp2font = document.getElementById("taskapp2font").style //#ref5006 
                     function vunnytask(){vunnywindowreset(); catactive(); pyroactive(); task2posopen()} //#ref5007
                     function task2posopen(){ if(task2on == false){currenttask = currenttask + 1; unvunnytaskbar.marginLeft = (currenttask * 168) + "px"; task2pos = (currenttask * 168)}; tabconsole(); task2on = true} //#ref5008
                     
-                    var disktaskbar = document.getElementById("taskapp3").style; //#ref5006   
+                    var disktaskbar = document.getElementById("taskapp3").style, taskapp3font = document.getElementById("taskapp3font").style //#ref5006   
                     function disktask(){diskopen(); appearancetab(); task3posopen()} //#ref5007
                     function task3posopen(){ if(task3on == false){currenttask = currenttask + 1; disktaskbar.marginLeft = (currenttask * 168) + "px"; task3pos = (currenttask * 168)}; tabconsole(); task3on = true} //#ref5008
                         
-                    var embedtaskbar = document.getElementById("taskapp4").style; //#ref5006
+                    var embedtaskbar = document.getElementById("taskapp4").style, taskapp4font = document.getElementById("taskapp4font").style //#ref5006
                     function embedtask(){embedactive(); task4posopen()} //#ref5007
                     function task4posopen(){ if(task4on == false){currenttask = currenttask + 1; embedtaskbar.marginLeft = (currenttask * 168) + "px"; task4pos = (currenttask * 168)}; tabconsole(); task4on = true} //#ref5008
 
-                    var patchnotestaskbar = document.getElementById("taskapp5").style; //#ref5006
+                    var patchnotestaskbar = document.getElementById("taskapp5").style, taskapp5font = document.getElementById("taskapp5font").style //#ref5006
                     function patchnotestask(){messageclose(); patchnotesopen(); task5posopen()} //#ref5007
                     function task5posopen(){ if(task5on == false){currenttask = currenttask + 1; patchnotestaskbar.marginLeft = (currenttask * 168) + "px"; task5pos = (currenttask * 168)}; tabconsole(); task5on = true} //#ref5008
                     
-                    var prompttaskbar = document.getElementById("taskapp6").style; //#ref5006
+                    var prompttaskbar = document.getElementById("taskapp6").style, taskapp6font = document.getElementById("taskapp6font").style //#ref5006
                     function prompttask(){promptactive(); task6posopen()} //#ref5007
                     function task6posopen(){ if(task6on == false){currenttask = currenttask + 1; prompttaskbar.marginLeft = (currenttask * 168) + "px"; task6pos = (currenttask * 168)}; tabconsole(); task6on = true} //#ref5008
                     
