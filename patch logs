@@ -1,20 +1,37 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll; padding-right: 4px;">
 <ul>
-<li><strong>2021 March 3rd (210303)</strong> <em>- &ldquo;Prompt&rdquo; Update 2a</em><br />
+<li><strong style="color: var(--atext);">2021 March 4th (210304)</strong><strong><br /></strong>
+<ul>
+<li><strong>Back-end updates</strong><br />
+<ul>
+<li>Tons of javascript optimisations.</li>
+<li>Tons of CSS optimisations, both size and stability.</li>
+<li>Some HTML optimisations.</li>
+</ul>
+</li>
+<li>Command Prompt Updates<strong><br /></strong>
+<ul>
+<li>Replaced the "load" config with it being stacked into the fetch command.</li>
+<li>Added reset commands.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong style="color: var(--atext);">2021 March 3rd (210303)</strong> <em>- &ldquo;Prompt&rdquo; Update 2a</em><br />
 <ul>
 <li>Command Prompt Updates<strong><br /></strong>
 <ul>
-<li>Some windows can now be reset to their default position alongside a few other debug settings using the "reset" function.</li>
+<li>Some windows can now be reset to their default position alongside a few other debug settings using the &ldquo;reset&rdquo; function.</li>
 <li><strong>You can now import both video and playlist urls.</strong></li>
 <li>Changes to functions<br />
 <ul>
 <li>Added a limit to how long functions can be.</li>
 <li>Added the ability to import plain ascii // html</li>
-<li><strong>Added the "player" function, which addresses commands to the embedded media player.</strong></li>
-<li>The "get" function can now load any temporary pages based on URL through the "url" function.</li>
-<li>Added "console" function to get current console settings. Current functions are somewhat limited such as pulling the current string length in the command prompt.</li>
-<li>Adjustments to the "mount" function in order to call urls.</li>
+<li><strong>Added the &ldquo;player&rdquo; function, which addresses commands to the embedded media player.</strong></li>
+<li>The &ldquo;get&rdquo; function can now load any temporary pages based on URL through the &ldquo;url&rdquo; function.</li>
+<li>Added &ldquo;console&rdquo; function to get current console settings. Current functions are somewhat limited such as pulling the current string length in the command prompt.</li>
+<li>Adjustments to the &ldquo;mount&rdquo; function in order to call urls.</li>
 </ul>
 </li>
 <li>Added more error codes.</li>
@@ -22,19 +39,23 @@
 </ul>
 </li>
 <li>Some adjustments to display properties in order to optimise window functionality. (This will take a while to roll out fully)</li>
-<li>Renamed the blog title from "Thealonic" to "Vher98".</li>
-<li><strong>Plenty of back-end updates</strong><br />
+<li>Renamed the blog title from &ldquo;Thealonic&rdquo; to &ldquo;Vher98&rdquo;.</li>
+<li><strong>A few back-end updates</strong><br />
 <ul>
 <li>Tons of javascript optimisations.</li>
 <li>Tons of CSS optimisations</li>
 </ul>
 </li>
 </ul>
+<ul>
+<li>Clicking on a drop down menu now changes the state of the button while holding, instead of just reacting when the button has been fully pressed.</li>
+<li><em>Page optimisations</em></li>
+</ul>
 <ol>
 <li>- Fixed a few issues related to the command prompt.</li>
 <li>- Fixed a page title bug.</li>
 </ol></li>
-<li><strong>2021 March 2st (210302) </strong><em>- &ldquo;Prompt&rdquo; Update 2</em><strong><strong><br /></strong></strong>
+<li><strong style="color: var(--atext);">2021 March 2st (210302) </strong><em>- &ldquo;Prompt&rdquo; Update 2</em><strong><strong><br /></strong></strong>
 <ul>
 <li><strong>&ldquo;Command Prompt&rdquo; Rehaul</strong><br />
 <ul>
@@ -65,7 +86,7 @@
 <li><em>- Fixed tons of variable checks.</em></li>
 <li><em>- Added more stability.</em></li>
 </ol></li>
-<li><strong>2021 March 1st (210301) </strong><em>- &ldquo;Prompt&rdquo; Update 1</em><strong><br /></strong>
+<li><strong style="color: var(--atext);">2021 March 1st (210301) </strong><em>- &ldquo;Prompt&rdquo; Update 1</em><strong><br /></strong>
 <ul>
 <li><strong>&ldquo;Command Prompt&rdquo; Additions</strong><br />
 <ul>
