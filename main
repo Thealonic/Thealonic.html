@@ -121,11 +121,11 @@
             
             /* General button handling */
             .win98button { box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; height:16px; cursor:pointer}
-            .win98button:active {box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); padding:3px; height:16px; cursor:pointer}
+            .win98button:active {box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray);}
             .win98buttoninactive {box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; margin-bottom: 4px; height:16px; cursor:default}
             .win98buttonpressed {box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); padding:3px; height:16px; cursor:pointer}
             .buttontext {display:inline-flex; align-items:center; color: var(--prestext)}
-            .buttontext:hover{ text-decoration-line: underline };
+            .buttontext:hover{ text-decoration-line: underline};
             
             .win98scroll {width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; position: absolute}
             .win98scroll:active {width:10px; height: 10px; float:right; box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); padding:3px; margin-top: -1px; margin-left: -1px; position: absolute;}
@@ -133,16 +133,15 @@
             .win98tab {box-shadow:inset -1px 0px var(--black),inset 1px 1px var(--white),inset -2px 0px var(--gray),inset 2px 2px var(--lightg);background:var(--silver);padding:3px; border-radius: 2px; font-size:11px; position: absolute; z-index; 100; color: var(--font)}
             
             .optionsmenu {cursor:pointer; height: 17px; width: 100%; background-color:var(--white); color:var(--font); border-style: dotted; border-width: 1px; border-color: var(--white); z-index:4}    
-            .optionsmenu:hover {cursor:pointer; height: 17px; width: 100%; background-color:var(--prussian); color:var(--hover); border-style: dotted; border-width: 1px; border-color: var(--yellow); z-index:10}  
+            .optionsmenu:hover {background-color:var(--prussian); color:var(--hover); border-style: dotted; border-color: var(--yellow); z-index:10}  
             
             .drop-down-menu {position: absolute; background: var(--white); margin-top: 20px; z-index: 20000000}
             .drop-down-text {height: 11px; width: 100%; padding:2px 3px 1px 2px; background-color:var(--white); color:var(--font)}
-            .drop-down-text:hover {height: 11px; width: 100%; padding:1px 3px 0px 2px; background-color:var(--prussian); color:var(--hover); border-style: dotted; border-width: 1px; border-color: var(--yellow)}
+            .drop-down-text:hover {padding:1px 3px 0px 2px; background-color:var(--prussian); color:var(--hover); border-style: dotted; border-color: var(--yellow)}
             
             .colourselect {height: 12px; width: 12px; padding:2px; background-color:var(--white); box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black);
                            border-style: solid; border-width: 1px; border-color:var(--silver); margin-left:-1px; margin-top:-1px; display: inline-block}
-            .colourselect:hover {height: 12px; width: 12px; padding:2px; background-color:var(--white); box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--white),inset -2px -2px var(--black),inset 2px 2px var(--black); 
-                                 display: inline-block; border-style: solid; border-width: 1px; border-color: black; margin-left:-1px; margin-top:-1px}
+            .colourselect:hover {box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--white),inset -2px -2px var(--black),inset 2px 2px var(--black); border-color: black; margin-left:-1px; margin-top:-1px}
             
             .window-menus {box-shadow:inset -1px -1px var(--silver), inset 1px 1px var(--silver); background:var(--silver); padding:3px; padding-left:4px; padding-right:4px; display: inline-block; margin-top:-1px}
             .window-menus:hover {box-shadow:inset -1px -1px var(--gray), inset 1px 1px var(--lightg)}
@@ -159,7 +158,7 @@
             .prewin98scroll {width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); padding:3px; position: absolute}
             .prewin98scroll:active {width:10px; height: 10px; float:right; box-shadow:inset 1px 1px var(--preblack),  inset -1px -1px var(--prewhite), inset -2px -2px var(--prelightg), inset 2px 2px var(--pregray); background:var(--presilver); padding:3px; margin-top: -1px; margin-left: -1px; position: absolute}
             .prewin98button {box-shadow:inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); padding:3px; height:16px; cursor:pointer; color:var(--prefont)}
-            .prewin98button:active {box-shadow:inset 1px 1px var(--preblack),  inset -1px -1px var(--prewhite), inset -2px -2px var(--prelightg), inset 2px 2px var(--pregray); background:var(--presilver); padding:3px; height:16px; cursor:pointer; color:var(--prefont)}
+            .prewin98button:active {box-shadow:inset 1px 1px var(--preblack),  inset -1px -1px var(--prewhite), inset -2px -2px var(--prelightg), inset 2px 2px var(--pregray)}
 
             .prebuttontext {display:inline-flex; align-items:center; color: var(--prestext)}
             .predisabledfont {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--gray); text-shadow:1px 1px 0 var(--prewhite)}
@@ -469,8 +468,7 @@
                     <div class="win98buttoninactive" style="width:70px; margin-top: 4px; margin-bottom: 4px;">
                     <div class="disabledfont" style="margin-top: 2px;">Asshole</div> </div>
                 </center>
-            </div>
-        </div>
+        </div></div>
 
         <script>
             var cat = document.getElementById("cat").style; catwin = document.getElementById("catwindow").style; cattext = document.getElementById("cattext").style;//#ref5014  #ref2000
@@ -492,8 +490,7 @@
                     <div class="win98button" style="width:70px; margin-top: 3px;" onclick="pyroshuffle();"> 
                     <div class="buttontext" style="margin-top: 2px" id="pyrobutton">Definately.</div></div>
                 </center>
-            </div>
-        </div>
+        </div></div>
         
         <script>
             var pyro = document.getElementById("pyro").style, pyrowin = document.getElementById("pyrowindow").style, pyroimg = document.getElementById("pyroimage").style, pyrotxt = document.getElementById("pyrotext").style //#ref5014 #ref2001
@@ -596,8 +593,7 @@
                     <ul class="tree-view" style="width:552px; height:12px; margin:-6px; margin-top:36px; background-color: var(--alwaysblack); color:var(--alwayswhite)" id="playertext"></ul> <!--#ref0049-->
                     <div style="float:right; margin-top:-12px;" id="playerspeed"></div> <!--States current speed of #ref0048-->
                 </div></div>
-            </div>
-        </div>
+        </div></div>
                 
         <script>
             var videolinksdrop = false, videolink = document.getElementById("tumblrlinkdrop").style; 
@@ -921,7 +917,7 @@
         
         <script>
             var prompt = document.getElementById("prompt").style, promptwin = document.getElementById("promptwindow").style, prompttitle = document.getElementById("prompttitle").style;//#ref5014
-            function promptactive() {calupdate(); prompt.zIndex = cal; taskapp6font.style.color = taskbartextpressed; prompttitle.color = curactivetitle;
+            function promptactive() {calupdate(); prompt.zIndex = cal; taskapp6font.color = taskbartextpressed; prompttitle.color = curactivetitle;
                 promptwin.backgroundImage = currentactiveheader; prompt.marginLeft = "0px"; promptButtonOpen = false; prompttaskbar.backgroundImage = github + "img/scrollbarempty.png')"; prompttaskbar.backgroundColor = curcolwhite; //#ref5028
                 docelem.style.setProperty('--taskbar6top1', curcolgray); docelem.style.setProperty('--taskbar6top2', curcolblack); //#ref5028
                 docelem.style.setProperty('--taskbar6bottom1', curcolwhite); docelem.style.setProperty('--taskbar6bottom2', curcollightg)} //#ref5028
@@ -1130,16 +1126,16 @@
                             for(let configloop = 0; configloop < configfixed; configloop++){ 
                                 loadedconfig = setTimeout(function() { 
                                     var configtext = config[configloop]; inprompt = inprompt + configtext; println();}, config[configset])
-                                    if (function2 !== undefined){ configset = configset + function2; promptText.textContent = "🎱 Command Prompt"
+                                    if (function2 !== undefined){ configset = configset + function2; prompttext.textContent = "🎱 Command Prompt"
                                     } else { configset = configloop + (configlength - 2)/ 2; promptText.textContent = config[config.length - 2] }}
                         } else {inprompt = inprompt + "Error 006: Run " + "'" + config + "' is not recognised as an internal or external command."; println(); println() }
                      
                     } else if (function1 == "reset") {
                         if(function2 == "player"){  embedpositionreset()
-                        } else if (function2 == "vunny"){ vunnywindowreset()
+                        } else if (function2 == "vunny"){ vunnywindowreset(); vunnypositionreset()
                         } else if (function2 == "disk"){ diskopen()
                         } else if (function2 == "prompt"){ promptpositionreset()
-                        } else if (function2 == "inactive"){ inactiveall()
+                        } else if (function2 == "$inactive"){ inactiveall()
                         } else if (function2 == "patchnotes"){ patchnotesopen() 
                         } else { inprompt = inprompt + "Error 217: Run " + "'" + config + "' is not recognised as an internal or external command."; println(); println()}
                             
@@ -1686,70 +1682,70 @@
                         <div class="win98buttoninactive" style="position:absolute; margin-top:0px; width:15px; height:15px; margin-left:334px;">
                             <div class="disabledfont" style="position:absolute; margin-left:4px; margin-top:1px;">/</div></div>
                     </div>
-                </div>
-            </div>
+            </div></div>
             
             <!-- --------------------------------------- Effects tab --------------------------------------- -->
             <!-- background inner container -->
-                <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="effects">
-                    <fieldset style="width:336px; height:165px; margin-left: 12px; margin-top: 14px;">
-                        <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: var(--silver); width:68px; padding: 0px 0px 3px 3px; margin-left:-3px"> Desktop Icons </label>
-                        
-                        <ul class="tree-view" style="width:318px; height:88px; margin-top:5px; margin-left:2px; background-color: #008080;" id="iconpreview">
-                            <div style="overflow-x: scroll; overflow-y:hidden; margin-left:-5px; width:327px; margin-top:1px;">
-                                <div style="height:75px; display: inline-block; width:410px; margin-left:5px;">
+            <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="effects">
+                <fieldset style="width:336px; height:165px; margin-left: 12px; margin-top: 14px;">
+                    <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: var(--silver); width:68px; padding: 0px 0px 3px 3px; margin-left:-3px"> Desktop Icons </label>
+                    
+                    <ul class="tree-view" style="width:318px; height:88px; margin-top:5px; margin-left:2px; background-color: #008080;" id="iconpreview">
+                        <div style="overflow-x: scroll; overflow-y:hidden; margin-left:-5px; width:327px; margin-top:1px;">
+                            <div style="height:75px; display: inline-block; width:410px; margin-left:5px;">
+                            
+                                <div class="smalliconscontainer" style="margin-left:3px; margin-top:2px;">
+                                    <center><div class="thealonicpreview" id="thealonicpreview"></div>
+                                    <div class="icon_label" style="color:white;"><icon id="iconpre1">
+                                        <label>Thealonic</label><label> </label></icon></div>
+                                </center></div>
+                                <!-- Button Two -->
+                                <div class="smalliconscontainer">
+                                    <center><div class="veryvherstypreview" id="veryverstyiconpreview"></div>
+                                    <div class="icon_label" style="color:white;"><icon id="iconpre2">
+                                        <label>Very</label><label>Vhersty</label></icon></div>
+                                </center></div>
+                                <!-- Button Three -->
+                                <div class="smalliconscontainer">
+                                    <center><div class="twitterpreview" id="twittericonpreview"></div>
+                                    <div class="icon_label" style="color:white;"><icon id="iconpre3">
+                                        <label>Art</label><label>posting</label></icon></div>
+                                </center></div>
+                                <!-- Button Four -->
+                                {block:AskEnabled}
+                                <div class="smalliconscontainer">
+                                    <center><div class="askiconpreview" id="askiconpreview"></div>
+                                    <div class="icon_label" style="color:white;"><icon id="iconpre4">
+                                        <label style="margin-left:1px;">Ask</label><label style="margin-left:1px;">mommy</label></icon></div>
+                                </center></div>
+                                {/block:AskEnabled}
+                                <!-- Button Five -->
+                                {block:SubmitEnabled}
+                                <div class="smalliconscontainer">
+                                    <center><div class="submiticonpreview" id="submiticonpreview"></div>
+                                    <div class="icon_label" style="color:white;"><icon id="iconpre5">
+                                        <label>Submissions</label><label> </label></icon></div>
+                                </center></div>
+                                {/block:SubmitEnabled}
+                                <!-- Button Six -->
+                                <div class="smalliconscontainer">
+                                    <center><div class="discordlinkpreview" id="discordiconpreview"></div>
+                                    <div class="icon_label" style="color:white;"><icon id="iconpre6">
+                                        <label>SGSP</label><label>discord</label></icon></div>
+                                </center></div>
+                                    
+                                <div class="smalliconscontainer">
+                                    <center><div class="officialfunnypreview" id="discordiconpreview"></div>
+                                    <div class="icon_label" style="color:white;"><icon id="iconpre7">
+                                        <label style="margin-left:1px;">TOVFV</label><label>Playlist</label></icon></div>
+                                </center></div>
                                 
-                                    <div class="smalliconscontainer" style="margin-left:3px; margin-top:2px;">
-                                        <center><div class="thealonicpreview" id="thealonicpreview"></div>
-                                        <div class="icon_label" style="color:white;"><icon id="iconpre1">
-                                            <label>Thealonic</label><label> </label></icon></div>
-                                    </center></div>
-                                    <!-- Button Two -->
-                                    <div class="smalliconscontainer">
-                                        <center><div class="veryvherstypreview" id="veryverstyiconpreview"></div>
-                                        <div class="icon_label" style="color:white;"><icon id="iconpre2">
-                                            <label>Very</label><label>Vhersty</label></icon></div>
-                                    </center></div>
-                                    <!-- Button Three -->
-                                    <div class="smalliconscontainer">
-                                        <center><div class="twitterpreview" id="twittericonpreview"></div>
-                                        <div class="icon_label" style="color:white;"><icon id="iconpre3">
-                                            <label>Art</label><label>posting</label></icon></div>
-                                    </center></div>
-                                    <!-- Button Four -->
-                                    {block:AskEnabled}
-                                    <div class="smalliconscontainer">
-                                        <center><div class="askiconpreview" id="askiconpreview"></div>
-                                        <div class="icon_label" style="color:white;"><icon id="iconpre4">
-                                            <label style="margin-left:1px;">Ask</label><label style="margin-left:1px;">mommy</label></icon></div>
-                                    </center></div>
-                                    {/block:AskEnabled}
-                                    <!-- Button Five -->
-                                    {block:SubmitEnabled}
-                                    <div class="smalliconscontainer">
-                                        <center><div class="submiticonpreview" id="submiticonpreview"></div>
-                                        <div class="icon_label" style="color:white;"><icon id="iconpre5">
-                                            <label>Submissions</label><label> </label></icon></div>
-                                    </center></div>
-                                    {/block:SubmitEnabled}
-                                    <!-- Button Six -->
-                                    <div class="smalliconscontainer">
-                                        <center><div class="discordlinkpreview" id="discordiconpreview"></div>
-                                        <div class="icon_label" style="color:white;"><icon id="iconpre6">
-                                            <label>SGSP</label><label>discord</label></icon></div>
-                                    </center></div>
-                                    
-                                    <div class="smalliconscontainer">
-                                        <center><div class="officialfunnypreview" id="discordiconpreview"></div>
-                                        <div class="icon_label" style="color:white;"><icon id="iconpre7">
-                                            <label style="margin-left:1px;">TOVFV</label><label>Playlist</label></icon></div>
-                                    </center></div>
-                                    
-                                    <div class="smalliconscontainer">
-                                        <center><div class="rct2preview" id="discordiconpreview"></div>
-                                        <div class="icon_label" style="color:white;"><icon id="iconpre8">
-                                            <label>Roller</label><label>Coaster</label></icon></div>
-                                    </center></div></div></div>
+                                <div class="smalliconscontainer">
+                                    <center><div class="rct2preview" id="discordiconpreview"></div>
+                                    <div class="icon_label" style="color:white;"><icon id="iconpre8">
+                                        <label>Roller</label><label>Coaster</label></icon></div>
+                                </center></div>
+                        </div></div>
 
                         <div class="win98buttoninactive" style="float:right; width:78px; height:18px; margin-top: 10px; margin-right:4px; ">
                             <div class="disabledfont" style="margin-top: 3px; margin-left:12px;"> Default Icon </div></div>
@@ -1816,8 +1812,7 @@
                     <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 45px; display: inline-block;">Extend my Windows desktop onto this monitor</div>
                     <div class="win98buttoninactive" style="position: absolute; margin-top: 50px; width:75px; height:18px; margin-left:277px;"> 
                         <div class="disabledfont" style="margin-top: 3px; margin-left:12px; cursor:pointer"> Advanced </div></div>
-                </div>
-            </div>
+            </div></div>
             
             <!-- --------------------------------------- footer --------------------------------------- -->
             <div class="win98button" style="position:absolute; width:70px; margin-top: 395px; margin-left:316px;" onclick="wallpaperupdate(); backcolourset(); fontcolourset(); themechange();"> 
@@ -1874,8 +1869,8 @@
                 <label style="margin-top: 5px; margin-left: 24px; cursor:default"> Are you sure you want to log off? </label></div>
             <div class="window-body" style="padding: 3px 3px 3px 3px; font-family: Arial; font-size: 11px;">
                 <center> <div class="win98button" style="position: absolute; margin-left:63px; width:60px;" onclick="location.href='https://thealonic.tumblr.com/loggedout'"> <p style="margin-top: 1px">  Yes </p> </div> 
-                    <div class="win98button" style="position: absolute; margin-left:135px; width:60px;" onclick="logoffno()"> <p style="margin-top: 1px"> No </p> </div> </center></div>
-        </div>
+                    <div class="win98button" style="position: absolute; margin-left:135px; width:60px;" onclick="logoffno()"> <p style="margin-top: 1px"> No </p> </div> </center>
+        </div></div>
         
         <script>
             var logoff = document.getElementById("logoff").style; var logoffwin = document.getElementById("logoffwindow").style; var logofftext = document.getElementById("logofftext").style;
@@ -2358,8 +2353,7 @@
                                 <div class="submenu20"><div class="menusystemtools11"></div><label><labc> System Information </labc></label></div>
                                 <div class="submenu20"><div class="menusystemtools12"></div><label><labc> System Monitor </label></div>
                                 <div class="submenu20"><div class="menusystemtools13"></div><label><labc> Welcome to Windows </labc></label></div>
-                            </div>
-                        </div>
+                        </div></div>
                                 
                         <div class="win98post" style="margin-left: 20000px; margin-top:-123px; width:110px; height:60px; " id="onlineservicessubmenu" 
                             onmouseover="onlineservicesopen()" onmouseout="onlineservicesclose()"> 
@@ -2371,8 +2365,7 @@
                         <div class="win98post" style="margin-left: 20000px; margin-top:-103px; width:89px; height: 20px;" id="startupsubmenu"
                             onmouseover="startupopen()" onmouseout="startupclose()">
                             <div class="disabledfont" style="margin-left: 20px; margin-top: 3px">(Empty)</div> 
-                        </div> 
-                    </div>
+                    </div></div>
         
 <!-- Favourites menu rendering------------------------------------------------------------------------------>
         
@@ -2417,8 +2410,7 @@
                             <div class="submenu20" onclick="virtualselfload()"><div class="menuentertainment5"></div><label><labc>Porter Robinson - Virtual Self</labc></label></div>
                             <div class="submenu20" onclick="natureload()"><div class="menuentertainment5"></div><label><labc>Porter Robinson - Nature</labc></label></div>
                             <div class="submenu20" onclick="worldsload()"><div class="menuentertainment5"></div><label><labc>Porter Robinson - worlds</labc></label></div>
-                        </div>
-                    </div>
+                    </div></div>
 
 <!-- Documents menu rendering ------------------------------------------------------------------------------>
                         
@@ -2446,9 +2438,7 @@
                                 
                             <div class="submenu20" onclick="win98load()"><div class="menufavouriteslink"></div><label><labc>Windows 98 Development</labc></label></div>
                             <div class="submenu20" onclick="csgoload()"><div class="menufavouriteslink"></div><label><labc>CSGO Funny Moments</labc></label></div>
-                        </div>
-                    <!--Documents submenu END --> 
-                    </div>
+                    </div></div>
                      
 <!-- Settings menu rendering ------------------------------------------------------------------------------>
                         
@@ -2471,8 +2461,7 @@
                         <div class="win98post" style="margin-left:-20000px; margin-top:-50px; width:170px; height:40px" id="activedesktopsubmenu" onmouseover="settingsactivedesktopopen()" onmouseout="settingsactivedesktopclose()">
                             <div class="submenu20" style="cursor: pointer;"><label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="messageopen(); menuclosed()"> 🧮 brain go brrrrr </label></div>
                             <div class="submenu20" style="cursor: pointer;"><label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="vunnytask(); vunnypositionreset(); menuclosed()"> 👿 very.unvunny</label></div>
-                        </div> 
-                    </div>
+                    </div></div>
                               
 <!-- Find menu rendering ------------------------------------------------------------------------------>
                                 
