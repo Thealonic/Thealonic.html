@@ -38,14 +38,12 @@ $custom
 ### var         + string : enforces a variable to an inserted value.
 ### refresh              : enforces a scheme refresh.
 
-mount                     
+mount                    : loads the mount directory into the loaded configuration.
 ### local                : store the local directory into the mount directory.
        + config + string : add 'config/' to the local to the current directory.
           + img + string : add 'img/' to the local to the current directory.
        https:// + string : adds a custom url as the focused directory.
-
-load                     : loads the mount directory into the loaded configuration.
-
+       
 fetch
 ### mount                : splits the current config into seperate lines.
 
@@ -68,6 +66,14 @@ get
 
 print         + interger : prints the currently mounted config based on inserted time in ms.
 ### default              : prints out the currently mounted based on preprogrammed times in the mounted config.
+
+reset
+### player               : resets the position of the embedded mediaplayer.
+### vunny                : resets the position of the "unvunny" windows.
+### display              : resets the position of the display properties and resets the current active tab.
+### prompt               : resets the position of the command prompt.
+### patchnotes           : focuses the patch notes and resets it to the default position.
+### $inactive            : turns all windows to inactive.
 
 clear                    : clears the current active text in the command prompt.
               
