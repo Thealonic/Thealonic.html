@@ -1,19 +1,39 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll; padding-right: 4px;">
 <ul>
+<li><strong>2021 March 5th (210305) </strong><em>- &ldquo;Prompt&rdquo; Update 2b</em><strong style="color: var(--atext);"><br /></strong>
+<ul>
+<li>Command Prompt Updates<strong><br /></strong>
+<ul>
+<li>The 'get' command now has an 'image' function to call the current image urls for certain windows. (Eg. get image pyro)</li>
+<li>Pressing up while in the command prompt will change the current active text to the previously entered text.</li>
+<li>Added 'push' command, which can push images by using the 'url' function or the 'config' function through the window of choice.</li>
+<li><em>Removed string input limit.</em></li>
+<li><em>General optimisations.</em></li>
+</ul>
+</li>
+<li>A few back-end updates<br />
+<ul>
+<li>CSS optimisations.</li>
+<li>Some stability tweaks.</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><strong style="color: var(--atext);">2021 March 4th (210304)</strong><strong><br /></strong>
 <ul>
-<li><strong>Back-end updates</strong><br />
+<li>Back-end updates<br />
 <ul>
-<li>Tons of javascript optimisations.</li>
-<li>Tons of CSS optimisations, both size and stability.</li>
+<li><strong>Tons of javascript optimisations.</strong></li>
+<li><strong>Tons of CSS optimisations, both size and stability.</strong></li>
 <li>Some HTML optimisations.</li>
 </ul>
 </li>
 <li>Command Prompt Updates<strong><br /></strong>
 <ul>
-<li>Replaced the "load" config with it being stacked into the fetch command.</li>
-<li>Added reset commands.</li>
+<li>Replaced the &ldquo;load&rdquo; config with it being stacked into the &lsquo;fetch&rsquo; command, anything currently in load will go to the config to default.</li>
+<li>Optimised the 'mount local&rsquo; command to not require as many checks and to not be as &ldquo;gate keepy&rdquo;.</li>
+<li><strong>Added reset commands</strong> for most windows through the &lsquo;reset&rsquo; function.</li>
 </ul>
 </li>
 </ul>
