@@ -116,8 +116,7 @@
             /* window title bar button handling */
             .win98titlebarbutton {width: 10px; height: 8px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); margin-top:2px; padding:3px}
             .win98titlebarbutton:active {width: 10px; height: 8px; float:right; box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); margin-top:2px; padding:3px}
-            .win98buttonscrollinactive {width: 10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); margin-left: 1px; position: absolute; padding:3px}                 
-            .win98buttontitlebarinactive {width: 10px; height: 8px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); margin-left: 1px; margin-right:1px; margin-top:2px; position: absolute; padding:3px}
+            .win98buttonscrollinactive {width: 10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); margin-left: 1px; position: absolute; padding:3px}
             
             /* General button handling */
             .win98button { box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; height:16px; cursor:pointer}
@@ -126,18 +125,16 @@
             .win98buttonpressed {box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); padding:3px; height:16px; cursor:pointer}
             .buttontext {display:inline-flex; align-items:center; color: var(--prestext)}
             .buttontext:hover{ text-decoration-line: underline};
-            
-            .win98scroll {width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; position: absolute}
-            .win98scroll:active {width:10px; height: 10px; float:right; box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); padding:3px; margin-top: -1px; margin-left: -1px; position: absolute;}
+
             .win98scrollinactive {width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; position: absolute}
-            .win98tab {box-shadow:inset -1px 0px var(--black),inset 1px 1px var(--white),inset -2px 0px var(--gray),inset 2px 2px var(--lightg);background:var(--silver);padding:3px; border-radius: 2px; font-size:11px; position: absolute; z-index; 100; color: var(--font)}
+            .win98tab {box-shadow:inset -1px 0px var(--black),inset 1px 1px var(--white),inset -2px 0px var(--gray),inset 2px 2px var(--lightg);background:var(--silver); padding:3px; border-radius: 2px; font-size:11px; position: absolute; z-index:; 1; color: var(--font); height:16px; margin-top:6px;}
             
             .optionsmenu {cursor:pointer; height: 17px; width: 100%; background-color:var(--white); color:var(--font); border-style: dotted; border-width: 1px; border-color: var(--white); z-index:4}    
             .optionsmenu:hover {background-color:var(--prussian); color:var(--hover); border-style: dotted; border-color: var(--yellow); z-index:10}  
             
             .drop-down-menu {position: absolute; background: var(--white); margin-top: 20px; z-index: 20000000}
             .drop-down-text {height: 11px; width: 100%; padding:2px 3px 1px 2px; background-color:var(--white); color:var(--font)}
-            .drop-down-text:hover {padding:1px 3px 0px 2px; background-color:var(--prussian); color:var(--hover); border-style: dotted; border-color: var(--yellow)}
+            .drop-down-text:hover {padding:1px 3px 0px 2px; background-color:var(--prussian); color:var(--hover); border-style: dotted; border-width: 1px; border-color: var(--yellow)}
             
             .colourselect {height: 12px; width: 12px; padding:2px; background-color:var(--white); box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black);
                            border-style: solid; border-width: 1px; border-color:var(--silver); margin-left:-1px; margin-top:-1px; display: inline-block}
@@ -471,7 +468,7 @@
         </div></div>
 
         <script>
-            var cat = document.getElementById("cat").style; catwin = document.getElementById("catwindow").style; cattext = document.getElementById("cattext").style;//#ref5014  #ref2000
+            var cat = document.getElementById("cat").style; catwin = document.getElementById("catwindow").style; cattext = document.getElementById("cattext").style; catimg = document.getElementById("catimage").style//#ref5014  #ref2000
             function catactive() { calupdate(); cat.zIndex = cal; vunnyactive(); pyroButtonOpen = false; cattext.color = curactivetitle; catwin.backgroundImage = currentactiveheader; cat.marginLeft = "0px"} //#ref5027 + //#ref5028 / //#ref0033
             function catclose() { inactiveall(); pyroButtonOpen = true; window2 = false; pyrotabs = pyrotabs - 1; pyrowindow(); cat.marginLeft = "-20000px"} //#ref5029
             function catminimize() { cat.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 1; pyrocurrentopen()} //#ref5030
@@ -516,7 +513,7 @@
                 if (window2 == true){ cat.marginLeft = "0px"; pyro.zIndex = cal}} //Positions Cat window to the desktop.
             //Resets images on windows for the random image function for #ref2000 & #ref2001
             function vunnywindowreset(){ window1 = true; window2 = true; tick = 3; //sets both #ref2000 & #ref2001 to being active on the screen, resets the random image generator.
-                if (tick == 3) { pyroimg.backgroundImage = github + "img/windows/ezgif-2-c475330a8091.gif')"; document.getElementById("catimage").style.backgroundImage = github + "img/windows/Untitled-5.jpg')"}} //default image
+                if (tick == 3) { pyroimg.backgroundImage = github + "img/windows/ezgif-2-c475330a8091.gif')"; catimg.backgroundImage = github + "img/windows/Untitled-5.jpg')"}} //default image
             function vunnypositionreset() {pyro.left = "12%"; pyro.top = "58%"; cat.left = "4%"; cat.top = "68%"} //#ref5031 for #ref2000 & #ref2001
             function vunnyminimize(){ inactiveall(); pyro.marginLeft = "-20000px"; cat.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 2} //#ref5030 for #ref2000 & #ref2001
         </script>
@@ -757,7 +754,7 @@
             <div class="win98titlebarbutton" style="margin-top:2px;" onclick="patchnotesclose(); messageopen()"><div class="restore"></div></div>
             <div class="win98titlebarbutton" title="Minimize" onclick="patchnotesminimize();"> <div class="minimize"></div></div>
             <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
-            <div class="title-bar-98" id="notewindow"> <div class="title-bar-text" id="notetext">🧮 Win98 Patchnotes</div></div>
+            <div class="title-bar-98" id="notewindow"> <div class="title-bar-text" id="notetext">🧮 𝖁𝖍𝖊𝖗𝟗𝟖 Patchnotes</div></div>
             
             <div class="post-header" style="height: 24px; width: 467px; margin-top:-2px">
                 <fieldset style="position:absolute; height: 21px; width: 465px; margin-top:4px; margin-left:2px; padding:2px; display: inline;"> 
@@ -766,7 +763,7 @@
                     <div class="container" style="margin-left:12px; margin-top:5px; width:400px;">A<underline>d</underline>dress</div>
                     
                     <ul class="tree-view" style="position:absolute; width:350px; height:9px; margin-left:55px; margin-top:-17px">
-                        <div class="win98scrollinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px"><div class="arrowdisableddown"></div></div>
+                        <div class="win98buttonscrollinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px"><div class="arrowdisableddown"></div></div>
                         <div class="menufavouriteslink" style="margin-top:-5px; margin-left:-5px;"></div>
                     <div style="margin-top:-1px; margin-left:16px;">https://thealonic.tumblr.com/patch-notes</div></ul>
                                     
@@ -798,6 +795,7 @@
             function messageclose(){message.marginLeft = "-20000px"}
             function messageopen(){calupdate(); message.marginLeft = "0px"; message.left = "77%"; message.top = "62%"; message.zIndex = cal; messagewin.backgroundImage = currentactiveheader}
             
+            var patchlogs = "https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/patch%20logs";
             var notes = document.getElementById("note").style, notewin = document.getElementById("notewindow").style, notetext = document.getElementById("notetext").style; //#ref5014
             function patchnotesactive() {calupdate(); notewin.backgroundImage = currentactiveheader; notetext.color = curactivetitle; note.style.zIndex = cal; 
                 taskapp5font.color = taskbartextpressed; patchnotesButtonOpen = false; patchnotestaskbar.backgroundImage = github + "img/scrollbarempty.png')"; patchnotestaskbar.backgroundColor = curcolwhite; 
@@ -805,7 +803,7 @@
                 docelem.style.setProperty('--taskbar5bottom1', curcolwhite); docelem.style.setProperty('--taskbar5bottom2', curcollightg)}
             function patchnotesclose() {note.style.marginLeft = "-20000px"; patchnotestaskbar.marginLeft = "-20000px"; task5true = false; task5on = false; taskreset()}
             function patchnotesopen() {calupdate(); note.style.zIndex = cal; note.style.marginLeft = "0px"; note.style.left = "67%"; note.style.top = "4%"; patchnotesactive();
-                $.get('https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/patch%20logs', function(data) { $( "patchnotes" ).last().html( data ); }, 'text')}
+                $.get(patchlogs, function(data) { $( "patchnotes" ).last().html( data ); }, 'text')}
             function patchnoteminimize() {note.style.marginLeft = "-20000px"}
         </script>
         
@@ -911,8 +909,7 @@
                             <console id="currentact" style="width:100%; line-height:1"></console>
                             <input type="text" id="prompttext" style="margin-top: -5px; background-color: var(--consoleback); color: var(--consoletext);" autocomplete="off"> 
                             <button id="promptin" onclick="consoleinput()" value="" style="margin-left:-20000px"></button>
-                    </div></div>
-                </ul>
+                </div></div></ul>
         </div></div>
         
         <script>
@@ -925,234 +922,227 @@
             function promptpositionreset() {calupdate(); prompt.left = "300px"; prompt.top = "200px"; prompt.zIndex = cal; promptwin.backgroundImage = currentactiveheader; promptactive()}
             function promptminimize(){inactiveall(); prompt.marginLeft = "-20000px"; promptButtonOpen = true}
         
-            var datestring;
-            function promptrestart(){ datestring = updateon.replace(". [GMT]","").replace(":","").replace("th, ","").replace("rd, ","").replace("nd, ","").replace("st, ","").replace(" ","").replace("pmon","").replace("amon",""); 
-                inprompt = "Vher98 [Version 0.6." + datestring + "]\n(c) 2021 Very Vhersty. All Rights Reserved.\nDeveloper console; use at your own risk."; println(); println()}
-        
-            var config, loadedconfig, config, inprompt = "", loaded; //global varable storage.
-            var setone, settwo, line = 1; //varables to read how many lines are in the config.
-            var consoleout = document.getElementById("currentact"); //console output
-            var consolein = document.getElementById("prompttext").value //current line in console
+            var datestring, config, loadedconfig, config, inprompt = "", loaded, consolein, imageElement, imageElementBack, upkeyin; //global varable storage.
+            var consoleback = "#000", consoletext = "#fff", word1, word2, word3, word4, word5, upkeyin, currunning;
+            var consoleout = document.getElementById("currentact"), consolein = document.getElementById("prompttext").value //current line in console and console out.
             var prompttitle = document.getElementById("prompttitle");
-            var function1, function2, function3, consolein;
-
-            function htmlupdate() { $.get(config, function(data) {inprompt = inprompt + data;}, 'text')}
-            document.getElementById("prompttext").addEventListener("keyup", function(event) { //button listener while prompt text is active.
-                if (event.keyCode === 13) { event.preventDefault(); document.getElementById("promptin").click(); }}); //listens for the enter key
-            function consoleinput(){ consolein = document.getElementById("prompttext").value; consoleread(); document.getElementById("prompttext").value = ""; }
             
-            function println() {inprompt = inprompt + "\n"; consoleout.innerHTML = inprompt;} 
-            function wordln(){inprompt = inprompt + consolein; println();}
+            function htmlupdate() { $.get(config, function(data) {inprompt = inprompt + data;}, 'text')}
+                document.getElementById("prompttext").addEventListener("keyup", function(event) { //button listener while prompt text is active.
+                if (event.keyCode === 13) { event.preventDefault(); document.getElementById("promptin").click(); }}); //listens for the enter key
+            function consoleinput(){ consolein = document.getElementById("prompttext").value; consoleread(); document.getElementById("prompttext").value = " "; }
+            
+            function println() {inprompt = inprompt + "\n "; consoleout.innerHTML = inprompt;} 
+            function wordln() {inprompt = inprompt + consolein; println();}
             function loadedln() {loaded = word1 ; inprompt = inprompt + "Loaded " + loaded; println(); println(); } 
-
-            var consoleback = "#000", consoletext = "#fff", word1, word2, word3, word4, word5, currunning = undefined;
-            function consoleread(){ function1 = undefined; function2 = undefined; function3 = undefined; function4 = undefined; function5 = undefined;
+            
+            function promptrestart(){ datestring = updateon.replace(". [GMT]","").replace(":","").replace("th, ","").replace("rd, ","").replace("nd, ","").replace("st, ","").replace(" ","").replace("pmon","").replace("amon",""); 
+                inprompt = inprompt + " Vher98 [Version 0.6." + datestring + "]"; println(); inprompt = inprompt + " (c) 2021 Very Vhersty. All Rights Reserved."; println(); inprompt = inprompt + "Developer console; use at your own risk."; println(); println()}
+            
+            function consoleread(){ 
+                var function1 = undefined, function2 = undefined, function3 = undefined, function4 = undefined, function5 = undefined, imageElement = undefined, currunning = undefined;
                 var array = consolein.split(' '), function1 = array[0], function2 = array[1], function3 = array[2], function4 = array[3], function5 = array[4];
+                
+                wordln(); upkeyin = consolein;
+                $(document).keydown(function(e){ if (e.which == 38) { document.getElementById("prompttext").value = upkeyin; return false}});
+                $(document).keydown(function(e){ if (e.which == 40) { document.getElementById("prompttext").value = ""; return false}});
 
-                if(consolein.length < 120){
-                    consolein.replace(/[|;$%@"<>()+,]/g, " "); 
-                    wordln()
-
-                    if (function1 == "console"){
-                        if(function2 == "length"){
-                            var temp = inprompt.length
-                            inprompt = inprompt + temp; println(); println();
-                        } else if (function2 == "split"){
-                            var temp = inprompt.split(function3), temp1 = temp[0], temp2 = temp[1];
-                            inprompt = temp1; println();
-                            inprompt = temp2; println(); println();
-                        } else {
-                            inprompt = inprompt + "Error 102: " + "'" + function1 + "' is not recognised as an internal or external command."; println(); println()}
+                if (function1 == "console"){
+                    if(function2 == "length"){
+                        var temp = inprompt.length
+                        inprompt = inprompt + temp; println(); println();
+                    } else if (function2 == "split"){
+                        var temp = inprompt.split(function3), temp1 = temp[0], temp2 = temp[1];
+                        inprompt = temp1; println();
+                        inprompt = temp2; println(); println();
+                    } else {
+                        inprompt = inprompt + "Error 102: " + "'" + function1 + "' is not recognised as an internal or external command."; println(); println()}
                         
-                    } else if (function1 == "player"){
-                        if(function4 == undefined){
-                            if(function2 == "video"){
-                                word1 = function3.split("="), word2 = word1[0], word3 = word1[1];
-                                if(word2 == "https://www.youtube.com/watch?v"){
-                                    var consolevideo = function3.replace("https://www.youtube.com/watch?v=", ""); videoclear(); playlistlaunch(); 
-                                    player.loadVideoById({'videoId':consolevideo, 'index': 0}); playerupdate(); playertext.textContent = "Playing video url:" + function3
-                                    inprompt = inprompt + "Playing " + function3; println(); println()
-                                } else {
-                                inprompt = inprompt + "Error 309: " + "'" + function3 + " " + function3 + "' is not recognised as a valid URL."; println(); println() }
-                            } else if (function2 == "playlist") {
-                                word1 = function3.split("="), word2 = word1[0], word3 = word1[1]; word4 = word1[2];
-                                if(word2 == "https://www.youtube.com/watch?v"){
-                                    currentplaylist = word4; videoclear(); playlistlaunch();
-                                    player.loadPlaylist({'list':currentplaylist, 'index': 0}); playerupdate(); playertext.textContent = "Playing playlist url:" + word4
-                                    inprompt = inprompt + "Playing playlist:" + word4; println(); println()
-                                } else { inprompt = inprompt + "Error 208: " + "'" + function3 + "' is not recognised as a valid playlist URL."; println(); println() }
-                            } else if (function2 == "push"){
-                                if(function3.length == 11){
-                                    var consolevideo = function3; videoclear(); playlistlaunch();
-                                    player.loadVideoById({'videoId':consolevideo, 'index': 0}); playerupdate(); playertext.textContent = "Playing video id:" + function3
-                                    inprompt = inprompt + "Playing video id: " + function3; println(); println()
-                                } else if(function3.length == 27){
-                                    currentplaylist = function3; videoclear(); playlistlaunch();
-                                    player.loadPlaylist({'list':currentplaylist, 'index': 0}); playerupdate(); playertext.textContent = "Playing playlist id:" + function3
-                                    inprompt = inprompt + "Playing playlist id: " + function3; println(); println()
-                                } else { inprompt = inprompt + "Error 311: " + "'" + function3 + "' is not a valid string length"; println(); println() }
-                            } else if (function2 == "fullscreen"){
-                                if (function3 == "true"){
-                                    fullscreenactive = false; fullscreenembed()
-                                } else if (function3 == "false"){
-                                    fullscreenactive = true; fullscreenembed()
-                                } else { inprompt = inprompt + "Error 310: " + "'" + function3 + "' is not recognised as an internal function"; println(); println() }
-                            } else { inprompt = inprompt + "Error 301: " + "'" + function3 + "' is not recognised as an internal function"; println(); println() }
-                        } else { inprompt = inprompt + "Error 406: " + "'" + function3 + " " + function4 + "' is not recognised as an internal function"; println(); println() }
-                          
-                    } else if (function1 == "custom"){
-                        if( function2 == "console"){
-                            if (function3 == "background"){
-                                inprompt = inprompt + "Background color set to: " + function4; println(); println();
-                                consoleback = function4; docelem.style.setProperty('--consoleback', consoleback)
-                            } else if (function3 == "text"){
-                                inprompt = inprompt + "Text color set to: " + function4; println(); println();
-                                consoletext = function4; docelem.style.setProperty('--consoletext', consoletext)
-                            } else { inprompt = inprompt + "Error 202: " + "'" + function2 + "' is not recognised as a valid address."; println(); println()}
-                        } else if (function2 == "root"){
-                                inprompt = inprompt + "Setting " + function3 + " to: " + function4; println(); println();
-                                docelem.style.setProperty('--' + function3, function4)
+                } else if (function1 == "player"){
+                    if(function4 == undefined){
+                        if(function2 == "video"){
+                            word1 = function3.split("="), word2 = word1[0], word3 = word1[1];
+                            if(word2 == "https://www.youtube.com/watch?v"){
+                                var consolevideo = function3.replace("https://www.youtube.com/watch?v=", ""); videoclear(); playlistlaunch(); 
+                                player.loadVideoById({'videoId':consolevideo, 'index': 0}); playerupdate(); playertext.textContent = "Playing video url:" + function3
+                                inprompt = inprompt + "Playing " + function3; println(); println()
+                            } else {
+                            inprompt = inprompt + "Error 309: " + "'" + function3 + " " + function3 + "' is not recognised as a valid URL."; println(); println() }
+                        } else if (function2 == "playlist") {
+                            word1 = function3.split("="), word2 = word1[0], word3 = word1[1]; word4 = word1[2];
+                            if(word2 == "https://www.youtube.com/watch?v"){
+                                currentplaylist = word4; videoclear(); playlistlaunch();
+                                player.loadPlaylist({'list':currentplaylist, 'index': 0}); playerupdate(); playertext.textContent = "Playing playlist url:" + word4
+                                inprompt = inprompt + "Playing playlist:" + word4; println(); println()
+                            } else { inprompt = inprompt + "Error 208: " + "'" + function3 + "' is not recognised as a valid playlist URL."; println(); println() }
+                        } else if (function2 == "push"){
+                            if(function3.length == 11){
+                                var consolevideo = function3; videoclear(); playlistlaunch();
+                                player.loadVideoById({'videoId':consolevideo, 'index': 0}); playerupdate(); playertext.textContent = "Playing video id:" + function3
+                                inprompt = inprompt + "Playing video id: " + function3; println(); println()
+                            } else if(function3.length == 27){
+                                currentplaylist = function3; videoclear(); playlistlaunch();
+                                player.loadPlaylist({'list':currentplaylist, 'index': 0}); playerupdate(); playertext.textContent = "Playing playlist id:" + function3
+                                inprompt = inprompt + "Playing playlist id: " + function3; println(); println()
+                            } else { inprompt = inprompt + "Error 311: " + "'" + function3 + "' is not a valid string length"; println(); println() }
+                        } else if (function2 == "fullscreen"){
+                            if (function3 == "true"){
+                                fullscreenactive = false; fullscreenembed()
+                            } else if (function3 == "false"){
+                                fullscreenactive = true; fullscreenembed()
+                            } else { inprompt = inprompt + "Error 310: " + "'" + function3 + "' is not recognised as an internal function"; println(); println() }
+                        } else { inprompt = inprompt + "Error 301: " + "'" + function3 + "' is not recognised as an internal function"; println(); println() }
+                    } else { inprompt = inprompt + "Error 406: " + "'" + function3 + " " + function4 + "' is not recognised as an internal function"; println(); println() }
+                      
+                } else if (function1 == "custom"){
+                    if( function2 == "console"){
+                        if (function3 == "background"){
+                            inprompt = inprompt + "Background color set to: " + function4; println(); println();
+                            consoleback = function4; docelem.style.setProperty('--consoleback', consoleback)
+                        } else if (function3 == "text"){
+                            inprompt = inprompt + "Text color set to: " + function4; println(); println();
+                            consoletext = function4; docelem.style.setProperty('--consoletext', consoletext)
+                        } else { inprompt = inprompt + "Error 202: " + "'" + function2 + "' is not recognised as a valid address."; println(); println()}
+                    } else if (function2 == "root"){
+                            inprompt = inprompt + "Setting " + function3 + " to: " + function4; println(); println();
+                            docelem.style.setProperty('--' + function3, function4)
                         } else if (function2 == "var"){
-                                inprompt = inprompt + "Setting " + function3 + " to: " + function4; println(); println();
-                                docelem.style.setProperty(function3, function4)
+                            inprompt = inprompt + "Setting " + function3 + " to: " + function4; println(); println();
+                            docelem.style.setProperty(function3, function4)
                         } else if (function2 == "refresh"){ themechange()
-                        } else { inprompt = inprompt + "Error 402: " + "'" + function3 + " " + function4 + "' is not recognised as a valid colour."; println(); println()}
+                    } else { inprompt = inprompt + "Error 402: " + "'" + function3 + " " + function4 + "' is not recognised as a valid colour."; println(); println()}
                             
-                    } else if (function1 == "mount"){
-                        inprompt = inprompt + "Mounting " 
-                        if(function2 !== undefined){
-                            inprompt = inprompt + function2 + " "}
-                        if(function3 !== undefined){
-                            inprompt = inprompt + function3 + " "}
-                        if(function4 !== undefined){
-                            inprompt = inprompt + function4}
-                        println(); println();
-                        
-                        if(function2 == "local"){
-                            word1 = "https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/";
-                            if(function3 == "config"){ 
-                                word2 = "configs/"; word3 = function4;
-                                loaded = word1 + word2 + word3;
-                            } else if(function3 == "img"){
-                                word2 = "img/";
-                                word3 = function4;
-                                loaded = word1 + word2 + word3;
-                            } else if(function4 !== undefined){
-                                word2 = function3;
-                                loaded = word1 + word2;
-                            } else { inprompt = inprompt + "Error 301: " + "'" + function3 + "' is not recognised as an internal file or folder."; println(); println() }
-                        } else if (function2 !== undefined) {
-                            var temp = function2.split(':').split('.'), temp1 = temp[0], temp2 = temp[1];
-                            if(temp1 == "https" || temp1 == "www" || temp1 == "https://www"){
-                                word1 = function2;
-                                loaded = word1 + word2 + word3 + word4;
-                            } else { inprompt = inprompt + "Error 206: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() }
-                        } else { inprompt = inprompt + "Error 201: " + "'" + function1 + "' is not recognised as an internal file or folder."; println(); println() }
-                           
-                    } else if (function1 == "fetch") { 
-                        inprompt = inprompt + "Loaded current config to buffer."; println(); config = loaded;
-                        if(function2 == "mount"){
-                            if(loaded !== undefined){
-                                inprompt = inprompt + "Fetching " + loaded; println();
-                                fetch(config).then(res => res.text()) .then(data => {config = data.split('\n')});
-                                inprompt = inprompt + "Done."; println(); println();
-                            } else { inprompt = inprompt + "Error 203: " + "'" + loaded + "' is not a valid config."; println(); println() }}
-                            
-                    } else if (function1 == "status"){
-                        if(function2 == undefined){
-                            inprompt = inprompt + "current: "
-                            if(word1 !== undefined){
-                                inprompt = inprompt + word1}
-                            if(word2 !== undefined){
-                                inprompt = inprompt + word2}
-                            if(word3 !== undefined){
-                                inprompt = inprompt + word3}
-                            if(word4 !== undefined){
-                                inprompt = inprompt + word4}
-                            if(function2 == "run"){
-                                inprompt = inprompt + currunning }
-                            println(); println()
-                        } else if (function2 == "config"){
-                            if(config == config){ inprompt = inprompt + config; println();
-                            } else { inprompt = inprompt + config; println(); inprompt = inprompt + config; println(); println() }
-                        } else if (function2 == "load"){ inprompt = inprompt + loaded; println(); println() }
-                        
-                    } else if (function1 == "flush"){
-                        if(function2 !== undefined){
-                            if (function2 == "function1"){
-                                word1 = undefined; inprompt = inprompt + "Flushed " + function2 + "."; println(); println();
-                            } else if (function2 == "function2"){
-                                word2 = undefined; inprompt = inprompt + "Flushed " + function2 + "."; println(); println();
-                            } else if (function2 == "function3"){
-                                word3 = undefined; inprompt = inprompt + "Flushed " + function2 + "."; println(); println();
-                            } else if (function2 == "function4"){
-                                word4 = undefined; inprompt = inprompt + "Flushed " + function2 + "."; println(); println();
-                            } else if (function2 == "run"){
-                                while (loadedconfig--) { window.clearTimeout(loadedconfig) };
-                                currunning = undefined; inprompt = inprompt + "Flushed run."; println(); println();
-                            } else if (config !== undefined){ config = undefined; inprompt = inprompt + "Flushed current loaded config."; println(); println()
-                            } else { inprompt = inprompt + "Error 204: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() }
-                        } else { word1 = undefined; word2 = undefined; word1 = undefined; inprompt = inprompt + "Flushed."; println(); println()}
-                            
-                    } else if (function1 == "get"){
-                        if(function3 == undefined){
-                            if (function2 == "readme"){
-                                config = "https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/readme"
-                                $.get(config, function(data) { inprompt = inprompt + $("console").html( data ); }, 'text')
-                            } else if(config.length !== 0){
-                                if(function2 == "mount"){
-                                    $.get(config, function(data) { inprompt = inprompt + $("console").html( data ); }, 'text')
-                                } else { inprompt = inprompt + "Error 208: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() }
-                            } else { inprompt = inprompt + "Error 207: no current config is loaded."; println(); println() }
-                        } else if (function2 == "url"){
-                            if (function3 !== undefined) {
-                                var temp = function3.split(':'), temp1 = temp[0], temp2 = temp[1];
-                                if(temp1 == "https"){
-                                    $.get(function3, function(data) { inprompt = inprompt + $("console").html( data ); }, 'text')
-                                } else { inprompt = inprompt + "Error 211: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() }
-                            } else { inprompt = inprompt + "Error 212: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() } 
-                        } else { inprompt = inprompt + "Error 312: " + "'" + function2 + " " + function3 + "' is not recognised as a valid colour."; println(); println()}
-                            
-                    } else if (function1 == "print") {
-                        if(function3 !== undefined){ currunning = " " + word4
-                        } else { currunning = " undefined" }
-                        inprompt = inprompt + "Printing " + currunning; println()
-                        if(config.length !== 0){ 
-                            let configlength = config.length; let configset = 0; var configloop = 0;
-                            if(function2 == "default"){
-                                var configfixed = (configlength - 2)/ 2 
-                            } else if (function2 !== undefined){ 
-                                var configfixed = config.length } 
-                            for(let configloop = 0; configloop < configfixed; configloop++){ 
-                                loadedconfig = setTimeout(function() { 
-                                    var configtext = config[configloop]; inprompt = inprompt + configtext; println();}, config[configset])
-                                    if (function2 !== undefined){ configset = configset + function2; prompttext.textContent = "🎱 Command Prompt"
-                                    } else { configset = configloop + (configlength - 2)/ 2; promptText.textContent = config[config.length - 2] }}
-                        } else {inprompt = inprompt + "Error 006: Run " + "'" + config + "' is not recognised as an internal or external command."; println(); println() }
-                     
-                    } else if (function1 == "reset") {
-                        if(function2 == "player"){  embedpositionreset()
-                        } else if (function2 == "vunny"){ vunnywindowreset(); vunnypositionreset()
-                        } else if (function2 == "disk"){ diskopen()
-                        } else if (function2 == "prompt"){ promptpositionreset()
-                        } else if (function2 == "$inactive"){ inactiveall()
-                        } else if (function2 == "patchnotes"){ patchnotesopen() 
-                        } else { inprompt = inprompt + "Error 217: Run " + "'" + config + "' is not recognised as an internal or external command."; println(); println()}
-                            
-                    } else if (function1 == "clear") { 
-                        if(function2 == undefined){ inprompt = "clear"; println(); prompttitle.textContent = "🎱 Command Prompt"; 
-                        } else { inprompt = inprompt + "Error 101: " + "'" + function1 + "' is not recognised as an internal or external command."; println(); println() }
-                            
-                    } else if (function1 == "!") {
-                        if (config !== undefined){ config = undefined; println()
-                        } else { inprompt = inprompt + "Error 105: no config is currently loaded."; println(); println() }
-                            
-                    } else { inprompt = inprompt + "Error 100: " + "'" + function1 + "' is not recognised as an internal or external command."; println(); println() }
+                } else if (function1 == "mount"){
+                    inprompt = inprompt + "Mounting " 
+                    if(function2 !== undefined){ inprompt = inprompt + function2 + " "}
+                    if(function3 !== undefined){ inprompt = inprompt + function3 + " "}
+                    if(function4 !== undefined){ inprompt = inprompt + function4 }
+                    println(); println();
                     
-                } else {
-                    if (function1.includes("!DOCTYPE")){ 
-                        inprompt = inprompt + "Enjoy your ascii!"; println(); println();
-                    } else { inprompt = inprompt + "Error 000: Input string is too long."; println();println();}}
+                    if(function2 == "local"){
+                        word1 = "https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/";
+                        if(function3 !== undefined){ word2 = function3; loaded = word1 + word2 }
+                        if(function4 !== undefined){ word3 = function4; loaded = loaded + "/" + word3}
+                        if(function5 !== undefined){ word4 = function5; loaded = loaded + "/" + word4}
+                    } else if (function2 !== undefined) {
+                        var temp = function2.split(':'), temp1 = temp[0], temp2 = temp[1];
+                        if(temp1 == "https"){ word1 = function2; loaded = word1;
+                        } else { inprompt = inprompt + "Error 206: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() }
+                    } else { inprompt = inprompt + "Error 201: " + "'" + function1 + "' is not recognised as an internal file or folder."; println(); println() }
+                       
+                } else if (function1 == "fetch") { 
+                    inprompt = inprompt + "Loaded current config to buffer."; println(); config = loaded;
+                    if(function2 == "mount"){
+                        if(loaded !== undefined){
+                            inprompt = inprompt + "Fetching " + loaded; println();
+                            fetch(config).then(res => res.text()) .then(data => {config = data.split('\n')});
+                            inprompt = inprompt + "Done."; println(); println();
+                        } else { inprompt = inprompt + "Error 203: " + "'" + loaded + "' is not a valid config."; println(); println() }}
+                        
+                } else if (function1 == "status"){
+                    if(function2 == undefined){ inprompt = inprompt + "current: "
+                        if(word1 !== undefined){ inprompt = inprompt + word1}
+                        if(word2 !== undefined){ inprompt = inprompt + word2}
+                        if(word3 !== undefined){ inprompt = inprompt + word3}
+                        if(word4 !== undefined){ inprompt = inprompt + word4}
+                        if(function2 == "run"){ inprompt = inprompt + currunning }
+                        println(); println()
+                    } else if (function2 == "config"){
+                        if(config == config){ inprompt = inprompt + config; println();
+                        } else { inprompt = inprompt + config; println(); inprompt = inprompt + config; println(); println() }
+                    } else if (function2 == "load"){ inprompt = inprompt + loaded; println(); println() }
+                    
+                } else if (function1 == "flush"){
+                    if(function2 !== undefined){
+                        if (function2 == "function1"){ word1 = undefined; inprompt = inprompt + "Flushed " + function2 + "."; println(); println();
+                        } else if (function2 == "function2"){ word2 = undefined; inprompt = inprompt + "Flushed " + function2 + "."; println(); println();
+                        } else if (function2 == "function3"){ word3 = undefined; inprompt = inprompt + "Flushed " + function2 + "."; println(); println();
+                        } else if (function2 == "function4"){ word4 = undefined; inprompt = inprompt + "Flushed " + function2 + "."; println(); println();
+                        } else if (function2 == "run"){
+                            while (loadedconfig--) { window.clearTimeout(loadedconfig) };
+                            currunning = undefined; inprompt = inprompt + "Flushed run."; println(); println();
+                        } else if (config !== undefined){ config = undefined; inprompt = inprompt + "Flushed current loaded config."; println(); println()
+                        } else { inprompt = inprompt + "Error 204: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() }
+                    } else { word1 = undefined; word2 = undefined; word1 = undefined; inprompt = inprompt + "Flushed."; println(); println()}
+                        
+                } else if (function1 == "get"){
+                    if(function3 == undefined){
+                        if (function2 == "readme"){
+                            var tempconfig = "https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/readme"
+                            $.get(tempconfig, function(data) { inprompt = inprompt + $("console").html( data ); }, 'text')
+                        } else if(config.length !== 0){
+                            if(function2 == "mount"){ $.get(config, function(data) { inprompt = inprompt + $("console").html( data ); }, 'text')
+                            } else { inprompt = inprompt + "Error 208: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() }
+                        } else { inprompt = inprompt + "Error 207: no current config is loaded."; println(); println() }
+                    } else if (function3 !== undefined) {
+                        if (function2 == "image"){
+                            if (function3 == "pyro"){ imageElement = document.getElementById('pyroimage');
+                            } else if (function3 == "cat"){ imageElement = document.getElementById('catimage'); }
+                            if(imageElement !== undefined){ 
+                                style = imageElement.currentStyle || window.getComputedStyle(imageElement, false),
+                                imageElementBack = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+                                inprompt = inprompt + imageElementBack; println(); println()
+                            } else { inprompt = inprompt + "Error 314: " + "'" + function3 + "' is not recognised as a valid window."; println(); println()}
+                        } else if (function2 == "url"){
+                            var temp = function3.split(':'), temp1 = temp[0], temp2 = temp[1];
+                            if(temp1 == "https"){ $.get(function3, function(data) { inprompt = inprompt + $("console").html( data ); }, 'text')
+                            } else { inprompt = inprompt + "Error 211: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() }
+                        } else { inprompt = inprompt + "Error 312: " + "'" + function2 + " " + function3 + "' is not recognised as a valid colour."; println(); println()}
+                    } else { inprompt = inprompt + "Error 212: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() } 
+                        
+                } else if (function1 == "push") {
+                    if(function4 == undefined){
+                        if (function2 == "config"){
+                            if (function3 == "patchnotes"){ patchnotes == config; 
+                                $.get(patchlogs, function(data) { $( "patchnotes" ).last().html( data ); }, 'text'); inprompt = inprompt + config + " pushed to #patchnotes."; println(); println()
+                            } else { document.getElementById(function3).style.backgroundImage = 'url('+config+')'; inprompt = inprompt + config + " pushed to '#" + function3 + "'"; println(); println()}
+                        } else { inprompt = inprompt + "Error 317: " + "'" + function3 + "' is not recognised as an internal or external command."; println(); println() } 
+                    } else if(function4 !== undefined){
+                        if (function2 == "url"){
+                            if (function3 == "readme"){ patchnotes == function4; 
+                                $.get(patchlogs, function(data) { $( "patchnotes" ).last().html( data ); }, 'text'); inprompt = inprompt + function4 + " pushed to #patchnotes."; println(); println()
+                            } else { document.getElementById(function3).style.backgroundImage = 'url('+function4+')'; inprompt = inprompt + function4 + " pushed to '#" + function3 + "'"; println(); println()}
+                        } else { inprompt = inprompt + "Error 403: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() } 
+                    } else { inprompt = inprompt + "Error 213: " + "'" + function2 + "' is not recognised as an internal or external command."; println(); println() } 
+                        
+                } else if (function1 == "print") {
+                    if(function3 !== undefined){ currunning = " " + word4
+                    } else { currunning = " undefined" }
+                    inprompt = inprompt + "Printing " + currunning; println()
+                    if(config.length !== 0){ 
+                        let configlength = config.length; let configset = 0; var configloop = 0;
+                        if(function2 == "default"){
+                            var configfixed = (configlength - 2)/ 2 
+                        } else if (function2 !== undefined){ 
+                            var configfixed = config.length } 
+                        for(let configloop = 0; configloop < configfixed; configloop++){ 
+                            loadedconfig = setTimeout(function() { 
+                                var configtext = config[configloop]; inprompt = inprompt + configtext; println();}, config[configset])
+                                if (function2 !== undefined){ configset = configset + function2; prompttext.textContent = "🎱 Command Prompt"
+                                } else { configset = configloop + (configlength - 2)/ 2; promptText.textContent = config[config.length - 2] }}
+                    } else {inprompt = inprompt + "Error 006: Run " + "'" + config + "' is not recognised as an internal or external command."; println(); println() }
+                
+                } else if (function1 == "reset") {
+                    if (function2 == "player"){ embedpositionreset(); inprompt = inprompt + "Embedded Media player has been reset."; println(); println()
+                    } else if (function2 == "vunny"){ vunnywindowreset(); vunnypositionreset(); inprompt = inprompt + "Ununny windows has been reset."; println(); println()
+                    } else if (function2 == "display"){ diskopen(); inprompt = inprompt + "Display properties has been reset."; println(); println()
+                    } else if (function2 == "prompt"){ promptpositionreset(); inprompt = inprompt + "Command Prompt has been reset."; println(); println()
+                    } else if (function2 == "$inactive"){ inactiveall(); inprompt = inprompt + "All windows set to inactive."; println(); println()
+                    } else if (function2 == "patchnotes"){ patchnotesopen(); inprompt = inprompt + "Patch notes window has been reset."; println(); println()
+                    } else { inprompt = inprompt + "Error 217: Run " + "'" + config + "' is not recognised as an internal or external command."; println(); println()}
+                        
+                } else if (function1 == "clear") { 
+                    if(function2 == undefined){ inprompt = "clear"; println(); prompttitle.textContent = "🎱 Command Prompt"; 
+                    } else { inprompt = inprompt + "Error 101: " + "'" + function1 + "' is not recognised as an internal or external command."; println(); println() }
+                        
+                } else if (function1 == "!") {
+                    if (config !== undefined){ config = undefined; println()
+                    } else { inprompt = inprompt + "Error 105: no config is currently loaded."; println(); println() }
+                 
+                } else if (function1.includes("!DOCTYPE")){ 
+                    inprompt = inprompt + "Enjoy your ascii!"; println(); println();
+                        
+                } else { inprompt = inprompt + "Error 100: " + "'" + function1 + "' is not recognised as an internal or external command."; println(); println() }
             }
         </script>
         
@@ -1164,11 +1154,11 @@
             <div class="title-bar-98" id="diskwindow"> <div class="title-bar-text" id="disktext">📺 Display Properties</div></div>
             
             <!--container for the setting window -->
-            <div class="win98tab" style="width:71px; height:17px; margin-top:5px; margin-left:  6px; z-index:10" onclick="tabreset(); backgroundtab();" id="backgroundtab"><center><label style="margin-top:1px;">Background</label></center></div>
-            <div class="win98tab" style="width:68px; height:16px; margin-top:6px; margin-left: 80px; z-index: 1"  onclick="tabreset(); screensavertab();" id="screenSavertab"><center><label style="margin-top:1px;">Screen Saver</label></center></div>
-            <div class="win98tab" style="width:65px; height:16px; margin-top:6px; margin-left:154px; z-index: 1"  onclick="tabreset(); appearancetab();" id="appearancetab"><center><label style="margin-top:1px;">Appearance</label></center></div>
-            <div class="win98tab" style="width:38px; height:16px; margin-top:6px; margin-left:225px; z-index: 1"  onclick="tabreset(); effectstab();" id="effectstab"><center><label style="margin-top:1px;">Effects</label></center></div>
-            <div class="win98tab" style="width:45px; height:16px; margin-top:6px; margin-left:269px; z-index: 1"  onclick="tabreset(); settingstab();" id="settingstab"><center><label style="margin-top:1px;">Settings</label></center></div>
+            <div class="win98tab" style="width:71px; margin-left:  6px" onclick="tabreset(); backgroundtab();" id="backgroundtab"><center><label style="margin-top:1px;">Background</label></center></div>
+            <div class="win98tab" style="width:68px; margin-left: 80px"  onclick="tabreset(); screensavertab();" id="screenSavertab"><center><label style="margin-top:1px;">Screen Saver</label></center></div>
+            <div class="win98tab" style="width:65px; margin-left:154px"  onclick="tabreset(); appearancetab();" id="appearancetab"><center><label style="margin-top:1px;">Appearance</label></center></div>
+            <div class="win98tab" style="width:38px; margin-left:225px"  onclick="tabreset(); effectstab();" id="effectstab"><center><label style="margin-top:1px;">Effects</label></center></div>
+            <div class="win98tab" style="width:45px; margin-left:269px"  onclick="tabreset(); settingstab();" id="settingstab"><center><label style="margin-top:1px;">Settings</label></center></div>
             
             <!-- --------------------------------------- background tab --------------------------------------- -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:9" id="background">
@@ -1290,20 +1280,18 @@
                         
                         <ul class="tree-view"  style="position: absolute; width:168px; height: 17px; padding:2px; margin-top:3px;" onclick="ssdropdown()" onmouseleave="ssdropdownclose()">
                             <div style="padding: 2px" id="currentscreensaver">(none)
-                                <div class="win98button" style="position:absolute; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div></div> <!--#ref0018-->
+                                <div class="win98button" style="float:right; margin-right:-2px; margin-top:-2px; width:10px; height:11px;"><div class="scrolldown"></div></div></div> <!--#ref0018-->
                         
                             <div class="drop-down-menu" style="margin-top:1px; width: 167px; margin-left: -20000px;" id="thescreensaver">
-                                <div class="win98buttonpressed" style="position:absolute; margin-top: -18px; margin-left:153px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
+                                <div class="win98buttonpressed" style="position:absolute; margin-top: -17px; margin-left:154px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
                                 <div class="drop-down-text" onclick="none()" id="none">(none)</div> <!--#ref0019-->
-                            </div>
-                        </ul>
+                        </div></ul>
                         
                         <script>
-                            var ssdrop = false; //#ref5022 through #ref0018
-                            function ssdropdown(){if (ssdrop == false) {document.getElementById("thescreensaver").style.marginLeft = "-2px"; ssdrop = true //#ref5023
-                                } else if (ssdrop == true){document.getElementById("thescreensaver").style.marginLeft = "-20000px"; ssdrop = false}} //#ref5024
+                            var ssdrop = false, thescreen = document.getElementById("thescreensaver").style; //#ref5022 through #ref0018
+                            function ssdropdown(){if (ssdrop == false) {thescreen.marginLeft = "-2px"; ssdrop = true } else if (ssdrop == true){thescreen.marginLeft = "-20000px"; ssdrop = false }} //#ref5023 //#ref5024
                             function none(){document.getElementById("currentscreensaver").textContent="(none)";} //dropdown option one for #ref0019
-                            function ssdropdownclose(){document.getElementById("thescreensaver").style.marginLeft = "-20000px"; ssdrop = false} //#ref5025
+                            function ssdropdownclose(){thescreen.marginLeft = "-20000px"; ssdrop = false} //#ref5025
                         </script>
                         
                         <div class="win98buttoninactive" style="position: absolute; margin-left:182px; margin-top: 1px; width:66px; height:18px;"> 
@@ -1324,10 +1312,8 @@
                                     <label style="position:absolute; margin-left: -14px; margin-top: 2px; color:curcolgray;"> 14 </label>
                                     <div class="win98buttoninactive" style="position:absolute; margin-left:1px; margin-top:0px; width:11px; height:2px;"><div class="tinyarrowdisabledup" style="margin-left:4px;"></div></div>
                                     <div class="win98buttoninactive" style="position:absolute; margin-left:1px; margin-top:9px; width:11px; height:2px;"><div class="tinyarrowdisableddown"  style="margin-left:4px;"></div></div>
-                                </div>
-                            </ul>
-                            <div class="disabledfont" style="position:absolute; margin-left:86px; margin-top:-1px">minutes</div>
-                        </div>
+                            </div></ul>
+                            <div class="disabledfont" style="position:absolute; margin-left:86px; margin-top:-1px">minutes</div></div>
                     </fieldset>
                     
                     <fieldset style="width:336px; height:48px; margin-left: 12px; margin-top: 12px;">
@@ -1975,7 +1961,7 @@
                                 <div class="small_seperator" style="margin-top:1px; height:17px;"></div> <!-- Left side of the Bottom container -->
                                 <div style="position:absolute; margin-left:12.5px; margin-top:5px; width:400px;">A<underline>d</underline>dress</div>
                                 <ul class="tree-view" style="position:absolute; width:300px; height:9px; margin-left:55.5px; overflow:hidden;">
-                                    <div class="win98buttontitlebarinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px; width:10px; height:11px;">
+                                    <div class="win98buttonscrollinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px; width:10px; height:11px;">
                                         <div class="arrowdisableddown" style="margin-left:-4px;"></div></div>
                                     <div class="menufavouriteslink" style="position:absolute; margin-top:-5px; margin-left:-5px;"></div>
                                     <div style="margin-top:-1px; margin-left:16px;">https://thealonic.tumblr.com/post/{PostID}</div></ul>
