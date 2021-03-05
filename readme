@@ -64,6 +64,14 @@ get
 ### url         + string : prints out the html of a loaded url.
 !                        : default command to clear the 'get' command without printing.
 
+push
+### config 
+          + var + string : pushes selected config as the background image.
+       + readme + string : pushes selected config to the readme.
+### url    
+          + var + string : pushes url string to the background image.
+       + readme + string : pushes selected config to the readme.
+
 print         + interger : prints the currently mounted config based on inserted time in ms.
 ### default              : prints out the currently mounted based on preprogrammed times in the mounted config.
 
