@@ -37,7 +37,7 @@
               
         var github = "url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/";
         var readme = "//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/README.md";
-        var updateon = "16:13pm on March 2nd, 2021. [GMT]", updatedfrom = "Thea Vanherst";
+        var updateon = "19:35pm on March 5th, 2021. [GMT]", updatedfrom = "Thea Vanherst";
         var currenttask = 1, cal = 5, docelem = document.documentElement
         
         function calupdate(){inactiveall(); cal = cal + 1}
@@ -73,10 +73,7 @@
                     --prewhite: #ffffff; --prelightg: #dfdfdf;  --presilver: #c0c0c0; --premidgray: #ababab; --pregray: #808080; --preblack: #0a0a0a; --preactivetitle: #ffffff;
                     --preprussian: #00207c ; --prewincyan: #008080; --preyellow: #ffff00; --prefont: #000000; --prefonttitle: #ffffff; --prehover: #ffffff; ----preinactivetitle: #ffffff;
                     
-                    --consoleback: #000; --consoletext: #fff;
-                    
-                    --slider: 550px;
-                    --invert: 0; --preinvert: 0; --shuffleinvert: 0.5}
+                    --consoleback: #000; --consoletext: #fff; --slider: 550px; --invert: 0; --preinvert: 0; --shuffleinvert: 0.5}
 
             /* desktop config settings */
             body {background: repeat fixed; background-size: cover; padding: auto auto auto auto; background-color: var(--wincyan); font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; max-width: 100%; overflow-x: hidden}
@@ -139,10 +136,7 @@
             .colourselect {height: 12px; width: 12px; padding:2px; background-color:var(--white); box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black);
                            border-style: solid; border-width: 1px; border-color:var(--silver); margin-left:-1px; margin-top:-1px; display: inline-block}
             .colourselect:hover {box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--white),inset -2px -2px var(--black),inset 2px 2px var(--black); border-color: black; margin-left:-1px; margin-top:-1px}
-            
-            .window-menus {box-shadow:inset -1px -1px var(--silver), inset 1px 1px var(--silver); background:var(--silver); padding:3px; padding-left:4px; padding-right:4px; display: inline-block; margin-top:-1px}
-            .window-menus:hover {box-shadow:inset -1px -1px var(--gray), inset 1px 1px var(--lightg)}
-            
+
             .disabledfont {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--gray); text-shadow:1px 1px 0 var(--lightg)}
             .tagged { font-size: 9px; opacity: 0.5;}
             
@@ -196,8 +190,6 @@
             .disabledtickbox {height: 7px; width: 7px; background-position: -143px -212px; margin-top:1px; margin-left:1px; position: absolute;}
             .enabledtickbox {height: 7px; width: 7px; background-position: -143px -220px; position: absolute}
             
-            /* tumblr post container things */
-            .sidescrollbarmiddlemiddle {height:  2px; width:467px; background-image: var(--windowplacement); background-repeat: repeat-y; overflow:hidden;}
             .scrollbarmiddle {height:  2px; width: 16px; background-image: var(--scrollbar); background-repeat: repeat; overflow:hidden; background-color: var(--white)}
             
 /* Start bar handling ------------------------------------------------------------------------------*/
@@ -217,68 +209,54 @@
             .menulogoff {background-position: -288px   0px} .menushutdown {background-position: -324px 0px} .logofficon {background-position: -288px -36px} .shutdownicon {background-position: -324px -36px}
             
             /* start menu submenu icon references */
-            .menuprograms123, .menuprograms4, .menuprograms5, .menuprograms6, .menuprograms7, .menufind1, .menufind2, .menufind3, .menufind4, .menusettings1, .menusettings2, 
-            .menusettings3, .menusettings4, .menusettings5, .menusettings6, .menuapplications7, .menuapplications8, .menuapplications9, .menuapplications10, .menuapplications11, 
-            .menuapplications12, .menuapplications13, .menuapplications14, .menuapplications15, .explorerlinks, .none, .menucommunications1, .menucommunications2, .menucommunications3, 
-            .menucommunications4, .taskbaricon1, .taskbaricon2, .taskbaricon3, .taskbaricon4,  .calendar, .explorergo, .explorerback, .menufavouritesfolder, .menufavouriteslink, 
-            .menusystemtools1, .menusystemtools2, .menusystemtools3, .menusystemtools4, .menusystemtools5, .menusystemtools6, .menusystemtools7, .menusystemtools8, .menusystemtools9, 
-            .menusystemtools10, .menusystemtools11, .menusystemtools12, .menusystemtools13, .menuinternettools1, .menuinternettools2, .menuinternettools3, .menuinternettools4, 
-            .menuentertainment1, .menuentertainment2, .menuentertainment3, .menuentertainment4, .menuentertainment5, .menuentertainment, .menusettings1, .menusettings2, .menusettings3, 
-            .menusettings4, .menusettings5, .menusettings6, .menugames1, .menugames2, .menugames3, .menugames4,  .menudocuments1, .menudocumentssound, .menudocumentsfolder
+            .menuprograms123, .menuprograms4, .menuprograms5, .menuprograms6, .menuprograms7, .menufind1, .menufind2, .menufind3, .menufind4, .menusettings1, .menusettings2, .menusettings3, .menusettings4, .menusettings5, .menusettings6,
+            .menuapplications7, .menuapplications8, .menuapplications9, .menuapplications10, .menuapplications11, .menuapplications12, .menuapplications13, .menuapplications14, .menuapplications15, .explorerlinks, .none, .menucommunications1, 
+            .menucommunications2, .menucommunications3, .menucommunications4, .taskbaricon1, .taskbaricon2, .taskbaricon3, .taskbaricon4,  .calendar, .explorergo, .explorerback, .menufavouritesfolder, .menufavouriteslink, .menusystemtools1, 
+            .menusystemtools2, .menusystemtools3, .menusystemtools4, .menusystemtools5, .menusystemtools6, .menusystemtools7, .menusystemtools8, .menusystemtools9, .menusystemtools10, .menusystemtools11, .menusystemtools12, .menusystemtools13, 
+            .menuinternettools1, .menuinternettools2, .menuinternettools3, .menuinternettools4, .menuentertainment1, .menuentertainment2, .menuentertainment3, .menuentertainment4, .menuentertainment5, .menuentertainment, .menusettings1, 
+            .menusettings2, .menusettings3, .menusettings4, .menusettings5, .menusettings6, .menugames1, .menugames2, .menugames3, .menugames4,  .menudocuments1, .menudocumentssound, .menudocumentsfolder 
             { background-image: var(--spritesheet); margin: auto; float: left; height: 20px; width: 20px}
-            .menuapplications7 {    background-position:  -20px  -92px;} /* calc */             .menuapplications12 {   background-position:    0px -112px;} /* ask */
-            .menuapplications8 {    background-position:  -40px  -92px;} /* img */              .menuapplications13 {   background-position:  -20px -112px;} /* yahoo */
-            .menuapplications9 {    background-position:  -60px  -92px;} /* wordpad */          .menuapplications14 {   background-position:  -40px -112px;} /* msn */
-            .menuapplications10 {   background-position:  -80px  -92px;} /* paint */            .menuapplications15 {   background-position:  -60px -112px;} /* prodigy */
-            .menuapplications11 {   background-position: -100px  -92px;} /* notepad */          .menuentertainment1 {   background-position:    0px -152px;} /* Cd player */
-            .menucommunications1 {  background-position:    0px -132px;} /* Dial Up */          .menuentertainment2 {   background-position:  -20px -152px;} /* Cd Burner */
-            .menucommunications2 {  background-position:  -20px -132px;} /* Hyper terminal */   .menuentertainment3 {   background-position:  -40px -152px;} /* Cd Recorder */
-            .menucommunications3 {  background-position:  -40px -132px;} /* Configurations */   .menuentertainment4 {   background-position:  -60px -152px;} /* Volume Player */
-            .menucommunications4 {  background-position:  -60px -132px;} /* Phone Dialup */     .menuentertainment5 {   background-position:  -80px -152px;} /* Media Player */
-            .menugames1 {           background-position:    0px -172px;} /* Freecell */         .menuinternettools1 {   background-position: -140px  -72px;} /* Internet wizard */
-            .menugames2 {           background-position:  -20px -172px;} /* Hearts */           .menuinternettools2 {   background-position: -160px  -72px;} /* Microsoft chat */
-            .menugames3 {           background-position:  -40px -172px;} /* Minesweeper */      .menuinternettools3 {   background-position: -180px  -72px;} /* Net meeting */
-            .menugames4 {           background-position:  -60px -172px;} /* Solitar */          .menuinternettools4 {   background-position: -200px  -72px;} /* Personal Webserver */
-            .menusystemtools1 {     background-position: -140px  -92px;} /* character map */    .menusystemtools11 {    background-position: -140px -112px;} /* systeminfo */
-            .menusystemtools2 {     background-position: -160px  -92px;} /* clipboard viewer */ .menusystemtools12 {    background-position: -160px -112px;} /* systemmonitor */
-            .menusystemtools3 {     background-position: -180px  -92px;} /* disk cleanup */     .menusystemtools13 {    background-position: -180px -112px;} /* welcometowindows */
-            .menusystemtools4 {     background-position: -200px  -92px;} /* disk defrag */      .explorerlinks {        background-position: -153px -222px; height:  5px; width:  4px; margin-top:-14px; filter: invert(var(--invert))}
-            .menusystemtools5 {     background-position: -220px  -92px;} /* drive converter */  .menuprograms123 {      background-position:    0px  -72px;} /* folder icon */
-            .menusystemtools6 {     background-position: -240px  -92px;} /* maintain wizard */  .menuprograms4 {        background-position: -140px -132px;} /* internet explorer */
-            .menusystemtools7 {     background-position: -260px  -92px;} /* net watcher */      .menuprograms5 {        background-position: -160px -132px;} /* MSDOS */
-            .menusystemtools8 {     background-position: -280px  -92px;} /* resource meter */   .menuprograms6 {        background-position: -180px -132px;} /* Outlook Express */
-            .menusystemtools9 {     background-position: -300px  -92px;} /* scandisk */         .menuprograms7 {        background-position: -200px -132px;} /* Windows Explorer */
-            .menusystemtools10 {    background-position: -320px  -92px;} /* schedualed tasks */ .menusettings1 {        background-position: -140px -172px;} /* control panel */
-            .menudocuments1 {       background-position: -140px -152px;} /* my documents */     .menusettings2 {        background-position: -160px -172px;} /* printers */
-            .menudocumentssound {   background-position: -160px -152px;} /* sound files */      .menusettings3 {        background-position: -180px -172px;} /* taskbar */
-            .menudocumentsfolder {  background-position: -180px -152px;} /* document file */    .menusettings4 {        background-position: -200px -172px;} /* folder options */
-            .menudocumentsdoc {     background-position: -220px -152px;} /* document file */    .menusettings5 {        background-position: -220px -172px;} /* Active desktop */
-            .menufavouriteslink {   background-position: -200px -152px;} /* favourates link */  .menusettings6 {        background-position: -240px -172px;} /* windows update */
-            .menufavouritesfolder { background-position: -180px -152px;} /* favourite folder */ .taskbaricon1 {         background-position:    0px -192px;} 
-            .menufind1 {            background-position: -140px -192px;} /* files or folders */ .taskbaricon2 {         background-position:  -20px -192px; margin-left: 2px;} 
-            .menufind2 {            background-position: -160px -192px;} /* computer */         .taskbaricon3 {         background-position:  -40px -192px; margin-left: 2px;} 
-            .menufind3 {            background-position: -180px -192px;} /* on the internet */  .taskbaricon4 {         background-position:  -60px -192px; margin-left: 2px;}
-            .menufind4 {            background-position: -200px -192px;} /* people */           .calendar {             background-position:  -82px -194px; margin-left: 2px; height: 16px; width: 16px;}
-                                                                                                .none {                 background-position: -100px -192px;                   height: 18px; width: 18px;}
-            .explorergo {           background-position: -101px  -72px; filter: invert(var(--invert))}                      
-            .explorerback {         background-position: -121px  -72px; filter: invert(var(--invert))}
+            .menuapplications7 {background-position: -20px -92px} /* calc */ .menuapplications12 {background-position: 0px -112px} /* ask */ .menuapplications8 {background-position: -40px -92px} /* img */ 
+            .menuapplications13 {background-position: -20px -112px} /* yahoo */ .menuapplications9 {background-position: -60px -92px} /* wordpad */ .menuapplications14 {background-position: -40px -112px} /* msn */
+            .menuapplications10 {background-position: -80px -92px} /* paint */ .menuapplications15 {background-position: -60px -112px} /* prodigy */ .menuapplications11 {background-position: -100px -92px} /* notepad */ 
+            .menuentertainment1 {background-position: 0px -152px} /* Cd player */ .menucommunications1 {background-position: 0px -132px} /* Dial Up */ .menuentertainment2 {background-position: -20px -152px} /* Cd Burner */
+            .menucommunications2 {background-position: -20px -132px} /* Hyper terminal */ .menuentertainment3 {background-position: -40px -152px} /* Cd Recorder */ .menucommunications3 {background-position: -40px -132px} /* Configurations */ 
+            .menuentertainment4 {background-position: -60px -152px} /* Volume Player */ .menucommunications4 {background-position: -60px -132px} /* Phone Dialup */ .menuentertainment5 {background-position: -80px -152px} /* Media Player */
+            .menugames1 {background-position: 0px -172px} /* Freecell */ .menuinternettools1 {background-position: -140px -72px} /* Internet wizard */ .menugames2 {background-position: -20px -172px} /* Hearts */ 
+            .menuinternettools2 {background-position: -160px -72px} /* Microsoft chat */ .menugames3 {background-position: -40px -172px} /* Minesweeper */ .menuinternettools3 {background-position: -180px -72px} /* Net meeting */
+            .menugames4 {background-position: -60px -172px} /* Solitar */ .menuinternettools4 {background-position: -200px -72px} /* Personal Webserver */ .menusystemtools1 {background-position: -140px -92px} /* character map */ 
+            .menusystemtools11 {background-position: -140px -112px} /* systeminfo */ .menusystemtools2 {background-position: -160px -92px} /* clipboard viewer */ .menusystemtools12 {background-position: -160px -112px} /* systemmonitor */
+            .menusystemtools3 {background-position: -180px -92px} /* disk cleanup */ .menusystemtools13 {background-position: -180px -112px} /* welcometowindows */ .menusystemtools4 {background-position: -200px -92px} /* disk defrag */ 
+            .explorerlinks {background-position: -153px -222px; height:  5px; width:  4px; margin-top:-14px; filter: invert(var(--invert))} .menusystemtools5 {background-position: -220px -92px} /* drive converter */ 
+            .menuprograms123 {background-position: 0px  -72px} /* folder icon */ .menusystemtools6 {background-position: -240px -92px} /* maintain wizard */ .menuprograms4 {background-position: -140px -132px} /* internet explorer */
+            .menusystemtools7 {background-position: -260px -92px} /* net watcher */ .menuprograms5 {background-position: -160px -132px} /* MSDOS */ .menusystemtools8 {background-position: -280px -92px} /* resource meter */ 
+            .menuprograms6 {background-position: -180px -132px} /* Outlook Express */ .menusystemtools9 {background-position: -300px -92px} /* scandisk */ .menuprograms7 {background-position: -200px -132px} /* Windows Explorer */
+            .menusystemtools10 {background-position: -320px  -92px} /* schedualed tasks */ .menusettings1 {background-position: -140px -172px} /* control panel */ .menudocuments1 {background-position: -140px -152px} /* my documents */ 
+            .menusettings2 {background-position: -160px -172px} /* printers */ .menudocumentssound {background-position: -160px -152px} /* sound files */ .menusettings3 {background-position: -180px -172px} /* taskbar */
+            .menudocumentsfolder {background-position: -180px -152px} /* document file */ .menusettings4 {background-position: -200px -172px} /* folder options */ .menudocumentsdoc {background-position: -220px -152px} /* document file */ 
+            .menusettings5 {background-position: -220px -172px} /* Active desktop */ .menufavouriteslink {background-position: -200px -152px} /* favourates link */ .menusettings6 {background-position: -240px -172px} /* windows update */
+            .menufavouritesfolder {background-position: -180px -152px} /* favourite folder */ .taskbaricon1 {background-position: 0px -192px} .menufind1 {background-position: -140px -192px} /* files or folders */ 
+            .taskbaricon2 {background-position: -20px -192px; margin-left: 2px} .menufind2 {background-position: -160px -192px} /* computer */ .taskbaricon3 {background-position: -40px -192px; margin-left: 2px} /* active desktop */
+            .menufind3 {background-position: -180px -192px} /* on the internet */ .taskbaricon4 {background-position: -60px -192px; margin-left: 2px} .menufind4 {background-position: -200px -192px} /* people */ 
+            .calendar {background-position: -82px -194px; margin-left: 2px; height: 16px; width: 16px} /* calender icon */ .none {background-position: -100px -192px; height: 18px; width: 18px} /* none */
+            .explorergo {background-position: -101px -72px; filter: invert(var(--invert))} .explorerback {background-position: -121px -72px; filter: invert(var(--invert))}
 
-            .taskbartask1 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--white); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; margin-left: 167px;
-                            box-shadow:inset -1px -1px var(--taskbar1bottom2), inset 1px 1px var(--taskbar1top2), inset -2px -2px var(--taskbar1bottom1), inset 2px 2px var(--taskbar1top1); background-image: var(--scrollbar);}
-            .taskbartask2 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; margin-left: -20000px;
-                            box-shadow:inset -1px -1px var(--taskbar2bottom2), inset 1px 1px var(--taskbar2top2), inset -2px -2px var(--taskbar2bottom1), inset 2px 2px var(--taskbar2top1);}
-            .taskbartask3 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; margin-left: -20000px;
-                            box-shadow:inset -1px -1px var(--taskbar3bottom2), inset 1px 1px var(--taskbar3top2), inset -2px -2px var(--taskbar3bottom1), inset 2px 2px var(--taskbar3top1);}
-            .taskbartask4 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; margin-left: -20000px;
-                            box-shadow:inset -1px -1px var(--taskbar4bottom2), inset 1px 1px var(--taskbar4top2), inset -2px -2px var(--taskbar4bottom1), inset 2px 2px var(--taskbar4top1);}
-            .taskbartask5 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; margin-left: -20000px;
-                            box-shadow:inset -1px -1px var(--taskbar5bottom2), inset 1px 1px var(--taskbar5top2), inset -2px -2px var(--taskbar5bottom1), inset 2px 2px var(--taskbar5top1);}
-            .taskbartask6 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; margin-left: -20000px;
-                            box-shadow:inset -1px -1px var(--taskbar6bottom2), inset 1px 1px var(--taskbar6top2), inset -2px -2px var(--taskbar6bottom1), inset 2px 2px var(--taskbar6top1);}
+            .taskbartask1 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--white); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; 
+                margin-left: 167px; box-shadow:inset -1px -1px var(--taskbar1bottom2), inset 1px 1px var(--taskbar1top2), inset -2px -2px var(--taskbar1bottom1), inset 2px 2px var(--taskbar1top1); background-image: var(--scrollbar);}
+            .taskbartask2 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; 
+                margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar2bottom2), inset 1px 1px var(--taskbar2top2), inset -2px -2px var(--taskbar2bottom1), inset 2px 2px var(--taskbar2top1);}
+            .taskbartask3 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; 
+                margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar3bottom2), inset 1px 1px var(--taskbar3top2), inset -2px -2px var(--taskbar3bottom1), inset 2px 2px var(--taskbar3top1);}
+            .taskbartask4 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; 
+                margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar4bottom2), inset 1px 1px var(--taskbar4top2), inset -2px -2px var(--taskbar4bottom1), inset 2px 2px var(--taskbar4top1);}
+            .taskbartask5 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; 
+                margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar5bottom2), inset 1px 1px var(--taskbar5top2), inset -2px -2px var(--taskbar5bottom1), inset 2px 2px var(--taskbar5top1);}
+            .taskbartask6 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; 
+                margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar6bottom2), inset 1px 1px var(--taskbar6top2), inset -2px -2px var(--taskbar6bottom1), inset 2px 2px var(--taskbar6top1);}
             
             .big_seperator { float: left; border-left: 1px solid var(--gray); border-right: 1px solid var(--lightg); height: 22px; margin-top: 2px; margin-left: -1px} /*thin seperator but tall*/
-            .small_seperator { float: left;  border-left: 1px solid var(--white); border-top: 1px solid var(--white); margin-top: 3px; margin-left: 1px; height:17px; /*thin seperator but tall*/
-                               border-right: 1px solid var(--gray); border-bottom: 1px solid var(--gray); background-color: var(--silver); width: 1px; height: 18px}
+            .small_seperator { float: left;  border-left: 1px solid var(--white); border-top: 1px solid var(--white); margin-top: 3px; margin-left: 1px; height:17px;
+                               border-right: 1px solid var(--gray); border-bottom: 1px solid var(--gray); background-color: var(--silver); width: 1px; height: 18px} /*thin seperator but tall*/
             .menuapplicationsplit { border-bottom: 1px solid var(--white); background-color: var(--gray); height: 1px; width: 1px}
             .startmenusplitter { border-bottom: 1px solid var(--white); background-color: var(--gray); height: 1px; width: 156px; margin-left: 2px; margin-top:3px; margin-bottom:2px}
             
@@ -385,7 +363,7 @@
             ol.notes li.note blockquote { padding: 4px 10px; margin: 10px 0px 0px 25px;} ol.notes li.note blockquote a { text-decoration: none; color: var(--blue);} ul, ol { padding: 0 0 0 18px;} /*infinate scroll*/
             
             input[type=text] { width: 100%; background-color:var(--alwaysblack); color:var(--alwayswhite); padding:0px; cursor: default; 
-                padding:0px; margin-left:-5px; display: block; margin-left: 0; margin-right: 0; letter-spacing: -1px; white-space: pre-wrap; font-family: monospace;
+                padding:0px; margin-left:-5px; display: block; margin-left: 0; margin-right: 0; white-space: pre-wrap; font-family:"Pixelated MS Sans Serif", Arial;
                 box-shadow: 0px solid var(--alwaysblack), 0px solid var(--alwaysblack), 0px solid var(--alwaysblack), 0px solid var(--alwaysblack);}
 
             #progressBar { width: var(--slider); height: 6px; background-color: var(--silver); display: none; margin-top: 1px;}
@@ -534,7 +512,7 @@
                         <div style="position:absolute; margin-left:11px; margin-top:5px;">A<underline>d</underline>dress</div>
                         <ul class="tree-view" style="position:absolute; width:400px; height:9px; margin-left:55px;" id="playertv">
                             <div class="menufavouriteslink" style="position:absolute; margin-top:-5px; margin-left:-5px;"></div>
-                        <div style="margin-top:-1px; margin-left:16px;" id="mediaplayer"></div></ul>
+                            <input type="text" style="margin-top: -6px; margin-left:16px; background-color: rgba(255, 255, 255, 0); color: var(--text);" id="mediaplayer"></input></ul>
                         
                         <div class="postlinks-container" style="float:right; height:22px; width:52px; cursor:pointer;" onclick="videolinkdropdown()">
                             <div style="position: absolute; margin-left:12px; margin-top:5px;">Links
@@ -618,13 +596,9 @@
                 var progressBarWidth = percent * $element.width() / 100; //progressbar = (progress percentage * width of player / 100).
                 $element.find('div').animate({ width: progressBarWidth }, {duration: 10})} //pushes updates for //#ref0039
             
-                //#ref0048                //#ref0043           //#ref0045                                  //#ref0050            //#ref0054             //#ref0055
-            var currentskiptime = 10; var shuffle = false; var shuffletext = "", fullscreenactive = false, currentplaylist = "", currentlyplaying = "", loadPlaylist = ""; 
-            
-            var embedmaximize = document.getElementById("embedmaximize"), embedtitle = document.getElementById("embedmaxtitle");
-            var playerspeed = document.getElementById("playerspeed"), playerst = document.getElementById("player").style, playertv = document.getElementById("playertv").style;
-            var playerul = document.getElementById("playerul").style, playerfs = document.getElementById("playerfs").style, playerws = document.getElementById("playerws").style;
-            
+                //#ref0048                //#ref0043                                     //#ref0045            //#ref0050            //#ref0054             //#ref0055
+            var currentskiptime = 10; var shuffle = false; var fullscreenactive = false; var shuffletext = "", currentplaylist = "", currentlyplaying = "", loadPlaylist = ""; 
+
             var tag = document.createElement('script'); tag.src = "https://www.youtube.com/iframe_api"; //#ref5014
             var player, mytimer, firstScriptTag = document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
@@ -656,7 +630,7 @@
             function shuffleVideo(){ //#ref0043, boolean to check shuffle state.
                 if(shuffle == true){player.setShuffle(false); shuffle = false; docelem.style.setProperty('--shuffleinvert', 0.5); shuffletext = ""} //shuffle mode disabled, adjusts #ref0044, and clears #ref0045
                 else if(shuffle == false){player.setShuffle(true); shuffle = true; docelem.style.setProperty('--shuffleinvert', shuffleflop); shuffletext = "Shuffle Enabled : "}} //shuffle mode enabled, adjusts #ref0044 and states mode with #ref0045
-
+            
             //prevents #ref0044 from being enabled without a playlist, and changes colour depending on status and theme.
             var nextbutton = document.getElementById("nextbuttonembed").style, previousbutton = document.getElementById("previousbuttonembed").style
             function shufflecolour(){ if(currentplaylist !== ""){ //check for playlist through #ref0050
@@ -664,16 +638,21 @@
                 } else {nextbutton.filter="invert(50%)"; previousbutton.filter="invert(50%)"}} //turns #ref0044 off if there's no playlist loaded.
             
             function playerurlupdate(){currentlyplaying = currentlyplaying.replace(currentplaylist, '')} 
-            function urlupdate(){ document.getElementById("mediaplayer").innerHTML = currentlyplaying; document.getElementById("youtubelink").href = "https://www." + currentlyplaying;
+            function urlupdate(){ document.getElementById("mediaplayer").value = currentlyplaying; document.getElementById("youtubelink").href = "https://www." + currentlyplaying;
                 if(currentplaylist !== ""){document.getElementById("playlistlink").href = "https://www.youtube.com/playlist?" + currentplaylist} else {document.getElementById("playlistlink").href = ""}
                 document.getElementById("videolink").href = currentlyplaying; document.getElementById("videoandplaylistlink").href = player.getVideoUrl()}
             function playerupdate() {currentlyplaying = player.getVideoUrl(); if(fullscreenactive == false){playerurlupdate()} urlupdate(); shufflecolour()}
+
+            var fullscreenactive = false; var embedmaximize = document.getElementById("embedmaximize").style, embedtitle = document.getElementById("embedmaxtitle")
+            var playerfs = document.getElementById("playerfs").style, playerws = document.getElementById("playerws").style, playertv = document.getElementById("playertv").style, playerul = document.getElementById("playerul").style;
             
-            function fullscreenembed(){ 
-                if(fullscreenactive == false){ fullscreenactive = true; playerupdate(); docelem.style.setProperty('--slider', "1056px"); embedmaximize.style.backgroundPosition = "-303px -215px"; embedtitle.title = "Restore down"; playstateupdate()
-                playerst.width = "1066px"; playerst.height = "600px"; playertext.style.width = "1058px"; playerws.width = "1056px"; playerul.width = "1066px"; playerfs.width = "1068px"; playertv.width = "908px";
-            } else { fullscreenactive = false; playerupdate(); docelem.style.setProperty('--slider', "550px"); embedmaximize.style.backgroundPosition = "-98px -215px"; embedtitle.title = "Maximize"; playstateupdate()
-                playerst.width = "560px"; playerst.height = "315px"; playertext.style.width = "552px"; playerws.width = "550px"; playerul.width = "560px"; playerfs.width = "562px"; playertv.width = "400px";}}
+            function fullscreenembed(){ if(fullscreenactive == false){ fullscreenactive = true; playerupdate();
+                document.getElementById("player").style.width = "1066px"; document.getElementById("player").style.height = "600px"; playertext.style.width = "1058px"; playerws.width = "1056px"; playerul.width = "1066px"; 
+                playerfs.width = "1068px"; playertv.width = "908px"; docelem.style.setProperty('--slider', "1056px"); embedmaximize.backgroundPosition = "-303px -215px"; embedtitle.title = "Restore down"; playstateupdate()
+            } else { fullscreenactive = false; playerupdate()
+                document.getElementById("player").style.width = "560px"; document.getElementById("player").style.height = "315px"; playertext.style.width = "552px"; playerws.width = "550px"; playerul.width = "560px"; 
+                playerfs.width = "562px"; playertv.width = "400px"; docelem.style.setProperty('--slider', "550px"); embedmaximize.backgroundPosition = "-98px -215px"; embedtitletitle = "Maximize"; playstateupdate()}}
+                
                 
             //desktop icons
             function twilightload() {embedtask(); videoclear(); videolinkdropdownclose(); currentplaylist = ""; 
@@ -797,14 +776,14 @@
             
             var patchlogs = "https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/patch%20logs";
             var notes = document.getElementById("note").style, notewin = document.getElementById("notewindow").style, notetext = document.getElementById("notetext").style; //#ref5014
-            function patchnotesactive() {calupdate(); notewin.backgroundImage = currentactiveheader; notetext.color = curactivetitle; note.style.zIndex = cal; 
+            function patchnotesactive() {calupdate(); notewin.backgroundImage = currentactiveheader; notetext.color = curactivetitle; note.zIndex = cal; 
                 taskapp5font.color = taskbartextpressed; patchnotesButtonOpen = false; patchnotestaskbar.backgroundImage = github + "img/scrollbarempty.png')"; patchnotestaskbar.backgroundColor = curcolwhite; 
                 docelem.style.setProperty('--taskbar5top1', curcolgray); docelem.style.setProperty('--taskbar5top2', curcolblack);
                 docelem.style.setProperty('--taskbar5bottom1', curcolwhite); docelem.style.setProperty('--taskbar5bottom2', curcollightg)}
-            function patchnotesclose() {note.style.marginLeft = "-20000px"; patchnotestaskbar.marginLeft = "-20000px"; task5true = false; task5on = false; taskreset()}
-            function patchnotesopen() {calupdate(); note.style.zIndex = cal; note.style.marginLeft = "0px"; note.style.left = "67%"; note.style.top = "4%"; patchnotesactive();
+            function patchnotesclose() {note.marginLeft = "-20000px"; patchnotestaskbar.marginLeft = "-20000px"; task5true = false; task5on = false; taskreset()}
+            function patchnotesopen() {calupdate(); note.zIndex = cal; note.marginLeft = "0px"; note.left = "67%"; note.top = "4%"; patchnotesactive();
                 $.get(patchlogs, function(data) { $( "patchnotes" ).last().html( data ); }, 'text')}
-            function patchnoteminimize() {note.style.marginLeft = "-20000px"}
+            function patchnoteminimize() {note.marginLeft = "-20000px"}
         </script>
         
 <!-- Time / date properties rendering ------------------------------------------------------------------------------>
@@ -890,8 +869,8 @@
                 if(realmonth == true){monthno = da.getMonth(); month = monthArr[monthno]};
                 document.getElementById("month").innerHTML = month; document.getElementById("year").innerHTML = year}
                  
-            function minuteadd() {minutemath = minutemath + 1; clocku()}   function minutesub() {minutemath = minutemath - 1; clocku()}
-            function houradd() {hourmath = hourmath + 1; clocku()}         function hoursub() {hourmath = hourmath - 1; clocku()}
+            function minuteadd() {minutemath = minutemath + 1; clocku()}    function minutesub() {minutemath = minutemath - 1; clocku()}
+            function houradd() {hourmath = hourmath + 1; clocku()}          function hoursub() {hourmath = hourmath - 1; clocku()}
             function yearadd() {yearmath = yearmath + 1; clocku()}          function yearsub() {yearmath = yearmath - 1; clocku()}
         </script>
 
@@ -907,7 +886,7 @@
                     <div style="overflow-y: scroll; margin-right: -4px; margin-top: -5px; max-height:821px; min-height:240px;">
                         <div style="margin-top:4px;">
                             <console id="currentact" style="width:100%; line-height:1"></console>
-                            <input type="text" id="prompttext" style="margin-top: -5px; background-color: var(--consoleback); color: var(--consoletext);" autocomplete="off"> 
+                            <input type="text" id="prompttext" style="font-family: monospace; letter-spacing: -1px; margin-top: -5px; background-color: var(--consoleback); color: var(--consoletext);" autocomplete="off"> 
                             <button id="promptin" onclick="consoleinput()" value="" style="margin-left:-20000px"></button>
                 </div></div></ul>
         </div></div>
@@ -928,16 +907,16 @@
             var prompttitle = document.getElementById("prompttitle");
             
             function htmlupdate() { $.get(config, function(data) {inprompt = inprompt + data;}, 'text')}
-                document.getElementById("prompttext").addEventListener("keyup", function(event) { //button listener while prompt text is active.
+            document.getElementById("prompttext").addEventListener("keyup", function(event) { //button listener while prompt text is active.
                 if (event.keyCode === 13) { event.preventDefault(); document.getElementById("promptin").click(); }}); //listens for the enter key
-            function consoleinput(){ consolein = document.getElementById("prompttext").value; consoleread(); document.getElementById("prompttext").value = " "; }
+            function consoleinput(){ consolein = document.getElementById("prompttext").value; consoleread(); document.getElementById("prompttext").value = ""; }
             
-            function println() {inprompt = inprompt + "\n "; consoleout.innerHTML = inprompt;} 
+            function println() {inprompt = inprompt + "\n"; consoleout.innerHTML = inprompt;} 
             function wordln() {inprompt = inprompt + consolein; println();}
             function loadedln() {loaded = word1 ; inprompt = inprompt + "Loaded " + loaded; println(); println(); } 
             
             function promptrestart(){ datestring = updateon.replace(". [GMT]","").replace(":","").replace("th, ","").replace("rd, ","").replace("nd, ","").replace("st, ","").replace(" ","").replace("pmon","").replace("amon",""); 
-                inprompt = inprompt + " Vher98 [Version 0.6." + datestring + "]"; println(); inprompt = inprompt + " (c) 2021 Very Vhersty. All Rights Reserved."; println(); inprompt = inprompt + "Developer console; use at your own risk."; println(); println()}
+                inprompt = inprompt + "Vher98 [Version 0.6." + datestring + "]"; println(); inprompt = inprompt + "(c) 2021 Very Vhersty. All Rights Reserved."; println(); inprompt = inprompt + "Developer console; use at your own risk."; println(); println()}
             
             function consoleread(){ 
                 var function1 = undefined, function2 = undefined, function3 = undefined, function4 = undefined, function5 = undefined, imageElement = undefined, currunning = undefined;
