@@ -18,6 +18,7 @@
                 
 <html>
     <script type="text/javascript" src="https://static.tumblr.com/d0qlne1/DiAl6ekb7/jquery-1.4.2.min.js"></script>
+    <script src="//static.tumblr.com/fpdiq1j/Ieqn0wdlb/jquery.imagesloaded.min.js"></script>
     <script src="//static.tumblr.com/fpdiq1j/x8Nn0wiyd/jquery.masonry.min.js"></script>
     <script src="//static.tumblr.com/fpdiq1j/jpPn0wdlf/jquery.photosetgrid.min.js"></script>
     <script src="//static.tumblr.com/fpdiq1j/GV9n0wdlc/jquery.infinitescroll.min.js"></script>
@@ -374,7 +375,7 @@
 <!-- Page rendering ------------------------------------------------------------------------------>
     <script> function defaultpageload() {evangelionmode(); backcolourset(); fontcolourset(); wallpaperupdate(); themechange(); evangelionmode();} </script>
     <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" 
-          onload="latestupdate(); defaultpageload(); messageopen(); vunnytask(); vunnypositionreset(); disktask(); tumblractive(); promptrestart()">
+          onload="latestupdate(); defaultpageload(); {block:HomePage}messageopen(); vunnytask(); vunnypositionreset();{/block:HomePage}  disktask(); tumblractive(); promptrestart(); diskminimize()">
      <title>𝖁𝖍𝖊𝖗𝟗𝟖</title>
 <!-- desktop handling ------------------------------------------------------------------------------>
         <!-- Sidebar icons coloumn 1 -->
@@ -588,21 +589,20 @@
             var mediaURLin; document.getElementById("mediaplayer").addEventListener("keyup", function(event) { //button listener while prompt text is active.
                 if (event.keyCode === 13) { event.preventDefault(); document.getElementById("mediain").click()}}); //listens for the enter key
                 
-            function mediainput(){ mediaURLin = document.getElementById("mediaplayer").value; inprompt = inprompt + "#read: " + mediaURLin; println();
-                mediaURLin = mediaURLin.replace("https://www.youtube.com/", "").replace("https://youtu.be/","").replace("playlist?list=","").replace("watch?v=",""); 
-                inprompt = inprompt + "^" + mediaURLin.length + ", id:" + mediaURLin; println(); videoclear(); playlistlaunch(); var index = 0, videoin = "";
-                if(mediaURLin.length < 20){
-                    if(mediaURLin.includes("&") == true){var temp = mediaURLin.split('&'), videoin = temp[0], timein = temp[1]; timein = timein.replace("t=","").replace("s","")
-                    } else if(mediaURLin.includes("?") == true){var temp = mediaURLin.split('?'), videoin = temp[0], timein = temp[1]; timein = timein.replace("t=","").replace("s","")
-                    } else {videoin = mediaURLin}; player.loadVideoById({'videoId':videoin,'startSeconds': timein})
-                    inprompt = inprompt + "Playing: $video = " + videoin; println();println();
-                } else { var index = 0, temp = mediaURLin.split('&'); 
-                    for(var i = 0; i < temp.length; i++){ temp[i] = temp[i].replace("list=", "");
-                        if(mediaURLin.includes("t=") == true){timein = temp[i].replace("t=","").replace("s","")}
-                        if(temp[i].includes("index=") == true){temp[i] = temp[i].replace("index=",""); index = temp[i]}
-                        if(temp[i].length == 34){ loadPlaylist = temp[i] }; inprompt = inprompt + i + ":" + temp[i] + " "}; 
-                    player.loadPlaylist({'list':loadPlaylist, 'index': index, 'startSeconds': timein}); println(); 
-                    inprompt = inprompt + "Playing: $playlist/" + loadPlaylist; println(); println()}}
+            function mediainput(){ mediaURLin = document.getElementById("mediaplayer").value; inprompt = inprompt + "#read: " + mediaURLin; println(); var index = 0, videoin = ""; //mediaplayer input + prompt print
+                mediaURLin = mediaURLin.replace("https://www.youtube.com/", "").replace("https://youtu.be/","").replace("playlist?list=","").replace("watch?v=",""); //gets rid of pointless url junk
+                if(mediaURLin.length < 20){ // checks if the value is short enough to be considered a regular video url
+                    if(mediaURLin.includes("&") == true){var temp = mediaURLin.split('&'), videoin = temp[0], timein = temp[1]; timein = timein.replace("t=","").replace("s","") //figures out if the timestamp uses & and gets the time.
+                    } else if(mediaURLin.includes("?") == true){var temp = mediaURLin.split('?'), videoin = temp[0], timein = temp[1]; timein = timein.replace("t=","").replace("s","") //figures out if the timestamp uses ? and gets the time.
+                    } else {videoin = mediaURLin}; player.loadVideoById({'videoId':videoin,'startSeconds': timein}) //if the video is default url without a timestamp, just push the video.
+                    inprompt = inprompt + "Playing: $video = " + videoin; println();println(); //prints the current playing video
+                } else { var index = 0, temp = mediaURLin.split('&'); //else divide the url by &
+                    for(var i = 0; i < temp.length; i++){ temp[i] = temp[i].replace("list=", ""); //loops through to remove uneeded url junk
+                        if(mediaURLin.includes("t=") == true){timein = temp[i].replace("t=","").replace("s","")} //if includes a timestamp, remove it and store to timein
+                        if(temp[i].includes("index=") == true){temp[i] = temp[i].replace("index=",""); index = temp[i]; index = -(-index + 2)} //if includes index value, store to index.
+                        if(temp[i].length == 34){ loadPlaylist = temp[i] }; inprompt = inprompt + i + ":" + temp[i] + " "}; //loops through and checks if the string is a playlist ID and prints to console.
+                    player.loadPlaylist({'list':loadPlaylist, 'index': index, 'startSeconds': timein}); println(); //pushes the stored strings above.
+                    inprompt = inprompt + "Playing: $playlist:" + index + "&" + loadPlaylist; println(); println()}} //prints debug into the console
 
             //volume settings for #ref2003
             var videovol = 100; //sets default volume which is changed through //#ref0042
@@ -794,14 +794,14 @@
             
             var patchlogs = "https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/patch%20logs";
             var notes = document.getElementById("note").style, notewin = document.getElementById("notewindow").style, notetext = document.getElementById("notetext").style; //#ref5014
-            function patchnotesactive() {calupdate(); notewin.backgroundImage = currentactiveheader; notetext.color = curactivetitle; note.zIndex = cal; 
+            function patchnotesactive() {calupdate(); notewin.backgroundImage = currentactiveheader; notetext.color = curactivetitle; notes.zIndex = cal; 
                 taskapp5font.color = taskbartextpressed; patchnotesButtonOpen = false; patchnotestaskbar.backgroundImage = github + "img/scrollbarempty.png')"; patchnotestaskbar.backgroundColor = curcolwhite; 
                 docelem.style.setProperty('--taskbar5top1', curcolgray); docelem.style.setProperty('--taskbar5top2', curcolblack);
                 docelem.style.setProperty('--taskbar5bottom1', curcolwhite); docelem.style.setProperty('--taskbar5bottom2', curcollightg)}
-            function patchnotesclose() {note.marginLeft = "-20000px"; patchnotestaskbar.marginLeft = "-20000px"; task5true = false; task5on = false; taskreset()}
-            function patchnotesopen() {calupdate(); note.zIndex = cal; note.marginLeft = "0px"; note.left = "67%"; note.top = "4%"; patchnotesactive();
+            function patchnotesclose() {notes.marginLeft = "-20000px"; patchnotestaskbar.marginLeft = "-20000px"; task5true = false; task5on = false; taskreset()}
+            function patchnotesopen() {calupdate(); notes.zIndex = cal; notes.marginLeft = "0px"; notes.left = "67%"; notes.top = "4%"; patchnotesactive();
                 $.get(patchlogs, function(data) { $( "patchnotes" ).last().html( data ); }, 'text')}
-            function patchnoteminimize() {note.marginLeft = "-20000px"}
+            function patchnoteminimize() {notes.marginLeft = "-20000px"}
         </script>
         
 <!-- Time / date properties rendering ------------------------------------------------------------------------------>
@@ -952,36 +952,12 @@
                         var temp = inprompt.split(function3), temp1 = temp[0], temp2 = temp[1];
                         inprompt = temp1; println();
                         inprompt = temp2; println(); println();
-                    } else {
-                        inprompt = inprompt + "Error 102: " + "'" + function1 + "' is not recognised as an internal or external command."; println(); println()}
+                    } else {inprompt = inprompt + "Error 102: " + "'" + function1 + "' is not recognised as an internal or external command."; println(); println()}
                         
                 } else if (function1 == "player"){
                     if(function4 == undefined){
-                        if(function2 == "video"){
-                            word1 = function3.split("="), word2 = word1[0], word3 = word1[1];
-                            if(word2 == "https://www.youtube.com/watch?v"){
-                                var consolevideo = function3.replace("https://www.youtube.com/watch?v=", ""); videoclear(); playlistlaunch(); 
-                                player.loadVideoById({'videoId':consolevideo, 'index': 0}); playerupdate(); playertext.textContent = "Playing video url:" + function3
-                                inprompt = inprompt + "Playing " + function3; println(); println()
-                            } else {
-                            inprompt = inprompt + "Error 309: " + "'" + function3 + " " + function3 + "' is not recognised as a valid URL."; println(); println() }
-                        } else if (function2 == "playlist") {
-                            word1 = function3.split("="), word2 = word1[0], word3 = word1[1]; word4 = word1[2];
-                            if(word2 == "https://www.youtube.com/watch?v"){
-                                currentplaylist = word4; videoclear(); playlistlaunch();
-                                player.loadPlaylist({'list':currentplaylist, 'index': 0}); playerupdate(); playertext.textContent = "Playing playlist url:" + word4
-                                inprompt = inprompt + "Playing playlist:" + word4; println(); println()
-                            } else { inprompt = inprompt + "Error 208: " + "'" + function3 + "' is not recognised as a valid playlist URL."; println(); println() }
-                        } else if (function2 == "push"){
-                            if(function3.length == 11){
-                                var consolevideo = function3; videoclear(); playlistlaunch();
-                                player.loadVideoById({'videoId':consolevideo, 'index': 0}); playerupdate(); playertext.textContent = "Playing video id:" + function3
-                                inprompt = inprompt + "Playing video id: " + function3; println(); println()
-                            } else if(function3.length == 27){
-                                currentplaylist = function3; videoclear(); playlistlaunch();
-                                player.loadPlaylist({'list':currentplaylist, 'index': 0}); playerupdate(); playertext.textContent = "Playing playlist id:" + function3
-                                inprompt = inprompt + "Playing playlist id: " + function3; println(); println()
-                            } else { inprompt = inprompt + "Error 311: " + "'" + function3 + "' is not a valid string length"; println(); println() }
+                        if (function2 == "push"){
+                            embedactive(); document.getElementById("mediaplayer").value = function3; mediainput();
                         } else if (function2 == "fullscreen"){
                             if (function3 == "true"){
                                 fullscreenactive = false; fullscreenembed()
@@ -1997,7 +1973,7 @@
                                     <div class="win98buttonscrollinactive" style="margin-left: 451px;"><div class="arrowdisableup"></div></div>
                                     {block:Text}
                                         <div style="padding: 3.5px; max-width:451px;">
-                                            {block:Title}<div class="title-bar-text" style="margin-left:3px; font-size: 2rem; color: var(--atext); margin-bottom:-7px; margin-top:-3px">{Title}</div>{/block:Title}
+                                            {block:Title}<div class="title-bar-text" style="margin-left:3px; font-size: 2rem; color: var(--atext); margin-bottom:-7px; margin-top:-3px">𝖁𝖍𝖊𝖗𝟗𝟖</div>{/block:Title}
                                             <div class="content caption" style="width: 100%; height: 100%;"> {Body} </div>
                                         </div>
                                     {/block:Text}
@@ -2044,7 +2020,7 @@
                         
                                     {block:Chat}
                                         <div style="padding: 3.5px;">
-                                            {block:Title}<div class="title">{Title}</div>{/block:Title}
+                                            {block:Title}<div class="title">𝖁𝖍𝖊𝖗𝟗𝟖</div>{/block:Title}
                                             <div class="content body">
                                                 {block:Lines}
                                                     <div class="line">
