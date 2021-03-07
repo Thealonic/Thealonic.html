@@ -1,9 +1,16 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll; padding-right: 4px;">
 <ul>
-<li><strong style="color: var(--atext);">2021 March 6th (210306)</strong><strong style="color: var(--atext);"><strong style="color: var(--atext);"><br /></strong></strong>
+<li><strong style="color: var(--atext);">2021 March 6th (210306)</strong><br />
 <ul>
-<li>The Address bar in the Embedded Media Player now allows text editing, but currently has no functionality other than text editing.</li>
+<li><strong>Media Player Updates:</strong><br />
+<ul>
+<li><strong>Video URLs can now be entered manually into the address bar. </strong>In which, will be&nbsp;filtered down in order to gather the; Timestamp, Video ID, Playlist ID and the Index number and update the player automatically<strong>.<br /></strong></li>
+<li>The "Go" button now functions the same as pressing Enter while an address is in the address bar.</li>
+<li>Added debug information for currently playing videos in the Command Prompt.</li>
+</ul>
+</li>
+<li>Command Prompt Updates<strong><br /></strong></li>
 </ul>
 <ol>
 <li>- Fixed a mediaplayer bug where the player would scale up accordingly, but not the player itself.</li>
@@ -13,7 +20,7 @@
 <ul>
 <li>Command Prompt Updates<strong><br /></strong>
 <ul>
-<li>The &lsquo;get&rsquo; command now has an 'image&rsquo; function to call the current image urls for certain windows. (Eg. get image pyro)</li>
+<li>The &lsquo;get&rsquo; command now has an &lsquo;image&rsquo; function to call the current image urls for certain windows. (Eg. get image pyro)</li>
 <li>Pressing up while in the command prompt will change the current active text to the previously entered text.</li>
 <li>Added 'push&rsquo; command, which can push images by using the 'url&rsquo; function or the 'config&rsquo; function through the window of choice.</li>
 <li><em>Removed string input limit.</em></li>
