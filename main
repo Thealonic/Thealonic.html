@@ -37,7 +37,7 @@
               
         var github = "url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/";
         var readme = "//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/README.md";
-        var updateon = "19:35pm on March 5th, 2021. [GMT]", updatedfrom = "Thea Vanherst";
+        var updateon = "18:19pm on March 6th, 2021. [GMT]", updatedfrom = "Thea Vanherst";
         var currenttask = 1, cal = 5, docelem = document.documentElement
         
         function calupdate(){inactiveall(); cal = cal + 1}
@@ -512,7 +512,8 @@
                         <div style="position:absolute; margin-left:11px; margin-top:5px;">A<underline>d</underline>dress</div>
                         <ul class="tree-view" style="position:absolute; width:400px; height:9px; margin-left:55px;" id="playertv">
                             <div class="menufavouriteslink" style="position:absolute; margin-top:-5px; margin-left:-5px;"></div>
-                            <input type="text" style="margin-top: -6px; margin-left:16px; background-color: rgba(255, 255, 255, 0); color: var(--text);" id="mediaplayer"></input></ul>
+                            <input type="text" style="margin-top: -6px; margin-left:16px; background-color: rgba(255, 255, 255, 0); color: var(--text); width:385px;" id="mediaplayer"></input></ul>
+                            <button id="mediain" onclick="mediainput()" value="" style="position:absolute; margin-left:-20000px"></button>
                         
                         <div class="postlinks-container" style="float:right; height:22px; width:52px; cursor:pointer;" onclick="videolinkdropdown()">
                             <div style="position: absolute; margin-left:12px; margin-top:5px;">Links
@@ -535,8 +536,8 @@
                         
                         <div class="big_seperator" style="float:right; margin-right:-4px; margin-top:0px; height:21px;"></div> 
                         
-                        <a href="#" id="youtubelink" target="_blank"><div style="float:right; height:22px; width:49px; margin-right:-6px;">
-                            <div class="explorergo" style="margin-left:5.5px;"></div> <div class="reflinkblack" style="margin-top:5px;">Go</div></div></a>
+                        <div style="float:right; height:22px; width:49px; margin-right:-6px;" onpress="mediainput()">
+                            <div class="explorergo" style="margin-left:5.5px;"></div> <div class="reflinkblack" style="margin-top:5px;">Go</div></div>
                     </fieldset>
                 </div>
 
@@ -583,7 +584,26 @@
             function embedclose() {embed.marginLeft = "-20000px"; embedtaskbar.marginLeft = "-20000px"; task4true = false; task4on = false; taskreset(); stopVideo()}
             function embedpositionreset() {calupdate(); embed.left = "300px"; embed.top = "200px"; embed.zIndex = cal; embedwin.backgroundImage = currentactiveheader; embedactive()}
             function embedminimize(){inactiveall(); embed.marginLeft = "-20000px"; embedButtonOpen = true}
-            
+
+            var mediaURLin; document.getElementById("mediaplayer").addEventListener("keyup", function(event) { //button listener while prompt text is active.
+                if (event.keyCode === 13) { event.preventDefault(); document.getElementById("mediain").click()}}); //listens for the enter key
+                
+            function mediainput(){ mediaURLin = document.getElementById("mediaplayer").value; inprompt = inprompt + "#read: " + mediaURLin; println();
+                mediaURLin = mediaURLin.replace("https://www.youtube.com/", "").replace("https://youtu.be/","").replace("playlist?list=","").replace("watch?v=",""); 
+                inprompt = inprompt + "^" + mediaURLin.length + ", id:" + mediaURLin; println(); videoclear(); playlistlaunch(); var index = 0, videoin = "";
+                if(mediaURLin.length < 20){
+                    if(mediaURLin.includes("&") == true){var temp = mediaURLin.split('&'), videoin = temp[0], timein = temp[1]; timein = timein.replace("t=","").replace("s","")
+                    } else if(mediaURLin.includes("?") == true){var temp = mediaURLin.split('?'), videoin = temp[0], timein = temp[1]; timein = timein.replace("t=","").replace("s","")
+                    } else {videoin = mediaURLin}; player.loadVideoById({'videoId':videoin,'startSeconds': timein})
+                    inprompt = inprompt + "Playing: $video = " + videoin; println();println();
+                } else { var index = 0, temp = mediaURLin.split('&'); 
+                    for(var i = 0; i < temp.length; i++){ temp[i] = temp[i].replace("list=", "");
+                        if(mediaURLin.includes("t=") == true){timein = temp[i].replace("t=","").replace("s","")}
+                        if(temp[i].includes("index=") == true){temp[i] = temp[i].replace("index=",""); index = temp[i]}
+                        if(temp[i].length == 34){ loadPlaylist = temp[i] }; inprompt = inprompt + i + ":" + temp[i] + " "}; 
+                    player.loadPlaylist({'list':loadPlaylist, 'index': index, 'startSeconds': timein}); println(); 
+                    inprompt = inprompt + "Playing: $playlist/" + loadPlaylist; println(); println()}}
+
             //volume settings for #ref2003
             var videovol = 100; //sets default volume which is changed through //#ref0042
             function videomute() { if(player.isMuted()){player.unMute()} else {player.mute()}} //this currently doesn't work, Idk why.
@@ -638,19 +658,19 @@
                 } else {nextbutton.filter="invert(50%)"; previousbutton.filter="invert(50%)"}} //turns #ref0044 off if there's no playlist loaded.
             
             function playerurlupdate(){currentlyplaying = currentlyplaying.replace(currentplaylist, '')} 
-            function urlupdate(){ document.getElementById("mediaplayer").value = currentlyplaying; document.getElementById("youtubelink").href = "https://www." + currentlyplaying;
+            function urlupdate(){ document.getElementById("mediaplayer").value = currentlyplaying;
                 if(currentplaylist !== ""){document.getElementById("playlistlink").href = "https://www.youtube.com/playlist?" + currentplaylist} else {document.getElementById("playlistlink").href = ""}
                 document.getElementById("videolink").href = currentlyplaying; document.getElementById("videoandplaylistlink").href = player.getVideoUrl()}
             function playerupdate() {currentlyplaying = player.getVideoUrl(); if(fullscreenactive == false){playerurlupdate()} urlupdate(); shufflecolour()}
 
-            var fullscreenactive = false; var embedmaximize = document.getElementById("embedmaximize").style, embedtitle = document.getElementById("embedmaxtitle")
+            var fullscreenactive = false; var embedmaximize = document.getElementById("embedmaximize").style, embedtitle = document.getElementById("embedmaxtitle"), embedplayer = document.getElementById("player")
             var playerfs = document.getElementById("playerfs").style, playerws = document.getElementById("playerws").style, playertv = document.getElementById("playertv").style, playerul = document.getElementById("playerul").style;
             
             function fullscreenembed(){ if(fullscreenactive == false){ fullscreenactive = true; playerupdate();
-                document.getElementById("player").style.width = "1066px"; document.getElementById("player").style.height = "600px"; playertext.style.width = "1058px"; playerws.width = "1056px"; playerul.width = "1066px"; 
+                embedplayer.style.width = "1066px"; embedplayer.style.height = "600px"; playertext.style.width = "1058px"; playerws.width = "1056px"; playerul.width = "1066px"; 
                 playerfs.width = "1068px"; playertv.width = "908px"; docelem.style.setProperty('--slider', "1056px"); embedmaximize.backgroundPosition = "-303px -215px"; embedtitle.title = "Restore down"; playstateupdate()
             } else { fullscreenactive = false; playerupdate()
-                document.getElementById("player").style.width = "560px"; document.getElementById("player").style.height = "315px"; playertext.style.width = "552px"; playerws.width = "550px"; playerul.width = "560px"; 
+                embedplayer.style.width = "560px"; embedplayer.style.height = "315px"; playertext.style.width = "552px"; playerws.width = "550px"; playerul.width = "560px"; 
                 playerfs.width = "562px"; playertv.width = "400px"; docelem.style.setProperty('--slider', "550px"); embedmaximize.backgroundPosition = "-98px -215px"; embedtitletitle = "Maximize"; playstateupdate()}}
                 
                 
@@ -746,10 +766,8 @@
                         <div class="menufavouriteslink" style="margin-top:-5px; margin-left:-5px;"></div>
                     <div style="margin-top:-1px; margin-left:16px;">https://thealonic.tumblr.com/patch-notes</div></ul>
                                     
-                    <a href="https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/patch%20logs">
-                        <div style="margin-left:418px; margin-top:-12px; width:49px;">
-                            <div class="explorergo" style="margin-left:5px; margin-top:-5px"></div> <div class="reflinkblack">Go</div></div>
-                    </a>
+                    <div style="margin-left:418px; margin-top:-12px; width:49px;">
+                        <div class="explorergo" style="margin-left:5px; margin-top:-5px"></div> <div class="reflinkblack">Go</div></div>
                 </fieldset>
             </div>
             
