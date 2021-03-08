@@ -45,9 +45,8 @@
         function latestupdate() {document.getElementById("lastupdate").textContent = updateon; document.getElementById("updatedby").textContent = updatedfrom}
     </script>
     
-    <head>
+    <head> <!-- Setup -->
         <meta name="description" value="{MetaDescription}" /><link rel="shortcut icon" href="{Favicon}"/><meta charset="utf-8" />
-        <!-- Setup -->
         <style type="text/css">
             :root { --spritesheet: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png');
                     --desktopsheet: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/desktopspritesheet.png');
@@ -62,12 +61,10 @@
                     --white: #ffffff; --lightg: #dfdfdf;  --silver: #c0c0c0; --midgray: #ababab; --gray: #808080; --black: #0a0a0a; --blue: #0000ff; --curactivetitle: #ffffff;
                     --prussian: #00207c ; --wincyan: #008080; --yellow: #ffff00; --font: #0000000; --fonttitle: #ffffff; --hover: #ffffff; --atext: #000000; --curactivetitle: #ffffff;
                     --taskbarstarttop1: #808080; --taskbarstarttop2: #0a0a0a; --taskbarstartbottom1: #ffffff; --taskbarstartbottom2: #dfdfdf; --alwayswhite: #ffffff; --alwaysblack: #000000;
-                    --taskbar1top1: #808080; --taskbar1top2: #0a0a0a; --taskbar1bottom1: #ffffff; --taskbar1bottom2: #dfdfdf; 
-                    --taskbar2top1: #ffffff; --taskbar2top2: #dfdfdf; --taskbar2bottom1: #808080; --taskbar2bottom2: #0a0a0a; 
-                    --taskbar3top1: #ffffff; --taskbar3top2: #dfdfdf; --taskbar3bottom1: #808080; --taskbar3bottom2: #0a0a0a; 
-                    --taskbar4top1: #ffffff; --taskbar4top2: #dfdfdf; --taskbar4bottom1: #808080; --taskbar4bottom2: #0a0a0a; 
-                    --taskbar5top1: #ffffff; --taskbar5top2: #dfdfdf; --taskbar5bottom1: #808080; --taskbar5bottom2: #0a0a0a;
-                    --taskbar6top1: #ffffff; --taskbar6top2: #dfdfdf; --taskbar6bottom1: #808080; --taskbar6bottom2: #0a0a0a;
+                    --taskbar1top1: #808080; --taskbar1top2: #0a0a0a; --taskbar1bottom1: #ffffff; --taskbar1bottom2: #dfdfdf; --taskbar2top1: #ffffff; --taskbar2top2: #dfdfdf; --taskbar2bottom1: #808080; --taskbar2bottom2: #0a0a0a; 
+                    --taskbar3top1: #ffffff; --taskbar3top2: #dfdfdf; --taskbar3bottom1: #808080; --taskbar3bottom2: #0a0a0a; --taskbar4top1: #ffffff; --taskbar4top2: #dfdfdf; --taskbar4bottom1: #808080; --taskbar4bottom2: #0a0a0a; 
+                    --taskbar5top1: #ffffff; --taskbar5top2: #dfdfdf; --taskbar5bottom1: #808080; --taskbar5bottom2: #0a0a0a; --taskbar6top1: #ffffff; --taskbar6top2: #dfdfdf; --taskbar6bottom1: #808080; --taskbar6bottom2: #0a0a0a;
+                    --taskbar7top1: #ffffff; --taskbar7top2: #dfdfdf; --taskbar7bottom1: #808080; --taskbar7bottom2: #0a0a0a;
                     
                     --preinactive: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheaderinactive.png');
                     --preactive: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheader.png');
@@ -127,9 +124,10 @@
             .win98scrollinactive {width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; position: absolute}
             .win98tab {box-shadow:inset -1px 0px var(--black),inset 1px 1px var(--white),inset -2px 0px var(--gray),inset 2px 2px var(--lightg);background:var(--silver); padding:3px; border-radius: 2px; font-size:11px; position: absolute; z-index:; 1; color: var(--font); height:16px; margin-top:6px;}
             
-            .optionsmenu {cursor:pointer; height: 17px; width: 100%; background-color:var(--white); color:var(--font); border-style: dotted; border-width: 1px; border-color: var(--white); z-index:4}    
-            .optionsmenu:hover {background-color:var(--prussian); color:var(--hover); border-style: dotted; border-color: var(--yellow); z-index:10}  
+            .wallpapermenu { width:227px; position: absolute; cursor:pointer; height: 17px; width: 100%; background-color:var(--white); color:var(--font); border-style: dotted; border-width: 1px; border-color: var(--white); z-index:4}    
+            .wallpapermenu:hover {background-color:var(--prussian); color:var(--hover); border-style: dotted; border-color: var(--yellow); z-index:10}  
             
+            .drop-down-selc {padding:2px; display: inline-block}
             .drop-down-menu {position: absolute; background: var(--white); margin-top: 20px; z-index: 20000000}
             .drop-down-text {height: 11px; width: 100%; padding:2px 3px 1px 2px; background-color:var(--white); color:var(--font)}
             .drop-down-text:hover {padding:1px 3px 0px 2px; background-color:var(--prussian); color:var(--hover); border-style: dotted; border-width: 1px; border-color: var(--yellow)}
@@ -254,6 +252,8 @@
                 margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar5bottom2), inset 1px 1px var(--taskbar5top2), inset -2px -2px var(--taskbar5bottom1), inset 2px 2px var(--taskbar5top1);}
             .taskbartask6 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; 
                 margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar6bottom2), inset 1px 1px var(--taskbar6top2), inset -2px -2px var(--taskbar6bottom1), inset 2px 2px var(--taskbar6top1);}
+            .taskbartask7 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; 
+                margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar7bottom2), inset 1px 1px var(--taskbar7top2), inset -2px -2px var(--taskbar7bottom1), inset 2px 2px var(--taskbar7top1);}
             
             .big_seperator { float: left; border-left: 1px solid var(--gray); border-right: 1px solid var(--lightg); height: 22px; margin-top: 2px; margin-left: -1px} /*thin seperator but tall*/
             .small_seperator { float: left;  border-left: 1px solid var(--white); border-top: 1px solid var(--white); margin-top: 3px; margin-left: 1px; height:17px;
@@ -363,9 +363,9 @@
             ol.notes li.note img.avatar { vertical-align: -4px; margin-right: 4px; width: 16px; height:16px; margin-top:-2px; margin-bottom;-2px;} ol.notes li.note .answer_content { font-weight: normal;}
             ol.notes li.note blockquote { padding: 4px 10px; margin: 10px 0px 0px 25px;} ol.notes li.note blockquote a { text-decoration: none; color: var(--blue);} ul, ol { padding: 0 0 0 18px;} /*infinate scroll*/
             
-            input[type=text] { width: 100%; background-color:var(--alwaysblack); color:var(--alwayswhite); padding:0px; cursor: default; 
-                padding:0px; margin-left:-5px; display: block; margin-left: 0; margin-right: 0; white-space: pre-wrap; font-family:"Pixelated MS Sans Serif", Arial;
-                box-shadow: 0px solid var(--alwaysblack), 0px solid var(--alwaysblack), 0px solid var(--alwaysblack), 0px solid var(--alwaysblack);}
+            textarea {box-shadow:0px 0px 0px 0px; background:rgba(255,255,255,0); color: var(--alwaysblack)}
+            input[type=text] { width: 100%; background-color:var(--alwaysblack); color:var(--alwayswhite); padding:0px; cursor: default; padding:0px; margin-left:-5px; display: block; margin-left: 0; margin-right: 0; 
+                white-space: pre-wrap; font-family:"Pixelated MS Sans Serif", Arial; box-shadow: 0px solid var(--alwaysblack), 0px solid var(--alwaysblack), 0px solid var(--alwaysblack), 0px solid var(--alwaysblack)}
 
             #progressBar { width: var(--slider); height: 6px; background-color: var(--silver); display: none; margin-top: 1px;}
             #progressBar div { height: 100%; width: 0; background-color: var(--atext)}
@@ -589,12 +589,14 @@
             var mediaURLin; document.getElementById("mediaplayer").addEventListener("keyup", function(event) { //button listener while prompt text is active.
                 if (event.keyCode === 13) { event.preventDefault(); document.getElementById("mediain").click()}}); //listens for the enter key
                 
-            function mediainput(){ mediaURLin = document.getElementById("mediaplayer").value; inprompt = inprompt + "#read: " + mediaURLin; println(); var index = 0, videoin = ""; //mediaplayer input + prompt print
-                mediaURLin = mediaURLin.replace("https://www.youtube.com/", "").replace("https://youtu.be/","").replace("playlist?list=","").replace("watch?v=",""); //gets rid of pointless url junk
+            function mediainput(){ mediaURLin = document.getElementById("mediaplayer").value; inprompt = inprompt + "#read: " + mediaURLin; println(); //mediaplayer input + prompt print
+                mediaURLin = mediaURLin.replace("https://www.youtube.com/", "").replace("https://youtu.be/","").replace("playlist?list=","").replace("watch?v=","").replace(" ",""); //gets rid of pointless url junk
+                inprompt = inprompt + "^" + mediaURLin.length + ", id:" + mediaURLin; println(); videoclear(); playlistlaunch(); var index = 0, videoin = "";
                 if(mediaURLin.length < 20){ // checks if the value is short enough to be considered a regular video url
                     if(mediaURLin.includes("&") == true){var temp = mediaURLin.split('&'), videoin = temp[0], timein = temp[1]; timein = timein.replace("t=","").replace("s","") //figures out if the timestamp uses & and gets the time.
                     } else if(mediaURLin.includes("?") == true){var temp = mediaURLin.split('?'), videoin = temp[0], timein = temp[1]; timein = timein.replace("t=","").replace("s","") //figures out if the timestamp uses ? and gets the time.
-                    } else {videoin = mediaURLin}; player.loadVideoById({'videoId':videoin,'startSeconds': timein}) //if the video is default url without a timestamp, just push the video.
+                    } else { videoin = mediaURLin; timein = 0 }; 
+                    player.loadVideoById({'videoId':videoin,'startSeconds': timein}) //if the video is default url without a timestamp, just push the video.
                     inprompt = inprompt + "Playing: $video = " + videoin; println();println(); //prints the current playing video
                 } else { var index = 0, temp = mediaURLin.split('&'); //else divide the url by &
                     for(var i = 0; i < temp.length; i++){ temp[i] = temp[i].replace("list=", ""); //loops through to remove uneeded url junk
@@ -663,14 +665,14 @@
                 document.getElementById("videolink").href = currentlyplaying; document.getElementById("videoandplaylistlink").href = player.getVideoUrl()}
             function playerupdate() {currentlyplaying = player.getVideoUrl(); if(fullscreenactive == false){playerurlupdate()} urlupdate(); shufflecolour()}
 
-            var fullscreenactive = false; var embedmaximize = document.getElementById("embedmaximize").style, embedtitle = document.getElementById("embedmaxtitle"), embedplayer = document.getElementById("player")
+            var fullscreenactive = false; var embedmaximize = document.getElementById("embedmaximize").style, embedtitle = document.getElementById("embedmaxtitle");
             var playerfs = document.getElementById("playerfs").style, playerws = document.getElementById("playerws").style, playertv = document.getElementById("playertv").style, playerul = document.getElementById("playerul").style;
             
             function fullscreenembed(){ if(fullscreenactive == false){ fullscreenactive = true; playerupdate();
-                embedplayer.style.width = "1066px"; embedplayer.style.height = "600px"; playertext.style.width = "1058px"; playerws.width = "1056px"; playerul.width = "1066px"; 
+                document.getElementById("player").style.width = "1066px"; document.getElementById("player").style.height = "600px"; playertext.style.width = "1058px"; playerws.width = "1056px"; playerul.width = "1066px"; 
                 playerfs.width = "1068px"; playertv.width = "908px"; docelem.style.setProperty('--slider', "1056px"); embedmaximize.backgroundPosition = "-303px -215px"; embedtitle.title = "Restore down"; playstateupdate()
             } else { fullscreenactive = false; playerupdate()
-                embedplayer.style.width = "560px"; embedplayer.style.height = "315px"; playertext.style.width = "552px"; playerws.width = "550px"; playerul.width = "560px"; 
+                document.getElementById("player").style.width = "560px"; document.getElementById("player").style.height = "315px"; playertext.style.width = "552px"; playerws.width = "550px"; playerul.width = "560px"; 
                 playerfs.width = "562px"; playertv.width = "400px"; docelem.style.setProperty('--slider', "550px"); embedmaximize.backgroundPosition = "-98px -215px"; embedtitletitle = "Maximize"; playstateupdate()}}
                 
                 
@@ -892,10 +894,39 @@
             function yearadd() {yearmath = yearmath + 1; clocku()}          function yearsub() {yearmath = yearmath - 1; clocku()}
         </script>
 
+<!-- notepad rendering ------------------------------------------------------------------------------------->
+
+        <div class="win98post" style="z-index:100; margin-left:-20000px" onmousedown="notepadactive();" id="notepad"> <!--#ref2007-->
+            <div class="win98titlebarbutton"  style="margin-right: 2px;" onclick="notepadclose()"><div class="close"></div></div>
+            <div class="win98titlebarbutton" title="Minimize" onclick="notepadminimize();"> <div class="minimize"></div></div>
+            <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
+            <div class="title-bar-98" id="notepadwindow"> <div class="title-bar-text" id="notepadtitle">📄 Notepad</div></div>
+            <div class="window-body" style="margin:1px">
+                <div style="margin:1px;">
+                    <div class="drop-down-selc" style="width:25px"><underline>F</underline>ile</div>
+                    <div class="drop-down-selc" style="width:26px"><underline>E</underline>dit</div>
+                    <div class="drop-down-selc" style="width:41px"><underline>S</underline>earch</div>
+                    <div class="drop-down-selc" style="width:30px"><underline>H</underline>elp</div>
+                </div>
+                <ul class="tree-view" style="background-color: var(--alwayswhite); color: var(--alwaysblack); padding:1px 2px 2px 2px;">
+                    <textarea name="textarea" style="height:230px; width:460px; min-width:350px; min-height:200px; max-height:400px; max-width:760px; overflow: scroll;" id="notepad"></textarea></ul>
+        </div></div>
+        
+        <script>
+            var notepad = document.getElementById("notepad").style, notepadwin = document.getElementById("notepadwindow").style, notepadtitle = document.getElementById("notepadtitle").style;//#ref5014
+            function notepadactive() {calupdate(); notepad.zIndex = cal; taskapp7font.color = taskbartextpressed; notepadtitle.color = curactivetitle;
+                notepadwin.backgroundImage = currentactiveheader; notepad.marginLeft = "0px"; notepadButtonOpen = false; notepadtaskbar.backgroundImage = github + "img/scrollbarempty.png')"; notepadtaskbar.backgroundColor = curcolwhite; //#ref5028
+                docelem.style.setProperty('--taskbar7top1', curcolgray); docelem.style.setProperty('--taskbar7top2', curcolblack); //#ref5028
+                docelem.style.setProperty('--taskbar7bottom1', curcolwhite); docelem.style.setProperty('--taskbar7bottom2', curcollightg)} //#ref5028
+            function notepadclose() {notepad.marginLeft = "-20000px"; notepadtaskbar.marginLeft = "-20000px"; task7true = false; task7on = false; taskreset(); notepadrestart()}
+            function notepadpositionreset() {calupdate(); notepad.left = "375px"; notepad.top = "217px"; notepad.zIndex = cal; notepadwin.backgroundImage = currentactiveheader; notepadactive()}
+            function notepadminimize(){inactiveall(); notepad.marginLeft = "-20000px"; notepadButtonOpen = true}
+        </script>
+        
 <!-- command prompt rendering ------------------------------------------------------------------------------>
 
-        <div class="win98post" style="z-index:100; margin-left: -20000px; min-width: 500px; max-width: 910px; max-height:860px;" onmousedown="promptactive();" id="prompt"> <!--#ref2007-->
-            <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="promptclose()"><div class="close"></div></div>
+        <div class="win98post" style="margin-left: -20000px; min-width: 500px; max-width: 910px; max-height:860px;" onmousedown="promptactive();" id="prompt"> <!--#ref2007-->
+            <div class="win98titlebarbutton"  style="margin-right: 2px;" onclick="promptclose()"><div class="close"></div></div>
             <div class="win98titlebarbutton" title="Minimize" onclick="promptminimize();"> <div class="minimize"></div></div>
             <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
             <div class="title-bar-98" id="promptwindow"> <div class="title-bar-text" id="prompttitle">🎱 Command Prompt</div></div>
@@ -1148,68 +1179,59 @@
                         <label style="position: absolute;margin-top: 60px;">Display</label>
 
                         <ul class="tree-view" style="position: absolute; margin-top: 75px; width:62px; height: 17px; padding:2px" onclick="desktopdropdown()" onmouseleave="desktopexit()">
-                            <div class="ultext" id="currentdesktopmode">Desktop</div> <!--#ref0003-->
+                            <div class="ultext" id="ofdesktop">Desktop</div> <!--#ref0003-->
                             <div class="win98button" style="position:absolute; margin-top: -17px; margin-left:46px; width:10px; height:11px;"><div class="scrolldown"></div></div>
                             <div class="drop-down-menu" style="margin-top:1px; width:61px; margin-left: -20000px;" id="desktopmode">
                                 <div class="win98buttonpressed" style="float:right; margin-top: -18px; margin-right: -3px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
                                 <div class="drop-down-text" onclick="centeritem()">Center</div>
+                                <div class="drop-down-text" onclick="fillitem()">Fill</div>
                                 <div class="drop-down-text" onclick="spanitem()">Span</div>
                                 <div class="drop-down-text" onclick="stretchitem()">Stretch</div></div></ul></div>
                            
                     <script>
-                        var desktopdrop = false,  desktopmode = document.getElementById("desktopmode").style.marginLeft, curdesktopmode = document.getElementById("currentdesktopmode").textContext; //#ref5022 through #ref0002
-                        function desktopdropdown(){if (desktopdrop == false) {desktopmode = "-2px"; desktopdrop = true } else if (desktopdrop == true){desktopmode = "-20000px"; desktopdrop = false}} //ref1023 & ref1024
-                        function desktopexit(){document.getElementById("desktopmode").style.marginLeft = "-20000px"; desktopdrop = false;} //ref1025 of #ref0002
-                        function centeritem(){curdesktopmode = "Center";} 
-                        function spanitem(){curdesktopmode = "Span";}
-                        function stretchitem(){curdesktopmode = "Stretch";} //changes text context of #ref0003
+                        var desktopdrop = false, desktopmode = document.getElementById("desktopmode").style, ofdesktopmode = document.getElementById("ofdesktop"); //#ref5022 through #ref0002
+                        function desktopdropdown(){if (desktopdrop == false) {desktopmode.marginLeft = "2px"; ; desktopdrop = true } else if (desktopdrop == true){desktopmode.marginLeft = "-20000px";; desktopdrop = false}} //ref1023 & ref1024
+                        function desktopexit(){desktopmode.opacity = "0"; desktopdrop = false;} //ref1025 of #ref0002
+                        function centeritem(){ofdesktopmode.innerHTML = 'Center'; document.body.style.objectFit = "none"} 
+                        function fillitem(){ofdesktopmode.innerHTML = 'Fill'; document.body.style.objectFit = "cover"} 
+                        function spanitem(){ofdesktopmode.innerHTML = 'Span'; document.body.style.objectFit = "contain"}
+                        function stretchitem(){ofdesktopmode.innerHTML = 'Stretch'; document.body.style.objectFit = "fill"} //changes text context of #ref0003
                     </script>
 
                     <ul class="tree-view" style="width:240px; height:86px; margin-top: 2px; margin-left:4px;">
                         <div style="position: absolute; margin-top:-3px; margin-left:-3px; width:247px; height:93px; overflow-y: scroll; overflow-x: hidden">
                             
-                            <div class="optionsmenu" style="width:227px; position: absolute; cursor:pointer;" onclick="wallpaperoptionnone()">
-                                    <div class="none" style="margin-top:-1px;"></div><!--ref#0026-->
-                                        <div class="filled" id="wallpaperoverlay1">
+                            <div class="wallpapermenu" onclick="wallpaperoptionnone()"><div class="none" style="margin-top:-1px;"></div>
+                                <div class="filled" id="wallpaperoverlay1"><!--ref#0026-->
                                     <label style="margin-left: 4px; margin-top: 2px; cursor:pointer;"> None </label></div></div> <!--#ref0004-->
-                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:18px; cursor:pointer" onclick="wallpaperoption1(); wallpapercust();">
-                                    <div class="menuapplications10" style="margin-top:-1px"></div>
-                                        <div class="filled" id="wallpaperoverlay2">
+                            <div class="wallpapermenu" style="margin-top:18px" onclick="wallpaperoption1(); wallpapercust();"><div class="menuapplications10" style="margin-top:-1px"></div>
+                                <div class="filled" id="wallpaperoverlay2">
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Default </label></div></div> <!--#ref0005-->
-                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:36px; cursor:pointer" onclick="wallpaperoption2(); wallpapercust();">
-                                    <div class="menuapplications10" style="margin-top:-1px"></div>
-                                        <div class="filled" id="wallpaperoverlay3">
+                            <div class="wallpapermenu" style="margin-top:36px;" onclick="wallpaperoption2(); wallpapercust();"><div class="menuapplications10" style="margin-top:-1px"></div>
+                                <div class="filled" id="wallpaperoverlay3">
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Octavia's Study </label></div></div> <!--#ref0006-->
-                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:72px; cursor:pointer" onclick="wallpaperoption3(); wallpapercust();"> 
-                                    <div class="menuapplications10" style="margin-top:-1px"></div>
-                                        <div class="filled" id="wallpaperoverlay4">
+                            <div class="wallpapermenu" style="margin-top:72px" onclick="wallpaperoption3(); wallpapercust();"> <div class="menuapplications10" style="margin-top:-1px"></div>
+                                <div class="filled" id="wallpaperoverlay4" title="submitted by Matt in the discord server">
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer" title="submitted by Matt in the discord server"> Star Trek (Submitted by Matt)</label></div></div> <!--#ref0007-->
-                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:54px; cursor:pointer" onclick="wallpaperoption4(); wallpapercust();">
-                                    <div class="menuapplications10" style="margin-top:-1px"></div>
-                                        <div class="filled" id="wallpaperoverlay5">
+                            <div class="wallpapermenu" style="margin-top:54px" onclick="wallpaperoption4(); wallpapercust();"><div class="menuapplications10" style="margin-top:-1px"></div>
+                                <div class="filled" id="wallpaperoverlay5">
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Neon Genesis Evangelion </label></div></div> <!--#ref0008-->
-                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:90px; cursor:pointer" onclick="wallpaperoption5(); wallpapercust();">
-                                    <div class="menuapplications10" style="margin-top:-1px"></div>
-                                        <div class="filled" id="wallpaperoverlay6">
-                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer" title="submitted by Xal in the discord server"> Battlefield Girls (Submitted by Xal)</label></div></div> <!--#ref0009-->
-                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:108px; cursor:pointer" onclick="wallpaperoption6(); wallpapercust();">
-                                    <div class="menuapplications10" style="margin-top:-1px"></div>
-                                        <div class="filled" id="wallpaperoverlay7">
+                            <div class="wallpapermenu" style="margin-top:90px" onclick="wallpaperoption5(); wallpapercust();"><div class="menuapplications10" style="margin-top:-1px"></div>
+                                <div class="filled" id="wallpaperoverlay6" title="submitted by Xal in the discord server">
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Battlefield Girls (Submitted by Xal)</label></div></div> <!--#ref0009-->
+                            <div class="wallpapermenu" style="margin-top:108px" onclick="wallpaperoption6(); wallpapercust();"><div class="menuapplications10" style="margin-top:-1px"></div>
+                                <div class="filled" id="wallpaperoverlay7" title="Created by Thea Vanherst">
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Vinyl Scratch</label></div></div> <!--#ref0010-->
-                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:126px; cursor:pointer" onclick="wallpaperoption7(); wallpapercust();">
-                                    <div class="menuapplications10" style="margin-top:-1px"></div>
-                                        <div class="filled" title="submitted by Millie in the discord server" id="wallpaperoverlay8">
+                            <div class="wallpapermenu" style="margin-top:126px" onclick="wallpaperoption7(); wallpapercust();"><div class="menuapplications10" style="margin-top:-1px"></div>
+                                <div class="filled" id="wallpaperoverlay8" title="submitted by Millie in the discord server">
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Clouds at Midnight (Submitted by Millie) </label></div></div> <!--#ref0011-->
-                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:146px; cursor:pointer" onclick="wallpaperoption8(); wallpapercust();">
-                                    <div class="menuapplications10" style="margin-top:-1px"></div>
-                                        <div class="filled" title="submitted by Qhetha in the discord server" id="wallpaperoverlay9">
+                            <div class="wallpapermenu" style="margin-top:146px" onclick="wallpaperoption8(); wallpapercust();"><div class="menuapplications10" style="margin-top:-1px"></div>
+                                <div class="filled" id="wallpaperoverlay9" title="submitted by Qhetha in the discord server">
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Desert Highway (Submitted by Qhetha)  </label></div></div> <!--#ref0012-->
-                            <div class="optionsmenu" style="width:227px; position: absolute; margin-top:166px; cursor:pointer" onclick="wallpaperoption9(); wallpapercust();">
-                                    <div class="menuapplications10" style="margin-top:-1px"></div>
-                                        <div class="filled" title="Created by Phil-Nye in the discord server" id="wallpaperoverlay10">
+                            <div class="wallpapermenu" style="margin-top:166px" onclick="wallpaperoption9(); wallpapercust();"><div class="menuapplications10" style="margin-top:-1px"></div>
+                                <div class="filled" id="wallpaperoverlay10" title="Created by Phil-Nye in the discord server">
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Aesthetic (Created by Phil-Nye)</label></div></div></div></ul> <!--#ref0013-->
-                </fieldset>
-            </div>
+            </fieldset></div>
                         
             <script>
                 //#ref5019: Resets ALL potential background selection background color through #ref0019, stores the #ref selected option to a varable under #ref5015 #ref5000. 
@@ -1218,30 +1240,28 @@
                 //#ref5020: changes monitor previews to the current wallpaper.
                 //#ref5021: changes the appearance preview and icon preview to current wallpaper
                 
-                var wpo1 = document.getElementById("wallpaperoverlay1").style.backgroundColor, wpo2 = document.getElementById("wallpaperoverlay2").style.backgroundColor, wpo3 = document.getElementById("wallpaperoverlay3").style.backgroundColor, //#ref5014
-                    wpo4 = document.getElementById("wallpaperoverlay4").style.backgroundColor, wpo5 = document.getElementById("wallpaperoverlay5").style.backgroundColor, wpo6 = document.getElementById("wallpaperoverlay6").style.backgroundColor, //#ref5014
-                    wpo7 = document.getElementById("wallpaperoverlay7").style.backgroundColor, wpo8 = document.getElementById("wallpaperoverlay8").style.backgroundColor, wpo9 = document.getElementById("wallpaperoverlay9").style.backgroundColor, //#ref5014
-                    wpo10 = document.getElementById("wallpaperoverlay10").style.backgroundColor; //#ref5014
+                var wpo = [document.getElementById("wallpaperoverlay1").style, document.getElementById("wallpaperoverlay2").style, document.getElementById("wallpaperoverlay3").style, //#ref5014
+                    document.getElementById("wallpaperoverlay4").style, document.getElementById("wallpaperoverlay5").style, document.getElementById("wallpaperoverlay6").style, //#ref5014
+                    document.getElementById("wallpaperoverlay7").style, document.getElementById("wallpaperoverlay8").style, document.getElementById("wallpaperoverlay9").style, //#ref5014
+                    document.getElementById("wallpaperoverlay10").style] //#ref5014
                 
-                var cwpp = "#c0c0c0", curwp = ""; //#ref5015, #ref5016
-                function wallpaperupdate(){document.getElementById("body").style.backgroundImage = curwp; //#ref5021
-                    dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp} //#ref5020
-                function wpp(){ //#ref0020
-                    document.getElementById("apperancepreview").style.backgroundImage = curwp; document.getElementById("iconpreview").style.backgroundImage = curwp; //#ref5021
-                    dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp} //#ref5020
-                function wpcr() { //#ref0019
-                    wpo1 = ""; wpo2 = ""; wpo3 = ""; wpo4 = ""; wpo5 = ""; wpo6 = ""; wpo7 = ""; wpo8 = ""; wpo9 = ""; wpo10 = ""}
+                var cwpp = "#c0c0c0", curwp = "", wpn = ""; //#ref5015, #ref5016
+                function wallpaperupdate(){document.getElementById("body").style.backgroundImage = curwp; dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp} //#ref5021 //#ref5020
+                function wpp(){ dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp;
+                    document.getElementById("apperancepreview").style.backgroundImage = curwp; iconpre.backgroundImage = curwp} //#ref5021 //#ref0020 //#ref0019 
                 //ref#0025 wallpaper changes based on ref#0026, changes on click to be previewed through #ref5021
-                function wallpaperoptionnone() {wpcr(); wpo1 = cwpp; curwp = "none"; wpp()} //#ref5019 for #ref0004
-                function wallpaperoption1() {   wpcr(); wpo2 = cwpp; curwp = github + "img/wallpapers/wallpaper32.png')"; wpp()} //#ref5019 for #ref0005
-                function wallpaperoption2() {   wpcr(); wpo3 = cwpp; curwp = github + "img/wallpapers/study.png')"; wpp()} //#ref5019 for #ref0006
-                function wallpaperoption3() {   wpcr(); wpo4 = cwpp; curwp = github + "img/wallpapers/startrek.png')"; wpp()} //#ref5019 for #ref0007
-                function wallpaperoption4() {   wpcr(); wpo5 = cwpp; curwp = github + "img/wallpapers/unknown.png')"; wpp()} //#ref5019 for #ref0008
-                function wallpaperoption5() {   wpcr(); wpo6 = cwpp; curwp = github + "img/wallpapers/anime.png')"; wpp()} //#ref5019 for #ref0009
-                function wallpaperoption6() {   wpcr(); wpo7 = cwpp; curwp = github + "img/wallpapers/vinyl.gif')"; wpp()} //#ref5019 for #ref0010
-                function wallpaperoption7() {   wpcr(); wpo8 = cwpp; curwp = github + "img/wallpapers/lynn.png')"; wpp()} //#ref5019 for #ref0011
-                function wallpaperoption8() {   wpcr(); wpo9 = cwpp; curwp = github + "img/wallpapers/Untitled-3.jpg')"; wpp()} //#ref5019 for #ref0012
-                function wallpaperoption9() {   wpcr(); wpo10 = cwpp; curwp = github + "img/wallpapers/Untitled-4.jpg')"; wpp()} //#ref5019 for #ref0013
+                function wwpno(){ wpo[wpn].backgroundColor = cwpp }; 
+                function wpcr() { for(var i = 0; wpo.length > i; i++){wpo[i].backgroundColor = "" }}//#ref0019
+                function wallpaperoptionnone(){wpcr(); wpn = 0; wwpno(); curwp = "none"; wpp()} //#ref5019 for #ref0004
+                function wallpaperoption1(){wpcr(); wpn = 1; wwpno(); curwp = github + "img/wallpapers/wallpaper32.png')"; wpp()} //#ref5019 for #ref0005
+                function wallpaperoption2(){wpcr(); wpn = 2; wwpno(); curwp = github + "img/wallpapers/study.png')"; wpp()} //#ref5019 for #ref0006
+                function wallpaperoption3(){wpcr(); wpn = 3; wwpno(); curwp = github + "img/wallpapers/startrek.png')"; wpp()} //#ref5019 for #ref0007
+                function wallpaperoption4(){wpcr(); wpn = 4; wwpno(); curwp = github + "img/wallpapers/unknown.png')"; wpp()} //#ref5019 for #ref0008
+                function wallpaperoption5(){wpcr(); wpn = 5; wwpno(); curwp = github + "img/wallpapers/anime.png')"; wpp()} //#ref5019 for #ref0009
+                function wallpaperoption6(){wpcr(); wpn = 6; wwpno(); curwp = github + "img/wallpapers/vinyl.gif')"; wpp()} //#ref5019 for #ref0010
+                function wallpaperoption7(){wpcr(); wpn = 7; wwpno(); curwp = github + "img/wallpapers/lynn.png')"; wpp()} //#ref5019 for #ref0011
+                function wallpaperoption8(){wpcr(); wpn = 8; wwpno(); curwp = github + "img/wallpapers/Untitled-3.jpg')"; wpp()} //#ref5019 for #ref0012
+                function wallpaperoption9(){wpcr(); wpn = 9; wwpno(); curwp = github + "img/wallpapers/Untitled-4.jpg')"; wpp()} //#ref5019 for #ref0013
             </script>
             
             <!-- --------------------------------------- screensaver tab --------------------------------------- -->
@@ -1441,10 +1461,10 @@
                             docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")}
                          
                         function highcontrast1() {currentcolour = "#00ffff"; fontcolour = "#000000"; backcolourpreview(); ctoggle = true; //changes the current colours to cyan and font colour to white. //#ref0021
-                            cpc.style.backgroundColor = "#000000"; cpo.style.backgroundColor = "#000000"; document.getElementById("iconpreview").style.backgroundColor = "#000000";  ap.style.backgroundColor = "#000000"} //changes backgrounds to black.
+                            cpc.style.backgroundColor = "#000000"; cpo.style.backgroundColor = "#000000"; iconpre.backgroundColor = "#000000";  ap.style.backgroundColor = "#000000"} //changes backgrounds to black.
                         
                         function highcontrast2() {  currentcolour = "#00ff00"; fontcolour = "#000000"; backcolourpreview(); ctoggle = true; //changes the current colours to green and font colour to white. //#ref0022
-                            cpc.style.backgroundColor = "#000000"; cpo.style.backgroundColor = "#000000"; document.getElementById("iconpreview").style.backgroundColor = "#000000";  ap.style.backgroundColor = "#000000"} //changes backgrounds to black.
+                            cpc.style.backgroundColor = "#000000"; cpo.style.backgroundColor = "#000000"; iconpre.backgroundColor = "#000000";  ap.style.backgroundColor = "#000000"} //changes backgrounds to black.
                         
                         function precolourupdate() { //changes current preview colours to active colours #ref0001
                             curcolwhite = precolwhite; curcollightg = precollightg; curcolsilver = precolsilver; curcolmidgray = precolmidgray; curcolgray = precolgray; curcolblack = precolblack; curcolblue = precolblue; curinvert = preinvert;
@@ -1491,7 +1511,7 @@
                             //changes the current state of headers and adjusts icons based on invert
                             docelem.style.setProperty('--inactive', curinactivehead); docelem.style.setProperty('--active', currentactiveheader); docelem.style.setProperty('--invert', curinvert); 
                             //updates windows visually by looping inactive windows
-                            inactiveall(); diskactive(); clocku(); 
+                            inactiveall(); diskactive(); clocku(); wwpno();
                             shufflecolour(); if(shuffle == false){docelem.style.setProperty('--shuffleinvert', 0.5)} else if(shuffle == true){docelem.style.setProperty('--shuffleinvert', shuffleflop)}
                             //logs if the preview theme has been turned into the current theme active.
                             console.log("Theme Loaded")
@@ -1562,7 +1582,7 @@
                             let desktopico = [
                                 document.getElementById("desktopi1").style, document.getElementById("desktopi2").style,  document.getElementById("desktopi3").style, document.getElementById("desktopi4").style, 
                                 document.getElementById("desktopi5").style, document.getElementById("desktopi6").style, document.getElementById("desktopi8").style]
-                            
+ 
                             function colourpickerupdate(){
                                 cpc.style.backgroundColor = currentcolour; cpo.style.backgroundColor = currentcolour}
                             function colourpicker(){ 
@@ -1574,25 +1594,18 @@
 
                             function backcolourset(){ //changes desktop icon span colour + backround colour.
                                 document.body.style.backgroundColor = currentcolour;
-                                for (var i = 0; i < desktopico.length; i++) {
-                                    desktopico[i].backgroundColor = currentcolour}
-                                if(ctoggle == true){
-                                    document.body.style.backgroundColor = "#000"; document.getElementById("iconpreview").style.backgroundColor = "#000";
+                                for (var i = 0; i < desktopico.length; i++) { desktopico[i].backgroundColor = currentcolour}
+                                if(ctoggle == true){ document.body.style.backgroundColor = "#000"; iconpre.backgroundColor = "#000";
                                     cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; ap.style.backgroundColor = "#000"}} 
-                            function fontcolourset(){ // changes desktop icon text color;
-                                for (var i = 0; i < desktopico.length; i++) {desktopico[i].color = fontcolour}}
+                            function fontcolourset(){
+                                for (var i = 0; i < desktopico.length; i++) {desktopico[i].color = fontcolour}} // changes desktop icon text color;
 
                             function backcolourpreview(){ // changes preview desktop icons background colour + background colours in appearance tab.
-                                document.getElementById("iconpre1").style.backgroundColor = currentcolour; document.getElementById("iconpre2").style.backgroundColor = currentcolour; 
-                                document.getElementById("iconpre3").style.backgroundColor = currentcolour; document.getElementById("iconpre4").style.backgroundColor = currentcolour; 
-                                document.getElementById("iconpre6").style.backgroundColor = currentcolour; document.getElementById("iconpre7").style.backgroundColor = currentcolour;
-                                document.getElementById("iconpre8").style.backgroundColor = currentcolour; document.getElementById("iconpreview").style.backgroundColor = currentcolour;  
-                                ap.style.backgroundColor = currentcolour; fontcolorsetpreview(); dcb1.backgroundColor = currentcolour;  dcb2.backgroundColor = currentcolour}
+                                for (var i = 0; i < previewico.length; i++) { previewico[i].backgroundColor = currentcolour}; 
+                                iconpre.backgroundColor = currentcolour;  
+                                ap.style.backgroundColor = currentcolour; fontcolorsetpreview(); dcb1.backgroundColor = currentcolour; dcb2.backgroundColor = currentcolour}
                             function fontcolorsetpreview(){ // changes preview desktop icons span colour
-                                document.getElementById("iconpre1").style.color = fontcolour; document.getElementById("iconpre2").style.color = fontcolour; 
-                                document.getElementById("iconpre3").style.color = fontcolour; document.getElementById("iconpre4").style.color = fontcolour; 
-                                document.getElementById("iconpre6").style.color = fontcolour; document.getElementById("iconpre7").style.color = fontcolour;
-                                document.getElementById("iconpre8").style.color = fontcolour}
+                                for (var i = 0; i < previewico.length; i++) { previewico[i].color = fontcolour}}
                             //ref#0024
                             function cpick1() { currentcolour = "#ffffff"; fontcolour = "#000"; colourpickerupdate(); document.getElementById("iconpre2").style.backgroundColor = currentcolour}
                             function cpick2() { currentcolour = "#000000"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
@@ -1786,7 +1799,10 @@
             //#ref5016: When pressing on the (tab-number) tab, set zindex to highest tab.
             //#ref5017: resets the index of all tabs to prevent weird z-index or positional bugs.
             //#ref5018: changes to the current tab and adjusts height and width to overlap / prioritise the tab
- 
+            var iconpre = document.getElementById("iconpreview").style; let previewico = [ 
+                document.getElementById("iconpre1").style, document.getElementById("iconpre2").style, document.getElementById("iconpre3").style, document.getElementById("iconpre4").style,
+                document.getElementById("iconpre6").style, document.getElementById("iconpre7").style, document.getElementById("iconpre8").style ]
+            
             var disk = document.getElementById("disk").style; diskwin = document.getElementById("diskwindow").style, disktext = document.getElementById("disktext").style;
             function diskactive() {calupdate(); diskButtonOpen = false; disk.marginLeft = "0px"; disk.marginTop = "0px"; disk.zIndex = cal; 
                 disktext.color = curactivetitle; diskwin.backgroundImage = currentactiveheader; taskapp3font.color = taskbartextpressed;
@@ -1871,6 +1887,11 @@
                 taskapp6font.color = taskbartext; prompttaskbar.backgroundImage = "none"; prompttaskbar.backgroundColor = silv;
                 docelem.style.setProperty('--taskbar6top1', curcolwhite); docelem.style.setProperty('--taskbar6top2', curcollightg);
                 docelem.style.setProperty('--taskbar6bottom1', curcolgray); docelem.style.setProperty('--taskbar6bottom2', curcolblack);
+                
+                notepadButtonOpen = true; notepadtitle.color = curinactivetitle; notepadwin.backgroundImage = curinactivehead; 
+                taskapp7font.color = taskbartext; notepadtaskbar.backgroundImage = "none"; notepadtaskbar.backgroundColor = silv;
+                docelem.style.setProperty('--taskbar7top1', curcolwhite); docelem.style.setProperty('--taskbar7top2', curcollightg);
+                docelem.style.setProperty('--taskbar7bottom1', curcolgray); docelem.style.setProperty('--taskbar7bottom2', curcolblack);
                 
                 messagewin.backgroundImage = curinactivehead; messagetext.color = curinactivetitle;
                 notewin.backgroundImage = curinactivehead; notetext.color = curinactivetitle;
@@ -2186,16 +2207,13 @@
                         <div class="menuapplicationsplit" style="width:139px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px"> </div>
                         <!-- Programs -->
                         <label><div class="submenu36" style="width: 142px;" id="menuprograms" onmouseover="programsopen()" onmouseout="programsclosed()"> 
-                            <div class="menuprograms"></div><label><labs><underline>P</underline>rograms </labs></label>
-                                <div class="lmenuarrow" id="menuarrow1"></div></div></label>
+                            <div class="menuprograms"></div><label><labs><underline>P</underline>rograms </labs></label><div class="lmenuarrow" id="menuarrow1"></div></div></label>
                         <!-- Favourites -->
                         <label><div class="submenu36" style="width: 142px;" id="menufavourites" onmouseover="favouritesopen()" onmouseout="favouritesclosed()"> 
-                            <div class="menufavourites"></div><label><labs>My F<underline>a</underline>vourites </labs></label>
-                                <div class="lmenuarrow" id="menuarrow2"></div></div></label>
+                            <div class="menufavourites"></div><label><labs>My F<underline>a</underline>vourites </labs></label><div class="lmenuarrow" id="menuarrow2"></div></div></label>
                         <!-- Documents -->  
                         <label><div class="submenu36" style="width: 142px;" id="menudocuments" onmouseover="documentsopen()" onmouseout="documentsclosed()"> 
-                            <div class="menudocuments"></div><label><labs><underline>D</underline>ocuments </labs></label>
-                                <div class="lmenuarrow" id="menuarrow3"></div></div></label>
+                            <div class="menudocuments"></div><label><labs><underline>D</underline>ocuments </labs></label><div class="lmenuarrow" id="menuarrow3"></div></div></label>
                         <!-- Settings -->
                         <label><div class="submenu36" style="width: 142px;" id="menusettings" onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
                             <div class="menusettings"></div><label><labs><underline>S</underline>ettings </labs></label><div class="lmenuarrow" id="menuarrow4"></div></div></label>
@@ -2242,8 +2260,7 @@
                              onmouseover="accessoriesopen()" onmouseout="accessoriesclose()"> 
                             <!-- Communication -->
                             <div class="submenu20" id="communications" onmouseover="communicationsopen()" onmouseout="communicationsclose();">
-                                <div class="menuprograms123"></div><label><labc> Communication </labc></label>
-                                    <div class="smenuarrow" id="menuarrow12"></div></div>
+                                <div class="menuprograms123"></div><label><labc> Communication </labc></label><div class="smenuarrow" id="menuarrow12"></div></div>
                             <!-- Entertainment -->
                             <div class="submenu20" id="entertainment" onmouseover="entertainmentopen()" onmouseout="entertainmentclose()">
                                 <div class="menuprograms123"></div><label><labc> Entertainment </labc></label><div class="smenuarrow" id="menuarrow13"></div></div>
@@ -2260,7 +2277,7 @@
                             <div class="submenu20"><div class="menufind4"></div><label><labc> Address book </labc></label></div>
                             <div class="submenu20"><div class="menuapplications7"></div><label><labc> Calculator </labc></label></div>
                             <div class="submenu20"><div class="menuapplications8"></div><label><labc> Imaging </labc></label></div>
-                            <div class="submenu20"><div class="menuapplications9"></div><label><labc> Notepad </labc></label></div>
+                            <div class="submenu20" onclick="notepadtask()"><div class="menuapplications9"></div><label><labc> Notepad </labc></label></div>
                             <div class="submenu20"><div class="menuapplications10"></div><label><labc> Paint </labc></label></div>
                             <div class="submenu20"><div class="menuapplications11"></div><label><labc> Wordpad </labc></label></div>
                                 
@@ -2476,19 +2493,22 @@
                         <div class="title-bar-text" style="font-size: 11px;" id="taskapp5font">🧮 Patch Notes</div></div>
                 <div class="taskbartask6" style="cursor:pointer;" onmousedown="task6toggle(); menuclosed();" id="taskapp6"> 
                         <div class="title-bar-text" style="font-size: 11px;" id="taskapp6font">🎱 Command Prompt</div></div>
+                <div class="taskbartask7" style="cursor:pointer;" onmousedown="task7toggle(); menuclosed();" id="taskapp7"> 
+                        <div class="title-bar-text" style="font-size: 11px;" id="taskapp7font">📄 Notepad</div></div>
                 
                 <script>
-                    var tumblrButtonOpen = false, pyroButtonOpen = true, diskButtonOpen = true, embedButtonOpen = true, patchnotesButtonOpen = true; //toggle states for #ref5013
+                    var tumblrButtonOpen = false, pyroButtonOpen = true, diskButtonOpen = true, embedButtonOpen = true, patchnotesButtonOpen = true, notepadButtonOpen = true; //toggle states for #ref5013
                     function task1toggle() { if (tumblrButtonOpen == false) {tumblrminimize()} else if (tumblrButtonOpen == true){tumblractive()}} //#ref5013
                     function task2toggle(){ if (pyroButtonOpen == false) {vunnyminimize()} else if (pyroButtonOpen == true){vunnyopen()}} //#ref5013
                     function task3toggle() { if (diskButtonOpen == false) {diskminimize()} else if (diskButtonOpen == true){diskactive()}} //#ref5013
                     function task4toggle() { if (embedButtonOpen == false) {embedminimize()} else if (embedButtonOpen == true){embedactive()}} //#ref5013
                     function task5toggle() { if (patchnotesButtonOpen == false) {patchnoteminimize()} else if (patchnotesButtonOpen == true){patchnotesactive()}} //#ref5013
                     function task6toggle() { if (promptButtonOpen == false) {promptminimize()} else if (promptButtonOpen == true){promptactive()}} //#ref5013
+                    function task7toggle() { if (notepadButtonOpen == false) {notepadminimize()} else if (notepadButtonOpen == true){notepadactive()}} //#ref5013
 
-                    var task2on = false, task3on = false, task4on = false, task5on = false, task6on = false;//check to compare if other windows than the current one being deactivated to update.
-                    var task2true = true, task3true = true, task4true = true, task5true = true, task6true = false;//a check for if the current window is active on the taskbar
-                    var task2pos, task3pos, task4pos, task5pos, task6pos; //positional values of the tasks on the taskbar.
+                    var task2on = false, task3on = false, task4on = false, task5on = false, task6on = false, task7on = false;//check to compare if other windows than the current one being deactivated to update.
+                    var task2true = true, task3true = true, task4true = true, task5true = true, task6true = false, task7true = false;//a check for if the current window is active on the taskbar
+                    var task2pos, task3pos, task4pos, task5pos, task6pos, task7pos; //positional values of the tasks on the taskbar.
                     
                     //#ref5006; assigns varable to taskbar grabbing //#ref5006
                     //#ref5007: opens the task, resets window position and enables the taskbar. //#ref5007
@@ -2521,40 +2541,53 @@
                     function prompttask(){promptactive(); task6posopen()} //#ref5007
                     function task6posopen(){ if(task6on == false){currenttask = currenttask + 1; prompttaskbar.marginLeft = (currenttask * 168) + "px"; task6pos = (currenttask * 168)}; tabconsole(); task6on = true} //#ref5008
                     
+                    var notepadtaskbar = document.getElementById("taskapp7").style, taskapp7font = document.getElementById("taskapp7font").style //#ref5006
+                    function notepadtask(){notepadactive(); task7posopen(); notepadpositionreset()} //#ref5007
+                    function task7posopen(){ if(task6on == false){currenttask = currenttask + 1; notepadtaskbar.marginLeft = (currenttask * 168) + "px"; task7pos = (currenttask * 168)}; tabconsole(); task7on = true} //#ref5008
+                    
                     function taskreset(){ //updates the current values of the tasks in order from left to right if a task is removed from the list.
                         if(task2true == false){ //current task 2        { if(task2on == true){ task2pos = task2pos - 170;    unvunnytaskbar.marginLeft = task2pos + "px"; console.log("task2false, task2true")}} //#ref5010
                                                 if(task2pos <= task3pos){ if(task3on == true){ task3pos = task3pos - 170;       disktaskbar.marginLeft = task3pos + "px"; console.log("task2false, task3true")}} //#ref5009
                                                 if(task2pos <= task4pos){ if(task4on == true){ task4pos = task4pos - 170;      embedtaskbar.marginLeft = task4pos + "px"; console.log("task2false, task4true")}} //#ref5009
                                                 if(task2pos <= task5pos){ if(task5on == true){ task5pos = task5pos - 170; patchnotestaskbar.marginLeft = task5pos + "px"; console.log("task2false, task5true")}} //#ref5009
                                                 if(task2pos <= task6pos){ if(task6on == true){ task6pos = task6pos - 170;     prompttaskbar.marginLeft = task6pos + "px"; console.log("task2false, task6true")}} //#ref5009
+                                                if(task2pos <= task7pos){ if(task7on == true){ task7pos = task6pos - 170;    notepadtaskbar.marginLeft = task7pos + "px"; console.log("task2false, task7true")}} //#ref5009
                                                 task2true = true;} //#ref5011
-                                                
                         if(task3true == false){ if(task3pos <= task2pos){ if(task2on == true){ task2pos = task2pos - 170;    unvunnytaskbar.marginLeft = task2pos + "px"; console.log("task3false, task2true")}} //#ref5009
                                                 //current task 3        { if(task3on == true){ task3pos = task3pos - 170;       disktaskbar.marginLeft = task3pos + "px"; console.log("task3false, task3true")}} //#ref5010
                                                 if(task3pos <= task4pos){ if(task4on == true){ task4pos = task4pos - 170;      embedtaskbar.marginLeft = task4pos + "px"; console.log("task3false, task4true")}} //#ref5009
                                                 if(task3pos <= task5pos){ if(task5on == true){ task5pos = task5pos - 170; patchnotestaskbar.marginLeft = task5pos + "px"; console.log("task3false, task5true")}} //#ref5009
                                                 if(task3pos <= task6pos){ if(task6on == true){ task6pos = task6pos - 170;     prompttaskbar.marginLeft = task6pos + "px"; console.log("task3false, task6true")}} //#ref5009
+                                                if(task3pos <= task7pos){ if(task7on == true){ task7pos = task6pos - 170;    notepadtaskbar.marginLeft = task7pos + "px"; console.log("task2false, task7true")}} //#ref5009
                                                 task3true = true;} //#ref5011
-                                                
                         if(task4true == false){ if(task4pos <= task2pos){ if(task2on == true){ task2pos = task2pos - 170;    unvunnytaskbar.marginLeft = task2pos + "px"; console.log("task4false, task2true")}} //#ref5009
                                                 if(task4pos <= task3pos){ if(task3on == true){ task3pos = task3pos - 170;       disktaskbar.marginLeft = task3pos + "px"; console.log("task4false, task3true")}} //#ref5009
                                                 //current task 4        { if(task4on == true){ task4pos = task4pos - 170;      embedtaskbar.marginLeft = task4pos + "px"; console.log("task4false, task4true")}} //#ref5010
                                                 if(task4pos <= task5pos){ if(task5on == true){ task5pos = task5pos - 170; patchnotestaskbar.marginLeft = task5pos + "px"; console.log("task4false, task5true")}} //#ref5009
                                                 if(task4pos <= task6pos){ if(task6on == true){ task6pos = task6pos - 170;     prompttaskbar.marginLeft = task6pos + "px"; console.log("task4false, task6true")}} //#ref5009
+                                                if(task4pos <= task7pos){ if(task7on == true){ task7pos = task6pos - 170;    notepadtaskbar.marginLeft = task7pos + "px"; console.log("task2false, task7true")}} //#ref5009
                                                 task4true = true;} //#ref5011
-                                                
                         if(task5true == false){ if(task5pos <= task2pos){ if(task2on == true){ task2pos = task2pos - 170;    unvunnytaskbar.marginLeft = task2pos + "px"; console.log("task5false, task2true")}} //#ref5009
                                                 if(task5pos <= task3pos){ if(task3on == true){ task3pos = task3pos - 170;       disktaskbar.marginLeft = task3pos + "px"; console.log("task5false, task3true")}} //#ref5009
                                                 if(task5pos <= task4pos){ if(task4on == true){ task4pos = task4pos - 170;      embedtaskbar.marginLeft = task4pos + "px"; console.log("task5false, task4true")}} //#ref5009
                                                 //current task 5        { if(task5on == true){ task5pos = task5pos - 170; patchnotestaskbar.marginLeft = task5pos + "px"; console.log("task5false, task5true")}} //#ref5010
                                                 if(task5pos <= task6pos){ if(task6on == true){ task6pos = task6pos - 170;     prompttaskbar.marginLeft = task6pos + "px"; console.log("task5false, task6true")}} //#ref5009
+                                                if(task5pos <= task7pos){ if(task7on == true){ task7pos = task6pos - 170;    notepadtaskbar.marginLeft = task7pos + "px"; console.log("task2false, task7true")}} //#ref5009
                                                 task5true = true;} //#ref5011
                         if(task6true == false){ if(task6pos <= task2pos){ if(task2on == true){ task2pos = task2pos - 170;    unvunnytaskbar.marginLeft = task2pos + "px"; console.log("task6false, task2true")}} //#ref5009
                                                 if(task6pos <= task3pos){ if(task3on == true){ task3pos = task3pos - 170;       disktaskbar.marginLeft = task3pos + "px"; console.log("task6false, task3true")}} //#ref5009
                                                 if(task6pos <= task4pos){ if(task4on == true){ task4pos = task4pos - 170;      embedtaskbar.marginLeft = task4pos + "px"; console.log("task6false, task4true")}} //#ref5009
                                                 if(task6pos <= task5pos){ if(task5on == true){ task5pos = task5pos - 170; patchnotestaskbar.marginLeft = task5pos + "px"; console.log("task6false, task5true")}} //#ref5010
                                                 //current task 6        { if(task6on == true){ task6pos = task6pos - 170;     prompttaskbar.marginLeft = task6pos + "px"; console.log("task6false, task6true")}} //#ref5009
+                                                if(task6pos <= task7pos){ if(task7on == true){ task7pos = task6pos - 170;    notepadtaskbar.marginLeft = task7pos + "px"; console.log("task6false, task7true")}} //#ref5009
                                                 task6true = true;} //#ref5011
+                        if(task6true == false){ if(task7pos <= task2pos){ if(task2on == true){ task2pos = task2pos - 170;    unvunnytaskbar.marginLeft = task2pos + "px"; console.log("task7false, task2true")}} //#ref5009
+                                                if(task7pos <= task3pos){ if(task3on == true){ task3pos = task3pos - 170;       disktaskbar.marginLeft = task3pos + "px"; console.log("task7false, task3true")}} //#ref5009
+                                                if(task7pos <= task4pos){ if(task4on == true){ task4pos = task4pos - 170;      embedtaskbar.marginLeft = task4pos + "px"; console.log("task7false, task4true")}} //#ref5009
+                                                if(task7pos <= task5pos){ if(task5on == true){ task5pos = task5pos - 170; patchnotestaskbar.marginLeft = task5pos + "px"; console.log("task7false, task5true")}} //#ref5010
+                                                if(task7pos <= task6pos){ if(task6on == true){ task6pos = task6pos - 170;     prompttaskbar.marginLeft = task6pos + "px"; console.log("task7false, task6true")}} //#ref5009
+                                                //current task 7      //{ if(task7on == true){ task7pos = task6pos - 170;    notepadtaskbar.marginLeft = task7pos + "px"; console.log("task7false, task7true")}} //#ref5009
+                                                task7true = true;} //#ref5011
                         currenttask = currenttask - 1; tabconsole()} //#ref5012
                     
                     function tabconsole(){ console.log("current tasks active: " + currenttask)}
@@ -2616,7 +2649,7 @@
         // Drag element scripts ------------------------------------------------------------------------------>
             
             dragElement(document.getElementById("cat")); dragElement(document.getElementById("pyro")); dragElement(document.getElementById("disk")); dragElement(document.getElementById("message")); 
-            dragElement(document.getElementById("embed")); dragElement(document.getElementById("note")); dragElement(document.getElementById("prompt"))
+            dragElement(document.getElementById("embed")); dragElement(document.getElementById("note")); dragElement(document.getElementById("prompt")); dragElement(document.getElementById("notepad"));
             dragElement(document.getElementById("logoff")); dragElement(document.getElementById("clock"));
             function dragElement(elmnt) { var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
             if (document.getElementById(elmnt.id + "window")) {document.getElementById(elmnt.id + "window").onmousedown = dragMouseDown} else { elmnt.onmousedown = dragMouseDown}
