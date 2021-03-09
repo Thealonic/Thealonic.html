@@ -1,12 +1,56 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll; padding-right: 4px;">
 <ul>
-<li><strong>2021 March 7th (210307)</strong><strong style="color: var(--atext);"><br /></strong>
+<li><strong style="color: var(--atext);">2021 March 9th (210309)</strong><br />
+<ul>
+<li>Tons of backend tweaks.<br />
+<ul>
+<li>Added Unique CSS for fieldset titles.</li>
+<li>Added Unique CSS for check boxes with a hover effect.</li>
+<li>Swapped out labels for a more streamline version.</li>
+<li>Optimised drop down menus to require no custom CSS.</li>
+<li>Buttons are now more optimised and streamlined to require less custom CSS.</li>
+</ul>
+</li>
+<li>Display Properties optimisation<strong><br /></strong>
+<ul>
+<li>Added new drop down menu CSS.</li>
+<li>Added new button CSS.</li>
+<li>Optimised the colour picker.</li>
+<li>Added theme debug to the command prompt.</li>
+</ul>
+</li>
+<li>Added new CSS optimisations to Very Unvunnies.</li>
+</ul>
+<ol>
+<li>- Disabled font CSS has been adjusted to be more accurate and less sharp on the eyes.</li>
+<li>- Removed tons of CSS to do with buttons / dropdown menus.</li>
+</ol></li>
+<li><strong style="color: var(--atext);">2021 March 8th (210308)<strong style="color: var(--atext);"><br /></strong></strong>
+<ul>
+<li><strong>Added the &ldquo;Notepad&rdquo;</strong>
+<ul>
+<li>Notepad is now featured as a task with limited functionability. (for now)</li>
+<li>Added shortcut in the Start Menu. (Programs &gt; Accessories &gt; Notepad)</li>
+</ul>
+</li>
+<li><strong>Display Properties tweaks.<br /></strong>
+<ul>
+<li>Optimised how wallpaper and preview selection is registered.</li>
+<li>Added functionability to the desktop wallpaper fit.</li>
+</ul>
+</li>
+<li>Expanded input features of the URL bar in the Embedded Media Player.</li>
+</ul>
+<ol>
+<li>- Fixed a bug where there was no visual indication for the current active wallpaper.</li>
+</ol></li>
+<li><strong style="color: var(--atext);">2021 March 7th (210307)</strong>
 <ul>
 <li>Media Player Updates:<br />
 <ul>
 <li>The index value is now returned when using playlist urls.</li>
-<li>The command prompt no longer uses it's own playlist / id checking to determine video id, and instead pushes the url to the address bar.</li>
+<li>The command prompt no longer uses it&rsquo;s own playlist / id checking to determine video id, and instead pushes the url to the address bar.</li>
 </ul>
 </li>
 <li>Display properties now starts up as a minimized task<strong><br /></strong></li>
@@ -34,7 +78,7 @@
 <ul>
 <li>The &lsquo;get&rsquo; command now has an &lsquo;image&rsquo; function to call the current image urls for certain windows. (Eg. get image pyro)</li>
 <li>Pressing up while in the command prompt will change the current active text to the previously entered text.</li>
-<li>Added &lsquo;push&rsquo; command, which can push images by using the 'url&rsquo; function or the 'config&rsquo; function through the window of choice.</li>
+<li>Added &lsquo;push&rsquo; command, which can push images by using the &lsquo;url&rsquo; function or the &lsquo;config&rsquo; function through the window of choice.</li>
 <li><em>Removed string input limit.</em></li>
 <li><em>General optimisations.</em></li>
 </ul>
