@@ -39,7 +39,7 @@
         var github = "url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/";
         var readme = "//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/README.md";
         var updateon = "18:19pm on March 6th, 2021. [GMT]", updatedfrom = "Thea Vanherst";
-        var currenttask = 1, cal = 5, docelem = document.documentElement
+        var currenttask = 1, cal = 5, docelem = document.documentElement;
         
         function calupdate(){inactiveall(); cal = cal + 1}
         function latestupdate() {document.getElementById("lastupdate").textContent = updateon; document.getElementById("updatedby").textContent = updatedfrom}
@@ -74,7 +74,7 @@
                     --consoleback: #000; --consoletext: #fff; --slider: 550px; --invert: 0; --preinvert: 0; --shuffleinvert: 0.5}
 
             /* desktop config settings */
-            body {background: repeat fixed; background-size: cover; padding: auto auto auto auto; background-color: var(--wincyan); font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; max-width: 100%; overflow-x: hidden}
+            body {background: repeat fixed; background-size: cover; padding: auto auto auto auto; background-color: var(--wincyan); font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; width: 1920px; height:1080px; overflow-x: hidden}
             #desktop, .navigation {margin: auto auto auto auto; width: 1010px;} body.permalink_page #desktop, body.permalink_page .navigation {width: 480px} body.infinite_scrolling .navigation, .inf_scr {display: none}
 
 /* Desktop setup css ------------------------------------------------------------------------------*/
@@ -116,7 +116,7 @@
             /* General button handling */
             .win98button { box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; height:16px; cursor:pointer}
             .win98button:active {box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray);}
-            .win98buttoninactive {box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; margin-bottom: 4px; height:16px; cursor:default}
+            .win98buttondis {box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; margin-bottom: 4px; height:16px; cursor:default}
             .win98buttonpressed {box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); padding:3px; height:16px; cursor:pointer}
             .buttontext {display:inline-flex; align-items:center; color: var(--prestext)}
             .buttontext:hover{ text-decoration-line: underline};
@@ -127,16 +127,21 @@
             .wallpapermenu { width:227px; position: absolute; cursor:pointer; height: 17px; width: 100%; background-color:var(--white); color:var(--font); border-style: dotted; border-width: 1px; border-color: var(--white); z-index:4}    
             .wallpapermenu:hover {background-color:var(--prussian); color:var(--hover); border-style: dotted; border-color: var(--yellow); z-index:10}  
             
+            butlabel {display:inline-flex; align-items: center; color: var(--text); pointer: cursor; margin-top: 2px;} 
+            butdislabel {font-size:11px; color:var(--gray); text-shadow:1px 1px 0 var(--white); display:inline-flex; align-items: center; margin-top: 2px;} 
+            
             .drop-down-selc {padding:2px; display: inline-block}
-            .drop-down-menu {position: absolute; background: var(--white); margin-top: 20px; z-index: 20000000}
+            .drop-down-menu {position: absolute; background: var(--white); margin-top: 20px; z-index: 20000000; margin-top:1px; }
             .drop-down-text {height: 11px; width: 100%; padding:2px 3px 1px 2px; background-color:var(--white); color:var(--font)}
             .drop-down-text:hover {padding:1px 3px 0px 2px; background-color:var(--prussian); color:var(--hover); border-style: dotted; border-width: 1px; border-color: var(--yellow)}
+            .drop-down-button {width: 10px; height: 8px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); float:right; margin-top:-17px; width:10px; height:11px; padding:3px;}
+            .drop-down-button-pres {width: 10px; height: 8px; float:right; box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); float:right; margin-right:-2px; margin-top: -18px; width:10px; height:11px; padding:3px; position:absolute;}
             
             .colourselect {height: 12px; width: 12px; padding:2px; background-color:var(--white); box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black);
                            border-style: solid; border-width: 1px; border-color:var(--silver); margin-left:-1px; margin-top:-1px; display: inline-block}
             .colourselect:hover {box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--white),inset -2px -2px var(--black),inset 2px 2px var(--black); border-color: black; margin-left:-1px; margin-top:-1px}
 
-            .disabledfont {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--gray); text-shadow:1px 1px 0 var(--lightg)}
+            .disabledfont {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--gray); text-shadow:1px 1px 0 var(--white);}
             .tagged { font-size: 9px; opacity: 0.5;}
             
 /* window preview handling ------------------------------------------------------------------------------*/
@@ -145,17 +150,18 @@
             .pretitle-bar-posts{font-weight: 700; color: var(--fonttitle); font-size: 11px; background-image: var(--preactive); height: 18px; width: 100%}
             .prewin98titlebarbutton {width: 10px; height: 8px; float:right; box-shadow:inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); margin-top:2px; padding:3px}
             .prewin98titlebarbutton:active {width: 10px; height: 8px; float:right; box-shadow:inset 1px 1px var(--preblack),  inset -1px -1px var(--prewhite), inset -2px -2px var(--prelightg), inset 2px 2px var(--pregray); background:var(--presilver); margin-top:2px; padding:3px}
-            .prewin98scroll {width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); padding:3px; position: absolute}
+            .prewin98scroll {width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); padding:3px; position: absolute; cursor: pointer;}
             .prewin98scroll:active {width:10px; height: 10px; float:right; box-shadow:inset 1px 1px var(--preblack),  inset -1px -1px var(--prewhite), inset -2px -2px var(--prelightg), inset 2px 2px var(--pregray); background:var(--presilver); padding:3px; margin-top: -1px; margin-left: -1px; position: absolute}
             .prewin98button {box-shadow:inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); padding:3px; height:16px; cursor:pointer; color:var(--prefont)}
             .prewin98button:active {box-shadow:inset 1px 1px var(--preblack),  inset -1px -1px var(--prewhite), inset -2px -2px var(--prelightg), inset 2px 2px var(--pregray)}
 
             .prebuttontext {display:inline-flex; align-items:center; color: var(--prestext)}
-            .predisabledfont {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--gray); text-shadow:1px 1px 0 var(--prewhite)}
             .predisabledfont {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--pregray); text-shadow:1px 1px 0 var(--prewhite)}
-            preul.tree-view {font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: 4px; display: block; background: var(--prewhite); 
-                             box-shadow: inset -1px -1px var(--prewhite),inset 1px 1px var(--pregray),inset -2px -2px var(--prelightg),inset 2px 2px var(--preblack); padding: 6px; margin: 0}
+            preul.tree-view {font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: 4px; display: block; background: var(--prewhite); box-shadow: inset -1px -1px var(--prewhite),inset 1px 1px var(--pregray),inset -2px -2px var(--prelightg),inset 2px 2px var(--preblack); padding: 6px; margin: 0}
             prefieldset{ border: none; box-shadow: inset -1px -1px var(--prewhite), inset 1px 1px var(--pregray), inset -2px -2px var(--pregray), inset 2px 2px var(--prelightg); padding:10px; padding-block-start:8px; margin:0}
+            
+            prebutlabel {display:inline-flex; align-items: center; color: var(--pretext); pointer: cursor; margin-top: 2px;} 
+            prebutdislabel {font-size:11px; color:var(--pregray); text-shadow:1px 1px 0 var(--prewhite); display:inline-flex; align-items: center; margin-top: 2px;} 
             
             .prehelp, .preclose {background-image: var(--spritesheet); width:12px; height:10px; margin-top: -1px; margin-left: -1px; filter: invert(var(--preinvert))}
             .prehelp {background-position: -66px -215px} .preclose {background-position: -114px -215px}
@@ -174,11 +180,11 @@
             .smallscrollup {background-position: -38px -218px; height: 2px; width: 3px} .smallscrolldown {background-position: -6px -220px; height: 2px; width: 3px} 
 
             .tinyarrowdisableddown, .smallarrowdisableddown, .arrowdisableddown, .tinyarrowdisabledup, .arrowdisableup, .menuarrow1, .lmenuarrow, .smenuarrow, .tinyarrowdown, .smallarrowdown, .disabledtickbox, .enabledtickbox {background-image: var(--spritesheet); filter: invert(var(--invert))}
-            .tinyarrowdisableddown {height: 3px; width: 4px; background-position: -6px -220px; filter: invert(0.5);}
+            .tinyarrowdisableddown {height: 3px; width: 4px; background-position: -6px -220px; filter: invert(0.5); margin-left:4px}
             .smallarrowdisableddown {height: 4px; width: 6px; background-position: -5px -219px; filter: invert(0.5);}
             .arrowdisableddown {height: 16px; width: 16px; background-position: 1px -212px; filter: invert(0.5); margin-top:-3px; margin-left:-3px}
-            .tinyarrowdisabledup {height: 2px; width: 3px; background-position: -38px -218px; filter: invert(0.5);}
-            .arrowdisableup {height: 16px; width: 16px; background-position: -32px -212px; filter: invert(0.5); margin-top:-3px; margin-left:-3px;}
+            .tinyarrowdisabledup {height: 2px; width: 3px; background-position: -38px -218px; filter: invert(0.5); margin-left:4px}
+            .arrowdisableup {height: 16px; width: 16px; background-position: -32px -212px; filter: invert(0.5); margin-top:-3px; margin-left:-3px}
             
             .menuarrow1 {height:  7px; width:  4px; background-position: -54px -216px; margin: auto; float: right}
             .smenuarrow {height:  7px; width:  4px; background-position: -54px -216px; margin: auto; float: right; margin-right:6px; margin-top: 7px}
@@ -307,11 +313,18 @@
             ul.tree-view li { margin-top: 4px; list-style-type: none;} 
             ul.tree-view ul details>summary:before{ margin-left: -22px; position: relative; z-index: 1;}
             ul.tree-view details { margin-top:0;} 
-            ul.tree-view details>summary:before {   text-align: center; display: block; float: left; content: "+"; border: 1px solid var(--gray); 
-                                   width: 8px; height: 9px; line-height: 8px; margin-right: 5px; padding-left: 1px; background-color: var(--white); }
+            ul.tree-view details>summary:before {   text-align: center; display: block; float: left; content: "+"; border: 1px solid var(--gray); width: 8px; height: 9px; line-height: 8px; margin-right: 5px; padding-left: 1px; background-color: var(--white); }
             ul.tree-view details[open] summary { margin-bottom: 0;} 
             ul.tree-view details[open]>summary:before { content: "-"; }
             ul:active .win98button { box-shadow:inset 1px 1px var(--black), inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); }
+            
+            .enabledtickbox {height: 7px; width: 7px; background-position: -143px -220px; position: absolute}
+            
+            ul.tick-box { font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; display: block; background: var(--white); color:var(--text); position: absolute; width:9px; height: 9px;
+                           box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black); padding:2px; margin: 0; margin-top: 7px; margin-left:3px;}
+            ul.tick-box:hover { font-family:"Pixelated MS Sans Serif", Arial; box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black);
+                font-size:11px; display: block; background: var(--white); color:var(--text); background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickboxhover.png');
+                position: absolute; width:9px; height: 9px; padding:2px; margin: 0; margin-top: 7px; margin-left:3px;}
             
             .ultext { padding: 3px 2px 2px 2px; cursor: pointer }
             .filled { width:100%; height:100%; }
@@ -319,16 +332,13 @@
             .field-row-stacked{ display:flex; flex-direction: column;} .field-row-stacked *+*{ margin-top: 6px;}
             
             a {color: var(--text); text-decoration: none} a:hover {text-decoration: underline; color: var(--hover)} 
-            strong {color: var(--blue)} h3 {font-size: 2rem} 
+            strong {color: var(--blue)} h3 {font-size: 2rem} underline {text-decoration-line: underline;}
             console {padding:0px; margin:-2px; display: block; margin-left: 0; margin-right: 0; letter-spacing: -1px; white-space: pre-wrap; font-family: monospace;}
-            underline {text-decoration-line: underline;}
-            span {background-color: var(--white); color: var(--text);} 
-            icon {background-color: var(--wincyan); color: var(--white)} 
+            span {background-color: var(--white); color: var(--text);} icon {background-color: var(--wincyan); color: var(--white)} 
             label {display:inline-flex; align-items: center; color: var(--text)} 
-            butlabel {display:inline-flex; align-items: center; color: var(--text); pointer: cursor; margin-top: 2px;} 
-            underline {text-decoration-line: underline;}
-            labc { margin-left: 4px; margin-top: 4px; } 
-            labs { margin-left: 2px; height:36px; margin-top:12px;}
+            inboxlabel { margin-top:-16px; position: absolute; background-color: var(--silver); padding: 3px; margin-left:-3px display:inline-flex; align-items: center; color: var(--text)}
+            
+            labc { margin-left: 4px; margin-top: 4px; } labs { margin-left: 2px; height:36px; margin-top:12px;}
             fieldset{border: none; box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray), inset -2px -2px var(--gray), inset 2px 2px var(--lightg); padding:10px; padding-block-start:8px; margin:0; color:var(--text)}
             .wieldset{box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray); margin:0; background-color:var(--silver); padding:2px}
             
@@ -375,7 +385,7 @@
 <!-- Page rendering ------------------------------------------------------------------------------>
     <script> function defaultpageload() {evangelionmode(); backcolourset(); fontcolourset(); wallpaperupdate(); themechange(); evangelionmode();} </script>
     <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" 
-          onload="latestupdate(); defaultpageload(); {block:HomePage}messageopen(); vunnytask(); vunnypositionreset();{/block:HomePage}  disktask(); tumblractive(); promptrestart(); diskminimize()">
+          onload="latestupdate(); defaultpageload(); {block:HomePage}messageopen(); vunnytask(); vunnypositionreset();{/block:HomePage} disktask(); tumblractive(); promptrestart(); diskminimize()">
      <title>𝖁𝖍𝖊𝖗𝟗𝟖</title>
 <!-- desktop handling ------------------------------------------------------------------------------>
         <!-- Sidebar icons coloumn 1 -->
@@ -412,7 +422,6 @@
         </div>
         <!-- Sidebar icons coloumn 2 -->
     
-    
 <!-- VUNNY message box rendering ------------------------------------------------------------------------------>
 
         <script>
@@ -437,13 +446,8 @@
             <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
             <div class="title-bar-98" id="catwindow"> <div class="title-bar-text" id="cattext">💯 BOUNCY CEMENT</div></div>
             <div class="messagewindowbody"> 
-                <ul class="tree-view" style="padding:2px;"> 
-                    <img style="margin-bottom:-3px; margin-left:-1px; margin-top:-1px; width:200px; height:200px; background-size: 200px 200px;" id="catimage">
-                </ul>
-                <center>
-                    <div class="win98buttoninactive" style="width:70px; margin-top: 4px; margin-bottom: 4px;">
-                    <div class="disabledfont" style="margin-top: 2px;">Asshole</div> </div>
-                </center>
+                <ul class="tree-view" style="padding:2px;"><img style="margin-bottom:-3px; margin-left:-1px; margin-top:-1px; width:200px; height:200px; background-size: 200px 200px;" id="catimage"></ul>
+                <center><div class="win98buttondis" style="width:70px; margin-top:3px;"><butdislabel>Asshole</butdislabel></div></center>
         </div></div>
 
         <script>
@@ -459,13 +463,8 @@
             <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
             <div class="title-bar-98" id="pyrowindow"> <div class="title-bar-text" id="pyrotext">💯 Wubba lubba dub dub!</div></div>
             <div class="messagewindowbody">
-                <ul class="tree-view" style="padding:2px;"> 
-                    <img style="margin-bottom:-3px; margin-left:-1px; margin-top:-1px; width:200px; height:200px; background-size: 200px 200px;" id="pyroimage"/>
-                </ul>
-                <center>
-                    <div class="win98button" style="width:70px; margin-top: 3px;" onclick="pyroshuffle();"> 
-                    <div class="buttontext" style="margin-top: 2px" id="pyrobutton">Definately.</div></div>
-                </center>
+                <ul class="tree-view" style="padding:2px;"><img style="margin-bottom:-3px; margin-left:-1px; margin-top:-1px; width:200px; height:200px; background-size: 200px 200px;" id="pyroimage"/></ul>
+                <center><div class="win98button" style="width:70px; margin-top:3px;" onclick="pyroshuffle()"><butlabel id="pyrobutton">Definately.</butlabel></div></center>
         </div></div>
         
         <script>
@@ -476,20 +475,16 @@
         </script>
         
         <script>
-            //Amount of windows #ref0036, current active windows #ref0035, boolean valdation for window 1 and 2 #ref0034
-            var pyrotabs = 2, pyrocurrentactive = 2, window1 = true, window2 = true;
-            //#ref0036; math check for the amount of windows for #ref2000 & #ref2001 to be OPEN, if none, closes taskbar.
-            function pyrowindow(){ if(pyrotabs == 0){ unvunnytaskbar.marginLeft = "-20000px"; task2true = false; task2on = false; taskreset()}} 
-            //#ref0035 math check for the amount of windows for #ref2000 & #ref2001 to be ACTIVE, if none, closes taskbar.
-            function pyrocurrentopen(){ if(pyrocurrentactive == 0){ pyroButtonOpen = false; task2toggle()}}
+            var pyrotabs = 2, pyrocurrentactive = 2, window1 = true, window2 = true; //Amount of windows #ref0036, current active windows #ref0035, boolean valdation for window 1 and 2 #ref0034
+            function pyrowindow(){ if(pyrotabs == 0){ unvunnytaskbar.marginLeft = "-20000px"; task2true = false; task2on = false; taskreset()}} //#ref0036; math check for the amount of windows for #ref2000 & #ref2001 to be OPEN, if none, closes taskbar.
+            function pyrocurrentopen(){ if(pyrocurrentactive == 0){ pyroButtonOpen = false; task2toggle()}} //#ref0035 math check for the amount of windows for #ref2000 & #ref2001 to be ACTIVE, if none, closes taskbar.
             
             function vunnyactive(){ //#ref0033
                 unvunnytaskbar.backgroundImage = github + "img/scrollbarempty.png')"; taskapp2font.color = taskbartextpressed; //#ref5028
                 docelem.style.setProperty('--taskbar2top1', curcolgray); docelem.style.setProperty('--taskbar2top2', curcolblack); 
                 docelem.style.setProperty('--taskbar2bottom1', curcolwhite); docelem.style.setProperty('--taskbar2bottom2', curcollightg)} //#ref5028
             function vunnyopen(){ calupdate(); vunnyactive(); pyroactive(); pyrotabs = 2; pyroButtonOpen = false; //#ref5027.1 + Enables max amount of Vunny windows. #ref0034
-                if (window1 == true){ pyro.marginLeft = "0px"; pyro.zIndex = cal + 1;} //Positions Pyro window to the desktop.
-                if (window2 == true){ cat.marginLeft = "0px"; pyro.zIndex = cal}} //Positions Cat window to the desktop.
+                if (window1 == true){ pyro.marginLeft = "0px"; pyro.zIndex = cal + 1} if (window2 == true){ cat.marginLeft = "0px"; pyro.zIndex = cal}} //Positions windows to the desktop.
             //Resets images on windows for the random image function for #ref2000 & #ref2001
             function vunnywindowreset(){ window1 = true; window2 = true; tick = 3; //sets both #ref2000 & #ref2001 to being active on the screen, resets the random image generator.
                 if (tick == 3) { pyroimg.backgroundImage = github + "img/windows/ezgif-2-c475330a8091.gif')"; catimg.backgroundImage = github + "img/windows/Untitled-5.jpg')"}} //default image
@@ -542,8 +537,8 @@
                     </fieldset>
                 </div>
 
-                <ul class="tree-view" style="width: 560px; height: 100%; padding:2px; padding-bottom:0px; margin-right:-6px; margin-left:-6px; margin-bottom:-5px;" id="playerul">
-                    <div id="player" style="height: 315px; width: 560px; background-color:--black;"></div></ul>
+                <ul class="tree-view" style="width: 560px; height: 100%; padding:2px; padding-bottom:0px; margin:-6px; margin-top:0px;" id="playerul">
+                    <div id="player" style="height: 315px; width: 560px; background-color:var(--black)"></div></ul>
  
                 <div style="height:56px; width:100%;">
                     <div class="wieldset" style="width:550px; height:4px; margin-top:12px; margin-left:-2px;" id="playerws"> <!--#ref0039-->
@@ -564,8 +559,7 @@
                     <div style="float:right; margin-top:11px;">
                         <div class="menuentertainment3" style="margin-right:9px" onclick="videomute()"></div>
                         <div class="volumedown" style="position: absolute; margin-left: 22px; margin-top:12px" onclick="videovolumedown()"></div>
-                        <div class="volumeup" style="position: absolute; margin-left: 22px; margin-top:0px" onclick="videovolumeup()"></div>
-                    </div>
+                        <div class="volumeup" style="position: absolute; margin-left: 22px; margin-top:0px" onclick="videovolumeup()"></div></div>
 
                     <ul class="tree-view" style="width:552px; height:12px; margin:-6px; margin-top:36px; background-color: var(--alwaysblack); color:var(--alwayswhite)" id="playertext"></ul> <!--#ref0049-->
                     <div style="float:right; margin-top:-12px;" id="playerspeed"></div> <!--States current speed of #ref0048-->
@@ -763,13 +757,10 @@
                     <div class="small_seperator" style="margin-top:1px; height:17px;"></div> <!-- Left side of the Bottom container -->
                     <div class="container" style="margin-left:12px; margin-top:5px; width:400px;">A<underline>d</underline>dress</div>
                     
-                    <ul class="tree-view" style="position:absolute; width:350px; height:9px; margin-left:55px; margin-top:-17px">
-                        <div class="win98buttonscrollinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px"><div class="arrowdisableddown"></div></div>
-                        <div class="menufavouriteslink" style="margin-top:-5px; margin-left:-5px;"></div>
-                    <div style="margin-top:-1px; margin-left:16px;">https://thealonic.tumblr.com/patch-notes</div></ul>
-                                    
-                    <div style="margin-left:418px; margin-top:-12px; width:49px;">
-                        <div class="explorergo" style="margin-left:5px; margin-top:-5px"></div> <div class="reflinkblack">Go</div></div>
+                    <ul class="tree-view" style="position:absolute; width:350px; height:9px; margin-left:55px; margin-top:-17px;">
+                    <div class="drop-down-button" style="margin:-4px;"><div class="arrowdisableddown"></div></div>
+                        <div class="menufavouriteslink" style="margin:-5px;"></div><div style="margin-top:-1px; margin-left:16px;">https://thealonic.tumblr.com/patch-notes</div></ul>
+                    <div style="margin-left:418px; margin-top:-12px; width:49px;"><div class="explorergo" style="margin-left:5px; margin-top:-5px"></div> <div class="reflinkblack">Go</div></div>
                 </fieldset>
             </div>
             
@@ -1016,8 +1007,7 @@
                         } else if (function2 == "refresh"){ themechange()
                     } else { inprompt = inprompt + "Error 402: " + "'" + function3 + " " + function4 + "' is not recognised as a valid colour."; println(); println()}
                             
-                } else if (function1 == "mount"){
-                    inprompt = inprompt + "Mounting " 
+                } else if (function1 == "mount"){inprompt = inprompt + "Mounting " 
                     if(function2 !== undefined){ inprompt = inprompt + function2 + " "}
                     if(function3 !== undefined){ inprompt = inprompt + function3 + " "}
                     if(function4 !== undefined){ inprompt = inprompt + function4 }
@@ -1143,8 +1133,7 @@
                     if (config !== undefined){ config = undefined; println()
                     } else { inprompt = inprompt + "Error 105: no config is currently loaded."; println(); println() }
                  
-                } else if (function1.includes("!DOCTYPE")){ 
-                    inprompt = inprompt + "Enjoy your ascii!"; println(); println();
+                } else if (function1.includes("!DOCTYPE")){ inprompt = inprompt + "Enjoy your ascii!"; println(); println();
                         
                 } else { inprompt = inprompt + "Error 100: " + "'" + function1 + "' is not recognised as an internal or external command."; println(); println() }
             }
@@ -1158,49 +1147,47 @@
             <div class="title-bar-98" id="diskwindow"> <div class="title-bar-text" id="disktext">📺 Display Properties</div></div>
             
             <!--container for the setting window -->
-            <div class="win98tab" style="width:71px; margin-left:  6px" onclick="tabreset(); backgroundtab();" id="backgroundtab"><center><label style="margin-top:1px;">Background</label></center></div>
-            <div class="win98tab" style="width:68px; margin-left: 80px"  onclick="tabreset(); screensavertab();" id="screenSavertab"><center><label style="margin-top:1px;">Screen Saver</label></center></div>
-            <div class="win98tab" style="width:65px; margin-left:154px"  onclick="tabreset(); appearancetab();" id="appearancetab"><center><label style="margin-top:1px;">Appearance</label></center></div>
-            <div class="win98tab" style="width:38px; margin-left:225px"  onclick="tabreset(); effectstab();" id="effectstab"><center><label style="margin-top:1px;">Effects</label></center></div>
-            <div class="win98tab" style="width:45px; margin-left:269px"  onclick="tabreset(); settingstab();" id="settingstab"><center><label style="margin-top:1px;">Settings</label></center></div>
+            <div class="win98tab" style="width:71px; margin-left:6px" onclick="tabreset(); backgroundtab();" id="backgroundtab"><center><label style="margin-top:2px;">Background</label></center></div>
+            <div class="win98tab" style="width:68px; margin-left:80px"  onclick="tabreset(); screensavertab();" id="screenSavertab"><center><label style="margin-top:2px;">Screen Saver</label></center></div>
+            <div class="win98tab" style="width:65px; margin-left:154px"  onclick="tabreset(); appearancetab();" id="appearancetab"><center><label style="margin-top:2px;">Appearance</label></center></div>
+            <div class="win98tab" style="width:38px; margin-left:225px"  onclick="tabreset(); effectstab();" id="effectstab"><center><label style="margin-top:2px;">Effects</label></center></div>
+            <div class="win98tab" style="width:45px; margin-left:269px"  onclick="tabreset(); settingstab();" id="settingstab"><center><label style="margin-top:2px;">Settings</label></center></div>
             
             <!-- --------------------------------------- background tab --------------------------------------- -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:9" id="background">
                 <center><div class="displaycolourback" id="dcb1"><div class="displayboxdisplay"></div><div class="displayboxdisplayde"></div></div></center>
                     
                     <!-- display container settings -->
-                <fieldset style="width:336px; height:125px; margin-left: 12px; margin-top: 55px;">
-                    <label style="margin-top:-14px; position: absolute; background-color: var(--silver); width:52px; padding: 3px;"> Wallpaper </label>
+                <fieldset style="width:336px; height:125px; margin-left: 12px; margin-top: 55px;"><inboxlabel style="width:50px"> Wallpaper </inboxlabel>
                     <label style="margin-top:8px;">Select a HTML document or picture:</label>
                     
                     <div style="position: absolute; margin-left:267px; margin-top: 2px; width:60px;">
                         <div class="win98button" style="position: absolute; width:60px;"><center><butlabel> Browse... </butlabel></center></div> 
-                        <div class="win98button" style="position: absolute;margin-top: 27px; width:60px;"><center><butlabel> Pattern </butlabel></center></div> 
-                        <label style="position: absolute;margin-top: 60px;">Display</label>
-
+                        <div class="win98button" style="position: absolute; margin-top: 27px; width:60px;"><center><butlabel> Pattern </butlabel></center></div> 
+                        <label style="position: absolute; margin-top: 60px;">Display</label>
+                        
                         <ul class="tree-view" style="position: absolute; margin-top: 75px; width:62px; height: 17px; padding:2px" onclick="desktopdropdown()" onmouseleave="desktopexit()">
-                            <div class="ultext" id="ofdesktop">Desktop</div> <!--#ref0003-->
-                            <div class="win98button" style="position:absolute; margin-top: -17px; margin-left:46px; width:10px; height:11px;"><div class="scrolldown"></div></div>
-                            <div class="drop-down-menu" style="margin-top:1px; width:61px; margin-left: -20000px;" id="desktopmode">
-                                <div class="win98buttonpressed" style="float:right; margin-top: -18px; margin-right: -3px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
+                            <div style="padding: 3px 3px 2px 2px" id="ofdesktop">(none)</div><div class="drop-down-button"><div class="scrolldown"></div></div>
+                            <div class="drop-down-menu" style="width:61px; margin-left: -20000px;" id="desktopmode">
+                                <div class="drop-down-button-pres" style="margin-left:47px"><div class="scrolldown"></div></div>
                                 <div class="drop-down-text" onclick="centeritem()">Center</div>
                                 <div class="drop-down-text" onclick="fillitem()">Fill</div>
                                 <div class="drop-down-text" onclick="spanitem()">Span</div>
-                                <div class="drop-down-text" onclick="stretchitem()">Stretch</div></div></ul></div>
+                                <div class="drop-down-text" onclick="stretchitem()">Stretch</div>
+                    </div></ul></div>
                            
                     <script>
                         var desktopdrop = false, desktopmode = document.getElementById("desktopmode").style, ofdesktopmode = document.getElementById("ofdesktop"); //#ref5022 through #ref0002
-                        function desktopdropdown(){if (desktopdrop == false) {desktopmode.marginLeft = "2px"; ; desktopdrop = true } else if (desktopdrop == true){desktopmode.marginLeft = "-20000px";; desktopdrop = false}} //ref1023 & ref1024
-                        function desktopexit(){desktopmode.opacity = "0"; desktopdrop = false;} //ref1025 of #ref0002
-                        function centeritem(){ofdesktopmode.innerHTML = 'Center'; document.body.style.objectFit = "none"} 
-                        function fillitem(){ofdesktopmode.innerHTML = 'Fill'; document.body.style.objectFit = "cover"} 
-                        function spanitem(){ofdesktopmode.innerHTML = 'Span'; document.body.style.objectFit = "contain"}
-                        function stretchitem(){ofdesktopmode.innerHTML = 'Stretch'; document.body.style.objectFit = "fill"} //changes text context of #ref0003
+                        function desktopdropdown(){if (desktopdrop == false) {desktopmode.marginLeft = "-2px"; ; desktopdrop = true } else if (desktopdrop == true){desktopmode.marginLeft = "-20000px";; desktopdrop = false}} //ref1023 & ref1024
+                        function desktopexit(){desktopmode.marginLeft = "-20000px"; desktopdrop = false;} //ref1025 of #ref0002
+                        function centeritem(){ofdesktopmode.textContent = 'Center'; document.getElementById("body").style.objectFit = "none"} 
+                        function fillitem(){ofdesktopmode.textContent = 'Fill'; document.getElementById("body").style.objectFit = "cover"} 
+                        function spanitem(){ofdesktopmode.textContent = 'Span'; document.getElementById("body").style.objectFit = "contain"}
+                        function stretchitem(){ofdesktopmode.textContent = 'Stretch'; document.getElementById("body").style.objectFit = "fill"} //changes text context of #ref0003
                     </script>
 
                     <ul class="tree-view" style="width:240px; height:86px; margin-top: 2px; margin-left:4px;">
                         <div style="position: absolute; margin-top:-3px; margin-left:-3px; width:247px; height:93px; overflow-y: scroll; overflow-x: hidden">
-                            
                             <div class="wallpapermenu" onclick="wallpaperoptionnone()"><div class="none" style="margin-top:-1px;"></div>
                                 <div class="filled" id="wallpaperoverlay1"><!--ref#0026-->
                                     <label style="margin-left: 4px; margin-top: 2px; cursor:pointer;"> None </label></div></div> <!--#ref0004-->
@@ -1230,7 +1217,8 @@
                                     <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Desert Highway (Submitted by Qhetha)  </label></div></div> <!--#ref0012-->
                             <div class="wallpapermenu" style="margin-top:166px" onclick="wallpaperoption9(); wallpapercust();"><div class="menuapplications10" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay10" title="Created by Phil-Nye in the discord server">
-                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Aesthetic (Created by Phil-Nye)</label></div></div></div></ul> <!--#ref0013-->
+                                    <label style="margin-left: 2px; margin-top: 2px; cursor:pointer"> Aesthetic (Created by Phil-Nye)</label></div></div>
+                    </div></ul> <!--#ref0013-->
             </fieldset></div>
                         
             <script>
@@ -1269,14 +1257,12 @@
                 <center><div class="displaycolourback" id="dcb2"><div class="displayboxdisplay"></div><div class="displayboxdisplayde"></div></div></center>
                     
                     <fieldset style="width:336px; height:50px; margin-left: 12px; margin-top: 49px;">
-                        <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: var(--silver); width:64px; padding: 0px 0px 3px 3px; margin-left:-3px"> Screen Saver </label>
+                        <inboxlabel style="width:64px"> Screen Saver </inboxlabel>
                         
                         <ul class="tree-view"  style="position: absolute; width:168px; height: 17px; padding:2px; margin-top:3px;" onclick="ssdropdown()" onmouseleave="ssdropdownclose()">
-                            <div style="padding: 2px" id="currentscreensaver">(none)
-                                <div class="win98button" style="float:right; margin-right:-2px; margin-top:-2px; width:10px; height:11px;"><div class="scrolldown"></div></div></div> <!--#ref0018-->
-                        
-                            <div class="drop-down-menu" style="margin-top:1px; width: 167px; margin-left: -20000px;" id="thescreensaver">
-                                <div class="win98buttonpressed" style="position:absolute; margin-top: -17px; margin-left:154px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
+                            <div style="padding: 3px 3px 2px 2px" id="currentscreensaver">(none)</div><div class="drop-down-button"><div class="scrolldown"></div></div> <!--#ref0018-->
+                            <div class="drop-down-menu" style="width: 167px; margin-left: -20000px;" id="thescreensaver">
+                                <div class="drop-down-button-pres" style="margin-left:154px"><div class="scrolldown"></div></div>
                                 <div class="drop-down-text" onclick="none()" id="none">(none)</div> <!--#ref0019-->
                         </div></ul>
                         
@@ -1286,85 +1272,74 @@
                             function none(){document.getElementById("currentscreensaver").textContent="(none)";} //dropdown option one for #ref0019
                             function ssdropdownclose(){thescreen.marginLeft = "-20000px"; ssdrop = false} //#ref5025
                         </script>
+
+                        <div class="win98buttondis" style="position: absolute; margin-left:182px; width:67px; margin-top:2px;"><center><butdislabel>Save As...</butdislabel></center></div>
+                        <div class="win98buttondis" style="position: absolute; margin-left:262px; width:68px; margin-top:2px;"><center><butdislabel>Preview</butdislabel></center></div>
                         
-                        <div class="win98buttoninactive" style="position: absolute; margin-left:182px; margin-top: 1px; width:66px; height:18px;"> 
-                        <div class="disabledfont" style="margin-top: 3px; margin-left:12px;"> Save As... </div></div>
-                        <div class="win98buttoninactive" style="position: absolute; margin-left:262px; margin-top: 1px; width:66px; height:18px;"> 
-                        <div class="disabledfont" style="margin-top: 3px; margin-left:14px;"> Preview </div></div>
+                        <div style="margin-top: 27px">
+                            <ul class="tree-view" style="position: absolute; width:1px; height: 1px; margin-top: 7px; background: var(--silver);"></ul>
+                                <butdislabel style="position:absolute; margin-left:20px; margin-top: 7px;">Password Protected</butdislabel>
+                            <div class="win98buttondis" style="position: absolute; margin-left:130px; width:67px; margin-top:3px;"><center><butdislabel>Change...</butdislabel></center></div></div>
                         
-                        <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 34px; background-color: var(--silver);"></ul>
-                            <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 34px; display: inline-block;">Password Protected</div>
-                        <div class="win98buttoninactive" style="position: absolute; margin-top: 30px; width:63px; height:18px; margin-left:130px;"> 
-                            <div class="disabledfont" style="margin-top: 3px; margin-left:11px;"> Change... </div>
-                        </div>
-                        
-                        <div style="margin-left:208px; margin-top:36px;">
-                            <div class="disabledfont" style="position:absolute; margin-top:-1px">Wait:</div>
-                            <ul class="tree-view" style="position:absolute; width:41px; height:9px; margin-top: -4px; margin-left:29px; background-color:var(--silver)">
-                                <div style="margin-top: -4px; margin-left:27px">
-                                    <label style="position:absolute; margin-left: -14px; margin-top: 2px; color:curcolgray;"> 14 </label>
-                                    <div class="win98buttoninactive" style="position:absolute; margin-left:1px; margin-top:0px; width:11px; height:2px;"><div class="tinyarrowdisabledup" style="margin-left:4px;"></div></div>
-                                    <div class="win98buttoninactive" style="position:absolute; margin-left:1px; margin-top:9px; width:11px; height:2px;"><div class="tinyarrowdisableddown"  style="margin-left:4px;"></div></div>
+                        <div style="margin-left:208px; margin-top:37px;">
+                            <butdislabel style="position:absolute; margin-top:-3px">Wait:</butdislabel>
+                            <ul class="tree-view" style="position:absolute; width:40px; height:9px; margin-top: -6px; margin-left:29px; background-color:var(--silver)">
+                                <div style="margin-top: -5px; margin-left:27px">
+                                    <div class="win98buttondis" style="position:absolute; margin-top:1px; width:11px; height:2px;"><div class="tinyarrowdisabledup"></div></div>
+                                    <div class="win98buttondis" style="position:absolute; margin-top:10px; width:11px; height:2px;"><div class="tinyarrowdisableddown"></div></div>
                             </div></ul>
-                            <div class="disabledfont" style="position:absolute; margin-left:86px; margin-top:-1px">minutes</div></div>
-                    </fieldset>
+                            <butdislabel style="position:absolute; margin-left:86px; margin-top:-2px">minutes</butdislabel>
+                    </div></fieldset>
                     
                     <fieldset style="width:336px; height:48px; margin-left: 12px; margin-top: 12px;">
-                        <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: var(--silver); width:154px; padding: 0px 0px 3px 3px; margin-left:-3px"> Energy saving features of monitor </label>
+                        <inboxlabel style="width:154px"> Energy saving features of monitor </inboxlabel>
                         <div class="energysaving" style="position: absolute; margin-left:24px; margin-top:5px"></div>
-                        <label style="width:210px; position: absolute; margin-left: 122px; margin-top: 5px"> To adjust the power settings of your monitor, click settings.</label>
-                        <div class="win98buttoninactive" style="margin-left:266px; margin-top: 24px; width:63px; height:18px;"> 
-                            <div class="disabledfont" style="margin-top: 3px; margin-left:13px;"> Settings </div></div></fieldset>
+                        <label style="position: absolute; margin-left: 112px; margin-top: 5px"> To adjust the power settings of your monitor, click settings.</label>
+                        <div class="win98buttondis" style="position: absolute; margin-left:266px; margin-top: 25px;  width:63px;"><center><butdislabel>Settings</butdislabel></center></div>
+                    </fieldset>
             </div>
             
             <!-- --------------------------------------- appearance tab --------------------------------------- -->
+            
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2;" id="appearance">
                 <ul class="tree-view"  id="apperancepreview" style="width:337px; height:179px; margin-left: 12px; margin-top: 12px; background-size: cover; padding:10px;">
                     
                     <div class="prewin98post" style="height: 137px; width:300px;">
-                        <div class="prewin98titlebarbutton" style="position:absolute; margin-left: 283px; margin-top:1px; cursor: pointer;" title="close"><div class="preclose"></div></div>
+                        <div class="prewin98titlebarbutton" style="position:absolute; margin-left: 283px; margin-top:1px" title="close"><div class="preclose"></div></div>
                         <div class="prewin98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="prehelp"></div></div>
                         <div class="pretitle-bar-posts" style="background-image: var(--preinactive);"> <div class="title-bar-text" style="margin-left:-1px; margin-top:-1px;" id="preinactive">💤 Inactive Window</div></div>
-                        <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding: 2px 2px 2px 2px"></div>
-                    </div>
+                        <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding: 2px 2px 2px 2px"></div></div>
                     
                     <div class="prewin98post" style="height: 137px; width:300px; margin-top:24px; margin-left:5px">
-                        <div class="prewin98titlebarbutton" style="position:absolute; margin-left: 283px; margin-top:1px; cursor: pointer;" title="close"><div class="preclose"></div></div>
+                        <div class="prewin98titlebarbutton" style="position:absolute; margin-left: 283px; margin-top:1px" title="close"><div class="preclose"></div></div>
                         <div class="prewin98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="prehelp"></div></div>
                         <div class="pretitle-bar-posts" style="background-image: var(--preactive);"> <div class="title-bar-text" style="margin-left:-1px; margin-top:-1px;" id="preactive">💯 Active Window</div></div>
-                        <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding: 2px 2px 2px 2px">
+                        <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding: 2px">
                             <div style="margin-top: -2px">
                                 <label style="position:absolute; color:var(--preblack)">Normal</label>
                                 <div class="predisabledfont" style="position:absolute; margin-left:39px; margin-top: -0px;">Disabled</div>
                                 <prefieldset style="position:absolute; margin-left:85px; margin-top:-1px; padding:2px 4px 1px 4px; color:var(--preblack);"> Selected </prefieldset></div>
-                            <preul class="tree-view"  style="width:284px; height:82px; margin-left: -3px; margin-top: 18px;">
-                                <div style="position:absolute; background-color: var(--premidgray); margin-left: 272px; width:16px; height:80px"> </div>
-                                <div class="prewin98scroll" style="margin-left: 272px; margin-top:-4px"><div class="prescrollup"></div></div>
-                                <div class="prewin98scroll" style="margin-left: 272px; margin-top:70px"><div class="prescrolldown"></div></div>
-                            </preul>
-                        </div>
-                    </div>
+                            <preul class="tree-view"  style="width:286px; height:85px; margin-left: -3px; margin-top: 18px;">
+                                <div style="position:absolute; background-color: var(--premidgray); margin-left: 274px; width:16px; height:84px"></div>
+                                <div class="prewin98scroll" style="margin-left: 274px; margin-top:-4px"><div class="prescrollup"></div></div>
+                                <div class="prewin98scroll" style="margin-left: 274px; margin-top:73px"><div class="prescrolldown"></div></div></preul>
+                    </div></div>
                         
                     <div class="prewin98post" style="height:67px; width:200px; margin-left:20px; margin-top: 100px;">
                         <div class="prewin98titlebarbutton" style="position:absolute; margin-left: 183px; margin-top:1px; cursor: pointer;" title="close"><div class="preclose"></div></div>
                         <div class="prewin98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="prehelp"></div></div>
                         <div class="pretitle-bar-posts" style="background-image: var(--preactive);"> <div class="title-bar-text" style="margin-left:-1px; margin-top:-1px;" id="premessage">💬 Message Box</div></div>
                         <div class="messagewindowbody" style="padding:3px; color:var(--pretext);"> Current active window
-                            <center><div class="prewin98button" style="width:60px; margin-top: 4px;"> 
-                                <div class="prebuttontext" style="margin-top: 2px; margin-left:0.5px; cursor:pointer">Ok.</div></div>
-                        </center></div>
-                    </div>
+                            <center><div class="prewin98button" style="margin-top:4px; width:59px;"><butlabel>Ok.</butdislabel></div></center>
+                    </div></div>
                 </ul>
-                                
-                <div style="margin-left:12px; margin-top: 10px;">
-                    <!-- line 1 -->
+                               
+                <div style="margin-left:12px; margin-top: 10px;"> <!-- line 1 -->
                     <label>Scheme</label><br>
                     <ul class="tree-view"  style="position: absolute; width:186px; height: 17px; padding:2px" onclick="schemedropdown()" onmouseleave="schemeexit()">
-                        <div style="padding: 3px 2px 2px 2px;" id="currentscheme">Windows 98</div> <!--#ref0023-->
-                        <div class="win98button" style="position:absolute; margin-top: -17px; margin-left:170px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
-                        <!--dropdown menu for schemes, #ref0000-->
-                        <div class="drop-down-menu" style="margin-top:1px; width: 185px; margin-left: -20000px;" id="scheme">
-                            <div class="win98buttonpressed" style="position:absolute; margin-top: -18px; margin-left:171px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
+                        <div style="padding: 3px 3px 2px 2px" id="currentscheme">Windows 98</div><div class="drop-down-button"><div class="scrolldown"></div></div><!--#ref0023-->
+                        <div class="drop-down-menu" style="width: 185px; margin-left: -20000px;" id="scheme"><!--dropdown menu for schemes, #ref0000-->
+                            <div class="drop-down-button-pres" style="margin-left:171px"><div class="scrolldown"></div></div>
                             <div class="drop-down-text" onclick="windows98()"           id="windows98scheme"                                 >Windows 98                </div> <!--#ref0024-->
                             <div class="drop-down-text" onclick="evangelionmode()"      id="evangelionscheme"    style="padding:bottom:2px;" >Neon Genesis Evangelion   </div> <!--#ref0025-->
                             <div class="drop-down-text" onclick="Octavia()"             id="Octavia"             style="padding:bottom:2px;" >Octavia's Study           </div> <!--#ref0026-->
@@ -1373,16 +1348,15 @@
                             <div class="drop-down-text" onclick="vapourwave()"          id="aesthetic"           style="padding:bottom:2px;" >Aesthetic                 </div> <!--#ref0029-->
                             <div class="drop-down-text" onclick="contrastmodescheme1()" id="contrastmodescheme1" style="padding:bottom:2px;" >High Contrast Mode 1      </div> <!--#ref0030-->
                             <div class="drop-down-text" onclick="contrastmodescheme2()" id="contrastmodescheme2" style="padding:bottom:2px;" >High Contrast Mode 2      </div> <!--#ref0031-->
-                        </div>
-                    </ul>
+                    </div></ul>
                             
                     <script>
                         var curcolwhite, curcollightg, curcolsilver, curcolmidgray, curcolgray, curcolblack, curcolblue, curcolprussian, curcolwincyan, curcolyellow, curcolfont, curcolfonttitle, curcolhover, curcolatext, prewhite, //#ref5026 //#ref5003
                             precolwhite, precollightg, precolsilver, precolmidgray, precolgray, precolblack, precolblue, precolprussian, precolwincyan, precolyellow, precolfont, precolfonttitle, precolhover, precolatext, preblack, //#ref5026 //#ref5003
                             preinactivetitle, curinactivetitle, preactivetitle, curactivetitle, preinvert, curinvert; //#ref5026 //#ref5003
                         var schemedrop = false, ctoggle = false, themecurrent = "lightmode"; //#ref5022
-                        var currentsch = document.getElementById("currentscheme"); //#ref5014
-                        //dropdown menu for schemes, #ref0000
+                        
+                        var currentsch = document.getElementById("currentscheme"); //#ref5014 //dropdown menu for schemes, #ref0000
                         function schemedropdown(){ if (schemedrop == false) {document.getElementById("scheme").style.marginLeft = "    -2px"; schemedrop = true; //#ref5023
                                             } else if (schemedrop == true){document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false}} //#ref5024
                         function schemeexit(){document.getElementById("scheme").style.marginLeft = "-20000px"; schemedrop = false} //#ref5025
@@ -1407,58 +1381,52 @@
                         //#ref5026a: Variable storage for colours to be applied later.
                         
                         function darkmode(){ //changes preview theme to darkmode
-                            cwpp = "#292929"; //#ref5000
                             pretaskbartxt = "#9f9f9f"; pretaskbartxtprs = "#ffffff"; preactivetitle = "#ffffff"; preinactivetitle = "#ffffff"; //#ref5001
                             precurrentactiveheader = github + "img/title-bar%20postheader-darkmodeactive.png')"; precurinactivehead = github + "img/title-bar%20postheader-darkmode.png')"; //#ref5002
                             precolwhite = "#545454";   precollightg = "#9f9f9f"; precolsilver = "#3f3f3f"; precolmidgray = "#ababab"; precolgray = "#292929"; precolblack = "#000000"; precolblue = "#fccc39"; //#ref5003
                             precolprussian = "#00207c"; precolwincyan = "#008080"; precolyellow = "#c0c0c0"; precolfont = "#c0c0c0"; precolfonttitle = "#ffffff"; curcolhover = "#ffffff"; precolatext = "#ffffff"; //#ref5003
                             docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 1; shuffleflop = 1; //#ref5004
-                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")} //#ref5005
+                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')"); cwpp = "#292929";} //#ref5000//#ref5005
                             
                         function tankmode(){ //changes preview theme to a ww1 inspired theme with army greens.
-                            cwpp = "#607060"; //#ref5000
                             pretaskbartxt = "#000000"; pretaskbartxtprs = "#000000"; preactivetitle = "#ffffff"; preinactivetitle = "#607060"; //#ref5001
                             precurinactivehead = github + "img/title-bar%20postheaderinactivetank.png')"; precurrentactiveheader = github + "img/title-bar%20postheaderactivetank.png')"; //#ref5002
                             precolwhite = "#7d8f7d";   precollightg = "#607060"; precolsilver = "#607060"; precolmidgray = "#404840"; precolgray = "#404840"; precolblack = "#0a0a0a"; precolblue = "#ffffff"; //#ref5003
                             precolprussian = "#481212" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#000000"; precolfonttitle = "#ffffff"; curcolhover = "#ffffff"; precolatext = "#000000"; //#ref5003
                             docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 0; shuffleflop = 0; //#ref5004
-                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")} //#ref5005
+                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')"); cwpp = "#607060";} //#ref5000//#ref5005
                         
                         function lightmode(){ //changes preview theme to default windows 98.
-                            cwpp = "#c0c0c0"; //#ref5000
                             pretaskbartxt = "#000000"; pretaskbartxtprs = "#000000"; preactivetitle = "#ffffff"; preinactivetitle = "#ffffff"; //#ref5001
                             precurinactivehead = github + "img/title-bar%20postheaderinactive.png')"; precurrentactiveheader = github + "img/title-bar%20postheader.png')"; //#ref5002
                             precolwhite = "#ffffff";   precollightg = "#dfdfdf"; precolsilver = "#c0c0c0"; precolmidgray = "#ababab"; precolgray = "#808080"; precolblack = "#0a0a0a"; precolblue = "#0000FF"; //#ref5003
                             precolprussian = "#00207c" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#000000"; precolfonttitle = "#ffffff"; precolhover = "#ffffff"; precolatext = "#000000"; //#ref5003
                             docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 0; shuffleflop = 0; //#ref5004
-                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")} //#ref5005
+                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')"); cwpp = "#c0c0c0";} //#ref5000//#ref5005
                             
                         function neonmode(){ //Vapourwave theme, using pastel pink and pastel blue.
-                            cwpp = "#a2dbd2"; //#ref5000
                             pretaskbartxt = "#000000"; pretaskbartxtprs = "#000000"; preactivetitle = "#ffffff"; preinactivetitle = "#00554d"; //#ref5001
                             precurinactivehead = github + "img/title-bar%20postheaderneon.png')"; precurrentactiveheader = github + "img/title-bar%20postheaderneonactive.png')"; //#ref5002
                             precolwhite = "#f7dbd7"; precollightg = "#fae0e4"; precolsilver = "#f4c1ca"; precolmidgray = "#e08998"; precolgray = "#de4560"; precolblack = "#0a0a0a"; precolblue = "#00bfbc"; //#ref5003
                             precolprussian = "#a2dbd2" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#000000"; precolfonttitle = "#ffffff"; precolhover = "#ffffff"; precolatext = "#000000"; //#ref5003
                             docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 0; shuffleflop = 0; //#ref5004
-                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")} //#ref5005
+                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')"); cwpp = "#a2dbd2";} //#ref5000//#ref5005
                         
                         function contrastmode1(){ //high contrast theme (cyan and blue)
-                            cwpp = "#0000ff"; //#ref5000
                             pretaskbartxt = "#ffffff"; pretaskbartxtprs = "#0000ff"; preactivetitle = "#ffffff"; preinactivetitle = "#000000"; //#ref5001
                             precurinactivehead = github + "img/title-bar%20postheaderinactivecontrast.png')"; precurrentactiveheader = github + "img/title-bar%20postheaderactivecontrast.png')"; //#ref5002
                             precolwhite = "#000000"; precollightg = "#dfdfdf"; precolsilver = "#000000"; precolmidgray = "#ababab"; precolgray = "#808080"; precolblack = "#ffffff"; precolblue = "#00ffff"; //#ref5003
                             precolprussian = "#0000ff" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#ffff00"; precolfonttitle = "#000000"; precolhover = "#ffffff"; precolatext = "#ffffff"; //#ref5003
                             docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 1; shuffleflop = 1;//#ref5004
-                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")} //#ref5005
+                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')"); cwpp = "#0000ff";} //#ref5000//#ref5005
                             
                         function contrastmode2(){ //high contrast theme (green and yellow)
-                            cwpp = "#00ff00"; //#ref5000
                             pretaskbartxt = "#ffffff"; pretaskbartxtprs = "#0000ff"; preactivetitle = "#000000"; preinactivetitle = "#000000"; //#ref5001
                             precurinactivehead = github + "img/title-bar%20postheaderinactivecontrast2.png')"; precurrentactiveheader = github + "img/title-bar%20postheaderactivecontrast2.png')"; //#ref5002
                             precolwhite = "#000000";   precollightg = "#dfdfdf"; precolsilver = "#000000"; precolmidgray = "#ababab"; precolgray = "#808080"; precolblack = "#ffffff"; precolblue = "#00ff00"; //#ref5003
                             precolprussian = "#00ff00" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#ffff00"; precolfonttitle = "#000000"; precolhover = "#ffffff"; precolatext = "#00ff00"; //#ref5003
                             docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 1; shuffleflop = 1;
-                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')")}
+                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')"); cwpp = "#00ff00";} //#ref5000//#ref5005
                          
                         function highcontrast1() {currentcolour = "#00ffff"; fontcolour = "#000000"; backcolourpreview(); ctoggle = true; //changes the current colours to cyan and font colour to white. //#ref0021
                             cpc.style.backgroundColor = "#000000"; cpo.style.backgroundColor = "#000000"; iconpre.backgroundColor = "#000000";  ap.style.backgroundColor = "#000000"} //changes backgrounds to black.
@@ -1470,10 +1438,8 @@
                             curcolwhite = precolwhite; curcollightg = precollightg; curcolsilver = precolsilver; curcolmidgray = precolmidgray; curcolgray = precolgray; curcolblack = precolblack; curcolblue = precolblue; curinvert = preinvert;
                             curcolprussian = precolprussian; curcolwincyan = precolwincyan; curcolyellow = precolyellow; curcolfont = precolfont; curcolfonttitle = precolfonttitle; curcolhover = precolhover; curcolatext = precolatext}
                         
-                        function themepreviewchange() {//updates the current preview in the appearance tab.
-                            //changes the icon colours based on invert status
-                            docelem.style.setProperty('--preinvert', preinvert);
-                            //changes the current preview colours based on variables set earlier
+                        function themepreviewchange() {//changes the current preview colours based on variables set earlier
+                            docelem.style.setProperty('--preinvert', preinvert); //changes the icon colours based on invert status
                             docelem.style.setProperty('--preblue', precolblue); docelem.style.setProperty('--preactivetitle', preactivetitle); docelem.style.setProperty('--preinactivetitle', preinactivetitle); 
                             docelem.style.setProperty('--prewhite', precolwhite); docelem.style.setProperty('--pregray', precolgray); docelem.style.setProperty('--prelightg', precollightg); 
                             docelem.style.setProperty('--preblack', precolblack); docelem.style.setProperty('--presilver', precolsilver); docelem.style.setProperty('--preprussian', precolprussian);
@@ -1482,16 +1448,11 @@
                             docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precurrentactiveheader);
                             //adjustments to headers
                             document.getElementById("preinactive").style.color = preinactivetitle; document.getElementById("preactive").style.color = preactivetitle;
-                            document.getElementById("premessage").style.color = preactivetitle; 
-                            //logs if preview has been loaded
-                            console.log("Theme preview loaded")
-                        }
+                            document.getElementById("premessage").style.color = preactivetitle; //adjustments to headers
+                            inprompt = inprompt + "Theme Preview Loaded."; println(); println()} //logs if preview has been loaded
                         
-                        function themechange() {//changes the current theme.
-                            //makes the current preview colours into current active colours. #ref0001
-                            precolourupdate();
-                            //changes headers and title colours
-                            curinactivehead = precurinactivehead; currentactiveheader = precurrentactiveheader; curactivetitle = preactivetitle; curinactivetitle = preinactivetitle;
+                        function themechange() { precolourupdate(); //changes the current theme and makes the current preview colours into current active colours. #ref0001
+                            curinactivehead = precurinactivehead; currentactiveheader = precurrentactiveheader; curactivetitle = preactivetitle; curinactivetitle = preinactivetitle; //changes headers and title colours
                             //updates current window colours that will get updated through inactive(); later
                             docelem.style.setProperty('--white', curcolwhite); docelem.style.setProperty('--gray', curcolgray); docelem.style.setProperty('--lightg', curcollightg); 
                             docelem.style.setProperty('--black', curcolblack); docelem.style.setProperty('--silver', curcolsilver); docelem.style.setProperty('--prussian', curcolprussian);
@@ -1510,33 +1471,24 @@
                             favouritesclosed(); channelsclose(); linksclose(); mediaclose(); mediaclose(); documentsclosed(); settingsclosed(); settingsclosed(); settingsactivedesktopclose(); findclosed(); vherstyclose();
                             //changes the current state of headers and adjusts icons based on invert
                             docelem.style.setProperty('--inactive', curinactivehead); docelem.style.setProperty('--active', currentactiveheader); docelem.style.setProperty('--invert', curinvert); 
-                            //updates windows visually by looping inactive windows
-                            inactiveall(); diskactive(); clocku(); wwpno();
-                            shufflecolour(); if(shuffle == false){docelem.style.setProperty('--shuffleinvert', 0.5)} else if(shuffle == true){docelem.style.setProperty('--shuffleinvert', shuffleflop)}
-                            //logs if the preview theme has been turned into the current theme active.
-                            console.log("Theme Loaded")
-                        }
+                            inactiveall(); diskactive(); clocku(); wwpno(); //updates windows visually by looping inactive windows
+                            shufflecolour(); if(shuffle == false){docelem.style.setProperty('--shuffleinvert', 0.5)} else if(shuffle == true){docelem.style.setProperty('--shuffleinvert', shuffleflop)} //mediaplayer shuffle colour correction.
+                            inprompt = inprompt + "Theme Loaded."; println(); println()} //logs if the preview theme has been turned into the current theme active.
                     </script>
                         
-                    <div class="win98buttoninactive" style="position: absolute; margin-left:199px; margin-top: -2px; width:66px; height:18px;"> 
-                        <div class="disabledfont" style="margin-top: 3px; margin-left:12px;"> Save As... </div></div>
-                    <div class="win98buttoninactive" style="position: absolute; margin-left:280px; margin-top: -2px; width:66px; height:18px;"> 
-                        <div class="disabledfont" style="margin-top: 3px; margin-left:14px;"> Preview </div></div><br><br>
+                    <div class="win98buttondis" style="position: absolute; margin-left:199px; width:67px; margin-top:-1px;"><center><butdislabel>Save As...</butdislabel></center></div>
+                        <div class="win98buttondis" style="position: absolute; margin-left:280px; width:68px; margin-top:-1px;"><center><butdislabel>Preview</butdislabel></center></div><br><br>
                     
                     <div style="margin-top:5px;">
-                        <label>Item</label><label style="margin-left:243px">Colour 1</label>
-                        <div class="disabledfont" style="position:absolute; margin-left:200px; margin-top: -13px;">Size</div>
-                        <div class="disabledfont" style="position:absolute; margin-left:312px; margin-top: -13px;">Colour 2</div><br>
+                        <div style="margin-bottom:1px;"> <label>Item</label><label style="margin-left:243px">Colour 1</label>
+                        <div style="margin-top: -13px"><div class="disabledfont" style="position:absolute; margin-left:200px">Size</div>
+                        <div class="disabledfont" style="position:absolute; margin-left:312px">Colour 2</div></div><br></div>
                         <!-- line 2 -->  
-                        <ul class="tree-view"  style="position: absolute; width:186px; height: 17px; padding:2px" onclick="itemdropdown()" onmouseleave="itemexit()">
-                            <div style="padding: 3px 2px 2px 2px;" id="currentitem">Desktop</div>
-                            <div class="win98button" style="position:absolute; margin-top: -17px; margin-left:170px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
-                        
-                            <div class="drop-down-menu" style="margin-top:1px; width: 185px; margin-left: -20000px;" id="item">
-                                <div class="win98buttonpressed" style="position:absolute; margin-top: -18px; margin-left:171px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
-                                <div class="drop-down-text" onclick="desktopitem()" id="desktopitem">Desktop</div> <!--#ref0032-->
-                            </div>
-                        </ul>
+                        <ul class="tree-view" style="position: absolute; width:186px; height: 17px; padding:2px" onclick="itemdropdown()" onmouseleave="itemexit()">
+                            <div style="padding: 3px 3px 2px 2px" id="currentitem">Desktop</div><div class="drop-down-button"><div class="scrolldown"></div></div>
+                            <div class="drop-down-menu" style="width: 185px; margin-left: -20000px;" id="item">
+                                <div class="drop-down-button-pres" style="margin-left:172px;"><div class="scrolldown"></div></div>
+                                <div class="drop-down-text" onclick="desktopitem()" id="desktopitem">Desktop</div></div></ul> <!--#ref0032-->
                                 
                         <script>
                             var itemdrop = false; item = document.getElementById("item").style //#ref5022 
@@ -1545,14 +1497,11 @@
                             function desktopitem(){document.getElementById("desktopitem").textContent="Desktop"} //#ref0032 
                         </script>
                             
-                        <ul class="tree-view" style="position:absolute; width:41px; height:9px; margin-left:199px; background-color: var(--silver);">
-                            <div style="margin-top: -4px; margin-left:27px">
-                                <div class="win98buttoninactive" style="position:absolute; margin-left:1px; margin-top:0px; width:11px; height:2px;"><div class="tinyarrowdisabledup" style="margin-left:4px;"></div></div>
-                                <div class="win98buttoninactive" style="position:absolute; margin-left:1px; margin-top:9px; width:11px; height:2px;"><div class="tinyarrowdisableddown"  style="margin-left:4px;"></div></div>
-                            </div>
-                        </ul>
+                        <ul class="tree-view" style="position:absolute; width:41px; height:9px; margin-left:199px; background-color: var(--silver);"><div style="margin-top: -4px; margin-left:27px">
+                            <div class="win98buttondis" style="position:absolute; margin-left:1px; margin-top:0px; width:11px; height:2px;"><div class="tinyarrowdisabledup"></div></div>
+                            <div class="win98buttondis" style="position:absolute; margin-left:1px; margin-top:9px; width:11px; height:2px;"><div class="tinyarrowdisableddown"></div></div></div></ul>
                             
-                        <div class="win98buttoninactive" style="position: absolute; margin-left:262px; width:38px; height:17px; margin-top:0px; padding: 2px;" onclick="colourpicker()"> 
+                        <div class="win98buttondis" style="position: absolute; margin-left:262px; width:38px; height:17px; margin-top:0px; padding: 2px;" onclick="colourpicker()"> 
                             <div class="big_seperator" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
                             <div class="smallarrowdown" style="position:absolute; margin-left: 31px; margin-top:7px"></div>
                             <div style="width:20px; height:11px; margin-top: 2px; margin-left: 3px; border:1px solid #000000; background-color: #008080;" id="currentpickedc"></div>
@@ -1573,94 +1522,74 @@
                                 <div class="menuapplicationsplit" style="width:100%; margin-bottom:3px;"> </div>
                                 <div class="colourselect" style="background-color: #a03762" onclick="cpick17()"></div> <div class="colourselect" style="background-color: #001224" onclick="cpick18(); wallpapercust();"></div> 
                                 <div class="colourselect" style="background-color: #483038" onclick="cpick19()"></div> <div class="colourselect" style="background-color: #ccffff" onclick="cpick20(); wallpapercust();"></div> <br>
-                            </div>
-                        </div> 
+                        </div></div> 
                         
                         <script>
-                            var colourpicked = false; currentcolour = "#008080"; fontcolour = "#ffffff"; dcb1 = document.getElementById("dcb1").style; dcb2 = document.getElementById("dcb2").style;
+                            var colourpicked = false, currentcolour = "#008080", fontcolour = "#ffffff", coloursampler = document.getElementById("coloursampler").style;
                             var cpo = document.getElementById("currentpickedo"); cpc = document.getElementById("currentpickedc"); ap = document.getElementById("apperancepreview");
-                            let desktopico = [
-                                document.getElementById("desktopi1").style, document.getElementById("desktopi2").style,  document.getElementById("desktopi3").style, document.getElementById("desktopi4").style, 
-                                document.getElementById("desktopi5").style, document.getElementById("desktopi6").style, document.getElementById("desktopi8").style]
+                            let desktopico = [ document.getElementById("desktopi1").style, document.getElementById("desktopi2").style, document.getElementById("desktopi3").style, 
+                                document.getElementById("desktopi4").style, document.getElementById("desktopi5").style, document.getElementById("desktopi6").style, document.getElementById("desktopi8").style]
  
-                            function colourpickerupdate(){
-                                cpc.style.backgroundColor = currentcolour; cpo.style.backgroundColor = currentcolour}
-                            function colourpicker(){ 
-                                if (colourpicked == false){
-                                    document.getElementById("coloursampler").style.marginLeft = "    -2px"; colourpicked =  true
-                                } else if (colourpicked == true ){
-                                    document.getElementById("coloursampler").style.marginLeft = "-20000px"; colourpicked = false}}
+                            function colourpickerupdate(){cpc.style.backgroundColor = currentcolour; cpo.style.backgroundColor = currentcolour}
+                            function colourpicker(){if (colourpicked == false){coloursampler.marginLeft = "-2px"; colourpicked = true} else if (colourpicked == true ){coloursampler.marginLeft = "-20000px"; colourpicked = false}}
                             function colourpickerexit() {document.getElementById("coloursampler").style.marginLeft = "-20000px"; colourpicked = false}
 
                             function backcolourset(){ //changes desktop icon span colour + backround colour.
-                                document.body.style.backgroundColor = currentcolour;
+                                document.body.style.backgroundColor = currentcolour; //changes desktop icon span colour + backround colour.
                                 for (var i = 0; i < desktopico.length; i++) { desktopico[i].backgroundColor = currentcolour}
-                                if(ctoggle == true){ document.body.style.backgroundColor = "#000"; iconpre.backgroundColor = "#000";
+                                if(ctoggle == true){document.body.style.backgroundColor = "#000"; iconpre.backgroundColor = "#000";
                                     cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; ap.style.backgroundColor = "#000"}} 
-                            function fontcolourset(){
-                                for (var i = 0; i < desktopico.length; i++) {desktopico[i].color = fontcolour}} // changes desktop icon text color;
-
+                            function fontcolourset(){ for (var i = 0; i < desktopico.length; i++) {desktopico[i].color = fontcolour}} // changes desktop icon text color;
+                            
                             function backcolourpreview(){ // changes preview desktop icons background colour + background colours in appearance tab.
                                 for (var i = 0; i < previewico.length; i++) { previewico[i].backgroundColor = currentcolour}; 
-                                iconpre.backgroundColor = currentcolour;  
-                                ap.style.backgroundColor = currentcolour; fontcolorsetpreview(); dcb1.backgroundColor = currentcolour; dcb2.backgroundColor = currentcolour}
-                            function fontcolorsetpreview(){ // changes preview desktop icons span colour
-                                for (var i = 0; i < previewico.length; i++) { previewico[i].color = fontcolour}}
+                                iconpre.backgroundColor = currentcolour;  ap.style.backgroundColor = currentcolour; fontcolorsetpreview(); 
+                                dcb1.backgroundColor = currentcolour; dcb2.backgroundColor = currentcolour; dcb3.backgroundColor = currentcolour}
+                            function fontcolorsetpreview(){ for (var i = 0; i < previewico.length; i++) { previewico[i].color = fontcolour}} // changes preview desktop icons span colour
                             //ref#0024
-                            function cpick1() { currentcolour = "#ffffff"; fontcolour = "#000"; colourpickerupdate(); document.getElementById("iconpre2").style.backgroundColor = currentcolour}
-                            function cpick2() { currentcolour = "#000000"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
-                            function cpick3() { currentcolour = "#c2c6ca"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
-                            function cpick4() { currentcolour = "#85898d"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
-                            function cpick5() { currentcolour = "#ff0000"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
-                            function cpick6() { currentcolour = "#aa0055"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
-                            function cpick7() { currentcolour = "#ffff00"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
-                            function cpick8() { currentcolour = "#aaaa55"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
-                            function cpick9() { currentcolour = "#00ff00"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
-                            function cpick10() {currentcolour = "#00aa55"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
-                            function cpick11() {currentcolour = "#00ffff"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
-                            function cpick12() {currentcolour = "#008080"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
-                            function cpick13() {currentcolour = "#0000ff"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
-                            function cpick14() {currentcolour = "#0000aa"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
-                            function cpick15() {currentcolour = "#ff00ff"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
-                            function cpick16() {currentcolour = "#aa55aa"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
-                            
-                            function cpick17() {currentcolour = "#a03762"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
-                            function cpick18() {currentcolour = "#001224"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
-                            function cpick19() {currentcolour = "#483038"; fontcolour = "#fff"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
-                            function cpick20() {currentcolour = "#ccffff"; fontcolour = "#000"; colourpickerupdate(); ctoggle = false; backcolourpreview()}
+                            function cpick(){colourpickerupdate(); ctoggle = false; backcolourpreview()}
+                            function cpick1() { currentcolour = "#ffffff"; fontcolour = "#000"; cpick()} function cpick2() { currentcolour = "#000000"; fontcolour = "#fff"; cpick()}
+                            function cpick3() { currentcolour = "#c2c6ca"; fontcolour = "#000"; cpick()} function cpick4() { currentcolour = "#85898d"; fontcolour = "#fff"; cpick()}
+                            function cpick5() { currentcolour = "#ff0000"; fontcolour = "#fff"; cpick()} function cpick6() { currentcolour = "#aa0055"; fontcolour = "#fff"; cpick()}
+                            function cpick7() { currentcolour = "#ffff00"; fontcolour = "#000"; cpick()} function cpick8() { currentcolour = "#aaaa55"; fontcolour = "#fff"; cpick()}
+                            function cpick9() { currentcolour = "#00ff00"; fontcolour = "#000"; cpick()} function cpick10() {currentcolour = "#00aa55"; fontcolour = "#fff"; cpick()}
+                            function cpick11() {currentcolour = "#00ffff"; fontcolour = "#000"; cpick()} function cpick12() {currentcolour = "#008080"; fontcolour = "#fff"; cpick()}
+                            function cpick13() {currentcolour = "#0000ff"; fontcolour = "#fff"; cpick()} function cpick14() {currentcolour = "#0000aa"; fontcolour = "#fff"; cpick()}
+                            function cpick15() {currentcolour = "#ff00ff"; fontcolour = "#000"; cpick()} function cpick16() {currentcolour = "#aa55aa"; fontcolour = "#fff"; cpick()}
+                            function cpick17() {currentcolour = "#a03762"; fontcolour = "#fff"; cpick()} function cpick18() {currentcolour = "#001224"; fontcolour = "#fff"; cpick()}
+                            function cpick19() {currentcolour = "#483038"; fontcolour = "#fff"; cpick()} function cpick20() {currentcolour = "#ccffff"; fontcolour = "#000"; cpick()}
                         </script>
                         
-                        <div class="win98buttoninactive" style="position: absolute; margin-left:312px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
+                        <div class="win98buttondis" style="position: absolute; margin-left:312px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
                             <div class="big_seperator" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
                             <div class="smallarrowdisableddown" style="margin-left: 31px; margin-top:7px"></div></div><br><br>
                     </div>
                     <!-- line 3 -->
                     <div style="margin-top:5px;">
-                        <label>Font</label>
-                        <div class="disabledfont" style="position:absolute; margin-left:200px; margin-top: -13px;">Size</div>
-                        <div class="disabledfont" style="position:absolute; margin-left:262px; margin-top: -13px;">Colour</div><br>
+                        <div style="margin-bottom:1px;"><label>Font</label>
+                        <div style="margin-top: -13px;"><div class="disabledfont" style="position:absolute; margin-left:200px">Size</div>
+                        <div class="disabledfont" style="position:absolute; margin-left:262px">Colour</div></div><br></div>
                         
                         <ul class="tree-view"  style="position: absolute; width:170px; height: 1px; background-color: var(--silver); padding:10px">
-                            <div class="win98buttoninactive" style="position:absolute; margin-top: -8px; margin-left:162px; width:10px; height:11px;"><div class="arrowdisableddown" style="margin-left:-4px;"></div></div></ul>
+                            <div class="win98buttondis" style="position:absolute; margin-top: -8px; margin-left:162px; width:10px; height:11px;"><div class="arrowdisableddown" style="margin-left:-4px;"></div></div></ul>
                         <ul class="tree-view" style="position:absolute; width:41px; height:9px; margin-left:199px; background-color:var(--silver)">
-                            <div class="win98buttoninactive" style="position:absolute; margin-top: -4px; margin-left:29px; width:10px; height:11px;"><div class="arrowdisableddown" style="margin-left:-4px;"></div></div></ul>
+                            <div class="win98buttondis" style="position:absolute; margin-top: -4px; margin-left:29px; width:10px; height:11px;"><div class="arrowdisableddown" style="margin-left:-4px;"></div></div></ul>
                             
-                        <div class="win98buttoninactive" style="position: absolute; margin-left:262px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
+                        <div class="win98buttondis" style="position: absolute; margin-left:262px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
                             <div class="big_seperator" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
                             <div class="smallarrowdisableddown" style="margin-left: 31px; margin-top:7px"></div></div> 
                             
-                        <div class="win98buttoninactive" style="position:absolute; margin-top:0px; width:15px; height:15px; margin-left:313px;">
+                        <div class="win98buttondis" style="position:absolute; margin-top:0px; width:15px; height:15px; margin-left:313px;">
                             <div class="disabledfont" style="position:absolute; font-weight:700; margin-left:4px; margin-top:1px; ">B</div></div>
-                        <div class="win98buttoninactive" style="position:absolute; margin-top:0px; width:15px; height:15px; margin-left:334px;">
-                            <div class="disabledfont" style="position:absolute; margin-left:4px; margin-top:1px;">/</div></div>
-                    </div>
+                        <div class="win98buttondis" style="position:absolute; margin-top:0px; width:15px; height:15px; margin-left:334px;">
+                            <div class="disabledfont" style="position:absolute; margin-left:4px; margin-top:1px;">/</div></div></div>
             </div></div>
             
             <!-- --------------------------------------- Effects tab --------------------------------------- -->
             <!-- background inner container -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="effects">
-                <fieldset style="width:336px; height:165px; margin-left: 12px; margin-top: 14px;">
-                    <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: var(--silver); width:68px; padding: 0px 0px 3px 3px; margin-left:-3px"> Desktop Icons </label>
+                <fieldset style="width:336px; height:155px; margin-left: 12px; margin-top: 14px;">
+                    <inboxlabel style="width:68px"> Desktop Icons </inboxlabel>
                     
                     <ul class="tree-view" style="width:318px; height:88px; margin-top:5px; margin-left:2px; background-color: #008080;" id="iconpreview">
                         <div style="overflow-x: scroll; overflow-y:hidden; margin-left:-5px; width:327px; margin-top:1px;">
@@ -1719,26 +1648,29 @@
                                 </center></div>
                         </div></div>
 
-                        <div class="win98buttoninactive" style="float:right; width:78px; height:18px; margin-top: 10px; margin-right:4px; ">
+                        <div class="win98buttondis" style="float:right; width:78px; height:18px; margin-top: 10px; margin-right:4px; ">
                             <div class="disabledfont" style="margin-top: 3px; margin-left:12px;"> Default Icon </div></div>
-                        <div class="win98buttoninactive" style="float:right; width:78px; height:18px; margin-top: 10px; margin-right:8px; "> 
+                        <div class="win98buttondis" style="float:right; width:78px; height:18px; margin-top: 10px; margin-right:8px; "> 
                             <div class="disabledfont" style="margin-top: 3px; margin-left:8px;"> Change Icon... </div></div>
-                        <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 44px; margin-left:3px; background-color: var(--silver);"><div class="disabledtickbox"></div></ul>
-                            <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 45px; display: inline-block;">Preview desktop icons as smaller icons</div>
                     </fieldset>
                     
-                    <fieldset style="width:336px; height:105px; margin-left: 12px; margin-top: 20px;">
-                        <label style="margin-top:-14px; position: absolute; padding: 1px; background-color: var(--silver); width:68px; padding: 0px 0px 3px 3px; margin-left:-3px"> Visual Effects </label>
-                        <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 7px; margin-left:3px; background-color: var(--silver);"><div class="disabledtickbox"></div></ul>
-                            <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 8px; display: inline-block;">Use large desktop icons</div>
-                        <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 27px; margin-left:3px; background-color: var(--silver);"><div class="disabledtickbox"></div></ul>
-                            <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 28px; display: inline-block;">Show desktop icons using all possible colours</div>
-                        <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 47px; margin-left:3px; background-color: var(--silver);"></ul>
-                            <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 48px; display: inline-block;">Allow all windows to be draggable</div>
-                        <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 67px; margin-left:3px; background-color: var(--silver);"></ul>
-                            <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 68px; display: inline-block;">Enable NSFW desktop options</div>
-                        <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 87px; margin-left:3px; background-color: var(--silver);"><div class="disabledtickbox"></div></ul>
-                            <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 88px; display: inline-block;">Show window contents while dragging</div>
+                    <fieldset style="width:336px; height:118px; margin-left: 12px; margin-top: 20px;">
+                        <inboxlabel style="width:65px"> Visual Effects </inboxlabel>
+                        <div style="position:absolute; margin-top: -56px;">
+                            <ul class="tick-box" style="background-color: var(--silver);" id="effectstick0"><div class="disabledtickbox"></div></ul>
+                                <label for="effectstick0" style="margin-left: 22px; margin-top:7px;">Preview desktop icons as smaller icons</label></div>
+                        <ul class="tick-box" style="background-color: var(--silver);" id="effectstick1"><div class="disabledtickbox"></div></ul>
+                            <label for="effectstick1" style="margin-left: 22px; margin-top:7px;">Use large desktop icons</label>
+                        <ul class="tick-box" style="background-color: var(--silver);" id="effectstick2"><div class="disabledtickbox"></div></ul>
+                            <label for="effectstick2" style="margin-left: 22px; margin-top:7px;">Show desktop icons using all possible colours</label>
+                        <ul class="tick-box" style="background-color: var(--silver);" id="effectstick3"></ul>
+                            <label for="effectstick3" style="margin-left: 22px; margin-top:7px;">Allow all windows to be draggable</label>
+                        <ul class="tick-box" style="background-color: var(--silver);" id="effectstick4"></ul>
+                            <label for="effectstick4" style="margin-left: 22px; margin-top:7px;">Enable NSFW desktop options</label>
+                        <ul class="tick-box" style="background-color: var(--silver);" id="effectstick5"><div class="disabledtickbox"></div></ul>
+                            <label for="effectstick5" style="margin-left: 22px; margin-top:7px;">Show window contents while dragging</label>
+                        <ul class="tick-box" style="background-color: var(--silver);" id="effectstick6"><div class="disabledtickbox"></div></ul>
+                            <label for="effectstick6" style="margin-left: 22px; margin-top:7px;">Enable Window Dragging</label>
                     </fieldset>
                 </div>
             
@@ -1750,26 +1682,23 @@
                 <!-- display container settings -->
                 <div style="float: left; margin-top: 12px">
                     <fieldset style="width:149px; height:39px; margin-left: 12px">
-                    
+
                         <ul class="tree-view" style="position: absolute; width:151px; height: 17px; padding:2px; margin-left:-3px;" onclick="colourdropdown()" onmouseleave="colourexit()">
-                            <div style="padding: 3px 2px 2px 2px;" id="currentcolour">High Colour (16-bit)</div>
-                            <div class="win98button" style="position:absolute; margin-top: -17px; margin-left:135px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
-                                
-                            <div class="drop-down-menu" style="margin-top:1px; width: 150px; margin-left: -20000px; index: 10000000;" id="colour">
-                                <div class="win98buttonpressed" style="position:absolute; margin-top: -18px; margin-left:136px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
+                            <div style="padding: 3px 3px 2px 2px" id="currentcolour">High Colour (16-bit)</div><div class="drop-down-button"><div class="scrolldown"></div></div>
+                            <div class="drop-down-menu" style="width: 150px; margin-left: -20000px" id="colour">
+                                <div class="drop-down-button-pres" style="margin-left:137px"><div class="scrolldown"></div></div>
                                 <div class="drop-down-text" onclick="sixteenbitcolour()">High Colour (16-bit)</div></div></ul>
 
                         <script>
-                            var colourdrop = false;
-                            function colourdropdown(){if (colourdrop == false){document.getElementById("colour").style.marginLeft = "    -2px"; colourdrop =  true
-                                                } else if (colourdrop ==  true){document.getElementById("colour").style.marginLeft = "-20000px"; colourdrop = false}}
-                            function colourexit(){document.getElementById("colour").style.marginLeft = "-20000px"; colourdrop = false}
+                            var colourdrop = false; colourbit = document.getElementById("colour").style;
+                            function colourdropdown(){if (colourdrop == false){colourbit.marginLeft = "-2px"; colourdrop = true } else if (colourdrop == true){colourbit.marginLeft = "-20000px"; colourdrop = false}}
+                            function colourexit(){colourbit.marginLeft = "-20000px"; colourdrop = false}
                             function sixteenbitcolour(){document.getElementById("currentcolour").textContent="High Colour (16-bit)"}
                         </script>
                 
                         <ul class="tree-view" style="position: absolute; width:151px; height: 13px; padding:2px; margin-left:-3px; margin-top:25px;"><div class="displaycolour" style="position:absolute; width:151px;"></div></ul>
-                    </fieldset>
-                </div>
+                </fieldset></div>
+                
                 <div style="float: right; margin-top: 12px">
                     <fieldset style="width:136px; height:39px; margin-right: 10px">
                         <div class="field-row" style="width: 77px">
@@ -1779,26 +1708,24 @@
                         <center style="margin-left:0.9px; margin-top:9px;"> 1920 by 1080 pixels</center></fieldset></div>
                 <!-- additional settings -->
                 <div class="field-row" style="width: 100%; margin-left: 12px;">
-                    <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 44px; background-color: var(--silver);">
-                        <div class="disabledtickbox"></div></ul>
-                    <div class="disabledfont" style="position:absolute; margin-left:20px; margin-top: 45px; display: inline-block;">Extend my Windows desktop onto this monitor</div>
-                    <div class="win98buttoninactive" style="position: absolute; margin-top: 50px; width:75px; height:18px; margin-left:277px;"> 
-                        <div class="disabledfont" style="margin-top: 3px; margin-left:12px; cursor:pointer"> Advanced </div></div>
-            </div></div>
+                    <ul class="tick-box" style="background-color: var(--silver); margin-top:20px" id="effectstick6"><div class="disabledtickbox"></div></ul>
+                        <butdislabel for="effectstick6" style="margin-left: 22px; margin-top:21px;">Extend my Windows desktop onto this monitor</butdislabel>
+                    <div class="win98buttondis" style="position: absolute; margin-left:276px; width:76px; margin-top:27px;"><center><butdislabel>Advanced</butdislabel></center></div>
+                </div>
+            </div>
             
             <!-- --------------------------------------- footer --------------------------------------- -->
-            <div class="win98button" style="position:absolute; width:70px; margin-top: 395px; margin-left:316px;" onclick="wallpaperupdate(); backcolourset(); fontcolourset(); themechange();"> 
-                        <div class="buttontext" style="margin-top: 2px; margin-left:22px; cursor:pointer"> Apply </div></div>
-            <div class="win98button" style="position:absolute; width:70px; margin-top: 395px; margin-left:234px;" onclick="diskclose()">
-                    <div class="buttontext" style="margin-top: 2px; margin-left:18px; cursor:pointer">Cancel</div></div>
-            <div class="win98button" style="position:absolute; width:70px; margin-top: 395px; margin-left:152px;" onclick="wallpaperupdate(); backcolourset(); fontcolourset(); themechange(); diskclose()">
-                    <div class="buttontext" style="margin-top: 2px; margin-left:25px; cursor:pointer">Okay</div></div>
+            <div class="win98buttondis" style="position: absolute; width:70px; margin-top: 395px; margin-left:316px;" onclick="wallpaperupdate(); backcolourset(); fontcolourset(); themechange()"><center><butdislabel>Apply</butdislabel></center></div>
+            <div class="win98buttondis" style="position: absolute; width:70px; margin-top: 395px; margin-left:234px;" onclick="diskclose()"><center><butdislabel>Cancel</butdislabel></center></div>
+            <div class="win98buttondis" style="position: absolute; width:70px; margin-top: 395px; margin-left:152px;" onclick="wallpaperupdate(); backcolourset(); fontcolourset(); themechange(); diskclose()"><center><butdislabel>Okay</butdislabel></center></div>
         </div>
+        
         <script>
             //#ref5015: changes the default positional values based on absolute values and changes to default widths / heights.
             //#ref5016: When pressing on the (tab-number) tab, set zindex to highest tab.
             //#ref5017: resets the index of all tabs to prevent weird z-index or positional bugs.
             //#ref5018: changes to the current tab and adjusts height and width to overlap / prioritise the tab
+            var dcb1 = document.getElementById("dcb1").style, dcb2 = document.getElementById("dcb2").style, dcb3 = document.getElementById("dcb3").style;
             var iconpre = document.getElementById("iconpreview").style; let previewico = [ 
                 document.getElementById("iconpre1").style, document.getElementById("iconpre2").style, document.getElementById("iconpre3").style, document.getElementById("iconpre4").style,
                 document.getElementById("iconpre6").style, document.getElementById("iconpre7").style, document.getElementById("iconpre8").style ]
@@ -2362,7 +2289,7 @@
                         <!-- Channels Submenu -->
                         <div class="win98post" style="margin-left: 20000px; margin-top: -83px; width:89px; height: 20px;" id="channelssubmenu"
                             onmouseover="channelsopen()" onmouseout="channelsclose()">
-                            <div class="disabledfont" style="margin-left: 20px; margin-top: 3px">(Empty)</div> </div>
+                            <div class="disabledfont" style="margin-left: 20px; margin-top: 3px">(Empty)</div></div>
                                 
                             <!-- links submenu -->
                         <div class="win98post" style="margin-left: 20000px; margin-top: -63px; width: 228px; height:60px" id="linkssubmenu" 
@@ -2390,12 +2317,10 @@
 
 <!-- Documents menu rendering ------------------------------------------------------------------------------>
                         
-                    <div class="win98post" style="margin-left: 20000px; margin-top: -264px; width: 160px; height:108px" id="documentsmenu" 
-                         onmouseover="documentsopen()" onmouseout="documentsclosed()"> 
+                    <div class="win98post" style="margin-left: 20000px; margin-top: -264px; width: 160px; height:108px" id="documentsmenu" onmouseover="documentsopen()" onmouseout="documentsclosed()"> 
                         <!-- My Documents -->
                         <div class="submenu20"><div class="menudocuments1"></div><label><labc> My Documents </labc></label></div>
-                        <div class="startmenusplitter"> </div>
-                        
+                        <div class="startmenusplitter"></div>
                         <div class="submenu20" onmouseover="vherstyopen()" onmouseout="vherstyclose()" id="vherstymenu">
                             <div class="menufavouritesfolder"></div><label><labc> Very Vhersty </labc></label><div class="smenuarrow" id="submenuarrow24"></div></div>
                             
@@ -2414,7 +2339,8 @@
                                 
                             <div class="submenu20" onclick="win98load()"><div class="menufavouriteslink"></div><label><labc>Windows 98 Development</labc></label></div>
                             <div class="submenu20" onclick="csgoload()"><div class="menufavouriteslink"></div><label><labc>CSGO Funny Moments</labc></label></div>
-                    </div></div>
+                        </div>
+                    </div>
                      
 <!-- Settings menu rendering ------------------------------------------------------------------------------>
                         
@@ -2437,7 +2363,8 @@
                         <div class="win98post" style="margin-left:-20000px; margin-top:-50px; width:170px; height:40px" id="activedesktopsubmenu" onmouseover="settingsactivedesktopopen()" onmouseout="settingsactivedesktopclose()">
                             <div class="submenu20" style="cursor: pointer;"><label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="messageopen(); menuclosed()"> 🧮 brain go brrrrr </label></div>
                             <div class="submenu20" style="cursor: pointer;"><label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="vunnytask(); vunnypositionreset(); menuclosed()"> 👿 very.unvunny</label></div>
-                    </div></div>
+                        </div>
+                    </div>
                               
 <!-- Find menu rendering ------------------------------------------------------------------------------>
                                 
