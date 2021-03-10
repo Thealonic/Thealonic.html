@@ -1,6 +1,20 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll; padding-right: 4px;">
 <ul>
+<li><strong style="color: var(--atext);"><strong style="color: var(--atext);">1021 March 9th (210309)</strong></strong><br />
+<ul>
+<li>Display Properties optimisation<strong><br /></strong>
+<ul>
+<li>Optimisation to page backgrounds selection.</li>
+<li>Complete rehaul of the colour picker to be more JS optimised.</li>
+<li>Optimised how Schemes deal with colours.</li>
+<li>More button CSS optimisation for buttons that weren't adjusted from yesterday.</li>
+<li>Adjustments to alignments in Appearance and Effect tabs.</li>
+</ul>
+</li>
+<li>Tweaks to how window counting is handled.</li>
+</ul>
+</li>
 <li><strong style="color: var(--atext);">2021 March 9th (210309)</strong><br />
 <ul>
 <li>Tons of backend tweaks.<br />
@@ -103,7 +117,7 @@
 <li>Command Prompt Updates<strong><br /></strong>
 <ul>
 <li>Replaced the &ldquo;load&rdquo; config with it being stacked into the &lsquo;fetch&rsquo; command, anything currently in load will go to the config to default.</li>
-<li>Optimised the 'mount local&rsquo; command to not require as many checks and to not be as &ldquo;gate keepy&rdquo;.</li>
+<li>Optimised the &lsquo;mount local&rsquo; command to not require as many checks and to not be as &ldquo;gate keepy&rdquo;.</li>
 <li><strong>Added reset commands</strong> for most windows through the &lsquo;reset&rsquo; function.</li>
 </ul>
 </li>
