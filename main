@@ -58,7 +58,7 @@
                     --scrollbar: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/scrollbarempty.png');
                     
                     --white: #ffffff; --lightg: #dfdfdf;  --silver: #c0c0c0; --midgray: #ababab; --gray: #808080; --black: #0a0a0a; --blue: #0000ff; --curactivetitle: #ffffff;
-                    --prussian: #00207c ; --wincyan: #008080; --yellow: #ffff00; --font: #0000000; --fonttitle: #ffffff; --hover: #ffffff; --atext: #000000; --curactivetitle: #ffffff;
+                    --prussian: #00207c ; --wincyan: #008080; --yellow: #ffff00; --font: #0000000; --fonttitle: #ffffff; --hover: #ffffff; --atext: #000000; --curinactivetitle: #ffffff;
                     --taskbarstarttop1: #808080; --taskbarstarttop2: #0a0a0a; --taskbarstartbottom1: #ffffff; --taskbarstartbottom2: #dfdfdf; --alwayswhite: #ffffff; --alwaysblack: #000000;
                     --taskbar1top1: #808080; --taskbar1top2: #0a0a0a; --taskbar1bottom1: #ffffff; --taskbar1bottom2: #dfdfdf; --taskbar2top1: #ffffff; --taskbar2top2: #dfdfdf; --taskbar2bottom1: #808080; --taskbar2bottom2: #0a0a0a; 
                     --taskbar3top1: #ffffff; --taskbar3top2: #dfdfdf; --taskbar3bottom1: #808080; --taskbar3bottom2: #0a0a0a; --taskbar4top1: #ffffff; --taskbar4top2: #dfdfdf; --taskbar4bottom1: #808080; --taskbar4bottom2: #0a0a0a; 
@@ -96,7 +96,7 @@
             .filler {height: 2px}
             /* custom css for post windows apposed to the default win98 css */
             .win98post{box-shadow: inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; position:fixed; color:var(--font)}
-            .title-bar-98{font-weight: 700; color: var(--fonttitle); font-size: 11px; background-image: var(--inactive); height: 18px; width: 100%; background-size: cover}
+            .title-bar-98{font-weight: 700; color: var(--curinactivetitle); font-size: 11px; background-image: var(--inactive); height: 18px; width: 100%; background-size: cover}
             .window-body{margin: 8px; color:var(--font)}
 
             /* window  post handling */
@@ -427,7 +427,7 @@
 
         <script>
             var cat = document.getElementById("cat").style; catwin = document.getElementById("catwindow").style; cattext = document.getElementById("cattext").style; catimg = document.getElementById("catimage").style//#ref5014  #ref2000
-            function catactive() { calupdate(); cat.zIndex = cal; vunnyactive(); pyroButtonOpen = false; cattext.color = curactivetitle; catwin.backgroundImage = currentactiveheader; cat.marginLeft = "0px"} //#ref5027 + //#ref5028 / //#ref0033
+            function catactive() { calupdate(); cat.zIndex = cal; vunnyactive(); pyroButtonOpen = false; cattext.color = curactivetitle; catwin.backgroundImage = curactiveheader; cat.marginLeft = "0px"} //#ref5027 + //#ref5028 / //#ref0033
             function catclose() { inactiveall(); pyroButtonOpen = true; window2 = false; pyrotabs = pyrotabs - 1; pyrowindow(); cat.marginLeft = "-20000px"} //#ref5029
             function catminimize() { cat.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 1; pyrocurrentopen()} //#ref5030
         </script>
@@ -444,7 +444,7 @@
         
         <script>
             var pyro = document.getElementById("pyro").style, pyrowin = document.getElementById("pyrowindow").style, pyroimg = document.getElementById("pyroimage").style, pyrotxt = document.getElementById("pyrotext").style //#ref5014 #ref2001
-            function pyroactive() { calupdate(); pyro.zIndex = cal; vunnyactive(); pyroButtonOpen = false; pyrotext.style.color = curactivetitle; pyrowin.backgroundImage = currentactiveheader; pyro.marginLeft = "0px"} //#ref5027 + //#ref5028 / //#ref0033
+            function pyroactive() { calupdate(); pyro.zIndex = cal; vunnyactive(); pyroButtonOpen = false; pyrotext.style.color = curactivetitle; pyrowin.backgroundImage = curactiveheader; pyro.marginLeft = "0px"} //#ref5027 + //#ref5028 / //#ref0033
             function pyroclose() { inactiveall(); pyroButtonOpen = true; window1 = false; pyrotabs = pyrotabs - 1; pyrowindow(); pyro.marginLeft = "-20000px"} //#ref5029
             function pyrominimize() { pyro.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 1; pyrocurrentopen()} //#ref5030
         </script>
@@ -465,6 +465,42 @@
                 if (tick == 3) { pyroimg.backgroundImage = github + "img/windows/ezgif-2-c475330a8091.gif')"; catimg.backgroundImage = github + "img/windows/Untitled-5.jpg')"}} //default image
             function vunnypositionreset() {pyro.left = "12%"; pyro.top = "58%"; cat.left = "4%"; cat.top = "68%"} //#ref5031 for #ref2000 & #ref2001
             function vunnyminimize(){ inactiveall(); pyro.marginLeft = "-20000px"; cat.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 2} //#ref5030 for #ref2000 & #ref2001
+
+            var myPix = new Array(
+                github + "img/Funni/1.jpg')", github + "img/Funni/2.jpg')", github + "img/Funni/3.jpg')", github + "img/Funni/4.jpg')", github + "img/Funni/5.jpg')",
+                github + "img/Funni/6.jpg')", github + "img/Funni/7.jpg')", github + "img/Funni/8.png')", github + "img/Funni/9.jpg')", github + "img/Funni/10.jpg')",
+                github + "img/Funni/11.jpg')", github + "img/Funni/12.jpg')", github + "img/Funni/13.jpg')", github + "img/Funni/14.jpg')", github + "img/Funni/15.jpg')",
+                github + "img/Funni/16.jpg')", github + "img/Funni/17.jpg')", github + "img/Funni/18.jpg')", github + "img/Funni/19.jpg')", github + "img/Funni/20.jpg')",
+                github + "img/Funni/21.jpg')", github + "img/Funni/22.jpg')", github + "img/Funni/23.jpg')", github + "img/Funni/24.png')", github + "img/Funni/25.jpg')",
+                github + "img/Funni/26.jpg')", github + "img/Funni/27.png')", github + "img/Funni/28.png')", github + "img/Funni/29.jpg')", github + "img/Funni/30.jpg')",
+                github + "img/Funni/31.jpg')", github + "img/Funni/32.jpg')", github + "img/Funni/33.jpg')", github + "img/Funni/34.jpg')", github + "img/Funni/35.jpg')",
+                github + "img/Funni/36.jpg')", github + "img/Funni/37.jpg')", github + "img/Funni/38.png')", github + "img/Funni/39.jpg')", github + "img/Funni/40.jpg')");
+            
+            var r_text = new Array (); 
+                r_text[0] = "frog"; r_text[1] = "bueno"; r_text[2] = "helpful book"; r_text[3] = "Going down under"; r_text[4] = "Soviet Nun"; 
+                r_text[5] = "Optic fibre cable"; r_text[6] = "Cum Dungeon"; r_text[7] = "You guys wipe?"; r_text[8] = "Bojack horseman (IRL)"; r_text[9] = "Froggers"; 
+                r_text[10] = "Hello, mr freeman."; r_text[11] = "ur toes, hand em over"; r_text[12] = "December 8, 1980"; r_text[13] = "Maxcumfoe"; r_text[14] = "kity"; 
+                r_text[15] = ""; r_text[16] = "ok epic"; r_text[17] = "Adventure time fans"; r_text[18] = "Sinking feeling"; r_text[19] = "LinusDeadTips"; 
+                r_text[20] = "New dis, who phone?"; r_text[21] = "life style"; r_text[22] = "Wide Phil"; r_text[23] = "fly eater"; r_text[24] = "Grand Theft Alien"; 
+                r_text[25] = "Emoji Jackson"; r_text[26] = "next time eat a salad"; r_text[27] = "BORN TO FUCK"; r_text[28] = "Homer Himphom"; r_text[29] = "Jojo reference"; 
+                r_text[30] = "howdy partner"; r_text[31] = "cat"; r_text[32] = "december 2018"; r_text[33] = ";)"; r_text[34] = "connect 4"; 
+                r_text[35] = "yeah I like ASS"; r_text[36] = "FUCK HARDER SNAKE"; r_text[37] = "Korean Border"; r_text[38] = ":)"; r_text[39] = "It seems today"; 
+            
+            var pyrobutton = document.getElementById("pyrobutton");
+            var randomNum = Math.floor(Math.random() * myPix.length), randomNum2 = 0, tick = 3, beforehand = "💯 ";
+            function pyroshuffle(){ //#ref2002
+                if (tick !== 0){ randomNum2 = Math.floor(Math.random() * myPix.length);
+                    if(randomNum2 !== randomNum){randomNum = randomNum2
+                        pyrotext.textContent = beforehand + r_text[randomNum]; 
+                        pyroimg.backgroundImage = myPix[randomNum]; randomNum = randomNum2;
+                    } else { randomNum2 = Math.floor(Math.random() * myPix.length); randomNum = randomNum2;
+                        pyrotxt.textContent = beforehand + r_text[randomNum]; 
+                        pyroimg.backgroundImage = + myPix[randomNum]; randomNum = randomNum2;}
+                    if(tick == 3){ pyrobutton.textContent = "Probably!"}
+                    if(tick == 2){ pyrobutton.textContent = "Maybe?"}
+                    if(tick == 1){ pyrobutton.textContent = "No."} tick = tick - 1;
+                } else { pyro.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; window1 = false; pyrowindow(); inactiveall();
+                pyrobutton.textContent = "Definately"; pyrotxt.textContent = '💯 Wubba lubba dub dub!';}}
         </script>
         
 <!-- Embedded Media Player ------------------------------------------------------------------------------>
@@ -481,10 +517,11 @@
                         <!-- Left side of the top container -->
                         <div class="small_seperator" style="margin-top:1px; height:17px;"></div> <!-- Left side of the Bottom container -->
                         <div style="position:absolute; margin-left:11px; margin-top:5px;">A<underline>d</underline>dress</div>
-                        <ul class="tree-view" style="position:absolute; width:400px; height:9px; margin-left:55px;" id="playertv">
-                            <div class="menufavouriteslink" style="position:absolute; margin-top:-5px; margin-left:-5px;"></div>
-                            <input type="text" style="margin-top: -6px; margin-left:16px; background-color: rgba(255, 255, 255, 0); color: var(--text); width:385px;" id="mediaplayer"></input></ul>
-                            <button id="mediain" onclick="mediainput()" value="" style="position:absolute; margin-left:-20000px"></button>
+                        <ul class="tree-view" style="position:absolute; width:406px; height: 17px; padding:2px; margin-left:55px" id="playertv">
+                            <div class="menufavouriteslink" style="position:absolute; margin-top:-1px;"></div>
+                            <input type="text" style="margin-left:21px; margin-top:-2px; background-color: rgba(0,0,0,0); color: var(--text);" id="mediaplayer"></input>
+                            <div class="drop-down-button" style="margin-top:-19px;"><div class="arrowdisableddown"></div></div></ul>
+                        <button id="mediain" onclick="mediainput()" value="" style="position:absolute; margin-left:-20000px"></button>
                         
                         <div class="postlinks-container" style="float:right; height:22px; width:52px; cursor:pointer;" onclick="videolinkdropdown()">
                             <div style="position: absolute; margin-left:12px; margin-top:5px;">Links
@@ -508,7 +545,7 @@
                         <div class="big_seperator" style="float:right; margin-right:-4px; margin-top:0px; height:21px;"></div> 
                         
                         <div style="float:right; height:22px; width:49px; margin-right:-6px;" onpress="mediainput()">
-                            <div class="explorergo" style="margin-left:5.5px;"></div> <div class="reflinkblack" style="margin-top:5px;">Go</div></div>
+                            <div class="explorergo" style="margin-left:4px;"></div> <div class="reflinkblack" style="margin-top:5px;">Go</div></div>
                     </fieldset>
                 </div>
 
@@ -547,12 +584,12 @@
             function videolinkdropdownclose(){videolink.marginLeft = "-20000px"; videolinksdrop = false}
             
             var embed = document.getElementById("embed").style, embedwin = document.getElementById("embedwindow").style; embedtext = document.getElementById("embedtext").style; //#ref5014
-            function embedactive() {calupdate(); embed.zIndex = cal; embedwin.backgroundImage = currentactiveheader; embed.marginLeft = "0px"; embedButtonOpen = false; 
+            function embedactive() {calupdate(); embed.zIndex = cal; embedwin.backgroundImage = curactiveheader; embed.marginLeft = "0px"; embedButtonOpen = false; 
                 taskapp4font.color = taskbartextpressed; embedtext.color = curactivetitle; embedtaskbar.backgroundImage = github + "img/scrollbarempty.png')"; embedtaskbar.backgroundColor = curcolwhite; //#ref5028
                 docelem.style.setProperty('--taskbar4top1', curcolgray); docelem.style.setProperty('--taskbar4top2', curcolblack); 
                 docelem.style.setProperty('--taskbar4bottom1', curcolwhite); docelem.style.setProperty('--taskbar4bottom2', curcollightg)} //#ref5028
             function embedclose() {embed.marginLeft = "-20000px"; embedtaskbar.marginLeft = "-20000px"; task4true = false; task4on = false; taskreset(); stopVideo()}
-            function embedpositionreset() {calupdate(); embed.left = "300px"; embed.top = "200px"; embed.zIndex = cal; embedwin.backgroundImage = currentactiveheader; embedactive()}
+            function embedpositionreset() {calupdate(); embed.left = "300px"; embed.top = "200px"; embed.zIndex = cal; embedwin.backgroundImage = curactiveheader; embedactive()}
             function embedminimize(){inactiveall(); embed.marginLeft = "-20000px"; embedButtonOpen = true}
 
             var mediaURLin; document.getElementById("mediaplayer").addEventListener("keyup", function(event) { //button listener while prompt text is active.
@@ -642,7 +679,7 @@
                 playerfs.width = "1068px"; playertv.width = "908px"; docelem.style.setProperty('--slider', "1056px"); embedmaximize.backgroundPosition = "-303px -215px"; embedtitle.title = "Restore down"; playstateupdate()
             } else { fullscreenactive = false; playerupdate()
                 document.getElementById("player").style.width = "560px"; document.getElementById("player").style.height = "315px"; playertext.style.width = "552px"; playerws.width = "550px"; playerul.width = "560px"; 
-                playerfs.width = "562px"; playertv.width = "400px"; docelem.style.setProperty('--slider', "550px"); embedmaximize.backgroundPosition = "-98px -215px"; embedtitletitle = "Maximize"; playstateupdate()}}
+                playerfs.width = "562px"; playertv.width = "406px"; docelem.style.setProperty('--slider', "550px"); embedmaximize.backgroundPosition = "-98px -215px"; embedtitletitle = "Maximize"; playstateupdate()}}
 
             //desktop icons
             function twilightload() {embedtask(); videoclear(); videolinkdropdownclose(); currentplaylist = ""; 
@@ -753,13 +790,13 @@
 
         <script>
             var message = document.getElementById("message").style, messagewin = document.getElementById("messagewindow").style, messagetext = document.getElementById("messagetext").style; //#ref5014
-            function messageactive() {calupdate(); message.zIndex = cal; messagewin.backgroundImage = currentactiveheader; messagetext.color = curactivetitle} 
+            function messageactive() {calupdate(); message.zIndex = cal; messagewin.backgroundImage = curactiveheader; messagetext.color = curactivetitle} 
             function messageclose(){message.marginLeft = "-20000px"}
-            function messageopen(){calupdate(); message.marginLeft = "0px"; message.left = "77%"; message.top = "62%"; message.zIndex = cal; messagewin.backgroundImage = currentactiveheader}
+            function messageopen(){calupdate(); message.marginLeft = "0px"; message.left = "77%"; message.top = "62%"; message.zIndex = cal; messagewin.backgroundImage = curactiveheader}
             
             var patchlogs = "https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/patch%20logs";
             var notes = document.getElementById("note").style, notewin = document.getElementById("notewindow").style, notetext = document.getElementById("notetext").style; //#ref5014
-            function patchnotesactive() {calupdate(); notewin.backgroundImage = currentactiveheader; notetext.color = curactivetitle; notes.zIndex = cal; 
+            function patchnotesactive() {calupdate(); notewin.backgroundImage = curactiveheader; notetext.color = curactivetitle; notes.zIndex = cal; 
                 taskapp5font.color = taskbartextpressed; patchnotesButtonOpen = false; patchnotestaskbar.backgroundImage = github + "img/scrollbarempty.png')"; patchnotestaskbar.backgroundColor = curcolwhite; 
                 docelem.style.setProperty('--taskbar5top1', curcolgray); docelem.style.setProperty('--taskbar5top2', curcolblack);
                 docelem.style.setProperty('--taskbar5bottom1', curcolwhite); docelem.style.setProperty('--taskbar5bottom2', curcollightg)}
@@ -839,7 +876,7 @@
         
         <script>
             var docclock = document.getElementById("clock").style; docclockwin = document.getElementById("clockwindow").style; //#ref5014
-            function clockactive() {calupdate(); docclock.zIndex = cal; docclockwin.backgroundImage = currentactiveheader}
+            function clockactive() {calupdate(); docclock.zIndex = cal; docclockwin.backgroundImage = curactiveheader}
             function clockclose() {inactiveall(); docclock.marginLeft = "-20000px"; docclock.right = "-100%"; monthdropdefa(); yeardropbackfa()}
             function clockopen() {clockactive(); docclock.left = "75%"; docclock.top = "50%"; docclock.marginLeft = "0px"; clocku()}
             
@@ -858,8 +895,25 @@
             function yearadd() {yearmath = yearmath + 1; clocku()}          function yearsub() {yearmath = yearmath - 1; clocku()}
         </script>
 
-<!-- notepad rendering ------------------------------------------------------------------------------------->
+<!-- Internet Explorer rendering ------------------------------------------------------------------------------------->
         <div class="win98post" style="z-index:100; margin-left:-20000px" onmousedown="notepadactive();" id="notepad"> <!--#ref2007-->
+            <div class="win98titlebarbutton"  style="margin-right: 2px;" onclick="notepadclose()"><div class="close"></div></div>
+            <div class="win98titlebarbutton" title="Minimize" onclick="notepadminimize();"> <div class="minimize"></div></div>
+            <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
+            <div class="title-bar-98" id="notepadwindow"> <div class="title-bar-text" id="notepadtitle">📄 Notepad</div></div>
+            <div class="window-body" style="margin:1px">
+                <div style="margin:1px;">
+                    <div class="drop-down-selc" style="width:25px"><underline>F</underline>ile</div>
+                    <div class="drop-down-selc" style="width:26px"><underline>E</underline>dit</div>
+                    <div class="drop-down-selc" style="width:41px"><underline>S</underline>earch</div>
+                    <div class="drop-down-selc" style="width:30px"><underline>H</underline>elp</div>
+                </div>
+                <ul class="tree-view" style="padding:2px; width:904px; height:604px"><iframe src="https://www.bing.com/" style="width:900px; height:600px"></iframe></ul>
+        </div></div>
+
+
+<!-- notepad rendering ------------------------------------------------------------------------------------->
+        <div class="win98post" style="margin-left:-20000px" onmousedown="notepadactive();" id="notepad"> <!--#ref2007-->
             <div class="win98titlebarbutton"  style="margin-right: 2px;" onclick="notepadclose()"><div class="close"></div></div>
             <div class="win98titlebarbutton" title="Minimize" onclick="notepadminimize();"> <div class="minimize"></div></div>
             <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
@@ -878,11 +932,11 @@
         <script>
             var notepad = document.getElementById("notepad").style, notepadwin = document.getElementById("notepadwindow").style, notepadtitle = document.getElementById("notepadtitle").style;//#ref5014
             function notepadactive() {calupdate(); notepad.zIndex = cal; taskapp7font.color = taskbartextpressed; notepadtitle.color = curactivetitle;
-                notepadwin.backgroundImage = currentactiveheader; notepad.marginLeft = "0px"; notepadButtonOpen = false; notepadtaskbar.backgroundImage = github + "img/scrollbarempty.png')"; notepadtaskbar.backgroundColor = curcolwhite; //#ref5028
+                notepadwin.backgroundImage = curactiveheader; notepad.marginLeft = "0px"; notepadButtonOpen = false; notepadtaskbar.backgroundImage = github + "img/scrollbarempty.png')"; notepadtaskbar.backgroundColor = curcolwhite; //#ref5028
                 docelem.style.setProperty('--taskbar7top1', curcolgray); docelem.style.setProperty('--taskbar7top2', curcolblack); //#ref5028
                 docelem.style.setProperty('--taskbar7bottom1', curcolwhite); docelem.style.setProperty('--taskbar7bottom2', curcollightg)} //#ref5028
             function notepadclose() {notepad.marginLeft = "-20000px"; notepadtaskbar.marginLeft = "-20000px"; task7true = false; task7on = false; taskreset(); notepadrestart()}
-            function notepadpositionreset() {calupdate(); notepad.left = "375px"; notepad.top = "217px"; notepad.zIndex = cal; notepadwin.backgroundImage = currentactiveheader; notepadactive()}
+            function notepadpositionreset() {calupdate(); notepad.left = "375px"; notepad.top = "217px"; notepad.zIndex = cal; notepadwin.backgroundImage = curactiveheader; notepadactive()}
             function notepadminimize(){inactiveall(); notepad.marginLeft = "-20000px"; notepadButtonOpen = true}
         </script>
         
@@ -905,11 +959,11 @@
         <script>
             var prompt = document.getElementById("prompt").style, promptwin = document.getElementById("promptwindow").style, prompttitle = document.getElementById("prompttitle").style;//#ref5014
             function promptactive() {calupdate(); prompt.zIndex = cal; taskapp6font.color = taskbartextpressed; prompttitle.color = curactivetitle;
-                promptwin.backgroundImage = currentactiveheader; prompt.marginLeft = "0px"; promptButtonOpen = false; prompttaskbar.backgroundImage = github + "img/scrollbarempty.png')"; prompttaskbar.backgroundColor = curcolwhite; //#ref5028
+                promptwin.backgroundImage = curactiveheader; prompt.marginLeft = "0px"; promptButtonOpen = false; prompttaskbar.backgroundImage = github + "img/scrollbarempty.png')"; prompttaskbar.backgroundColor = curcolwhite; //#ref5028
                 docelem.style.setProperty('--taskbar6top1', curcolgray); docelem.style.setProperty('--taskbar6top2', curcolblack); //#ref5028
                 docelem.style.setProperty('--taskbar6bottom1', curcolwhite); docelem.style.setProperty('--taskbar6bottom2', curcollightg)} //#ref5028
             function promptclose() {prompt.marginLeft = "-20000px"; prompttaskbar.marginLeft = "-20000px"; task6true = false; task6on = false; taskreset(); promptrestart()}
-            function promptpositionreset() {calupdate(); prompt.left = "300px"; prompt.top = "200px"; prompt.zIndex = cal; promptwin.backgroundImage = currentactiveheader; promptactive()}
+            function promptpositionreset() {calupdate(); prompt.left = "300px"; prompt.top = "200px"; prompt.zIndex = cal; promptwin.backgroundImage = curactiveheader; promptactive()}
             function promptminimize(){inactiveall(); prompt.marginLeft = "-20000px"; promptButtonOpen = true}
         
             var datestring, config, loadedconfig, config, inprompt = "", loaded, consolein, imageElement, imageElementBack, upkeyin; //global varable storage.
@@ -1316,45 +1370,45 @@
                         function wallpapercust() {      currentsch.textContent="(Custom)"} //changes text on current active theme to "custom" #ref0023
 
                         function darkmode(){ pretaskbartxt = "#9f9f9f"; pretaskbartxtprs = "#ffffff"; preactivetitle = "#ffffff"; preinactivetitle = "#ffffff"; //#ref5001 //changes preview theme to darkmode
-                            precurrentactiveheader = github + "img/title-bar%20postheader-darkmodeactive.png')"; precurinactivehead = github + "img/title-bar%20postheader-darkmode.png')"; //#ref5002
+                            precuractiveheader = github + "img/title-bar%20postheader-darkmodeactive.png')"; precurinactivehead = github + "img/title-bar%20postheader-darkmode.png')"; //#ref5002
                             precolwhite = "#545454";   precollightg = "#9f9f9f"; precolsilver = "#3f3f3f"; precolmidgray = "#ababab"; precolgray = "#292929"; precolblack = "#000000"; precolblue = "#fccc39"; //#ref5003
                             precolprussian = "#00207c"; precolwincyan = "#008080"; precolyellow = "#c0c0c0"; precolfont = "#c0c0c0"; precolfonttitle = "#ffffff"; curcolhover = "#ffffff"; precolatext = "#ffffff"; //#ref5003
-                            docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 1; shuffleflop = 1; //#ref5004
+                            docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader); preinvert = 1; shuffleflop = 1; //#ref5004
                             docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')"); cwpp = "#292929";} //#ref5000//#ref5005
                             
                         function tankmode(){ pretaskbartxt = "#000000"; pretaskbartxtprs = "#000000"; preactivetitle = "#ffffff"; preinactivetitle = "#607060"; //#ref5001 //changes preview theme to a ww1 inspired theme with army greens.
-                            precurinactivehead = github + "img/title-bar%20postheaderinactivetank.png')"; precurrentactiveheader = github + "img/title-bar%20postheaderactivetank.png')"; //#ref5002
+                            precurinactivehead = github + "img/title-bar%20postheaderinactivetank.png')"; precuractiveheader = github + "img/title-bar%20postheaderactivetank.png')"; //#ref5002
                             precolwhite = "#7d8f7d";   precollightg = "#607060"; precolsilver = "#607060"; precolmidgray = "#404840"; precolgray = "#404840"; precolblack = "#0a0a0a"; precolblue = "#ffffff"; //#ref5003
                             precolprussian = "#481212" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#000000"; precolfonttitle = "#ffffff"; curcolhover = "#ffffff"; precolatext = "#000000"; //#ref5003
-                            docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 0; shuffleflop = 0; //#ref5004
+                            docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader); preinvert = 0; shuffleflop = 0; //#ref5004
                             docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')"); cwpp = "#607060";} //#ref5000//#ref5005
                         
                         function lightmode(){ pretaskbartxt = "#000000"; pretaskbartxtprs = "#000000"; preactivetitle = "#ffffff"; preinactivetitle = "#ffffff"; //#ref5001 //changes preview theme to default windows 98.
-                            precurinactivehead = github + "img/title-bar%20postheaderinactive.png')"; precurrentactiveheader = github + "img/title-bar%20postheader.png')"; //#ref5002
+                            precurinactivehead = github + "img/title-bar%20postheaderinactive.png')"; precuractiveheader = github + "img/title-bar%20postheader.png')"; //#ref5002
                             precolwhite = "#ffffff";   precollightg = "#dfdfdf"; precolsilver = "#c0c0c0"; precolmidgray = "#ababab"; precolgray = "#808080"; precolblack = "#0a0a0a"; precolblue = "#0000FF"; //#ref5003
                             precolprussian = "#00207c" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#000000"; precolfonttitle = "#ffffff"; precolhover = "#ffffff"; precolatext = "#000000"; //#ref5003
-                            docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 0; shuffleflop = 0; //#ref5004
+                            docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader); preinvert = 0; shuffleflop = 0; //#ref5004
                             docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')"); cwpp = "#c0c0c0";} //#ref5000//#ref5005
                             
                         function neonmode(){ pretaskbartxt = "#000000"; pretaskbartxtprs = "#000000"; preactivetitle = "#ffffff"; preinactivetitle = "#00554d"; //#ref5001 //Vapourwave theme, using pastel pink and pastel blue.
-                            precurinactivehead = github + "img/title-bar%20postheaderneon.png')"; precurrentactiveheader = github + "img/title-bar%20postheaderneonactive.png')"; //#ref5002
+                            precurinactivehead = github + "img/title-bar%20postheaderneon.png')"; precuractiveheader = github + "img/title-bar%20postheaderneonactive.png')"; //#ref5002
                             precolwhite = "#f7dbd7"; precollightg = "#fae0e4"; precolsilver = "#f4c1ca"; precolmidgray = "#e08998"; precolgray = "#de4560"; precolblack = "#0a0a0a"; precolblue = "#00bfbc"; //#ref5003
                             precolprussian = "#a2dbd2" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#000000"; precolfonttitle = "#ffffff"; precolhover = "#ffffff"; precolatext = "#000000"; //#ref5003
-                            docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 0; shuffleflop = 0; //#ref5004
+                            docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader); preinvert = 0; shuffleflop = 0; //#ref5004
                             docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')"); cwpp = "#a2dbd2";} //#ref5000//#ref5005
                         
                         function contrastmode1(){ pretaskbartxt = "#ffffff"; pretaskbartxtprs = "#0000ff"; preactivetitle = "#ffffff"; preinactivetitle = "#000000"; //#ref5001  //high contrast theme (cyan and blue)
-                            precurinactivehead = github + "img/title-bar%20postheaderinactivecontrast.png')"; precurrentactiveheader = github + "img/title-bar%20postheaderactivecontrast.png')"; //#ref5002
+                            precurinactivehead = github + "img/title-bar%20postheaderinactivecontrast.png')"; precuractiveheader = github + "img/title-bar%20postheaderactivecontrast.png')"; //#ref5002
                             precolwhite = "#000000"; precollightg = "#dfdfdf"; precolsilver = "#000000"; precolmidgray = "#ababab"; precolgray = "#808080"; precolblack = "#ffffff"; precolblue = "#00ffff"; //#ref5003
                             precolprussian = "#0000ff" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#ffff00"; precolfonttitle = "#000000"; precolhover = "#ffffff"; precolatext = "#ffffff"; //#ref5003
-                            docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 1; shuffleflop = 1;//#ref5004
+                            docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader); preinvert = 1; shuffleflop = 1;//#ref5004
                             docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')"); cwpp = "#0000ff";} //#ref5000//#ref5005
                             
                         function contrastmode2(){ pretaskbartxt = "#ffffff"; pretaskbartxtprs = "#0000ff"; preactivetitle = "#000000"; preinactivetitle = "#000000"; //#ref5001 //high contrast theme (green and yellow)
-                            precurinactivehead = github + "img/title-bar%20postheaderinactivecontrast2.png')"; precurrentactiveheader = github + "img/title-bar%20postheaderactivecontrast2.png')"; //#ref5002
+                            precurinactivehead = github + "img/title-bar%20postheaderinactivecontrast2.png')"; precuractiveheader = github + "img/title-bar%20postheaderactivecontrast2.png')"; //#ref5002
                             precolwhite = "#000000";   precollightg = "#dfdfdf"; precolsilver = "#000000"; precolmidgray = "#ababab"; precolgray = "#808080"; precolblack = "#ffffff"; precolblue = "#00ff00"; //#ref5003
                             precolprussian = "#00ff00" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#ffff00"; precolfonttitle = "#000000"; precolhover = "#ffffff"; precolatext = "#00ff00"; //#ref5003
-                            docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precurrentactiveheader); preinvert = 1; shuffleflop = 1;
+                            docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader); preinvert = 1; shuffleflop = 1;
                             docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')"); cwpp = "#00ff00";} //#ref5000//#ref5005
                          
                         function highcontrast1() {currentcolour = "#00ffff"; fontcolour = "#000000"; backcolourpreview(); ctoggle = true; contrastscheme()} //changes the current colours to cyan and font colour to white. //#ref0021
@@ -1372,13 +1426,13 @@
                             docelem.style.setProperty('--preblack', precolblack); docelem.style.setProperty('--presilver', precolsilver); docelem.style.setProperty('--preprussian', precolprussian);
                             docelem.style.setProperty('--premidgray', precolmidgray); docelem.style.setProperty('--prewincyan', precolwincyan); docelem.style.setProperty('--preyellow', precolyellow); 
                             docelem.style.setProperty('--prefont', precolfont); docelem.style.setProperty('--prefonttitle', precolfonttitle); docelem.style.setProperty('--prehover', precolhover);
-                            docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precurrentactiveheader);
+                            docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader);
                             //adjustments to headers
                             document.getElementById("preinactive").style.color = preinactivetitle; document.getElementById("preactive").style.color = preactivetitle; document.getElementById("premessage").style.color = preactivetitle; //adjustments to headers
                             inprompt = inprompt + "Theme Preview Loaded."; println()} //logs if preview has been loaded
                         
                         function themechange() { precolourupdate(); //changes the current theme and makes the current preview colours into current active colours. #ref0001
-                            curinactivehead = precurinactivehead; currentactiveheader = precurrentactiveheader; curactivetitle = preactivetitle; curinactivetitle = preinactivetitle; //changes headers and title colours
+                            curinactivehead = precurinactivehead; curactiveheader = precuractiveheader; curactivetitle = preactivetitle; curinactivetitle = preinactivetitle; //changes headers and title colours
                             //updates current window colours that will get updated through inactive(); later
                             docelem.style.setProperty('--white', curcolwhite); docelem.style.setProperty('--gray', curcolgray); docelem.style.setProperty('--lightg', curcollightg); 
                             docelem.style.setProperty('--black', curcolblack); docelem.style.setProperty('--silver', curcolsilver); docelem.style.setProperty('--prussian', curcolprussian);
@@ -1387,7 +1441,7 @@
                             docelem.style.setProperty('--atext', curcolatext); docelem.style.setProperty('--blue', curcolblue); 
                             //start menu colour requirement update (Different to regular colours) & updates header colours // taskbar colours
                             whit = curcolhover; blac = curcolblack; prus = curcolprussian; silv = curcolsilver; yell = curcolyellow; lightg = curcollightg; gray = curcolgray; text = curcolfont; cyan = curcolwincyan;
-                            taskbartext = pretaskbartxt; taskbartextpressed = pretaskbartxtprs; curinactivehead = precurinactivehead; currentactiveheader = precurrentactiveheader; black = curcolfont; white = curcolwhite;
+                            taskbartext = pretaskbartxt; taskbartextpressed = pretaskbartxtprs; curinactivehead = precurinactivehead; curactiveheader = precuractiveheader; black = curcolfont; white = curcolwhite;
                             docelem.style.setProperty('--curactivetitle', curactivetitle); docelem.style.setProperty('--curinactivetitle', curinactivetitle); 
                             //updates startmenu button
                             docelem.style.setProperty('--taskbarstarttop1', curcolgray); docelem.style.setProperty('--taskbarstarttop2', curcolblack); 
@@ -1396,7 +1450,7 @@
                             programsclosed(); accessoriesclose(); communicationsclose(); entertainmentclose(); gamesclose(); internettoolsclose(); systemtoolsclose(); onlineservicesclose(); startupclose(); 
                             favouritesclosed(); channelsclose(); linksclose(); mediaclose(); mediaclose(); documentsclosed(); settingsclosed(); settingsclosed(); settingsactivedesktopclose(); findclosed(); vherstyclose();
                             //changes the current state of headers and adjusts icons based on invert
-                            docelem.style.setProperty('--inactive', curinactivehead); docelem.style.setProperty('--active', currentactiveheader); docelem.style.setProperty('--invert', curinvert); 
+                            docelem.style.setProperty('--inactive', curinactivehead); docelem.style.setProperty('--active', curactiveheader); docelem.style.setProperty('--invert', curinvert); 
                             inactiveall(); diskactive(); clocku(); wwpno(); //updates windows visually by looping inactive windows
                             shufflecolour(); if(shuffle == false){docelem.style.setProperty('--shuffleinvert', 0.5)} else if(shuffle == true){docelem.style.setProperty('--shuffleinvert', shuffleflop)} //mediaplayer shuffle colour correction.
                             inprompt = inprompt + "Theme Loaded."; println()} //logs if the preview theme has been turned into the current theme active.
@@ -1625,7 +1679,7 @@
         <script>
             var disk = document.getElementById("disk").style; diskwin = document.getElementById("diskwindow").style, disktext = document.getElementById("disktext").style;
             function diskactive() {calupdate(); diskButtonOpen = false; disk.marginLeft = "0px"; disk.marginTop = "0px"; disk.zIndex = cal; 
-                disktext.color = curactivetitle; diskwin.backgroundImage = currentactiveheader; taskapp3font.color = taskbartextpressed;
+                disktext.color = curactivetitle; diskwin.backgroundImage = curactiveheader; taskapp3font.color = taskbartextpressed;
                 disktaskbar.backgroundImage = github + "img/scrollbarempty.png')"; disktaskbar.backgroundColor = curcolwhite;
                 docelem.style.setProperty('--taskbar3top1', curcolgray); docelem.style.setProperty('--taskbar3top2', curcolblack);
                 docelem.style.setProperty('--taskbar3bottom1', curcolwhite); docelem.style.setProperty('--taskbar3bottom2', curcollightg)}
@@ -1671,53 +1725,9 @@
         
         <script>
             var logoff = document.getElementById("logoff").style; var logoffwin = document.getElementById("logoffwindow").style; var logofftext = document.getElementById("logofftext").style;
-            function logonactive(){calupdate(); logoff.style.zIndex = cal; logoff.style.marginLeft = "0px"; logofftext .color = curactivetitle; logoffwin.backgroundImage = currentactiveheader}
-            function logoff() {logonactive(); logoff.marginLeft = "0px"; logoff.zIndex = "100"}
+            function logonactive(){calupdate(); logoff.style.zIndex = cal; logoff.style.marginLeft = "0px"; logofftext .color = curactivetitle; logoffwin.backgroundImage = curactiveheader; logoff.marginLeft = "0px";}
             function logreset() { logoff.left = "40%"; logoff.top = "40%"; logonactive()}
             function logoffno() { logoff.marginLeft = "200000px"; logoff.zIndex = "1"}
-        </script>
-
-<!-- message box inactive toggle ------------------------------------------------------------------------------>
-        <script>    
-            function inactiveall() { var timer = 0; if (timer < 1){timer = 1; menuclosed(); tumblrButtonOpen = true; posttext.color = curinactivetitle;
-                //for (var i = 0; i < post.length; i++) {post[i].childNodes[4].style.backgroundImage = curinactivehead}; //unoptimised as shit until able to find a proper caller
-                taskapp1font.color = taskbartext; tumblrtaskbar.backgroundImage = "none"; tumblrtaskbar.backgroundColor = silv;
-                docelem.style.setProperty('--taskbar1top1', curcolwhite); docelem.style.setProperty('--taskbar1top2', curcollightg);
-                docelem.style.setProperty('--taskbar1bottom1', curcolgray); docelem.style.setProperty('--taskbar1bottom2', curcolblack);
-                
-                pyroButtonOpen = true; pyrotxt.color = curinactivetitle; cattext.color = curinactivetitle; pyrowin.backgroundImage = curinactivehead; catwin.backgroundImage = curinactivehead; 
-                taskapp2font.color = taskbartext; unvunnytaskbar.backgroundImage = "none"; unvunnytaskbar.backgroundColor = silv;
-                docelem.style.setProperty('--taskbar2top1', curcolwhite); docelem.style.setProperty('--taskbar2top2', curcollightg);
-                docelem.style.setProperty('--taskbar2bottom1', curcolgray); docelem.style.setProperty('--taskbar2bottom2', curcolblack);
-                
-                diskButtonOpen = true; disktext.color = curinactivetitle; diskwin.backgroundImage = curinactivehead; 
-                taskapp3font.color = taskbartext; disktaskbar.backgroundImage = "none"; disktaskbar.backgroundColor = silv;
-                docelem.style.setProperty('--taskbar3top1', curcolwhite); docelem.style.setProperty('--taskbar3top2', curcollightg);
-                docelem.style.setProperty('--taskbar3bottom1', curcolgray); docelem.style.setProperty('--taskbar3bottom2', curcolblack);
-                    
-                embedButtonOpen = true; document.getElementById("embedtext").style.color = curinactivetitle; embedwin.backgroundImage = curinactivehead; 
-                taskapp4font.color = taskbartext; embedtaskbar.backgroundImage = "none"; embedtaskbar.backgroundColor = silv;
-                docelem.style.setProperty('--taskbar4top1', curcolwhite); docelem.style.setProperty('--taskbar4top2', curcollightg);
-                docelem.style.setProperty('--taskbar4bottom1', curcolgray); docelem.style.setProperty('--taskbar4bottom2', curcolblack);
-                
-                noteButtonOpen = true; notetext.color = curinactivetitle; notewin.backgroundImage = curinactivehead; 
-                taskapp5font.color = taskbartext; patchnotestaskbar.backgroundImage = "none"; patchnotestaskbar.backgroundColor = silv;
-                docelem.style.setProperty('--taskbar5top1', curcolwhite); docelem.style.setProperty('--taskbar5top2', curcollightg);
-                docelem.style.setProperty('--taskbar5bottom1', curcolgray); docelem.style.setProperty('--taskbar5bottom2', curcolblack);
-                
-                promptButtonOpen = true; prompttitle.color = curinactivetitle; promptwin.backgroundImage = curinactivehead; 
-                taskapp6font.color = taskbartext; prompttaskbar.backgroundImage = "none"; prompttaskbar.backgroundColor = silv;
-                docelem.style.setProperty('--taskbar6top1', curcolwhite); docelem.style.setProperty('--taskbar6top2', curcollightg);
-                docelem.style.setProperty('--taskbar6bottom1', curcolgray); docelem.style.setProperty('--taskbar6bottom2', curcolblack);
-                
-                notepadButtonOpen = true; notepadtitle.color = curinactivetitle; notepadwin.backgroundImage = curinactivehead; 
-                taskapp7font.color = taskbartext; notepadtaskbar.backgroundImage = "none"; notepadtaskbar.backgroundColor = silv;
-                docelem.style.setProperty('--taskbar7top1', curcolwhite); docelem.style.setProperty('--taskbar7top2', curcollightg);
-                docelem.style.setProperty('--taskbar7bottom1', curcolgray); docelem.style.setProperty('--taskbar7bottom2', curcolblack);
-                
-                messagewin.backgroundImage = curinactivehead; messagetext.color = curinactivetitle;
-                notewin.backgroundImage = curinactivehead; notetext.color = curinactivetitle;
-                docclockwin.backgroundImage = curinactivehead; disktext.color = curinactivetitle}}
         </script>
         
 <!-- Windows 98 desktop handling ------------------------------------------------------------------------------>
@@ -1731,8 +1741,7 @@
         
         <div id="desktop" style="width:1010px; margin-top:20px;">
             {block:Posts}
-            <post>
-                <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-right: 20px; {block:PermalinkPage}margin-left: 12.5px; {/block:PermalinkPage}position: absolute" onmousedown="tumblractive()">
+                <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-right: 20px; position: absolute">
                     <div class="win98titlebarbutton" style="margin-right:2px; margin-left:2px;" title="Close"><div class="close"></div></div>
                     <div class="win98titlebarbutton" title="Maximize" style=""> <div class="maximize"></div></div>
                     <div class="win98titlebarbutton" title="Minimize" onclick="tumblrminimize();"> <div class="minimize"></div></div>
@@ -1793,9 +1802,13 @@
                                             <div class="submenu18"><label style="margin-left: 4px; margin-top: 3px"> Set wallpaper as (Tiled) </label></div>
                                             <div class="submenu18"><label style="margin-left: 4px; margin-top: 3px"> Set wallpaper as (Centered) </label></div></div>
                                     </postdrop>
-                                </div>
-                            </fieldset>
-                        </div>
+                                    
+                                    <script>var plinksdrop = false, post = document.getElementById("desktop"), desktop = document.getElementById("desktop").style;
+                                        $(".postlinks-container").click(function(){if (plinksdrop == false){$(this).find("postdrop").css("margin-left", "49px"); plinksdrop = true 
+                                            } else if (plinksdrop == true){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false}})
+                                        $(".postlinks-container").mouseleave(function(){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false})</script>
+                                    
+                        </div></fieldset></div>
 
 <!-- Post window body ------------------------------------------------------------------------------>
                         <div class="filler"></div><div class="filler"></div>
@@ -1918,65 +1931,55 @@
                             <fieldset style="position: absolute; width: 35px; height: 11px; padding:4px; margin-left: 428px"></fieldset></div>
                     </div>
                 </div>
-            </post>
             {/block:Posts}
         </div>
         {block:NextPage}<div style="height:50px;"></div>{/block:NextPage} <!--adjusts gap at the bottom of the page-->
         {block:PostNotes}<div style="height:10px;"></div>{/block:PostNotes} <!--adjusts gap at the bottom of the page-->
         
         <script>
-            var plinksdrop = false, post = document.getElementById("desktop"), desktop = document.getElementById("desktop").style, posttext = document.getElementById("tumblrtext").style;
-            $(".postlinks-container").click(function(){if (plinksdrop == false){$(this).find("postdrop").css("margin-left", "49px"); plinksdrop = true 
-                } else if (plinksdrop == true){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false}});
-            $(".postlinks-container").mouseleave(function(){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false});
-            $(".window").click(function(){cal = cal + 1; $(this).css("z-index", cal)});
-             
-            function tumblractive() {calupdate(); tumblrButtonOpen = false; desktop.left = "0px"; document.body.style.overflowY = "scroll"; posttext.color = curactivetitle;
-                //for (var i = 0; i < post.length; i++) {post[i].childNodes[4].style.backgroundImage = currentactiveheader} 
-                taskapp1font.color = taskbartextpressed; tumblrtaskbar.backgroundImage = github + "img/scrollbarempty.png')";
+            $(".window").click(function(){tumblractive(); $(this).css("z-index", cal);
+            $(this).find(".title-bar-98").css("background-image", curactiveheader); $(this).find(".title-bar-text").css("color", curactivetitle)});
+            
+            function tumblractive(){calupdate(); desktop.left = "0px"; document.body.style.overflowY = "scroll";
+                tumblrButtonOpen = false; tumblrtaskbar.backgroundImage = github + "img/scrollbarempty.png')";
                 docelem.style.setProperty('--taskbar1top1', curcolgray); docelem.style.setProperty('--taskbar1top2', curcolblack);
                 docelem.style.setProperty('--taskbar1bottom1', curcolwhite); docelem.style.setProperty('--taskbar1bottom2', curcollightg)}
-            function tumblrminimize() { tumblrButtonOpen = true; inactiveall(); desktop.left = "-20000px"; document.body.style.overflowY = "hidden";}
+            function tumblrminimize() { tumblrButtonOpen = true; inactiveall(); desktop.left = "-20000px"; document.body.style.overflowY = "hidden"}
         </script>
+
+<!-- inactive toggle ------------------------------------------------------------------------------>
         
-<!-- Additional Page Rendering ------------------------------------------------------------------------------>
         <script> 
-            var myPix = new Array(
-                github + "img/Funni/1.jpg')", github + "img/Funni/2.jpg')", github + "img/Funni/3.jpg')", github + "img/Funni/4.jpg')", github + "img/Funni/5.jpg')",
-                github + "img/Funni/6.jpg')", github + "img/Funni/7.jpg')", github + "img/Funni/8.png')", github + "img/Funni/9.jpg')", github + "img/Funni/10.jpg')",
-                github + "img/Funni/11.jpg')", github + "img/Funni/12.jpg')", github + "img/Funni/13.jpg')", github + "img/Funni/14.jpg')", github + "img/Funni/15.jpg')",
-                github + "img/Funni/16.jpg')", github + "img/Funni/17.jpg')", github + "img/Funni/18.jpg')", github + "img/Funni/19.jpg')", github + "img/Funni/20.jpg')",
-                github + "img/Funni/21.jpg')", github + "img/Funni/22.jpg')", github + "img/Funni/23.jpg')", github + "img/Funni/24.png')", github + "img/Funni/25.jpg')",
-                github + "img/Funni/26.jpg')", github + "img/Funni/27.png')", github + "img/Funni/28.png')", github + "img/Funni/29.jpg')", github + "img/Funni/30.jpg')",
-                github + "img/Funni/31.jpg')", github + "img/Funni/32.jpg')", github + "img/Funni/33.jpg')", github + "img/Funni/34.jpg')", github + "img/Funni/35.jpg')",
-                github + "img/Funni/36.jpg')", github + "img/Funni/37.jpg')", github + "img/Funni/38.png')", github + "img/Funni/39.jpg')", github + "img/Funni/40.jpg')");
-            
-            var r_text = new Array (); 
-                r_text[0] = "frog"; r_text[1] = "bueno"; r_text[2] = "helpful book"; r_text[3] = "Going down under"; r_text[4] = "Soviet Nun"; 
-                r_text[5] = "Optic fibre cable"; r_text[6] = "Cum Dungeon"; r_text[7] = "You guys wipe?"; r_text[8] = "Bojack horseman (IRL)"; r_text[9] = "Froggers"; 
-                r_text[10] = "Hello, mr freeman."; r_text[11] = "ur toes, hand em over"; r_text[12] = "December 8, 1980"; r_text[13] = "Maxcumfoe"; r_text[14] = "kity"; 
-                r_text[15] = ""; r_text[16] = "ok epic"; r_text[17] = "Adventure time fans"; r_text[18] = "Sinking feeling"; r_text[19] = "LinusDeadTips"; 
-                r_text[20] = "New dis, who phone?"; r_text[21] = "life style"; r_text[22] = "Wide Phil"; r_text[23] = "fly eater"; r_text[24] = "Grand Theft Alien"; 
-                r_text[25] = "Emoji Jackson"; r_text[26] = "next time eat a salad"; r_text[27] = "BORN TO FUCK"; r_text[28] = "Homer Himphom"; r_text[29] = "Jojo reference"; 
-                r_text[30] = "howdy partner"; r_text[31] = "cat"; r_text[32] = "december 2018"; r_text[33] = ";)"; r_text[34] = "connect 4"; 
-                r_text[35] = "yeah I like ASS"; r_text[36] = "FUCK HARDER SNAKE"; r_text[37] = "Korean Border"; r_text[38] = ":)"; r_text[39] = "It seems today"; 
-            
-            var pyrobutton = document.getElementById("pyrobutton");
-            var randomNum = Math.floor(Math.random() * myPix.length), randomNum2 = 0, tick = 3, beforehand = "💯 ";
-            function pyroshuffle(){ //#ref2002
-                if (tick !== 0){ randomNum2 = Math.floor(Math.random() * myPix.length);
-                    if(randomNum2 !== randomNum){randomNum = randomNum2
-                        pyrotext.textContent = beforehand + r_text[randomNum]; 
-                        pyroimg.backgroundImage = myPix[randomNum]; randomNum = randomNum2;
-                    } else { randomNum2 = Math.floor(Math.random() * myPix.length); randomNum = randomNum2;
-                        pyrotxt.textContent = beforehand + r_text[randomNum]; 
-                        pyroimg.backgroundImage = + myPix[randomNum]; randomNum = randomNum2;}
-                    if(tick == 3){ pyrobutton.textContent = "Probably!";}
-                    if(tick == 2){ pyrobutton.textContent = "Maybe?";}
-                    if(tick == 1){ pyrobutton.textContent = "No.";} tick = tick - 1;
-                } else { 
-                pyro.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; window1 = false; pyrowindow(); inactiveall();
-                pyrobutton.textContent = "Definately"; pyrotxt.textContent = '💯 Wubba lubba dub dub!';}}
+            function inactiveall() { var timer = 0; if (timer < 1){timer = 1; menuclosed(); tumblrButtonOpen = true;
+                $(".win98post").find(".title-bar-98").css("background-image", curinactivehead); $(".win98post").find(".title-bar-text").css("color", curinactivetitle)
+                $(".window").find(".title-bar-98").css("background-image", curinactivehead); $(".window").find(".title-bar-text").css("color", curinactivetitle)
+                taskapp1font.color = taskbartext; tumblrtaskbar.backgroundImage = "none"; tumblrtaskbar.backgroundColor = silv
+                docelem.style.setProperty('--taskbar1top1', curcolwhite); docelem.style.setProperty('--taskbar1top2', curcollightg)
+                docelem.style.setProperty('--taskbar1bottom1', curcolgray); docelem.style.setProperty('--taskbar1bottom2', curcolblack)
+                
+                pyroButtonOpen = true; taskapp2font.color = taskbartext; unvunnytaskbar.backgroundImage = "none"; unvunnytaskbar.backgroundColor = silv
+                docelem.style.setProperty('--taskbar2top1', curcolwhite); docelem.style.setProperty('--taskbar2top2', curcollightg)
+                docelem.style.setProperty('--taskbar2bottom1', curcolgray); docelem.style.setProperty('--taskbar2bottom2', curcolblack)
+                
+                diskButtonOpen = true; taskapp3font.color = taskbartext; disktaskbar.backgroundImage = "none"; disktaskbar.backgroundColor = silv
+                docelem.style.setProperty('--taskbar3top1', curcolwhite); docelem.style.setProperty('--taskbar3top2', curcollightg)
+                docelem.style.setProperty('--taskbar3bottom1', curcolgray); docelem.style.setProperty('--taskbar3bottom2', curcolblack)
+                    
+                embedButtonOpen = true; taskapp4font.color = taskbartext; embedtaskbar.backgroundImage = "none"; embedtaskbar.backgroundColor = silv
+                docelem.style.setProperty('--taskbar4top1', curcolwhite); docelem.style.setProperty('--taskbar4top2', curcollightg)
+                docelem.style.setProperty('--taskbar4bottom1', curcolgray); docelem.style.setProperty('--taskbar4bottom2', curcolblack)
+                
+                noteButtonOpen = true; taskapp5font.color = taskbartext; patchnotestaskbar.backgroundImage = "none"; patchnotestaskbar.backgroundColor = silv
+                docelem.style.setProperty('--taskbar5top1', curcolwhite); docelem.style.setProperty('--taskbar5top2', curcollightg)
+                docelem.style.setProperty('--taskbar5bottom1', curcolgray); docelem.style.setProperty('--taskbar5bottom2', curcolblack)
+                
+                promptButtonOpen = true; taskapp6font.color = taskbartext; prompttaskbar.backgroundImage = "none"; prompttaskbar.backgroundColor = silv
+                docelem.style.setProperty('--taskbar6top1', curcolwhite); docelem.style.setProperty('--taskbar6top2', curcollightg)
+                docelem.style.setProperty('--taskbar6bottom1', curcolgray); docelem.style.setProperty('--taskbar6bottom2', curcolblack)
+                
+                notepadButtonOpen = true; taskapp7font.color = taskbartext; notepadtaskbar.backgroundImage = "none"; notepadtaskbar.backgroundColor = silv
+                docelem.style.setProperty('--taskbar7top1', curcolwhite); docelem.style.setProperty('--taskbar7top2', curcollightg)
+                docelem.style.setProperty('--taskbar7bottom1', curcolgray); docelem.style.setProperty('--taskbar7bottom2', curcolblack)}}
         </script>
 
 <!-- Taskbar Rendering ------------------------------------------------------------------------------>
@@ -2031,7 +2034,7 @@
                         <label><a href="https://paypal.me/TheaVanherst"><div class="submenu36" style="width: 142px;">
                             <div class="menurun" ></div><label><labs><underline>S</underline>upport development </labs></label></div></a></label>   
                         <!--Log off submenu -->
-                        <label><div class="submenu36" style="width: 142px;" onclick="logoff(); shutdownno();">
+                        <label><div class="submenu36" style="width: 142px;" onclick="logonactive(); shutdownno();">
                             <div class="menulogoff"></div><label><labs><underline>L</underline>og off </labs></label></div></label>  
                     </div>
 
@@ -2379,9 +2382,11 @@
 <!-- On page load handling ------------------------------------------------------------------------------>
         <script>
             $(document).ready(function(){
-                var infScr = $('body').hasClass('infinite_scrolling'); twoCol = $('body').hasClass('two_column'); $container = $('#desktop');
-                if( infScr && twoCol ){ $container.imagesLoaded(function(){ $container.masonry({ itemSelector: '.window'}) });
-                    $container.infinitescroll({ itemSelector: '.window'}, function( newElements ) {
+                var infScr = $('body').hasClass('infinite_scrolling'), twoCol = $('body').hasClass('two_column'), $container = $('#desktop');
+                if( infScr && twoCol ){ 
+                    $container.imagesLoaded(function(){$container.masonry({itemSelector:'.window', isAnimated: false})});
+                    $container.infinitescroll({itemSelector: '.window'}, 
+                    function(newElements) {
                         var $newElems = $( newElements ).css({ opacity: 0 }); 
                         var $newElemsIDs = $newElems.map(function () { return this.id; }).get();
                         //Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
@@ -2392,7 +2397,7 @@
             function updateClock(){
                 var mins = da.getMinutes() + minutemath; var hrs = da.getHours() + hourmath; var ext = "AM";
                 if(hrs > 12){ var ext = "PM"; var hrs = hrs - parseInt(12)}
-                if(hrs < 10){ var hrs = "0"+hrs} if(mins < 10){ var mins = "0"+mins}
+                if(hrs < 10){ var hrs = "0"+hrs} if(mins < 10){ var mins = "0"+ mins}
                 var currentTime = hrs + ":" + mins + " " + ext;
                 $('#showClock').html(currentTime)}
                 
