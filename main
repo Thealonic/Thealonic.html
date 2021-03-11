@@ -37,7 +37,7 @@
               
         var github = "url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/";
         var readme = "//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/README.md";
-        var updateon = "21:28pm on March 9th, 2021. [GMT]", updatedfrom = "Thea Vanherst";
+        var updateon = "00:55am on March 11th, 2021. [GMT]", updatedfrom = "Thea Vanherst";
         var currenttask = 1, cal = 5, docelem = document.documentElement;
         
         function calupdate(){inactiveall(); cal = cal + 1}
@@ -1625,15 +1625,6 @@
         </div>
         
         <script>
-            //#ref5015: changes the default positional values based on absolute values and changes to default widths / heights.
-            //#ref5016: When pressing on the (tab-number) tab, set zindex to highest tab.
-            //#ref5017: resets the index of all tabs to prevent weird z-index or positional bugs.
-            //#ref5018: changes to the current tab and adjusts height and width to overlap / prioritise the tab
-            var dcb1 = document.getElementById("dcb1").style, dcb2 = document.getElementById("dcb2").style, dcb3 = document.getElementById("dcb3").style;
-            var iconpre = document.getElementById("iconpreview").style; let previewico = [ 
-                document.getElementById("iconpre1").style, document.getElementById("iconpre2").style, document.getElementById("iconpre3").style, document.getElementById("iconpre4").style,
-                document.getElementById("iconpre6").style, document.getElementById("iconpre7").style, document.getElementById("iconpre8").style ]
-            
             var disk = document.getElementById("disk").style; diskwin = document.getElementById("diskwindow").style, disktext = document.getElementById("disktext").style;
             function diskactive() {calupdate(); diskButtonOpen = false; disk.marginLeft = "0px"; disk.marginTop = "0px"; disk.zIndex = cal; 
                 disktext.color = curactivetitle; diskwin.backgroundImage = currentactiveheader; taskapp3font.color = taskbartextpressed;
@@ -1644,6 +1635,9 @@
             function diskclose() {inactiveall(); diskButtonOpen = true; disk.marginLeft = "-20000px"; disk.marginTop = "-20000px"; disktaskbar.marginLeft = "-20000px"; task3true = false; task3on = false; taskreset()}
             function diskminimize() {inactiveall(); disk.marginLeft = "-20000px"; disk.marginTop = "-20000px"; diskButtonOpen = true}
             
+            var dcb1 = document.getElementById("dcb1").style, dcb2 = document.getElementById("dcb2").style, dcb3 = document.getElementById("dcb3").style, iconpre = document.getElementById("iconpreview").style; 
+            let previewico = [ document.getElementById("iconpre1").style, document.getElementById("iconpre2").style, document.getElementById("iconpre3").style, document.getElementById("iconpre4").style,
+                document.getElementById("iconpre6").style, document.getElementById("iconpre7").style, document.getElementById("iconpre8").style ]
             //#ref5014
             var a = document.getElementById("backgroundtab").style, b = document.getElementById("screenSavertab").style, c = document.getElementById("appearancetab").style, 
                 d = document.getElementById("effectstab").style, e = document.getElementById("settingstab").style;
@@ -1739,7 +1733,8 @@
         
         <div id="desktop" style="width:1010px; margin-top:20px;">
             {block:Posts}
-                <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-left: 20px; {block:PermalinkPage}margin-left: 12.5px; {/block:PermalinkPage}position: absolute" onmousedown="tumblractive()">
+            <post>
+                <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-right: 20px; {block:PermalinkPage}margin-left: 12.5px; {/block:PermalinkPage}position: absolute" onmousedown="tumblractive()">
                     <div class="win98titlebarbutton" style="margin-right:2px; margin-left:2px;" title="Close"><div class="close"></div></div>
                     <div class="win98titlebarbutton" title="Maximize" style=""> <div class="maximize"></div></div>
                     <div class="win98titlebarbutton" title="Minimize" onclick="tumblrminimize();"> <div class="minimize"></div></div>
@@ -1754,15 +1749,15 @@
                                 <div style="width:38px; height:21px; background-color:black; float:right;"><div class="windowsexplorerlogo"></div></div> <!-- right side of the top container -->
                                 <div class="big_seperator" style="float:right; height:21px; margin-top:0px;"></div>
                                 {block:NoteCount} 
-                                <div class="postnote-container" style="float:right; margin-top:4px; margin-right:3.5px;">{NoteCountWithLabel}</div>
+                                <div class="postnote-container" style="float:right; margin-top:4px; margin-right:3px;">{NoteCountWithLabel}</div>
                                 <div class="big_seperator" style="float:right; margin-right:5px; margin-top:0px; height:21px;"></div>
                                 {/block:NoteCount}
                                 
                                  <!-- Left side of the top container -->
                                 <a href="https://thealonic.tumblr.com/"><div style="position: absolute; margin-left:2px; height:22px; width:49px;">
-                                    <div class="explorerback" style="margin-left:4.5px; width:20px; height:20px;"></div> <div class="reflinkblack" style="margin-top:4px;">Back</div></div></a>
+                                    <div class="explorerback" style="margin-left:5px; width:20px; height:20px;"></div> <div class="reflinkblack" style="margin-top:5px;">Back</div></div></a>
                                 <div class="big_seperator" style="position: absolute; margin-left:55px; margin-top:0px; height:21px;"></div> 
-                                <div style="margin-left:63.5px; margin-top:5px; width:400px;">
+                                <div style="margin-left:63px; margin-top:5px; width:400px;">
                                     {block:RebloggedFrom} 
                                     Posted on <strong style="color: var(--blue); cursor:default; margin-right:-1px" title="Day of posting">{ShortMonth} {DayOfMonth}{DayOfMonthSuffix} </strong>
                                     at: <strong style="color: var(--blue); cursor:default;" title="Time of posting"> {12Hour}:{Minutes} {CapitalAmPm}</strong>, {Year}
@@ -1776,35 +1771,34 @@
                                 <div class="menuapplicationsplit" style="width:468px; margin-left:-1px; margin-top: 4px;"> </div>
                                 
                                 <div class="small_seperator" style="margin-top:1px; height:17px;"></div> <!-- Left side of the Bottom container -->
-                                <div style="position:absolute; margin-left:12.5px; margin-top:5px; width:400px;">A<underline>d</underline>dress</div>
+                                <div style="position:absolute; margin-left:12px; margin-top:5px; width:400px;">A<underline>d</underline>dress</div>
                                 <ul class="tree-view" style="position:absolute; width:300px; height:9px; margin-left:55.5px; overflow:hidden;">
                                     <div class="win98buttonscrollinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px; width:10px; height:11px;">
                                         <div class="arrowdisableddown" style="margin-left:-4px;"></div></div>
                                     <div class="menufavouriteslink" style="position:absolute; margin-top:-5px; margin-left:-5px;"></div>
-                                    <div style="margin-top:-1px; margin-left:16px;">https://thealonic.tumblr.com/post/{PostID}</div></ul>
+                                    <div style="margin-top:-1px; margin-left:16.5px;">https://thealonic.tumblr.com/post/{PostID}</div></ul>
                                 
                                 <a href="{Permalink}"><div style="position: absolute; margin-left:368px; height:22px; width:49px;">
-                                    <div class="explorergo" style="margin-left:5.5px;"></div> <div class="reflinkblack" style="margin-top:5px;">Go</div></div></a>
+                                    <div class="explorergo" style="margin-left:5px;"></div> <div class="reflinkblack" style="margin-top:5px;">Go</div></div></a>
                                 <div class="big_seperator" style="position;absolute; height:21px; margin-top:-0px; margin-left:411px;"></div>
                                 
                                 <div class="postlinks-container" style="position: absolute; margin-left:419px; margin-top:-0px; height:22px; width:49px; cursor:pointer;">
-                                    <div style="position: absolute; margin-left:12.5px; margin-top:5px;">Links
+                                    <div style="position: absolute; margin-left:12px; margin-top:5px;">Links
                                         <div class="explorerlinks" style="position: absolute; margin-left:27px; margin-top:-14px;"></div>
                                         <div class="explorerlinks" style="position: absolute; margin-left:30px; margin-top:-14px;"></div></div>
-                                         
-                                    <div class="win98post" style="position: absolute; width:150px; margin-top:-1px; margin-left:-20000px;" id="tumblrlinkdrop">
-                                        <div class="submenu18"><label style="margin-left: 4px; margin-top: 3px"> Generate new image </label></div>
-                                        <div class="submenu18"><label style="margin-left: 4px; margin-top: 3px"> Previous image </label></div>
-                                        <div class="menuapplicationsplit" style="width:100%; margin-top:1px; margin-bottom:1px;"></div>
-                                        <div class="submenu18"><label style="margin-left: 4px; margin-top: 3px"> Set wallpaper as (Tiled) </label></div>
-                                        <div class="submenu18"><label style="margin-left: 4px; margin-top: 3px"> Set wallpaper as (Centered) </label></div></div>
+                                      
+                                    <postdrop style="margin-left:-20000px; position:absolute">      
+                                        <div class="win98post" style="position: absolute; width:150px; margin-top:-1px">
+                                            <div class="submenu18"><label style="margin-left: 4px; margin-top: 3px"> Generate new image </label></div>
+                                            <div class="submenu18"><label style="margin-left: 4px; margin-top: 3px"> Previous image </label></div>
+                                            <div class="menuapplicationsplit" style="width:100%; margin-top:1px; margin-bottom:1px;"></div>
+                                            <div class="submenu18"><label style="margin-left: 4px; margin-top: 3px"> Set wallpaper as (Tiled) </label></div>
+                                            <div class="submenu18"><label style="margin-left: 4px; margin-top: 3px"> Set wallpaper as (Centered) </label></div></div>
+                                    </postdrop>
                                 </div>
                             </fieldset>
                         </div>
-                        
-                        <script>function tumblrlink() {document.getElementById("tumblrlinkdrop").style.marginLeft = "48px"; document.getElementById("pyrofile").style.backgroundColor = gray}
-                            function tumblrlinkclose() {document.getElementById("tumblrlinkdrop").style.marginLeft = "-20000px"; document.getElementById("pyrofile").style.backgroundColor = silv}</script>
-                        
+
 <!-- Post window body ------------------------------------------------------------------------------>
                         <div class="filler"></div><div class="filler"></div>
                         <ul class="tree-view" style="margin-left:-6px; margin-bottom:26px; width: 471px; padding:0px; overflow:hidden; background-color: var(--white)"> 
@@ -1813,7 +1807,7 @@
                                 <!-- Text posts -->
                                     <div class="win98buttonscrollinactive" style="margin-left: 451px;"><div class="arrowdisableup"></div></div>
                                     {block:Text}
-                                        <div style="padding: 3.5px; max-width:451px;">
+                                        <div style="padding: 3px; max-width:451px;">
                                             {block:Title}<div class="title-bar-text" style="margin-left:3px; font-size: 2rem; color: var(--atext); margin-bottom:-7px; margin-top:-3px">𝖁𝖍𝖊𝖗𝟗𝟖</div>{/block:Title}
                                             <div class="content caption" style="width: 100%; height: 100%;"> {Body} </div>
                                         </div>
@@ -1826,15 +1820,15 @@
                                         
                                     {block:Photos} 
                                         {LinkOpenTag}<img src="{Photoset}" class="full_set" alt="{PhotoAlt}"></img>{LinkCloseTag} 
-                                        {block:Caption}<div class="content caption" style="padding: 3.5px;">{Caption}</div>{/block:Caption}
+                                        {block:Caption}<div class="content caption" style="padding: 3px;">{Caption}</div>{/block:Caption}
                                     {/block:Photos}
                                                     
                                     {block:Photoset}
-                                        {Photoset} {block:Caption}<div class="content caption" style="margin-left:2.5px; height:100%">{Caption}</div>{/block:Caption}
+                                        {Photoset} {block:Caption}<div class="content caption" style="margin-left:2px; height:100%">{Caption}</div>{/block:Caption}
                                     {/block:Photoset}
                          
                                     {block:Quote}
-                                        <div style="padding: 3.5px;">
+                                        <div style="padding: 3px;">
                                             <div class="content caption" style="margin-left:1px;"> "{Quote}" </div> <!-- quote itself -->
                                             {block:Source} <div class="dash" style="margin-left:2px"> &mdash; </div> <div class="source" style="margin-left:2px"> {Source} </div> {/block:Source}
                                         </div>
@@ -1849,12 +1843,12 @@
                                         </div>
                                         {block:Description}
                                             <div class="menuapplicationsplit" style="width:451px; margin-bottom:-2px;"></div>
-                                            <div style="padding: 3.5px;">{Description}</div>
+                                            <div style="padding: 3px;">{Description}</div>
                                         {/block:Description}
                                     {/block:Link}
                         
                                     {block:Chat}
-                                        <div style="padding: 3.5px;">
+                                        <div style="padding: 3px;">
                                             {block:Title}<div class="title">𝖁𝖍𝖊𝖗𝟗𝟖</div>{/block:Title}
                                             <div class="content body">
                                                 {block:Lines}
@@ -1865,7 +1859,7 @@
                         
                                     {block:Video}
                                         <div class="video"  data-from-page="{CurrentPage}" style="height:100%; margin-bottom:-2px">{Video-500}</div>
-                                        {block:Caption}<div class="content caption" style="padding: 3.5px; margin-top:9px">{Caption}</div>{/block:Caption}
+                                        {block:Caption}<div class="content caption" style="padding: 3px; margin-top:9px">{Caption}</div>{/block:Caption}
                                     {/block:Video}
 
                                     {block:Audio}
@@ -1877,7 +1871,7 @@
                                     {/block:Audio}
                                                 
                                     {block:Answer}
-                                        <div class="content body" style="max-width: 451px; padding:3.5px; margin-bottom:-2px">
+                                        <div class="content body" style="max-width: 451px; padding:3px; margin-bottom:-2px">
                                             <strong style="color: var(--blue)"> {lang:Asker asked 2}:</strong>
                                             {Question} 
                                             {block:NotReblog} <div class="answerer"><strong style="color: var(--blue)"> Mommy answered; </strong></div> {/block:NotReblog}
@@ -1900,13 +1894,13 @@
                         
 <!-- Bottom post handling ------------------------------------------------------------------------------>
                         {block:HasTags}
-                            <label style="position:absolute; height: 16px; max-width:410px; margin-top:-25px; margin-left:-4.5px; overflow:hidden; color: gray">
+                            <label style="position:absolute; height: 16px; max-width:410px; margin-top:-25px; margin-left:-4px; overflow:hidden; color: gray">
                                 {block:Tags}<a href="{TagURL}" style="color: grey; white-space: nowrap; margin-left:2px">{Tag}</a><div class="comma">, </div>{/block:Tags}
                                 <div style="background-color:var(--silver); margin-left:-4px;"></div></label>
                         {/block:HasTags}
                         
                         <div style="z-index:100; width:100px; float:right; margin-right:-5px">
-                            <a class="like-b" href="{ReblogURL}" target="_blank" style="float:right; margin-top:-22px; margin-right:1.5px;">reblog</a>
+                            <a class="like-b" href="{ReblogURL}" target="_blank" style="float:right; margin-top:-22px; margin-right:1px;">reblog</a>
                             <div class="big_seperator" style="float: right; margin-left: 3px; margin-right: 3px; margin-top:-25px; margin-right:34px; height:17px;"></div>
                             <!--<a class="like-b" href="#" style="float:right; margin-top:-22px; margin-right:38.5px;">{LikeButton}
                             <div class="b" style="background-color: var(--silver); padding: 0px 2px 2px 6px; margin-left:-4px">like</div>-->
@@ -1926,13 +1920,21 @@
                             <fieldset style="position: absolute; width: 35px; height: 11px; padding:4px; margin-left: 428px"></fieldset></div>
                     </div>
                 </div>
+            </post>
             {/block:Posts}
         </div>
         {block:NextPage}<div style="height:50px;"></div>{/block:NextPage}{block:PostNotes}<div style="height:10px;"></div>{/block:PostNotes} <!--adjusts gap at the bottom of the page-->
         
         <script>
-            var post = document.getElementById("desktop").children, postwin = document.getElementById("postwindow"), desktop = document.getElementById("desktop").style; posttext = document.getElementById("tumblrtext").style;
-             //$("#desktop").delegate('div', 'click', function () {console.log( $(this).index() )});
+            var post = document.getElementById("desktop"), postwin = document.getElementById("postwindow"), desktop = document.getElementById("desktop").style; posttext = document.getElementById("tumblrtext").style;
+             
+            var plinksdrop = false;
+            $(".postlinks-container").click(function(){if (plinksdrop == false){$(this).find("postdrop").css("margin-left", "49px"); plinksdrop = true 
+                } else if (plinksdrop == true){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false}});
+            $(".postlinks-container").mouseleave(function(){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false});
+             
+            $(".window").click(function(){cal = cal + 1; $(this).css("z-index", cal)});
+             
             function tumblractive() {calupdate(); tumblrButtonOpen = false; desktop.left = "0px"; document.body.style.overflowY = "scroll"; posttext.color = curactivetitle;
                 //for (var i = 0; i < post.length; i++) {post[i].childNodes[4].style.backgroundImage = currentactiveheader} 
                 taskapp1font.color = taskbartextpressed; tumblrtaskbar.backgroundImage = github + "img/scrollbarempty.png')";
