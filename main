@@ -367,7 +367,6 @@
             textarea {box-shadow:0px 0px 0px 0px; background:rgba(255,255,255,0); color: var(--alwaysblack)}
             input[type=text] { width: 100%; background-color:var(--alwaysblack); color:var(--alwayswhite); padding:0px; cursor: default; padding:0px; margin-left:-5px; display: block; margin-left: 0; margin-right: 0; 
                 white-space: pre-wrap; font-family:"Pixelated MS Sans Serif", Arial; box-shadow: 0px solid var(--alwaysblack), 0px solid var(--alwaysblack), 0px solid var(--alwaysblack), 0px solid var(--alwaysblack)}
-            input[type=range]::-webkit-slider-thumb {-webkit-appearance: none;}
 
             #progressBar { width: var(--slider); height: 6px; background-color: var(--silver); display: none; margin-top: 1px;}
             #progressBar div { height: 100%; width: 0; background-color: var(--atext)}
@@ -644,8 +643,7 @@
             } else { fullscreenactive = false; playerupdate()
                 document.getElementById("player").style.width = "560px"; document.getElementById("player").style.height = "315px"; playertext.style.width = "552px"; playerws.width = "550px"; playerul.width = "560px"; 
                 playerfs.width = "562px"; playertv.width = "400px"; docelem.style.setProperty('--slider', "550px"); embedmaximize.backgroundPosition = "-98px -215px"; embedtitletitle = "Maximize"; playstateupdate()}}
-                
-                
+
             //desktop icons
             function twilightload() {embedtask(); videoclear(); videolinkdropdownclose(); currentplaylist = ""; 
                 player.loadVideoById({'videoId':'6BJFnnWVNRU','startSeconds': 0}); playertext.textContent = "Asking Twilight Sparkle for help.";}
@@ -1739,7 +1737,7 @@
                     <div class="win98titlebarbutton" title="Maximize" style=""> <div class="maximize"></div></div>
                     <div class="win98titlebarbutton" title="Minimize" onclick="tumblrminimize();"> <div class="minimize"></div></div>
                     <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
-                    <div class="title-bar-98" id="postwindow"><div class="title-bar-text" id="tumblrtext">🍭 very.vunnies on Tumblr - Internet Explorer</div></div>
+                    <div class="title-bar-98"><div class="title-bar-text" id="tumblrtext">🍭 very.vunnies on Tumblr - Internet Explorer</div></div>
                     <div class="window-body"> 
                         
                         <div class="post-header" style="height: 46px; margin-top:-6px;">
@@ -1923,16 +1921,14 @@
             </post>
             {/block:Posts}
         </div>
-        {block:NextPage}<div style="height:50px;"></div>{/block:NextPage}{block:PostNotes}<div style="height:10px;"></div>{/block:PostNotes} <!--adjusts gap at the bottom of the page-->
+        {block:NextPage}<div style="height:50px;"></div>{/block:NextPage} <!--adjusts gap at the bottom of the page-->
+        {block:PostNotes}<div style="height:10px;"></div>{/block:PostNotes} <!--adjusts gap at the bottom of the page-->
         
         <script>
-            var post = document.getElementById("desktop"), postwin = document.getElementById("postwindow"), desktop = document.getElementById("desktop").style; posttext = document.getElementById("tumblrtext").style;
-             
-            var plinksdrop = false;
+            var plinksdrop = false, post = document.getElementById("desktop"), desktop = document.getElementById("desktop").style, posttext = document.getElementById("tumblrtext").style;
             $(".postlinks-container").click(function(){if (plinksdrop == false){$(this).find("postdrop").css("margin-left", "49px"); plinksdrop = true 
                 } else if (plinksdrop == true){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false}});
             $(".postlinks-container").mouseleave(function(){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false});
-             
             $(".window").click(function(){cal = cal + 1; $(this).css("z-index", cal)});
              
             function tumblractive() {calupdate(); tumblrButtonOpen = false; desktop.left = "0px"; document.body.style.overflowY = "scroll"; posttext.color = curactivetitle;
