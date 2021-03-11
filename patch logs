@@ -1,7 +1,26 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll; padding-right: 4px;">
 <ul>
-<li><strong>2021 March 10th (210310)</strong><br />
+<li><strong style="color: var(--atext);">2021 March 11th (210311)</strong><em> - The "Post optimisation" Update.<strong><br /></strong></em>
+<ul>
+<li><strong>Tumblr Post Updates<br /></strong>
+<ul>
+<li><strong>Tumblr posts titlebars now react depending on the window being currently active or inactive.<br /></strong></li>
+<li>Added &ldquo;Links&rdquo; dropdown menus for tumblr posts.</li>
+<li><strong>Tumblr posts now have individual layer handling.</strong></li>
+<li>Tweaked how tumblr post handling is done.</li>
+</ul>
+</li>
+<li>Added a disabled dropdown button back to the mediaplayer in the URL bar.</li>
+<li><em>Added experimental "Windows Internet Explorer".</em></li>
+<li>Tweaks to how window counting is handled.</li>
+<li><strong>Rehauled how window inactivity is processed.</strong></li>
+</ul>
+<ol>
+<li>- Fixed a graphical bug when Posts are the currently active task, doesn't generate a checkerboard texture on the taskbar.</li>
+<li>- Fixed a few colour related scheme bugs.</li>
+</ol></li>
+<li><strong style="color: var(--atext);">2021 March 10th (210310)</strong><br />
 <ul>
 <li><strong>Display Properties optimisation<br /></strong>
 <ul>
@@ -13,18 +32,15 @@
 <li>Page no longer loads uneeded theme assets until page is load, inwhich will load the default theme required, apposed to loading the default theme first.</li>
 </ul>
 </li>
-<li>Added "Links" dropdown menus for tumblr posts.</li>
-<li><strong>Tumblr posts now have individual layer handling.</strong></li>
-<li>Tweaks to how window counting is handled.</li>
 <li>Tweaks to schemes on windows start up.</li>
 </ul>
 <ol>
-<li>- "Theoretically" fixed all anti-aliasing based issues to do with Posts.</li>
+<li>- &ldquo;Theoretically&rdquo; fixed all anti-aliasing based issues to do with Posts.</li>
 <li>- Fixed janky loading of tumblr posts where when the page is loading, will shift the posts ever so slightly.</li>
 </ol></li>
 <li><strong style="color: var(--atext);">2021 March 9th (210309)</strong><br />
 <ul>
-<li>Tons of backend tweaks.<br />
+<li><strong>Tons of backend tweaks.</strong><br />
 <ul>
 <li>Added Unique CSS for fieldset titles.</li>
 <li>Added Unique CSS for check boxes with a hover effect.</li>
