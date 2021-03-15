@@ -63,7 +63,7 @@
                     --taskbar1top1: #808080; --taskbar1top2: #0a0a0a; --taskbar1bottom1: #ffffff; --taskbar1bottom2: #dfdfdf; --taskbar2top1: #ffffff; --taskbar2top2: #dfdfdf; --taskbar2bottom1: #808080; --taskbar2bottom2: #0a0a0a; 
                     --taskbar3top1: #ffffff; --taskbar3top2: #dfdfdf; --taskbar3bottom1: #808080; --taskbar3bottom2: #0a0a0a; --taskbar4top1: #ffffff; --taskbar4top2: #dfdfdf; --taskbar4bottom1: #808080; --taskbar4bottom2: #0a0a0a; 
                     --taskbar5top1: #ffffff; --taskbar5top2: #dfdfdf; --taskbar5bottom1: #808080; --taskbar5bottom2: #0a0a0a; --taskbar6top1: #ffffff; --taskbar6top2: #dfdfdf; --taskbar6bottom1: #808080; --taskbar6bottom2: #0a0a0a;
-                    --taskbar7top1: #ffffff; --taskbar7top2: #dfdfdf; --taskbar7bottom1: #808080; --taskbar7bottom2: #0a0a0a;
+                    --taskbar7top1: #ffffff; --taskbar7top2: #dfdfdf; --taskbar7bottom1: #808080; --taskbar7bottom2: #0a0a0a; --taskbar8top1: #ffffff; --taskbar8top2: #dfdfdf; --taskbar8bottom1: #808080; --taskbar8bottom2: #0a0a0a;
                     
                     --preinactive: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheaderinactive.png');
                     --preactive: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheader.png');
@@ -254,6 +254,8 @@
                 margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar6bottom2), inset 1px 1px var(--taskbar6top2), inset -2px -2px var(--taskbar6bottom1), inset 2px 2px var(--taskbar6top1);}
             .taskbartask7 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; 
                 margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar7bottom2), inset 1px 1px var(--taskbar7top2), inset -2px -2px var(--taskbar7bottom1), inset 2px 2px var(--taskbar7top1);}
+            .taskbartask8 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; 
+                margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar8bottom2), inset 1px 1px var(--taskbar8top2), inset -2px -2px var(--taskbar8bottom1), inset 2px 2px var(--taskbar8top1);}
             
             .big_seperator { float: left; border-left: 1px solid var(--gray); border-right: 1px solid var(--lightg); height: 22px; margin-top: 2px; margin-left: -1px} /*thin seperator but tall*/
             .small_seperator { float: left;  border-left: 1px solid var(--white); border-top: 1px solid var(--white); margin-top: 3px; margin-left: 1px; height:17px;
@@ -376,7 +378,7 @@
 <!-- Page rendering ------------------------------------------------------------------------------>
     <script> function defaultpageload() {evangelionmode(); backcolourset(); fontcolourset(); wallpaperupdate(); themechange(); evangelionmode();} </script>
     <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" 
-          onload="latestupdate(); defaultpageload(); {block:HomePage}messageopen(); vunnytask(); vunnypositionreset();{/block:HomePage} disktask(); tumblractive(); promptrestart(); diskminimize()">
+          onload="defaultpageload(); tumblractive(); promptrestart();">
      <title>𝖁𝖍𝖊𝖗𝟗𝟖</title>
      
 <!-- desktop handling ------------------------------------------------------------------------------>
@@ -427,8 +429,8 @@
 
         <script>
             var cat = document.getElementById("cat").style; catwin = document.getElementById("catwindow").style; cattext = document.getElementById("cattext").style; catimg = document.getElementById("catimage").style//#ref5014  #ref2000
-            function catactive() { calupdate(); cat.zIndex = cal; vunnyactive(); pyroButtonOpen = false; cattext.color = curactivetitle; catwin.backgroundImage = curactiveheader; cat.marginLeft = "0px"} //#ref5027 + //#ref5028 / //#ref0033
-            function catclose() { inactiveall(); pyroButtonOpen = true; window2 = false; pyrotabs = pyrotabs - 1; pyrowindow(); cat.marginLeft = "-20000px"} //#ref5029
+            function catactive() { calupdate(); cat.zIndex = cal; vunnyactive(); ButtonOpen[2] = false; cattext.color = curactivetitle; catwin.backgroundImage = curactiveheader; cat.marginLeft = "0px"} //#ref5027 + //#ref5028 / //#ref0033
+            function catclose() { inactiveall(); ButtonOpen[2] = true; window2 = false; pyrotabs = pyrotabs - 1; pyrowindow(); cat.marginLeft = "-20000px"} //#ref5029
             function catminimize() { cat.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 1; pyrocurrentopen()} //#ref5030
         </script>
 
@@ -444,21 +446,21 @@
         
         <script>
             var pyro = document.getElementById("pyro").style, pyrowin = document.getElementById("pyrowindow").style, pyroimg = document.getElementById("pyroimage").style, pyrotxt = document.getElementById("pyrotext").style //#ref5014 #ref2001
-            function pyroactive() { calupdate(); pyro.zIndex = cal; vunnyactive(); pyroButtonOpen = false; pyrotext.style.color = curactivetitle; pyrowin.backgroundImage = curactiveheader; pyro.marginLeft = "0px"} //#ref5027 + //#ref5028 / //#ref0033
+            function pyroactive() { calupdate(); pyro.zIndex = cal; vunnyactive(); ButtonOpen[2] = false; pyrotext.style.color = curactivetitle; pyrowin.backgroundImage = curactiveheader; pyro.marginLeft = "0px"} //#ref5027 + //#ref5028 / //#ref0033
             function pyroclose() { inactiveall(); pyroButtonOpen = true; window1 = false; pyrotabs = pyrotabs - 1; pyrowindow(); pyro.marginLeft = "-20000px"} //#ref5029
             function pyrominimize() { pyro.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 1; pyrocurrentopen()} //#ref5030
         </script>
         
         <script>
             var pyrotabs = 2, pyrocurrentactive = 2, window1 = true, window2 = true; //Amount of windows #ref0036, current active windows #ref0035, boolean valdation for window 1 and 2 #ref0034
-            function pyrowindow(){ if(pyrotabs == 0){ unvunnytaskbar.marginLeft = "-20000px"; task2true = false; task2on = false; taskreset()}} //#ref0036; math check for the amount of windows for #ref2000 & #ref2001 to be OPEN, if none, closes taskbar.
-            function pyrocurrentopen(){ if(pyrocurrentactive == 0){ pyroButtonOpen = false; task2toggle()}} //#ref0035 math check for the amount of windows for #ref2000 & #ref2001 to be ACTIVE, if none, closes taskbar.
+            function pyrowindow(){ if(pyrotabs == 0){ taskbar[2].marginLeft = "-20000px"; tasktrue[2] = false; taskon[2] = false; taskreset()}} //#ref0036; math check for the amount of windows for #ref2000 & #ref2001 to be OPEN, if none, closes taskbar.
+            function pyrocurrentopen(){ if(pyrocurrentactive == 0){ ButtonOpen[2] = false; tasktoggle()}} //#ref0035 math check for the amount of windows for #ref2000 & #ref2001 to be ACTIVE, if none, closes taskbar.
             
             function vunnyactive(){ //#ref0033
-                unvunnytaskbar.backgroundImage = github + "img/scrollbarempty.png')"; taskapp2font.color = taskbartextpressed; //#ref5028
+                taskbar[2].backgroundImage = github + "img/scrollbarempty.png')"; taskapp2font.color = taskbartextpressed; //#ref5028
                 docelem.style.setProperty('--taskbar2top1', curcolgray); docelem.style.setProperty('--taskbar2top2', curcolblack); 
                 docelem.style.setProperty('--taskbar2bottom1', curcolwhite); docelem.style.setProperty('--taskbar2bottom2', curcollightg)} //#ref5028
-            function vunnyopen(){ calupdate(); vunnyactive(); pyroactive(); pyrotabs = 2; pyroButtonOpen = false; //#ref5027.1 + Enables max amount of Vunny windows. #ref0034
+            function vunnyopen(){ calupdate(); vunnyactive(); pyroactive(); pyrotabs = 2; ButtonOpen[2] = false; //#ref5027.1 + Enables max amount of Vunny windows. #ref0034
                 if (window1 == true){ pyro.marginLeft = "0px"; pyro.zIndex = cal + 1} if (window2 == true){ cat.marginLeft = "0px"; pyro.zIndex = cal}} //Positions windows to the desktop.
             //Resets images on windows for the random image function for #ref2000 & #ref2001
             function vunnywindowreset(){ window1 = true; window2 = true; tick = 3; //sets both #ref2000 & #ref2001 to being active on the screen, resets the random image generator.
@@ -585,10 +587,10 @@
             
             var embed = document.getElementById("embed").style, embedwin = document.getElementById("embedwindow").style; embedtext = document.getElementById("embedtext").style; //#ref5014
             function embedactive() {calupdate(); embed.zIndex = cal; embedwin.backgroundImage = curactiveheader; embed.marginLeft = "0px"; embedButtonOpen = false; 
-                taskapp4font.color = taskbartextpressed; embedtext.color = curactivetitle; embedtaskbar.backgroundImage = github + "img/scrollbarempty.png')"; embedtaskbar.backgroundColor = curcolwhite; //#ref5028
+                taskapp4font.color = taskbartextpressed; embedtext.color = curactivetitle; taskbar[4].backgroundImage = github + "img/scrollbarempty.png')"; taskbar[4].backgroundColor = curcolwhite; //#ref5028
                 docelem.style.setProperty('--taskbar4top1', curcolgray); docelem.style.setProperty('--taskbar4top2', curcolblack); 
                 docelem.style.setProperty('--taskbar4bottom1', curcolwhite); docelem.style.setProperty('--taskbar4bottom2', curcollightg)} //#ref5028
-            function embedclose() {embed.marginLeft = "-20000px"; embedtaskbar.marginLeft = "-20000px"; task4true = false; task4on = false; taskreset(); stopVideo()}
+            function embedclose() {embed.marginLeft = "-20000px"; taskbar[4].marginLeft = "-20000px"; tasktrue[4] = false; taskon[4] = false; taskreset(); stopVideo()}
             function embedpositionreset() {calupdate(); embed.left = "300px"; embed.top = "200px"; embed.zIndex = cal; embedwin.backgroundImage = curactiveheader; embedactive()}
             function embedminimize(){inactiveall(); embed.marginLeft = "-20000px"; embedButtonOpen = true}
 
@@ -797,10 +799,10 @@
             var patchlogs = "https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/patch%20logs";
             var notes = document.getElementById("note").style, notewin = document.getElementById("notewindow").style, notetext = document.getElementById("notetext").style; //#ref5014
             function patchnotesactive() {calupdate(); notewin.backgroundImage = curactiveheader; notetext.color = curactivetitle; notes.zIndex = cal; 
-                taskapp5font.color = taskbartextpressed; patchnotesButtonOpen = false; patchnotestaskbar.backgroundImage = github + "img/scrollbarempty.png')"; patchnotestaskbar.backgroundColor = curcolwhite; 
+                taskapp5font.color = taskbartextpressed; ButtonOpen[5] = false; taskbar[5].backgroundImage = github + "img/scrollbarempty.png')"; taskbar[5].backgroundColor = curcolwhite; 
                 docelem.style.setProperty('--taskbar5top1', curcolgray); docelem.style.setProperty('--taskbar5top2', curcolblack);
                 docelem.style.setProperty('--taskbar5bottom1', curcolwhite); docelem.style.setProperty('--taskbar5bottom2', curcollightg)}
-            function patchnotesclose() {notes.marginLeft = "-20000px"; patchnotestaskbar.marginLeft = "-20000px"; task5true = false; task5on = false; taskreset()}
+            function patchnotesclose() {notes.marginLeft = "-20000px"; taskbar[5].marginLeft = "-20000px"; tasktrue[5] = false; taskon[5] = false; taskreset()}
             function patchnotesopen() {calupdate(); notes.zIndex = cal; notes.marginLeft = "0px"; notes.left = "67%"; notes.top = "4%"; patchnotesactive();
                 $.get(patchlogs, function(data) { $( "patchnotes" ).last().html( data ); }, 'text')}
             function patchnoteminimize() {notes.marginLeft = "-20000px"}
@@ -896,26 +898,70 @@
         </script>
 
 <!-- Internet Explorer rendering ------------------------------------------------------------------------------------->
-        <div class="win98post" style="z-index:100; margin-left:-20000px" onmousedown="notepadactive();" id="notepad"> <!--#ref2007-->
-            <div class="win98titlebarbutton"  style="margin-right: 2px;" onclick="notepadclose()"><div class="close"></div></div>
-            <div class="win98titlebarbutton" title="Minimize" onclick="notepadminimize();"> <div class="minimize"></div></div>
+        <div class="win98post" style="margin-left: -20000px" onmousedown="internetactive();" id="internet"> <!--#ref2007-->
+            <div class="win98titlebarbutton"  style="margin-right: 2px" onclick="internetclose()"><div class="close"></div></div>
+            <div class="win98titlebarbutton" title="Minimize" onclick="internetminimize()"> <div class="minimize"></div></div>
             <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
-            <div class="title-bar-98" id="notepadwindow"> <div class="title-bar-text" id="notepadtitle">📄 Notepad</div></div>
+            <div class="title-bar-98" id="internetwindow"> <div class="title-bar-text" id="internettitle">🌍 Internet Explorer</div></div>
             <div class="window-body" style="margin:1px">
-                <div style="margin:1px;">
-                    <div class="drop-down-selc" style="width:25px"><underline>F</underline>ile</div>
-                    <div class="drop-down-selc" style="width:26px"><underline>E</underline>dit</div>
-                    <div class="drop-down-selc" style="width:41px"><underline>S</underline>earch</div>
-                    <div class="drop-down-selc" style="width:30px"><underline>H</underline>elp</div>
-                </div>
-                <ul class="tree-view" style="padding:2px; width:904px; height:604px"><iframe src="https://www.bing.com/" style="width:900px; height:600px"></iframe></ul>
-        </div></div>
+            
+                <fieldset style="width:818px; height:85px; padding:2px">
+                    <div class="small_seperator" style="margin:1px; height:17px;"></div>
+                    <div style="margin:2px; margin-left:10px">
+                        <div class="drop-down-selc" style="width:25px"><underline>F</underline>ile</div>
+                        <div class="drop-down-selc" style="width:26px"><underline>E</underline>dit</div>
+                        <div class="drop-down-selc" style="width:41px"><underline>S</underline>earch</div>
+                        <div class="drop-down-selc" style="width:30px"><underline>H</underline>elp</div>
+                    </div>
+                    <div class="menuapplicationsplit" style="width:819px; margin-left:-1px; margin-top: 3px;"> </div>
+                    
+                    <div class="small_seperator" style="margin:1px; height:35px;"></div>
+                    <div style="margin:2px; margin-left:10px; height:34px; ">
+                        <div class="drop-down-selc" style="width:25px"><underline>F</underline>ile</div>
+                        <div class="drop-down-selc" style="width:26px"><underline>E</underline>dit</div>
+                        <div class="drop-down-selc" style="width:41px"><underline>S</underline>earch</div>
+                        <div class="drop-down-selc" style="width:30px"><underline>H</underline>elp</div>
+                    </div>               
+                    
+                    <div class="menuapplicationsplit" style="width:819px; margin-left:-1px; margin-top: 3px;"> </div>
+                    <div class="small_seperator" style="margin:1px; height:17px;"></div>
+                    
+                    <div style="position:absolute; margin-left:12px; margin-top:5px">A<underline>d</underline>dress</div>
+                    <ul class="tree-view" style="position:absolute; width:700px; height:9px; margin-left:55.5px; overflow:hidden;">
+                        <div class="win98buttonscrollinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px; width:10px; height:11px;">
+                            <div class="arrowdisableddown" style="margin-left:-4px;"></div></div>
+                        <div class="menufavouriteslink" style="position:absolute; margin-top:-5px; margin-left:-5px;"></div>
+                        <div style="margin-top:-1px; margin-left:16.5px;" id="iefhtml"></div></ul>
+                                
+                    <a href="{Permalink}"><div style="position: absolute; margin-left:768px; height:22px; width:49px;">
+                        <div class="explorergo" style="margin-left:5px;"></div> <div class="reflinkblack" style="margin-top:5px;">Go</div></div></a>
+                    <div class="big_seperator" style="position: absolute; height:21px; margin-top:-0px; margin-left:411px;"></div>
+                    
+                </fieldset>
 
+                <ul class="tree-view" style="padding:2px; width:818px; height:604px; margin-top:1px;">
+                <iframe src="https://www.bing.com/" style="width:818px; height:604px" frameBorder="0" id="iexplorerframe"></iframe></ul>
+        </div></div>
+        
+        <script>
+            var iframe = document.getElementById('iexplorerframe');
+            $(iframe).contents().find("iefhtml").html();
+            
+            var internet = document.getElementById("internet").style, internetwin = document.getElementById("internetwindow").style, internettitle = document.getElementById("internettitle").style;//#ref5014
+            function internetactive() {calupdate(); internet.zIndex = cal; taskapp8font.color = taskbartextpressed; internettitle.color = curactivetitle;
+                internetwin.backgroundImage = curactiveheader; internet.marginLeft = "0px"; ButtonOpen[8] = false; taskbar[8].backgroundImage = github + "img/scrollbarempty.png')"; taskbar[8].backgroundColor = curcolwhite; //#ref5028
+                docelem.style.setProperty('--taskbar8top1', curcolgray); docelem.style.setProperty('--taskbar8top2', curcolblack); //#ref5028
+                docelem.style.setProperty('--taskbar8bottom1', curcolwhite); docelem.style.setProperty('--taskbar8bottom2', curcollightg)} //#ref5028
+            function internetclose() {internet.marginLeft = "-20000px"; taskbar[8].marginLeft = "-20000px"; tasktrue[8] = false; taskon[8] = false; taskreset(); internetrestart()}
+            function internetpositionreset() {calupdate(); internet.left = "375px"; internet.top = "217px"; internet.zIndex = cal; internetwin.backgroundImage = curactiveheader; internetactive()}
+            function internetminimize(){inactiveall(); internet.marginLeft = "-20000px"; internetButtonOpen = true}
+        </script>
+        
 
 <!-- notepad rendering ------------------------------------------------------------------------------------->
         <div class="win98post" style="margin-left:-20000px" onmousedown="notepadactive();" id="notepad"> <!--#ref2007-->
-            <div class="win98titlebarbutton"  style="margin-right: 2px;" onclick="notepadclose()"><div class="close"></div></div>
-            <div class="win98titlebarbutton" title="Minimize" onclick="notepadminimize();"> <div class="minimize"></div></div>
+            <div class="win98titlebarbutton"  style="margin-right: 2px" onclick="notepadclose()"><div class="close"></div></div>
+            <div class="win98titlebarbutton" title="Minimize" onclick="notepadminimize()"> <div class="minimize"></div></div>
             <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
             <div class="title-bar-98" id="notepadwindow"> <div class="title-bar-text" id="notepadtitle">📄 Notepad</div></div>
             <div class="window-body" style="margin:1px">
@@ -932,10 +978,10 @@
         <script>
             var notepad = document.getElementById("notepad").style, notepadwin = document.getElementById("notepadwindow").style, notepadtitle = document.getElementById("notepadtitle").style;//#ref5014
             function notepadactive() {calupdate(); notepad.zIndex = cal; taskapp7font.color = taskbartextpressed; notepadtitle.color = curactivetitle;
-                notepadwin.backgroundImage = curactiveheader; notepad.marginLeft = "0px"; notepadButtonOpen = false; notepadtaskbar.backgroundImage = github + "img/scrollbarempty.png')"; notepadtaskbar.backgroundColor = curcolwhite; //#ref5028
+                notepadwin.backgroundImage = curactiveheader; notepad.marginLeft = "0px"; ButtonOpen[7] = false; taskbar[7].backgroundImage = github + "img/scrollbarempty.png')"; taskbar[7].backgroundColor = curcolwhite; //#ref5028
                 docelem.style.setProperty('--taskbar7top1', curcolgray); docelem.style.setProperty('--taskbar7top2', curcolblack); //#ref5028
                 docelem.style.setProperty('--taskbar7bottom1', curcolwhite); docelem.style.setProperty('--taskbar7bottom2', curcollightg)} //#ref5028
-            function notepadclose() {notepad.marginLeft = "-20000px"; notepadtaskbar.marginLeft = "-20000px"; task7true = false; task7on = false; taskreset(); notepadrestart()}
+            function notepadclose() {notepad.marginLeft = "-20000px"; notepadtaskbar.marginLeft = "-20000px"; tasktrue[7] = false; task7on[7] = false; taskreset(); notepadrestart()}
             function notepadpositionreset() {calupdate(); notepad.left = "375px"; notepad.top = "217px"; notepad.zIndex = cal; notepadwin.backgroundImage = curactiveheader; notepadactive()}
             function notepadminimize(){inactiveall(); notepad.marginLeft = "-20000px"; notepadButtonOpen = true}
         </script>
@@ -959,10 +1005,10 @@
         <script>
             var prompt = document.getElementById("prompt").style, promptwin = document.getElementById("promptwindow").style, prompttitle = document.getElementById("prompttitle").style;//#ref5014
             function promptactive() {calupdate(); prompt.zIndex = cal; taskapp6font.color = taskbartextpressed; prompttitle.color = curactivetitle;
-                promptwin.backgroundImage = curactiveheader; prompt.marginLeft = "0px"; promptButtonOpen = false; prompttaskbar.backgroundImage = github + "img/scrollbarempty.png')"; prompttaskbar.backgroundColor = curcolwhite; //#ref5028
+                promptwin.backgroundImage = curactiveheader; prompt.marginLeft = "0px"; ButtonOpen[6] = false; taskbar[6].backgroundImage = github + "img/scrollbarempty.png')"; taskbar[6].backgroundColor = curcolwhite; //#ref5028
                 docelem.style.setProperty('--taskbar6top1', curcolgray); docelem.style.setProperty('--taskbar6top2', curcolblack); //#ref5028
                 docelem.style.setProperty('--taskbar6bottom1', curcolwhite); docelem.style.setProperty('--taskbar6bottom2', curcollightg)} //#ref5028
-            function promptclose() {prompt.marginLeft = "-20000px"; prompttaskbar.marginLeft = "-20000px"; task6true = false; task6on = false; taskreset(); promptrestart()}
+            function promptclose() {prompt.marginLeft = "-20000px"; taskbar[6].marginLeft = "-20000px"; tasktrue[6] = false; taskon[6] = false; taskreset(); promptrestart()}
             function promptpositionreset() {calupdate(); prompt.left = "300px"; prompt.top = "200px"; prompt.zIndex = cal; promptwin.backgroundImage = curactiveheader; promptactive()}
             function promptminimize(){inactiveall(); prompt.marginLeft = "-20000px"; promptButtonOpen = true}
         
@@ -1451,7 +1497,7 @@
                             favouritesclosed(); channelsclose(); linksclose(); mediaclose(); mediaclose(); documentsclosed(); settingsclosed(); settingsclosed(); settingsactivedesktopclose(); findclosed(); vherstyclose();
                             //changes the current state of headers and adjusts icons based on invert
                             docelem.style.setProperty('--inactive', curinactivehead); docelem.style.setProperty('--active', curactiveheader); docelem.style.setProperty('--invert', curinvert); 
-                            inactiveall(); diskactive(); clocku(); wwpno(); //updates windows visually by looping inactive windows
+                            inactiveall(); clocku(); wwpno(); //updates windows visually by looping inactive windows
                             shufflecolour(); if(shuffle == false){docelem.style.setProperty('--shuffleinvert', 0.5)} else if(shuffle == true){docelem.style.setProperty('--shuffleinvert', shuffleflop)} //mediaplayer shuffle colour correction.
                             inprompt = inprompt + "Theme Loaded."; println()} //logs if the preview theme has been turned into the current theme active.
                     </script>
@@ -1680,12 +1726,12 @@
             var disk = document.getElementById("disk").style; diskwin = document.getElementById("diskwindow").style, disktext = document.getElementById("disktext").style;
             function diskactive() {calupdate(); diskButtonOpen = false; disk.marginLeft = "0px"; disk.marginTop = "0px"; disk.zIndex = cal; 
                 disktext.color = curactivetitle; diskwin.backgroundImage = curactiveheader; taskapp3font.color = taskbartextpressed;
-                disktaskbar.backgroundImage = github + "img/scrollbarempty.png')"; disktaskbar.backgroundColor = curcolwhite;
+                taskbar[3].backgroundImage = github + "img/scrollbarempty.png')"; taskbar[3].backgroundColor = curcolwhite;
                 docelem.style.setProperty('--taskbar3top1', curcolgray); docelem.style.setProperty('--taskbar3top2', curcolblack);
                 docelem.style.setProperty('--taskbar3bottom1', curcolwhite); docelem.style.setProperty('--taskbar3bottom2', curcollightg)}
             function diskopen() {tabreset(); diskactive(); disk.left = "1465px"; disk.top = "13%"}
-            function diskclose() {inactiveall(); diskButtonOpen = true; disk.marginLeft = "-20000px"; disk.marginTop = "-20000px"; disktaskbar.marginLeft = "-20000px"; task3true = false; task3on = false; taskreset()}
-            function diskminimize() {inactiveall(); disk.marginLeft = "-20000px"; disk.marginTop = "-20000px"; diskButtonOpen = true}
+            function diskclose() {inactiveall(); ButtonOpen[3] = true; disk.marginLeft = "-20000px"; disk.marginTop = "-20000px"; taskbar[3].marginLeft = "-20000px"; tasktrue[3] = false; taskon[3] = false; taskreset()}
+            function diskminimize() {inactiveall(); disk.marginLeft = "-20000px"; disk.marginTop = "-20000px"; ButtonOpen[3] = true}
             
             var dcb1 = document.getElementById("dcb1").style, dcb2 = document.getElementById("dcb2").style, dcb3 = document.getElementById("dcb3").style, iconpre = document.getElementById("iconpreview").style; 
             let previewico = [ document.getElementById("iconpre1").style, document.getElementById("iconpre2").style, document.getElementById("iconpre3").style, document.getElementById("iconpre4").style,
@@ -1777,17 +1823,17 @@
                                    
                                 <div class="menuapplicationsplit" style="width:468px; margin-left:-1px; margin-top: 4px;"> </div>
                                 
-                                <div class="small_seperator" style="margin-top:1px; height:17px;"></div> <!-- Left side of the Bottom container -->
-                                <div style="position:absolute; margin-left:12px; margin-top:5px; width:400px;">A<underline>d</underline>dress</div>
-                                <ul class="tree-view" style="position:absolute; width:300px; height:9px; margin-left:55.5px; overflow:hidden;">
-                                    <div class="win98buttonscrollinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px; width:10px; height:11px;">
-                                        <div class="arrowdisableddown" style="margin-left:-4px;"></div></div>
-                                    <div class="menufavouriteslink" style="position:absolute; margin-top:-5px; margin-left:-5px;"></div>
-                                    <div style="margin-top:-1px; margin-left:16.5px;">https://thealonic.tumblr.com/post/{PostID}</div></ul>
+                                <div class="small_seperator" style="margin-top:1px; height:17px"></div> <!-- Left side of the Bottom container -->
+                                <div style="position:absolute; margin-left:12px; margin-top:5px">A<underline>d</underline>dress</div>
+                                <ul class="tree-view" style="position:absolute; width:300px; height:9px; margin-left:55.5px; overflow:hidden">
+                                    <div class="win98buttonscrollinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px; width:10px; height:11px">
+                                        <div class="arrowdisableddown" style="margin-left:-4px"></div></div>
+                                    <div class="menufavouriteslink" style="position:absolute; margin-top:-5px; margin-left:-5px"></div>
+                                    <div style="margin-top:-1px; margin-left:16.5px">https://thealonic.tumblr.com/post/{PostID}</div></ul>
                                 
                                 <a href="{Permalink}"><div style="position: absolute; margin-left:368px; height:22px; width:49px;">
                                     <div class="explorergo" style="margin-left:5px;"></div> <div class="reflinkblack" style="margin-top:5px;">Go</div></div></a>
-                                <div class="big_seperator" style="position;absolute; height:21px; margin-top:-0px; margin-left:411px;"></div>
+                                <div class="big_seperator" style="height:21px; margin-top:0px; margin-left:413px;"></div>
                                 
                                 <div class="postlinks-container" style="position: absolute; margin-left:419px; margin-top:-0px; height:22px; width:49px; cursor:pointer;">
                                     <div style="position: absolute; margin-left:12px; margin-top:5px;">Links
@@ -1940,8 +1986,8 @@
             $(".window").click(function(){tumblractive(); $(this).css("z-index", cal);
             $(this).find(".title-bar-98").css("background-image", curactiveheader); $(this).find(".title-bar-text").css("color", curactivetitle)});
             
-            function tumblractive(){calupdate(); desktop.left = "0px"; document.body.style.overflowY = "scroll";
-                tumblrButtonOpen = false; tumblrtaskbar.backgroundImage = github + "img/scrollbarempty.png')";
+            function tumblractive(){calupdate(); desktop.left = "0px"; document.body.style.overflowY = "scroll"; desktop.zIndex = cal;
+                tumblrButtonOpen = false; taskbar[1].backgroundImage = github + "img/scrollbarempty.png')";
                 docelem.style.setProperty('--taskbar1top1', curcolgray); docelem.style.setProperty('--taskbar1top2', curcolblack);
                 docelem.style.setProperty('--taskbar1bottom1', curcolwhite); docelem.style.setProperty('--taskbar1bottom2', curcollightg)}
             function tumblrminimize() { tumblrButtonOpen = true; inactiveall(); desktop.left = "-20000px"; document.body.style.overflowY = "hidden"}
@@ -1953,33 +1999,25 @@
             function inactiveall() { var timer = 0; if (timer < 1){timer = 1; menuclosed(); tumblrButtonOpen = true;
                 $(".win98post").find(".title-bar-98").css("background-image", curinactivehead); $(".win98post").find(".title-bar-text").css("color", curinactivetitle)
                 $(".window").find(".title-bar-98").css("background-image", curinactivehead); $(".window").find(".title-bar-text").css("color", curinactivetitle)
-                taskapp1font.color = taskbartext; tumblrtaskbar.backgroundImage = "none"; tumblrtaskbar.backgroundColor = silv
+                
+                for (var i = 1; i < tasktrue.length; i++){taskbar[i].backgroundImage = "none"; taskbar[i].backgroundColor = silv}
+ 
                 docelem.style.setProperty('--taskbar1top1', curcolwhite); docelem.style.setProperty('--taskbar1top2', curcollightg)
                 docelem.style.setProperty('--taskbar1bottom1', curcolgray); docelem.style.setProperty('--taskbar1bottom2', curcolblack)
-                
-                pyroButtonOpen = true; taskapp2font.color = taskbartext; unvunnytaskbar.backgroundImage = "none"; unvunnytaskbar.backgroundColor = silv
                 docelem.style.setProperty('--taskbar2top1', curcolwhite); docelem.style.setProperty('--taskbar2top2', curcollightg)
                 docelem.style.setProperty('--taskbar2bottom1', curcolgray); docelem.style.setProperty('--taskbar2bottom2', curcolblack)
-                
-                diskButtonOpen = true; taskapp3font.color = taskbartext; disktaskbar.backgroundImage = "none"; disktaskbar.backgroundColor = silv
                 docelem.style.setProperty('--taskbar3top1', curcolwhite); docelem.style.setProperty('--taskbar3top2', curcollightg)
                 docelem.style.setProperty('--taskbar3bottom1', curcolgray); docelem.style.setProperty('--taskbar3bottom2', curcolblack)
-                    
-                embedButtonOpen = true; taskapp4font.color = taskbartext; embedtaskbar.backgroundImage = "none"; embedtaskbar.backgroundColor = silv
                 docelem.style.setProperty('--taskbar4top1', curcolwhite); docelem.style.setProperty('--taskbar4top2', curcollightg)
                 docelem.style.setProperty('--taskbar4bottom1', curcolgray); docelem.style.setProperty('--taskbar4bottom2', curcolblack)
-                
-                noteButtonOpen = true; taskapp5font.color = taskbartext; patchnotestaskbar.backgroundImage = "none"; patchnotestaskbar.backgroundColor = silv
                 docelem.style.setProperty('--taskbar5top1', curcolwhite); docelem.style.setProperty('--taskbar5top2', curcollightg)
                 docelem.style.setProperty('--taskbar5bottom1', curcolgray); docelem.style.setProperty('--taskbar5bottom2', curcolblack)
-                
-                promptButtonOpen = true; taskapp6font.color = taskbartext; prompttaskbar.backgroundImage = "none"; prompttaskbar.backgroundColor = silv
                 docelem.style.setProperty('--taskbar6top1', curcolwhite); docelem.style.setProperty('--taskbar6top2', curcollightg)
                 docelem.style.setProperty('--taskbar6bottom1', curcolgray); docelem.style.setProperty('--taskbar6bottom2', curcolblack)
-                
-                notepadButtonOpen = true; taskapp7font.color = taskbartext; notepadtaskbar.backgroundImage = "none"; notepadtaskbar.backgroundColor = silv
                 docelem.style.setProperty('--taskbar7top1', curcolwhite); docelem.style.setProperty('--taskbar7top2', curcollightg)
-                docelem.style.setProperty('--taskbar7bottom1', curcolgray); docelem.style.setProperty('--taskbar7bottom2', curcolblack)}}
+                docelem.style.setProperty('--taskbar7bottom1', curcolgray); docelem.style.setProperty('--taskbar7bottom2', curcolblack)
+                docelem.style.setProperty('--taskbar8top1', curcolwhite); docelem.style.setProperty('--taskbar8top2', curcollightg)
+                docelem.style.setProperty('--taskbar8bottom1', curcolgray); docelem.style.setProperty('--taskbar8bottom2', curcolblack)}}
         </script>
 
 <!-- Taskbar Rendering ------------------------------------------------------------------------------>
@@ -2051,7 +2089,7 @@
                         <div class="submenu20" id="startup" onmouseover="startupopen()" onmouseout="startupclose()">
                             <div class="menuprograms123"></div><label><labc> Startup </labc></label><div class="smenuarrow" id="submenuarrow4"></div></div>
                             
-                        <div class="submenu20"><div class="menuprograms4"></div><label><labc> Internet Explorer </labc></label></div>
+                        <div class="submenu20" onclick="internettask()"><div class="menuprograms4"></div><label><labc> Internet Explorer </labc></label></div>
                         <div class="submenu20" onclick="prompttask()"><div class="menuprograms5"></div><label><labc> MS-DOS Prompt </labc></label></div>
                         <div class="submenu20"><div class="menuprograms6"></div><label><labc> Outlook Express </labc></label></div>
                         <div class="submenu20"><div class="menuprograms7"></div><label><labc> Windows Explorer </labc></label></div>
@@ -2267,108 +2305,49 @@
                 <taskbar class="big_seperator" style="margin-left:-1px; margin-right:1px;"> </taskbar>
                 <taskbar class="small_seperator" style="cursor:e-resize"> </taskbar>
                 
-                <div class="taskbartask1" style="cursor:pointer;" onmousedown="task1toggle(); menuclosed();" id="taskapp1">
-                        <div class="title-bar-text" style="font-size: 11px; " id="taskapp1font">🍭 very.vunnies</div></div>
-                <div class="taskbartask2" style="cursor:pointer;" onmousedown="task2toggle(); menuclosed();" id="taskapp2">
-                        <div class="title-bar-text" style="font-size: 11px;" id="taskapp2font">👿 very.unvunny</div></div>
-                <div class="taskbartask3" style="cursor:pointer;" onmousedown="task3toggle(); menuclosed();" id="taskapp3">
-                        <div class="title-bar-text" style="font-size: 11px; " id="taskapp3font">📺 Display Properties</div></div>
-                <div class="taskbartask4" style="cursor:pointer;" onmousedown="task4toggle(); menuclosed();" id="taskapp4">
-                        <div class="title-bar-text" style="font-size: 11px;" id="taskapp4font">🎬 Media Player</div></div>
-                <div class="taskbartask5" style="cursor:pointer;" onmousedown="task5toggle(); menuclosed();" id="taskapp5"> 
-                        <div class="title-bar-text" style="font-size: 11px;" id="taskapp5font">🧮 Patch Notes</div></div>
-                <div class="taskbartask6" style="cursor:pointer;" onmousedown="task6toggle(); menuclosed();" id="taskapp6"> 
-                        <div class="title-bar-text" style="font-size: 11px;" id="taskapp6font">🎱 Command Prompt</div></div>
-                <div class="taskbartask7" style="cursor:pointer;" onmousedown="task7toggle(); menuclosed();" id="taskapp7"> 
-                        <div class="title-bar-text" style="font-size: 11px;" id="taskapp7font">📄 Notepad</div></div>
+                <div class="taskbartask1" style="cursor:pointer" onmousedown="button = 1; tasktoggle()" id="taskapp1">
+                    <div class="title-bar-text" style="font-size: 11px" id="taskapp1font">🍭 very.vunnies</div></div>
+                <div class="taskbartask2" style="cursor:pointer" onmousedown="button = 2; tasktoggle()" id="taskapp2">
+                    <div class="title-bar-text" style="font-size: 11px" id="taskapp2font">👿 very.unvunny</div></div>
+                <div class="taskbartask3" style="cursor:pointer" onmousedown="button = 3; tasktoggle()" id="taskapp3">
+                    <div class="title-bar-text" style="font-size: 11px" id="taskapp3font">📺 Display Properties</div></div>
+                <div class="taskbartask4" style="cursor:pointer" onmousedown="button = 4; tasktoggle()" id="taskapp4">
+                    <div class="title-bar-text" style="font-size: 11px" id="taskapp4font">🎬 Media Player</div></div>
+                <div class="taskbartask5" style="cursor:pointer" onmousedown="button = 5; tasktoggle()" id="taskapp5"> 
+                    <div class="title-bar-text" style="font-size: 11px" id="taskapp5font">🧮 Patch Notes</div></div>
+                <div class="taskbartask6" style="cursor:pointer" onmousedown="button = 6; tasktoggle()" id="taskapp6"> 
+                    <div class="title-bar-text" style="font-size: 11px" id="taskapp6font">🎱 Command Prompt</div></div>
+                <div class="taskbartask7" style="cursor:pointer" onmousedown="button = 7; tasktoggle()" id="taskapp7"> 
+                    <div class="title-bar-text" style="font-size: 11px" id="taskapp7font">📄 Notepad</div></div>
+                <div class="taskbartask8" style="cursor:pointer" onmousedown="button = 8; tasktoggle()" id="taskapp8"> 
+                    <div class="title-bar-text" style="font-size: 11px" id="taskapp8font">🌍 Internet Explorer</div></div>
                 
                 <script>
-                    var tumblrButtonOpen = false, pyroButtonOpen = true, diskButtonOpen = true, embedButtonOpen = true, patchnotesButtonOpen = true, notepadButtonOpen = true; //toggle states for #ref5013
-                    function task1toggle() { if (tumblrButtonOpen == false) {tumblrminimize()} else if (tumblrButtonOpen == true){tumblractive()}} //#ref5013
-                    function task2toggle(){ if (pyroButtonOpen == false) {vunnyminimize()} else if (pyroButtonOpen == true){vunnyopen()}} //#ref5013
-                    function task3toggle() { if (diskButtonOpen == false) {diskminimize()} else if (diskButtonOpen == true){diskactive()}} //#ref5013
-                    function task4toggle() { if (embedButtonOpen == false) {embedminimize()} else if (embedButtonOpen == true){embedactive()}} //#ref5013
-                    function task5toggle() { if (patchnotesButtonOpen == false) {patchnoteminimize()} else if (patchnotesButtonOpen == true){patchnotesactive()}} //#ref5013
-                    function task6toggle() { if (promptButtonOpen == false) {promptminimize()} else if (promptButtonOpen == true){promptactive()}} //#ref5013
-                    function task7toggle() { if (notepadButtonOpen == false) {notepadminimize()} else if (notepadButtonOpen == true){notepadactive()}} //#ref5013
+                    var taskpos = [undefined, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], ButtonOpen = [undefined, true, false, false, false, false, false, false, false],
+                        taskon = [undefined, undefined, false, false, false, false, false, false, false], tasktrue = [undefined, true, false, false, false, false, false, false],
+                        taskbar = [undefined, document.getElementById("taskapp1").style, document.getElementById("taskapp2").style, document.getElementById("taskapp3").style, document.getElementById("taskapp4").style, 
+                        document.getElementById("taskapp5").style, document.getElementById("taskapp6").style, document.getElementById("taskapp7").style, document.getElementById("taskapp8").style],
+                        taskbarfont = [undefined, document.getElementById("taskapp1font").style, document.getElementById("taskapp2font").style, document.getElementById("taskapp3font").style, document.getElementById("taskapp4font").style,
+                        document.getElementById("taskapp5font").style, document.getElementById("taskapp6font").style, document.getElementById("taskapp7font").style, document.getElementById("taskapp8font").style]
+                    
+                    var button = 0, funccall = "m1m", task = 0
+                    function tasktoggle() {if (ButtonOpen[button] == false) {ButtonOpen[button] = true; funccall = button + "m"} else if (ButtonOpen[button] == true){ButtonOpen[button] = false; funccall = button + "a"}
+                        button = 0; menuclosed(); switch (funccall) {
+                            case "1m":tumblrminimize(); break; case "1a": tumblractive(); break; case "2m": vunnyminimize(); break; case "2a": vunnyopen(); break; case "3m": diskminimize(); break; case "3a": diskactive(); break; 
+                            case "4m":embedminimize(); break; case "4a": embedactive(); break; case "5m": patchnoteminimize(); break; case "5a": patchnotactive(); break; case "6m": promptminimize(); break; case "6a": promptactive(); break;
+                            case "7m": notepadminimize(); break; case "7a": notepadactive(); break; case "8m": internetminimize(); break; case "8a": internetactive(); break;}}
 
-                    var task2on = false, task3on = false, task4on = false, task5on = false, task6on = false, task7on = false;//check to compare if other windows than the current one being deactivated to update.
-                    var task2true = true, task3true = true, task4true = true, task5true = true, task6true = false, task7true = false;//a check for if the current window is active on the taskbar
-                    var task2pos, task3pos, task4pos, task5pos, task6pos, task7pos; //positional values of the tasks on the taskbar.
-                    function taskadd(){currenttask = currenttask + 1}
-                    
-                    var tumblrtaskbar = document.getElementById("taskapp1").style, taskapp1font = document.getElementById("taskapp1font").style //#ref5006 //no functions for this are needed as it's always open
-                    
-                    var unvunnytaskbar = document.getElementById("taskapp2").style, taskapp2font = document.getElementById("taskapp2font").style //#ref5006 
-                    function vunnytask(){vunnywindowreset(); catactive(); pyroactive(); task2posopen()} //#ref5007
-                    function task2posopen(){ if(task2on == false){taskadd(); unvunnytaskbar.marginLeft = (currenttask * 168) + "px"; task2pos = (currenttask * 168)}; tabconsole(); task2on = true} //#ref5008
-                    
-                    var disktaskbar = document.getElementById("taskapp3").style, taskapp3font = document.getElementById("taskapp3font").style //#ref5006   
-                    function disktask(){diskopen(); appearancetab(); task3posopen()} //#ref5007
-                    function task3posopen(){ if(task3on == false){taskadd(); disktaskbar.marginLeft = (currenttask * 168) + "px"; task3pos = (currenttask * 168)}; tabconsole(); task3on = true} //#ref5008
-                        
-                    var embedtaskbar = document.getElementById("taskapp4").style, taskapp4font = document.getElementById("taskapp4font").style //#ref5006
-                    function embedtask(){embedactive(); task4posopen()} //#ref5007
-                    function task4posopen(){ if(task4on == false){taskadd(); embedtaskbar.marginLeft = (currenttask * 168) + "px"; task4pos = (currenttask * 168)}; tabconsole(); task4on = true} //#ref5008
+                    function vunnytask(){vunnywindowreset(); catactive(); pyroactive(); task = 2; taskposopen()} function disktask(){diskopen(); appearancetab(); task = 3; taskposopen()} //tasks 2 + 3
+                    function embedtask(){embedactive(); task = 4; taskposopen()} function patchnotestask(){messageclose(); task = 5; patchnotesopen(); taskposopen()} //tasks 3 + 4
+                    function prompttask(){promptactive(); task = 6; taskposopen()} function notepadtask(){notepadpositionreset(); task = 7; taskposopen()} //tasks 4 + 5
+                    function internettask(){internetpositionreset(); task = 8; taskposopen()}
 
-                    var patchnotestaskbar = document.getElementById("taskapp5").style, taskapp5font = document.getElementById("taskapp5font").style //#ref5006
-                    function patchnotestask(){messageclose(); patchnotesopen(); task5posopen()} //#ref5007
-                    function task5posopen(){ if(task5on == false){taskadd(); patchnotestaskbar.marginLeft = (currenttask * 168) + "px"; task5pos = (currenttask * 168)}; tabconsole(); task5on = true} //#ref5008
+                    function taskadd(){currenttask = currenttask + 1}; function tabconsole(){ console.log("current tasks active: " + currenttask)}
+                    function taskreset(){
+                        for (var v = 2; v < tasktrue.length; v++){ if(tasktrue[v] == false){ for (var i = 2; tasktrue.length < i; i++){ if(v !== i){
+                            if(taskpos[v] <= taskpos[i]){ if(taskon[i] == true){ taskpos[i] = taskpos[i] - 170; taskbar[i].marginLeft = taskpos[i] + "px"}}}}}}; currenttask = currenttask - 1; tabconsole()}
                     
-                    var prompttaskbar = document.getElementById("taskapp6").style, taskapp6font = document.getElementById("taskapp6font").style //#ref5006
-                    function prompttask(){promptactive(); task6posopen()} //#ref5007
-                    function task6posopen(){ if(task6on == false){taskadd(); prompttaskbar.marginLeft = (currenttask * 168) + "px"; task6pos = (currenttask * 168)}; tabconsole(); task6on = true} //#ref5008
-                    
-                    var notepadtaskbar = document.getElementById("taskapp7").style, taskapp7font = document.getElementById("taskapp7font").style //#ref5006
-                    function notepadtask(){notepadactive(); task7posopen(); notepadpositionreset()} //#ref5007
-                    function task7posopen(){ if(task6on == false){taskadd(); notepadtaskbar.marginLeft = (currenttask * 168) + "px"; task7pos = (currenttask * 168)}; tabconsole(); task7on = true} //#ref5008
-                    
-                    function taskreset(){ //updates the current values of the tasks in order from left to right if a task is removed from the list.
-                        if(task2true == false){ //current task 2        { if(task2on == true){ task2pos = task2pos - 170;    unvunnytaskbar.marginLeft = task2pos + "px"; console.log("task2false, task2true")}} //#ref5010
-                                                if(task2pos <= task3pos){ if(task3on == true){ task3pos = task3pos - 170;       disktaskbar.marginLeft = task3pos + "px"; console.log("task2false, task3true")}} //#ref5009
-                                                if(task2pos <= task4pos){ if(task4on == true){ task4pos = task4pos - 170;      embedtaskbar.marginLeft = task4pos + "px"; console.log("task2false, task4true")}} //#ref5009
-                                                if(task2pos <= task5pos){ if(task5on == true){ task5pos = task5pos - 170; patchnotestaskbar.marginLeft = task5pos + "px"; console.log("task2false, task5true")}} //#ref5009
-                                                if(task2pos <= task6pos){ if(task6on == true){ task6pos = task6pos - 170;     prompttaskbar.marginLeft = task6pos + "px"; console.log("task2false, task6true")}} //#ref5009
-                                                if(task2pos <= task7pos){ if(task7on == true){ task7pos = task6pos - 170;    notepadtaskbar.marginLeft = task7pos + "px"; console.log("task2false, task7true")}} //#ref5009
-                                                task2true = true;} //#ref5011
-                        if(task3true == false){ if(task3pos <= task2pos){ if(task2on == true){ task2pos = task2pos - 170;    unvunnytaskbar.marginLeft = task2pos + "px"; console.log("task3false, task2true")}} //#ref5009
-                                                //current task 3        { if(task3on == true){ task3pos = task3pos - 170;       disktaskbar.marginLeft = task3pos + "px"; console.log("task3false, task3true")}} //#ref5010
-                                                if(task3pos <= task4pos){ if(task4on == true){ task4pos = task4pos - 170;      embedtaskbar.marginLeft = task4pos + "px"; console.log("task3false, task4true")}} //#ref5009
-                                                if(task3pos <= task5pos){ if(task5on == true){ task5pos = task5pos - 170; patchnotestaskbar.marginLeft = task5pos + "px"; console.log("task3false, task5true")}} //#ref5009
-                                                if(task3pos <= task6pos){ if(task6on == true){ task6pos = task6pos - 170;     prompttaskbar.marginLeft = task6pos + "px"; console.log("task3false, task6true")}} //#ref5009
-                                                if(task3pos <= task7pos){ if(task7on == true){ task7pos = task6pos - 170;    notepadtaskbar.marginLeft = task7pos + "px"; console.log("task2false, task7true")}} //#ref5009
-                                                task3true = true;} //#ref5011
-                        if(task4true == false){ if(task4pos <= task2pos){ if(task2on == true){ task2pos = task2pos - 170;    unvunnytaskbar.marginLeft = task2pos + "px"; console.log("task4false, task2true")}} //#ref5009
-                                                if(task4pos <= task3pos){ if(task3on == true){ task3pos = task3pos - 170;       disktaskbar.marginLeft = task3pos + "px"; console.log("task4false, task3true")}} //#ref5009
-                                                //current task 4        { if(task4on == true){ task4pos = task4pos - 170;      embedtaskbar.marginLeft = task4pos + "px"; console.log("task4false, task4true")}} //#ref5010
-                                                if(task4pos <= task5pos){ if(task5on == true){ task5pos = task5pos - 170; patchnotestaskbar.marginLeft = task5pos + "px"; console.log("task4false, task5true")}} //#ref5009
-                                                if(task4pos <= task6pos){ if(task6on == true){ task6pos = task6pos - 170;     prompttaskbar.marginLeft = task6pos + "px"; console.log("task4false, task6true")}} //#ref5009
-                                                if(task4pos <= task7pos){ if(task7on == true){ task7pos = task6pos - 170;    notepadtaskbar.marginLeft = task7pos + "px"; console.log("task2false, task7true")}} //#ref5009
-                                                task4true = true;} //#ref5011
-                        if(task5true == false){ if(task5pos <= task2pos){ if(task2on == true){ task2pos = task2pos - 170;    unvunnytaskbar.marginLeft = task2pos + "px"; console.log("task5false, task2true")}} //#ref5009
-                                                if(task5pos <= task3pos){ if(task3on == true){ task3pos = task3pos - 170;       disktaskbar.marginLeft = task3pos + "px"; console.log("task5false, task3true")}} //#ref5009
-                                                if(task5pos <= task4pos){ if(task4on == true){ task4pos = task4pos - 170;      embedtaskbar.marginLeft = task4pos + "px"; console.log("task5false, task4true")}} //#ref5009
-                                                //current task 5        { if(task5on == true){ task5pos = task5pos - 170; patchnotestaskbar.marginLeft = task5pos + "px"; console.log("task5false, task5true")}} //#ref5010
-                                                if(task5pos <= task6pos){ if(task6on == true){ task6pos = task6pos - 170;     prompttaskbar.marginLeft = task6pos + "px"; console.log("task5false, task6true")}} //#ref5009
-                                                if(task5pos <= task7pos){ if(task7on == true){ task7pos = task6pos - 170;    notepadtaskbar.marginLeft = task7pos + "px"; console.log("task2false, task7true")}} //#ref5009
-                                                task5true = true;} //#ref5011
-                        if(task6true == false){ if(task6pos <= task2pos){ if(task2on == true){ task2pos = task2pos - 170;    unvunnytaskbar.marginLeft = task2pos + "px"; console.log("task6false, task2true")}} //#ref5009
-                                                if(task6pos <= task3pos){ if(task3on == true){ task3pos = task3pos - 170;       disktaskbar.marginLeft = task3pos + "px"; console.log("task6false, task3true")}} //#ref5009
-                                                if(task6pos <= task4pos){ if(task4on == true){ task4pos = task4pos - 170;      embedtaskbar.marginLeft = task4pos + "px"; console.log("task6false, task4true")}} //#ref5009
-                                                if(task6pos <= task5pos){ if(task5on == true){ task5pos = task5pos - 170; patchnotestaskbar.marginLeft = task5pos + "px"; console.log("task6false, task5true")}} //#ref5010
-                                                //current task 6        { if(task6on == true){ task6pos = task6pos - 170;     prompttaskbar.marginLeft = task6pos + "px"; console.log("task6false, task6true")}} //#ref5009
-                                                if(task6pos <= task7pos){ if(task7on == true){ task7pos = task6pos - 170;    notepadtaskbar.marginLeft = task7pos + "px"; console.log("task6false, task7true")}} //#ref5009
-                                                task6true = true;} //#ref5011
-                        if(task6true == false){ if(task7pos <= task2pos){ if(task2on == true){ task2pos = task2pos - 170;    unvunnytaskbar.marginLeft = task2pos + "px"; console.log("task7false, task2true")}} //#ref5009
-                                                if(task7pos <= task3pos){ if(task3on == true){ task3pos = task3pos - 170;       disktaskbar.marginLeft = task3pos + "px"; console.log("task7false, task3true")}} //#ref5009
-                                                if(task7pos <= task4pos){ if(task4on == true){ task4pos = task4pos - 170;      embedtaskbar.marginLeft = task4pos + "px"; console.log("task7false, task4true")}} //#ref5009
-                                                if(task7pos <= task5pos){ if(task5on == true){ task5pos = task5pos - 170; patchnotestaskbar.marginLeft = task5pos + "px"; console.log("task7false, task5true")}} //#ref5010
-                                                if(task7pos <= task6pos){ if(task6on == true){ task6pos = task6pos - 170;     prompttaskbar.marginLeft = task6pos + "px"; console.log("task7false, task6true")}} //#ref5009
-                                                //current task 7      //{ if(task7on == true){ task7pos = task6pos - 170;    notepadtaskbar.marginLeft = task7pos + "px"; console.log("task7false, task7true")}} //#ref5009
-                                                task7true = true;} //#ref5011
-                        currenttask = currenttask - 1; tabconsole()} //#ref5012
-                    
-                    function tabconsole(){ console.log("current tasks active: " + currenttask)}
+                    function taskposopen(){ if(taskon[task] == false){taskadd(); taskbar[task].marginLeft = (currenttask * 168) + "px"; taskpos[task] = (currenttask * 168); tabconsole(); taskon[task] = true} tabconsole()}
                 </script>
                  
                 <div class="clock">
@@ -2427,7 +2406,7 @@
         // Drag element scripts ------------------------------------------------------------------------------>
             dragElement(document.getElementById("cat")); dragElement(document.getElementById("pyro")); dragElement(document.getElementById("disk")); dragElement(document.getElementById("message")); 
             dragElement(document.getElementById("embed")); dragElement(document.getElementById("note")); dragElement(document.getElementById("prompt")); dragElement(document.getElementById("notepad"));
-            dragElement(document.getElementById("logoff")); dragElement(document.getElementById("clock"));
+            dragElement(document.getElementById("logoff")); dragElement(document.getElementById("clock")); dragElement(document.getElementById("internet"));
             
             function dragElement(elmnt) { var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
             if (document.getElementById(elmnt.id + "window")) {document.getElementById(elmnt.id + "window").onmousedown = dragMouseDown} else { elmnt.onmousedown = dragMouseDown}
