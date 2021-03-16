@@ -430,8 +430,8 @@
         <script>
             var cat = document.getElementById("cat").style; catwin = document.getElementById("catwindow").style; cattext = document.getElementById("cattext").style; catimg = document.getElementById("catimage").style//#ref5014  #ref2000
             function catactive() { calupdate(); cat.zIndex = cal; vunnyactive(); cattext.color = curactivetitle; catwin.backgroundImage = curactiveheader; cat.marginLeft = "0px"} //#ref5027 + //#ref5028 / //#ref0033
-            function catclose() { inactiveall(); ButtonOpen[2] = true; window2 = false; pyrotabs = pyrotabs - 1; pyrowindow(); cat.marginLeft = "-20000px"} //#ref5029
-            function catminimize() { cat.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 1; pyrocurrentopen()} //#ref5030
+            function catclose() { inactiveall(); window2 = false; pyrotabs = pyrotabs - 1; pyrowindow(); cat.marginLeft = "-20000px"} //#ref5029
+            function catminimize() { cat.marginLeft = "-20000px"; inactiveall(); pyrocurrentopen()} //#ref5030
         </script>
 
         <div class="win98post" style="position: fixed; width: 206px; margin-left:-20000px;" onmousedown="pyroactive();" id="pyro"> <!--#ref2001-->
@@ -447,14 +447,14 @@
         <script>
             var pyrotabs = 2, pyrocurrentactive = 2, window1 = true, window2 = true; //Amount of windows #ref0036, current active windows #ref0035, boolean valdation for window 1 and 2 #ref0034
             function pyrowindow(){ if(pyrotabs == 0){ taskbar[2].marginLeft = "-20000px"; tasktrue[2] = false; taskon[2] = false; taskreset()}} //#ref0036; math check for the amount of windows for #ref2000 & #ref2001 to be OPEN, if none, closes taskbar.
-            function pyrocurrentopen(){ if(pyrocurrentactive == 0){ ButtonOpen[2] = false; tasktoggle()}} //#ref0035 math check for the amount of windows for #ref2000 & #ref2001 to be ACTIVE, if none, closes taskbar.
+            function pyrocurrentopen(){ if(pyrocurrentactive == 0){ ButtonOpen[2] = false; taskreset()}} //#ref0035 math check for the amount of windows for #ref2000 & #ref2001 to be ACTIVE, if none, closes taskbar.
             
             var pyro = document.getElementById("pyro").style, pyrowin = document.getElementById("pyrowindow").style, pyroimg = document.getElementById("pyroimage").style, pyrotxt = document.getElementById("pyrotext").style //#ref5014 #ref2001
             function pyroactive() { calupdate(); pyro.zIndex = cal; vunnyactive(); pyrotext.style.color = curactivetitle; pyrowin.backgroundImage = curactiveheader; pyro.marginLeft = "0px"} //#ref5027 + //#ref5028 / //#ref0033
-            function pyroclose() { inactiveall(); pyroButtonOpen = true; window1 = false; pyrotabs = pyrotabs - 1; pyrowindow(); pyro.marginLeft = "-20000px"} //#ref5029
-            function pyrominimize() { pyro.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 1; pyrocurrentopen()} //#ref5030
+            function pyroclose() { inactiveall(); window1 = false; pyrotabs = pyrotabs - 1; pyrowindow(); pyro.marginLeft = "-20000px"} //#ref5029
+            function pyrominimize() { pyro.marginLeft = "-20000px"; inactiveall(); pyrocurrentopen()} //#ref5030
 
-            function vunnyactive(){ ButtonOpen[2] = false; taskapp2font.color = taskbartextpressed; curtaskact = 2; activatetask()}
+            function vunnyactive(){ taskapp2font.color = taskbartextpressed; curtaskact = 2; activatetask()}
             function vunnyopen(){ calupdate(); vunnyactive(); pyroactive(); pyrotabs = 2; //#ref5027.1 + Enables max amount of Vunny windows. #ref0034
                 if (window1 == true){ pyro.marginLeft = "0px"; pyro.zIndex = cal + 1} if (window2 == true){ cat.marginLeft = "0px"; pyro.zIndex = cal}} //Positions windows to the desktop.
             //Resets images on windows for the random image function for #ref2000 & #ref2001
@@ -503,7 +503,7 @@
 <!-- Embedded Media Player ------------------------------------------------------------------------------>
         <div class="win98post" style="position: fixed; margin-left:-20000px; left: 300px; top: 200px;" onmousedown="embedactive()" id="embed"> <!--#ref2003-->
             <div class="win98titlebarbutton"  style="margin-right: 2px; margin-top: 2px" onclick="embedclose()"><div class="close"></div></div>
-            <div class="win98titlebarbutton" title="Minimize" onclick="fullscreenembed()" id="embedmaxtitle"> <div class="maximize" id="embedmaximize"></div></div>
+            <div class="win98titlebarbutton" title="Maximize" onclick="fullscreenembed()" id="embedmaxtitle"> <div class="maximize" id="embedmaximize"></div></div>
             <div class="win98titlebarbutton" title="Minimize" onclick="embedminimize()"> <div class="minimize"></div></div>
             <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
             <div class="title-bar-98" id="embedwindow"> <div class="title-bar-text" id="embedtext">🎬 Windows Embedded Media Player</div></div>
@@ -581,11 +581,11 @@
             function videolinkdropdownclose(){videolink.marginLeft = "-20000px"; videolinksdrop = false}
             
             var embed = document.getElementById("embed").style, embedwin = document.getElementById("embedwindow").style; embedtext = document.getElementById("embedtext").style; //#ref5014
-            function embedactive() {calupdate(); embed.zIndex = cal; embedwin.backgroundImage = curactiveheader; embed.marginLeft = "0px"; embedButtonOpen = false; embedtext.color = curactivetitle; 
-                ButtonOpen[4] = false; taskapp4font.color = taskbartextpressed; curtaskact = 4; activatetask()}
+            function embedactive() {calupdate(); embed.zIndex = cal; embedwin.backgroundImage = curactiveheader; embed.marginLeft = "0px"; embedtext.color = curactivetitle; 
+                taskapp4font.color = taskbartextpressed; curtaskact = 4; activatetask()}
             function embedclose() {embed.marginLeft = "-20000px"; taskbar[4].marginLeft = "-20000px"; tasktrue[4] = false; taskon[4] = false; taskreset(); stopVideo()}
             function embedpositionreset() {calupdate(); embed.left = "300px"; embed.top = "200px"; embed.zIndex = cal; embedwin.backgroundImage = curactiveheader; embedactive()}
-            function embedminimize(){inactiveall(); embed.marginLeft = "-20000px"; embedButtonOpen = true}
+            function embedminimize(){notes.marginLeft = "-20000px"; inactiveall()}
 
             var mediaURLin; document.getElementById("mediaplayer").addEventListener("keyup", function(event) { //button listener while prompt text is active.
                 if (event.keyCode === 13) { event.preventDefault(); document.getElementById("mediain").click()}}); //listens for the enter key
@@ -792,11 +792,11 @@
             var patchlogs = "https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/patch%20logs";
             var notes = document.getElementById("note").style, notewin = document.getElementById("notewindow").style, notetext = document.getElementById("notetext").style; //#ref5014
             function patchnotesactive() {calupdate(); notewin.backgroundImage = curactiveheader; notetext.color = curactivetitle; notes.zIndex = cal; 
-                ButtonOpen[7] = false; taskapp7font.color = taskbartextpressed; curtaskact = 7; activatetask()}
+                taskapp5font.color = taskbartextpressed; curtaskact = 5; activatetask()}
             function patchnotesclose() {notes.marginLeft = "-20000px"; taskbar[5].marginLeft = "-20000px"; tasktrue[5] = false; taskon[5] = false; taskreset()}
             function patchnotesopen() {calupdate(); notes.zIndex = cal; notes.marginLeft = "0px"; notes.left = "67%"; notes.top = "4%"; patchnotesactive();
                 $.get(patchlogs, function(data) { $( "patchnotes" ).last().html( data ); }, 'text')}
-            function patchnoteminimize() {notes.marginLeft = "-20000px"}
+            function patchnoteminimize() {notes.marginLeft = "-20000px"; inactiveall()}
         </script>
         
 <!-- Time / date properties rendering ------------------------------------------------------------------------------>
@@ -940,17 +940,17 @@
             
             var internet = document.getElementById("internet").style, internetwin = document.getElementById("internetwindow").style, internettitle = document.getElementById("internettitle").style;//#ref5014
             function internetactive() {calupdate(); internet.zIndex = cal; internettitle.color = curactivetitle; internet.marginLeft = "0px"; internetwin.backgroundImage = curactiveheader; internet.marginLeft = "0px";
-                ButtonOpen[8] = false; taskapp8font.color = taskbartextpressed; curtaskact = 8; activatetask()} //#ref5028
+                taskapp8font.color = taskbartextpressed; curtaskact = 8; activatetask()} //#ref5028
             function internetclose() {internet.marginLeft = "-20000px"; taskbar[8].marginLeft = "-20000px"; tasktrue[8] = false; taskon[8] = false; taskreset()}
             function internetpositionreset() {calupdate(); internet.left = "375px"; internet.top = "217px"; internet.zIndex = cal; internetwin.backgroundImage = curactiveheader; internetactive()}
-            function internetminimize(){inactiveall(); internet.marginLeft = "-20000px"; internetButtonOpen = true}
+            function internetminimize(){internet.marginLeft = "-20000px"; inactiveall()}
         </script>
         
 
 <!-- notepad rendering ------------------------------------------------------------------------------------->
         <div class="win98post" style="margin-left:-20000px" onmousedown="notepadactive();" id="notepad"> <!--#ref2007-->
-            <div class="win98titlebarbutton"  style="margin-right: 2px" onclick="notepadclose()"><div class="close"></div></div>
-            <div class="win98titlebarbutton" title="Minimize" onclick="notepadminimize()"> <div class="minimize"></div></div>
+            <div class="win98titlebarbutton" style="margin-right: 2px" onclick="notepadclose()"><div class="close"></div></div>
+            <div class="win98titlebarbutton" onclick="notepadminimize()"> <div class="minimize"></div></div>
             <div class="win98titlebarbutton" style="margin-top:2px" title="help" onclick="twilightload()"> <div class="help"></div></div>
             <div class="title-bar-98" id="notepadwindow"> <div class="title-bar-text" id="notepadtitle">📄 Notepad</div></div>
             <div class="window-body" style="margin:1px">
@@ -967,10 +967,10 @@
         <script>
             var notepad = document.getElementById("notepad").style, notepadwin = document.getElementById("notepadwindow").style, notepadtitle = document.getElementById("notepadtitle").style;//#ref5014
             function notepadactive() {calupdate(); notepad.zIndex = cal; notepadtitle.color = curactivetitle; notepadwin.backgroundImage = curactiveheader; notepad.marginLeft = "0px";
-                ButtonOpen[7] = false; taskapp7font.color = taskbartextpressed; curtaskact = 7; activatetask()} //#ref5028
+                taskapp7font.color = taskbartextpressed; curtaskact = 7; activatetask()} //#ref5028
             function notepadclose() {notepad.marginLeft = "-20000px"; notepadtaskbar.marginLeft = "-20000px"; tasktrue[7] = false; task7on[7] = false; taskreset(); notepadrestart()}
             function notepadpositionreset() {calupdate(); notepad.left = "375px"; notepad.top = "217px"; notepad.zIndex = cal; notepadwin.backgroundImage = curactiveheader; notepadactive()}
-            function notepadminimize(){inactiveall(); notepad.marginLeft = "-20000px"; notepadButtonOpen = true}
+            function notepadminimize(){notepad.marginLeft = "-20000px"; inactiveall()}
         </script>
         
 <!-- command prompt rendering ------------------------------------------------------------------------------>
@@ -992,10 +992,10 @@
         <script>
             var prompt = document.getElementById("prompt").style, promptwin = document.getElementById("promptwindow").style, prompttitle = document.getElementById("prompttitle").style;//#ref5014
             function promptactive() {calupdate(); prompt.marginLeft = "0px"; prompt.zIndex = cal; prompttitle.color = curactivetitle; promptwin.backgroundImage = curactiveheader; //#ref5028
-                ButtonOpen[6] = false; taskapp6font.color = taskbartextpressed; curtaskact = 6; activatetask()}
+                taskapp6font.color = taskbartextpressed; curtaskact = 6; activatetask()}
             function promptclose() {prompt.marginLeft = "-20000px"; taskbar[6].marginLeft = "-20000px"; tasktrue[6] = false; taskon[6] = false; taskreset(); promptrestart()}
             function promptpositionreset() {calupdate(); prompt.left = "300px"; prompt.top = "200px"; prompt.zIndex = cal; promptwin.backgroundImage = curactiveheader; promptactive()}
-            function promptminimize(){inactiveall(); prompt.marginLeft = "-20000px"; promptButtonOpen = true}
+            function promptminimize(){prompt.marginLeft = "-20000px"; inactiveall()}
         
             var datestring, config, loadedconfig, config, inprompt = "", loaded, consolein, imageElement, imageElementBack, upkeyin; //global varable storage.
             var consoleback = "#000", consoletext = "#fff", word1, word2, word3, word4, word5, upkeyin, currunning;
@@ -1710,10 +1710,10 @@
         <script>
             var disk = document.getElementById("disk").style; diskwin = document.getElementById("diskwindow").style, disktext = document.getElementById("disktext").style;
             function diskactive() {calupdate(); disk.marginLeft = "0px"; disk.marginTop = "0px"; disk.zIndex = cal; disktext.color = curactivetitle; diskwin.backgroundImage = curactiveheader; 
-                ButtonOpen[3] = false; taskapp3font.color = taskbartextpressed; curtaskact = 3; activatetask()}
+                taskapp3font.color = taskbartextpressed; curtaskact = 3; activatetask()}
             function diskopen() {tabreset(); diskactive(); disk.left = "1465px"; disk.top = "13%"}
-            function diskclose() {inactiveall(); ButtonOpen[3] = true; disk.marginLeft = "-20000px"; disk.marginTop = "-20000px"; taskbar[3].marginLeft = "-20000px"; tasktrue[3] = false; taskon[3] = false; taskreset()}
-            function diskminimize() {inactiveall(); disk.marginLeft = "-20000px"; disk.marginTop = "-20000px"; ButtonOpen[3] = true}
+            function diskclose() {inactiveall(); disk.marginLeft = "-20000px"; disk.marginTop = "-20000px"; taskbar[3].marginLeft = "-20000px"; tasktrue[3] = false; taskon[3] = false; taskreset()}
+            function diskminimize() {disk.marginLeft = "-20000px"; inactiveall()}
             
             var dcb1 = document.getElementById("dcb1").style, dcb2 = document.getElementById("dcb2").style, dcb3 = document.getElementById("dcb3").style, iconpre = document.getElementById("iconpreview").style; 
             let previewico = [ document.getElementById("iconpre1").style, document.getElementById("iconpre2").style, document.getElementById("iconpre3").style, document.getElementById("iconpre4").style,
@@ -1968,21 +1968,21 @@
             $(".window").click(function(){tumblractive(); $(this).css("z-index", cal);
             $(this).find(".title-bar-98").css("background-image", curactiveheader); $(this).find(".title-bar-text").css("color", curactivetitle)});
             function tumblractive(){calupdate(); desktop.left = "0px"; document.body.style.overflowY = "scroll"; desktop.zIndex = cal; 
-                ButtonOpen[1] = false; taskapp1font.color = taskbartextpressed; curtaskact = 1; activatetask()}
-            function tumblrminimize() { tumblrButtonOpen = true; inactiveall(); desktop.left = "-20000px"; document.body.style.overflowY = "hidden"}
+                taskapp1font.color = taskbartextpressed; curtaskact = 1; activatetask()}
+            function tumblrminimize() { inactiveall(); desktop.left = "-20000px"; document.body.style.overflowY = "hidden"}
         </script>
 
 <!-- inactive toggle ------------------------------------------------------------------------------>
         
         <script> 
             var curtaskact = undefined;
-            function inactiveall() { var timer = 0; if (timer < 1){timer = 1; menuclosed(); tumblrButtonOpen = true;
+            function inactiveall() { var timer = 0; if (timer < 1){timer = 1; menuclosed();
                 $(".win98post").find(".title-bar-98").css("background-image", curinactivehead); $(".win98post").find(".title-bar-text").css("color", curinactivetitle)
                 $(".window").find(".title-bar-98").css("background-image", curinactivehead); $(".window").find(".title-bar-text").css("color", curinactivetitle)
-                for (var i = 1; i < tasktrue.length; i++){ ButtonOpen[i] = true
-                    taskbar[i].backgroundImage = "none"; taskbar[i].backgroundColor = silv 
-                    docelem.style.setProperty('--taskbar' + i + 'top1', curcolwhite); docelem.style.setProperty('--taskbar' + i + 'top2', curcollightg)
-                    docelem.style.setProperty('--taskbar' + i + 'bottom1', curcolgray); docelem.style.setProperty('--taskbar' + i + 'bottom2', curcolblack)}}}
+                for (var i = 1; i < tasktrue.length; i++){ 
+                    if(ButtonOpen[i] == false){ ButtonOpen[i] = true; taskbar[i].backgroundImage = "none"; taskbar[i].backgroundColor = silv
+                        docelem.style.setProperty('--taskbar' + i + 'top1', curcolwhite); docelem.style.setProperty('--taskbar' + i + 'top2', curcollightg)
+                        docelem.style.setProperty('--taskbar' + i + 'bottom1', curcolgray); docelem.style.setProperty('--taskbar' + i + 'bottom2', curcolblack)}}}}
             function activatetask(){ ButtonOpen[curtaskact] = false; taskbar[curtaskact].backgroundImage = github + "img/scrollbarempty.png')"; taskbar[curtaskact].backgroundColor = curcolwhite;
                 docelem.style.setProperty('--taskbar' + curtaskact + 'top1', curcolblack); docelem.style.setProperty('--taskbar' + curtaskact + 'top2', curcolgray);
                 docelem.style.setProperty('--taskbar' + curtaskact + 'bottom1', curcollightg); docelem.style.setProperty('--taskbar' + curtaskact + 'bottom2', curcolwhite);}
@@ -2299,11 +2299,11 @@
                         document.getElementById("taskapp5font").style, document.getElementById("taskapp6font").style, document.getElementById("taskapp7font").style, document.getElementById("taskapp8font").style]
                     
                     function tasktoggle() {
-                        if (ButtonOpen[button] == false) { funccall = button + "m"; ButtonOpen[button] = true } else if (ButtonOpen[button] == true){ funccall = button + "a"; ButtonOpen[button] = false } switch (funccall) {
+                        if (ButtonOpen[button] == false) { funccall = button + "m"} else if (ButtonOpen[button] == true){ funccall = button + "a"; ButtonOpen[button] = false } switch (funccall) {
                             case "1m": tumblrminimize(); break; case "1a": tumblractive(); break; case "2m": vunnyminimize(); break; case "2a": vunnyopen(); break; case "3m": diskminimize(); break; case "3a": diskactive(); break; 
-                            case "4m" :embedminimize(); break; case "4a": embedactive(); break; case "5m": patchnoteminimize(); break; case "5a": patchnoteactive(); break; case "6m": promptminimize(); break; case "6a": promptactive(); break;
+                            case "4m" :embedminimize(); break; case "4a": embedactive(); break; case "5m": patchnoteminimize(); break; case "5a": patchnotesactive(); break; case "6m": promptminimize(); break; case "6a": promptactive(); break;
                             case "7m": notepadminimize(); break; case "7a": notepadactive(); break; case "8m": internetminimize(); break; case "8a": internetactive(); break;} 
-                        button = 0; menuclosed()}
+                        button = 0; menuclosed();}
 
                     function vunnytask(){vunnywindowreset(); catactive(); pyroactive(); task = 2; taskposopen()} function disktask(){diskopen(); appearancetab(); task = 3; taskposopen()} //tasks 2 + 3
                     function embedtask(){embedactive(); task = 4; taskposopen()} function patchnotestask(){messageclose(); task = 5; patchnotesopen(); taskposopen()} //tasks 4 + 5
@@ -2311,8 +2311,9 @@
                     function internettask(){internetpositionreset(); task = 8; taskposopen()} //tasks 8
 
                     function taskreset(){currenttask = currenttask - 1; for (var v = 1; v < tasktrue.length; v++){ if(v !== curtaskact){ if(taskpos[v] > taskpos[curtaskact]){ if(taskon[v] == true){ 
-                        taskpos[v] = taskpos[v] - 170; taskbar[v].marginLeft = taskpos[v] + "px"}}}} inprompt = inprompt + "current tasks active: " + currenttask; println();}
-                    function taskposopen(){ if(taskon[task] == false){ if(ButtonOpen[task] == false){currenttask = currenttask + 1}; taskbar[task].marginLeft = (currenttask * 168) + "px"; taskpos[task] = (currenttask * 168); taskon[task] = true}}
+                        taskpos[v] = taskpos[v] - 168; taskbar[v].marginLeft = taskpos[v] + "px"}}}} inprompt = inprompt + "current tasks active: " + currenttask; println();}
+                    function taskposopen(){ if(taskon[task] == false){ if(ButtonOpen[task] == false){currenttask = currenttask + 1}; taskbar[task].marginLeft = (currenttask * 168) + "px"; 
+                        taskpos[task] = (currenttask * 168); taskon[task] = true; inprompt = inprompt + "current tasks active: " + currenttask; println();}}
                 </script>
                  
                 <div class="clock">
