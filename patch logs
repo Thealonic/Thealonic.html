@@ -1,7 +1,37 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll; padding-right: 4px;">
 <ul>
-<li><strong style="color: var(--atext);">2021 March 11th (210311)</strong><em> - The "Post optimisation" Update.<strong><br /></strong></em>
+<li><strong>2021 March 16th (210316)</strong><strong><em><br /></em></strong>
+<ul>
+<li><strong>Major Taskbar Updates<br /></strong>
+<ul>
+<li>Tasks being added and remove no longer states in the console as a log, but uses the command prompt instead.<strong><br /></strong></li>
+<li>Rehauled how task positions are mathmatically calculated.</li>
+<li><strong>Tasks no longer individually calculate each task every time, but will instead loop through.</strong></li>
+<li>Reworked how new tasks are called active.</li>
+<li><strong>Rehauled how tasks change depending on if they're currently active.</strong></li>
+<li>Task calling no longer calls independant functions.</li>
+<li><strong>TONS of back end optimisations. </strong>Eg. <span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">The previous solution used 13590 characters, the new one uses 3688.</span></li>
+</ul>
+</li>
+<li>Clicking on Very.Vunnies on the taskbar, will now bring tumblr posts to the front instead of just focusing it.</li>
+<li><strong>The "Inactive" call is now more efficent.</strong></li>
+<li><strong>Added Internet Explorer<br /></strong>
+<ul>
+<li><strong>Added window draggability.<br /></strong></li>
+<li>Added Internet Explorer as a shortcut in the Start Menu. (Start Menu &gt; Programs)</li>
+<li><strong>Added taskbar functionality.<br /></strong></li>
+<li>Tweaked how tumblr post handling is done.</li>
+</ul>
+</li>
+<li><strong>Optmised how tasks are registered as currently active.</strong></li>
+<li>Optimised and increased consistancy between window activity.</li>
+</ul>
+<ol>
+<li>- Fixed a few issues to do with taskbar positioning.</li>
+<li>- Some bug fixes in current active state of taskbar tasks.</li>
+</ol></li>
+<li><strong style="color: var(--atext);">2021 March 11th (210311)</strong><em> - The &ldquo;Post optimisation&rdquo; Update.<strong><br /></strong></em>
 <ul>
 <li><strong>Tumblr Post Updates<br /></strong>
 <ul>
@@ -12,12 +42,12 @@
 </ul>
 </li>
 <li>Added a disabled dropdown button back to the mediaplayer in the URL bar.</li>
-<li><em>Added experimental "Windows Internet Explorer".</em></li>
+<li><em>Added experimental &ldquo;Windows Internet Explorer&rdquo;.</em></li>
 <li>Tweaks to how window counting is handled.</li>
 <li><strong>Rehauled how window inactivity is processed.</strong></li>
 </ul>
 <ol>
-<li>- Fixed a graphical bug when Posts are the currently active task, doesn't generate a checkerboard texture on the taskbar.</li>
+<li>- Fixed a graphical bug when Posts are the currently active task, doesn&rsquo;t generate a checkerboard texture on the taskbar.</li>
 <li>- Fixed a few colour related scheme bugs.</li>
 </ol></li>
 <li><strong style="color: var(--atext);">2021 March 10th (210310)</strong><br />
