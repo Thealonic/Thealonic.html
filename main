@@ -41,9 +41,7 @@
     <head> <!-- Setup -->
         <meta name="description" value="{MetaDescription}" /><link rel="shortcut icon" href="{Favicon}"/><meta charset="utf-8" />
         <style type="text/css">
-            :root { --spritesheet: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png');
-                    --desktopsheet: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/desktopspritesheet.png');
-                    
+            :root { --curspritesheet: " "; --prespritesheet: " "; --curdesktopsheet: " "; --predesktopsheet: " ";
                     --inactive: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheaderinactive.png'); 
                     --preinactive: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheaderinactive.png');
                     --active: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheader.png'); 
@@ -67,20 +65,20 @@
 
             /* desktop config settings */
             body {background: repeat fixed; background-size: cover; padding: auto auto auto auto; background-color: var(--wincyan); font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; width: 1920px; height:1080px; overflow-x: hidden}
-            #desktop, .navigation {margin: auto auto auto auto; width: 1010px;} body.permalink_page #desktop, body.permalink_page .navigation {width: 480px} body.infinite_scrolling .navigation, .inf_scr {display: none}
+            #desktop, .navigation {margin: auto auto auto auto; width: 1010px} body.permalink_page #desktop, body.permalink_page .navigation {width: 480px} body.infinite_scrolling .navigation, .inf_scr {display: none}
 
 /* Desktop setup css ------------------------------------------------------------------------------*/
             /* taskbar icon setup */
-            .icons { margin: 0 0 0 0; padding: -10px; width: 100px; height:100%; float: left; position: fixed; z-index: 1; font-size: 12px}
-            .icon_label { padding-top: 6px; padding-bottom: 6px; color: var(--wincyan); text-align: center; cursor: pointer} /* Icon gaps */
+            .icons {margin: 0 0 0 0; padding: -10px; width: 100px; height:100%; float: left; position: fixed; z-index: 1; font-size: 12px}
+            .icon_label {padding-top: 6px; padding-bottom: 6px; color: var(--wincyan); text-align: center; cursor: pointer} /* Icon gaps */
             
             /* sidebar */
-            .thealonic, .veryvhersty, .twitter, .askicon, .discordlink, .officialfunny, .rct2, .simcity, .notepaddesktop {background-image: var(--desktopsheet); height: 72px; width: 72px; margin-left:14px; cursor: pointer}
+            .thealonic, .veryvhersty, .twitter, .askicon, .discordlink, .officialfunny, .rct2, .simcity, .notepaddesktop {background-image: var(--curdesktopsheet); height: 72px; width: 72px; margin-left:14px; cursor: pointer}
             .thealonic {background-position: -0px -0px} .simcity {background-position: -432px -0px} .veryvhersty {background-position: -72px -0px} .rct2 {background-position: -360px -0px}
             .twitter {background-position: -144px -0px} .officialfunny {background-position: -504px -0px} .askicon {background-position: -216px -0px} .discordlink {background-position: -288px -0px}
             .notepaddesktop {background-position: -576px -0px}
 
-            .thealonicpreview, .veryvherstypreview, .twitterpreview, .askiconpreview, .discordlinkpreview, .officialfunnypreview, .rct2preview, .simcitypreview{background-image: var(--desktopsheet); height: 36px; width: 36px}
+            .thealonicpreview, .veryvherstypreview, .twitterpreview, .askiconpreview, .discordlinkpreview, .officialfunnypreview, .rct2preview, .simcitypreview{background-image: var(--curdesktopsheet); height: 36px; width: 36px}
             .thealonicpreview {background-position: -0px -72px}  .simcitypreview {background-position: -214px -72px} .veryvherstypreview {background-position: -36px -72px} .rct2preview { background-position: -180px -72px}
             .twitterpreview {background-position: -72px -72px}  .officialfunnypreview {background-position: -252px -72px} .askiconpreview {background-position: -107px -72px} .discordlinkpreview { background-position: -144px -72px}
             .rct2preview  {background-position: -180px -72px} .officialfunnypreview {background-position: -248px -72px} 
@@ -104,25 +102,21 @@
             .win98buttonscrollinactive {width: 10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); margin-left: 1px; position: absolute; padding:3px}
             
             /* General button handling */
-            .win98button { box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; width:70px; height:16px; cursor:pointer}
+            .win98button {box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; width:70px; height:16px; cursor:pointer}
             .win98button:active {box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray)}
-            .win98buttona { box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; width:70px; height:16px; cursor:pointer; position:absolute}
+            .win98buttona {box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; width:70px; height:16px; cursor:pointer; position:absolute}
             .win98buttona:active {box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray)}
             .win98buttondis {box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; margin-bottom: 4px; width:70px; height:16px; cursor:default}
             .win98buttondisa {box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; margin-bottom: 4px; width:70px; height:16px; cursor:default; position:absolute}
             .win98buttonpressed {box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); padding:3px; height:16px; cursor:pointer}
             .buttontext {display:inline-flex; align-items:center; color: var(--prestext)}
-            .buttontext:hover{ text-decoration-line: underline};
+            .buttontext:hover{ text-decoration-line: underline}
+            butlabel {display:inline-flex; align-items: center; color: var(--text); pointer: cursor; margin-top: 2px} 
+            butdislabel {font-size:11px; color:var(--gray); text-shadow:1px 1px 0 var(--white); display:inline-flex; align-items: center; margin-top: 2px} 
 
             .win98scrollinactive {width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; position: absolute}
             .win98tab {box-shadow:inset -1px 0px var(--black),inset 1px 1px var(--white),inset -2px 0px var(--gray),inset 2px 2px var(--lightg);background:var(--silver); padding:3px; border-radius: 2px; font-size:11px; position: absolute; z-index:; 1; color: var(--font); height:16px; margin-top:6px;}
-            
-            .wallpapermenu { width:227px; position: absolute; cursor:pointer; height: 17px; width: 100%; background-color:var(--white); color:var(--font); border-style: dotted; border-width: 1px; border-color: var(--white); z-index:4}    
-            .wallpapermenu:hover {background-color:var(--prussian); color:var(--hover); border-style: dotted; border-color: var(--yellow); z-index:10}  
-            
-            butlabel {display:inline-flex; align-items: center; color: var(--text); pointer: cursor; margin-top: 2px;} 
-            butdislabel {font-size:11px; color:var(--gray); text-shadow:1px 1px 0 var(--white); display:inline-flex; align-items: center; margin-top: 2px;} 
-            
+
             .drop-down-selc {padding:2px; display: inline-block}
             .drop-down-menu {position: absolute; background: var(--white); margin-top: 20px; z-index: 20000000; margin-top:1px; }
             .drop-down-text {height: 11px; width: 100%; padding:2px 3px 1px 2px; background-color:var(--white); color:var(--font)}
@@ -132,40 +126,42 @@
             
             .colourselect {height: 12px; width: 12px; padding:2px; background-color:var(--white); box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black); border-style: solid; border-width: 1px; border-color:var(--silver); margin-left:-1px; margin-top:-1px; display: inline-block}
             .colourselect:hover {box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--white),inset -2px -2px var(--black),inset 2px 2px var(--black); border-color: black}
+            .wallpapermenu { width:227px; position: absolute; cursor:pointer; height: 17px; width: 100%; background-color:var(--white); color:var(--font); border-style: dotted; border-width: 1px; border-color: var(--white); z-index:4}    
+            .wallpapermenu:hover {background-color:var(--prussian); color:var(--hover); border-style: dotted; border-color: var(--yellow); z-index:10} 
 
             .disabledfont {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--gray); text-shadow:1px 1px 0 var(--white);}
-            .tagged { font-size: 9px; opacity: 0.5;}
+            .tagged {font-size: 9px; opacity: 0.5;}
             
 /* window preview handling ------------------------------------------------------------------------------*/
             .prewin98post{box-shadow: inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); padding:3px; position: absolute; color: var(--prefont)}
             .pretitle-bar-posts{font-weight: 700; color: var(--fonttitle); font-size: 11px; background-image: var(--preactive); height: 18px; width: 100%}
-            .prewin98titlebarbutton {width: 10px; height: 8px; float:right; box-shadow:inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); margin-top:2px; padding:3px}
+            .prewin98titlebarbutton {width: 10px; height: 8px; float:right; box-shadow:inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); margin-top:2px; padding:3px; margin-right:2px}
             .prewin98titlebarbutton:active {box-shadow:inset 1px 1px var(--preblack),  inset -1px -1px var(--prewhite), inset -2px -2px var(--prelightg), inset 2px 2px var(--pregray)}
-            .prewin98scroll {width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); padding:3px; position: absolute; cursor: pointer;}
+            .prewin98scroll {width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); padding:3px; position: absolute; cursor: pointer}
             .prewin98scroll:active {box-shadow:inset 1px 1px var(--preblack),  inset -1px -1px var(--prewhite), inset -2px -2px var(--prelightg), inset 2px 2px var(--pregray)}
-            .prewin98button {box-shadow:inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); padding:3px; height:16px; cursor:pointer; color:var(--prefont)}
+            .prewin98button {box-shadow:inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); padding:3px; height:16px; cursor:pointer; color:var(--prefont); width:60px}
             .prewin98button:active {box-shadow:inset 1px 1px var(--preblack),  inset -1px -1px var(--prewhite), inset -2px -2px var(--prelightg), inset 2px 2px var(--pregray)}
 
             .prebuttontext {display:inline-flex; align-items:center; color: var(--prestext)}
             .predisabledfont {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--pregray); text-shadow:1px 1px 0 var(--prewhite)}
             preul.tree-view {font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: 4px; display: block; background: var(--prewhite); box-shadow: inset -1px -1px var(--prewhite),inset 1px 1px var(--pregray),inset -2px -2px var(--prelightg),inset 2px 2px var(--preblack); padding: 6px; margin: 0}
-            prefieldset{ border: none; box-shadow: inset -1px -1px var(--prewhite), inset 1px 1px var(--pregray), inset -2px -2px var(--pregray), inset 2px 2px var(--prelightg); padding:10px; padding-block-start:8px; margin:0}
+            prefieldset{border: none; box-shadow: inset -1px -1px var(--prewhite), inset 1px 1px var(--pregray), inset -2px -2px var(--pregray), inset 2px 2px var(--prelightg); padding:10px; padding-block-start:8px; margin:0}
             
             prebutlabel {display:inline-flex; align-items: center; color: var(--pretext); pointer: cursor; margin-top: 2px;} 
             prebutdislabel {font-size:11px; color:var(--pregray); text-shadow:1px 1px 0 var(--prewhite); display:inline-flex; align-items: center; margin-top: 2px;} 
             
-            .prehelp, .preclose {background-image: var(--spritesheet); width:12px; height:10px; margin-top: -1px; margin-left: -1px; filter: invert(var(--preinvert))} .prehelp {background-position: -66px -215px} .preclose {background-position: -114px -215px}
-            .prescrollup, .prescrolldown {background-image: var(--spritesheet); height: 16px; width: 16px; margin-top: -3px; margin-left: -3px; filter: invert(var(--preinvert))} .prescrolldown {background-position: 0px -212px} .prescrollup {background-position:  -32px -212px}
+            .prehelp, .preclose {background-image: var(--curspritesheet); width:12px; height:10px; margin-top: -1px; margin-left: -1px; filter: invert(var(--preinvert))} .prehelp {background-position: -66px -215px} .preclose {background-position: -114px -215px}
+            .prescrollup, .prescrolldown {background-image: var(--curspritesheet); height: 16px; width: 16px; margin-top: -3px; margin-left: -3px; filter: invert(var(--preinvert))} .prescrolldown {background-position: 0px -212px} .prescrollup {background-position:  -32px -212px}
             
 /* Window icon handling ------------------------------------------------------------------------------*/
-            .help, .minimize, .maximize, .close, .restore {background-image: var(--spritesheet); width:12px; height:10px; margin-top: -1px; margin-left: -1px; filter: invert(var(--invert))}
+            .help, .minimize, .maximize, .close, .restore {background-image: var(--curspritesheet); width:12px; height:10px; margin-top: -1px; margin-left: -1px; filter: invert(var(--invert))}
             .help {background-position: -66px -215px} .minimize {background-position: -82px -215px} .maximize {background-position: -98px -215px} .close {background-position: -114px -215px} .restore {background-position: -303px -215px}
         
-            .scrollup, .scrollright, .scrolldown, .scrollleft, .cornerpeice, .smallscrollup, .smallscrolldown {background-image: var(--spritesheet); height: 16px; width: 16px; margin-top: -3px; margin-left: -3px; filter: invert(var(--invert))}
+            .scrollup, .scrollright, .scrolldown, .scrollleft, .cornerpeice, .smallscrollup, .smallscrolldown {background-image: var(--curspritesheet); height: 16px; width: 16px; margin-top: -3px; margin-left: -3px; filter: invert(var(--invert))}
             .scrolldown {background-position: 0px -212px} .scrollleft { background-position: -16px -212px} .scrollup {background-position:  -32px -212px} .scrollright {background-position: -48px -212px}
             .smallscrollup {background-position: -38px -218px; height: 2px; width: 3px} .smallscrolldown {background-position: -6px -220px; height: 2px; width: 3px} 
 
-            .tinyarrowdisableddown, .smallarrowdisableddown, .arrowdisableddown, .tinyarrowdisabledup, .arrowdisableup, .menuarrow1, .lmenuarrow, .smenuarrow, .tinyarrowdown, .smallarrowdown, .disabledtickbox, .enabledtickbox {background-image: var(--spritesheet); filter: invert(var(--invert))}
+            .tinyarrowdisableddown, .smallarrowdisableddown, .arrowdisableddown, .tinyarrowdisabledup, .arrowdisableup, .menuarrow1, .lmenuarrow, .smenuarrow, .tinyarrowdown, .smallarrowdown, .disabledtickbox, .enabledtickbox {background-image: var(--curspritesheet); filter: invert(var(--invert))}
             .tinyarrowdisableddown {height: 3px; width: 4px; background-position: -6px -220px; filter: invert(0.5); margin-left:4px}
             .smallarrowdisableddown {height: 4px; width: 6px; background-position: -5px -219px; filter: invert(0.5)}
             .arrowdisableddown {height: 16px; width: 16px; background-position: 1px -212px; filter: invert(0.5); margin-top:-3px; margin-left:-3px}
@@ -184,19 +180,18 @@
             .scrollbarmiddle {height:  2px; width: 16px; background-image: var(--scrollbar); background-repeat: repeat; overflow:hidden; background-color: var(--white)}
             
 /* Start bar handling ------------------------------------------------------------------------------*/
-            .win98start{ box-shadow:inset -1px -1px var(--taskbarstarttop2), inset 1px 1px var(--taskbarstartbottom2), inset -2px -2px var(--taskbarstarttop1), inset 2px 2px var(--taskbarstartbottom1); background:var(--silver); padding:3px; color:var(--font); height: 16px; width: 50px; margin-left: 2px; margin-top: 2px; margin-right: 2px; font-family:"Pixelated MS Sans Serif"; font-size:11px;}
-            .windowsexplorerlogo { background-image: var(--spritesheet); margin-top:2px; height: 16px; width: 20px; background-position: -158px -212px; float:right; margin-right:9px}
-            .windowslogo { background-image: var(--spritesheet); height: 16px; width: 18px; background-position: -178px -212px}
+            .win98start{box-shadow:inset -1px -1px var(--taskbarstarttop2), inset 1px 1px var(--taskbarstartbottom2), inset -2px -2px var(--taskbarstarttop1), inset 2px 2px var(--taskbarstartbottom1); background:var(--silver); padding:3px; color:var(--font); height: 16px; width: 50px; margin-left: 2px; margin-top: 2px; margin-right: 2px; font-family:"Pixelated MS Sans Serif"; font-size:11px;}
+            .windowsexplorerlogo {background-image: var(--curspritesheet); margin-top:2px; height: 16px; width: 20px; background-position: -158px -212px; float:right; margin-right:9px}
+            .windowslogo {background-image: var(--curspritesheet); height: 16px; width: 18px; background-position: -178px -212px}
 
             .submenu18 {height: 18px; background-color:var(--silver); color: var(--text); width:100%} .submenu18:hover { height: 18px; background-color:var(--prussian); color:var(--hover); width:100%}
             .submenu20 {height: 20px; background-color:var(--silver); color: var(--text); width:100%} .submenu20:hover {height: 20px; background-color:var(--prussian); color:var(--hover); width:100%}
             .submenu36 {height: 36px; background-color:var(--silver); color: var(--text); width:100%} .submenu36:hover { height: 36px; background-color:var(--prussian); color:var(--hover); width:100%}
             
-            .patchnotes, .menuprograms, .menudocuments, .menufavourites, .menushutdown, .logofficon, .menusettings, .menufind, .menuhelp, .menurun, .menulogoff, .shutdownicon{ background-image: var(--spritesheet); margin: auto; float: left; height: 36px; width: 36px;}
+            .patchnotes, .menuprograms, .menudocuments, .menufavourites, .menushutdown, .logofficon, .menusettings, .menufind, .menuhelp, .menurun, .menulogoff, .shutdownicon{ background-image: var(--curspritesheet); margin: auto; float: left; height: 36px; width: 36px;}
             .patchnotes {background-position:    0px   0px} .menuprograms {background-position: -36px 0px} .menudocuments {background-position: -108px   0px} .menufavourites {background-position: -72px 0px}
             .menusettings {background-position: -144px   0px} .menufind {background-position: -180px  0px} .menuhelp {background-position: -216px -36px} .menurun {background-position: -252px -36px}
             .menulogoff {background-position: -288px   0px} .menushutdown {background-position: -324px 0px} .logofficon {background-position: -288px -36px} .shutdownicon {background-position: -324px -36px}
-            
             /* start menu submenu icon references */
             .menuprograms123, .menuprograms4, .menuprograms5, .menuprograms6, .menuprograms7, .menufind1, .menufind2, .menufind3, .menufind4, .menusettings1, .menusettings2, .menusettings3, .menusettings4, .menusettings5, .menusettings6,
             .menuapplications7, .menuapplications8, .menuapplications9, .menuapplications10, .menuapplications11, .menuapplications12, .menuapplications13, .menuapplications14, .menuapplications15, .explorerlinks, .none, .menucommunications1, 
@@ -204,7 +199,7 @@
             .menusystemtools2, .menusystemtools3, .menusystemtools4, .menusystemtools5, .menusystemtools6, .menusystemtools7, .menusystemtools8, .menusystemtools9, .menusystemtools10, .menusystemtools11, .menusystemtools12, .menusystemtools13, 
             .menuinternettools1, .menuinternettools2, .menuinternettools3, .menuinternettools4, .menuentertainment1, .menuentertainment2, .menuentertainment3, .menuentertainment4, .menuentertainment5, .menuentertainment, .menusettings1, 
             .menusettings2, .menusettings3, .menusettings4, .menusettings5, .menusettings6, .menugames1, .menugames2, .menugames3, .menugames4,  .menudocuments1, .menudocumentssound, .menudocumentsfolder 
-            { background-image: var(--spritesheet); margin: auto; float: left; height: 20px; width: 20px}
+            {background-image: var(--curspritesheet); margin: auto; float: left; height: 20px; width: 20px}
             .menuapplications7 {background-position: -20px -92px} /* calc */ .menuapplications12 {background-position: 0px -112px} /* ask */ .menuapplications8 {background-position: -40px -92px} /* img */ 
             .menuapplications13 {background-position: -20px -112px} /* yahoo */ .menuapplications9 {background-position: -60px -92px} /* wordpad */ .menuapplications14 {background-position: -40px -112px} /* msn */
             .menuapplications10 {background-position: -80px -92px} /* paint */ .menuapplications15 {background-position: -60px -112px} /* prodigy */ .menuapplications11 {background-position: -100px -92px} /* notepad */ 
@@ -230,22 +225,22 @@
             .calendar {background-position: -82px -194px; margin-left: 2px; height: 16px; width: 16px} /* calender icon */ .none {background-position: -100px -192px; height: 18px; width: 18px} /* none */
             .explorergo {background-position: -101px -72px; filter: invert(var(--invert))} .explorerback {background-position: -121px -72px; filter: invert(var(--invert))}
 
-            .taskbartask1 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--white); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; 
-                margin-left: 167px; box-shadow:inset -1px -1px var(--taskbar1bottom2), inset 1px 1px var(--taskbar1top2), inset -2px -2px var(--taskbar1bottom1), inset 2px 2px var(--taskbar1top1); background-image: var(--scrollbar);}
+            .taskbartask1 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; 
+                margin-left: 167px; box-shadow:inset -1px -1px var(--taskbar1bottom2), inset 1px 1px var(--taskbar1top2), inset -2px -2px var(--taskbar1bottom1), inset 2px 2px var(--taskbar1top1)}
             .taskbartask2 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; 
-                margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar2bottom2), inset 1px 1px var(--taskbar2top2), inset -2px -2px var(--taskbar2bottom1), inset 2px 2px var(--taskbar2top1);}
+                margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar2bottom2), inset 1px 1px var(--taskbar2top2), inset -2px -2px var(--taskbar2bottom1), inset 2px 2px var(--taskbar2top1)}
             .taskbartask3 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; 
-                margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar3bottom2), inset 1px 1px var(--taskbar3top2), inset -2px -2px var(--taskbar3bottom1), inset 2px 2px var(--taskbar3top1);}
+                margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar3bottom2), inset 1px 1px var(--taskbar3top2), inset -2px -2px var(--taskbar3bottom1), inset 2px 2px var(--taskbar3top1)}
             .taskbartask4 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; 
-                margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar4bottom2), inset 1px 1px var(--taskbar4top2), inset -2px -2px var(--taskbar4bottom1), inset 2px 2px var(--taskbar4top1);}
+                margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar4bottom2), inset 1px 1px var(--taskbar4top2), inset -2px -2px var(--taskbar4bottom1), inset 2px 2px var(--taskbar4top1)}
             .taskbartask5 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; 
-                margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar5bottom2), inset 1px 1px var(--taskbar5top2), inset -2px -2px var(--taskbar5bottom1), inset 2px 2px var(--taskbar5top1);}
+                margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar5bottom2), inset 1px 1px var(--taskbar5top2), inset -2px -2px var(--taskbar5bottom1), inset 2px 2px var(--taskbar5top1)}
             .taskbartask6 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; 
-                margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar6bottom2), inset 1px 1px var(--taskbar6top2), inset -2px -2px var(--taskbar6bottom1), inset 2px 2px var(--taskbar6top1);}
+                margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar6bottom2), inset 1px 1px var(--taskbar6top2), inset -2px -2px var(--taskbar6bottom1), inset 2px 2px var(--taskbar6top1)}
             .taskbartask7 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; 
-                margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar7bottom2), inset 1px 1px var(--taskbar7top2), inset -2px -2px var(--taskbar7bottom1), inset 2px 2px var(--taskbar7top1);}
+                margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar7bottom2), inset 1px 1px var(--taskbar7top2), inset -2px -2px var(--taskbar7bottom1), inset 2px 2px var(--taskbar7top1)}
             .taskbartask8 { font-family:"Pixelated MS Sans Serif", Arial; float: left; width: 160px; height: 18px; margin-top: 2px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; 
-                margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar8bottom2), inset 1px 1px var(--taskbar8top2), inset -2px -2px var(--taskbar8bottom1), inset 2px 2px var(--taskbar8top1);}
+                margin-left: -20000px; box-shadow:inset -1px -1px var(--taskbar8bottom2), inset 1px 1px var(--taskbar8top2), inset -2px -2px var(--taskbar8bottom1), inset 2px 2px var(--taskbar8top1)}
             
             .big_seperator { float: left; border-left: 1px solid var(--gray); border-right: 1px solid var(--lightg); height: 22px; margin-top: 2px; margin-left: -1px} /*thin seperator but tall*/
             .small_seperator { float: left;  border-left: 1px solid var(--white); border-top: 1px solid var(--white); margin-top: 3px; margin-left: 1px; height:17px; border-right: 1px solid var(--gray); border-bottom: 1px solid var(--gray); background-color: var(--silver); width: 1px; height: 18px} /*thin seperator but tall*/
@@ -256,7 +251,7 @@
             .start_bar .top_border { border-bottom: 1px solid var(--lightg); border-top: 1px solid var(--white)}
             .start_bar .time {  line-height: 18px; float: right; font-size: 10px; margin-right: 10px; color:var(--text)}
             .taskbaricons { float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px}
-            .windowsstartmenubar { background-image: var(--spritesheet); height: 159px; width:  21px; background-position: -339px -72px; position:absolute; float: left}
+            .windowsstartmenubar { background-image: var(--curspritesheet); height: 159px; width:  21px; background-position: -339px -72px; position:absolute; float: left}
     
             .clock{ box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray); padding:2px; float:right; width:96px; height:18px; margin-right:2px; margin-top:2px}
             
@@ -275,7 +270,7 @@
             .energysaving { width: 71px; height: 42px; background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/energy.png')}
             .currentclock { width:127px; height:127px; background-image: url('https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/clock.png')}
             
-            .playbutton, .pausebutton, .stopbutton, .shufflebutton, .nextbutton, .fastforwardbutton, .rewindbutton, .previousbutton, .volumeup, .volumedown {background-image: var(--spritesheet); height: 13px; width: 13px; margin: 6px; float: left; filter: invert(var(--invert)); cursor:pointer;}
+            .playbutton, .pausebutton, .stopbutton, .shufflebutton, .nextbutton, .fastforwardbutton, .rewindbutton, .previousbutton, .volumeup, .volumedown {background-image: var(--curspritesheet); height: 13px; width: 13px; margin: 6px; float: left; filter: invert(var(--invert)); cursor:pointer;}
             .playbutton { background-position: -198px -213px} .pausebutton { background-position: -211px -213px;} .stopbutton { background-position: -225px -213px;} .shufflebutton { background-position: -266px -213px; width:17px;}
             .fastforwardbutton { background-position: -253px -213px; width: 9px; } .rewindbutton { background-position: -241px -213px; width: 9px; } 
             .previousbutton { background-position: -237px -213px;} .nextbutton { background-position: -252px -213px;}
@@ -284,82 +279,81 @@
 /* Formatting ref css ------------------------------------------------------------------------------*/
             .reflinkblack { color: var(--atext); } .reflinkblack:hover { color: var(--blue); text-decoration-line: underline; }
             
-            ul.tree-view { font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; margin-top: 4px; display: block; background: var(--white); color:var(--text);
-                           box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black); padding: 6px; margin: 0; }
-            ul.tree-view a { text-decoration: none; color: var(--black);}
-            ul.tree-view a:focus { background-color: var(--prussian); color: var(--white);}
-            ul.tree-view ul { margin-top: 4px; margin-left: 12px; padding-left: 16px; border-left: 1px dotted var(--gray);} 
-            ul.tree-view ul>li { position:relative; }
-            ul.tree-view ul>li:before { content:""; display: block; position: absolute; left: -16px; top: 6px; width: 12px; border-bottom: 1px dotted var(--gray);}
-            ul.tree-view ul>li:last-child:after { content:""; display: block; position:absolute; left: -20px; top: 7px; bottom:0; width: 8px; background: var(--white);}
-            ul.tree-view li { margin-top: 4px; list-style-type: none;} 
-            ul.tree-view ul details>summary:before{ margin-left: -22px; position: relative; z-index: 1;}
-            ul.tree-view details { margin-top:0;} 
-            ul.tree-view details>summary:before {   text-align: center; display: block; float: left; content: "+"; border: 1px solid var(--gray); width: 8px; height: 9px; line-height: 8px; margin-right: 5px; padding-left: 1px; background-color: var(--white); }
-            ul.tree-view details[open] summary { margin-bottom: 0;} 
-            ul.tree-view details[open]>summary:before { content: "-"; }
-            ul:active .win98button { box-shadow:inset 1px 1px var(--black), inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver); }
+            ul.tree-view {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; margin-top: 4px; display: block; background: var(--white); color:var(--text);
+                          box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black); padding: 6px; margin: 0}
+            ul.tree-view a {text-decoration: none; color: var(--black)}
+            ul.tree-view a:focus {background-color: var(--prussian); color: var(--white)}
+            ul.tree-view ul {margin-top: 4px; margin-left: 12px; padding-left: 16px; border-left: 1px dotted var(--gray)} 
+            ul.tree-view ul>li {position:relative}
+            ul.tree-view ul>li:before {content:""; display: block; position: absolute; left: -16px; top: 6px; width: 12px; border-bottom: 1px dotted var(--gray)}
+            ul.tree-view ul>li:last-child:after {content:""; display: block; position:absolute; left: -20px; top: 7px; bottom:0; width: 8px; background: var(--white)}
+            ul.tree-view li {margin-top: 4px; list-style-type: none} 
+            ul.tree-view ul details>summary:before{margin-left: -22px; position: relative; z-index: 1}
+            ul.tree-view details {margin-top:0} 
+            ul.tree-view details>summary:before {text-align: center; display: block; float: left; content: "+"; border: 1px solid var(--gray); width: 8px; height: 9px; line-height: 8px; margin-right: 5px; padding-left: 1px; background-color: var(--white)}
+            ul.tree-view details[open] summary {margin-bottom: 0} 
+            ul.tree-view details[open]>summary:before {content: "-"}
+            ul:active .win98button {box-shadow:inset 1px 1px var(--black), inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver)}
             
             .enabledtickbox {height: 7px; width: 7px; background-position: -143px -220px; position: absolute}
             
-            ul.tick-box { font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; display: block; background: var(--white); color:var(--text); position: absolute; width:9px; height: 9px;
-                           box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black); padding:2px; margin: 0; margin-top: 7px; margin-left:3px;}
-            ul.tick-box:hover { font-family:"Pixelated MS Sans Serif", Arial; box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black);
+            ul.tick-box {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; display: block; background: var(--white); color:var(--text); position: absolute; width:9px; height: 9px;
+                         box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black); padding:2px; margin: 0; margin-top: 7px; margin-left:3px}
+            ul.tick-box:hover {font-family:"Pixelated MS Sans Serif", Arial; box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black);
                 font-size:11px; display: block; background: var(--white); color:var(--text); background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickboxhover.png');
-                position: absolute; width:9px; height: 9px; padding:2px; margin: 0; margin-top: 7px; margin-left:3px;}
+                position: absolute; width:9px; height: 9px; padding:2px; margin: 0; margin-top: 7px; margin-left:3px}
             
-            .ultext { padding: 3px 2px 2px 2px; cursor: pointer }
-            .filled { width:100%; height:100%; }
-            .field-row{ display:flex; align-items: center;} .field-row>*+*{ margin-left: 6px;} 
-            .field-row-stacked{ display:flex; flex-direction: column;} .field-row-stacked *+*{ margin-top: 6px;}
+            .ultext {padding: 3px 2px 2px 2px; cursor: pointer}; .filled {width:100%; height:100%}
+            .field-row{display:flex; align-items: center}; .field-row>*+*{ margin-left: 6px} 
+            .field-row-stacked{display:flex; flex-direction: column}; .field-row-stacked *+*{ margin-top: 6px}
             
             a {color: var(--text); text-decoration: none} a:hover {text-decoration: underline; color: var(--hover)} 
-            strong {color: var(--blue)} h3 {font-size: 2rem} underline {text-decoration-line: underline;}
-            console {padding:0px; margin:-2px; display: block; margin-left: 0; margin-right: 0; letter-spacing: -1px; white-space: pre-wrap; font-family: monospace;}
-            span {background-color: var(--white); color: var(--text);} icon {background-color: var(--wincyan); color: var(--white)} 
+            strong {color: var(--blue)}; h3 {font-size: 2rem}; underline {text-decoration-line: underline}
+            console {padding:0px; margin:-2px; display: block; margin-left: 0; margin-right: 0; letter-spacing: -1px; white-space: pre-wrap; font-family: monospace}
+            span {background-color: var(--white); color: var(--text)}; icon {background-color: var(--wincyan); color: var(--white)} 
             label {display:inline-flex; align-items: center; color: var(--text)} 
-            inboxlabel { margin-top:-16px; position: absolute; background-color: var(--silver); padding: 3px; margin-left:-3px display:inline-flex; align-items: center; color: var(--text)}
+            inboxlabel {margin-top:-16px; position: absolute; background-color: var(--silver); padding: 3px; margin-left:-3px display:inline-flex; align-items: center; color: var(--text)}
             
-            labc { margin-left: 4px; margin-top: 4px; } labs { margin-left: 2px; height:36px; margin-top:12px;}
+            labc { margin-left: 4px; margin-top: 4px; } labs { margin-left: 2px; height:36px; margin-top:12px}
             fieldset{border: none; box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray), inset -2px -2px var(--gray), inset 2px 2px var(--lightg); padding:10px; padding-block-start:8px; margin:0; color:var(--text)}
             .wieldset{box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray); margin:0; background-color:var(--silver); padding:2px}
             
 /* tumblr post handling ------------------------------------------------------------------------------*/
-            .posts .photo img.image { display: block; width: 100%; height:auto;} .posts .audio img.artwork { display: block; width: 100%; height:auto;}
-            .posts .html_photoset {  position: relative; display: block; width: 100%; height:auto;} .posts .photoset { position: relative; height:auto;}
-            .posts p:empty { display: none;} .posts div:empty { display: none;} .posts .with_caption {margin-bottom: 1em;} .hide_if_last:last-child { display: none;} 
-            body.permalink_page .posts .controls {  display: none;} #content #posts #tags .comma:last-child { display: none;}
+            .posts .photo img.image {display: block; width: 100%; height:auto} .posts .audio img.artwork { display: block; width: 100%; height:auto}
+            .posts .html_photoset {position: relative; display: block; width: 100%; height:auto;} .posts .photoset { position: relative; height:auto}
+            .posts p:empty {display: none} .posts div:empty {display: none} .posts .with_caption {margin-bottom: 1em} .hide_if_last:last-child { display: none} 
+            body.permalink_page .posts .controls {display: none} #content #posts #tags .comma:last-child {display: none}
             
-            .content p > img { max-width: 100%; border-radius: 0;} .content p { margin: 0 0 0.85em 0;}
-            .meta div { margin: 0 0 0.4em 0 !important;} .meta div a { text-decoration: none;} .meta div:last-child { margin-bottom: 0 !important;} /* bottom of posts before footer */
-            .content p:last-child { margin-bottom: 0 !important;} .content blockquote:last-child { margin-bottom: 0 !important;} blockquote, ul, ol  { margin: 0 0 0.8em 0;}
+            .content p > img {max-width: 100%; border-radius: 0} .content p {margin: 0 0 0.85em 0}
+            .meta div {margin: 0 0 0.4em 0 !important} .meta div a { text-decoration: none} .meta div:last-child {margin-bottom: 0 !important} /* bottom of posts before footer */
+            .content p:last-child {margin-bottom: 0 !important} .content blockquote:last-child {margin-bottom: 0 !important;} blockquote, ul, ol  {margin: 0 0 0.8em 0}
             
-            blockquote { margin-left: 2px; padding-left: 4px; margin-top:-5px; margin-bottom:5px; border-left: 2px solid var(--midgray); border-left: 2px solid var(--midgray); } /* lines at the side of posts */
-            .quote .dash { float: left; padding: 0 2px 0 2px;} .quote .source { float: left;}
-            .chat .line:last-of-type { margin-bottom: 0;} .chat ul { padding: 0; list-style: none;} .chat ol { padding: 0; list-style: none;}
+            blockquote {margin-left: 2px; padding-left: 4px; margin-top:-5px; margin-bottom:5px; border-left: 2px solid var(--midgray); border-left: 2px solid var(--midgray)} /* lines at the side of posts */
+            .quote .dash {float: left; padding: 0 2px 0 2px} .quote .source {float: left}
+            .chat .line:last-of-type {margin-bottom: 0} .chat ul {padding: 0; list-style: none} .chat ol {padding: 0; list-style: none}
             
-            .body img { max-width: 100%; overflow: hidden;} .caption img { max-width: 100%; overflow: hidden;} img.full_image { ,width: 451px; overflow: hidden;}
-            .middle img { max-width: 451px; width: 100%; height: 100%; display: block;} a img {border: 0;}
+            .body img {max-width: 100%; overflow: hidden} .caption img { max-width: 100%; overflow: hidden} img.full_image {width: 451px; overflow: hidden}
+            .middle img {max-width: 451px; width: 100%; height: 100%; display: block} a img {border: 0}
             
-            .audio_container { overflow: hidden; position: relative; width: 100px;} 
-            .tumblr_audio_player {width: 100%;} .posts .audio .audio_player embed { display: block;}
-            .soundcloud_audio_player { width: 100%;} .spotify_audio_player { height: 80px !important; width:100%;}
-            .tumblr_video_container {   position: relative; width:auto !important; height:auto !important; padding: auto;}
+            .audio_container {overflow: hidden; position: relative; width: 100px} 
+            .tumblr_audio_player {width: 100%;} .posts .audio .audio_player embed {display: block}
+            .soundcloud_audio_player {width: 100%;} .spotify_audio_player { height: 80px !important; width:100%}
+            .tumblr_video_container {position: relative; width:auto !important; height:auto !important; padding: auto}
 
-            .like-b { position:relative; display:inline-block; height:1em; line-height:1em; color:var(--text); background-color: var(--silver)} 
+            .like-b {position:relative; display:inline-block; height:1em; line-height:1em; color:var(--text); background-color: var(--silver)} 
             .like-b .like_button iframe { position:absolute; opacity:0; background-color: var(--silver)}
-            .like-b .liked + .b { color:inherit;} .like-b .liked + .b:after { content:'d';} .like-b:hover { color:var(--hover); text-decoration-line: underline; } 
+            .like-b .liked + .b {color:inherit;} .like-b .liked + .b:after {content:'d'} .like-b:hover { color:var(--hover); text-decoration-line: underline} 
 
-            .notes { margin-top:0px; text-align:left;} ol.notes { padding: 2px; list-style-type: none; max-height: 320px; width:463px; overflow:auto; margin-top:-6px;} 
-            ol.notes li.note img.avatar { vertical-align: -4px; margin-right: 4px; width: 16px; height:16px; margin-top:-2px; margin-bottom;-2px;} ol.notes li.note .answer_content { font-weight: normal;}
-            ol.notes li.note blockquote { padding: 4px 10px; margin: 10px 0px 0px 25px;} ol.notes li.note blockquote a { text-decoration: none; color: var(--blue);} ul, ol { padding: 0 0 0 18px;} /*infinate scroll*/
+            .notes {margin-top:0px; text-align:left} ol.notes {padding: 2px; list-style-type: none; max-height: 320px; width:463px; overflow:auto; margin-top:-6px} 
+            ol.notes li.note img.avatar {vertical-align: -4px; margin-right: 4px; width: 16px; height:16px; margin-top:-2px; margin-bottom;-2px} ol.notes li.note .answer_content {font-weight: normal}
+            ol.notes li.note blockquote {padding: 4px 10px; margin: 10px 0px 0px 25px} ol.notes li.note blockquote a {text-decoration: none; color: var(--blue);} ul, ol {padding: 0 0 0 18px} /*infinate scroll*/
             
             textarea {box-shadow:0px 0px 0px 0px; background:rgba(255,255,255,0); color: var(--alwaysblack)}
-            input[type=text] { width: 100%; background-color:var(--alwaysblack); color:var(--alwayswhite); padding:0px; cursor: default; padding:0px; margin-left:-5px; display: block; margin-left: 0; margin-right: 0; 
+            input[type=text] {width: 100%; background-color:var(--alwaysblack); color:var(--alwayswhite); padding:0px; cursor: default; padding:0px; margin-left:-5px; display: block; margin-left: 0; margin-right: 0; 
                 white-space: pre-wrap; font-family:"Pixelated MS Sans Serif", Arial; box-shadow: 0px solid var(--alwaysblack), 0px solid var(--alwaysblack), 0px solid var(--alwaysblack), 0px solid var(--alwaysblack)}
 
-            #progressBar { width: var(--slider); height: 6px; background-color: var(--silver); display: none; margin-top: 1px;}
-            #progressBar div { height: 100%; width: 0; background-color: var(--atext)}
+            #progressBar {width: var(--slider); height: 6px; background-color: var(--silver); display: none; margin-top: 1px}
+            #progressBar div {height: 100%; width: 0; background-color: var(--atext)}
         </style>
     </head>
 
@@ -1305,32 +1299,32 @@
                 <ul class="tree-view"  id="apperancepreview" style="width:337px; height:179px; margin-left: 12px; margin-top: 12px; background-size: cover; padding:10px;">
                     
                     <div class="prewin98post" style="height: 137px; width:300px;">
-                        <div class="prewin98titlebarbutton" style="position:absolute; margin-left: 283px; margin-top:1px" title="close"><div class="preclose"></div></div>
-                        <div class="prewin98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="prehelp"></div></div>
-                        <div class="pretitle-bar-posts" style="background-image: var(--preinactive);"> <div class="title-bar-text" style="margin-left:-1px; margin-top:-1px;" id="preinactive">💤 Inactive Window</div></div>
-                        <div class="window-body" style="margin-right: 4px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; padding: 2px 2px 2px 2px"></div></div>
+                        <div class="prewin98titlebarbutton" title="Close"><div class="preclose"></div></div>
+                        <div class="prewin98titlebarbutton" title="Help"> <div class="prehelp"></div></div>
+                        <div class="pretitle-bar-posts" style="background-image: var(--preinactive);"> <div class="title-bar-text" id="preinactive">💤 Inactive Window</div></div>
+                        <div class="window-body" style="margin: 3px; padding: 2px"></div></div>
                     
                     <div class="prewin98post" style="height: 137px; width:301px; margin-top:24px; margin-left:5px">
-                        <div class="prewin98titlebarbutton" style="position:absolute; margin-left: 283px; margin-top:1px" title="close"><div class="preclose"></div></div>
-                        <div class="prewin98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="prehelp"></div></div>
-                        <div class="pretitle-bar-posts" style="background-image: var(--preactive);"> <div class="title-bar-text" style="margin-left:-1px; margin-top:-1px;" id="preactive">💯 Active Window</div></div>
-                        <div class="window-body" style="margin: 3px 2px 2px 3px; padding: 2px">
-                            <div style="margin-top: -2px">
+                        <div class="prewin98titlebarbutton" title="Close"><div class="preclose"></div></div>
+                        <div class="prewin98titlebarbutton" title="Help"> <div class="prehelp"></div></div>
+                        <div class="pretitle-bar-posts" style="background-image: var(--preactive);"> <div class="title-bar-text" id="preactive">💯 Active Window</div></div>
+                        <div class="window-body" style="margin: 3px; margin-top: -2px; padding: 2px">
                                 <label style="position:absolute; color:var(--preblack)">Normal</label>
-                                <div class="predisabledfont" style="position:absolute; margin-left:39px; margin-top: -0px;">Disabled</div>
-                                <prefieldset style="position:absolute; margin-left:85px; margin-top:-1px; padding:2px 4px 1px 4px; color:var(--preblack);"> Selected </prefieldset></div>
+                                <div class="predisabledfont" style="position:absolute; margin-left:39px">Disabled</div>
+                                <prefieldset style="position:absolute; margin-left:85px; margin-top:-1px; padding:2px 4px 1px 4px; color:var(--preblack);"> Selected </prefieldset>
                             <preul class="tree-view"  style="width:286px; height:85px; margin-left: -3px; margin-top: 18px;">
                                 <div style="position:absolute; background-color: var(--premidgray); margin-left: 274px; width:16px; height:84px"></div>
-                                <div class="prewin98scroll" style="margin-left: 274px; margin-top:-4px"><div class="prescrollup"></div></div>
-                                <div class="prewin98scroll" style="margin-left: 274px; margin-top:73px"><div class="prescrolldown"></div></div></preul>
+                                <div style="margin-left: 274px">
+                                    <div class="prewin98scroll" style="margin-top:-4px"><div class="prescrollup"></div></div>
+                                    <div class="prewin98scroll" style="margin-top:73px"><div class="prescrolldown"></div></div></div></preul>
                     </div></div>
                         
-                    <div class="prewin98post" style="height:67px; width:200px; margin-left:20px; margin-top: 100px;">
-                        <div class="prewin98titlebarbutton" style="position:absolute; margin-left: 183px; margin-top:1px; cursor: pointer;" title="close"><div class="preclose"></div></div>
-                        <div class="prewin98titlebarbutton" style="margin-top:1px; margin-right:19px;" title="help"> <div class="prehelp"></div></div>
-                        <div class="pretitle-bar-posts" style="background-image: var(--preactive);"> <div class="title-bar-text" style="margin-left:-1px; margin-top:-1px;" id="premessage">💬 Message Box</div></div>
-                        <div class="messagewindowbody" style="padding:3px; color:var(--pretext);"> Current active window
-                            <center><div class="prewin98button" style="margin-top:4px; width:59px;"><butlabel>Ok.</butdislabel></div></center>
+                    <div class="prewin98post" style="height:72px; width:201px; margin-left:20px; margin-top: 100px;">
+                        <div class="prewin98titlebarbutton" title="Close"><div class="preclose"></div></div>
+                        <div class="prewin98titlebarbutton" title="Help"> <div class="prehelp"></div></div>
+                        <div class="pretitle-bar-posts" style="background-image: var(--preactive);"> <div class="title-bar-text" id="premessage">💬 Message Box</div></div>
+                        <div class="window-body" style="color:var(--pretext);"> Current active window
+                            <center><div class="prewin98button" style="margin-top:7px"><butlabel>Ok</butdislabel></div></center>
                     </div></div>
                 </ul>
                                
@@ -1353,7 +1347,7 @@
                     <script>
                         var curcolwhite, curcollightg, curcolsilver, curcolmidgray, curcolgray, curcolblack, curcolblue, curcolprussian, curcolwincyan, curcolyellow, curcolfont, curcolfonttitle, curcolhover, curcolatext, prewhite, //#ref5026 //#ref5003
                             precolwhite, precollightg, precolsilver, precolmidgray, precolgray, precolblack, precolblue, precolprussian, precolwincyan, precolyellow, precolfont, precolfonttitle, precolhover, precolatext, preblack, //#ref5026 //#ref5003
-                            preinactivetitle, curinactivetitle, preactivetitle, curactivetitle, preinvert, curinvert, schemedrop = false, ctoggle = false, themecurrent = "lightmode"; //#ref5026 //#ref5003//#ref5022
+                            predesktopsheet, curdesktopsheet, prespritesheet, curspritesheet, preinactivetitle, curinactivetitle, preactivetitle, curactivetitle, preinvert, curinvert, schemedrop = false, ctoggle = false, themecurrent = "lightmode"; //#ref5026 //#ref5003//#ref5022
                         
                         var currentsch = document.getElementById("currentscheme"), scheme = document.getElementById("scheme").style; //#ref5014 //dropdown menu for schemes, #ref0000
                         function schemedropdown(){ if (schemedrop == false) {scheme.marginLeft = "-2px"; schemedrop = true} else if (schemedrop == true){scheme.marginLeft = "-20000px"; schemedrop = false}} //#ref5023 //#ref5024
@@ -1374,43 +1368,44 @@
                             precolwhite = "#545454";   precollightg = "#9f9f9f"; precolsilver = "#3f3f3f"; precolmidgray = "#ababab"; precolgray = "#292929"; precolblack = "#000000"; precolblue = "#fccc39"; //#ref5003
                             precolprussian = "#00207c"; precolwincyan = "#008080"; precolyellow = "#c0c0c0"; precolfont = "#c0c0c0"; precolfonttitle = "#ffffff"; curcolhover = "#ffffff"; precolatext = "#ffffff"; //#ref5003
                             docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader); preinvert = 1; shuffleflop = 1; //#ref5004
-                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')"); cwpp = "#292929";} //#ref5000//#ref5005
+                            prespritesheet = github + "img/spritesheet.png')"; predesktopsheet = github + "img/desktopspritesheet.png')"; cwpp = "#292929";} //#ref5000//#ref5005
                             
                         function tankmode(){ pretaskbartxt = "#000000"; pretaskbartxtprs = "#000000"; preactivetitle = "#ffffff"; preinactivetitle = "#607060"; //#ref5001 //changes preview theme to a ww1 inspired theme with army greens.
                             precurinactivehead = github + "img/title-bar%20postheaderinactivetank.png')"; precuractiveheader = github + "img/title-bar%20postheaderactivetank.png')"; //#ref5002
+                            predesktopsheet =  github + "img/spritesheet.png')"; prespritesheet = github + "img/desktopspritesheet.png')"
                             precolwhite = "#7d8f7d";   precollightg = "#607060"; precolsilver = "#607060"; precolmidgray = "#404840"; precolgray = "#404840"; precolblack = "#0a0a0a"; precolblue = "#ffffff"; //#ref5003
                             precolprussian = "#481212" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#000000"; precolfonttitle = "#ffffff"; curcolhover = "#ffffff"; precolatext = "#000000"; //#ref5003
                             docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader); preinvert = 0; shuffleflop = 0; //#ref5004
-                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')"); cwpp = "#607060";} //#ref5000//#ref5005
+                            prespritesheet = github + "img/spritesheet.png')"; predesktopsheet = github + "img/desktopspritesheet.png')"; cwpp = "#607060";} //#ref5000//#ref5005
                         
                         function lightmode(){ pretaskbartxt = "#000000"; pretaskbartxtprs = "#000000"; preactivetitle = "#ffffff"; preinactivetitle = "#ffffff"; //#ref5001 //changes preview theme to default windows 98.
                             precurinactivehead = github + "img/title-bar%20postheaderinactive.png')"; precuractiveheader = github + "img/title-bar%20postheader.png')"; //#ref5002
                             precolwhite = "#ffffff";   precollightg = "#dfdfdf"; precolsilver = "#c0c0c0"; precolmidgray = "#ababab"; precolgray = "#808080"; precolblack = "#0a0a0a"; precolblue = "#0000FF"; //#ref5003
                             precolprussian = "#00207c" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#000000"; precolfonttitle = "#ffffff"; precolhover = "#ffffff"; precolatext = "#000000"; //#ref5003
                             docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader); preinvert = 0; shuffleflop = 0; //#ref5004
-                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')"); cwpp = "#c0c0c0";} //#ref5000//#ref5005
+                            prespritesheet = github + "img/spritesheet.png')"; predesktopsheet = github + "img/desktopspritesheet.png')"; cwpp = "#c0c0c0";} //#ref5000//#ref5005
                             
                         function neonmode(){ pretaskbartxt = "#000000"; pretaskbartxtprs = "#000000"; preactivetitle = "#ffffff"; preinactivetitle = "#00554d"; //#ref5001 //Vapourwave theme, using pastel pink and pastel blue.
                             precurinactivehead = github + "img/title-bar%20postheaderneon.png')"; precuractiveheader = github + "img/title-bar%20postheaderneonactive.png')"; //#ref5002
                             precolwhite = "#f7dbd7"; precollightg = "#fae0e4"; precolsilver = "#f4c1ca"; precolmidgray = "#e08998"; precolgray = "#de4560"; precolblack = "#0a0a0a"; precolblue = "#00bfbc"; //#ref5003
                             precolprussian = "#a2dbd2" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#000000"; precolfonttitle = "#ffffff"; precolhover = "#ffffff"; precolatext = "#000000"; //#ref5003
                             docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader); preinvert = 0; shuffleflop = 0; //#ref5004
-                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')"); cwpp = "#a2dbd2";} //#ref5000//#ref5005
+                            prespritesheet = github + "img/spritesheet.png')"; predesktopsheet = github + "img/desktopspritesheet.png')"; cwpp = "#a2dbd2";} //#ref5000//#ref5005
                         
                         function contrastmode1(){ pretaskbartxt = "#ffffff"; pretaskbartxtprs = "#0000ff"; preactivetitle = "#ffffff"; preinactivetitle = "#000000"; //#ref5001  //high contrast theme (cyan and blue)
                             precurinactivehead = github + "img/title-bar%20postheaderinactivecontrast.png')"; precuractiveheader = github + "img/title-bar%20postheaderactivecontrast.png')"; //#ref5002
                             precolwhite = "#000000"; precollightg = "#dfdfdf"; precolsilver = "#000000"; precolmidgray = "#ababab"; precolgray = "#808080"; precolblack = "#ffffff"; precolblue = "#00ffff"; //#ref5003
                             precolprussian = "#0000ff" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#ffff00"; precolfonttitle = "#000000"; precolhover = "#ffffff"; precolatext = "#ffffff"; //#ref5003
                             docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader); preinvert = 1; shuffleflop = 1;//#ref5004
-                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')"); cwpp = "#0000ff";} //#ref5000//#ref5005
+                            prespritesheet = github + "img/spritesheet.png')"; predesktopsheet = github + "img/desktopspritesheet.png')"; cwpp = "#0000ff";} //#ref5000//#ref5005
                             
                         function contrastmode2(){ pretaskbartxt = "#ffffff"; pretaskbartxtprs = "#0000ff"; preactivetitle = "#000000"; preinactivetitle = "#000000"; //#ref5001 //high contrast theme (green and yellow)
                             precurinactivehead = github + "img/title-bar%20postheaderinactivecontrast2.png')"; precuractiveheader = github + "img/title-bar%20postheaderactivecontrast2.png')"; //#ref5002
                             precolwhite = "#000000";   precollightg = "#dfdfdf"; precolsilver = "#000000"; precolmidgray = "#ababab"; precolgray = "#808080"; precolblack = "#ffffff"; precolblue = "#00ff00"; //#ref5003
                             precolprussian = "#00ff00" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#ffff00"; precolfonttitle = "#000000"; precolhover = "#ffffff"; precolatext = "#00ff00"; //#ref5003
                             docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader); preinvert = 1; shuffleflop = 1;
-                            docelem.style.setProperty('--spritesheet', "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/spritesheet.png')"); cwpp = "#00ff00";} //#ref5000//#ref5005
-                         
+                            prespritesheet = github + "img/spritesheet.png')"; predesktopsheet = github + "img/desktopspritesheet.png')"; cwpp = "#00ff00";} //#ref5000//#ref5005
+
                         function highcontrast1() {currentcolour = "#00ffff"; fontcolour = "#000000"; backcolourpreview(); ctoggle = true; contrastscheme()} //changes the current colours to cyan and font colour to white. //#ref0021
                         function highcontrast2() {  currentcolour = "#00ff00"; fontcolour = "#000000"; backcolourpreview(); ctoggle = true; contrastscheme()}//changes the current colours to green and font colour to white. //#ref0022
                         function contrastscheme(){ ctoggle = true; cpc.style.backgroundColor = "#000000"; cpo.style.backgroundColor = "#000000"; iconpre.backgroundColor = "#000000";  ap.style.backgroundColor = "#000000"} //changes backgrounds to black.
@@ -1426,12 +1421,12 @@
                             docelem.style.setProperty('--preblack', precolblack); docelem.style.setProperty('--presilver', precolsilver); docelem.style.setProperty('--preprussian', precolprussian);
                             docelem.style.setProperty('--premidgray', precolmidgray); docelem.style.setProperty('--prewincyan', precolwincyan); docelem.style.setProperty('--preyellow', precolyellow); 
                             docelem.style.setProperty('--prefont', precolfont); docelem.style.setProperty('--prefonttitle', precolfonttitle); docelem.style.setProperty('--prehover', precolhover);
-                            docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader);
-                            //adjustments to headers
+                            docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader);//adjustments to headers
+                            docelem.style.setProperty('--prespritesheet', prespritesheet); docelem.style.setProperty('--predesktopsheet', predesktopsheet);//adjusts spritesheets
                             document.getElementById("preinactive").style.color = preinactivetitle; document.getElementById("preactive").style.color = preactivetitle; document.getElementById("premessage").style.color = preactivetitle; //adjustments to headers
                             inprompt = inprompt + "Theme Preview Loaded."; println()} //logs if preview has been loaded
                         
-                        function themechange() { precolourupdate(); //changes the current theme and makes the current preview colours into current active colours. #ref0001
+                        function themechange() { precolourupdate(); curdesktopsheet = predesktopsheet; curspritesheet = prespritesheet; //changes the current theme and makes the current preview colours into current active colours. #ref0001
                             curinactivehead = precurinactivehead; curactiveheader = precuractiveheader; curactivetitle = preactivetitle; curinactivetitle = preinactivetitle; //changes headers and title colours
                             //updates current window colours that will get updated through inactive(); later
                             docelem.style.setProperty('--white', curcolwhite); docelem.style.setProperty('--gray', curcolgray); docelem.style.setProperty('--lightg', curcollightg); 
@@ -1443,6 +1438,7 @@
                             whit = curcolhover; blac = curcolblack; prus = curcolprussian; silv = curcolsilver; yell = curcolyellow; lightg = curcollightg; gray = curcolgray; text = curcolfont; cyan = curcolwincyan;
                             taskbartext = pretaskbartxt; taskbartextpressed = pretaskbartxtprs; curinactivehead = precurinactivehead; curactiveheader = precuractiveheader; black = curcolfont; white = curcolwhite;
                             docelem.style.setProperty('--curactivetitle', curactivetitle); docelem.style.setProperty('--curinactivetitle', curinactivetitle); 
+                            docelem.style.setProperty('--curspritesheet', curspritesheet); docelem.style.setProperty('--curdesktopsheet', curdesktopsheet);//adjusts spritesheets
                             //updates startmenu button
                             docelem.style.setProperty('--taskbarstarttop1', curcolgray); docelem.style.setProperty('--taskbarstarttop2', curcolblack); 
                             docelem.style.setProperty('--taskbarstartbottom1', curcolwhite); docelem.style.setProperty('--taskbarstartbottom2', curcollightg);
@@ -1451,7 +1447,7 @@
                             favouritesclosed(); channelsclose(); linksclose(); mediaclose(); mediaclose(); documentsclosed(); settingsclosed(); settingsclosed(); settingsactivedesktopclose(); findclosed(); vherstyclose();
                             //changes the current state of headers and adjusts icons based on invert
                             docelem.style.setProperty('--inactive', curinactivehead); docelem.style.setProperty('--active', curactiveheader); docelem.style.setProperty('--invert', curinvert); 
-                            inactiveall(); clocku(); wwpno(); //updates windows visually by looping inactive windows
+                            clocku(); wwpno(); diskactive(); //updates windows visually by looping inactive windows
                             shufflecolour(); if(shuffle == false){docelem.style.setProperty('--shuffleinvert', 0.5)} else if(shuffle == true){docelem.style.setProperty('--shuffleinvert', shuffleflop)} //mediaplayer shuffle colour correction.
                             inprompt = inprompt + "Theme Loaded."; println()} //logs if the preview theme has been turned into the current theme active.
                     </script>
@@ -1940,10 +1936,9 @@
             function inactiveall() { var timer = 0; if (timer < 1){timer = 1; menuclosed();
                 $(".win98post").find(".title-bar-98").css("background-image", curinactivehead); $(".win98post").find(".title-bar-text").css("color", curinactivetitle)
                 $(".window").find(".title-bar-98").css("background-image", curinactivehead); $(".window").find(".title-bar-text").css("color", curinactivetitle)
-                for (var i = 1; i < tasktrue.length; i++){ 
-                    if(ButtonOpen[i] == false){ ButtonOpen[i] = true; taskbar[i].backgroundImage = "none"; taskbar[i].backgroundColor = silv
-                        docelem.style.setProperty('--taskbar' + i + 'top1', curcolwhite); docelem.style.setProperty('--taskbar' + i + 'top2', curcollightg)
-                        docelem.style.setProperty('--taskbar' + i + 'bottom1', curcolgray); docelem.style.setProperty('--taskbar' + i + 'bottom2', curcolblack)}}}}
+                for (var i = 1; i < tasktrue.length; i++){ ButtonOpen[i] = true; taskbar[i].backgroundImage = "none"; taskbar[i].backgroundColor = silv
+                    docelem.style.setProperty('--taskbar' + i + 'top1', curcolwhite); docelem.style.setProperty('--taskbar' + i + 'top2', curcollightg)
+                    docelem.style.setProperty('--taskbar' + i + 'bottom1', curcolgray); docelem.style.setProperty('--taskbar' + i + 'bottom2', curcolblack)}}}
             function activatetask(){ ButtonOpen[curtaskact] = false; taskbar[curtaskact].backgroundImage = github + "img/scrollbarempty.png')"; taskbar[curtaskact].backgroundColor = curcolwhite;
                 docelem.style.setProperty('--taskbar' + curtaskact + 'top1', curcolblack); docelem.style.setProperty('--taskbar' + curtaskact + 'top2', curcolgray);
                 docelem.style.setProperty('--taskbar' + curtaskact + 'bottom1', curcollightg); docelem.style.setProperty('--taskbar' + curtaskact + 'bottom2', curcolwhite)}
@@ -2258,12 +2253,10 @@
                         taskbarfont = [undefined, document.getElementById("taskapp1font").style, document.getElementById("taskapp2font").style, document.getElementById("taskapp3font").style, document.getElementById("taskapp4font").style,
                         document.getElementById("taskapp5font").style, document.getElementById("taskapp6font").style, document.getElementById("taskapp7font").style, document.getElementById("taskapp8font").style]
                     
-                    function tasktoggle() {
-                        if (ButtonOpen[button] == false) { funccall = button + "m"} else if (ButtonOpen[button] == true){ funccall = button + "a"; ButtonOpen[button] = false } switch (funccall) {
+                    function tasktoggle() { if (ButtonOpen[button] == false) { funccall = button + "m"} else if (ButtonOpen[button] == true){ funccall = button + "a"; ButtonOpen[button] = false } switch (funccall) {
                             case "1m": tumblrminimize(); break; case "1a": tumblractive(); break; case "2m": vunnyminimize(); break; case "2a": vunnyopen(); break; case "3m": diskminimize(); break; case "3a": diskactive(); break; 
                             case "4m" :embedminimize(); break; case "4a": embedactive(); break; case "5m": patchnoteminimize(); break; case "5a": patchnotesactive(); break; case "6m": promptminimize(); break; case "6a": promptactive(); break;
-                            case "7m": notepadminimize(); break; case "7a": notepadactive(); break; case "8m": internetminimize(); break; case "8a": internetactive(); break} 
-                        button = 0; menuclosed()}
+                            case "7m": notepadminimize(); break; case "7a": notepadactive(); break; case "8m": internetminimize(); break; case "8a": internetactive(); break}; button = 0; menuclosed()}
 
                     function vunnytask(){vunnywindowreset(); catactive(); pyroactive(); task = 2; taskposopen()}; function disktask(){diskopen(); appearancetab(); task = 3; taskposopen()} //tasks 2 + 3
                     function embedtask(){embedactive(); task = 4; taskposopen()}; function patchnotestask(){messageclose(); task = 5; patchnotesopen(); taskposopen()} //tasks 4 + 5
@@ -2281,8 +2274,8 @@
                     <div class="menuentertainment3" style="margin-top:-1px; margin-left:1px;"></div>
                     <label class="time" style="font-size:11px; color: var(--atext);" id="showClock"> 00:00 am </label>
                 </div>
-            </div>
-        </div>
+                
+        </div></div>
 
 <!-- On page load handling ------------------------------------------------------------------------------>
         <script>
