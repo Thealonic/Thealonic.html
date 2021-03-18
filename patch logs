@@ -1,7 +1,39 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll; padding-right: 4px;">
 <ul>
-<li><strong>2021 March 16th (210316)</strong><strong><em><br /></em></strong>
+<li><strong style="color: var(--atext);">2021 March 18th (210318) </strong><em>- A general optimisation update.<strong style="color: var(--atext);"><br /></strong></em>
+<ul>
+<li><strong>Backend CSS / HTML Updates</strong><br />
+<ul>
+<li>Swapped out custom Titlebar button CSS for more streamlined implimentation.</li>
+<li>All taskbar buttons are now in the disabled state by default.</li>
+<li>Added new default button CSS for better implimentation of both 'Absolute' and 'Relative' button positioning.</li>
+<li>Fixed Titlebar button title properties.</li>
+<li>Simplified tons of backend CSS.</li>
+<li>Removed needless or outdated backend CSS.</li>
+</ul>
+</li>
+<li><strong>Scheme updates and page optimisation<br /></strong>
+<ul>
+<li>Page sprites no longer load until theme loading.</li>
+<li><strong>Added feature to change desktop icons through themes. </strong>(Custom sheets to be implimented at a later date)</li>
+<li><strong>Added feature to change sprite assets through themes. </strong>(Custom sheets to be implimented at a later date)</li>
+<li>Spritesheets can now be enforced through the console through the 'curspritesheet' and 'curdesktopsheet' variables.</li>
+<li>Adjusted how page loading looks to represent load order and more optimised for schemes.</li>
+</ul>
+</li>
+<li>Simplied a bunch of JS in the Time and Date menu.</li>
+<li>Optimised footers of both the Time and Date menu and the Display Properties.</li>
+</ul>
+<ol>
+<li>- Fixed taskbar related issue with Tumblr posts not making the task active.</li>
+<li>- Fixed inactive tasks on the taskbar remaining the colour of the previous theme, regardless of how many theme changes.</li>
+</ol></li>
+<li><strong style="color: var(--atext);">2021 March 17th (210317)<strong><em><br /></em></strong></strong><ol>
+<li>- Fixed issues with layering on the desktop overriding individual layering of posts.</li>
+<li>- Fixed a bug where the patchnotes, when minimized, wouldn&rsquo;t reappear when clicking it&rsquo;s task on the taskbar.</li>
+</ol></li>
+<li><strong style="color: var(--atext);">2021 March 16th (210316)</strong><strong><em><br /></em></strong>
 <ul>
 <li><strong>Major Taskbar Updates<br /></strong>
 <ul>
@@ -9,13 +41,13 @@
 <li>Rehauled how task positions are mathmatically calculated.</li>
 <li><strong>Tasks no longer individually calculate each task every time, but will instead loop through.</strong></li>
 <li>Reworked how new tasks are called active.</li>
-<li><strong>Rehauled how tasks change depending on if they're currently active.</strong></li>
+<li><strong>Rehauled how tasks change depending on if they&rsquo;re currently active.</strong></li>
 <li>Task calling no longer calls independant functions.</li>
-<li><strong>TONS of back end optimisations. </strong>Eg. <span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">The previous solution used 13590 characters, the new one uses 3688.</span></li>
+<li><strong>TONS of back end optimisations. </strong>Eg. The previous solution used 13590 characters, the new one uses 3532.</li>
 </ul>
 </li>
 <li>Clicking on Very.Vunnies on the taskbar, will now bring tumblr posts to the front instead of just focusing it.</li>
-<li><strong>The "Inactive" call is now more efficent.</strong></li>
+<li><strong>The &ldquo;Inactive&rdquo; call is now more efficent.</strong></li>
 <li><strong>Added Internet Explorer<br /></strong>
 <ul>
 <li><strong>Added window draggability.<br /></strong></li>
