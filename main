@@ -32,8 +32,8 @@
                $(this).css({ 'transform': 'scale(' + scale + ')', 'margin': 250 * ( scale - 1 ) + 'px' });
                $(this).parents('.tumblr_video_container').css({ width: Math.floor($(this).width() * ( scale + 1 ) / 2), height: Math.floor($(this).height() * ( scale + 1 ) / 2)})})}
               
-        var github = "url('//raw.githubusercontent.com/Thealonic/Thealonic.html/main/", readme = "//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/README.md";
-        var updateon = "10:36am on March 18th, 2021. [GMT]", updatedfrom = "Thea Vanherst";
+        var github = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/", readme = "//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/README.md";
+        var updateon = "9:19am on March 20th, 2021. [GMT]", updatedfrom = "Thea Vanherst";
         var currenttask = 1, cal = 5, docelem = document.documentElement; function calupdate(){inactiveall(); cal = cal + 1};
         function latestupdate() {document.getElementById("lastupdate").textContent = updateon; document.getElementById("updatedby").textContent = updatedfrom}
     </script>
@@ -50,11 +50,11 @@
                     --scrollbar: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/scrollbarempty.png');
                     
                     --white: #fff; --lightg: #dfdfdf;  --silver: #c0c0c0; --midgray: #ababab; --gray: #808080; --black: #0a0a0a; --blue: #0000ff; --prussian: #00207c ; --wincyan: #008080; --yellow: #ffff00; 
-                    --font: #000; --fonttitle: #fff; --hover: #fff; --atext: #000; --curinactivetitle: #fff; --curactivetitle: #fff; --consoleback: #000; --consoletext: #fff; --alwayswhite: #fff; --alwaysblack: #000;
-                    --invert: 0; --preinvert: 0; --shuffleinvert: 0.5;
+                    --font: #000; --hover: #fff; --atext: #000; --curinactivetitle: #fff; --curactivetitle: #fff; --consoleback: #000; --consoletext: #fff; --alwayswhite: #fff; --alwaysblack: #000;
+                    --invert: 0; --preinvert: 0; --shuffleinvert: 0.5; --discheckinv: 0.6; --enacheckinv: 0.2; --invcheckinv: 0.35;
 
                     --prewhite: #fff; --prelightg: #dfdfdf;  --presilver: #c0c0c0; --premidgray: #ababab; --pregray: #808080; --preblack: #0a0a0a; --preprussian: #00207c ; --prewincyan: #008080; --preyellow: #ffff00; 
-                    --prefont: #000; --prefonttitle: #fff; --prehover: #fff; --preactivetitle: #fff; --preinactivetitle: #fff; 
+                    --prefont: #000; --prehover: #fff; --preactivetitle: #fff; --preinactivetitle: #fff; 
                     
                     --taskbarstarttop1: #808080; --taskbarstarttop2: #0a0a0a; --taskbarstartbottom1: #fff; --taskbarstartbottom2: #dfdfdf; 
                     --taskbar1top1: #fff; --taskbar1top2: #dfdfdf; --taskbar1bottom1: #808080; --taskbar1bottom2: #0a0a0a; --taskbar2top1: #fff; --taskbar2top2: #dfdfdf; --taskbar2bottom1: #808080; --taskbar2bottom2: #0a0a0a; 
@@ -89,7 +89,7 @@
             .title-bar-98{font-weight:700; color: var(--curinactivetitle); font-size:11px; background-image: var(--inactive); height:18px; width:100%; background-size: cover}
             .window-body{margin: 8px; color:var(--font)}
             .window {box-shadow: inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; font-size:11px; position: absolute; z-index:4}
-            .title-bar-text {font-family:"Pixelated MS Sans Serif", Arial; font-weight:700; color: var(--fonttitle); letter-spacing:0; margin-right:24px; padding:1px 4px 2px 4px; cursor: context-menu}
+            .title-bar-text {font-family:"Pixelated MS Sans Serif", Arial; font-weight:700; color: var(--curactivetitle); letter-spacing:0; margin-right:24px; padding:1px 4px 2px 4px; cursor: context-menu}
             .win98innerbox {box-shadow: inset -1px -1px var(--black), inset 1px 1px var(--white), inset -2px -2px var(--gray), inset 2px 2px var(--lightg); background:var(--silver); padding:3px; font-size:11px; position: absolute; color: var(--font)}
             .messagewindowbody {margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; color: var(--font)}
             
@@ -137,7 +137,8 @@
             
 /* window preview handling ------------------------------------------------------------------------------*/
             .prepost{box-shadow: inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); padding:3px; position: absolute; color: var(--prefont)}
-            .pretitle-bar-posts{font-weight: 700; color: var(--fonttitle); font-size: 11px; background-image: var(--preactive); height: 18px; width: 100%}
+            .pretitle-bar-posts{background-image: var(--preactive); height: 18px; width: 100%}
+            .pretitle-bar-text {font-family:"Pixelated MS Sans Serif", Arial; font-weight:700; color: var(--preactivetitle); letter-spacing:0; margin-right:24px; padding:1px 4px 2px 4px; cursor: context-menu}
             .pretitlebarbutton {width: 10px; height: 8px; float:right; box-shadow:inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); margin-top:2px; padding:3px; margin-right:2px}
             .pretitlebarbutton:active {box-shadow:inset 1px 1px var(--preblack),  inset -1px -1px var(--prewhite), inset -2px -2px var(--prelightg), inset 2px 2px var(--pregray)}
             .prescroll {width:10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); padding:3px; position: absolute; cursor: pointer}
@@ -164,7 +165,7 @@
             .scrolldown {background-position: 0px -212px} .scrollleft { background-position: -16px -212px} .scrollup {background-position:  -32px -212px} .scrollright {background-position: -48px -212px}
             .smallscrollup {background-position: -38px -218px; height: 2px; width: 3px; margin-left:3px; margin-top:0px;} .smallscrolldown {background-position: -6px -220px; height: 2px; width: 3px; margin-left:3px; margin-top:0px;} 
 
-            .tinyarrowdisableddown, .smallarrowdisableddown, .arrowdisableddown, .tinyarrowdisabledup, .arrowdisableup, .menuarrow1, .lmenuarrow, .smenuarrow, .tinyarrowdown, .smallarrowdown, .disabledtickbox, .enabledtickbox {background-image: var(--curspritesheet); filter: invert(var(--invert))}
+            .tinyarrowdisableddown, .smallarrowdisableddown, .arrowdisableddown, .tinyarrowdisabledup, .arrowdisableup, .menuarrow1, .lmenuarrow, .smenuarrow, .tinyarrowdown, .smallarrowdown{background-image: var(--curspritesheet); filter: invert(var(--invert))}
             .tinyarrowdisableddown {height: 3px; width: 4px; background-position: -6px -220px; filter: invert(0.5); margin-left:3px}
             .smallarrowdisableddown {height: 4px; width: 6px; background-position: -5px -219px; filter: invert(0.5)}
             .arrowdisableddown {height: 16px; width: 16px; background-position: 1px -212px; filter: invert(0.5); margin-top:-3px; margin-left:-3px}
@@ -177,8 +178,11 @@
             .tinyarrowdown {height:  5px; width:  7px; background-position: -6px -220px; margin: auto; float: right}
             .smallarrowdown {height:  3px; width:  5px; background-position: -5px -219px; margin: auto; float: right}
             
-            .disabledtickbox {height: 7px; width: 7px; background-position: -143px -212px; margin-top:1px; margin-left:1px; position: absolute}
-            .enabledtickbox {height: 7px; width: 7px; background-position: -143px -220px; position: absolute}
+            .disabletickbox {height: 14px; width: 14px; filter: invert(var(--discheckinv)); background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png'); margin:-2px; position: absolute}
+            .enabledtickbox {height: 14px; width: 14px; filter: invert(var(--invert)); background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png'); margin:-2px; position: absolute}
+            .enabledtickbox:hover {height: 14px; width: 14px; filter: invert(var(--enacheckinv)); background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png'); margin:-2px; position: absolute}
+            .invisibtickbox {height: 14px; width: 14px; filter: invert(var(--invert)); background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickboxinv.png'); margin:-2px; position: absolute}
+            .invisibtickbox:hover {height: 14px; width: 14px; filter: invert(var(--invcheckinv)); background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png'); margin:-2px; position: absolute}
             
             .scrollbarmiddle {height:  2px; width: 16px; background-image: var(--scrollbar); background-repeat: repeat; overflow:hidden; background-color: var(--white)}
             
@@ -297,14 +301,9 @@
             ul.tree-view details[open] summary {margin-bottom: 0} 
             ul.tree-view details[open]>summary:before {content: "-"}
             ul:active .win98button {box-shadow:inset 1px 1px var(--black), inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray); background:var(--silver)}
-            
-            .enabledtickbox {height: 7px; width: 7px; background-position: -143px -220px; position: absolute}
-            
+
             ul.tick-box {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; display: block; background: var(--white); color:var(--text); position: absolute; width:9px; height: 9px;
                          box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black); padding:2px; margin: 0; margin-top: 7px; margin-left:3px}
-            ul.tick-box:hover {font-family:"Pixelated MS Sans Serif", Arial; box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black);
-                font-size:11px; display: block; background: var(--white); color:var(--text); background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickboxhover.png');
-                position: absolute; width:9px; height: 9px; padding:2px; margin: 0; margin-top: 7px; margin-left:3px}
             
             .ultext {padding: 3px 2px 2px 2px; cursor: pointer}; .filled {width:100%; height:100%}
             .field-row{display:flex; align-items: center}; .field-row>*+*{ margin-left: 6px} 
@@ -363,7 +362,7 @@
 <!-- Page rendering ------------------------------------------------------------------------------>
     <script> function defaultpageload() {evangelionmode(); backcolourset(); fontcolourset(); wallpaperupdate(); themechange(); evangelionmode();} </script>
     <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" 
-          onload="latestupdate(); defaultpageload(); {block:HomePage}messageopen(); vunnytask(); vunnypositionreset(); diskminimize();{/block:HomePage} disktask(); promptrestart(); tumblractive()">
+          onload="latestupdate(); defaultpageload(); {block:HomePage}messageopen(); vunnytask(); vunnypositionreset(); {/block:HomePage} disktask(); diskminimize(); promptrestart(); tumblractive()">
      <title>𝖁𝖍𝖊𝖗𝟗𝟖</title>
      
 <!-- desktop handling ------------------------------------------------------------------------------>
@@ -400,6 +399,23 @@
                 <label>Roller Coaster</label> <label style="margin-left:0.5px;">Tycoon 2</label></icon></div></a>
         </div>
         <!-- Sidebar icons coloumn 2 -->
+    
+    
+        <div class="container" style="width:649px; height:995px; position:fixed; margin-left:1250px" id="CSGO"></div>
+        
+        <script>
+            var csgostyle = document.getElementById("CSGO").style, CSLength = 1, ranCSno = 1, CSspeed = 60, CSinterval = 173 * CSspeed, CS;
+            
+            function changeBanner() { 
+                if(csgotoggle == true){ CS = github + "img/CSGO/Cycle" + ranCSno + ".gif')";
+                    if(ranCSno == 1){CSinterval = 173 * CSspeed}; csgostyle.backgroundImage = CS;
+                    inprompt = inprompt + "CSinterval : " + CSinterval + "ms :  ranCSno: " + ranCSno; println(); println();
+                } else {csgostyle.backgroundImage = ""}}
+            $('document').ready(function(){setInterval(changeBanner, CSinterval)});
+            
+            
+        </script>
+    
     
 <!-- VUNNY message box rendering ------------------------------------------------------------------------------>
         <div class="win98post" style="position: fixed; width: 206px; margin-left:-20000px;" onmousedown="catactive();" id="cat"> <!--#ref2000-->
@@ -467,8 +483,9 @@
                 r_text[35] = "yeah I like ASS"; r_text[36] = "FUCK HARDER SNAKE"; r_text[37] = "Korean Border"; r_text[38] = ":)"; r_text[39] = "It seems today"; 
             
             var pyrobutton = document.getElementById("pyrobutton");
-            var randomNum = Math.floor(Math.random() * myPix.length), randomNum2 = 0, tick = 3, beforehand = "💯 ";
+            var tick = 3, beforehand = "💯 ";
             function pyroshuffle(){ //#ref2002
+                var randomNum = Math.floor(Math.random() * myPix.length), randomNum2;
                 if (tick !== 0){ randomNum2 = Math.floor(Math.random() * myPix.length);
                     if(randomNum2 !== randomNum){randomNum = randomNum2
                         pyrotext.textContent = beforehand + r_text[randomNum]; 
@@ -835,7 +852,7 @@
                     <inboxlabel style="width:49px"> <underline>Time <underline> z</underline>one</inboxlabel>
                     <ul class="tree-view"  style="position: absolute; width:373px; height: 17px; padding:2px; margin-top:7px; margin-left:1px;"><div style="padding: 3px 2px 2px 2px;">(GMT 0:00) London, Greenwich Mean Time </div>
                         <div class="win98buttona" style="margin-top: -17px; margin-left:357px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
-                    <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 13px; margin-left:-3px; background-color: var(--silver);"><div class="disabledtickbox"></div></ul>
+                    <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 13px; margin-left:-3px; background-color: var(--silver);"><div class="disabletickbox"></div></ul>
                             <div class="disabledfont" style="position:absolute; margin-left:15px; margin-top: 14px; display: inline-block;">Automatically adjust clock for daylight savings</div></fieldset></div>
                 
                 <!-- --------------------------------------- footer --------------------------------------- -->
@@ -1232,9 +1249,14 @@
                                 <div class="filled" id="wallpaperoverlay10" title="Created by Phil-Nye in the discord server">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Aesthetic (Created by Phil-Nye)</label></div></div>
                                     
-                            <div class="wallpapermenu" style="margin-top:146px; margin-left:-20000px"><div class="menuapplications11" style="margin-top:-1px"></div>
-                                <div class="filled" id="wallpaperoverlay11">
-                                    <label style="margin-left: 2px 2px 0px 0px; cursor:pointer">test</label></div></div>
+                            <div style="margin-top:-80px; margin-left: -20000px" id="nsfwoptions">
+                                <div class="wallpapermenu" style="margin-top:186px;" onclick="wallpaperoption10()"><div class="menuapplications11" style="margin-top:-1px"></div>
+                                    <div class="filled" id="wallpaperoverlay11">
+                                        <label style="margin: 3px 2px 0px 0px; cursor:pointer">The Small Brown Fox</label></div></div>
+                                <div class="wallpapermenu" style="margin-top:206px;" onclick="wallpaperoption11()"><div class="menuapplications11" style="margin-top:-1px"></div>
+                                    <div class="filled" id="wallpaperoverlay12">
+                                        <label style="margin: 3px 2px 0px 0px; cursor:pointer">Resident Evil</label></div></div>
+                            </div>
                     </div></ul> <!--#ref0013-->
             </fieldset></div>
                         
@@ -1242,7 +1264,8 @@
                 var wpo = [document.getElementById("wallpaperoverlay1").style, document.getElementById("wallpaperoverlay2").style, document.getElementById("wallpaperoverlay3").style, //#ref5014
                     document.getElementById("wallpaperoverlay4").style, document.getElementById("wallpaperoverlay5").style, document.getElementById("wallpaperoverlay6").style, //#ref5014
                     document.getElementById("wallpaperoverlay7").style, document.getElementById("wallpaperoverlay8").style, document.getElementById("wallpaperoverlay9").style, //#ref5014
-                    document.getElementById("wallpaperoverlay10").style], cwpp = "#c0c0c0", curwp = "", wpn = "", wps = ""; //#ref5014 //#ref5015, #ref5016
+                    document.getElementById("wallpaperoverlay10").style, document.getElementById("wallpaperoverlay11").style, document.getElementById("wallpaperoverlay12").style]; //#ref5014
+                var cwpp = "#c0c0c0", curwp = "", wpn = "", wps = ""; //#ref5014 //#ref5015, #ref5016
                 function wallpaperupdate(){abody.backgroundImage = curwp; dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp} //#ref5021 //#ref5020
                 function wpp(){ dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp; document.getElementById("apperancepreview").style.backgroundImage = curwp; iconpre.backgroundImage = curwp} //#ref5021 //#ref0020 //#ref0019 
                 //ref#0025 wallpaper changes based on ref#0026, changes on click to be previewed through #ref5021
@@ -1252,8 +1275,8 @@
                 function wallpaperoption4(){wpn = 4; wps = "img/wallpapers/unknown.png')"; wwpno()}     function wallpaperoption5(){wpn = 5; wps = "img/wallpapers/anime.png')"; wwpno()} //#ref5019 for #ref0008 //#ref5019 for #ref0009
                 function wallpaperoption6(){wpn = 6; wps = "img/wallpapers/vinyl.gif')"; wwpno()}       function wallpaperoption7(){wpn = 7; wps = "img/wallpapers/lynn.png')"; wwpno()} //#ref5019 for #ref0010 //#ref5019 for #ref0011
                 function wallpaperoption8(){wpn = 8; wps = "img/wallpapers/Untitled-3.jpg')"; wwpno()}  function wallpaperoption9(){wpn = 9; wps = "img/wallpapers/Untitled-4.jpg')"; wwpno()} //#ref5019 for #ref0012 //#ref5019 for #ref0013
+                function wallpaperoption10(){wpn = 10; wps = "img/wallpapers/macro.png')"; wwpno()}     function wallpaperoption11(){wpn = 11; wps = "img/wallpapers/ResidentEvil.png')"; wwpno()} //#ref5019 for #ref0012 //#ref5019 for #ref0013
             </script>
-            
             <!-- --------------------------------------- screensaver tab --------------------------------------- -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="screensaver">
                 <center><div class="displaycolourback" id="dcb2"><div class="displayboxdisplay"></div><div class="displayboxdisplayde"></div></div></center>
@@ -1307,13 +1330,13 @@
                     <div class="prepost" style="height: 137px; width:300px;">
                         <div class="pretitlebarbutton" title="Close"><div class="preclose"></div></div>
                         <div class="pretitlebarbutton" title="Help"> <div class="prehelp"></div></div>
-                        <div class="pretitle-bar-posts" style="background: var(--preinactive);"> <div class="title-bar-text" id="preinactive">💤 Inactive Window</div></div>
+                        <div class="pretitle-bar-posts" style="background: var(--preinactive);"> <div class="pretitle-bar-text" style="color: var(--preinactivetitle);">💤 Inactive Window</div></div>
                         <div class="window-body" style="margin: 3px; padding: 2px"></div></div>
                     
                     <div class="prepost" style="height: 137px; width:301px; margin-top:24px; margin-left:5px">
                         <div class="pretitlebarbutton" title="Close"><div class="preclose"></div></div>
                         <div class="pretitlebarbutton" title="Help"> <div class="prehelp"></div></div>
-                        <div class="pretitle-bar-posts" style="background: var(--preactive);"> <div class="title-bar-text" id="preactive">💯 Active Window</div></div>
+                        <div class="pretitle-bar-posts" style="background: var(--preactive);"> <div class="pretitle-bar-text">💯 Active Window</div></div>
                         <div class="window-body" style="margin: 0px 3px 3px 3px; padding: 2px">
                             <label style="position:absolute; color:var(--preblack)">Normal</label>
                             <div class="predisabledfont" style="position:absolute; margin-left:39px">Disabled</div>
@@ -1327,7 +1350,7 @@
                     <div class="prepost" style="height:72px; width:201px; margin-left:20px; margin-top: 100px;">
                         <div class="pretitlebarbutton" title="Close"><div class="preclose"></div></div>
                         <div class="pretitlebarbutton" title="Help"> <div class="prehelp"></div></div>
-                        <div class="pretitle-bar-posts" style="background: var(--preactive);"> <div class="title-bar-text" id="premessage">💬 Message Box</div></div>
+                        <div class="pretitle-bar-posts" style="background: var(--preactive);"> <div class="pretitle-bar-text">💬 Message Box</div></div>
                         <div class="window-body" style="color:var(--pretext);"> Current active window
                             <center><div class="prebutton" style="margin-top:7px"><butlabel>Ok</butdislabel></div></center>
                 </div></div></ul>
@@ -1348,9 +1371,10 @@
                     </div></ul>
                             
                     <script>
-                        var curcolwhite, curcollightg, curcolsilver, curcolmidgray, curcolgray, curcolblack, curcolblue, curcolprussian, curcolwincyan, curcolyellow, curcolfont, curcolfonttitle, curcolhover, curcolatext, prewhite, //#ref5026 //#ref5003
-                            precolwhite, precollightg, precolsilver, precolmidgray, precolgray, precolblack, precolblue, precolprussian, precolwincyan, precolyellow, precolfont, precolfonttitle, precolhover, precolatext, preblack, //#ref5026 //#ref5003
-                            predesktopsheet, curdesktopsheet, prespritesheet, curspritesheet, preinactivetitle, curinactivetitle, preactivetitle, curactivetitle, preinvert, curinvert, schemedrop = false, ctoggle = false, themecurrent = "lightmode"; //#ref5026 //#ref5003//#ref5022
+                        var curcolwhite, curcollightg, curcolsilver, curcolmidgray, curcolgray, curcolblack, curcolblue, curcolprussian, curcolwincyan, curcolyellow, curcolfont, curcolhover, curcolatext, prewhite, //#ref5026 //#ref5003
+                            precolwhite, precollightg, precolsilver, precolmidgray, precolgray, precolblack, precolblue, precolprussian, precolwincyan, precolyellow, precolfont, precolhover, precolatext, preblack, //#ref5026 //#ref5003
+                            predesktopsheet, curdesktopsheet, prespritesheet, curspritesheet, preinactivetitle, curinactivetitle, preactivetitle, curactivetitle, preinvert, curinvert, discheckinv, enacheckinv, invcheckinv, //#ref5026 //#ref5003//#ref5022
+                            schemedrop = false, ctoggle = false, themecurrent = "lightmode"; //#ref5026 //#ref5003//#ref5022
                         
                         var currentsch = document.getElementById("currentscheme"), scheme = document.getElementById("scheme").style; //#ref5014 //dropdown menu for schemes, #ref0000
                         function schemedropdown(){ if (schemedrop == false) {scheme.marginLeft = "-2px"; schemedrop = true} else if (schemedrop == true){scheme.marginLeft = "-20000px"; schemedrop = false}} //#ref5023 //#ref5024
@@ -1366,56 +1390,56 @@
                         function contrastmodescheme2(){ currentsch.textContent="High Contrast Mode 2";    highcontrast2(); wallpaperoptionnone(); tcontrastmode2(); themepreviewchange()} //#ref0031 wallpaper #ref0022
                         function wallpapercust() {      currentsch.textContent="(Custom)"} //changes text on current active theme to "custom" #ref0023
 
-                        function darkmode(){ pretaskbartxt = "#9f9f9f"; pretaskbartxtprs = "#ffffff"; preactivetitle = "#ffffff"; preinactivetitle = "#ffffff"; //#ref5001 //changes preview theme to darkmode
+                        function darkmode(){ pretaskbartxt = "#9f9f9f"; pretaskbartxtprs = "#fff"; preactivetitle = "#fff"; preinactivetitle = "#fff"; //#ref5001 //changes preview theme to darkmode
                             precuractiveheader = github + "img/title-bar%20postheader-darkmodeactive.png')"; precurinactivehead = github + "img/title-bar%20postheader-darkmode.png')"; //#ref5002
-                            precolwhite = "#545454";   precollightg = "#9f9f9f"; precolsilver = "#3f3f3f"; precolmidgray = "#ababab"; precolgray = "#292929"; precolblack = "#000000"; precolblue = "#fccc39"; //#ref5003
-                            precolprussian = "#00207c"; precolwincyan = "#008080"; precolyellow = "#c0c0c0"; precolfont = "#c0c0c0"; precolfonttitle = "#ffffff"; curcolhover = "#ffffff"; precolatext = "#ffffff"; //#ref5003
-                            docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader); preinvert = 1; shuffleflop = 1; //#ref5004
+                            precolwhite = "#545454";   precollightg = "#9f9f9f"; precolsilver = "#3f3f3f"; precolmidgray = "#ababab"; precolgray = "#292929"; precolblack = "#000"; precolblue = "#fccc39"; //#ref5003
+                            precolprussian = "#00207c"; precolwincyan = "#008080"; precolyellow = "#c0c0c0"; precolfont = "#c0c0c0"; curcolhover = "#fff"; precolatext = "#fff"; //#ref5003
+                            preinvert = 1; shuffleflop = 1; discheckinv = 0.4; enacheckinv = 0.8; invcheckinv = 0.65; 
                             prespritesheet = github + "img/spritesheet.png')"; predesktopsheet = github + "img/desktopspritesheet.png')"; cwpp = "#292929";} //#ref5000//#ref5005
                             
-                        function tankmode(){ pretaskbartxt = "#000000"; pretaskbartxtprs = "#000000"; preactivetitle = "#ffffff"; preinactivetitle = "#607060"; //#ref5001 //changes preview theme to a ww1 inspired theme with army greens.
+                        function tankmode(){ pretaskbartxt = "#000"; pretaskbartxtprs = "#000"; preactivetitle = "#fff"; preinactivetitle = "#607060"; //#ref5001 //changes preview theme to a ww1 inspired theme with army greens.
                             precurinactivehead = github + "img/title-bar%20postheaderinactivetank.png')"; precuractiveheader = github + "img/title-bar%20postheaderactivetank.png')"; //#ref5002
                             predesktopsheet =  github + "img/spritesheet.png')"; prespritesheet = github + "img/desktopspritesheet.png')"
-                            precolwhite = "#7d8f7d";   precollightg = "#607060"; precolsilver = "#607060"; precolmidgray = "#404840"; precolgray = "#404840"; precolblack = "#0a0a0a"; precolblue = "#ffffff"; //#ref5003
-                            precolprussian = "#481212" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#000000"; precolfonttitle = "#ffffff"; curcolhover = "#ffffff"; precolatext = "#000000"; //#ref5003
-                            docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader); preinvert = 0; shuffleflop = 0; //#ref5004
+                            precolwhite = "#7d8f7d";   precollightg = "#607060"; precolsilver = "#607060"; precolmidgray = "#404840"; precolgray = "#404840"; precolblack = "#0a0a0a"; precolblue = "#fff"; //#ref5003
+                            precolprussian = "#481212" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#000"; curcolhover = "#fff"; precolatext = "#000"; //#ref5003
+                            preinvert = 0; shuffleflop = 0; discheckinv = 0.4; enacheckinv = 0.8; invcheckinv = 0.65; 
                             prespritesheet = github + "img/spritesheet.png')"; predesktopsheet = github + "img/desktopspritesheet.png')"; cwpp = "#607060";} //#ref5000//#ref5005
                         
-                        function lightmode(){ pretaskbartxt = "#000000"; pretaskbartxtprs = "#000000"; preactivetitle = "#ffffff"; preinactivetitle = "#ffffff"; //#ref5001 //changes preview theme to default windows 98.
+                        function lightmode(){ pretaskbartxt = "#000"; pretaskbartxtprs = "#000"; preactivetitle = "#fff"; preinactivetitle = "#fff"; //#ref5001 //changes preview theme to default windows 98.
                             precurinactivehead = github + "img/title-bar%20postheaderinactive.png')"; precuractiveheader = github + "img/title-bar%20postheader.png')"; //#ref5002
-                            precolwhite = "#ffffff";   precollightg = "#dfdfdf"; precolsilver = "#c0c0c0"; precolmidgray = "#ababab"; precolgray = "#808080"; precolblack = "#0a0a0a"; precolblue = "#0000FF"; //#ref5003
-                            precolprussian = "#00207c" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#000000"; precolfonttitle = "#ffffff"; precolhover = "#ffffff"; precolatext = "#000000"; //#ref5003
-                            docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader); preinvert = 0; shuffleflop = 0; //#ref5004
+                            precolwhite = "#fff";   precollightg = "#dfdfdf"; precolsilver = "#c0c0c0"; precolmidgray = "#ababab"; precolgray = "#808080"; precolblack = "#0a0a0a"; precolblue = "#0000FF"; //#ref5003
+                            precolprussian = "#00207c" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#000"; precolhover = "#fff"; precolatext = "#000"; //#ref5003
+                            preinvert = 0; shuffleflop = 0; discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; 
                             prespritesheet = github + "img/spritesheet.png')"; predesktopsheet = github + "img/desktopspritesheet.png')"; cwpp = "#c0c0c0";} //#ref5000//#ref5005
                             
-                        function neonmode(){ pretaskbartxt = "#000000"; pretaskbartxtprs = "#000000"; preactivetitle = "#ffffff"; preinactivetitle = "#00554d"; //#ref5001 //Vapourwave theme, using pastel pink and pastel blue.
+                        function neonmode(){ pretaskbartxt = "#000"; pretaskbartxtprs = "#000"; preactivetitle = "#fff"; preinactivetitle = "#00554d"; //#ref5001 //Vapourwave theme, using pastel pink and pastel blue.
                             precurinactivehead = github + "img/title-bar%20postheaderneon.png')"; precuractiveheader = github + "img/title-bar%20postheaderneonactive.png')"; //#ref5002
                             precolwhite = "#f7dbd7"; precollightg = "#fae0e4"; precolsilver = "#f4c1ca"; precolmidgray = "#e08998"; precolgray = "#de4560"; precolblack = "#0a0a0a"; precolblue = "#00bfbc"; //#ref5003
-                            precolprussian = "#a2dbd2" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#000000"; precolfonttitle = "#ffffff"; precolhover = "#ffffff"; precolatext = "#000000"; //#ref5003
-                            docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader); preinvert = 0; shuffleflop = 0; //#ref5004
+                            precolprussian = "#a2dbd2" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#000"; precolhover = "#fff"; precolatext = "#000"; //#ref5003
+                            preinvert = 0; shuffleflop = 0; discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; 
                             prespritesheet = github + "img/spritesheet.png')"; predesktopsheet = github + "img/desktopspritesheet.png')"; cwpp = "#a2dbd2";} //#ref5000//#ref5005
                         
-                        function contrastmode1(){ pretaskbartxt = "#ffffff"; pretaskbartxtprs = "#0000ff"; preactivetitle = "#ffffff"; preinactivetitle = "#000000"; //#ref5001  //high contrast theme (cyan and blue)
+                        function contrastmode1(){ pretaskbartxt = "#fff"; pretaskbartxtprs = "#0000ff"; preactivetitle = "#fff"; preinactivetitle = "#000"; //#ref5001  //high contrast theme (cyan and blue)
                             precurinactivehead = github + "img/title-bar%20postheaderinactivecontrast.png')"; precuractiveheader = github + "img/title-bar%20postheaderactivecontrast.png')"; //#ref5002
-                            precolwhite = "#000000"; precollightg = "#dfdfdf"; precolsilver = "#000000"; precolmidgray = "#ababab"; precolgray = "#808080"; precolblack = "#ffffff"; precolblue = "#00ffff"; //#ref5003
-                            precolprussian = "#0000ff" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#ffff00"; precolfonttitle = "#000000"; precolhover = "#ffffff"; precolatext = "#ffffff"; //#ref5003
-                            docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader); preinvert = 1; shuffleflop = 1;//#ref5004
+                            precolwhite = "#000"; precollightg = "#dfdfdf"; precolsilver = "#000"; precolmidgray = "#ababab"; precolgray = "#808080"; precolblack = "#fff"; precolblue = "#00ffff"; //#ref5003
+                            precolprussian = "#0000ff" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#ffff00"; precolhover = "#fff"; precolatext = "#fff"; //#ref5003
+                            preinvert = 1; shuffleflop = 1; discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; 
                             prespritesheet = github + "img/spritesheet.png')"; predesktopsheet = github + "img/desktopspritesheet.png')"; cwpp = "#0000ff";} //#ref5000//#ref5005
                             
-                        function contrastmode2(){ pretaskbartxt = "#ffffff"; pretaskbartxtprs = "#0000ff"; preactivetitle = "#000000"; preinactivetitle = "#000000"; //#ref5001 //high contrast theme (green and yellow)
+                        function contrastmode2(){ pretaskbartxt = "#fff"; pretaskbartxtprs = "#0000ff"; preactivetitle = "#000"; preinactivetitle = "#000"; //#ref5001 //high contrast theme (green and yellow)
                             precurinactivehead = github + "img/title-bar%20postheaderinactivecontrast2.png')"; precuractiveheader = github + "img/title-bar%20postheaderactivecontrast2.png')"; //#ref5002
-                            precolwhite = "#000000";   precollightg = "#dfdfdf"; precolsilver = "#000000"; precolmidgray = "#ababab"; precolgray = "#808080"; precolblack = "#ffffff"; precolblue = "#00ff00"; //#ref5003
-                            precolprussian = "#00ff00" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#ffff00"; precolfonttitle = "#000000"; precolhover = "#ffffff"; precolatext = "#00ff00"; //#ref5003
-                            docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader); preinvert = 1; shuffleflop = 1;
+                            precolwhite = "#000";   precollightg = "#dfdfdf"; precolsilver = "#000"; precolmidgray = "#ababab"; precolgray = "#808080"; precolblack = "#fff"; precolblue = "#00ff00"; //#ref5003
+                            precolprussian = "#00ff00" ; precolwincyan = "#008080"; precolyellow = "#ffff00"; precolfont = "#ffff00"; precolhover = "#fff"; precolatext = "#00ff00"; //#ref5003
+                            preinvert = 1; shuffleflop = 1; discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; 
                             prespritesheet = github + "img/spritesheet.png')"; predesktopsheet = github + "img/desktopspritesheet.png')"; cwpp = "#00ff00";} //#ref5000//#ref5005
 
-                        function highcontrast1() {currentcolour = "#00ffff"; fontcolour = "#000000"; backcolourpreview(); ctoggle = true; contrastscheme()} //changes the current colours to cyan and font colour to white. //#ref0021
-                        function highcontrast2() {  currentcolour = "#00ff00"; fontcolour = "#000000"; backcolourpreview(); ctoggle = true; contrastscheme()}//changes the current colours to green and font colour to white. //#ref0022
-                        function contrastscheme(){ ctoggle = true; cpc.style.backgroundColor = "#000000"; cpo.style.backgroundColor = "#000000"; iconpre.backgroundColor = "#000000";  ap.style.backgroundColor = "#000000"} //changes backgrounds to black.
+                        function highcontrast1() {currentcolour = "#00ffff"; fontcolour = "#000"; backcolourpreview(); ctoggle = true; contrastscheme()} //changes the current colours to cyan and font colour to white. //#ref0021
+                        function highcontrast2() {currentcolour = "#00ff00"; fontcolour = "#000"; backcolourpreview(); ctoggle = true; contrastscheme()}//changes the current colours to green and font colour to white. //#ref0022
+                        function contrastscheme(){ctoggle = true; cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; iconpre.backgroundColor = "#000";  ap.style.backgroundColor = "#000"} //changes backgrounds to black.
                         
                         function precolourupdate() { //changes current preview colours to active colours #ref0001
                             curcolwhite = precolwhite; curcollightg = precollightg; curcolsilver = precolsilver; curcolmidgray = precolmidgray; curcolgray = precolgray; curcolblack = precolblack; curcolblue = precolblue; curinvert = preinvert;
-                            curcolprussian = precolprussian; curcolwincyan = precolwincyan; curcolyellow = precolyellow; curcolfont = precolfont; curcolfonttitle = precolfonttitle; curcolhover = precolhover; curcolatext = precolatext}
+                            curcolprussian = precolprussian; curcolwincyan = precolwincyan; curcolyellow = precolyellow; curcolfont = precolfont; curcolhover = precolhover; curcolatext = precolatext}
                         
                         function themepreviewchange() {//changes the current preview colours based on variables set earlier
                             docelem.style.setProperty('--preinvert', preinvert); //changes the icon colours based on invert status
@@ -1423,10 +1447,9 @@
                             docelem.style.setProperty('--prewhite', precolwhite); docelem.style.setProperty('--pregray', precolgray); docelem.style.setProperty('--prelightg', precollightg); 
                             docelem.style.setProperty('--preblack', precolblack); docelem.style.setProperty('--presilver', precolsilver); docelem.style.setProperty('--preprussian', precolprussian);
                             docelem.style.setProperty('--premidgray', precolmidgray); docelem.style.setProperty('--prewincyan', precolwincyan); docelem.style.setProperty('--preyellow', precolyellow); 
-                            docelem.style.setProperty('--prefont', precolfont); docelem.style.setProperty('--prefonttitle', precolfonttitle); docelem.style.setProperty('--prehover', precolhover);
+                            docelem.style.setProperty('--prefont', precolfont); docelem.style.setProperty('--prehover', precolhover);
                             docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader);//adjustments to headers
                             docelem.style.setProperty('--prespritesheet', prespritesheet); docelem.style.setProperty('--predesktopsheet', predesktopsheet);//adjusts spritesheets
-                            document.getElementById("preinactive").style.color = preinactivetitle; document.getElementById("preactive").style.color = preactivetitle; document.getElementById("premessage").style.color = preactivetitle; //adjustments to headers
                             inprompt = inprompt + "Theme Preview Loaded."; println()} //logs if preview has been loaded
                         
                         function themechange() { precolourupdate(); curdesktopsheet = predesktopsheet; curspritesheet = prespritesheet; //changes the current theme and makes the current preview colours into current active colours. #ref0001
@@ -1435,7 +1458,7 @@
                             docelem.style.setProperty('--white', curcolwhite); docelem.style.setProperty('--gray', curcolgray); docelem.style.setProperty('--lightg', curcollightg); 
                             docelem.style.setProperty('--black', curcolblack); docelem.style.setProperty('--silver', curcolsilver); docelem.style.setProperty('--prussian', curcolprussian);
                             docelem.style.setProperty('--midgray', curcolmidgray); docelem.style.setProperty('--wincyan', curcolwincyan); docelem.style.setProperty('--yellow', curcolyellow); 
-                            docelem.style.setProperty('--font', curcolfont); docelem.style.setProperty('--fonttitle', curcolfonttitle); docelem.style.setProperty('--hover', curcolhover);
+                            docelem.style.setProperty('--font', curcolfont); docelem.style.setProperty('--hover', curcolhover);
                             docelem.style.setProperty('--atext', curcolatext); docelem.style.setProperty('--blue', curcolblue); 
                             //start menu colour requirement update (Different to regular colours) & updates header colours // taskbar colours
                             whit = curcolhover; blac = curcolblack; prus = curcolprussian; silv = curcolsilver; yell = curcolyellow; lightg = curcollightg; gray = curcolgray; text = curcolfont; cyan = curcolwincyan;
@@ -1450,9 +1473,9 @@
                             favouritesclosed(); channelsclose(); linksclose(); mediaclose(); mediaclose(); documentsclosed(); settingsclosed(); settingsclosed(); settingsactivedesktopclose(); findclosed(); vherstyclose();
                             //changes the current state of headers and adjusts icons based on invert
                             docelem.style.setProperty('--inactive', curinactivehead); docelem.style.setProperty('--active', curactiveheader); docelem.style.setProperty('--invert', curinvert); 
-                            clocku(); wwpno(); diskactive(); //updates windows visually by looping inactive windows
+                            docelem.style.setProperty('--discheckinv', discheckinv); docelem.style.setProperty('--enacheckinv', enacheckinv); docelem.style.setProperty('--invcheckinv', invcheckinv); 
                             shufflecolour(); if(shuffle == false){docelem.style.setProperty('--shuffleinvert', 0.5)} else if(shuffle == true){docelem.style.setProperty('--shuffleinvert', shuffleflop)} //mediaplayer shuffle colour correction.
-                            inprompt = inprompt + "Theme Loaded."; println()} //logs if the preview theme has been turned into the current theme active.
+                            clocku(); wwpno(); diskactive(); inprompt = inprompt + "Theme Loaded."; println()} //logs if the preview theme has been turned into the current theme active.
                     </script>
                         
                     <div class="win98buttondisa" style="margin-left:199px; width:67px; margin-top:-1px;"><center><butdislabel>Save As...</butdislabel></center></div>
@@ -1482,14 +1505,14 @@
                         <div class="win98buttondisa" style="margin-left:262px; width:38px; height:17px; padding: 2px;" onclick="cpick(); colourpicker()"> 
                             <div class="big_seperator" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
                             <div class="smallarrowdown" style="position:absolute; margin-left: 31px; margin-top:7px"></div>
-                            <div style="width:20px; height:11px; margin-top: 2px; margin-left: 3px; border:1px solid #000000; background-color: #008080;" id="currentpickedc"></div>
+                            <div style="width:20px; height:11px; margin-top: 2px; margin-left: 3px; border:1px solid #000; background-color: #008080;" id="currentpickedc"></div>
                             
                             <div class="win98post" style="position:absolute; z-index:10000; width:74px; height:96px; padding:5px; margin-top:4px; margin-left:-20000px;" onmouseleave="colourpickerexit()"id="coloursampler">
                                 <div class="dropbutton-pres" style="position: absolute; width:38px; height:17px; margin-left:-5px; margin-top:-26px; padding: 2px;"> 
                                     <div class="big_seperator" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
                                     <div class="smallarrowdown" style="position:absolute; margin-left: 31px; margin-top:7px"></div>
-                                    <div style="width:20px; height:11px; margin-top: 2px; margin-left: 3px; border:1px solid #000000; background-color: #008080;" id="currentpickedo"></div></div>
-                                <div class="colourselect" style="background-color: #ffffff" onclick="copi = 1"></div> <div class="colourselect" style="background-color: #000000" onclick="copi = 2"></div> 
+                                    <div style="width:20px; height:11px; margin-top: 2px; margin-left: 3px; border:1px solid #000; background-color: #008080;" id="currentpickedo"></div></div>
+                                <div class="colourselect" style="background-color: #fff" onclick="copi = 1"></div> <div class="colourselect" style="background-color: #000" onclick="copi = 2"></div> 
                                 <div class="colourselect" style="background-color: #c2c6ca" onclick="copi = 3"></div> <div class="colourselect" style="background-color: #85898d" onclick="copi = 4"></div> <br>
                                 <div class="colourselect" style="background-color: #ff0000" onclick="copi = 5"></div> <div class="colourselect" style="background-color: #aa0055" onclick="copi = 6"></div> 
                                 <div class="colourselect" style="background-color: #ffff00" onclick="copi = 7"></div> <div class="colourselect" style="background-color: #aaaa55" onclick="copi = 8"></div> <br>
@@ -1503,7 +1526,7 @@
                         </div></div> 
                         
                         <script>
-                            var colourpicked = false, currentcolour = "#008080", fontcolour = "#ffffff", copi = "", coloursampler = document.getElementById("coloursampler").style;
+                            var colourpicked = false, currentcolour = "#008080", fontcolour = "#fff", copi = "", coloursampler = document.getElementById("coloursampler").style;
                             var cpo = document.getElementById("currentpickedo").style; cpc = document.getElementById("currentpickedc").style; ap = document.getElementById("apperancepreview").style;
                             let desktopico = [ document.getElementById("desktopi1").style, document.getElementById("desktopi2").style, document.getElementById("desktopi3").style, document.getElementById("desktopi4").style, document.getElementById("desktopi5").style, document.getElementById("desktopi6").style, document.getElementById("desktopi8").style]
  
@@ -1515,7 +1538,7 @@
                             function fontcolourset(){ for (var i = 0; i < desktopico.length; i++) {desktopico[i].color = fontcolour}} // changes desktop icon text color;
                             function fontcolorsetpreview(){ for (var i = 0; i < previewico.length; i++) { previewico[i].color = fontcolour}} // changes preview desktop icons span colour
 
-                            function cpick(){if(copi == 1){currentcolour = "#ffffff"; fontcolour = "#000"} else if (copi == 2){currentcolour = "#000000"; fontcolour = "#fff"
+                            function cpick(){if(copi == 1){currentcolour = "#fff"; fontcolour = "#000"} else if (copi == 2){currentcolour = "#000"; fontcolour = "#fff"
                                 } else if (copi == 3){currentcolour = "#c2c6ca"; fontcolour = "#000"} else if (copi == 4){currentcolour = "#85898d"; fontcolour = "#fff"
                                 } else if (copi == 5){currentcolour = "#ff0000"; fontcolour = "#fff"} else if (copi == 6){currentcolour = "#aa0055"; fontcolour = "#fff"
                                 } else if (copi == 7){currentcolour = "#ffff00"; fontcolour = "#000"} else if (copi == 8){currentcolour = "#aaaa55"; fontcolour = "#fff"
@@ -1615,26 +1638,33 @@
                     
                     <fieldset style="width:336px; height:118px; margin-left: 12px; margin-top: 20px;">
                         <inboxlabel style="width:65px"> Visual Effects </inboxlabel>
-                        <div style="position:absolute; margin-top: -58px;">
-                            <ul class="tick-box" style="background-color: var(--silver);" id="effectstick0"><div class="disabledtickbox"></div></ul>
-                                <label for="effectstick0" style="margin-left: 22px; margin-top:7px;">Preview desktop icons as smaller icons</label></div>
-                        <ul class="tick-box" style="background-color: var(--silver);" id="effectstick1"><div class="disabledtickbox"></div></ul>
+                        <div style="position:absolute; margin-top: -58px;"><ul class="tick-box" style="background-color: var(--silver);" id="effectstick0"><div class="disabletickbox"></div></ul>
+                            <label for="effectstick0" style="margin-left: 22px; margin-top:7px;">Preview desktop icons as smaller icons</label></div>
+                                
+                        <ul class="tick-box" style="background-color: var(--silver);" id="effectstick1"><div class="disabletickbox" id="effect1"></div></ul>
                             <label for="effectstick1" style="margin-left: 22px; margin-top:7px;">Use large desktop icons</label>
-                        <ul class="tick-box" style="background-color: var(--silver);" id="effectstick2"><div class="disabledtickbox"></div></ul>
+                        <ul class="tick-box" style="background-color: var(--silver);" id="effectstick2"><div class="disabletickbox" id="effect2"></div></ul>
                             <label for="effectstick2" style="margin-left: 22px; margin-top:7px;">Show desktop icons using all possible colours</label>
-                        <ul class="tick-box" style="background-color: var(--silver);" id="effectstick3"></ul>
-                            <label for="effectstick3" style="margin-left: 22px; margin-top:7px;">Allow all windows to be draggable</label>
-                        <ul class="tick-box" style="background-color: var(--silver);" id="effectstick4"></ul>
-                            <label for="effectstick4" style="margin-left: 22px; margin-top:7px;">Enable NSFW desktop options</label>
-                        <ul class="tick-box" style="background-color: var(--silver);" id="effectstick5"><div class="disabledtickbox"></div></ul>
+                        <ul class="tick-box" style="background-color: var(--silver);" id="effectstick3"><div class="enabledtickbox" id="effect3" onclick="tickdragtoggle()"></div></ul>
+                            <label for="effectstick3" style="margin-left: 22px; margin-top:7px;" onclick="tickdragtoggle()">Allow all windows to be draggable</label>
+                        <ul class="tick-box" style="background-color: var(--silver);" id="effectstick4"><div class="invisibtickbox" id="effect4" onclick="ticknsfwtoggle()"></div></ul>
+                            <label for="effectstick4" style="margin-left: 22px; margin-top:7px;" onclick="ticknsfwtoggle()">Enable NSFW desktop options</label>
+                        <ul class="tick-box" style="background-color: var(--silver);" id="effectstick5"><div class="disabletickbox" id="effect5"></div></ul>
                             <label for="effectstick5" style="margin-left: 22px; margin-top:7px;">Show window contents while dragging</label>
-                        <ul class="tick-box" style="background-color: var(--silver);" id="effectstick6"><div class="disabledtickbox"></div></ul>
-                            <label for="effectstick6" style="margin-left: 22px; margin-top:7px;">Enable Window Dragging</label>
+                        <ul class="tick-box" style="background-color: var(--silver);" id="effectstick6"><div class="invisibtickbox" id="effect6" onclick="tickcsgotoggle()"></div></ul>
+                            <label for="effectstick6" style="margin-left: 22px; margin-top:7px;" onclick="tickcsgotoggle()">Enable "CSGO desktop" mode</label>
                     </fieldset>
                     
                     <script>
-                        var nsfwtoggle = false;
-                        function colourdropdown(){if (nsfwtoggle == false){nsfwtoggle = true} else if (nsfwtoggle == true){nsfwtoggle = false}}
+                        var nsfwtoggle = false, csgotoggle = false, dragtoggle = true, nsfwoptions = document.getElementById("nsfwoptions").style;
+                        var effect1 = document.getElementById("effect1").style, effect2 = document.getElementById("effect2").style, effect3 = document.getElementById("effect3").style, 
+                            effect4 = document.getElementById("effect4").style, effect5 = document.getElementById("effect5").style, effect6 = document.getElementById("effect6").style;
+                        function tickdragtoggle(){ if (dragtoggle == false){dragtoggle = true; effect3.backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')";
+                            } else if (dragtoggle == true){dragtoggle = false; effect3.backgroundImage = "";}}
+                        function ticknsfwtoggle(){ if (nsfwtoggle == false){nsfwtoggle = true; effect4.backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')"; nsfwoptions.marginLeft = "0px"; nsfwoptions.marginTop = "0px";
+                            } else if (nsfwtoggle == true){nsfwtoggle = false; effect4.backgroundImage = ""; nsfwoptions.marginLeft = "-20000px"; nsfwoptions.marginTop = "-80px";}}
+                        function tickcsgotoggle(){ if (csgotoggle == false){csgotoggle = true; effect6.backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')"; desktop.left = "-200px"; ranCSno == 1; changeBanner();
+                            } else if (csgotoggle == true){csgotoggle = false; effect6.backgroundImage = ""; desktop.left = "0px"; csgostyle.backgroundImage = ""}}
                     </script>
                     
                 </div>
@@ -1672,7 +1702,7 @@
                 </fieldset></div>
                 <!-- additional settings -->
                 <div class="field-row" style="margin-left: 12px">
-                    <ul class="tick-box" style="background-color: var(--silver); margin-top:6px" id="effectstick6"><div class="disabledtickbox"></div></ul>
+                    <ul class="tick-box" style="background-color: var(--silver); margin-top:6px" id="effectstick6"><div class="disabletickbox"></div></ul>
                         <butdislabel for="effectstick6" style="margin-left: 22px; margin-top:7px;">Extend my Windows desktop onto this monitor</butdislabel>
                     <div class="win98buttondisa" style="margin-left:276px; width:76px; margin-top:14px;"><center><butdislabel>Advanced</butdislabel></center></div></div>
             </div>
@@ -1938,7 +1968,7 @@
             $(".window").click(function(){calupdate(); tumblractive(); $(this).css("z-index", cal); 
                 $(this).find(".title-bar-98").css("background-image", curactiveheader); $(this).find(".title-bar-text").css("color", curactivetitle)});
             function tumblractive(){calupdate(); curtaskact = 1; activatetask(); desktop.left = "0px"; document.body.style.overflowY = "scroll"; taskapp1font.color = taskbartextpressed}
-            function tumblrminimize() { inactiveall(); desktop.left = "-20000px"; document.body.style.overflowY = "hidden"}
+            function tumblrminimize() { inactiveall(); desktop.left = "-20000px"; document.body.style.position = "hidden"}
             
 //   inactive toggle ------------------------------------------------------------------------------>
             
