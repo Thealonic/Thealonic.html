@@ -1,13 +1,47 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll; padding-right: 4px;">
 <ul>
+<li><strong style="color: var(--atext);">2021 March 20th (210320)<em><br /></em></strong>
+<ul>
+<li><strong>Tickbox CSS updates</strong><br />
+<ul>
+<li>Adjusted tickbox CSS to be easier to program as individual assets and now all use the same tick asset.</li>
+<li>Tickboxes now use schemes for the invert property of said scheme.</li>
+<li>Tickboxes no longer use the same colour for the hover effect and disabled effect.</li>
+<li><strong>Added tickbox script functionality.</strong></li>
+<li>Disabled tickboxes no longer have a hover effect.</li>
+<li>Enabled tickboxes now have a hover effect.</li>
+<li>Tickboxes are now adjustable through scheme presets.</li>
+</ul>
+</li>
+<li><strong>Display Properties tweaks.<br /></strong>
+<ul>
+<li>Added Tickbox functionality in the Effects tab.</li>
+<li>Added beta of 'CSGO mode'</li>
+<li>Added "CSGO desktop mode" toggle.</li>
+<li>Added "NSFW desktop options" toggle.</li>
+</ul>
+</li>
+<li>Added NSFW desktop wallpapers.</li>
+<li>Optimisation tweaks to themes.</li>
+</ul>
+<ol>
+<li>- Fixed a bug where all preview titlebars were inactive.</li>
+</ol></li>
+<li><strong style="color: var(--atext);">2021 March 19th (210319)<em><br /></em></strong>
+<ul>
+<li><strong>Added featurelist to the Read.me</strong></li>
+<li>Backend tweaks to the Time and Date menu</li>
+<li>CSS Tweaks and changes.</li>
+</ul>
+</li>
 <li><strong style="color: var(--atext);">2021 March 18th (210318) </strong><em>- A general optimisation update.<strong style="color: var(--atext);"><br /></strong></em>
 <ul>
 <li><strong>Backend CSS / HTML Updates</strong><br />
 <ul>
 <li>Swapped out custom Titlebar button CSS for more streamlined implimentation.</li>
 <li>All taskbar buttons are now in the disabled state by default.</li>
-<li>Added new default button CSS for better implimentation of both 'Absolute' and 'Relative' button positioning.</li>
+<li>Added new default button CSS for better implimentation of both &lsquo;Absolute&rsquo; and &lsquo;Relative&rsquo; button positioning.</li>
 <li>Fixed Titlebar button title properties.</li>
 <li>Simplified tons of backend CSS.</li>
 <li>Removed needless or outdated backend CSS.</li>
@@ -18,7 +52,7 @@
 <li>Page sprites no longer load until theme loading.</li>
 <li><strong>Added feature to change desktop icons through themes. </strong>(Custom sheets to be implimented at a later date)</li>
 <li><strong>Added feature to change sprite assets through themes. </strong>(Custom sheets to be implimented at a later date)</li>
-<li>Spritesheets can now be enforced through the console through the 'curspritesheet' and 'curdesktopsheet' variables.</li>
+<li>Spritesheets can now be enforced through the console through the &lsquo;curspritesheet&rsquo; and 'curdesktopsheet&rsquo; variables.</li>
 <li>Adjusted how page loading looks to represent load order and more optimised for schemes.</li>
 </ul>
 </li>
