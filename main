@@ -40,18 +40,15 @@
     
     <head> <!-- Setup -->
         <meta name="description" value="{MetaDescription}" /><link rel="shortcut icon" href="{Favicon}"/><meta charset="utf-8" />
-        <style type="text/css">
-            :root { --curspritesheet: " "; --prespritesheet: " "; --curdesktopsheet: " "; --predesktopsheet: " ";
+        <style type="text/css"> :root { --curspritesheet: " "; --prespritesheet: " "; --curdesktopsheet: " "; --predesktopsheet: " ";
                     --inactive: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheaderinactive.png'); 
                     --preinactive: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheaderinactive.png');
                     --active: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheader.png'); 
                     --preactive: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/title-bar%20postheader.png');
-
                     --scrollbar: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/scrollbarempty.png');
                     
                     --white: #fff; --lightg: #dfdfdf;  --silver: #c0c0c0; --midgray: #ababab; --gray: #808080; --black: #0a0a0a; --blue: #0000ff; --prussian: #00207c ; --wincyan: #008080; --yellow: #ffff00; 
                     --font: #000; --hover: #fff; --atext: #000; --curinactivetitle: #fff; --curactivetitle: #fff; --consoleback: #000; --consoletext: #fff; --alwayswhite: #fff; --alwaysblack: #000;
-                    --invert: 0; --preinvert: 0; --shuffleinvert: 0.5; --discheckinv: 0.6; --enacheckinv: 0.2; --invcheckinv: 0.35;
 
                     --prewhite: #fff; --prelightg: #dfdfdf;  --presilver: #c0c0c0; --premidgray: #ababab; --pregray: #808080; --preblack: #0a0a0a; --preprussian: #00207c ; --prewincyan: #008080; --preyellow: #ffff00; 
                     --prefont: #000; --prehover: #fff; --preactivetitle: #fff; --preinactivetitle: #fff; 
@@ -61,7 +58,7 @@
                     --taskbar3top1: #fff; --taskbar3top2: #dfdfdf; --taskbar3bottom1: #808080; --taskbar3bottom2: #0a0a0a; --taskbar4top1: #fff; --taskbar4top2: #dfdfdf; --taskbar4bottom1: #808080; --taskbar4bottom2: #0a0a0a; 
                     --taskbar5top1: #fff; --taskbar5top2: #dfdfdf; --taskbar5bottom1: #808080; --taskbar5bottom2: #0a0a0a; --taskbar6top1: #fff; --taskbar6top2: #dfdfdf; --taskbar6bottom1: #808080; --taskbar6bottom2: #0a0a0a;
                     --taskbar7top1: #fff; --taskbar7top2: #dfdfdf; --taskbar7bottom1: #808080; --taskbar7bottom2: #0a0a0a; --taskbar8top1: #fff; --taskbar8top2: #dfdfdf; --taskbar8bottom1: #808080; --taskbar8bottom2: #0a0a0a;
-                    --slider: 550px}
+                    --slider: 550px; --invert: 0; --preinvert: 0; --shuffleinvert: 0.5; --discheckinv: 0.6; --enacheckinv: 0.2; --invcheckinv: 0.35}
 
             /* desktop config settings */
             body {background: repeat fixed; background-size: cover; padding: auto auto auto auto; background-color: var(--wincyan); font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; width: 1920px; height:1080px; overflow-x: hidden}
@@ -132,7 +129,7 @@
             .wallpapermenu { width:227px; position: absolute; cursor:pointer; height: 17px; width: 100%; background-color:var(--white); color:var(--font); border-style: dotted; border-width: 1px; border-color: var(--white); z-index:4}    
             .wallpapermenu:hover {background-color:var(--prussian); color:var(--hover); border-style: dotted; border-color: var(--yellow); z-index:10} 
 
-            .disabledfont {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--gray); text-shadow:1px 1px 0 var(--white);}
+            .disabledfont {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--gray); text-shadow:1px 1px 0 var(--white)}
             .tagged {font-size: 9px; opacity: 0.5;}
             
 /* window preview handling ------------------------------------------------------------------------------*/
@@ -398,24 +395,18 @@
             <div class="rct2" onclick="embedtask(); rct2load(); urlupdate();"></div><div class="icon_label"><icon id="desktopi8">
                 <label>Roller Coaster</label> <label style="margin-left:0.5px;">Tycoon 2</label></icon></div></a>
         </div>
-        <!-- Sidebar icons coloumn 2 -->
-    
-    
-        <div class="container" style="width:649px; height:995px; position:fixed; margin-left:1250px" id="CSGO"></div>
+
+        <div class="container" style="width:649px; height:995px; position:fixed; right: 0; bottom:0" id="CSGO"></div>
         
         <script>
-            var csgostyle = document.getElementById("CSGO").style, CSLength = 1, ranCSno = 1, CSspeed = 60, CSinterval = 173 * CSspeed, CS;
-            
-            function changeBanner() { 
-                if(csgotoggle == true){ CS = github + "img/CSGO/Cycle" + ranCSno + ".gif')";
-                    if(ranCSno == 1){CSinterval = 173 * CSspeed}; csgostyle.backgroundImage = CS;
-                    inprompt = inprompt + "CSinterval : " + CSinterval + "ms :  ranCSno: " + ranCSno; println(); println();
-                } else {csgostyle.backgroundImage = ""}}
-            $('document').ready(function(){setInterval(changeBanner, CSinterval)});
-            
-            
+            var csgostyle = document.getElementById("CSGO").style;
+            var CS, CSLength = 2, ranCSno = 1, CSspeed = 60, CSinterval = 173 * CSspeed, CSframes = [undefined, 173, 105];
+            function changeCSGO() { if(csgotoggle == true){ 
+                    CS = github + "img/CSGO/Cycle" + ranCSno + ".gif')"; CSinterval = CSframes[ranCSno];
+                    csgostyle.backgroundImage = CS; ranCSno = Math.floor(Math.random() * CSLength) + 1;
+                    inprompt = inprompt + "CSinterval : " + CSinterval + "ms :  ranCSno: " + ranCSno; println(); println()}}
+            $('document').ready(function(){setInterval(changeCSGO, CSinterval)});
         </script>
-    
     
 <!-- VUNNY message box rendering ------------------------------------------------------------------------------>
         <div class="win98post" style="position: fixed; width: 206px; margin-left:-20000px;" onmousedown="catactive();" id="cat"> <!--#ref2000-->
@@ -1221,31 +1212,31 @@
                             <div class="wallpapermenu" onclick="wallpaperoptionnone()"><div class="none" style="margin-top:-1px;"></div>
                                 <div class="filled" id="wallpaperoverlay1"><!--ref#0026-->
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> None </label></div></div> <!--#ref0004-->
-                            <div class="wallpapermenu" style="margin-top:18px" onclick="wallpaperoption1()"><div class="menuapplications10" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:18px" onclick="wallpaperoption1(); wallpapercust()"><div class="menuapplications10" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay2">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Default </label></div></div> <!--#ref0005-->
-                            <div class="wallpapermenu" style="margin-top:36px;" onclick="wallpaperoption2()"><div class="menuapplications10" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:36px;" onclick="wallpaperoption2(); wallpapercust()"><div class="menuapplications10" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay3">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Octavia's Study </label></div></div> <!--#ref0006-->
-                            <div class="wallpapermenu" style="margin-top:72px" onclick="wallpaperoption3()"> <div class="menuapplications10" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:72px" onclick="wallpaperoption3(); wallpapercust()"> <div class="menuapplications10" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay4" title="submitted by Matt in the discord server">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer" title="submitted by Matt in the discord server"> Star Trek (Submitted by Matt)</label></div></div> <!--#ref0007-->
-                            <div class="wallpapermenu" style="margin-top:54px" onclick="wallpaperoption4()"><div class="menuapplications10" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:54px" onclick="wallpaperoption4(); wallpapercust()"><div class="menuapplications10" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay5">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Neon Genesis Evangelion </label></div></div> <!--#ref0008-->
-                            <div class="wallpapermenu" style="margin-top:90px" onclick="wallpaperoption5()"><div class="menuapplications10" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:90px" onclick="wallpaperoption5(); wallpapercust()"><div class="menuapplications10" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay6" title="submitted by Xal in the discord server">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Battlefield Girls (Submitted by Xal)</label></div></div> <!--#ref0009-->
-                            <div class="wallpapermenu" style="margin-top:108px" onclick="wallpaperoption6()"><div class="menuapplications10" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:108px" onclick="wallpaperoption6(); wallpapercust()"><div class="menuapplications10" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay7" title="Created by Thea Vanherst">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Vinyl Scratch</label></div></div> <!--#ref0010-->
-                            <div class="wallpapermenu" style="margin-top:126px" onclick="wallpaperoption7()"><div class="menuapplications10" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:126px" onclick="wallpaperoption7(); wallpapercust()"><div class="menuapplications10" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay8" title="submitted by Millie in the discord server">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Clouds at Midnight (Submitted by Millie) </label></div></div> <!--#ref0011-->
-                            <div class="wallpapermenu" style="margin-top:146px" onclick="wallpaperoption8();"><div class="menuapplications10" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:146px" onclick="wallpaperoption8(); wallpapercust()"><div class="menuapplications10" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay9" title="submitted by Qhetha in the discord server">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Desert Highway (Submitted by Qhetha)  </label></div></div> <!--#ref0012-->
-                            <div class="wallpapermenu" style="margin-top:166px" onclick="wallpaperoption9()"><div class="menuapplications10" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:166px" onclick="wallpaperoption9(); wallpapercust()"><div class="menuapplications10" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay10" title="Created by Phil-Nye in the discord server">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Aesthetic (Created by Phil-Nye)</label></div></div>
                                     
@@ -1269,7 +1260,7 @@
                 function wallpaperupdate(){abody.backgroundImage = curwp; dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp} //#ref5021 //#ref5020
                 function wpp(){ dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp; document.getElementById("apperancepreview").style.backgroundImage = curwp; iconpre.backgroundImage = curwp} //#ref5021 //#ref0020 //#ref0019 
                 //ref#0025 wallpaper changes based on ref#0026, changes on click to be previewed through #ref5021
-                function wwpno(){ wpo[wpn].backgroundColor = cwpp; curwp = github + wps; wpp(); wpcr()} function wpcr() { for(var i = 0; wpo.length > i; i++){wpo[i].backgroundColor = ""};  wallpapercust()}//#ref0019
+                function wwpno(){ wpo[wpn].backgroundColor = cwpp; curwp = github + wps; wpp(); wpcr()} function wpcr() { for(var i = 0; wpo.length > i; i++){wpo[i].backgroundColor = ""}}//#ref0019
                 function wallpaperoptionnone(){wpcr(); wpn = 0; wps =  "none"; wwpno()}                 function wallpaperoption1(){wpn = 1; wps = "img/wallpapers/wallpaper32.png')"; wwpno();} //#ref5019 for #ref0004 //#ref5019 for #ref0005
                 function wallpaperoption2(){wpn = 2; wps = "img/wallpapers/study.png')"; wwpno()}       function wallpaperoption3(){wpn = 3; wps = "img/wallpapers/startrek.png')"; wwpno()} //#ref5019 for #ref0006 //#ref5019 for #ref0007
                 function wallpaperoption4(){wpn = 4; wps = "img/wallpapers/unknown.png')"; wwpno()}     function wallpaperoption5(){wpn = 5; wps = "img/wallpapers/anime.png')"; wwpno()} //#ref5019 for #ref0008 //#ref5019 for #ref0009
@@ -1528,7 +1519,8 @@
                         <script>
                             var colourpicked = false, currentcolour = "#008080", fontcolour = "#fff", copi = "", coloursampler = document.getElementById("coloursampler").style;
                             var cpo = document.getElementById("currentpickedo").style; cpc = document.getElementById("currentpickedc").style; ap = document.getElementById("apperancepreview").style;
-                            let desktopico = [ document.getElementById("desktopi1").style, document.getElementById("desktopi2").style, document.getElementById("desktopi3").style, document.getElementById("desktopi4").style, document.getElementById("desktopi5").style, document.getElementById("desktopi6").style, document.getElementById("desktopi8").style]
+                            let desktopico = [ document.getElementById("desktopi1").style, document.getElementById("desktopi2").style, document.getElementById("desktopi3").style, document.getElementById("desktopi4").style, 
+                                               document.getElementById("desktopi5").style, document.getElementById("desktopi6").style, document.getElementById("desktopi8").style]
  
                             function colourpicker(){if (colourpicked == false){coloursampler.marginLeft = "-2px"; colourpicked = true} else if (colourpicked == true ){coloursampler.marginLeft = "-20000px"; colourpicked = false}}
                             function colourpickerexit() {coloursampler.marginLeft = "-20000px"; colourpicked = false}
@@ -1659,12 +1651,15 @@
                         var nsfwtoggle = false, csgotoggle = false, dragtoggle = true, nsfwoptions = document.getElementById("nsfwoptions").style;
                         var effect1 = document.getElementById("effect1").style, effect2 = document.getElementById("effect2").style, effect3 = document.getElementById("effect3").style, 
                             effect4 = document.getElementById("effect4").style, effect5 = document.getElementById("effect5").style, effect6 = document.getElementById("effect6").style;
-                        function tickdragtoggle(){ if (dragtoggle == false){dragtoggle = true; effect3.backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')";
+                        function tickdragtoggle(){ if (dragtoggle == false){
+                            dragtoggle = true; effect3.backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')";
                             } else if (dragtoggle == true){dragtoggle = false; effect3.backgroundImage = "";}}
-                        function ticknsfwtoggle(){ if (nsfwtoggle == false){nsfwtoggle = true; effect4.backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')"; nsfwoptions.marginLeft = "0px"; nsfwoptions.marginTop = "0px";
+                        function ticknsfwtoggle(){ if (nsfwtoggle == false){
+                            nsfwtoggle = true; effect4.backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')"; nsfwoptions.marginLeft = "0px"; nsfwoptions.marginTop = "0px";
                             } else if (nsfwtoggle == true){nsfwtoggle = false; effect4.backgroundImage = ""; nsfwoptions.marginLeft = "-20000px"; nsfwoptions.marginTop = "-80px";}}
-                        function tickcsgotoggle(){ if (csgotoggle == false){csgotoggle = true; effect6.backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')"; desktop.left = "-200px"; ranCSno == 1; changeBanner();
-                            } else if (csgotoggle == true){csgotoggle = false; effect6.backgroundImage = ""; desktop.left = "0px"; csgostyle.backgroundImage = ""}}
+                        function tickcsgotoggle(){ if (csgotoggle == false){ wallpaperoption6();
+                            csgotoggle = true; effect6.backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')"; desktopleft = "-200px"; desktop.left = desktopleft; ranCSno = 1; changeCSGO();
+                            } else if (csgotoggle == true){csgotoggle = false; effect6.backgroundImage = ""; desktopleft = "0px"; desktop.left = desktopleft; csgostyle.backgroundImage = ""}}
                     </script>
                     
                 </div>
@@ -1965,9 +1960,9 @@
         {block:PostNotes}<div style="height:10px;"></div>{/block:PostNotes} <!--adjusts gap at the bottom of the page-->
         
         <script>
-            $(".window").click(function(){calupdate(); tumblractive(); $(this).css("z-index", cal); 
+            $(".window").click(function(){calupdate(); tumblractive(); $(this).css("z-index", cal); var desktopleft
                 $(this).find(".title-bar-98").css("background-image", curactiveheader); $(this).find(".title-bar-text").css("color", curactivetitle)});
-            function tumblractive(){calupdate(); curtaskact = 1; activatetask(); desktop.left = "0px"; document.body.style.overflowY = "scroll"; taskapp1font.color = taskbartextpressed}
+            function tumblractive(){calupdate(); curtaskact = 1; activatetask(); desktop.left = desktopleft; document.body.style.overflowY = "scroll"; taskapp1font.color = taskbartextpressed}
             function tumblrminimize() { inactiveall(); desktop.left = "-20000px"; document.body.style.position = "hidden"}
             
 //   inactive toggle ------------------------------------------------------------------------------>
