@@ -400,11 +400,11 @@
         <div class="container" style="width:649px; height:995px; position:fixed; right: 0; bottom:0" id="CSGO"></div>
         
         <script> var csgostyle = document.getElementById("CSGO").style
-            var CS, CSon = false, CSLength = 3, ranCSno = 1, CSspeed = 60, CSinterval = 173 * CSspeed, CSframes = [undefined, 173, 105, 113]
+            var CS, CSon = false, ranCSno = 1, CSspeed = 60, CSinterval = 173 * CSspeed, CSframes = [undefined, 173, 105, 113, 127, 168, 109], CSLength = CSframes.length - 1;
             function changeCSGO() { if(CSon == true){ 
                 ranCSno = Math.floor(Math.random() * CSLength) + 1; CS = github + "img/CSGO/Cycle" + ranCSno + ".gif')"; 
-                csgostyle.backgroundImage = CS; CSinterval = CSframes[ranCSno] * CSspeed} else {csgostyle.backgroundImage = ""}}
-            $('document').ready(function(){setInterval(changeCSGO, CSinterval)}) </script>
+                csgostyle.backgroundImage = CS; CSinterval = (CSframes[ranCSno]) * CSspeed} else {csgostyle.backgroundImage = ""}}
+            $('document').ready(function(){setInterval(changeCSGO, CSinterval)})</script>
     
 <!-- VUNNY message box rendering ------------------------------------------------------------------------------>
         <div class="win98post" style="position: fixed; width: 206px; margin-left:-20000px;" onmousedown="catactive();" id="cat"> <!--#ref2000-->
@@ -2329,15 +2329,13 @@
             
             function dragElement(elmnt) { var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
             if (document.getElementById(elmnt.id + "window")) {document.getElementById(elmnt.id + "window").onmousedown = dragMouseDown} else { elmnt.onmousedown = dragMouseDown}
-            function dragMouseDown(e) { e = e || window.event; e.preventDefault(); pos3 = e.clientX; pos4 = e.clientY;//mouse moment grabbing
-                document.onmouseup = closeDragElement; document.onmousemove = elementDrag}
-            function elementDrag(e) { e = e || window.event;  e.preventDefault();
-               pos1 = pos3 - e.clientX; pos2 = pos4 - e.clientY; pos3 = e.clientX; pos4 = e.clientY;  //if(pos1 < 0){pos1 = 0}
+            function dragMouseDown(e) { e = e || window.event; e.preventDefault(); pos3 = e.clientX; pos4 = e.clientY; document.onmouseup = closeDragElement; document.onmousemove = elementDrag}
+            function elementDrag(e) { e = e || window.event;  e.preventDefault(); pos1 = pos3 - e.clientX; pos2 = pos4 - e.clientY; pos3 = e.clientX; pos4 = e.clientY;  //if(pos1 < 0){pos1 = 0}
                elmnt.style.top = (elmnt.offsetTop - pos2) + "px"; elmnt.style.left = (elmnt.offsetLeft - pos1) + "px"} //if(elmnt.offsetTop < 0){elmnt.style.top = elmnt.offsetTop - pos2}
             function closeDragElement() {document.onmouseup = null; document.onmousemove = null}}
         
 //-- Startmenu script handling ------------------------------------------------------------------------------>
-            function starton() {cmbs(); cmw()} function startoff(){cmbp(); cmb()} var scf, faraw = "200000px", aropen = "-134px -216px", arclose = "-54px -216px", smu = [ 
+            var scf, smo = "-134px -216px", smc = "-54px -216px", smu = [ 
                 document.getElementById("menuprograms").style, document.getElementById("accessories").style, document.getElementById("communications").style, document.getElementById("entertainment").style,
                 document.getElementById("games").style, document.getElementById("internettools").style, document.getElementById("systemtools").style, document.getElementById("onlineservices").style,
                 document.getElementById("startup").style, document.getElementById("menufavourites").style, document.getElementById("channels").style, document.getElementById("links").style,
@@ -2346,27 +2344,32 @@
                 document.getElementById("menucommunicationssubmenu").style, document.getElementById("menuentertainmentsubmenu").style, document.getElementById("gamessubmenu").style, document.getElementById("internettoolssubmenu").style, 
                 document.getElementById("systemtoolssubmenu").style, document.getElementById("onlineservicessubmenu").style, document.getElementById("startupsubmenu").style, document.getElementById("favouritesmenu").style, 
                 document.getElementById("channelssubmenu").style, document.getElementById("linkssubmenu").style, document.getElementById("mediasubmenu").style, document.getElementById("documentsmenu").style, 
-                document.getElementById("settingsmenu").style, document.getElementById("activedesktopsubmenu").style, document.getElementById("findmenu").style, document.getElementById("vherstymenu").style];
-                
-            function cmw() {smu[scf].color = cchover} function cmb() {smu[scf].color = ccfont} function cmd() {sms[scf].marginLeft = faraw} function cmbp() {smu[scf].backgroundColor = ccsilver}; function cmbs() {smu[scf].backgroundColor = ccprussian}
-            function programsopen() {scf=0; starton(); sms[scf].marginLeft = "161px";  document.getElementById("menuarrow1").style.backgroundPosition = aropen} function programsclosed() {scf=0; startoff(); document.getElementById("menuarrow1").style.backgroundPosition = arclose; cmd()}
-            function accessoriesopen() {scf=1; starton(); sms[scf].marginLeft = "133px"; document.getElementById("submenuarrow2").style.backgroundPosition = aropen} function accessoriesclose() {scf=1; startoff(); document.getElementById("submenuarrow2").style.backgroundPosition = arclose; cmd()}
-            function communicationsopen() {scf=2; starton(); sms[scf].marginLeft = "130px"; document.getElementById("menuarrow12").style.backgroundPosition = aropen} function communicationsclose() {scf=2; startoff(); document.getElementById("menuarrow12").style.backgroundPosition = arclose; cmd()}
-            function entertainmentopen() {scf=3; starton(); sms[scf].marginLeft = "130px"; document.getElementById("menuarrow13").style.backgroundPosition = aropen} function entertainmentclose() {scf=3; startoff(); document.getElementById("menuarrow13").style.backgroundPosition = arclose; cmd()}
-            function gamesopen() {scf=4; starton(); sms[scf].marginLeft = "130px"; document.getElementById("menuarrow14").style.backgroundPosition = aropen} function gamesclose() {scf=4; startoff(); document.getElementById("menuarrow14").style.backgroundPosition = arclose; cmd()}
-            function internettoolsopen() {scf=5; starton(); sms[scf].marginLeft = "130px"; document.getElementById("menuarrow15").style.backgroundPosition = aropen} function internettoolsclose() {scf=5; startoff(); document.getElementById("menuarrow15").style.backgroundPosition = arclose; cmd()}
-            function systemtoolsopen() {scf=6; starton(); sms[scf].marginTop = "-163px"; document.getElementById("menuarrow16").style.backgroundPosition = aropen} function systemtoolsclose() {scf=6; startoff(); document.getElementById("menuarrow16").style.backgroundPosition = arclose; cmd()}
-            function onlineservicesopen() {scf=7; starton(); sms[scf].marginLeft = "133px"; document.getElementById("submenuarrow3").style.backgroundPosition = aropen} function onlineservicesclose() {scf=7; startoff(); document.getElementById("submenuarrow3").style.backgroundPosition = arclose; cmd()}
-            function startupopen() {scf=8; starton(); sms[scf].marginLeft = "133px"; document.getElementById("submenuarrow4").style.backgroundPosition = aropen} function startupclose() {scf=8; startoff(); document.getElementById("submenuarrow4").style.backgroundPosition = arclose; cmd()}
-            function favouritesopen() {scf=9; starton(); sms[scf].marginLeft = "161px"; document.getElementById("menuarrow2").style.backgroundPosition = aropen} function favouritesclosed() {scf=9; startoff(); document.getElementById("menuarrow2").style.backgroundPosition = arclose; cmd()}
-            function channelsopen() {scf=10; starton(); sms[scf].marginLeft = "148px"; document.getElementById("submenuarrow21").style.backgroundPosition = aropen} function channelsclose() {scf=10; startoff(); document.getElementById("submenuarrow21").style.backgroundPosition = arclose; cmd()}
-            function linksopen() {scf=11; starton(); sms[scf].marginLeft = "148px"; document.getElementById("submenuarrow22").style.backgroundPosition = aropen} function linksclose() {scf=11; startoff(); document.getElementById("submenuarrow22").style.backgroundPosition = arclose; cmd()}
-            function mediaopen() {scf=12; starton(); sms[scf].marginLeft = "148px"; document.getElementById("submenuarrow23").style.backgroundPosition = aropen} function mediaclose() {scf=12; startoff(); document.getElementById("submenuarrow23").style.backgroundPosition = arclose; cmd()}
-            function documentsopen() {scf=13; starton(); sms[scf].marginLeft = "161px"; document.getElementById("menuarrow3").style.backgroundPosition = aropen} function documentsclosed() {scf=13; startoff(); document.getElementById("menuarrow3").style.backgroundPosition = arclose; cmd()}
-            function settingsopen() {scf=14; starton(); sms[scf].marginLeft = "161px"; document.getElementById("menuarrow4").style.backgroundPosition = aropen} function settingsclosed() {scf=14; startoff(); document.getElementById("menuarrow4").style.backgroundPosition = arclose; cmd()}
-            function activeopen() {scf=15; starton(); sms[scf].marginLeft = "158px"; document.getElementById("submenuarrow31").style.backgroundPosition = aropen} function activeclose() {scf=15; startoff(); document.getElementById("submenuarrow31").style.backgroundPosition = arclose; cmd()}
-            function findopen() {scf=16; starton(); sms[scf].marginLeft = "161px"; document.getElementById("menuarrow5").style.backgroundPosition = aropen} function findclosed() {scf=16; startoff(); document.getElementById("menuarrow5").style.backgroundPosition = arclose; cmd()}
-            function vherstyopen() {scf=17; starton(); sms[scf].marginLeft = "161px"; document.getElementById("submenuarrow24").style.backgroundPosition = aropen} function vherstyclose() {scf=17; startoff(); document.getElementById("submenuarrow24").style.backgroundPosition = arclose; cmd()}
+                document.getElementById("settingsmenu").style, document.getElementById("activedesktopsubmenu").style, document.getElementById("findmenu").style, document.getElementById("vherstysubmenu").style],
+            marr = [document.getElementById("menuarrow1").style, document.getElementById("menuarrow2").style, document.getElementById("menuarrow3").style, document.getElementById("menuarrow4").style,
+                document.getElementById("menuarrow5").style, document.getElementById("menuarrow12").style, document.getElementById("menuarrow13").style, document.getElementById("menuarrow14").style, 
+                document.getElementById("menuarrow15").style, document.getElementById("menuarrow16").style],
+            sarr = [document.getElementById("submenuarrow2").style, document.getElementById("submenuarrow3").style, document.getElementById("submenuarrow4").style, document.getElementById("submenuarrow21").style, 
+                document.getElementById("submenuarrow22").style, document.getElementById("submenuarrow23").style, document.getElementById("submenuarrow24").style, document.getElementById("submenuarrow31").style]
+            
+            function starton() {smu[scf].backgroundColor = ccprussian; smu[scf].color = cchover} function startoff() {smu[scf].backgroundColor = ccsilver; smu[scf].color = ccfont; sms[scf].marginLeft = "200000px"} 
+            function programsopen() {scf=0; starton(); sms[scf].marginLeft = "161px"; marr[0].backgroundPosition = smo} function programsclosed() {scf=0; startoff(); marr[0].backgroundPosition = smc}
+            function accessoriesopen() {scf=1; starton(); sms[scf].marginLeft = "133px"; sarr[0].backgroundPosition = smo} function accessoriesclose() {scf=1; startoff(); sarr[0].backgroundPosition = smc}
+            function communicationsopen() {scf=2; starton(); sms[scf].marginLeft = "130px"; marr[5].backgroundPosition = smo} function communicationsclose() {scf=2; startoff(); marr[5].backgroundPosition = smc}
+            function entertainmentopen() {scf=3; starton(); sms[scf].marginLeft = "130px"; marr[6].backgroundPosition = smo} function entertainmentclose() {scf=3; startoff(); marr[6].backgroundPosition = smc}
+            function gamesopen() {scf=4; starton(); sms[scf].marginLeft = "130px"; marr[7].backgroundPosition = smo} function gamesclose() {scf=4; startoff(); marr[7].backgroundPosition = smc}
+            function internettoolsopen() {scf=5; starton(); sms[scf].marginLeft = "130px"; marr[8].backgroundPosition = smo} function internettoolsclose() {scf=5; startoff(); marr[8].backgroundPosition = smc}
+            function systemtoolsopen() {scf=6; starton(); sms[scf].marginTop = "-163px"; marr[9].backgroundPosition = smo} function systemtoolsclose() {scf=6; startoff(); marr[9].backgroundPosition = smc}
+            function onlineservicesopen() {scf=7; starton(); sms[scf].marginLeft = "133px"; sarr[1].backgroundPosition = smo} function onlineservicesclose() {scf=7; startoff(); sarr[1].backgroundPosition = smc}
+            function startupopen() {scf=8; starton(); sms[scf].marginLeft = "133px"; sarr[2].backgroundPosition = smo} function startupclose() {scf=8; startoff(); sarr[2].backgroundPosition = smc}
+            function favouritesopen() {scf=9; starton(); sms[scf].marginLeft = "161px"; marr[1].backgroundPosition = smo} function favouritesclosed() {scf=9; startoff(); marr[1].backgroundPosition = smc}
+            function channelsopen() {scf=10; starton(); sms[scf].marginLeft = "148px"; sarr[3].backgroundPosition = smo} function channelsclose() {scf=10; startoff(); sarr[3].backgroundPosition = smc}
+            function linksopen() {scf=11; starton(); sms[scf].marginLeft = "148px"; sarr[4].backgroundPosition = smo} function linksclose() {scf=11; startoff(); sarr[4].backgroundPosition = smc}
+            function mediaopen() {scf=12; starton(); sms[scf].marginLeft = "148px"; sarr[5].backgroundPosition = smo} function mediaclose() {scf=12; startoff(); sarr[5].backgroundPosition = smc}
+            function documentsopen() {scf=13; starton(); sms[scf].marginLeft = "161px"; marr[2].backgroundPosition = smo} function documentsclosed() {scf=13; startoff(); marr[2].backgroundPosition = smc}
+            function settingsopen() {scf=14; starton(); sms[scf].marginLeft = "161px"; marr[3].backgroundPosition = smo} function settingsclosed() {scf=14; startoff(); marr[3].backgroundPosition = smc}
+            function activeopen() {scf=15; starton(); sms[scf].marginLeft = "158px"; sarr[7].backgroundPosition = smo} function activeclose() {scf=15; startoff(); sarr[7].backgroundPosition = smc}
+            function findopen() {scf=16; starton(); sms[scf].marginLeft = "161px"; marr[4].backgroundPosition = smo} function findclosed() {scf=16; startoff(); marr[4].backgroundPosition = smc}
+            function vherstyopen() {scf=17; starton(); sms[scf].marginLeft = "161px"; sarr[6].backgroundPosition = smo} function vherstyclose() {scf=17; startoff(); sarr[6].backgroundPosition = smc}
         </script>
     </body>
 </html>
