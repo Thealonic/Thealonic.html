@@ -16,25 +16,22 @@
 
 <!-- Script setup ------------------------------------------------------------------------------>
 <html>
-    <script type="text/javascript" src="https://static.tumblr.com/d0qlne1/DiAl6ekb7/jquery-1.4.2.min.js"></script>
-    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-    <script src="//static.tumblr.com/fpdiq1j/x8Nn0wiyd/jquery.masonry.min.js"></script>
-    <script src="//static.tumblr.com/fpdiq1j/jpPn0wdlf/jquery.photosetgrid.min.js"></script>
-    <script src="//static.tumblr.com/fpdiq1j/GV9n0wdlc/jquery.infinitescroll.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.16/dist/98.css">
+    <script type="text/javascript" src="https://static.tumblr.com/d0qlne1/DiAl6ekb7/jquery-1.4.2.min.js"></script> <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="//static.tumblr.com/fpdiq1j/x8Nn0wiyd/jquery.masonry.min.js"></script> <script src="//static.tumblr.com/fpdiq1j/jpPn0wdlf/jquery.photosetgrid.min.js"></script>
+    <script src="//static.tumblr.com/fpdiq1j/GV9n0wdlc/jquery.infinitescroll.min.js"></script> <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.16/dist/98.css">
     
     <script> 
-        $(document).ready(function(){ resizeVideos() }); 
-        function resizeVideos() {
+        $(document).ready(function(){
            $('.video iframe:not(.tumblr_video_iframe)').each(function(){ var scale = $(this).parents('.video').width() / 500;
-               $(this).attr({ width: Math.floor($(this).attr('width') * scale), height: Math.floor($(this).attr('height') * scale) })});
+               $(this).attr({ width: Math.floor($(this).attr('width') * scale), height: Math.floor($(this).attr('height') * scale), margin: "0px" })});
            $('.tumblr_video_iframe').each(function(){ var scale = $(this).parents('.video').width() / 500;
                $(this).css({ 'transform': 'scale(' + scale + ')', 'margin': 250 * ( scale - 1 ) + 'px' });
-               $(this).parents('.tumblr_video_container').css({ width: Math.floor($(this).width() * ( scale + 1 ) / 2), height: Math.floor($(this).height() * ( scale + 1 ) / 2)})})}
+               $(this).parents('.tumblr_video_container').css({ width: Math.floor($(this).width() * ( scale + 1 ) / 2), height: Math.floor($(this).height() * ( scale + 1 ) / 2)})})})
               
         var github = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/", readme = "//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/README.md";
         var updateon = "12:05pm on March 20th, 2021. [GMT]", updatedfrom = "Thea Vanherst"; 
-        var curtaskact = undefined, currenttask = 1, cal = 5, docelem = document.documentElement; function calupdate(){inactiveall(); cal = cal + 1};
+        var curtaskact = undefined, currenttask = 1, cal = 5, docelem = document.documentElement, plinksdrop = false
+        function calupdate(){inactiveall(); cal = cal + 1};
         function latestupdate() {document.getElementById("lastupdate").textContent = updateon; document.getElementById("updatedby").textContent = updatedfrom}
     </script>
     
@@ -66,7 +63,7 @@
 
 /* Desktop setup css ------------------------------------------------------------------------------*/
             /* taskbar icon setup */
-            .icons {margin: 0 0 0 0; padding: -10px; width: 100px; height:100%; float: left; position: fixed; z-index: 1; font-size: 12px}
+            .icons {margin: 0 0 0 0; padding: -10px; width: 100px; height:100%; float: left; position: fixed; z-index: 1; font-size: 12px; margin-left:-10px; margin-top: -20px; }
             .icon_label {padding-top: 6px; padding-bottom: 6px; color: var(--wincyan); text-align: center; cursor: pointer} /* Icon gaps */
             
             /* sidebar */
@@ -145,10 +142,10 @@
 
             .prebuttontext {display:inline-flex; align-items:center; color: var(--prestext)}
             .predisabledfont {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--pregray); text-shadow:1px 1px 0 var(--prewhite)}
-            preul.tree-view {font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: 4px; display: block; background: var(--prewhite); box-shadow: inset -1px -1px var(--prewhite),inset 1px 1px var(--pregray),inset -2px -2px var(--prelightg),inset 2px 2px var(--preblack); padding: 6px; margin: 0}
-            prefieldset{border: none; box-shadow: inset -1px -1px var(--prewhite), inset 1px 1px var(--pregray), inset -2px -2px var(--pregray), inset 2px 2px var(--prelightg); padding:10px; padding-block-start:8px; margin:0}
+            preul.tree-view {font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: 4px; display: block; background: var(--prewhite); box-shadow: inset -1px -1px var(--prewhite),inset 1px 1px var(--pregray),inset -2px -2px var(--prelightg),inset 2px 2px var(--preblack); padding: 6px; margin: 0; color: var(--preblack);}
+            prefieldset{border: none; box-shadow: inset -1px -1px var(--prewhite), inset 1px 1px var(--pregray), inset -2px -2px var(--pregray), inset 2px 2px var(--prelightg); padding:10px; padding-block-start:8px; margin:0; color: var(--preblack);}
             
-            prebutlabel {display:inline-flex; align-items: center; color: var(--pretext); pointer: cursor; margin-top: 2px;} 
+            prebutlabel {display:inline-flex; align-items: center; color: var(--preblack); pointer: cursor; margin-top: 2px;} 
             prebutdislabel {font-size:11px; color:var(--pregray); text-shadow:1px 1px 0 var(--prewhite); display:inline-flex; align-items: center; margin-top: 2px;} 
             
             .prehelp, .preclose {background-image: var(--curspritesheet); width:12px; height:10px; margin-top: -1px; margin-left: -1px; filter: invert(var(--preinvert))} .prehelp {background-position: -66px -215px} .preclose {background-position: -114px -215px}
@@ -302,6 +299,9 @@
             ul.tick-box {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; display: block; background: var(--white); color:var(--text); position: absolute; width:9px; height: 9px;
                          box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black); padding:2px; margin: 0; margin-top: 7px; margin-left:3px}
             
+            ul.selection {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; margin-top: 4px; display: block; background: var(--silver); color:var(--text); width:40px; height:9px;
+                          box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black); padding: 6px; margin: 0}
+  
             .ultext {padding: 3px 2px 2px 2px; cursor: pointer}; .filled {width:100%; height:100%}
             .field-row{display:flex; align-items: center}; .field-row>*+*{ margin-left: 6px} 
             .field-row-stacked{display:flex; flex-direction: column}; .field-row-stacked *+*{ margin-top: 6px}
@@ -363,8 +363,11 @@
      <title>𝖁𝖍𝖊𝖗𝟗𝟖</title>
      
 <!-- desktop handling ------------------------------------------------------------------------------>
-        <!-- Sidebar icons coloumn 1 -->
-        <div class="icons" style="max-height:100%; max-width:100%; margin-left:-10px; z-index:1" onclick="menuclosed()">
+        <div class="icons" style="height:100%; padding-top: 10px; background-position: top left; background-repeat: no-repeat; background-size: cover; box-sizing: border-box;" id="CSGOsidebar2"></div>
+        <div class="icons" style="height:100%; padding-top: 10px; filter: blur(10px); background-position: top left; background-repeat: no-repeat; background-size: cover; box-sizing: border-box;" id="CSGOsidebar1"></div>
+        <div class="icons" style="height:100%; padding-top: 10px; background:gray; opacity: 0.2" id="CSGOsidebar3"></div>
+        
+        <div class="icons" style="padding-top: 20px; z-index:1" onclick="menuclosed()">
             <a href="https://thealonic.tumblr.com/">
                 <div class="thealonic"></div><div class="icon_label"><icon id="desktopi1">
                     <label>Thealonic </label></icon></div> </a>
@@ -395,16 +398,18 @@
             <div class="rct2" onclick="embedtask(); rct2load(); urlupdate();"></div><div class="icon_label"><icon id="desktopi8">
                 <label>Roller Coaster</label> <label style="margin-left:0.5px;">Tycoon 2</label></icon></div></a>
         </div>
-        
+  
 <!-- CSGO MODE rendering ------------------------------------------------------------------------------>
         <div class="container" style="width:649px; height:995px; position:fixed; right: 0; bottom:0" id="CSGO"></div>
         
         <script> var csgostyle = document.getElementById("CSGO").style
-            var CS, CSon = false, ranCSno = 1, CSspeed = 60, CSinterval = 173 * CSspeed, CSframes = [undefined, 173, 105, 113, 127, 168, 109], CSLength = CSframes.length - 1;
+            var CS, CSon = false, ranCSno1 = 1, ranCSno2 = 1, CSframes = [undefined, 10440, 6300, 6780, 7620, 10080, 6540], CSLength = CSframes.length - 1;
+            
             function changeCSGO() { if(CSon == true){ 
-                ranCSno = Math.floor(Math.random() * CSLength) + 1; CS = github + "img/CSGO/Cycle" + ranCSno + ".gif')"; 
-                csgostyle.backgroundImage = CS; CSinterval = (CSframes[ranCSno]) * CSspeed} else {csgostyle.backgroundImage = ""}}
-            $('document').ready(function(){setInterval(changeCSGO, CSinterval)})</script>
+                    CS = github + "img/CSGO/Animation" + ranCSno1 + ".gif')"; csgostyle.backgroundImage = CS; ranCSno1 = ranCSno2
+                } else {csgostyle.backgroundImage = ""}}
+                
+            $('document').ready(function(){setInterval(function(){ranCSno2 = Math.floor(Math.random() * CSLength) + 1; changeCSGO()}, (CSframes[ranCSno2] - 2000))})</script>
     
 <!-- VUNNY message box rendering ------------------------------------------------------------------------------>
         <div class="win98post" style="position: fixed; width: 206px; margin-left:-20000px;" onmousedown="catactive();" id="cat"> <!--#ref2000-->
@@ -972,7 +977,7 @@
                 if (event.keyCode === 13) { event.preventDefault(); document.getElementById("promptin").click(); }}); //listens for the enter key
             function consoleinput(){ consolein = document.getElementById("prompttext").value; consoleread(); document.getElementById("prompttext").value = ""; }
             
-            function println() {inprompt = inprompt + "\n"; consoleout.innerHTML = inprompt} 
+            function println() {inprompt = inprompt + "\n"; consoleout.innerHTML = inprompt} //\n
             function wordln() {inprompt = inprompt + consolein; println()}
             function loadedln() {loaded = word1 ; inprompt = inprompt + "Loaded " + loaded; println(); println()} 
             
@@ -1042,7 +1047,7 @@
                     if(function2 == "mount"){
                         if(loaded !== undefined){
                             inprompt = inprompt + "Fetching " + loaded; println();
-                            fetch(config).then(res => res.text()) .then(data => {config = data.split('\n')});
+                            fetch(config).then(res => res.text()) .then(data => {config = data.split('\n')}); //\n
                             inprompt = inprompt + "Done."; println(); println();
                         } else { inprompt = inprompt + "Error 203: " + "'" + loaded + "' is not a valid config."; println(); println() }}
                         
@@ -1190,11 +1195,9 @@
                     <script>
                         var desktopdrop = false, desktopmode = document.getElementById("desktopmode").style, ofdesktopmode = document.getElementById("ofdesktop"); abody = document.getElementById("body").style; //#ref5022 through #ref0002
                         function desktopdropdown(){if (desktopdrop == false) {desktopmode.marginLeft = "-2px"; ; desktopdrop = true } else if (desktopdrop == true){desktopmode.marginLeft = "-20000px";; desktopdrop = false}} //ref1023 & ref1024
-                        function desktopexit(){desktopmode.marginLeft = "-20000px"; desktopdrop = false;} //ref1025 of #ref0002
-                        function centeritem(){ofdesktopmode.textContent = 'Center'; abody.objectFit = "none"} 
-                        function fillitem(){ofdesktopmode.textContent = 'Fill'; abody.objectFit = "cover"} 
-                        function spanitem(){ofdesktopmode.textContent = 'Span'; abody.objectFit = "contain"}
-                        function stretchitem(){ofdesktopmode.textContent = 'Stretch'; abody.objectFit = "fill"} //changes text context of #ref0003
+                        function desktopexit(){desktopmode.marginLeft = "-20000px"; desktopdrop = false} //ref1025 of #ref0002
+                        function centeritem(){ofdesktopmode.textContent = 'Center'; abody.objectFit = "none"} function fillitem(){ofdesktopmode.textContent = 'Fill'; abody.objectFit = "cover"} 
+                        function spanitem(){ofdesktopmode.textContent = 'Span'; abody.objectFit = "contain"} function stretchitem(){ofdesktopmode.textContent = 'Stretch'; abody.objectFit = "fill"} //changes text context of #ref0003
                     </script>
 
                     <ul class="tree-view" style="width:240px; height:86px; margin-top: 2px; margin-left:4px;">
@@ -1246,7 +1249,7 @@
                     document.getElementById("wallpaperoverlay7").style, document.getElementById("wallpaperoverlay8").style, document.getElementById("wallpaperoverlay9").style, //#ref5014
                     document.getElementById("wallpaperoverlay10").style, document.getElementById("wallpaperoverlay11").style, document.getElementById("wallpaperoverlay12").style]; //#ref5014
                 var cwpp = "#c0c0c0", curwp = "", wpn = "", wps = ""; //#ref5014 //#ref5015, #ref5016
-                function wallpaperupdate(){abody.backgroundImage = curwp; dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp} //#ref5021 //#ref5020
+                function wallpaperupdate(){abody.backgroundImage = curwp; dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp; CSGOsidebar1.backgroundImage = curwp; CSGOsidebar2.backgroundImage = curwp} //#ref5021 //#ref5020
                 function wpp(){ dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp; document.getElementById("apperancepreview").style.backgroundImage = curwp; iconpre.backgroundImage = curwp} //#ref5021 //#ref0020 //#ref0019 
                 //ref#0025 wallpaper changes based on ref#0026, changes on click to be previewed through #ref5021
                 function wwpno(){ wpo[wpn].backgroundColor = cwpp; curwp = github + wps; wpp(); wpcr()} function wpcr() { for(var i = 0; wpo.length > i; i++){wpo[i].backgroundColor = ""}}//#ref0019
@@ -1271,36 +1274,32 @@
                                 <div class="dropbutton-pres" style="margin-left:154px"><div class="scrolldown"></div></div>
                                 <div class="droptext" onclick="none()" id="none">(none)</div></div></ul> <!--#ref0019-->
                         
-                        <script>
-                            var ssdrop = false, thescreen = document.getElementById("thescreensaver").style; //#ref5022 through #ref0018
+                        <script> var ssdrop = false, thescreen = document.getElementById("thescreensaver").style; //#ref5022 through #ref0018
                             function ssdropdown(){if (ssdrop == false) {thescreen.marginLeft = "-2px"; ssdrop = true } else if (ssdrop == true){thescreen.marginLeft = "-20000px"; ssdrop = false }} //#ref5023 //#ref5024
                             function ssdropdownclose(){thescreen.marginLeft = "-20000px"; ssdrop = false} //#ref5025
-                            function none(){document.getElementById("currentscreensaver").textContent="(none)";} //dropdown option one for #ref0019
-                        </script>
+                            function none(){document.getElementById("currentscreensaver").textContent="(none)"} </script>
 
                         <div class="win98buttondisa" style="margin-left:182px; width:67px; margin-top:2px;"><center><butdislabel>Save As...</butdislabel></center></div>
                         <div class="win98buttondisa" style="margin-left:262px; width:68px; margin-top:2px;"><center><butdislabel>Preview</butdislabel></center></div>
                         
                         <div style="margin-top: 27px">
-                            <ul class="tree-view" style="position: absolute; width:1px; height: 1px; margin-top: 7px; background: var(--silver);"></ul>
-                                <butdislabel style="position:absolute; margin-left:20px; margin-top: 7px;">Password Protected</butdislabel>
-                            <div class="win98buttondisa" style="margin-left:130px; width:67px; margin-top:3px;"><center><butdislabel>Change...</butdislabel></center></div></div>
+                            <ul class="tick-box" style="position:absolute; background-color: var(--silver)" id="screentick1"><div class="invisibtickbox"></div></ul>
+                                <label for="screentick1" style="margin-left: 22px; margin-top:7px">Password Protected</label></div>
+                        <div class="win98buttondis" style="margin-left:130px; width:67px; margin-top:-16px"><center><butdislabel>Change...</butdislabel></center></div>
                         
-                        <div style="margin-left:208px; margin-top:37px;">
-                            <butdislabel style="position:absolute; margin-top:-3px">Wait:</butdislabel>
-                            <ul class="tree-view" style="position:absolute; width:40px; height:9px; margin-top: -6px; margin-left:29px; background-color:var(--silver)">
-                                <div style="margin-top: 13px; margin-left:29px">
-                                    <div class="buttonsmalldis" style="margin-top: -17px"><div class="tinyarrowdisabledup"></div></div>
-                                    <div class="buttonsmalldis" onclick="yearsub()"><div class="tinyarrowdisableddown"></div></div></div>
-                            </ul>
-                            <butdislabel style="position:absolute; margin-left:86px; margin-top:-2px">minutes</butdislabel>
+                        <div style="margin-left:208px; margin-top:-24px">
+                            <butdislabel>Wait:</butdislabel>
+                            <ul class="selection" style="margin-left:29px; margin-top: -15px"><div style="margin-top: 13px; margin-left:29px">
+                                <div class="buttonsmalldis" style="margin-top: -17px"><div class="tinyarrowdisabledup"></div></div>
+                                <div class="buttonsmalldis" onclick="yearsub()"><div class="tinyarrowdisableddown"></div></div></div></ul>
+                            <butdislabel style="position:absolute; margin-top:-18px; margin-left:87px">minutes</butdislabel>
                     </div></fieldset>
                     
                     <fieldset style="width:336px; height:48px; margin-left: 12px; margin-top: 12px;">
                         <inboxlabel style="width:154px"> Energy saving features of monitor </inboxlabel>
-                        <div class="energysaving" style="position: absolute; margin-left:24px; margin-top:5px"></div>
-                        <label style="position: absolute; margin-left: 112px; margin-top: 5px"> To adjust the power settings of your monitor, click settings.</label>
-                        <div class="win98buttondisa" style="margin-left:266px; margin-top: 25px;  width:63px;"><center><butdislabel>Settings</butdislabel></center></div>
+                        <div style="margin-top:5px"><div class="energysaving" style="position: absolute; margin-left:24px"></div>
+                            <label style="position: absolute; margin-left: 112px"> To adjust the power settings of your monitor, click settings.</label></div>
+                        <div class="win98buttondisa" style="margin-left:266px; margin-top: 25px; width:63px;"><center><butdislabel>Settings</butdislabel></center></div>
                     </fieldset></div>
             
             <!-- --------------------------------------- appearance tab --------------------------------------- -->
@@ -1308,28 +1307,22 @@
                 <ul class="tree-view"  id="apperancepreview" style="width:337px; height:179px; margin: 12px; padding:10px;">
                     
                     <div class="prepost" style="height: 137px; width:300px;">
-                        <div class="pretitlebarbutton" title="Close"><div class="preclose"></div></div>
-                        <div class="pretitlebarbutton" title="Help"> <div class="prehelp"></div></div>
-                        <div class="pretitle-bar-posts" style="background: var(--preinactive);"> <div class="pretitle-bar-text" style="color: var(--preinactivetitle);">💤 Inactive Window</div></div>
-                        <div class="window-body" style="margin: 3px; padding: 2px"></div></div>
+                        <div class="pretitlebarbutton" title="Close"><div class="preclose"></div></div><div class="pretitlebarbutton" title="Help"> <div class="prehelp"></div></div>
+                        <div class="pretitle-bar-posts" style="background: var(--preinactive)"> <div class="pretitle-bar-text" style="color: var(--preinactivetitle);">💤 Inactive Window</div></div></div>
                     
-                    <div class="prepost" style="height: 137px; width:301px; margin-top:24px; margin-left:5px">
-                        <div class="pretitlebarbutton" title="Close"><div class="preclose"></div></div>
-                        <div class="pretitlebarbutton" title="Help"> <div class="prehelp"></div></div>
+                    <div class="prepost" style="height: 137px; width:300px; margin-top:24px; margin-left:5px">
+                        <div class="pretitlebarbutton" title="Close"><div class="preclose"></div></div><div class="pretitlebarbutton" title="Help"> <div class="prehelp"></div></div>
                         <div class="pretitle-bar-posts" style="background: var(--preactive);"> <div class="pretitle-bar-text">💯 Active Window</div></div>
                         <div class="window-body" style="margin: 0px 3px 3px 3px; padding: 2px">
-                            <label style="position:absolute; color:var(--preblack)">Normal</label>
-                            <div class="predisabledfont" style="position:absolute; margin-left:39px">Disabled</div>
-                            <prefieldset style="position:absolute; margin-left:85px; margin-top:-1px; padding:2px 4px 1px 4px; color:var(--preblack);"> Selected </prefieldset>
-                            <preul class="tree-view"  style="width:286px; height:85px; margin-left: -3px; margin-top: 15px;">
+                            <prebutlabel>Normal</prebutlabel><prebutdislabel style="margin-left:4px;">Disabled</prebutdislabel>
+                            <prefieldset style="margin-left:4px; margin-top:-1px; padding:2px 4px 1px 4px"> Selected </prefieldset>
+                            <preul class="tree-view" style="width:286px; height:85px; margin-top:3px; margin-left:-4px;">
                                 <div style="position:absolute; background: var(--premidgray); margin-left: 274px; width:16px; height:84px"></div>
-                                <div style="margin-left: 274px">
-                                    <div class="prescroll" style="margin-top:-4px"><div class="prescrollup"></div></div>
+                                <div style="margin-left: 274px"><div class="prescroll" style="margin-top:-4px"><div class="prescrollup"></div></div>
                                     <div class="prescroll" style="margin-top:73px"><div class="prescrolldown"></div></div></div></preul></div></div>
                         
                     <div class="prepost" style="height:72px; width:201px; margin-left:20px; margin-top: 100px;">
-                        <div class="pretitlebarbutton" title="Close"><div class="preclose"></div></div>
-                        <div class="pretitlebarbutton" title="Help"> <div class="prehelp"></div></div>
+                        <div class="pretitlebarbutton" title="Close"><div class="preclose"></div></div><div class="pretitlebarbutton" title="Help"> <div class="prehelp"></div></div>
                         <div class="pretitle-bar-posts" style="background: var(--preactive);"> <div class="pretitle-bar-text">💬 Message Box</div></div>
                         <div class="window-body" style="color:var(--pretext);"> Current active window
                             <center><div class="prebutton" style="margin-top:7px"><butlabel>Ok</butdislabel></div></center>
@@ -1426,7 +1419,7 @@
                             docelem.style.setProperty('--taskbarstarttop1', ccgray); docelem.style.setProperty('--taskbarstarttop2', ccblack); 
                             docelem.style.setProperty('--taskbarstartbottom1', ccwhite); docelem.style.setProperty('--taskbarstartbottom2', cclightg); taskbartext = pretaskbartxt; taskbartextpressed = pretaskbartxtprs; 
                             curinactivehead = precurinactivehead; curactiveheader = precuractiveheader; docelem.style.setProperty('--inactive', curinactivehead); docelem.style.setProperty('--active', curactiveheader);
-                            for(var temp = 1; taskbarfont.length > temp; temp++){ taskbarfont[temp].color = taskbartext}; for(scf = 0; smu.length > scf; scf++){cmbp()}
+                            for(var temp = 1; taskbarfont.length > temp; temp++){ taskbarfont[temp].color = taskbartext}; for(scf = 0; smu.length > scf; scf++){smu[scf].backgroundColor = ccsilver; smu[scf].color = ccfont}
                             
                             curinactivehead = precurinactivehead; curactiveheader = precuractiveheader; curactivetitle = preactivetitle; curinactivetitle = preinactivetitle; //changes headers and title colours
                             curinactivehead = precurinactivehead; curactiveheader = precuractiveheader; curactivetitle = preactivetitle; curinactivetitle = preinactivetitle;
@@ -1436,7 +1429,8 @@
                             docelem.style.setProperty('--discheckinv', discheckinv); docelem.style.setProperty('--enacheckinv', enacheckinv); docelem.style.setProperty('--invcheckinv', invcheckinv); 
                             
                             if (nsfwtoggle == true){nsfwoptions.marginLeft = "0px"; nsfwoptions.marginTop = "0px"; inprompt = inprompt + "NSFW options enabled."; println(); println()} else {nsfwoptions.marginLeft = "-20000px"; nsfwoptions.marginTop = "-80px";}
-                            if (csgotoggle == true){CSon = true; desktopleft = "-200px"; desktop.left = desktopleft; ranCSno = 1; changeCSGO(); inprompt = inprompt + "CSGO mode enabled."; println(); println()} else {CSon = false; desktopleft = "0px"; desktop.left = desktopleft; changeCSGO(); wallpapercust()}
+                            if (csgotoggle == true){CSon = true; desktopleft = "-340px"; desktop.left = desktopleft; desktop.top = "5px"; ranCSno = 1; CSGOsidebar1.opacity = 1; CSGOsidebar2.opacity = 1; CSGOsidebar3.opacity = 0.2; changeCSGO(); inprompt = inprompt + "CSGO mode enabled."; println(); println()
+                            } else {CSon = false; desktopleft = "0px"; desktop.left = desktopleft; desktop.top = "0px"; CSGOsidebar1.opacity = 0; CSGOsidebar2.opacity = 0; CSGOsidebar3.opacity = 0; changeCSGO()}
                             
                             shufflecolour(); clocku(); wwpno(); diskactive(); inprompt = inprompt + "Theme Loaded."; println()} //logs if the preview theme has been turned into the current theme active.
                     </script>
@@ -1491,7 +1485,7 @@
                             var colourpicked = false, currentcolour = "#008080", fontcolour = "#fff", copi = "", coloursampler = document.getElementById("coloursampler").style;
                             var cpo = document.getElementById("currentpickedo").style; cpc = document.getElementById("currentpickedc").style; ap = document.getElementById("apperancepreview").style;
                             let desktopico = [ document.getElementById("desktopi1").style, document.getElementById("desktopi2").style, document.getElementById("desktopi3").style, document.getElementById("desktopi4").style, 
-                                               document.getElementById("desktopi5").style, document.getElementById("desktopi6").style, document.getElementById("desktopi8").style]
+                                document.getElementById("desktopi5").style, document.getElementById("desktopi6").style, document.getElementById("desktopi8").style]
  
                             function colourpicker(){if (colourpicked == false){coloursampler.marginLeft = "-2px"; colourpicked = true} else if (colourpicked == true ){coloursampler.marginLeft = "-20000px"; colourpicked = false}}
                             function colourpickerexit() {coloursampler.marginLeft = "-20000px"; colourpicked = false}
@@ -1501,15 +1495,12 @@
                             function fontcolourset(){ for (var i = 0; i < desktopico.length; i++) {desktopico[i].color = fontcolour}} // changes desktop icon text color;
                             function fontcolorsetpreview(){ for (var i = 0; i < previewico.length; i++) { previewico[i].color = fontcolour}} // changes preview desktop icons span colour
 
-                            function cpick(){if(copi == 1){currentcolour = "#fff"; fontcolour = "#000"} else if (copi == 2){currentcolour = "#000"; fontcolour = "#fff"
-                                } else if (copi == 3){currentcolour = "#c2c6ca"; fontcolour = "#000"} else if (copi == 4){currentcolour = "#85898d"; fontcolour = "#fff"
-                                } else if (copi == 5){currentcolour = "#ff0000"; fontcolour = "#fff"} else if (copi == 6){currentcolour = "#aa0055"; fontcolour = "#fff"
-                                } else if (copi == 7){currentcolour = "#ffff00"; fontcolour = "#000"} else if (copi == 8){currentcolour = "#aaaa55"; fontcolour = "#fff"
-                                } else if (copi == 9){currentcolour = "#00ff00"; fontcolour = "#000"} else if (copi == 10){currentcolour = "#00aa55"; fontcolour = "#fff"
-                                } else if (copi == 11){currentcolour = "#00ffff"; fontcolour = "#000"} else if (copi == 12){currentcolour = "#008080"; fontcolour = "#fff"
-                                } else if (copi == 13){currentcolour = "#0000ff"; fontcolour = "#fff"} else if (copi == 14){currentcolour = "#0000aa"; fontcolour = "#fff"
-                                } else if (copi == 15){currentcolour = "#ff00ff"; fontcolour = "#000"} else if (copi == 16){currentcolour = "#aa55aa"; fontcolour = "#fff"
-                                } else if (copi == 17){currentcolour = "#a03762"; fontcolour = "#fff"} else if (copi == 18){currentcolour = "#001224"; fontcolour = "#fff"
+                            function cpick(){if(copi == 1){currentcolour = "#fff"; fontcolour = "#000"} else if (copi == 2){currentcolour = "#000"; fontcolour = "#fff" } else if (copi == 3){currentcolour = "#c2c6ca"; fontcolour = "#000"
+                                } else if (copi == 4){currentcolour = "#85898d"; fontcolour = "#fff"} else if (copi == 5){currentcolour = "#ff0000"; fontcolour = "#fff"} else if (copi == 6){currentcolour = "#aa0055"; fontcolour = "#fff"
+                                } else if (copi == 7){currentcolour = "#ffff00"; fontcolour = "#000"} else if (copi == 8){currentcolour = "#aaaa55"; fontcolour = "#fff"} else if (copi == 9){currentcolour = "#00ff00"; fontcolour = "#000"
+                                } else if (copi == 10){currentcolour = "#00aa55"; fontcolour = "#fff"} else if (copi == 11){currentcolour = "#00ffff"; fontcolour = "#000"} else if (copi == 12){currentcolour = "#008080"; fontcolour = "#fff"
+                                } else if (copi == 13){currentcolour = "#0000ff"; fontcolour = "#fff"} else if (copi == 14){currentcolour = "#0000aa"; fontcolour = "#fff"} else if (copi == 15){currentcolour = "#ff00ff"; fontcolour = "#000"
+                                } else if (copi == 16){currentcolour = "#aa55aa"; fontcolour = "#fff"} else if (copi == 17){currentcolour = "#a03762"; fontcolour = "#fff"} else if (copi == 18){currentcolour = "#001224"; fontcolour = "#fff"
                                 } else if (copi == 19){currentcolour = "#483038"; fontcolour = "#fff"} else if (copi == 20){currentcolour = "#ccffff"; fontcolour = "#000"}
                                 cpc.backgroundColor = currentcolour; cpo.backgroundColor = currentcolour; iconpre.backgroundColor = currentcolour; ctoggle = false
                                 ap.backgroundColor = currentcolour; dcb1.backgroundColor = currentcolour; dcb2.backgroundColor = currentcolour; dcb3.backgroundColor = currentcolour
@@ -1595,8 +1586,8 @@
                                 </center></div>
                         </div></div>
 
-                        <div class="win98buttondis" style="float:right; width:78px; height:18px; margin-top: 7px; margin-right:4px;"><center><butdislabel>Default Icon</butdislabel></center></div>
-                        <div class="win98buttondis" style="float:right; width:78px; height:18px; margin-top: 7px; margin-right:8px;"><center><butdislabel>Change Icon...</butdislabel></center></div>
+                        <div class="win98buttondis" style="float:right; width:78px; margin-top: 7px; margin-right:4px;"><center><butdislabel>Default Icon</butdislabel></center></div>
+                        <div class="win98buttondis" style="float:right; width:78px; margin-top: 7px; margin-right:8px;"><center><butdislabel>Change Icon...</butdislabel></center></div>
                     </fieldset>
                     
                     <fieldset style="width:336px; height:118px; margin-left: 12px; margin-top: 20px;">
@@ -1618,24 +1609,22 @@
                             <label for="effectstick6" style="margin-left: 22px; margin-top:7px;" onclick="tickcsgotoggle()">Enable "CSGO desktop" mode</label>
                     </fieldset>
                     
-                    <script>
-                        var nsfwtoggle = false, csgotoggle = false, dragtoggle = true, nsfwoptions = document.getElementById("nsfwoptions").style;
+                    <script> var nsfwtoggle = false, csgotoggle = false, dragtoggle = true, nsfwoptions = document.getElementById("nsfwoptions").style, 
+                            CSGOsidebar1 = document.getElementById("CSGOsidebar1").style, CSGOsidebar2 = document.getElementById("CSGOsidebar2").style, CSGOsidebar3 = document.getElementById("CSGOsidebar3").style;
                         var effect1 = document.getElementById("effect1").style, effect2 = document.getElementById("effect2").style, effect3 = document.getElementById("effect3").style, 
                             effect4 = document.getElementById("effect4").style, effect5 = document.getElementById("effect5").style, effect6 = document.getElementById("effect6").style;
                         function tickdragtoggle(){ if (dragtoggle == false){dragtoggle = true; effect3.backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')"
                             } else if (dragtoggle == true){dragtoggle = false; effect3.backgroundImage = ""}}
                         function ticknsfwtoggle(){ if (nsfwtoggle == false){nsfwtoggle = true; effect4.backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')"
                             } else if (nsfwtoggle == true){nsfwtoggle = false; effect4.backgroundImage = ""}}
-                        function tickcsgotoggle(){ if (csgotoggle == false){csgotoggle = true; effect6.backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')" 
-                            wps = "img/wallpapers/vinylchrys.gif')"; wwpno() } else if (csgotoggle == true){csgotoggle = false; effect6.backgroundImage = ""}}
-                    </script>
+                        function tickcsgotoggle(){ if (csgotoggle == false){csgotoggle = true; effect6.backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')";
+                            wps = "img/wallpapers/vinylchrys.gif')"; wwpno() } else if (csgotoggle == true){csgotoggle = false; effect6.backgroundImage = ""}} </script>
                 </div>
             
             <!-- --------------------------------------- settings tab --------------------------------------- -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="settings">
                 <center><div class="displaycolourback" id="dcb3"><div class="displayboxdisplay"></div><div class="displayboxdisplayde"></div></div></center>
                 <p style="margin-left:14px; margin-top:58px"> Display: <br> Default Monitor on DisplayPort - Standard PCI Graphics Adapter (XGA) </p>
-                
                 <!-- display container settings -->
                 <div style="display: inline-block; margin: 12px">
                     <fieldset style="width:149px; height:39px">
@@ -1679,26 +1668,20 @@
         <script>
             var disk = document.getElementById("disk").style; diskwin = document.getElementById("diskwindow").style, disktext = document.getElementById("disktext").style;
             function diskactive() {calupdate(); disk.marginLeft = "0px"; disk.marginTop = "0px"; disk.zIndex = cal; disktext.color = curactivetitle; diskwin.backgroundImage = curactiveheader; curtaskact = 3; activatetask()}
-            function diskopen() {tabreset(); diskactive(); disk.left = "1465px"; disk.top = "13%"}
+            function diskopen() {tabreset(); diskactive(); disk.left = "1465px"; disk.top = "13%"} function diskminimize() {disk.marginLeft = "-20000px"; inactiveall()}
             function diskclose() {inactiveall(); disk.marginLeft = "-20000px"; disk.marginTop = "-20000px"; taskbar[3].marginLeft = "-20000px"; tasktrue[3] = false; taskon[3] = false; taskreset()}
-            function diskminimize() {disk.marginLeft = "-20000px"; inactiveall()}
             
             var dcb1 = document.getElementById("dcb1").style, dcb2 = document.getElementById("dcb2").style, dcb3 = document.getElementById("dcb3").style, iconpre = document.getElementById("iconpreview").style; 
             let previewico = [ document.getElementById("iconpre1").style, document.getElementById("iconpre2").style, document.getElementById("iconpre3").style, document.getElementById("iconpre4").style,
-                document.getElementById("iconpre6").style, document.getElementById("iconpre7").style, document.getElementById("iconpre8").style ]
-            //#ref5014
+                               document.getElementById("iconpre6").style, document.getElementById("iconpre7").style, document.getElementById("iconpre8").style ]
             var a = document.getElementById("backgroundtab").style, b = document.getElementById("screenSavertab").style, c = document.getElementById("appearancetab").style, 
                 d = document.getElementById("effectstab").style, e = document.getElementById("settingstab").style;
             var effz = document.getElementById("effects").style, setz = document.getElementById("settings").style, bacz = document.getElementById("background").style, 
                 scrz = document.getElementById("screensaver").style, appz = document.getElementById("appearance").style;
                 
-            function tabreset(){ effz.zIndex  = 2; setz.zIndex  = 2; bacz.zIndex  = 2; scrz.zIndex  = 2; appz.zIndex  = 2; //#ref5017
-                a.width = "63px"; a.height = "16px"; a.marginTop = "6px"; a.marginLeft = " 11px"; a.zIndex = 1; //#ref5015 first tab
-                b.width = "68px"; b.height = "16px"; b.marginTop = "6px"; b.marginLeft = " 80px"; b.zIndex = 1; //#ref5015 second tab 
-                c.width = "65px"; c.height = "16px"; c.marginTop = "6px"; c.marginLeft = "154px"; c.zIndex = 1; //#ref5015 third tab 
-                d.width = "38px"; d.height = "16px"; d.marginTop = "6px"; d.marginLeft = "225px"; d.zIndex = 1; //#ref5015 fourth tab 
-                e.width = "45px"; e.height = "16px"; e.marginTop = "6px"; e.marginLeft = "269px"; e.zIndex = 1} //#ref5015 fifth tab
-                    
+            function tabreset(){ effz.zIndex  = 2; setz.zIndex  = 2; bacz.zIndex  = 2; scrz.zIndex  = 2; appz.zIndex  = 2; a.width = "63px"; a.height = "16px"; a.marginTop = "6px"; a.marginLeft = " 11px"; a.zIndex = 1; 
+                b.width = "68px"; b.height = "16px"; b.marginTop = "6px"; b.marginLeft = " 80px"; b.zIndex = 1; c.width = "65px"; c.height = "16px"; c.marginTop = "6px"; c.marginLeft = "154px"; c.zIndex = 1; 
+                d.width = "38px"; d.height = "16px"; d.marginTop = "6px"; d.marginLeft = "225px"; d.zIndex = 1; e.width = "45px"; e.height = "16px"; e.marginTop = "6px"; e.marginLeft = "269px"; e.zIndex = 1} 
             function backgroundtab(){bacz.zIndex  = 9; a.zIndex = 10; a.width = "71px"; a.marginLeft = "6px"; a.marginTop = "5px"; a.height = "17px"} //#ref5016 #ref5018:
             function screensavertab(){scrz.zIndex  = 9; b.zIndex = 10; b.width = "72px"; b.marginLeft = "78px"; b.marginTop = "5px"; b.height = "17px"} //#ref5016 #ref5018:
             function appearancetab(){appz.zIndex  = 9; c.zIndex = 10; c.width = "69px"; c.marginLeft = "152px"; c.marginTop = "5px"; c.height = "17px"} //#ref5016 #ref5018:
@@ -1724,14 +1707,10 @@
             function logreset() { logoff.left = "40%"; logoff.top = "40%"; logonactive()}; function logoffno() { logoff.marginLeft = "-20000px"; logoff.zIndex = "1"} </script>
         
 <!-- Windows 98 desktop handling ------------------------------------------------------------------------------>
-        {block:Pagination}
-            <div class="navigation cf" id="i_nav">
-                {block:NextPage}<a class="next" id="i_next" href="{NextPage}">{lang:Next} &rarr;</a>{/block:NextPage}
-                {block:PreviousPage}<a class="prev" href="{PreviousPage}">&larr; {lang:Previous}</a>{/block:PreviousPage}</div>
-        {/block:Pagination}
+        {block:Pagination} <div class="navigation cf" id="i_nav"> {block:NextPage}<a class="next" id="i_next" href="{NextPage}">{lang:Next} &rarr;</a>{/block:NextPage}
+            {block:PreviousPage}<a class="prev" href="{PreviousPage}">&larr; {lang:Previous}</a>{/block:PreviousPage}</div>{/block:Pagination}
         
 <!-- Tumblr Post handler ------------------------------------------------------------------------------>
-        
         <div id="desktop" style="width:1010px; margin-top:20px;">
             {block:Posts}
                 <div class="window" style="width: 475px; max-width: 475px; margin-bottom: 20px; margin-right: 20px; position: absolute">
@@ -1794,14 +1773,12 @@
                                             <div class="menuapplicationsplit" style="width:100%; margin-top:1px; margin-bottom:1px;"></div>
                                             <div class="submenu18"><label style="margin-left: 4px; margin-top: 3px"> Set wallpaper as (Tiled) </label></div>
                                             <div class="submenu18"><label style="margin-left: 4px; margin-top: 3px"> Set wallpaper as (Centered) </label></div></div>
-                                    </postdrop>
+                                </postdrop></div>
                                 
-                                    <script> var plinksdrop = false, post = document.getElementById("desktop"), desktop = document.getElementById("desktop").style;
-                                        $(".postlinks-container").click(function(){if (plinksdrop == false){$(this).find("postdrop").css("margin-left", "49px"); plinksdrop = true 
-                                            } else if (plinksdrop == true){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false}})
-                                        $(".postlinks-container").mouseleave(function(){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false})</script>
-
-                                </div>
+                                <script> $(".postlinks-container").click(function(){if (plinksdrop == false){$(this).find("postdrop").css("margin-left", "49px"); plinksdrop = true 
+                                        } else if (plinksdrop == true){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false}})
+                                    $(".postlinks-container").mouseleave(function(){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false})</script>
+                                
                         </fieldset></div>
 
 <!-- Post window body ------------------------------------------------------------------------------>
@@ -1931,7 +1908,7 @@
             function tumblrminimize() { inactiveall(); desktop.left = "-20000px"; document.body.style.position = "hidden"}
             
 //   inactive toggle ------------------------------------------------------------------------------>
-            
+            var desktop = document.getElementById("desktop").style
             function inactiveall() { var timer = 0; if (timer < 1){timer = 1; menuclosed();
                 $(".win98post").find(".title-bar-98").css("background-image", curinactivehead); $(".win98post").find(".title-bar-text").css("color", curinactivetitle)
                 $(".window").find(".title-bar-98").css("background-image", curinactivehead); $(".window").find(".title-bar-text").css("color", curinactivetitle)
@@ -2196,26 +2173,21 @@
                         <div class="submenu20" style="width: 116px; height:20px"><div class="menufind2"></div><label><labc> Computer...</labc></label></div>
                         <div class="submenu20" style="width: 116px; height:20px"><div class="menufind3"></div><label><labc> On the Internet...</labc></label></div>
                         <div class="submenu20" style="width: 116px; height:20px"><div class="menufind4"></div><label><labc> People</labc></label></div></div>
-                    
-<!-- startmenu scripts + end ------------------------------------------------------------------------------>
-            
             </div></div>
             
-            <script>   
-                var startButtonOpen = false, startmenu = document.getElementById("startmenu").style;
+<!-- startmenu scripts + end ------------------------------------------------------------------------------>
+            <script>  var startButtonOpen = false, startmenu = document.getElementById("startmenu").style;
                 function startpress() { if (startButtonOpen == true) { startmenu.marginLeft = "200000px"; startButtonOpen = false;
                         docelem.style.setProperty('--taskbarstarttop1', ccgray); docelem.style.setProperty('--taskbarstarttop2', ccblack);
                         docelem.style.setProperty('--taskbarstartbottom1', ccwhite); docelem.style.setProperty('--taskbarstartbottom2', cclightg);
                     } else if(startButtonOpen == false) { startmenu.marginLeft = "0px"; startButtonOpen = true; 
                         docelem.style.setProperty('--taskbarstarttop1', ccwhite); docelem.style.setProperty('--taskbarstarttop2', cclightg);
-                        docelem.style.setProperty('--taskbarstartbottom1', ccblack); docelem.style.setProperty('--taskbarstartbottom2', ccgray);}}
+                        docelem.style.setProperty('--taskbarstartbottom1', ccblack); docelem.style.setProperty('--taskbarstartbottom2', ccgray)}}
                 function menuclosed(){ startmenu.marginLeft = "200000px"; startButtonOpen = false;
                     docelem.style.setProperty('--taskbarstarttop1', ccgray); docelem.style.setProperty('--taskbarstarttop2', ccblack);
-                    docelem.style.setProperty('--taskbarstartbottom1', ccwhite); docelem.style.setProperty('--taskbarstartbottom2', cclightg);}
-            </script> 
+                    docelem.style.setProperty('--taskbarstartbottom1', ccwhite); docelem.style.setProperty('--taskbarstartbottom2', cclightg)} </script> 
             
 <!-- Taskbar Rendering  ------------------------------------------------------------------------------>
-        
             <div style="margin-top: -24px">
                 <!-- taskbar application icons -->
                 <div class="big_seperator" style="margin-left:60px; margin-right:1px;"> </div> 
@@ -2269,14 +2241,14 @@
                         taskpos[task] = (currenttask * 168); taskon[task] = true; inprompt = inprompt + "current tasks active: " + currenttask; println()}}
                 </script>
                  
-                <div class="clock">
-                    <div class="calendar" style="cursor: pointer;" onclick="clockopen();"> </div>
+                <div class="clock"> <div class="calendar" style="cursor: pointer;" onclick="clockopen();"> </div>
                     <div class="menuentertainment3" style="margin-top:-1px; margin-left:1px;"></div>
-                    <label class="time" style="font-size:11px; color: var(--atext);" id="showClock"> 00:00 am </label>
-                </div>
-                
+                    <label class="time" style="font-size:11px; color: var(--atext);" id="showClock"> 00:00 am </label></div>
         </div></div>
-
+                
+        <script> function updateClock(){ var mins = da.getMinutes() + minutemath; var hrs = da.getHours() + hourmath; var ext = "AM"; var currentTime = hrs + ":" + mins + " " + ext;
+            if(hrs > 12){ var ext = "PM"; var hrs = hrs - parseInt(12)} if(hrs < 10){ var hrs = "0"+hrs} if(mins < 10){ var mins = "0"+ mins} $('#showClock').html(currentTime)} </script>
+                
 <!-- On page load handling ------------------------------------------------------------------------------>
         <script>
             $(document).ready(function(){
@@ -2285,34 +2257,25 @@
                     $container.imagesLoaded(function(){$container.masonry({itemSelector:'.window', isAnimated: true})});
                     $container.infinitescroll({itemSelector: '.window'}, 
                     function(newElements) {
+                        $(".window").click(function(){calupdate(); tumblractive(); $(this).css("z-index", cal); var desktopleft
+                            $(this).find(".title-bar-98").css("background-image", curactiveheader); $(this).find(".title-bar-text").css("color", curactivetitle)});
+                        
                         var $newElems = $( newElements ).hide();
-                        $newElems.show();
-                        $newElems.imagesLoaded(function(){
+                        $newElems.imagesLoaded(function(){ $newElems.show();
                             var $newElemsIDs = $newElems.map(function () { return this.id; }).get();
                             $container.masonry('appended', $newElems)})
-                        $newElems.find('.video').each( function() { resizeVideos() })
-                })}
+                        $newElems.find('.video').each( function() { resizeVideos() })})}
                 window.setInterval(updateClock(), 6000); updateClock()});
-            
-            function updateClock(){
-                var mins = da.getMinutes() + minutemath; var hrs = da.getHours() + hourmath; var ext = "AM";
-                if(hrs > 12){ var ext = "PM"; var hrs = hrs - parseInt(12)}
-                if(hrs < 10){ var hrs = "0"+hrs} if(mins < 10){ var mins = "0"+ mins}
-                var currentTime = hrs + ":" + mins + " " + ext;
-                $('#showClock').html(currentTime)}
                 
 //-- clock for clockbox ------------------------------------------------------------------------------>
+
             var canvas = document.getElementById("canvas"), ctx = canvas.getContext("2d"), radius = canvas.height / 2, hand = 1;
             ctx.translate(radius, radius); radius = radius * 0.90; setInterval(drawClock, 1000);
-            
             function drawClock() { drawFace(ctx, radius); drawTime(ctx, radius)}
             function drawFace(ctx, radius) { ctx.beginPath(); ctx.arc(0, 0, radius, 0, 2*Math.PI); ctx.fillStyle = ccsilver; ctx.fill()}
             
-            function drawTime(ctx, radius){ 
-                var now = new Date(); hour = now.getHours(); minute = now.getMinutes() + minutemath; second = now.getSeconds();
-                hour=hour%12; hour=(hour*Math.PI/6)+(minute*Math.PI/(6*60))+(second*Math.PI/(360*60));
-                
-                drawHand(ctx, hour, radius*0.5, radius*0.05); //hand drawing functions
+            function drawTime(ctx, radius){ var now = new Date(); var hour = now.getHours(); var minute = now.getMinutes() + minutemath; var second = now.getSeconds();
+                hour=hour%12; hour=(hour*Math.PI/6)+(minute*Math.PI/(6*60))+(second*Math.PI/(360*60)); drawHand(ctx, hour, radius*0.5, radius*0.05); //hand drawing functions
                 minute=(minute*Math.PI/30)+(second*Math.PI/(30*60)); drawHand(ctx, minute, radius*0.8, radius*0.05);
                 second=(second*Math.PI/30); drawHand(ctx, second, radius*0.9, radius*0.005)} //hand drawing functions
 
@@ -2335,8 +2298,7 @@
             function closeDragElement() {document.onmouseup = null; document.onmousemove = null}}
         
 //-- Startmenu script handling ------------------------------------------------------------------------------>
-            var scf, smo = "-134px -216px", smc = "-54px -216px", smu = [ 
-                document.getElementById("menuprograms").style, document.getElementById("accessories").style, document.getElementById("communications").style, document.getElementById("entertainment").style,
+            var smu = [document.getElementById("menuprograms").style, document.getElementById("accessories").style, document.getElementById("communications").style, document.getElementById("entertainment").style,
                 document.getElementById("games").style, document.getElementById("internettools").style, document.getElementById("systemtools").style, document.getElementById("onlineservices").style,
                 document.getElementById("startup").style, document.getElementById("menufavourites").style, document.getElementById("channels").style, document.getElementById("links").style,
                 document.getElementById("media").style, document.getElementById("menudocuments").style, document.getElementById("menusettings").style, document.getElementById("activedesktop").style,
@@ -2347,29 +2309,20 @@
                 document.getElementById("settingsmenu").style, document.getElementById("activedesktopsubmenu").style, document.getElementById("findmenu").style, document.getElementById("vherstysubmenu").style],
             marr = [document.getElementById("menuarrow1").style, document.getElementById("menuarrow2").style, document.getElementById("menuarrow3").style, document.getElementById("menuarrow4").style,
                 document.getElementById("menuarrow5").style, document.getElementById("menuarrow12").style, document.getElementById("menuarrow13").style, document.getElementById("menuarrow14").style, 
-                document.getElementById("menuarrow15").style, document.getElementById("menuarrow16").style],
-            sarr = [document.getElementById("submenuarrow2").style, document.getElementById("submenuarrow3").style, document.getElementById("submenuarrow4").style, document.getElementById("submenuarrow21").style, 
-                document.getElementById("submenuarrow22").style, document.getElementById("submenuarrow23").style, document.getElementById("submenuarrow24").style, document.getElementById("submenuarrow31").style]
+                document.getElementById("menuarrow15").style, document.getElementById("menuarrow16").style], sarr = [document.getElementById("submenuarrow2").style, document.getElementById("submenuarrow3").style, 
+                document.getElementById("submenuarrow4").style, document.getElementById("submenuarrow21").style, document.getElementById("submenuarrow22").style, document.getElementById("submenuarrow23").style, 
+                document.getElementById("submenuarrow24").style, document.getElementById("submenuarrow31").style], scf
             
             function starton() {smu[scf].backgroundColor = ccprussian; smu[scf].color = cchover} function startoff() {smu[scf].backgroundColor = ccsilver; smu[scf].color = ccfont; sms[scf].marginLeft = "200000px"} 
-            function programsopen() {scf=0; starton(); sms[scf].marginLeft = "161px"; marr[0].backgroundPosition = smo} function programsclosed() {scf=0; startoff(); marr[0].backgroundPosition = smc}
-            function accessoriesopen() {scf=1; starton(); sms[scf].marginLeft = "133px"; sarr[0].backgroundPosition = smo} function accessoriesclose() {scf=1; startoff(); sarr[0].backgroundPosition = smc}
-            function communicationsopen() {scf=2; starton(); sms[scf].marginLeft = "130px"; marr[5].backgroundPosition = smo} function communicationsclose() {scf=2; startoff(); marr[5].backgroundPosition = smc}
-            function entertainmentopen() {scf=3; starton(); sms[scf].marginLeft = "130px"; marr[6].backgroundPosition = smo} function entertainmentclose() {scf=3; startoff(); marr[6].backgroundPosition = smc}
-            function gamesopen() {scf=4; starton(); sms[scf].marginLeft = "130px"; marr[7].backgroundPosition = smo} function gamesclose() {scf=4; startoff(); marr[7].backgroundPosition = smc}
-            function internettoolsopen() {scf=5; starton(); sms[scf].marginLeft = "130px"; marr[8].backgroundPosition = smo} function internettoolsclose() {scf=5; startoff(); marr[8].backgroundPosition = smc}
-            function systemtoolsopen() {scf=6; starton(); sms[scf].marginTop = "-163px"; marr[9].backgroundPosition = smo} function systemtoolsclose() {scf=6; startoff(); marr[9].backgroundPosition = smc}
-            function onlineservicesopen() {scf=7; starton(); sms[scf].marginLeft = "133px"; sarr[1].backgroundPosition = smo} function onlineservicesclose() {scf=7; startoff(); sarr[1].backgroundPosition = smc}
-            function startupopen() {scf=8; starton(); sms[scf].marginLeft = "133px"; sarr[2].backgroundPosition = smo} function startupclose() {scf=8; startoff(); sarr[2].backgroundPosition = smc}
-            function favouritesopen() {scf=9; starton(); sms[scf].marginLeft = "161px"; marr[1].backgroundPosition = smo} function favouritesclosed() {scf=9; startoff(); marr[1].backgroundPosition = smc}
-            function channelsopen() {scf=10; starton(); sms[scf].marginLeft = "148px"; sarr[3].backgroundPosition = smo} function channelsclose() {scf=10; startoff(); sarr[3].backgroundPosition = smc}
-            function linksopen() {scf=11; starton(); sms[scf].marginLeft = "148px"; sarr[4].backgroundPosition = smo} function linksclose() {scf=11; startoff(); sarr[4].backgroundPosition = smc}
-            function mediaopen() {scf=12; starton(); sms[scf].marginLeft = "148px"; sarr[5].backgroundPosition = smo} function mediaclose() {scf=12; startoff(); sarr[5].backgroundPosition = smc}
-            function documentsopen() {scf=13; starton(); sms[scf].marginLeft = "161px"; marr[2].backgroundPosition = smo} function documentsclosed() {scf=13; startoff(); marr[2].backgroundPosition = smc}
-            function settingsopen() {scf=14; starton(); sms[scf].marginLeft = "161px"; marr[3].backgroundPosition = smo} function settingsclosed() {scf=14; startoff(); marr[3].backgroundPosition = smc}
-            function activeopen() {scf=15; starton(); sms[scf].marginLeft = "158px"; sarr[7].backgroundPosition = smo} function activeclose() {scf=15; startoff(); sarr[7].backgroundPosition = smc}
-            function findopen() {scf=16; starton(); sms[scf].marginLeft = "161px"; marr[4].backgroundPosition = smo} function findclosed() {scf=16; startoff(); marr[4].backgroundPosition = smc}
-            function vherstyopen() {scf=17; starton(); sms[scf].marginLeft = "161px"; sarr[6].backgroundPosition = smo} function vherstyclose() {scf=17; startoff(); sarr[6].backgroundPosition = smc}
+            function programsopen() {scf=0; starton(); sms[scf].marginLeft = "161px"} function programsclosed() {scf=0; startoff()} function accessoriesopen() {scf=1; starton(); sms[scf].marginLeft = "133px"} function accessoriesclose() {scf=1; startoff()}
+            function communicationsopen() {scf=2; starton(); sms[scf].marginLeft = "130px"} function communicationsclose() {scf=2; startoff()} function entertainmentopen() {scf=3; starton(); sms[scf].marginLeft = "130px"} function entertainmentclose() {scf=3; startoff()}
+            function gamesopen() {scf=4; starton(); sms[scf].marginLeft = "130px"} function gamesclose() {scf=4; startoff()} function internettoolsopen() {scf=5; starton(); sms[scf].marginLeft = "130px"} function internettoolsclose() {scf=5; startoff()}
+            function systemtoolsopen() {scf=6; starton(); sms[scf].marginTop = "-163px"} function systemtoolsclose() {scf=6; startoff()} function onlineservicesopen() {scf=7; starton(); sms[scf].marginLeft = "133px"} function onlineservicesclose() {scf=7; startoff()}
+            function startupopen() {scf=8; starton(); sms[scf].marginLeft = "133px"} function startupclose() {scf=8; startoff()} function favouritesopen() {scf=9; starton(); sms[scf].marginLeft = "161px"} function favouritesclosed() {scf=9; startoff()}
+            function channelsopen() {scf=10; starton(); sms[scf].marginLeft = "148px"} function channelsclose() {scf=10; startoff()} function linksopen() {scf=11; starton(); sms[scf].marginLeft = "148px"} function linksclose() {scf=11; startoff()}
+            function mediaopen() {scf=12; starton(); sms[scf].marginLeft = "148px"} function mediaclose() {scf=12; startoff()} function documentsopen() {scf=13; starton(); sms[scf].marginLeft = "161px"} function documentsclosed() {scf=13; startoff()}
+            function settingsopen() {scf=14; starton(); sms[scf].marginLeft = "161px"} function settingsclosed() {scf=14; startoff()} function activeopen() {scf=15; starton(); sms[scf].marginLeft = "158px"} function activeclose() {scf=15; startoff()}
+            function findopen() {scf=16; starton(); sms[scf].marginLeft = "161px"} function findclosed() {scf=16; startoff()} function vherstyopen() {scf=17; starton(); sms[scf].marginLeft = "161px"} function vherstyclose() {scf=17; startoff()}
         </script>
     </body>
 </html>
