@@ -1,11 +1,40 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll; padding-right: 4px;">
 <ul>
-<li><strong style="color: var(--atext)">2021 March 22th (210322) </strong><em>- The Desktop icons update</em><br />
+<li><strong style="color: var(--atext);">2021 March 23th (210323) </strong><em>- The Desktop icons update</em><br />
+<ul>
+<li><strong>Desktop Icon changes.</strong>
+<ul>
+<li><strong>Designed new sets of sprites for desktop icons for all spritesheets. </strong>(desktop icons are now more unique)</li>
+<li>Desktop icons now have a smaller clickbox.</li>
+<li>Changing desktop colours is now more simplistic and should be less demanding.</li>
+<li><strong>Rehauled desktop icons</strong> to be more efficent alongside having better CSS.</li>
+<li>Added "Justice" Icon, which will pick an album at random.<strong><br /></strong></li>
+<li>Simplified desktop sprite ordering.</li>
+</ul>
+</li>
+<li>Display Properties 'Effects' tab changes.<br />
+<ul>
+<li>Added "Default Icons" and "Change Icons" buttons along side functionality.</li>
+<li><strong>Rehauled preview icons</strong> to be more efficent alongside way better CSS.</li>
+<li>Added tickbox to toggle large and small icon previews in the Effects tab.</li>
+<li>Added "Justice" icon to match the desktop.<strong><br /></strong></li>
+</ul>
+</li>
+<li><strong>Adjustments to how colours are applied to desktop icons and preview icons.</strong></li>
+<li>Other CSS tweaks and javascript changes.<strong><br /></strong></li>
+</ul>
+<ol>
+<li>- Fixed icon preview not adjusting the font colour to compensate for brightness change of the currently picked background colour.</li>
+<li>- Fixed some graphical bugs with desktop icons.</li>
+<li>- Fixed some text formatting in Patch Notes.</li>
+<li>- Improved animation timing loop in CSGO mode.</li>
+</ol></li>
+<li><strong style="color: var(--atext);">2021 March 22th (210322) </strong><em>- The Effects tab update</em><br />
 <ul>
 <li><strong> [Display Properties] Effects tab rehaul</strong>
 <ul>
-<li>Toggling CSGO mode to off will now change the wallpaper back to it's previous state in the preview to then be applied when pressing "Apply".</li>
+<li>Toggling CSGO mode to off will now change the wallpaper back to it&rsquo;s previous state in the preview to then be applied when pressing &ldquo;Apply&rdquo;.</li>
 <li><strong>Desktop spritesheets can now be changed, </strong>and added a dropdown menu box with sprite sheets to select from.</li>
 <li><strong>Added 5 new desktop Sprite Sheets.</strong><strong><br /></strong></li>
 <li>Added desktop icons sheet changes to be previewed.</li>
@@ -14,10 +43,10 @@
 <li>Tweaks to tickboxes.</li>
 </ul>
 </li>
-<li>Changed the default desktop icons to to the "Petra Revisit" sheet.</li>
+<li>Changed the default desktop icons to to the &ldquo;Petra Revisit&rdquo; sheet.</li>
 </ul>
 </li>
-<li><strong style="color: var(--atext)">2021 March 21th (210321)<em><br /></em></strong>
+<li><strong style="color: var(--atext);">2021 March 21th (210321)<em><br /></em></strong>
 <ul>
 <li><strong>Tumblr posts no longer show themselves at the top of the page before adjusting themselves to the correct positioning.</strong></li>
 <li>Adjusted CSGO mode
@@ -105,7 +134,7 @@
 <li>Page sprites no longer load until theme loading.</li>
 <li><strong>Added feature to change desktop icons through themes. </strong>(Custom sheets to be implimented at a later date)</li>
 <li><strong>Added feature to change sprite assets through themes. </strong>(Custom sheets to be implimented at a later date)</li>
-<li>Spritesheets can now be enforced through the console through the &lsquo;curspritesheet&rsquo; and 'curdesktopsheet&rsquo; variables.</li>
+<li>Spritesheets can now be enforced through the console through the &lsquo;curspritesheet&rsquo; and &lsquo;curdesktopsheet&rsquo; variables.</li>
 <li>Adjusted how page loading looks to represent load order and more optimised for schemes.</li>
 </ul>
 </li>
@@ -323,8 +352,6 @@
 <li>Tons of CSS optimisations</li>
 </ul>
 </li>
-</ul>
-<ul>
 <li>Clicking on a drop down menu now changes the state of the button while holding, instead of just reacting when the button has been fully pressed.</li>
 <li><em>Page optimisations</em></li>
 </ul>
@@ -939,8 +966,6 @@
 <li>Replaced a bunch of buttons with new CSS in the Screensaver tab.</li>
 </ul>
 </li>
-</ul>
-<ul>
 <li>Added tickbox functionality.</li>
 <li>Removed the rest of the old disabled font CSS</li>
 </ul>
