@@ -29,7 +29,7 @@
                $(this).parents('.tumblr_video_container').css({ width: Math.floor($(this).width() * ( scale + 1 ) / 2), height: Math.floor($(this).height() * ( scale + 1 ) / 2)})})})
               
         var github = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/", readme = "//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/README.md";
-        var updateon = "14:18pm on March 22th, 2021. [GMT]", updatedfrom = "Thea Vanherst"; 
+        var updateon = "16:44pm on March 23th, 2021. [GMT]", updatedfrom = "Thea Vanherst"; 
         var curtaskact = undefined, currenttask = 1, cal = 5, docelem = document.documentElement, plinksdrop = false
         function calupdate(){inactiveall(); cal = cal + 1};
         function latestupdate() {document.getElementById("lastupdate").textContent = updateon; document.getElementById("updatedby").textContent = updatedfrom}
@@ -62,16 +62,13 @@
 
 /* Desktop setup css ------------------------------------------------------------------------------*/
             /* taskbar icon setup */
-            .icons {padding: -10px; width: 80px; height:100%; float: left; position: fixed; z-index: 1; font-size: 12px; margin-left:10px; margin-top: -20px; cursor: pointer}
-            ico {cursor: pointer; display:inline-flex; align-items: center; color: var(--preicotext); background: var(--predesktopicon); font-size: 11px}
-            /* sidebar */
+            .icons {padding: -10px; width: 78px; height:100%; float: left; position: fixed; z-index: 1; font-size: 12px; margin-left:10px; margin-top: -20px; cursor: pointer}
+            ico {cursor: pointer; display:inline-flex; align-items: center; color: var(--desktoptext); background: var(--desktopicon); font-size: 11px;  margin-top:-1px;}
+            icon {background-color: var(--desktopicom); color: var(--desktoptext)} 
+            
             .thealonic, .veryvhersty, .twitter, .askicon, .discordlink, .officialfunny, .rct2, .justice {background-image: var(--curdesktopsheet); height: 72px; width: 72px; margin-bottom: 3px; margin-top: 6px;}
             .thealonic {background-position: -0px -0px} .veryvhersty {background-position: -72px -0px} .twitter {background-position: -144px -0px} .askicon {background-position: -216px -0px}
             .discordlink {background-position: -288px -0px} .officialfunny {background-position: -360px -0px} .rct2 {background-position: -432px -0px} .justice {background-position: -504px -0px}
-
-            .thealonicpreview, .veryvherstypreview, .twitterpreview, .askiconpreview, .discordlinkpreview, .officialfunnypreview, .rct2preview, .justicepreview {background-image: var(--predesktopsheet); height: var(--smicoh); width: var(--smicoh); margin-bottom: 6px}
-            .thealonicpreview {background-position: -0px -72px} .veryvherstypreview {background-position: -36px -72px} .twitterpreview {background-position: -72px -72px} .askiconpreview {background-position: -107px -72px}
-            .discordlinkpreview { background-position: -144px -72px} .rct2preview { background-position: -216px -72px} .officialfunnypreview {background-position: -180px -72px} .justicepreview {background-position: -252px -72px} 
 
 /* Window bar handling ------------------------------------------------------------------------------*/
             /* custom css for post windows apposed to the default win98 css */
@@ -123,6 +120,14 @@
             .disabledfont {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--gray); text-shadow:1px 1px 0 var(--white)}
             .tagged {font-size: 9px; opacity: 0.5}
             
+/* Desktop preview css ------------------------------------------------------------------------------*/
+            .thealonicpreview, .veryvherstypreview, .twitterpreview, .askiconpreview, .discordlinkpreview, .officialfunnypreview, .rct2preview, .justicepreview {background-image: var(--predesktopsheet); height: var(--smicoh); width: var(--smicoh); margin-bottom: 6px}
+            .thealonicpreview {background-position: -0px -72px} .veryvherstypreview {background-position: -36px -72px} .twitterpreview {background-position: -72px -72px} .askiconpreview {background-position: -107px -72px}
+            .discordlinkpreview { background-position: -144px -72px} .rct2preview { background-position: -216px -72px} .officialfunnypreview {background-position: -180px -72px} .justicepreview {background-position: -252px -72px} 
+            
+            .preicocon { width:var(--smicow); height:var(--smicoh); display: inline-block; margin-left:16px; vertical-align:top; align-items: center;}
+            preico {cursor: pointer; max-width: var(--smicoh); display:inline-flex; align-items: center; color: var(--preicotext); background: var(--predesktopicon)} 
+            
 /* window preview handling ------------------------------------------------------------------------------*/
             .prepost{box-shadow: inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); padding:3px; position: absolute; color: var(--prefont)}
             .pretitle-bar-posts{background-image: var(--preactive); height: 18px; width: 100%}
@@ -138,9 +143,7 @@
             .predisabledfont {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--pregray); text-shadow:1px 1px 0 var(--prewhite)}
             preul.tree-view {font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: 4px; display: block; background: var(--prewhite); box-shadow: inset -1px -1px var(--prewhite),inset 1px 1px var(--pregray),inset -2px -2px var(--prelightg),inset 2px 2px var(--preblack); padding: 6px; margin: 0; color: var(--preblack);}
             prefieldset{border: none; box-shadow: inset -1px -1px var(--prewhite), inset 1px 1px var(--pregray), inset -2px -2px var(--pregray), inset 2px 2px var(--prelightg); padding:10px; padding-block-start:8px; margin:0; color: var(--preblack);}
-            
-            .preicocon { width:var(--smicow); height:var(--smicoh); display: inline-block; margin-left:16px; vertical-align:top; align-items: center;}
-            preico {cursor: pointer; max-width: var(--smicoh); display:inline-flex; align-items: center; color: var(--preicotext); background: var(--predesktopicon)} 
+
             prebutlabel {display:inline-flex; align-items: center; color: var(--preblack); pointer: cursor; margin-top: 2px} 
             prebutdislabel {font-size:11px; color:var(--pregray); text-shadow:1px 1px 0 var(--prewhite); display:inline-flex; align-items: center; margin-top: 2px} 
             
@@ -295,7 +298,7 @@
             a {color: var(--text); text-decoration: none} a:hover {text-decoration: underline; color: var(--hover)} 
             strong {color: var(--blue)}; h3 {font-size: 2rem}; underline {text-decoration-line: underline}
             console {padding:0px; margin:-2px; display: block; margin-left: 0; margin-right: 0; letter-spacing: -1px; white-space: pre-wrap; font-family: monospace}
-            span {background-color: var(--white); color: var(--text)}; icon {background-color: var(--desktopicom); color: var(--desktoptext)} 
+            span {background-color: var(--white); color: var(--text)}
             label {display:inline-flex; align-items: center; color: var(--text)} 
             inboxlabel {margin-top:-16px; position: absolute; background-color: var(--silver); padding: 3px; margin-left:-3px display:inline-flex; align-items: center; color: var(--text)}
             
@@ -351,35 +354,29 @@
         <div class="icons" style="height:100%; padding-top: 10px; background:gray; opacity: 0" id="CSGOsidebar3"></div>
         
         <div class="icons" style="padding-top: 20px; z-index:1" onclick="menuclosed()">
-            <a href="https://thealonic.tumblr.com/">
-                <center><div class="thealonic" id="desktopico1"></div>
-                    <icon><ico>Thealonic</ico></icon></center></a>
+            <a href="https://thealonic.tumblr.com/"><center><div class="thealonic" id="desktopico1"></div>
+                    <ico>Thealonic</ico></icon></center></a>
                     
-            <a href="https://veryvhersty.tumblr.com/" target="_blank">
-                <center><div class="veryvhersty" id="desktopico2"></div>
-                    <icon><ico>Very.Vhersty</ico></icon></center></a>
+            <a href="https://veryvhersty.tumblr.com/" target="_blank"><center><div class="veryvhersty" id="desktopico2"></div>
+                    <ico>Very.Vhersty</ico></center></a>
                     
-            <a href="https://twitter.com/VeryVhersty" target="_blank">
-                <center><div class="twitter" id="desktopico3"></div>
-                    <icon><ico style="margin-left:0.5px;">Art Posting</ico></span></center></a>
+            <a href="https://twitter.com/VeryVhersty" target="_blank"><center><div class="twitter" id="desktopico3"></div>
+                    <ico style="margin-left:0.5px;">Art Posting</ico></center></a>
                     
             {block:AskEnabled}<a href="/ask" class="ask" target="_blank">
-                <center><div class="askicon" id="desktopico4"></div>
-                    <icon><ico>Ask Mommy</ico></icon></center></a>
-            {/block:AskEnabled}
-
-            <a href="https://discord.gg/KDQcXs7" target="_blank">
-                <center><div class="discordlink" id="desktopico5"></div>
-                    <icon><ico>Self-Governed</ico><ico style="margin-left:0.5px;">Shitposters</ico></icon></center></a>
-                    
+                <center><div class="askicon" id="desktopico4"></div><ico>Ask Mommy</ico></center></a>{/block:AskEnabled}
+                
+            <a href="https://discord.gg/KDQcXs7" target="_blank"><center><div class="discordlink" id="desktopico5"></div>
+                <ico>Self-Governed</ico><ico style="margin-left:0.5px;">Shitposters</ico></center></a>
+                
             <center><div class="officialfunny" onclick="embedtask(); ovfvpload(); urlupdate();" id="desktopico6"></div>
-                <icon><ico style="margin-left:0.5px;">The Official Very</ico> <ico style="margin-left:0.5px;">Funny Video Playlist </ico></icon></center>
+                <ico style="margin-left:0.5px">The Official Very</ico> <ico style="margin-left:0.5px">Funny Video</ico><ico>Playlist</ico></center>
                 
             <center><div class="rct2" onclick="embedtask(); rct2load(); urlupdate();" id="desktopico7"></div>
-                <icon><ico>Roller Coaster</ico> <ico style="margin-left:0.5px;">Tycoon 2</ico></icon></center>
+                <ico>Roller Coaster</ico><ico style="margin-left:0.5px;">Tycoon 2</ico></center>
                 
             <center><div class="justice" onclick="embedtask(); Crossload(); urlupdate();" id="desktopico8"></div>
-                <icon><ico>Justice</ico></center>
+                <ico>Justice</ico></center>
         </div>
   
 <!-- CSGO MODE rendering ------------------------------------------------------------------------------>
@@ -1477,7 +1474,7 @@
                     
                     <ul class="tree-view" style="width:318px; height:88px; margin-top:5px; margin-left:2px; background-color: #008080;" id="iconpreview">
                         <div style="overflow-x: scroll; overflow-y:hidden; margin-left:-5px; width:327px; margin-top:1px;">
-                            <div style="height:72px; overflow-y:hidden; display: inline-block; width:466px; margin-left:3px" id="iconscont">
+                            <div style="height:72px; overflow-y:hidden; display: inline-block; width:480px; margin-left:-3px" id="iconscont">
                             
                                 <div class="preicocon"><center><div class="thealonicpreview" id="previewi1"></div>
                                     <preico style="margin-left:-12px">Thealonic</preico></center></div>
@@ -1546,7 +1543,7 @@
                 function largepicotoggle(){ var dtil = 0; if(picotoggle == false){ 
                     picotoggle = true; effect[0].backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')"; docelem.style.setProperty('--smicow', '78px'); docelem.style.setProperty('--smicoh', '72px'); iconscont.width = "766px"; 
                         for(var i = 0; previewico.length > i; i++){var temp1 = dtil + "px"; var temp2 = "-0px"; previewico[i].backgroundPosition = temp1 + " " + temp2; dtil = dtil - 72}
-                    } else {picotoggle = false; effect[0].backgroundImage = ""; docelem.style.setProperty('--smicow', '42px'); docelem.style.setProperty('--smicoh', '36px'); iconscont.width = "466px"
+                    } else {picotoggle = false; effect[0].backgroundImage = ""; docelem.style.setProperty('--smicow', '42px'); docelem.style.setProperty('--smicoh', '36px'); iconscont.width = "480px"
                         for(var i = "0"; previewico.length > i; i++){var temp1 = dtil + "px"; var temp2 = "-72px"; previewico[i].backgroundPosition = temp1 + " " + temp2; dtil = dtil - 36}}}
                 function largedicotoggle(){if(dicotoggle == false){dicotoggle = true; effect[1].backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')"} else if (dicotoggle == true){dicotoggle = false; effect[1].backgroundImage = ""}}
                 function tickdragtoggle(){if (dragtoggle == false){dragtoggle = true; effect[3].backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')"} else if (dragtoggle == true){dragtoggle = false; effect[3].backgroundImage = ""}}
