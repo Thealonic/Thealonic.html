@@ -29,9 +29,8 @@
                $(this).parents('.tumblr_video_container').css({ width: Math.floor($(this).width() * ( scale + 1 ) / 2), height: Math.floor($(this).height() * ( scale + 1 ) / 2)})})})
               
         var github = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/", readme = "//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/README.md";
-        var updateon = "16:44pm on March 23th, 2021. [GMT]", updatedfrom = "Thea Vanherst"; 
-        var curtaskact = undefined, currenttask = 1, cal = 5, docelem = document.documentElement, plinksdrop = false
-        function calupdate(){inactiveall(); cal = cal + 1};
+        var updateon = "17:19pm on March 23th, 2021. [GMT]", updatedfrom = "Thea Vanherst"; 
+        var curtaskact = undefined, currenttask = 1, cal = 5, docelem = document.documentElement, plinksdrop = false; function calupdate(){inactiveall(); cal = cal + 1};
         function latestupdate() {document.getElementById("lastupdate").textContent = updateon; document.getElementById("updatedby").textContent = updatedfrom}
     </script>
     
@@ -183,9 +182,9 @@
             .submenu36 {height: 36px; background-color:var(--silver); color: var(--text); width:100%} .submenu36:hover { height: 36px; background-color:var(--prussian); color:var(--hover); width:100%}
             
             .patchnotes, .menuprograms, .menudocuments, .menufavourites, .menushutdown, .logofficon, .menusettings, .menufind, .menuhelp, .menurun, .menulogoff, .shutdownicon{ background-image: var(--curspritesheet); margin: auto; float: left; height: 36px; width: 36px;}
-            .patchnotes {background-position:    0px   0px} .menuprograms {background-position: -36px 0px} .menudocuments {background-position: -108px   0px} .menufavourites {background-position: -72px 0px}
-            .menusettings {background-position: -144px   0px} .menufind {background-position: -180px  0px} .menuhelp {background-position: -216px -36px} .menurun {background-position: -252px -36px}
-            .menulogoff {background-position: -288px   0px} .menushutdown {background-position: -324px 0px} .logofficon {background-position: -288px -36px} .shutdownicon {background-position: -324px -36px}
+            .patchnotes {background-position: 0px 0px} .menuprograms {background-position: -36px 0px} .menudocuments {background-position: -108px   0px} .menufavourites {background-position: -72px 0px}
+            .menusettings {background-position: -144px 0px} .menufind {background-position: -180px  0px} .menuhelp {background-position: -216px -36px} .menurun {background-position: -252px -36px}
+            .menulogoff {background-position: -288px 0px} .menushutdown {background-position: -324px 0px} .logofficon {background-position: -288px -36px} .shutdownicon {background-position: -324px -36px}
             /* start menu submenu icon references */
             .menuprograms123, .menuprograms4, .menuprograms5, .menuprograms6, .menuprograms7, .menufind1, .menufind2, .menufind3, .menufind4, .menusettings1, .menusettings2, .menusettings3, .menusettings4, .menusettings5, .menusettings6,
             .menuapplications7, .menuapplications8, .menuapplications9, .menuapplications10, .menuapplications11, .menuapplications12, .menuapplications13, .menuapplications14, .menuapplications15, .explorerlinks, .none, .menucommunications1, 
@@ -328,8 +327,8 @@
             .tumblr_video_container {position: relative; width:auto !important; height:auto !important; padding: auto}
 
             .like-b {position:relative; display:inline-block; height:1em; line-height:1em; color:var(--text); background-color: var(--silver)} 
-            .like-b .like_button iframe { position:absolute; opacity:0; background-color: var(--silver)}
-            .like-b .liked + .b {color:inherit;} .like-b .liked + .b:after {content:'d'} .like-b:hover { color:var(--hover); text-decoration-line: underline} 
+            .like-b .like_button iframe {position:absolute; opacity:0; background-color: var(--silver)}
+            .like-b .liked + .b {color:inherit;} .like-b .liked + .b:after {content:'d'} .like-b:hover {color:var(--hover); text-decoration-line: underline} 
 
             .notes {margin-top:0px; text-align:left} ol.notes {padding: 2px; list-style-type: none; max-height: 320px; width:463px; overflow:auto; margin-top:-6px} 
             ol.notes li.note img.avatar {vertical-align: -4px; margin-right: 4px; width: 16px; height:16px; margin-top:-2px; margin-bottom;-2px} ol.notes li.note .answer_content {font-weight: normal}
@@ -463,8 +462,7 @@
                     if(tick == 2){ pyrobutton.textContent = "Maybe?"}
                     if(tick == 1){ pyrobutton.textContent = "No."} tick = tick - 1;
                 } else { pyro.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; window1 = false; pyrowindow(); inactiveall();
-                pyrobutton.textContent = "Definately"; pyrotxt.textContent = '💯 Wubba lubba dub dub!';}}
-        </script>
+                pyrobutton.textContent = "Definately"; pyrotxt.textContent = '💯 Wubba lubba dub dub!';}} </script>
         
 <!-- Embedded Media Player ------------------------------------------------------------------------------>
         <div class="win98post" style="position: fixed; margin-left:-20000px; left: 300px; top: 200px;" onmousedown="embedactive()" id="embed"> <!--#ref2003-->
@@ -542,9 +540,8 @@
         </div></div>
                 
         <script>
-            var videolinksdrop = false, videolink = document.getElementById("tumblrlinkdrop").style; 
+            var videolinksdrop = false, videolink = document.getElementById("tumblrlinkdrop").style; function videolinkdropdownclose(){videolink.marginLeft = "-20000px"; videolinksdrop = false}
             function videolinkdropdown(){ if (videolinksdrop == false) {videolink.marginLeft = "50px"; videolinksdrop = true } else if (videolinksdrop == true){videolink.marginLeft = "-20000px"; videolinksdrop = false}}
-            function videolinkdropdownclose(){videolink.marginLeft = "-20000px"; videolinksdrop = false}
             
             var embed = document.getElementById("embed").style, embedwin = document.getElementById("embedwindow").style; embedtext = document.getElementById("embedtext").style; //#ref5014
             function embedactive() {calupdate(); embed.zIndex = cal; embedwin.backgroundImage = curactiveheader; embed.marginLeft = "0px"; embedtext.color = curactivetitle; curtaskact = 4; activatetask()}
@@ -795,8 +792,7 @@
                     <div class="win98buttona" style="margin-left:199px"><center><butlabel onclick="clockclose();">Okay</butlabel></div></div>
         </div></div>
         
-        <script> 
-        var docclock = document.getElementById("clock").style; docclockwin = document.getElementById("clockwindow").style; //#ref5014
+        <script> var docclock = document.getElementById("clock").style; docclockwin = document.getElementById("clockwindow").style; //#ref5014
             function clockactive() {calupdate(); docclock.zIndex = cal; docclockwin.backgroundImage = curactiveheader}
             function clockclose() {inactiveall(); docclock.marginLeft = "-20000px"; docclock.right = "-100%"; monthdropdefa(); yeardropbackfa()}
             function clockopen() {clockactive(); docclock.left = "75%"; docclock.top = "50%"; docclock.marginLeft = "0px"; clocku()}
@@ -809,8 +805,7 @@
                  
             function minuteadd() {minutemath = minutemath + 1; clocku()}; function minutesub() {minutemath = minutemath - 1; clocku()}
             function houradd() {hourmath = hourmath + 1; clocku()}; function hoursub() {hourmath = hourmath - 1; clocku()}
-            function yearadd() {yearmath = yearmath + 1; clocku(); yeardropback(); monthdropdefa()}; function yearsub() {yearmath = yearmath - 1; clocku(); yeardropback(); monthdropdefa()} 
-        </script>
+            function yearadd() {yearmath = yearmath + 1; clocku(); yeardropback(); monthdropdefa()}; function yearsub() {yearmath = yearmath - 1; clocku(); yeardropback(); monthdropdefa()} </script>
 
 <!-- Internet Explorer rendering ------------------------------------------------------------------------------------->
         <div class="win98post" style="margin-left: -20000px" onmousedown="internetactive();" id="internet"> <!--#ref2007-->
@@ -1134,13 +1129,11 @@
                                 <div class="droptext" onclick="stretchitem()">Stretch</div>
                     </div></ul></div>
                            
-                    <script>
-                        var desktopdrop = false, desktopmode = document.getElementById("desktopmode").style, ofdesktopmode = document.getElementById("ofdesktop"); abody = document.getElementById("body").style; //#ref5022 through #ref0002
+                    <script> var desktopdrop = false, desktopmode = document.getElementById("desktopmode").style, ofdesktopmode = document.getElementById("ofdesktop"); abody = document.getElementById("body").style; //#ref5022 through #ref0002
                         function desktopdropdown(){if (desktopdrop == false) {desktopmode.marginLeft = "-2px"; ; desktopdrop = true } else if (desktopdrop == true){desktopmode.marginLeft = "-20000px";; desktopdrop = false}} //ref1023 & ref1024
                         function desktopexit(){desktopmode.marginLeft = "-20000px"; desktopdrop = false} //ref1025 of #ref0002
                         function centeritem(){ofdesktopmode.textContent = 'Center'; abody.objectFit = "none"} function fillitem(){ofdesktopmode.textContent = 'Fill'; abody.objectFit = "cover"} 
-                        function spanitem(){ofdesktopmode.textContent = 'Span'; abody.objectFit = "contain"} function stretchitem(){ofdesktopmode.textContent = 'Stretch'; abody.objectFit = "fill"} //changes text context of #ref0003
-                    </script>
+                        function spanitem(){ofdesktopmode.textContent = 'Span'; abody.objectFit = "contain"} function stretchitem(){ofdesktopmode.textContent = 'Stretch'; abody.objectFit = "fill"} </script>
 
                     <ul class="tree-view" style="width:240px; height:86px; margin-top: 2px; margin-left:4px;">
                         <div style="position: absolute; margin-top:-3px; margin-left:-3px; width:247px; height:93px; overflow-y: scroll; overflow-x: hidden">
@@ -1288,8 +1281,8 @@
                         var ccwhite, cclightg, ccsilver, ccmidgray, ccgray, ccblack, ccblue, ccprussian, ccwincyan, ccyellow, ccfont, cchover, ccatext, prewhite, //#ref5026 //#ref5003
                             cpwhite, cplightg, cpsilver, cpmidgray, cpgray, cpblack, cpblue, cpprussian, cpwincyan, cpyellow, cpfont, cphover, cpatext, preblack, //#ref5026 //#ref5003
                             prewallpaper, prespritesheet, curspritesheet, preinactivetitle, curinactivetitle, preactivetitle, curactivetitle, preinvert, curinvert, discheckinv, enacheckinv, invcheckinv, //#ref5026 //#ref5003//#ref5022
-                            schemedrop = false, ctoggle = false, themecurrent = "lightmode"; //#ref5026 //#ref5003//#ref5022
-                        var deskico = [document.getElementById("desktopico1").style, document.getElementById("desktopico2").style, document.getElementById("desktopico3").style, document.getElementById("desktopico4").style, 
+                            schemedrop = false, ctoggle = false, themecurrent = "lightmode", //#ref5026 //#ref5003//#ref5022
+                            deskico = [document.getElementById("desktopico1").style, document.getElementById("desktopico2").style, document.getElementById("desktopico3").style, document.getElementById("desktopico4").style, 
                             document.getElementById("desktopico5").style, document.getElementById("desktopico6").style, document.getElementById("desktopico7").style, document.getElementById("desktopico8").style];
         
                         var currentsch = document.getElementById("currentscheme"), scheme = document.getElementById("scheme").style; function schemeexit(){scheme.marginLeft = "-20000px"; schemedrop = false}
@@ -1370,8 +1363,7 @@
                             docelem.style.setProperty('--curactivetitle', curactivetitle); docelem.style.setProperty('--curinactivetitle', curinactivetitle); docelem.style.setProperty('--curspritesheet', curspritesheet);//adjusts spritesheets
                             docelem.style.setProperty('--discheckinv', discheckinv); docelem.style.setProperty('--enacheckinv', enacheckinv); docelem.style.setProperty('--invcheckinv', invcheckinv); 
                             
-                            var dtil = 0;
-                            if (dicotoggle == true){for(var i = 0; deskico.length > i; i++){deskico[i].width = "72px"; deskico[i].height = "72px"; var temp1 = dtil + "px"; var temp2 = "-0px"; deskico[i].backgroundPosition = temp1 + " " + temp2; dtil = dtil - 72}
+                            var dtil = 0; if (dicotoggle == true){for(var i = 0; deskico.length > i; i++){deskico[i].width = "72px"; deskico[i].height = "72px"; var temp1 = dtil + "px"; var temp2 = "-0px"; deskico[i].backgroundPosition = temp1 + " " + temp2; dtil = dtil - 72}
                                 } else {for(var i = "0"; deskico.length > i; i++){deskico[i].width = "36px"; deskico[i].height = "36px"; var temp1 = dtil + "px"; var temp2 = "-72px"; deskico[i].backgroundPosition = temp1 + " " + temp2; dtil = dtil - 36}}
                             if (nsfwtoggle == true){nsfwoptions.marginLeft = "0px"; nsfwoptions.marginTop = "0px"} else {nsfwoptions.marginLeft = "-20000px"; nsfwoptions.marginTop = "-80px"}
                             if (csgotoggle == true){CSon = true; desktopleft = "-340px"; desktop.left = desktopleft; desktop.top = "5px"; ranCSno = 1; CSGOsidebar1.opacity = 1; CSGOsidebar2.opacity = 1; CSGOsidebar3.opacity = 0.2; changeCSGO();
@@ -2173,9 +2165,6 @@
                     <label class="time" style="font-size:11px; color: var(--atext);" id="showClock"> 00:00 am </label></div>
         </div></div>
                 
-        <script> function updateClock(){ var mins = da.getMinutes() + minutemath; var hrs = da.getHours() + hourmath; var ext = "AM"; var currentTime = hrs + ":" + mins + " " + ext;
-            if(hrs > 12){ var ext = "PM"; var hrs = hrs - parseInt(12)} if(hrs < 10){ var hrs = "0"+hrs} if(mins < 10){ var mins = "0"+ mins} $('#showClock').html(currentTime)} </script>
-                
 <!-- On page load handling ------------------------------------------------------------------------------>
         <script>
             $(document).ready(function(){
@@ -2186,14 +2175,15 @@
                     function(newElements) {
                         $(".window").click(function(){calupdate(); tumblractive(); $(this).css("z-index", cal); var desktopleft
                             $(this).find(".title-bar-98").css("background-image", curactiveheader); $(this).find(".title-bar-text").css("color", curactivetitle)});
-                        
                         var $newElems = $( newElements ).hide();
                         $newElems.imagesLoaded(function(){ $newElems.show();
                             var $newElemsIDs = $newElems.map(function () { return this.id; }).get();
                             $container.masonry('appended', $newElems)})
                         $newElems.find('.video').each( function() { resizeVideos() })})}
                 window.setInterval(updateClock(), 6000); updateClock()});
-                
+            function updateClock(){ var mins = da.getMinutes() + minutemath; var hrs = da.getHours() + hourmath; var ext = "AM"; var currentTime = hrs + ":" + mins + " " + ext;
+            if(hrs > 12){ var ext = "PM"; var hrs = hrs - parseInt(12)} if(hrs < 10){ var hrs = "0"+hrs} if(mins < 10){ var mins = "0"+ mins} $('#showClock').html(currentTime)}
+            
 //-- clock for clockbox ------------------------------------------------------------------------------>
 
             var canvas = document.getElementById("canvas"), ctx = canvas.getContext("2d"), radius = canvas.height / 2, hand = 1;
