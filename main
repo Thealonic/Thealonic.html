@@ -29,7 +29,7 @@
                $(this).parents('.tumblr_video_container').css({ width: Math.floor($(this).width() * ( scale + 1 ) / 2), height: Math.floor($(this).height() * ( scale + 1 ) / 2)})})})
               
         var github = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/", readme = "//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/README.md";
-        var updateon = "15:48pm on March 21th, 2021. [GMT]", updatedfrom = "Thea Vanherst"; 
+        var updateon = "14:18pm on March 22th, 2021. [GMT]", updatedfrom = "Thea Vanherst"; 
         var curtaskact = undefined, currenttask = 1, cal = 5, docelem = document.documentElement, plinksdrop = false
         function calupdate(){inactiveall(); cal = cal + 1};
         function latestupdate() {document.getElementById("lastupdate").textContent = updateon; document.getElementById("updatedby").textContent = updatedfrom}
@@ -45,35 +45,33 @@
                     --scrollbar: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/scrollbarempty.png');
                     
                     --white: #fff; --lightg: #dfdfdf;  --silver: #c0c0c0; --midgray: #ababab; --gray: #808080; --black: #0a0a0a; --blue: #0000ff; --prussian: #00207c ; --wincyan: #008080; --yellow: #ffff00; 
-                    --font: #000; --hover: #fff; --atext: #000; --curinactivetitle: #fff; --curactivetitle: #fff; --consoleback: #000; --consoletext: #fff; --alwayswhite: #fff; --alwaysblack: #000;
+                    --font: #000; --hover: #fff; --atext: #000; --curinactivetitle: #fff; --curactivetitle: #fff; --consoleback: #000; --consoletext: #fff; --desktopicon: #008080; --desktoptext: #fff;
 
-                    --prewhite: #fff; --prelightg: #dfdfdf;  --presilver: #c0c0c0; --premidgray: #ababab; --pregray: #808080; --preblack: #0a0a0a; --preprussian: #00207c ; --prewincyan: #008080; --preyellow: #ffff00; 
-                    --prefont: #000; --prehover: #fff; --preactivetitle: #fff; --preinactivetitle: #fff; 
+                    --prewhite: #fff; --prelightg: #dfdfdf;  --presilver: #c0c0c0; --premidgray: #ababab; --pregray: #808080; --preblack: #0a0a0a; --preprussian: #00207c ; --predesktopicon: #008080; --preyellow: #ffff00; 
+                    --prefont: #000; --prehover: #fff; --preactivetitle: #fff; --preinactivetitle: #fff; --preicotext: #fff;
                     
-                    --taskbarstarttop1: #808080; --taskbarstarttop2: #0a0a0a; --taskbarstartbottom1: #fff; --taskbarstartbottom2: #dfdfdf; 
+                    --taskbarstarttop1: #808080; --taskbarstarttop2: #0a0a0a; --taskbarstartbottom1: #fff; --taskbarstartbottom2: #dfdfdf; --alwayswhite: #fff; --alwaysblack: #000; 
                     --taskbar1top1: #fff; --taskbar1top2: #dfdfdf; --taskbar1bottom1: #808080; --taskbar1bottom2: #0a0a0a; --taskbar2top1: #fff; --taskbar2top2: #dfdfdf; --taskbar2bottom1: #808080; --taskbar2bottom2: #0a0a0a; 
                     --taskbar3top1: #fff; --taskbar3top2: #dfdfdf; --taskbar3bottom1: #808080; --taskbar3bottom2: #0a0a0a; --taskbar4top1: #fff; --taskbar4top2: #dfdfdf; --taskbar4bottom1: #808080; --taskbar4bottom2: #0a0a0a; 
                     --taskbar5top1: #fff; --taskbar5top2: #dfdfdf; --taskbar5bottom1: #808080; --taskbar5bottom2: #0a0a0a; --taskbar6top1: #fff; --taskbar6top2: #dfdfdf; --taskbar6bottom1: #808080; --taskbar6bottom2: #0a0a0a;
                     --taskbar7top1: #fff; --taskbar7top2: #dfdfdf; --taskbar7bottom1: #808080; --taskbar7bottom2: #0a0a0a; --taskbar8top1: #fff; --taskbar8top2: #dfdfdf; --taskbar8bottom1: #808080; --taskbar8bottom2: #0a0a0a;
-                    --slider: 550px; --invert: 0; --preinvert: 0; --shuffleinvert: 0.5; --discheckinv: 0.6; --enacheckinv: 0.2; --invcheckinv: 0.35}
-
+                    --slider: 550px; --invert: 0; --preinvert: 0; --shuffleinvert: 0.5; --discheckinv: 0.6; --enacheckinv: 0.2; --invcheckinv: 0.35; --smicow: 42px; --smicoh: 36px;}
             /* desktop config settings */
             body {background: repeat fixed; background-size: cover; padding: auto auto auto auto; background-color: var(--wincyan); font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; width: 1920px; height:1080px; overflow-x: hidden}
             #desktop, .navigation {margin: auto auto auto auto; width: 1010px} body.permalink_page #desktop, body.permalink_page .navigation {width: 480px} body.infinite_scrolling .navigation, .inf_scr {display: none}
 
 /* Desktop setup css ------------------------------------------------------------------------------*/
             /* taskbar icon setup */
-            .icons {margin: 0 0 0 0; padding: -10px; width: 100px; height:100%; float: left; position: fixed; z-index: 1; font-size: 12px; margin-left:-10px; margin-top: -20px; }
-            .icon_label {padding-top: 6px; padding-bottom: 6px; color: var(--wincyan); cursor: pointer} /* Icon gaps */
-            
+            .icons {padding: -10px; width: 80px; height:100%; float: left; position: fixed; z-index: 1; font-size: 12px; margin-left:10px; margin-top: -20px; cursor: pointer}
+            ico {cursor: pointer; display:inline-flex; align-items: center; color: var(--preicotext); background: var(--predesktopicon); font-size: 11px}
             /* sidebar */
-            .thealonic, .veryvhersty, .twitter, .askicon, .discordlink, .officialfunny, .rct2, .simcity, .notepaddesktop {background-image: var(--curdesktopsheet); height: 72px; width: 72px; cursor: pointer}
+            .thealonic, .veryvhersty, .twitter, .askicon, .discordlink, .officialfunny, .rct2, .justice {background-image: var(--curdesktopsheet); height: 72px; width: 72px; margin-bottom: 3px; margin-top: 6px;}
             .thealonic {background-position: -0px -0px} .veryvhersty {background-position: -72px -0px} .twitter {background-position: -144px -0px} .askicon {background-position: -216px -0px}
-            .discordlink {background-position: -288px -0px} .officialfunny {background-position: -360px -0px} .rct2 {background-position: -432px -0px}
+            .discordlink {background-position: -288px -0px} .officialfunny {background-position: -360px -0px} .rct2 {background-position: -432px -0px} .justice {background-position: -504px -0px}
 
-            .thealonicpreview, .veryvherstypreview, .twitterpreview, .askiconpreview, .discordlinkpreview, .officialfunnypreview, .rct2preview, .simcitypreview{background-image: var(--predesktopsheet); height: 36px; width: 36px}
+            .thealonicpreview, .veryvherstypreview, .twitterpreview, .askiconpreview, .discordlinkpreview, .officialfunnypreview, .rct2preview, .justicepreview {background-image: var(--predesktopsheet); height: var(--smicoh); width: var(--smicoh); margin-bottom: 6px}
             .thealonicpreview {background-position: -0px -72px} .veryvherstypreview {background-position: -36px -72px} .twitterpreview {background-position: -72px -72px} .askiconpreview {background-position: -107px -72px}
-            .discordlinkpreview { background-position: -144px -72px} .rct2preview { background-position: -180px -72px} .officialfunnypreview {background-position: -216px -72px} 
+            .discordlinkpreview { background-position: -144px -72px} .rct2preview { background-position: -216px -72px} .officialfunnypreview {background-position: -180px -72px} .justicepreview {background-position: -252px -72px} 
 
 /* Window bar handling ------------------------------------------------------------------------------*/
             /* custom css for post windows apposed to the default win98 css */
@@ -84,15 +82,13 @@
             .title-bar-text {font-family:"Pixelated MS Sans Serif", Arial; font-weight:700; color: var(--curactivetitle); letter-spacing:0; margin-right:24px; padding:1px 4px 2px 4px; cursor: context-menu}
             .win98innerbox {box-shadow: inset -1px -1px var(--black), inset 1px 1px var(--white), inset -2px -2px var(--gray), inset 2px 2px var(--lightg); background:var(--silver); padding:3px; font-size:11px; position: absolute; color: var(--font)}
             .messagewindowbody {margin-right: 2px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px; color: var(--font)}
-            
             /* window title bar button handling */
             .win98titlebarc {width:10px; height:8px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); margin-top:2px; margin-right:2px; margin-left:2px; padding:3px}
             .win98titlebarc:active {box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray)}
             .win98titlebarh {width:10px; height:8px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); margin-top:2px; padding:3px}
             .win98titlebarh:active {box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray)}
 
-            .win98buttonscrollinactive {width: 10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); margin-left: 1px; position: absolute; padding:3px}
-            
+            .win98buttonscrollinactive {width: 10px; height: 10px; float:right; box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); margin-left: 1px; position: absolute; padding:3px; }
             /* General button handling */
             .win98button {box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; width:70px; height:16px; cursor:pointer}
             .win98button:active {box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray)}
@@ -100,8 +96,8 @@
             .win98buttona:active {box-shadow:inset 1px 1px var(--black),  inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray)}
             .win98buttondis {box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; margin-bottom: 4px; width:70px; height:16px; cursor:default}
             .win98buttondisa {box-shadow:inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white); background:var(--silver); padding:3px; margin-bottom: 4px; width:70px; height:16px; cursor:default; position:absolute}
-
-            .buttontext {display:inline-flex; align-items:center; color: var(--prestext)} .buttontext:hover{ text-decoration-line: underline}
+            
+            .buttontext {display:inline-flex; align-items:center; color: var(--prestext)} .buttontext:hover{text-decoration-line: underline}
             butlabel {display:inline-flex; align-items: center; color: var(--text); pointer: cursor; margin-top: 2px} 
             butdislabel {font-size:11px; color:var(--gray); text-shadow:1px 1px 0 var(--white); display:inline-flex; align-items: center; margin-top: 2px} 
 
@@ -125,7 +121,7 @@
             .wallpapermenu:hover {background-color:var(--prussian); color:var(--hover); border-style: dotted; border-color: var(--yellow); z-index:10} 
 
             .disabledfont {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; color:var(--gray); text-shadow:1px 1px 0 var(--white)}
-            .tagged {font-size: 9px; opacity: 0.5;}
+            .tagged {font-size: 9px; opacity: 0.5}
             
 /* window preview handling ------------------------------------------------------------------------------*/
             .prepost{box-shadow: inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite); background:var(--presilver); padding:3px; position: absolute; color: var(--prefont)}
@@ -143,8 +139,10 @@
             preul.tree-view {font-family:"Pixelated MS Sans Serif", Arial; -webkit-font-smoothing:none; font-size:11px; margin-top: 4px; display: block; background: var(--prewhite); box-shadow: inset -1px -1px var(--prewhite),inset 1px 1px var(--pregray),inset -2px -2px var(--prelightg),inset 2px 2px var(--preblack); padding: 6px; margin: 0; color: var(--preblack);}
             prefieldset{border: none; box-shadow: inset -1px -1px var(--prewhite), inset 1px 1px var(--pregray), inset -2px -2px var(--pregray), inset 2px 2px var(--prelightg); padding:10px; padding-block-start:8px; margin:0; color: var(--preblack);}
             
-            prebutlabel {display:inline-flex; align-items: center; color: var(--preblack); pointer: cursor; margin-top: 2px;} 
-            prebutdislabel {font-size:11px; color:var(--pregray); text-shadow:1px 1px 0 var(--prewhite); display:inline-flex; align-items: center; margin-top: 2px;} 
+            .preicocon { width:var(--smicow); height:var(--smicoh); display: inline-block; margin-left:16px; vertical-align:top; align-items: center;}
+            preico {cursor: pointer; max-width: var(--smicoh); display:inline-flex; align-items: center; color: var(--preicotext); background: var(--predesktopicon)} 
+            prebutlabel {display:inline-flex; align-items: center; color: var(--preblack); pointer: cursor; margin-top: 2px} 
+            prebutdislabel {font-size:11px; color:var(--pregray); text-shadow:1px 1px 0 var(--prewhite); display:inline-flex; align-items: center; margin-top: 2px} 
             
             .prehelp, .preclose {background-image: var(--curspritesheet); width:12px; height:10px; margin-top: -1px; margin-left: -1px; filter: invert(var(--preinvert))} .prehelp {background-position: -66px -215px} .preclose {background-position: -114px -215px}
             .prescrollup, .prescrolldown {background-image: var(--curspritesheet); height: 16px; width: 16px; margin-top: -3px; margin-left: -3px; filter: invert(var(--preinvert))} .prescrolldown {background-position: 0px -212px} .prescrollup {background-position:  -32px -212px}
@@ -157,22 +155,18 @@
             .scrolldown {background-position: 0px -212px} .scrollleft { background-position: -16px -212px} .scrollup {background-position:  -32px -212px} .scrollright {background-position: -48px -212px}
             .smallscrollup {background-position: -38px -218px; height: 2px; width: 3px; margin-left:3px; margin-top:0px;} .smallscrolldown {background-position: -6px -220px; height: 2px; width: 3px; margin-left:3px; margin-top:0px;} 
 
-            .tinyarrowdisableddown, .smallarrowdisableddown, .arrowdisableddown, .tinyarrowdisabledup, .arrowdisableup, .menuarrow1, .lmenuarrow, .smenuarrow, .tinyarrowdown, .smallarrowdown{background-image: var(--curspritesheet); filter: invert(var(--invert))}
-            .tinyarrowdisableddown {height: 3px; width: 4px; background-position: -6px -220px; filter: invert(0.5); margin-left:3px}
-            .smallarrowdisableddown {height: 4px; width: 6px; background-position: -5px -219px; filter: invert(0.5)}
-            .arrowdisableddown {height: 16px; width: 16px; background-position: 1px -212px; filter: invert(0.5); margin-top:-3px; margin-left:-3px}
-            .tinyarrowdisabledup {height: 2px; width: 3px; background-position: -38px -218px; filter: invert(0.5); margin-left:3px}
+            .tinyarrowdisableddown, .smallarrowdisableddown, .arrowdisableddown, .tinyarrowdisabledup, .arrowdisableup, .menuarrow, .lmenuarrow, .smenuarrow, .tinyarrowdown, .smallarrowdown{background-image: var(--curspritesheet); filter: invert(var(--invert))}
+            .tinyarrowdisableddown {height: 3px; width: 4px; background-position: -6px -220px; filter: invert(0.5); margin-left:3px} .smallarrowdisableddown {height: 4px; width: 6px; background-position: -5px -219px; filter: invert(0.5)}
+            .arrowdisableddown {height: 16px; width: 16px; background-position: 1px -212px; filter: invert(0.5); margin-top:-3px; margin-left:-3px} .tinyarrowdisabledup {height: 2px; width: 3px; background-position: -38px -218px; filter: invert(0.5); margin-left:3px}
             .arrowdisableup {height: 16px; width: 16px; background-position: -32px -212px; filter: invert(0.5); margin-top:-3px; margin-left:-3px}
             
-            .menuarrow1 {height:  7px; width:  4px; background-position: -54px -216px; margin: auto; float: right}
-            .smenuarrow {height:  7px; width:  4px; background-position: -54px -216px; margin: auto; float: right; margin-right:6px; margin-top: 7px}
-            .lmenuarrow {height:  7px; width:  4px; background-position: -54px -216px; margin: auto; float: right; margin-top:15px; margin-right: 5px}
-            .tinyarrowdown {height:  5px; width:  7px; background-position: -6px -220px; margin: auto; float: right}
-            .smallarrowdown {height:  3px; width:  5px; background-position: -5px -219px; margin: auto; float: right}
+            .menuarrow {height:  7px; width:  4px; background-position: -54px -216px; margin: auto; float: right}
+            .smenuarrow {height:  7px; width:  4px; background-position: -54px -216px; margin: auto; float: right; margin-right:6px; margin-top: 7px} .lmenuarrow {height:  7px; width:  4px; background-position: -54px -216px; margin: auto; float: right; margin-top:15px; margin-right: 5px}
+            .tinyarrowdown {height:  5px; width:  7px; background-position: -6px -220px; margin: auto; float: right} .smallarrowdown {height:  3px; width:  5px; background-position: -5px -219px; margin: auto; float: right}
             
             .disabletickbox {height: 14px; width: 14px; filter: invert(var(--discheckinv)); background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png'); margin:-2px; position: absolute}
             .invisibtickbox {height: 14px; width: 14px; filter: invert(var(--invert)); background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickboxinv.png'); margin:-2px; position: absolute}
-            .invisibtickbox:hover {height: 14px; width: 14px; filter: invert(var(--invcheckinv)); background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png'); margin:-2px; position: absolute}
+            .invisibtickbox:hover {filter: invert(var(--invcheckinv)); background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')}
             
             .scrollbarmiddle {height:  2px; width: 16px; background-image: var(--scrollbar); background-repeat: repeat; overflow:hidden; background-color: var(--white)}
             
@@ -251,11 +245,7 @@
             .windowsstartmenubar { background-image: var(--curspritesheet); height: 159px; width:  21px; background-position: -339px -72px; position:absolute; float: left}
     
             .clock{ box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray); padding:2px; float:right; width:96px; height:18px; margin-right:2px; margin-top:2px}
-            
-            .smalliconscontainer { width:42px; height:36px; display: inline-block; margin-left:16px}
-            .calendar { float: left; margin-top: 1px; margin-left: 3px}
-            .taskbaricons { float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px}
-            .smalliconscontainer { width:42px; height:36px; display: inline-block; margin-left:16px}
+            .calendar { float: left; margin-top: 1px; margin-left: 3px} .taskbaricons { float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px}
 
 /* Message box reference sheets ------------------------------------------------------------------------------*/
             .displayboxdisplay { width:184px; height:169px; background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/display%20window.png'); margin-left:-16px; position:absolute; margin-top:-16px;}
@@ -268,13 +258,12 @@
             .currentclock { width:127px; height:127px; background-image: url('https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/clock.png')}
             
             .playbutton, .pausebutton, .stopbutton, .shufflebutton, .nextbutton, .fastforwardbutton, .rewindbutton, .previousbutton, .volumeup, .volumedown {background-image: var(--curspritesheet); height: 13px; width: 13px; margin: 6px; float: left; filter: invert(var(--invert)); cursor:pointer;}
-            .playbutton { background-position: -198px -213px} .pausebutton { background-position: -211px -213px;} .stopbutton { background-position: -225px -213px;} .shufflebutton { background-position: -266px -213px; width:17px;}
-            .fastforwardbutton { background-position: -253px -213px; width: 9px; } .rewindbutton { background-position: -241px -213px; width: 9px; } 
-            .previousbutton { background-position: -237px -213px;} .nextbutton { background-position: -252px -213px;}
+            .playbutton { background-position: -198px -213px} .pausebutton { background-position: -211px -213px} .stopbutton { background-position: -225px -213px} .shufflebutton { background-position: -266px -213px; width:17px}
+            .fastforwardbutton { background-position: -253px -213px; width: 9px; } .rewindbutton { background-position: -241px -213px; width: 9px} .previousbutton { background-position: -237px -213px;} .nextbutton { background-position: -252px -213px;}
             .volumeup { background-position: -284px -215px; height: 9px; width: 9px} .volumedown { background-position: -293px -215px; height: 9px; width: 9px}
             
 /* Formatting ref css ------------------------------------------------------------------------------*/
-            .reflinkblack { color: var(--atext); } .reflinkblack:hover { color: var(--blue); text-decoration-line: underline; }
+            .reflinkblack { color: var(--atext)} .reflinkblack:hover { color: var(--blue); text-decoration-line: underline}
             
             ul.tree-view {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; margin-top: 4px; display: block; background: var(--white); color:var(--text);
                           box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black); padding: 6px; margin: 0}
@@ -294,7 +283,7 @@
 
             ul.tick-box {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; display: block; background-color: var(--silver); color:var(--text); position: absolute; width:9px; height: 9px;
                          box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black); padding:2px; margin: 0; margin-top: 7px; margin-left:3px}
-            ticklabel {display:inline-flex; algin-items: center; color: var(--text); margin-left: 22px; margin-top:7px;}
+            ticklabel {display:inline-flex; algin-items: center; color: var(--text); margin-left: 22px; margin-top:7px}
             
             ul.selection {font-family:"Pixelated MS Sans Serif", Arial; font-size:11px; margin-top: 4px; display: block; background: var(--silver); color:var(--text); width:40px; height:9px;
                           box-shadow: inset -1px -1px var(--white),inset 1px 1px var(--gray),inset -2px -2px var(--lightg),inset 2px 2px var(--black); padding: 6px; margin: 0}
@@ -306,7 +295,7 @@
             a {color: var(--text); text-decoration: none} a:hover {text-decoration: underline; color: var(--hover)} 
             strong {color: var(--blue)}; h3 {font-size: 2rem}; underline {text-decoration-line: underline}
             console {padding:0px; margin:-2px; display: block; margin-left: 0; margin-right: 0; letter-spacing: -1px; white-space: pre-wrap; font-family: monospace}
-            span {background-color: var(--white); color: var(--text)}; icon {background-color: var(--wincyan); color: var(--white)} 
+            span {background-color: var(--white); color: var(--text)}; icon {background-color: var(--desktopicom); color: var(--desktoptext)} 
             label {display:inline-flex; align-items: center; color: var(--text)} 
             inboxlabel {margin-top:-16px; position: absolute; background-color: var(--silver); padding: 3px; margin-left:-3px display:inline-flex; align-items: center; color: var(--text)}
             
@@ -331,8 +320,7 @@
             .body img {max-width: 100%; overflow: hidden} .caption img { max-width: 100%; overflow: hidden} img.full_image {width: 451px; overflow: hidden}
             .middle img {max-width: 451px; width: 100%; height: 100%; display: block} a img {border: 0}
             
-            .audio_container {overflow: hidden; position: relative; width: 100px} 
-            .tumblr_audio_player {width: 100%;} .posts .audio .audio_player embed {display: block}
+            .audio_container {overflow: hidden; position: relative; width: 100px} .tumblr_audio_player {width: 100%;} .posts .audio .audio_player embed {display: block}
             .soundcloud_audio_player {width: 100%;} .spotify_audio_player { height: 80px !important; width:100%}
             .tumblr_video_container {position: relative; width:auto !important; height:auto !important; padding: auto}
 
@@ -348,14 +336,13 @@
             input[type=text] {width: 100%; background-color:var(--alwaysblack); color:var(--alwayswhite); padding:0px; cursor: default; padding:0px; margin-left:-5px; display: block; margin-left: 0; margin-right: 0; 
                 white-space: pre-wrap; font-family:"Pixelated MS Sans Serif", Arial; box-shadow: 0px solid var(--alwaysblack), 0px solid var(--alwaysblack), 0px solid var(--alwaysblack), 0px solid var(--alwaysblack)}
 
-            #progressBar {width: var(--slider); height: 6px; background-color: var(--silver); display: none; margin-top: 1px}
-            #progressBar div {height: 100%; width: 0; background-color: var(--atext)}
+            #progressBar {width: var(--slider); height: 6px; background-color: var(--silver); display: none; margin-top: 1px} #progressBar div {height: 100%; width: 0; background-color: var(--atext)}
     </style></head>
 
 <!-- Page rendering ------------------------------------------------------------------------------>
-    <script> function defaultpageload() {dsheetpetra(); desktopiconpreview(); desktopiconchange(); evangelionmode(); backcolourset(); fontcolourset(); wallpaperupdate(); themechange(); evangelionmode();} </script>
+    <script> function defaultpageload() {dsheetpetra(); desktopiconchange(); evangelionmode(); backcolourset(); wallpaperupdate(); themechange(); evangelionmode()} </script>
     <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" 
-          onload="latestupdate(); defaultpageload(); {block:HomePage}messageopen(); vunnytask(); vunnypositionreset(); {/block:HomePage} disktask(); diskminimize(); promptrestart(); tumblractive()">
+          onload="latestupdate(); defaultpageload(); {block:HomePage}messageopen(); vunnytask(); vunnypositionreset();{/block:HomePage} disktask(); diskminimize(); promptrestart(); tumblractive()">
      <title>𝖁𝖍𝖊𝖗𝟗𝟖</title>
      
 <!-- desktop handling ------------------------------------------------------------------------------>
@@ -365,42 +352,42 @@
         
         <div class="icons" style="padding-top: 20px; z-index:1" onclick="menuclosed()">
             <a href="https://thealonic.tumblr.com/">
-                <center><div class="thealonic" id="desktopico1"></div><div class="icon_label"><icon id="desktopi1">
-                    <label>Thealonic </label></icon></div></center> </a>
-            <a href="https://veryvhersty.tumblr.com/" target="_blank">
-                <center><div class="veryvhersty" id="desktopico2"></div><div class="icon_label"><icon id="desktopi2">
-                    <label > Very.Vhersty </label></icon></div></center></a>
-            <a href="https://twitter.com/VeryVhersty" target="_blank">
-                <center><div class="twitter" id="desktopico3"></div><div class="icon_label"><icon id="desktopi3">
-                    <label style="margin-left:0.5px;"> Art Posting </label></span></div></center></a>
-            {block:AskEnabled}
-            <a href="/ask" class="ask" target="_blank">
-                <center><div class="askicon" id="desktopico4"></div><div class="icon_label"><icon id="desktopi4">
-                    <label>Ask Mommy </label></icon></div></center></a>
-            {/block:AskEnabled}
-            <!-- Button Six -->
-            <a href="https://discord.gg/KDQcXs7" target="_blank">
-                <center><div class="discordlink" id="desktopico5"></div><div class="icon_label"><icon id="desktopi5">
-                    <label>Self-Governed</label> <label style="margin-left:0.5px;">Shitposters </label></icon></div></center></a>
+                <center><div class="thealonic" id="desktopico1"></div>
+                    <icon><ico>Thealonic</ico></icon></center></a>
                     
-            <center><div class="officialfunny" onclick="embedtask(); ovfvpload(); urlupdate();" id="desktopico6"></div><div class="icon_label"><icon id="desktopi6">
-                <label style="margin-left:0.5px;">The Official Very</label> <label style="margin-left:0.5px;">Funny Video Playlist </label></icon></div></center>
+            <a href="https://veryvhersty.tumblr.com/" target="_blank">
+                <center><div class="veryvhersty" id="desktopico2"></div>
+                    <icon><ico>Very.Vhersty</ico></icon></center></a>
+                    
+            <a href="https://twitter.com/VeryVhersty" target="_blank">
+                <center><div class="twitter" id="desktopico3"></div>
+                    <icon><ico style="margin-left:0.5px;">Art Posting</ico></span></center></a>
+                    
+            {block:AskEnabled}<a href="/ask" class="ask" target="_blank">
+                <center><div class="askicon" id="desktopico4"></div>
+                    <icon><ico>Ask Mommy</ico></icon></center></a>
+            {/block:AskEnabled}
+
+            <a href="https://discord.gg/KDQcXs7" target="_blank">
+                <center><div class="discordlink" id="desktopico5"></div>
+                    <icon><ico>Self-Governed</ico><ico style="margin-left:0.5px;">Shitposters</ico></icon></center></a>
+                    
+            <center><div class="officialfunny" onclick="embedtask(); ovfvpload(); urlupdate();" id="desktopico6"></div>
+                <icon><ico style="margin-left:0.5px;">The Official Very</ico> <ico style="margin-left:0.5px;">Funny Video Playlist </ico></icon></center>
                 
-            <center><div class="rct2" onclick="embedtask(); rct2load(); urlupdate();" id="desktopico7"></div><div class="icon_label"><icon id="desktopi7">
-                <label>Roller Coaster</label> <label style="margin-left:0.5px;">Tycoon 2</label></icon></div></center>
+            <center><div class="rct2" onclick="embedtask(); rct2load(); urlupdate();" id="desktopico7"></div>
+                <icon><ico>Roller Coaster</ico> <ico style="margin-left:0.5px;">Tycoon 2</ico></icon></center>
+                
+            <center><div class="justice" onclick="embedtask(); Crossload(); urlupdate();" id="desktopico8"></div>
+                <icon><ico>Justice</ico></center>
         </div>
   
 <!-- CSGO MODE rendering ------------------------------------------------------------------------------>
         <div class="container" style="width:649px; height:995px; position:fixed; right: 0; bottom:0" id="CSGO"></div>
         
-        <script> var csgostyle = document.getElementById("CSGO").style
-            var CS, CSon = false, ranCSno1 = 1, ranCSno2 = 1, CSframes = [undefined, 10440, 6300, 6780, 7620, 10080, 6540], CSLength = CSframes.length - 1;
-            
-            function changeCSGO() { if(CSon == true){ 
-                    CS = github + "img/CSGO/Animation" + ranCSno1 + ".gif')"; csgostyle.backgroundImage = CS; ranCSno1 = ranCSno2
-                } else {csgostyle.backgroundImage = ""}}
-                
-            $('document').ready(function(){setInterval(function(){ranCSno2 = Math.floor(Math.random() * CSLength) + 1; changeCSGO()}, (CSframes[ranCSno2] - 2000))})</script>
+        <script> var csgostyle = document.getElementById("CSGO").style, CS, CSon = false, ranCSno1 = 1, CSframes = [10440, 6300, 6780, 7620, 10080, 6540], CSLength = CSframes.length;
+            function changeCSGO() { if(CSon == true){ ranCSno1 = ranCSno1 + 1; CS = github + "img/CSGO/Animation" + ranCSno1 + ".gif')"; csgostyle.backgroundImage = CS} else {csgostyle.backgroundImage = ""}}
+            $('document').ready(function(){setInterval(function(){ranCSno1 = Math.floor(Math.random() * CSLength); changeCSGO()}, CSframes[ranCSno1])})</script>
     
 <!-- VUNNY message box rendering ------------------------------------------------------------------------------>
         <div class="win98post" style="position: fixed; width: 206px; margin-left:-20000px;" onmousedown="catactive();" id="cat"> <!--#ref2000-->
@@ -428,8 +415,7 @@
                 <center><div class="win98button" style="margin-top:3px;" onclick="pyroshuffle()"><butlabel id="pyrobutton">Definately.</butlabel></div></center>
         </div></div>
         
-        <script>
-            var pyrotabs = 2, pyrocurrentactive = 2, window1 = true, window2 = true; //Amount of windows #ref0036, current active windows #ref0035, boolean valdation for window 1 and 2 #ref0034
+        <script> var pyrotabs = 2, pyrocurrentactive = 2, window1 = true, window2 = true; //Amount of windows #ref0036, current active windows #ref0035, boolean valdation for window 1 and 2 #ref0034
             function pyrowindow(){ if(pyrotabs == 0){ taskbar[2].marginLeft = "-20000px"; tasktrue[2] = false; taskon[2] = false; taskreset()}} //#ref0036; math check for the amount of windows for #ref2000 & #ref2001 to be OPEN, if none, closes taskbar.
             function pyrocurrentopen(){ if(pyrocurrentactive == 0){ ButtonOpen[2] = false; taskreset()}} //#ref0035 math check for the amount of windows for #ref2000 & #ref2001 to be ACTIVE, if none, closes taskbar.
             
@@ -438,8 +424,7 @@
             function pyroclose() { inactiveall(); window1 = false; pyrotabs = pyrotabs - 1; pyrowindow(); pyro.marginLeft = "-20000px"} //#ref5029
             function pyrominimize() { pyro.marginLeft = "-20000px"; inactiveall(); pyrocurrentopen()} //#ref5030
 
-            function vunnyactive(){ curtaskact = 2; activatetask()}
-            function vunnyopen(){ calupdate(); vunnyactive(); pyroactive(); pyrotabs = 2; //#ref5027.1 + Enables max amount of Vunny windows. #ref0034
+            function vunnyactive(){ curtaskact = 2; activatetask()} function vunnyopen(){ calupdate(); vunnyactive(); pyroactive(); pyrotabs = 2; //#ref5027.1 + Enables max amount of Vunny windows. #ref0034
                 if (window1 == true){ pyro.marginLeft = "0px"; pyro.zIndex = cal + 1} if (window2 == true){ cat.marginLeft = "0px"; pyro.zIndex = cal}} //Positions windows to the desktop.
             //Resets images on windows for the random image function for #ref2000 & #ref2001
             function vunnywindowreset(){ window1 = true; window2 = true; tick = 3; //sets both #ref2000 & #ref2001 to being active on the screen, resets the random image generator.
@@ -467,8 +452,7 @@
                 r_text[30] = "howdy partner"; r_text[31] = "cat"; r_text[32] = "december 2018"; r_text[33] = ";)"; r_text[34] = "connect 4"; 
                 r_text[35] = "yeah I like ASS"; r_text[36] = "FUCK HARDER SNAKE"; r_text[37] = "Korean Border"; r_text[38] = ":)"; r_text[39] = "It seems today"; 
             
-            var pyrobutton = document.getElementById("pyrobutton");
-            var tick = 3, beforehand = "💯 ";
+            var pyrobutton = document.getElementById("pyrobutton"), tick = 3, beforehand = "💯 ";
             function pyroshuffle(){ //#ref2002
                 var randomNum = Math.floor(Math.random() * myPix.length), randomNum2;
                 if (tick !== 0){ randomNum2 = Math.floor(Math.random() * myPix.length);
@@ -591,7 +575,6 @@
                     player.loadPlaylist({'list':loadPlaylist, 'index': index, 'startSeconds': timein}); println(); //pushes the stored strings above.
                     inprompt = inprompt + "Playing: $playlist:" + index + "&" + loadPlaylist; println(); println()}} //prints debug into the console
 
-            //volume settings for #ref2003
             var videovol = 100; //sets default volume which is changed through //#ref0042
             function videomute() { if(player.isMuted()){player.unMute()} else {player.mute()}} //this currently doesn't work, Idk why.
             function videovolumedown() { if(videovol > 0){videovol = videovol - 20; player.setVolume(videovol)}} //volume limiter from 0, decreases volume of #ref0042
@@ -599,21 +582,19 @@
             //enforces media player to be cleaned on video startup #ref0037
             function videoclear() {shuffle = true; shuffleVideo()} //#ref0043
             //updates progression bar 10 times a second, but updates 100 times a second to remove animation jank-ness.
-            function progress(percent, $element) { //#ref0038
-                var progressBarWidth = percent * $element.width() / 100; //progressbar = (progress percentage * width of player / 100).
-                $element.find('div').animate({ width: progressBarWidth }, {duration: 10})} //pushes updates for //#ref0039
                 //#ref0048                //#ref0043                                     //#ref0045            //#ref0050            //#ref0054             //#ref0055
-            var currentskiptime = 10; var shuffle = false; var fullscreenactive = false; var shuffletext = "", currentplaylist = "", currentlyplaying = "", loadPlaylist = ""; 
+            var currentskiptime = 10; var shuffle = false; var fullscreenactive = false; var shuffletext = "", currentplaylist = "", currentlyplaying = "", loadPlaylist = "", player, mytimer;
+            var tag = document.createElement('script'); tag.src = "https://www.youtube.com/iframe_api"; firstScriptTag = document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); //#ref5014
+            var playerfs = document.getElementById("playerfs").style, playerws = document.getElementById("playerws").style, playertv = document.getElementById("playertv").style, playerul = document.getElementById("playerul").style;
 
-            var tag = document.createElement('script'); tag.src = "https://www.youtube.com/iframe_api"; //#ref5014
-            var player, mytimer, firstScriptTag = document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
+            function progress(percent, $element) { var progressBarWidth = percent * $element.width() / 100; //progressbar = (progress percentage * width of player / 100).
+                $element.find('div').animate({ width: progressBarWidth }, {duration: 10})} //pushes updates for //#ref0039
             function onYouTubeIframeAPIReady() {$('#progressBar').show(); //when player is ready, load #ref0038
                 player = new YT.Player('player', { height: '315', width: '560', videoId: '', //generates widths of player and clears video ID
                 events: {'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange, 'onError': onPlayerError}, //assigns events to functions #ref0040, #ref0041
                 playerVars: {controls: 0, autoplay: 0, modestbranding:1, showinfo: 0, disablekb: 0}})} //player settings
             function onPlayerReady(event) {urlupdate(); event.target.loadPlaylist({list: "", index: 0, suggestedQuality: "small"})} //#ref0040
-
+            
             //basic player functionality.
             function startVideo() {player.playVideo()} function pauseVideo() {player.pauseVideo()} function stopVideo() {player.stopVideo()} //#ref0051, #ref0052, #ref0053
             function previousVideo() {if(currentplaylist !== ""){player.previousVideo(); playertext.textContent = "Playing previous video"}} //#ref0045: Plays the previous video IF there is a playlist.
@@ -623,83 +604,60 @@
                 playertext.textContent = "Skipped " + currentskiptime + " seconds ahead"; playstateupdateforward(); playerspeed.textContext = currentskiptime;} //States current time of #ref0048 with #ref0049
             function rewindVideo() { player.seekTo((player.getCurrentTime() - currentskiptime)); //#ref0046: skips time forward based on #ref0048
                 playertext.textContent = "Rewinded " + currentskiptime + " seconds"; playstateupdatebackward(); playerspeed.textContext = currentskiptime;} //States current time of #ref0048 with #ref0049
-
-            function increaseskip() { if(currentskiptime < 120){currentskiptime = currentskiptime + 5;}}
-            function decreaseskip() { if(currentskiptime > 5){currentskiptime = currentskiptime - 5;}}
-
-            function playlistlaunch(){embedtask(); player.loadVideoById({'videoId':'','startSeconds': 0});
-                loadPlaylist = currentplaylist; loadPlaylist = loadPlaylist.replace("list=", '');  loadPlaylist = loadPlaylist.replace("&", '')} 
-                
-            function playerupdate() {currentlyplaying = player.getVideoUrl(); if(fullscreenactive == false){playerurlupdate()} urlupdate(); shufflecolour()}
-            
+            function increaseskip() { if(currentskiptime < 120){currentskiptime = currentskiptime + 5;}} function decreaseskip() { if(currentskiptime > 5){currentskiptime = currentskiptime - 5;}}
             //shuffle settings for #ref2003
-            function shuffleVideo(){ //#ref0043, boolean to check shuffle state.
-                if(shuffle == true){player.setShuffle(false); shuffle = false; docelem.style.setProperty('--shuffleinvert', 0.5); shuffletext = ""} //shuffle mode disabled, adjusts #ref0044, and clears #ref0045
+            function shuffleVideo(){ if(shuffle == true){player.setShuffle(false); shuffle = false; docelem.style.setProperty('--shuffleinvert', 0.5); shuffletext = ""} //shuffle mode disabled, adjusts #ref0044, and clears #ref0045
                 else if(shuffle == false){player.setShuffle(true); shuffle = true; docelem.style.setProperty('--shuffleinvert', shuffleflop); shuffletext = "Shuffle Enabled : "}} //shuffle mode enabled, adjusts #ref0044 and states mode with #ref0045
-            
             //prevents #ref0044 from being enabled without a playlist, and changes colour depending on status and theme.
             var nextbutton = document.getElementById("nextbuttonembed").style, previousbutton = document.getElementById("previousbuttonembed").style
             function shufflecolour(){ if(currentplaylist !== ""){ //check for playlist through #ref0050
                 if(preinvert == 1){nextbutton.filter="invert(1)"; previousbutton.filter="invert(1)" } else if(preinvert == 0) {dnextbutton.filter="invert(0%)"; previousbutton.filter="invert(0%)"}  //Icon adjustment for lightmode enabled for #ref0044.
                 } else {nextbutton.filter="invert(0.5)"; previousbutton.filter="invert(0.5)"}} //turns #ref0044 off if there's no playlist loaded.
             
+            function playlistlaunch(){embedtask(); player.loadVideoById({'videoId':'','startSeconds': 0}); loadPlaylist = currentplaylist; loadPlaylist = loadPlaylist.replace("list=", ''); loadPlaylist = loadPlaylist.replace("&", '')} 
+            function playerupdate() {currentlyplaying = player.getVideoUrl(); if(fullscreenactive == false){playerurlupdate()} urlupdate(); shufflecolour()}
+            
             function playerurlupdate(){currentlyplaying = currentlyplaying.replace(currentplaylist, '')} 
             function urlupdate(){ document.getElementById("mediaplayer").value = currentlyplaying;
                 if(currentplaylist !== ""){document.getElementById("playlistlink").href = "https://www.youtube.com/playlist?" + currentplaylist} else {document.getElementById("playlistlink").href = ""}
                 document.getElementById("videolink").href = currentlyplaying; document.getElementById("videoandplaylistlink").href = player.getVideoUrl()}
             function playerupdate() {currentlyplaying = player.getVideoUrl(); if(fullscreenactive == false){playerurlupdate()} urlupdate(); shufflecolour()}
-
-            var fullscreenactive = false; var embedmaximize = document.getElementById("embedmaximize").style, embedtitle = document.getElementById("embedmaxtitle");
-            var playerfs = document.getElementById("playerfs").style, playerws = document.getElementById("playerws").style, playertv = document.getElementById("playertv").style, playerul = document.getElementById("playerul").style;
             
+            //fullscreen toggle
+            var fullscreenactive = false; var embedmaximize = document.getElementById("embedmaximize").style, embedtitle = document.getElementById("embedmaxtitle");
             function fullscreenembed(){ if(fullscreenactive == false){ fullscreenactive = true; playerupdate();
-                document.getElementById("player").style.width = "1066px"; document.getElementById("player").style.height = "600px"; playertext.style.width = "1058px"; playerws.width = "1056px"; playerul.width = "1066px"; 
-                playerfs.width = "1068px"; playertv.width = "908px"; docelem.style.setProperty('--slider', "1056px"); embedmaximize.backgroundPosition = "-303px -215px"; embedtitle.title = "Restore down"; playstateupdate()
-            } else { fullscreenactive = false; playerupdate()
-                document.getElementById("player").style.width = "560px"; document.getElementById("player").style.height = "315px"; playertext.style.width = "552px"; playerws.width = "550px"; playerul.width = "560px"; 
-                playerfs.width = "562px"; playertv.width = "406px"; docelem.style.setProperty('--slider', "550px"); embedmaximize.backgroundPosition = "-98px -215px"; embedtitletitle = "Maximize"; playstateupdate()}}
-
+                    document.getElementById("player").style.width = "1066px"; document.getElementById("player").style.height = "600px"; playertext.style.width = "1058px"; playerws.width = "1056px"; playerul.width = "1066px"; 
+                    playerfs.width = "1068px"; playertv.width = "908px"; docelem.style.setProperty('--slider', "1056px"); embedmaximize.backgroundPosition = "-303px -215px"; embedtitle.title = "Restore down"; playstateupdate()
+                } else { fullscreenactive = false; playerupdate()
+                    document.getElementById("player").style.width = "560px"; document.getElementById("player").style.height = "315px"; playertext.style.width = "552px"; playerws.width = "550px"; playerul.width = "560px"; 
+                    playerfs.width = "562px"; playertv.width = "406px"; docelem.style.setProperty('--slider', "550px"); embedmaximize.backgroundPosition = "-98px -215px"; embedtitletitle = "Maximize"; playstateupdate()}}
+            
             //desktop icons
-            function twilightload() {embedtask(); videoclear(); videolinkdropdownclose(); currentplaylist = ""; 
-                player.loadVideoById({'videoId':'6BJFnnWVNRU','startSeconds': 0}); playertext.textContent = "Asking Twilight Sparkle for help.";}
-            function rct2load(){embedtask(); videoclear(); videolinkdropdownclose(); currentplaylist = ""; 
-                player.loadVideoById({'videoId':'W_4uRZFVKPE','startSeconds': 985}); playertext.textContent = "Playing 'Roller Coaster Tycoon 2: Merry-Go-Round Music'";}
-            function startmenuembed(){embedtask(); videoclear(); videolinkdropdownclose(); currentplaylist = "";
-                player.loadVideoById({'videoId':'T6fqtJbVoFI','startSeconds': 0}); playertext.textContent = "Opening Windows Embedded Mediaplayer"; stopVideo()}
+            function twilightload() {embedtask(); videoclear(); videolinkdropdownclose(); currentplaylist = ""; player.loadVideoById({'videoId':'6BJFnnWVNRU','startSeconds': 0}); playertext.textContent = "Asking Twilight Sparkle for help.";}
+            function rct2load(){embedtask(); videoclear(); videolinkdropdownclose(); currentplaylist = ""; player.loadVideoById({'videoId':'W_4uRZFVKPE','startSeconds': 985}); playertext.textContent = "Playing 'Roller Coaster Tycoon 2: Merry-Go-Round Music'";}
+            function startmenuembed(){embedtask(); videoclear(); videolinkdropdownclose(); currentplaylist = ""; player.loadVideoById({'videoId':'T6fqtJbVoFI','startSeconds': 0}); playertext.textContent = "Opening Windows Embedded Mediaplayer"; stopVideo()}
             //my playlists
-            function ovfvpload(){currentplaylist = "list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU&"; videoclear(); playlistlaunch(); 
-                player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'The Official Very Funny Video Playlist'."}
-            function gabetousleload(){currentplaylist = "list=PLNcem2Adr0D5EH7Mk01PRQ8_wJ08MuyR2&"; videoclear(); playlistlaunch(); 
-                player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Gabetousle'."}
-            function mylittleponyload(){currentplaylist = "list=PLNcem2Adr0D7erFZoWmkMgN_eSO5qBcYF&"; videoclear(); playlistlaunch(); 
-                player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'The My Little Pony playlist of My Little Pony songs about some little ponies'."}
+            function ovfvpload(){currentplaylist = "list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU&"; videoclear(); playlistlaunch(); player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'The Official Very Funny Video Playlist'."}
+            function gabetousleload(){currentplaylist = "list=PLNcem2Adr0D5EH7Mk01PRQ8_wJ08MuyR2&"; videoclear(); playlistlaunch(); player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Gabetousle'."}
+            function mlpload(){currentplaylist = "list=PLNcem2Adr0D7erFZoWmkMgN_eSO5qBcYF&"; videoclear(); playlistlaunch(); player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'The My Little Pony playlist of My Little Pony songs about some little ponies'."}
             //music playlists         
-            function Crossload(){currentplaylist = "list=OLAK5uy_mUH9mXeJdOroDCgBIUlj5EIkI2dnl77bo&"; videoclear(); playlistlaunch(); 
-                player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Cross' by Justice."}
-            function AudioVideoDiscoload(){currentplaylist = "list=OLAK5uy_lzrGRfM-k_Ncx_VVvZp5NXsVaT4s5daWs&"; videoclear(); playlistlaunch(); 
-                player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Audio, Video, Disco' by Justice."}
-            function Womanload(){currentplaylist = "list=OLAK5uy_kCIRvtVuXqD5LTUQzqTFS7fZ309yTPd-k&"; videoclear(); playlistlaunch(); 
-                player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Cross' by Justice."}
-            function worldsload(){currentplaylist = "list=PLAZNU5fM7FIAndWHF8KXqy5wJzG1D5pkF&"; videoclear(); playlistlaunch(); 
-                player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Worlds' by Porter Robinson."}
-            function natureload(){currentplaylist = "list=PLAZNU5fM7FIC4ruXQhKjpuvP0AByhc0bl&"; videoclear(); playlistlaunch(); 
-                player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Nature' by Porter Robinson."}
-            function virtualselfload(){currentplaylist = "list=OLAK5uy_mvDmPc6xhsOD8ZsY-FsKLO-d4LlWFRWe0&"; videoclear(); playlistlaunch(); 
-                player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Virtual Self' by Porter Robinson."}
-                
+            function Crossload(){currentplaylist = "list=OLAK5uy_mUH9mXeJdOroDCgBIUlj5EIkI2dnl77bo&"; videoclear(); playlistlaunch(); player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Cross' by Justice."}
+            function AuViDisload(){currentplaylist = "list=OLAK5uy_lzrGRfM-k_Ncx_VVvZp5NXsVaT4s5daWs&"; videoclear(); playlistlaunch(); player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Audio, Video, Disco' by Justice."}
+            function Womanload(){currentplaylist = "list=OLAK5uy_kCIRvtVuXqD5LTUQzqTFS7fZ309yTPd-k&"; videoclear(); playlistlaunch(); player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Cross' by Justice."}
+            function worldsload(){currentplaylist = "list=PLAZNU5fM7FIAndWHF8KXqy5wJzG1D5pkF&"; videoclear(); playlistlaunch(); player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Worlds' by Porter Robinson."}
+            function natureload(){currentplaylist = "list=PLAZNU5fM7FIC4ruXQhKjpuvP0AByhc0bl&"; videoclear(); playlistlaunch(); player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Nature' by Porter Robinson."}
+            function virtualload(){currentplaylist = "list=OLAK5uy_mvDmPc6xhsOD8ZsY-FsKLO-d4LlWFRWe0&"; videoclear(); playlistlaunch(); player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Virtual Self' by Porter Robinson."}
             //veryvhersty tab
-            function win98load(){currentplaylist = "list=PLNcem2Adr0D6ZaukKoeuIDd_F64cVdR6n&"; videoclear(); playlistlaunch(); 
-                player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Windows 98 Development'."}
-            function csgoload(){currentplaylist = "list=PLNcem2Adr0D6hVLogqdDGWVISRhFp7drV&"; videoclear(); playlistlaunch(); 
-                player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Thea's CSGO Videos'."}
-
+            function win98load(){currentplaylist = "list=PLNcem2Adr0D6ZaukKoeuIDd_F64cVdR6n&"; videoclear(); playlistlaunch(); player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Windows 98 Development'."}
+            function csgoload(){currentplaylist = "list=PLNcem2Adr0D6hVLogqdDGWVISRhFp7drV&"; videoclear(); playlistlaunch(); player.loadPlaylist({'list':loadPlaylist, 'index': 0}); playertext.textContent = "Playing 'Thea's CSGO Videos'."}
+            
+            //play state updating
             function playstateupdateforward() { var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime() + currentskiptime;
                 if(playerTotalTime > playerCurrentTime){ var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))} else {nextVideo()}} //if #ref0038 > 100, skip video.
             function playstateupdatebackward() {var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime() - currentskiptime;
                 var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))} //enforces #ref0038 update
             function playstateupdate(){ var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime();
                 var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))} //enforces #ref0038 update
-            
             function playstate() {playertext.textContent = shuffletext + "Playing"} //enforces player state as playing.
             //#ref0041: Updates the console at the bottom left with the current players state.
             function changeplayerstate(playerStatus) {
@@ -713,11 +671,8 @@
 
             function onPlayerStateChange(event) { changeplayerstate(event.data);
                 if (event.data == YT.PlayerState.PLAYING) { var playerTotalTime = player.getDuration();
-                    mytimer = setInterval(function() { 
-                        var playerCurrentTime = player.getCurrentTime(); var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; 
-                        if (playerCurrentTime < playerTotalTime){
-                        progress(playerTimeDifference, $('#progressBar'))}}, 100)
-                } else {clearTimeout(mytimer)}} //#ref0038
+                    mytimer = setInterval(function() { var playerCurrentTime = player.getCurrentTime(); var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; 
+                        if (playerCurrentTime < playerTotalTime){ progress(playerTimeDifference, $('#progressBar'))}}, 100)} else {clearTimeout(mytimer)}} //#ref0038
         </script>
 
 <!-- Latest updates message box ------------------------------------------------------------------------------>
@@ -1338,9 +1293,8 @@
                             prewallpaper, prespritesheet, curspritesheet, preinactivetitle, curinactivetitle, preactivetitle, curactivetitle, preinvert, curinvert, discheckinv, enacheckinv, invcheckinv, //#ref5026 //#ref5003//#ref5022
                             schemedrop = false, ctoggle = false, themecurrent = "lightmode"; //#ref5026 //#ref5003//#ref5022
                         var deskico = [document.getElementById("desktopico1").style, document.getElementById("desktopico2").style, document.getElementById("desktopico3").style, document.getElementById("desktopico4").style, 
-                            document.getElementById("desktopico5").style, document.getElementById("desktopico6").style, document.getElementById("desktopico7").style];
-                        let desktopico = [ document.getElementById("desktopi1").style, document.getElementById("desktopi2").style, document.getElementById("desktopi3").style, document.getElementById("desktopi4").style, 
-                            document.getElementById("desktopi5").style, document.getElementById("desktopi6").style, document.getElementById("desktopi7").style]
+                            document.getElementById("desktopico5").style, document.getElementById("desktopico6").style, document.getElementById("desktopico7").style, document.getElementById("desktopico8").style];
+        
                         var currentsch = document.getElementById("currentscheme"), scheme = document.getElementById("scheme").style; function schemeexit(){scheme.marginLeft = "-20000px"; schemedrop = false}
                         function schemedropdown(){ if (schemedrop == false) {scheme.marginLeft = "-2px"; schemedrop = true} else if (schemedrop == true){scheme.marginLeft = "-20000px"; schemedrop = false}} //#ref5023 //#ref5024
 
@@ -1396,7 +1350,7 @@
 
                         function themepreviewchange() {//changes the current preview colours based on variables set earlier
                             docelem.style.setProperty('--prewhite', cpwhite); docelem.style.setProperty('--pregray', cpgray); docelem.style.setProperty('--prelightg', cplightg); docelem.style.setProperty('--preblack', cpblack); 
-                            docelem.style.setProperty('--presilver', cpsilver); docelem.style.setProperty('--preprussian', cpprussian); docelem.style.setProperty('--premidgray', cpmidgray); docelem.style.setProperty('--prewincyan', cpwincyan);
+                            docelem.style.setProperty('--presilver', cpsilver); docelem.style.setProperty('--preprussian', cpprussian); docelem.style.setProperty('--premidgray', cpmidgray);
                             docelem.style.setProperty('--prefont', cpfont); docelem.style.setProperty('--prehover', cphover); docelem.style.setProperty('--preblue', cpblue); docelem.style.setProperty('--preyellow', cpyellow); 
                             docelem.style.setProperty('--preactivetitle', preactivetitle); docelem.style.setProperty('--preinactivetitle', preinactivetitle); docelem.style.setProperty('--preinvert', preinvert);
                             docelem.style.setProperty('--preinactive', precurinactivehead); docelem.style.setProperty('--preactive', precuractiveheader); docelem.style.setProperty('--prespritesheet', prespritesheet);//adjusts spritesheets
@@ -1419,13 +1373,14 @@
                             docelem.style.setProperty('--curactivetitle', curactivetitle); docelem.style.setProperty('--curinactivetitle', curinactivetitle); docelem.style.setProperty('--curspritesheet', curspritesheet);//adjusts spritesheets
                             docelem.style.setProperty('--discheckinv', discheckinv); docelem.style.setProperty('--enacheckinv', enacheckinv); docelem.style.setProperty('--invcheckinv', invcheckinv); 
                             
-                            if (dicotoggle == true){var dtil = 0; for(var i = 0; previewico.length > i; i++){deskico[i].width = "72px"; deskico[i].height = "72px"; var temp1 = dtil + "px"; var temp2 = "-0px"; deskico[i].backgroundPosition = temp1 + " " + temp2; dtil = dtil - 72}
-                                } else {var dtil = 0; for(var i = "0"; previewico.length > i; i++){deskico[i].width = "36px"; deskico[i].height = "36px"; var temp1 = dtil + "px"; var temp2 = "-72px"; deskico[i].backgroundPosition = temp1 + " " + temp2; dtil = dtil - 36}}
+                            var dtil = 0;
+                            if (dicotoggle == true){for(var i = 0; deskico.length > i; i++){deskico[i].width = "72px"; deskico[i].height = "72px"; var temp1 = dtil + "px"; var temp2 = "-0px"; deskico[i].backgroundPosition = temp1 + " " + temp2; dtil = dtil - 72}
+                                } else {for(var i = "0"; deskico.length > i; i++){deskico[i].width = "36px"; deskico[i].height = "36px"; var temp1 = dtil + "px"; var temp2 = "-72px"; deskico[i].backgroundPosition = temp1 + " " + temp2; dtil = dtil - 36}}
                             if (nsfwtoggle == true){nsfwoptions.marginLeft = "0px"; nsfwoptions.marginTop = "0px"} else {nsfwoptions.marginLeft = "-20000px"; nsfwoptions.marginTop = "-80px"}
                             if (csgotoggle == true){CSon = true; desktopleft = "-340px"; desktop.left = desktopleft; desktop.top = "5px"; ranCSno = 1; CSGOsidebar1.opacity = 1; CSGOsidebar2.opacity = 1; CSGOsidebar3.opacity = 0.2; changeCSGO();
                                 } else {CSon = false; desktopleft = "0px"; desktop.left = desktopleft; desktop.top = "0px"; CSGOsidebar1.opacity = 0; CSGOsidebar2.opacity = 0; CSGOsidebar3.opacity = 0; changeCSGO()}
-                            
-                            shufflecolour(); desktopiconchange(); clocku(); wwpno(); diskactive(); inprompt = inprompt + "Theme Loaded."; println()} //logs if the preview theme has been turned into the current theme active.
+       
+                            shufflecolour(); desktopiconchange(); wwpno(); clocku(); diskactive(); inprompt = inprompt + "Theme Loaded."; println()} //logs if the preview theme has been turned into the current theme active.
                     </script>
                         
                     <div class="win98buttondisa" style="margin-left:199px; width:67px; margin-top:-1px;"><center><butdislabel>Save As...</butdislabel></center></div>
@@ -1474,26 +1429,22 @@
                                 <div class="colourselect" style="background-color: #483038" onclick="copi = 19"></div> <div class="colourselect" style="background-color: #ccffff" onclick="copi = 20"></div> <br>
                         </div></div> 
                         
-                        <script> 
-                            var colourpicked = false, currentcolour = "#008080", fontcolour = "#fff", copi = "", coloursampler = document.getElementById("coloursampler").style;
-                            var cpo = document.getElementById("currentpickedo").style; cpc = document.getElementById("currentpickedc").style; ap = document.getElementById("apperancepreview").style;
+                        <script> var colourpicked = false, currentcolour = "#008080", fontcolour = "#fff", copi = "", coloursampler = document.getElementById("coloursampler").style,
+                            cpo = document.getElementById("currentpickedo").style; cpc = document.getElementById("currentpickedc").style; ap = document.getElementById("apperancepreview").style;
 
                             function colourpicker(){if (colourpicked == false){coloursampler.marginLeft = "-2px"; colourpicked = true} else if (colourpicked == true ){coloursampler.marginLeft = "-20000px"; colourpicked = false}}
-                            function colourpickerexit() {coloursampler.marginLeft = "-20000px"; colourpicked = false} function fcw(){fontcolour = "#fff"} function fcb(){fontcolour = "#000"}
+                            function colourpickerexit(){coloursampler.marginLeft = "-20000px"; colourpicked = false} function fcw(){fontcolour = "#fff"} function fcb(){fontcolour = "#000"}
 
-                            function backcolourset(){ document.body.style.backgroundColor = currentcolour; for (var i = 0; i < desktopico.length; i++) { desktopico[i].backgroundColor = currentcolour} //changes desktop icon span colour + backround colour.
-                                if(ctoggle == true){document.body.style.backgroundColor = "#000"; iconpre.backgroundColor = "#000"; cpc.backgroundColor = "#000"; cpo.backgroundColor = "#000"; ap.backgroundColor = "#000"}} 
-                            function fontcolourset(){ for (var i = 0; i < desktopico.length; i++) {desktopico[i].color = fontcolour}} // changes desktop icon text color;
-      
+                            function backcolourset(){document.body.style.backgroundColor = currentcolour; docelem.style.setProperty('--desktopicon', currentcolour); docelem.style.setProperty('--desktoptext', fontcolour); //changes desktop icon span colour + backround colour.
+                                if(ctoggle == true){document.body.style.backgroundColor = "#000"; iconpre.backgroundColor = "#000"; cpc.backgroundColor = "#000"; cpo.backgroundColor = "#000"; ap.backgroundColor = "#000"}}
                             function cpick(){if(copi == 1){currentcolour = "#fff"; fcb()} else if (copi == 2){currentcolour = "#000"; fcw()} else if (copi == 3){currentcolour = "#c2c6ca"; fcb()} else if (copi == 4){currentcolour = "#85898d"; fcw()
                                 } else if (copi == 5){currentcolour = "#ff0000"; fcw()} else if (copi == 6){currentcolour = "#aa0055"; fcw()} else if (copi == 7){currentcolour = "#ffff00"; fcb()} else if (copi == 8){currentcolour = "#aaaa55"; fcw()
                                 } else if (copi == 9){currentcolour = "#00ff00"; fcb()} else if (copi == 10){currentcolour = "#00aa55"; fcw()} else if (copi == 11){currentcolour = "#00ffff"; fcb()} else if (copi == 12){currentcolour = "#008080"; fcw()
                                 } else if (copi == 13){currentcolour = "#0000ff"; fcw()} else if (copi == 14){currentcolour = "#0000aa"; fcw()} else if (copi == 15){currentcolour = "#ff00ff"; fcb()} else if (copi == 16){currentcolour = "#aa55aa"; fcw()
                                 } else if (copi == 17){currentcolour = "#a03762"; fcw()} else if (copi == 18){currentcolour = "#001224"; fcw()} else if (copi == 19){currentcolour = "#483038"; fcw()} else if (copi == 20){currentcolour = "#ccffff"; fcb()}
-                                cpc.backgroundColor = currentcolour; cpo.backgroundColor = currentcolour; iconpre.backgroundColor = currentcolour; ap.backgroundColor = currentcolour; dcb1.backgroundColor = currentcolour; 
-                                dcb2.backgroundColor = currentcolour; dcb3.backgroundColor = currentcolour; for (var i = 0; i < previewico.length; i++) { previewico[i].backgroundColor = currentcolour}} 
-                        </script>
-                        
+                                docelem.style.setProperty('--predesktopicon', currentcolour); docelem.style.setProperty('--preicotext', fontcolour); cpc.backgroundColor = currentcolour; cpo.backgroundColor = currentcolour; 
+                                iconpre.backgroundColor = currentcolour; ap.backgroundColor = currentcolour; dcb1.backgroundColor = currentcolour; dcb2.backgroundColor = currentcolour; dcb3.backgroundColor = currentcolour} </script>
+
                         <div class="win98buttondisa" style="margin-left:312px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
                             <div class="big_seperator" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
                             <div class="smallarrowdisableddown" style="margin-left: 31px; margin-top:7px"></div></div><br><br>
@@ -1526,53 +1477,28 @@
                     
                     <ul class="tree-view" style="width:318px; height:88px; margin-top:5px; margin-left:2px; background-color: #008080;" id="iconpreview">
                         <div style="overflow-x: scroll; overflow-y:hidden; margin-left:-5px; width:327px; margin-top:1px;">
-                            <div style="height:75px; display: inline-block; width:410px; margin-left:5px;">
+                            <div style="height:72px; overflow-y:hidden; display: inline-block; width:466px; margin-left:3px" id="iconscont">
                             
-                                <div class="smalliconscontainer" style="margin-left:3px; margin-top:2px;">
-                                    <center><div class="thealonicpreview" id="thealonicpreview"></div>
-                                    <div class="icon_label" style="color:white;"><icon id="iconpre1">
-                                        <label>Thealonic</label><label> </label></icon></div>
-                                </center></div>
-                                <!-- Button Two -->
-                                <div class="smalliconscontainer">
-                                    <center><div class="veryvherstypreview" id="veryverstyiconpreview"></div>
-                                    <div class="icon_label" style="color:white;"><icon id="iconpre2">
-                                        <label>Very</label><label>Vhersty</label></icon></div>
-                                </center></div>
-                                <!-- Button Three -->
-                                <div class="smalliconscontainer">
-                                    <center><div class="twitterpreview" id="twittericonpreview"></div>
-                                    <div class="icon_label" style="color:white;"><icon id="iconpre3">
-                                        <label>Art</label><label>posting</label></icon></div>
-                                </center></div>
-                                <!-- Button Four -->
+                                <div class="preicocon"><center><div class="thealonicpreview" id="previewi1"></div>
+                                    <preico style="margin-left:-12px">Thealonic</preico></center></div>
+                                <div class="preicocon"><center><div class="veryvherstypreview" id="previewi2"></div>
+                                    <preico>Very </preico><br><preico>Vhersty</preico></center></div>
+                                <div class="preicocon"><center><div class="twitterpreview" id="previewi3"></div>
+                                    <preico>Art </preico><br><preico>posting</preico></center></div>
                                 {block:AskEnabled}
-                                <div class="smalliconscontainer">
-                                    <center><div class="askiconpreview" id="askiconpreview"></div>
-                                    <div class="icon_label" style="color:white;"><icon id="iconpre4">
-                                        <label style="margin-left:1px;">Ask</label><label style="margin-left:1px;">mommy</label></icon></div>
-                                </center></div>
+                                <div class="preicocon"><center><div class="askiconpreview" id="previewi4"></div>
+                                    <preico>Ask </preico><br><preico>Mommy</preico></center></div>
                                 {/block:AskEnabled}
-                                <!-- Button Six -->
-                                <div class="smalliconscontainer">
-                                    <center><div class="discordlinkpreview" id="discordiconpreview"></div>
-                                    <div class="icon_label" style="color:white;"><icon id="iconpre6">
-                                        <label>SGSP</label><label>discord</label></icon></div>
-                                </center></div>
-                                    
-                                <div class="smalliconscontainer">
-                                    <center><div class="officialfunnypreview" id="discordiconpreview"></div>
-                                    <div class="icon_label" style="color:white;"><icon id="iconpre7">
-                                        <label style="margin-left:1px;">TOVFV</label><label>Playlist</label></icon></div>
-                                </center></div>
-                                
-                                <div class="smalliconscontainer">
-                                    <center><div class="rct2preview" id="discordiconpreview"></div>
-                                    <div class="icon_label" style="color:white;"><icon id="iconpre8">
-                                        <label>Roller</label><label>Coaster</label></icon></div>
-                                </center></div>
+                                <div class="preicocon"><center><div class="discordlinkpreview" id="previewi5"></div>
+                                    <preico>SGSP </preico><br><preico>discord</preico></center></div>
+                                <div class="preicocon"><center><div class="officialfunnypreview" id="previewi6"></div>
+                                    <preico>TOVFV</preico><br><preico>Playlist</preico></center></div>
+                                <div class="preicocon"><center><div class="rct2preview" id="previewi7"></div>
+                                    <preico>Roller </preico><br><preico>Coaster</preico></center></div>
+                                <div class="preicocon"><center><div class="justicepreview" id="previewi8"></div>
+                                    <preico>Justice</preico></center></div>
                     </div></div></ul>
-                    
+   
                     <div style="margin-top: 7px">
                         <ul class="tree-view" style="width:143px; height: 17px; padding:2px" onclick="dsheetdropdown()" onmouseleave="dsheetexit()">
                             <div style="padding: 3px 3px 2px 2px" id="currentdsheet"></div><div class="dropbutton"><div class="scrolldown"></div></div>
@@ -1581,55 +1507,52 @@
                                 <div class="droptext" onclick="dsheetpetraOG()">Petra Classic</div>  
                                 <div class="droptext" onclick="dsheetpetra()">Petra Revisit</div>   
                                 <div class="droptext" onclick="dsheetcaddyog()">Thealonic</div>
-                                <div class="droptext" onclick="dsheetcaddyclassic()">Thealonic Oldschool</div>
+                                <div class="droptext" onclick="dsheetcaddycl()">Thealonic Oldschool</div>
                                 <div class="droptext" onclick="dsheetprat()">Prat</div></div></ul> <!--#ref0032-->
                                 
-                        <div class="win98button" style="float:right; width:78px; margin-top: -21px; margin-right:4.5px;" onclick="dsheetpetraog()"><center><butlabel>Default Icon</butlabel></center></div>
+                        <div class="win98button" style="float:right; width:78px; margin-top: -21px; margin-right:4.5px;" onclick="dsheetpetra(); desktopiconchange()"><center><butlabel>Default Icon</butlabel></center></div>
                         <div class="win98button" style="float:right; width:78px; margin-top: -21px; margin-right:8px;" onclick="desktopiconchange()"><center><butlabel>Change Icon...</butlabel></center></div></div>
                 </fieldset>
                     
-                <script> let previewico = [ document.getElementById("iconpre1").style, document.getElementById("iconpre2").style, document.getElementById("iconpre3").style, document.getElementById("iconpre4").style,
-                        document.getElementById("iconpre6").style, document.getElementById("iconpre7").style, document.getElementById("iconpre8").style], predesktopsheet, curdesktopsheet;
-                    
-                    var dsheetdrop = false; dsheet = document.getElementById("dsheet").style; function dsheetexit(){dsheet.marginLeft = "-20000px"; dsheetdrop = false} //#ref5022 //#ref5025 
+                <script> let previewico = [document.getElementById("previewi1").style, document.getElementById("previewi2").style, document.getElementById("previewi3").style, document.getElementById("previewi4").style,
+                        document.getElementById("previewi5").style, document.getElementById("previewi6").style, document.getElementById("previewi7").style, document.getElementById("previewi8").style];
+                    var predesktopsheet, curdesktopsheet, dsheetdrop = false; dsheet = document.getElementById("dsheet").style; function dsheetexit(){dsheet.marginLeft = "-20000px"; dsheetdrop = false} //#ref5022 //#ref5025 
                     function dsheetdropdown(){if (dsheetdrop == false) {dsheet.marginLeft = "-2px"; dsheetdrop = true} else if (dsheetdrop == true){dsheet.marginLeft = "-20000px"; dsheetdrop = false}} //#ref5023 //#ref5024
                     function dsheetpetra(){document.getElementById("currentdsheet").textContent="Petra Revisit"; predesktopsheet = github + "img/desktopspritesheet2.png')"; desktopiconpreview()}   
                     function dsheetpetraOG(){document.getElementById("currentdsheet").textContent="Petra Classic"; predesktopsheet = github + "img/desktopspritesheet.png')"; desktopiconpreview()} 
                     function dsheetcaddyog(){document.getElementById("currentdsheet").textContent="Caddy OG"; predesktopsheet = github + "img/desktopspritesheet3.png')"; desktopiconpreview()} 
-                    function dsheetcaddyclassic(){document.getElementById("currentdsheet").textContent="Caddy Classic"; predesktopsheet = github + "img/desktopspritesheet4.png')"; desktopiconpreview()} 
+                    function dsheetcaddycl(){document.getElementById("currentdsheet").textContent="Caddy Classic"; predesktopsheet = github + "img/desktopspritesheet4.png')"; desktopiconpreview()} 
                     function dsheetprat(){document.getElementById("currentdsheet").textContent="Prat"; predesktopsheet = github + "img/desktopspritesheet5.png')"; desktopiconpreview()} 
                     
                     function desktopiconpreview(){docelem.style.setProperty('--predesktopsheet', predesktopsheet); curdesktopsheet = predesktopsheet}
                     function desktopiconchange(){docelem.style.setProperty('--curdesktopsheet', curdesktopsheet)}</script> 
                         
-                <fieldset style="width:336px; height:118px; margin-left: 12px; margin-top: 20px;">
-                    <inboxlabel style="width:65px"> Visual Effects </inboxlabel>
+                <fieldset style="width:336px; height:118px; margin-left: 12px; margin-top: 20px;"><inboxlabel style="width:65px"> Visual Effects </inboxlabel>
                     <div style="margin-top:-58px; position:absolute">
-                    <ul class="tick-box" id="effectstick0"><div class="disabletickbox" id="effect0"></div></ul><ticklabel for="effectstick0">Preview desktop icons as smaller icons</ticklabel></div>
+                    <ul class="tick-box" id="effectstick0"><div class="invisibtickbox" style="background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')" id="effect0"onclick="largepicotoggle()"></div></ul><ticklabel for="effectstick0" onclick="largepicotoggle()">Preview desktop icons as smaller icons</ticklabel></div>
                     <ul class="tick-box" id="effectstick1"><div class="invisibtickbox" style="background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')" id="effect1" onclick="largedicotoggle()"></div></ul><ticklabel for="effectstick1" onclick="largedicotoggle()">Use large desktop icons</ticklabel>
                     <ul class="tick-box" id="effectstick2"><div class="disabletickbox" id="effect2"></div></ul><ticklabel for="effectstick2">Show desktop icons using all possible colours</ticklabel>
                     <ul class="tick-box" id="effectstick3"><div class="disabletickbox" id="effect3" onclick="tickdragtoggle()"></div></ul><ticklabel for="effectstick3" onclick="tickdragtoggle()">Allow all windows to be draggable</ticklabel>
                     <ul class="tick-box" id="effectstick4"><div class="invisibtickbox" id="effect4" onclick="ticknsfwtoggle()"></div></ul><ticklabel for="effectstick4" onclick="ticknsfwtoggle()">Enable NSFW desktop options</ticklabel>
                     <ul class="tick-box" id="effectstick5"><div class="disabletickbox" id="effect5"></div></ul><ticklabel for="effectstick5">Show window contents while dragging</ticklabel>
                     <ul class="tick-box" id="effectstick6"><div class="invisibtickbox" id="effect6" onclick="tickcsgotoggle()"></div></ul><ticklabel for="effectstick6" onclick="tickcsgotoggle()">Enable "CSGO desktop" mode</ticklabel>
-                </fieldset>
-                    
-                <script> 
-                    var dicotoggle = true, nsfwtoggle = false, csgotoggle = false, dragtoggle = true, nsfwoptions = document.getElementById("nsfwoptions").style, 
-                        CSGOsidebar1 = document.getElementById("CSGOsidebar1").style, CSGOsidebar2 = document.getElementById("CSGOsidebar2").style, CSGOsidebar3 = document.getElementById("CSGOsidebar3").style;
-                    var effect = [undefined, document.getElementById("effect1").style, document.getElementById("effect2").style, document.getElementById("effect3").style, document.getElementById("effect4").style, 
-                        document.getElementById("effect5").style, document.getElementById("effect6").style];
+            </fieldset></div>
+            
+            <script> var picotoggle = false, dicotoggle = true, nsfwtoggle = false, csgotoggle = false, dragtoggle = true, nsfwoptions = document.getElementById("nsfwoptions").style, iconscont = document.getElementById("iconscont").style
+                CSGOsidebar1 = document.getElementById("CSGOsidebar1").style, CSGOsidebar2 = document.getElementById("CSGOsidebar2").style, CSGOsidebar3 = document.getElementById("CSGOsidebar3").style,
+                effect = [document.getElementById("effect0").style, document.getElementById("effect1").style, document.getElementById("effect2").style, document.getElementById("effect3").style, document.getElementById("effect4").style, 
+                document.getElementById("effect5").style, document.getElementById("effect6").style];
 
-                    function largedicotoggle(){ if(dicotoggle == false){dicotoggle = true; effect[1].backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')"
-                        } else if (dicotoggle == true){dicotoggle = false; effect[1].backgroundImage = ""}}
-                    function tickdragtoggle(){ if (dragtoggle == false){dragtoggle = true; effect[3].backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')"
-                        } else if (dragtoggle == true){dragtoggle = false; effect[3].backgroundImage = ""}}
-                    function ticknsfwtoggle(){ if (nsfwtoggle == false){nsfwtoggle = true; effect[4].backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')"
-                        } else if (nsfwtoggle == true){nsfwtoggle = false; effect[4].backgroundImage = ""}}
-                    function tickcsgotoggle(){ if (csgotoggle == false){csgotoggle = true; effect[6].backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')"; prewallpaper = wps; wps = "img/wallpapers/vinylchrys.gif')"; wwpno(); 
-                        } else if (csgotoggle == true){csgotoggle = false; effect[6].backgroundImage = ""; wps = prewallpaper; wwpno()}} 
-                </script>
-            </div>
+                function largepicotoggle(){ var dtil = 0; if(picotoggle == false){ 
+                    picotoggle = true; effect[0].backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')"; docelem.style.setProperty('--smicow', '78px'); docelem.style.setProperty('--smicoh', '72px'); iconscont.width = "766px"; 
+                        for(var i = 0; previewico.length > i; i++){var temp1 = dtil + "px"; var temp2 = "-0px"; previewico[i].backgroundPosition = temp1 + " " + temp2; dtil = dtil - 72}
+                    } else {picotoggle = false; effect[0].backgroundImage = ""; docelem.style.setProperty('--smicow', '42px'); docelem.style.setProperty('--smicoh', '36px'); iconscont.width = "466px"
+                        for(var i = "0"; previewico.length > i; i++){var temp1 = dtil + "px"; var temp2 = "-72px"; previewico[i].backgroundPosition = temp1 + " " + temp2; dtil = dtil - 36}}}
+                function largedicotoggle(){if(dicotoggle == false){dicotoggle = true; effect[1].backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')"} else if (dicotoggle == true){dicotoggle = false; effect[1].backgroundImage = ""}}
+                function tickdragtoggle(){if (dragtoggle == false){dragtoggle = true; effect[3].backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')"} else if (dragtoggle == true){dragtoggle = false; effect[3].backgroundImage = ""}}
+                function ticknsfwtoggle(){if (nsfwtoggle == false){nsfwtoggle = true; effect[4].backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')"} else if (nsfwtoggle == true){nsfwtoggle = false; effect[4].backgroundImage = ""}}
+                function tickcsgotoggle(){if (csgotoggle == false){csgotoggle = true; effect[6].backgroundImage = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')"; prewallpaper = wps; wps = "img/wallpapers/vinylchrys.gif')"; wwpno(); 
+                    } else if (csgotoggle == true){csgotoggle = false; effect[6].backgroundImage = ""; wps = prewallpaper; wwpno()}} </script>
             
             <!-- --------------------------------------- settings tab --------------------------------------- -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="settings">
@@ -1670,9 +1593,9 @@
             
             <!-- --------------------------------------- footer --------------------------------------- -->
             <div style="margin-top: 395px">
-                <div class="win98buttona" style="margin-left:316px;" onclick="wallpaperupdate(); backcolourset(); fontcolourset(); themechange()"><center><butlabel>Apply</butlabel></center></div>
+                <div class="win98buttona" style="margin-left:316px;" onclick="wallpaperupdate(); backcolourset(); themechange()"><center><butlabel>Apply</butlabel></center></div>
                 <div class="win98buttona" style="margin-left:234px;" onclick="diskclose()"><center><butlabel>Cancel</butlabel></center></div>
-                <div class="win98buttona" style="margin-left:152px;" onclick="wallpaperupdate(); backcolourset(); fontcolourset(); themechange(); diskclose()"><center><butlabel>Okay</butlabel></center></div>
+                <div class="win98buttona" style="margin-left:152px;" onclick="wallpaperupdate(); backcolourset(); themechange(); diskclose()"><center><butlabel>Okay</butlabel></center></div>
         </div></div>
         
         <script>
@@ -1782,12 +1705,11 @@
                                             <div class="submenu18"><label style="margin-left: 4px; margin-top: 3px"> Set wallpaper as (Tiled) </label></div>
                                             <div class="submenu18"><label style="margin-left: 4px; margin-top: 3px"> Set wallpaper as (Centered) </label></div></div>
                                 </postdrop></div>
-                                
-                                <script> $(".postlinks-container").click(function(){if (plinksdrop == false){$(this).find("postdrop").css("margin-left", "49px"); plinksdrop = true 
-                                        } else if (plinksdrop == true){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false}})
-                                    $(".postlinks-container").mouseleave(function(){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false})</script>
-                                
                         </fieldset></div>
+                                
+                        <script> $(".postlinks-container").click(function(){if (plinksdrop == false){$(this).find("postdrop").css("margin-left", "49px"); plinksdrop = true 
+                                } else if (plinksdrop == true){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false}})
+                            $(".postlinks-container").mouseleave(function(){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false})</script>
 
 <!-- Post window body ------------------------------------------------------------------------------>
                         <ul class="tree-view" style="margin-left:-6px; margin-bottom:26px; width: 471px; margin-top:4px; padding:0px; overflow:hidden; background-color: var(--white)"> 
@@ -1956,7 +1878,7 @@
                         <div class="menuapplicationsplit" style="width:139px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px"> </div>
                         <!-- Programs -->
                         <label><div class="submenu36" style="width: 142px;" id="menuprograms" onmouseover="programsopen()" onmouseout="programsclosed()"> 
-                            <div class="menuprograms"></div><label><labs><underline>P</underline>rograms </labs></label><div class="lmenuarrow" id="menuarrow1"></div></div></label>
+                            <div class="menuprograms"></div><label><labs><underline>P</underline>rograms </labs></label><div class="lmenuarrow" id="menuarrow"></div></div></label>
                         <!-- Favourites -->
                         <label><div class="submenu36" style="width: 142px;" id="menufavourites" onmouseover="favouritesopen()" onmouseout="favouritesclosed()"> 
                             <div class="menufavourites"></div><label><labs>My F<underline>a</underline>vourites </labs></label><div class="lmenuarrow" id="menuarrow2"></div></div></label>
@@ -2008,19 +1930,19 @@
                              onmouseover="accessoriesopen()" onmouseout="accessoriesclose()"> 
                             <!-- Communication -->
                             <div class="submenu20" id="communications" onmouseover="communicationsopen()" onmouseout="communicationsclose();">
-                                <div class="menuprograms123"></div><label><labc> Communication </labc></label><div class="smenuarrow" id="menuarrow12"></div></div>
+                                <div class="menuprograms123"></div><label><labc> Communication </labc></label><div class="smenuarrow" id="menuarrow2"></div></div>
                             <!-- Entertainment -->
                             <div class="submenu20" id="entertainment" onmouseover="entertainmentopen()" onmouseout="entertainmentclose()">
-                                <div class="menuprograms123"></div><label><labc> Entertainment </labc></label><div class="smenuarrow" id="menuarrow13"></div></div>
+                                <div class="menuprograms123"></div><label><labc> Entertainment </labc></label><div class="smenuarrow" id="menuarrow3"></div></div>
                             <!-- Games -->
                             <div class="submenu20" id="games" onmouseover="gamesopen()" onmouseout="gamesclose()">
-                                <div class="menuprograms123"></div><label><labc> Games </labc></label><div class="smenuarrow" id="menuarrow14"></div></div>
+                                <div class="menuprograms123"></div><label><labc> Games </labc></label><div class="smenuarrow" id="menuarrow4"></div></div>
                             <!-- Internet Tools -->
                             <div class="submenu20" id="internettools" onmouseover="internettoolsopen()" onmouseout="internettoolsclose()">
-                                <div class="menuprograms123"></div><label><labc> Internet Tools </labc></label><div class="smenuarrow" id="menuarrow15"></div></div>
+                                <div class="menuprograms123"></div><label><labc> Internet Tools </labc></label><div class="smenuarrow" id="menuarrow5"></div></div>
                             <!-- System Tools -->
                             <div class="submenu20" id="systemtools" onmouseover="systemtoolsopen()" onmouseout="systemtoolsclose()">
-                                <div class="menuprograms123"></div><label><labc> System Tools </labc></label><div class="smenuarrow" id="menuarrow16"></div></div>
+                                <div class="menuprograms123"></div><label><labc> System Tools </labc></label><div class="smenuarrow" id="menuarrow6"></div></div>
 
                             <div class="submenu20"><div class="menufind4"></div><label><labc> Address book </labc></label></div>
                             <div class="submenu20"><div class="menuapplications7"></div><label><labc> Calculator </labc></label></div>
@@ -2117,13 +2039,13 @@
                              onmouseover="mediaopen()" onmouseout="mediaclose()"> 
                             <div class="submenu20" onclick="gabetousleload()"><div class="menuentertainment5"></div><label><labc>Gabetousle</labc></label></div>
                             <div class="submenu20" onclick="gabetousleload()"><div class="menudocumentssound"></div><label><labc>Rocking, Rollin n' Boneing.</labc></label></div>
-                            <div class="submenu20" onclick="mylittleponyload()"><div class="menuentertainment5"></div><label><labc>The My Little Pony playlist</labc></label></div>
+                            <div class="submenu20" onclick="mlpload()"><div class="menuentertainment5"></div><label><labc>The My Little Pony playlist</labc></label></div>
                             <div class="startmenusplitter"></div>
                             <div class="submenu20" onclick="Crossload()"><div class="menuentertainment5"></div><label><labc>Justice - Cross</labc></label></div>
-                            <div class="submenu20" onclick="AudioVideoDiscoload()"><div class="menuentertainment5"></div><label><labc>Justice - Audio, Video, Disco</labc></label></div>
+                            <div class="submenu20" onclick="AuViDisload()"><div class="menuentertainment5"></div><label><labc>Justice - Audio, Video, Disco</labc></label></div>
                             <div class="submenu20" onclick="Womanload()"><div class="menuentertainment5"></div><label><labc>Justice - Woman</labc></label></div>
                             <div class="startmenusplitter"></div>
-                            <div class="submenu20" onclick="virtualselfload()"><div class="menuentertainment5"></div><label><labc>Porter Robinson - Virtual Self</labc></label></div>
+                            <div class="submenu20" onclick="virtualload()"><div class="menuentertainment5"></div><label><labc>Porter Robinson - Virtual Self</labc></label></div>
                             <div class="submenu20" onclick="natureload()"><div class="menuentertainment5"></div><label><labc>Porter Robinson - Nature</labc></label></div>
                             <div class="submenu20" onclick="worldsload()"><div class="menuentertainment5"></div><label><labc>Porter Robinson - worlds</labc></label></div>
                     </div></div>
@@ -2288,10 +2210,8 @@
                 second=(second*Math.PI/30); drawHand(ctx, second, radius*0.9, radius*0.005)} //hand drawing functions
 
             function drawHand(ctx, pos, length, width) {
-            	if (hand < 3){ ctx.beginPath(); ctx.lineWidth = 2.5; ctx.strokeStyle = ccwincyan;
-                  ctx.moveTo(0,0); ctx.rotate(pos); ctx.lineTo(0, -length); ctx.stroke(); ctx.rotate(-pos); hand = hand + 1
-            	} else { ctx.beginPath(); ctx.lineWidth = 0.5; ctx.strokeStyle = ccblack; ctx.lineCap = "round"; 
-                  ctx.moveTo(0,0); ctx.rotate(pos); ctx.lineTo(0, -length); ctx.stroke(); ctx.rotate(-pos); hand = 1}}
+            	if (hand < 3){ ctx.beginPath(); ctx.lineWidth = 2.5; ctx.strokeStyle = ccwincyan; ctx.moveTo(0,0); ctx.rotate(pos); ctx.lineTo(0, -length); ctx.stroke(); ctx.rotate(-pos); hand = hand + 1
+            	} else { ctx.beginPath(); ctx.lineWidth = 0.5; ctx.strokeStyle = ccblack; ctx.lineCap = "round"; ctx.moveTo(0,0); ctx.rotate(pos); ctx.lineTo(0, -length); ctx.stroke(); ctx.rotate(-pos); hand = 1}}
             
         // Drag element scripts ------------------------------------------------------------------------------>
             dragElement(document.getElementById("cat")); dragElement(document.getElementById("pyro")); dragElement(document.getElementById("disk")); dragElement(document.getElementById("message")); 
@@ -2299,7 +2219,7 @@
             dragElement(document.getElementById("logoff")); dragElement(document.getElementById("clock")); dragElement(document.getElementById("internet"));
             
             function dragElement(elmnt) { var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-            if (document.getElementById(elmnt.id + "window")) {document.getElementById(elmnt.id + "window").onmousedown = dragMouseDown} else { elmnt.onmousedown = dragMouseDown}
+                if (document.getElementById(elmnt.id + "window")) {document.getElementById(elmnt.id + "window").onmousedown = dragMouseDown} else { elmnt.onmousedown = dragMouseDown}
             function dragMouseDown(e) { e = e || window.event; e.preventDefault(); pos3 = e.clientX; pos4 = e.clientY; document.onmouseup = closeDragElement; document.onmousemove = elementDrag}
             function elementDrag(e) { e = e || window.event;  e.preventDefault(); pos1 = pos3 - e.clientX; pos2 = pos4 - e.clientY; pos3 = e.clientX; pos4 = e.clientY;  //if(pos1 < 0){pos1 = 0}
                elmnt.style.top = (elmnt.offsetTop - pos2) + "px"; elmnt.style.left = (elmnt.offsetLeft - pos1) + "px"} //if(elmnt.offsetTop < 0){elmnt.style.top = elmnt.offsetTop - pos2}
@@ -2315,9 +2235,9 @@
                 document.getElementById("systemtoolssubmenu").style, document.getElementById("onlineservicessubmenu").style, document.getElementById("startupsubmenu").style, document.getElementById("favouritesmenu").style, 
                 document.getElementById("channelssubmenu").style, document.getElementById("linkssubmenu").style, document.getElementById("mediasubmenu").style, document.getElementById("documentsmenu").style, 
                 document.getElementById("settingsmenu").style, document.getElementById("activedesktopsubmenu").style, document.getElementById("findmenu").style, document.getElementById("vherstysubmenu").style],
-            marr = [document.getElementById("menuarrow1").style, document.getElementById("menuarrow2").style, document.getElementById("menuarrow3").style, document.getElementById("menuarrow4").style,
-                document.getElementById("menuarrow5").style, document.getElementById("menuarrow12").style, document.getElementById("menuarrow13").style, document.getElementById("menuarrow14").style, 
-                document.getElementById("menuarrow15").style, document.getElementById("menuarrow16").style], sarr = [document.getElementById("submenuarrow2").style, document.getElementById("submenuarrow3").style, 
+            marr = [document.getElementById("menuarrow").style, document.getElementById("menuarrow2").style, document.getElementById("menuarrow3").style, document.getElementById("menuarrow4").style,
+                document.getElementById("menuarrow5").style, document.getElementById("menuarrow2").style, document.getElementById("menuarrow3").style, document.getElementById("menuarrow4").style, 
+                document.getElementById("menuarrow5").style, document.getElementById("menuarrow6").style], sarr = [document.getElementById("submenuarrow2").style, document.getElementById("submenuarrow3").style, 
                 document.getElementById("submenuarrow4").style, document.getElementById("submenuarrow21").style, document.getElementById("submenuarrow22").style, document.getElementById("submenuarrow23").style, 
                 document.getElementById("submenuarrow24").style, document.getElementById("submenuarrow31").style], scf
             
