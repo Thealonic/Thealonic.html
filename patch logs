@@ -1,6 +1,29 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll; padding-right: 4px;">
 <ul>
+<li><strong style="color: var(--atext);">2021 March 24th (210324)</strong><strong style="color: var(--atext);"><br /></strong>
+<ul>
+<li><strong>Major CSS updates.<br /></strong>
+<ul>
+<li><strong>Optimised CSS that assosiates colours with windows.<br /></strong></li>
+<li>Optimised font handling to be less messy, and all font data are now global variables. (Which hopefully should have concequences in future updates)<strong><br /></strong></li>
+<li><strong>Localised fontdata needed for MS Sans Serif.</strong></li>
+<li>Removed mixed and outdated CSS to do with labels and disabled labels.</li>
+<li><strong>Titlebars now use gradients instead of images.</strong></li>
+<li>Removed tons of outdated CSS.</li>
+<li><em>(Tons of other backend stuff)</em></li>
+</ul>
+</li>
+<li><strong>Rehauled the Tumblr Posts header </strong>for a future scaling update.<strong><br /></strong></li>
+<li>Tumblr post link menus should now have functionality regardless of page.</li>
+<li><strong>Removed Win98.</strong></li>
+<li>Tons of optimisation tweaks.</li>
+<li>Tweaks to orders of window handling events.</li>
+</ul>
+<ol>
+<li>- Fixed a scaling bug in CS mode to do with how width was handled based on the icons container.</li>
+<li>- Fixed a bunch of font related issues.</li>
+</ol></li>
 <li><strong style="color: var(--atext);">2021 March 23th (210323) </strong><em>- The Desktop icons update</em><br />
 <ul>
 <li><strong>Desktop Icon changes.</strong>
@@ -9,18 +32,18 @@
 <li>Desktop icons now have a smaller clickbox.</li>
 <li>Changing desktop colours is now more simplistic and should be less demanding.</li>
 <li><strong>Rehauled desktop icons</strong> to be more efficent alongside having better CSS.</li>
-<li>Added "Justice" Icon, which will pick an album at random.<strong><br /></strong></li>
+<li>Added &ldquo;Justice&rdquo; Icon, which will pick an album at random.<strong><br /></strong></li>
 <li>Simplified desktop sprite ordering.</li>
 </ul>
 <ol>
 <li>- Tweaked how desktop icons should scale</li>
 </ol></li>
-<li>Display Properties 'Effects' tab changes.<br />
+<li>Display Properties &lsquo;Effects&rsquo; tab changes.<br />
 <ul>
-<li>Added "Default Icons" and "Change Icons" buttons along side functionality.</li>
+<li>Added &ldquo;Default Icons&rdquo; and &ldquo;Change Icons&rdquo; buttons along side functionality.</li>
 <li><strong>Rehauled preview icons</strong> to be more efficent alongside way better CSS.</li>
 <li>Added tickbox to toggle large and small icon previews in the Effects tab.</li>
-<li>Added "Justice" icon to match the desktop.<strong><br /></strong></li>
+<li>Added &ldquo;Justice&rdquo; icon to match the desktop.<strong><br /></strong></li>
 </ul>
 </li>
 <li><strong>Adjustments to how colours are applied to desktop icons and preview icons.</strong></li>
