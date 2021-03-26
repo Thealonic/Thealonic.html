@@ -186,7 +186,7 @@
             
             .submenu18, .submenu20, .submenu36 {background:var(--silver); color: var(--text); width:100%}
             .submenu18:hover, .submenu20:hover, .submenu36:hover{ background:var(--prussian); color:var(--hover); width:100%}
-            .submenu18, .submenu18:hover {height: 18px} .submenu20, .submenu20:hover {height: 20px} .submenu36, .submenu36:hover {height: 36px}
+            .submenu18, .submenu18:hover {height: 18px} .submenu20, .submenu20:hover {height: 20px} .submenu36, .submenu36:hover {height: 36px; width: 142px}
             
             .patchnotes, .menuprograms, .menudocuments, .menufavourites, .menushutdown, .logofficon, .menusettings, .menufind, .menuhelp, .menurun,
             .menulogoff, .shutdownicon{ background-image: var(--curspritesheet); margin: auto; float: left; height: 36px; width: 36px}
@@ -246,7 +246,10 @@
             .start_bar {position: fixed; background: var(--silver); bottom: 0; height: 28px; width: 100%; z-index: 3; margin-left:-8px} 
             .start_bar .top_border {border-bottom: 1px solid var(--lightg); border-top: 1px solid var(--white)}
             .start_bar .time {line-height: 18px; float: right; margin-right: 10px; color:var(--text)} .taskbaricons {float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px}
-            .windowsstartmenubar {background-image: var(--curspritesheet); height: 159px; width:  21px; background-position: -339px -72px; position:absolute; float: left}
+            
+            .startmenubar, .startmenubartext {background-image: var(--curspritesheet); height: 159px; width: 21px; bottom:0; background-position: -339px -72px; position:absolute; float: left;}
+            .startmenubar {opacity: 0.5;  filter: invert(var(--invert))} .startmenubartext {height: 109px; background-position: -318px -122px} 
+            .startmenubarback {width: 21px; height:377px; background-color:var(--prussian); position:absolute;}
     
             .clock{ box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray); padding:2px; float:right; width:96px; height:18px; margin-right:2px; margin-top:2px}
             .calendar { float: left; margin-top: 1px; margin-left: 3px} .taskbaricons { float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px}
@@ -380,7 +383,7 @@
             $('document').ready(function(){setInterval(function(){CS = " "; ranCSno1 = Math.floor(Math.random() * CSLength); changeCSGO()}, CSframes[ranCSno1])})</script>
     
 <!-- VUNNY message box rendering ------------------------------------------------------------------------------>
-        <div class="win98post" style="position: fixed; width: 206px; margin-left:-20000px;" onmousedown="catactive();" id="cat"> <!--#ref2000-->
+        <div class="win98post" style="position: fixed; width: 206px; margin-left:-20000px;" onmousedown="catactive();" id="cat">
             <div class="win98titlebarc" onclick="catclose();"><div class="close"></div></div>
             <div class="win98titlebarh" onclick="catminimize();"> <div class="minimize"></div></div>
             <div class="win98titlebarh" onclick="twilightload()"> <div class="help"></div></div>
@@ -390,12 +393,13 @@
                 <center><div class="win98buttondis" style="margin-top:3px;"><butdislabel>Asshole</butdislabel></div></center>
         </div></div>
 
-        <script> var cat = document.getElementById("cat").style; catwin = document.getElementById("catwindow").style; cattext = document.getElementById("cattext").style; catimg = document.getElementById("catimage").style//#ref5014  #ref2000
-            function catactive() {vunnyactive(); cat.zIndex = cal; catwin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"; cattext.color = curactivetitle; cat.marginLeft = "0px"} //#ref5027 + //#ref5028 / //#ref0033
-            function catclose() {inactiveall(); window2 = false; pyrotabs = pyrotabs - 1; pyrowindow(); cat.marginLeft = "-20000px"} //#ref5029
-            function catminimize() {inactiveall(); cat.marginLeft = "-20000px"; pyrocurrentopen()} //#ref5030 </script>
+        <script> var pyrocurrentactive = 2, pyrowindows = [true, true];
+            var cat = document.getElementById("cat").style; catwin = document.getElementById("catwindow").style; cattext = document.getElementById("cattext").style; catimg = document.getElementById("catimage").style
+            function catactive() {vunnyactive(); cat.zIndex = cal; catwin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"; cattext.color = curactivetitle; cat.marginLeft = "0px"}
+            function catclose() {inactiveall(); pyrowindows[1] = false; pyrotabs = pyrotabs - 1; pyrowindow(); cat.marginLeft = "-20000px"}
+            function catminimize() {inactiveall(); cat.marginLeft = "-20000px"; pyrocurrentopen()} </script>
 
-        <div class="win98post" style="position: fixed; width: 206px; margin-left:-20000px;" onmousedown="pyroactive();" id="pyro"> <!--#ref2001-->
+        <div class="win98post" style="position: fixed; width: 206px; margin-left:-20000px;" onmousedown="pyroactive();" id="pyro">
             <div class="win98titlebarc" onclick="pyroclose();"><div class="close"></div></div>
             <div class="win98titlebarh" onclick="pyrominimize();"> <div class="minimize"></div></div>
             <div class="win98titlebarh" onclick="twilightload()"> <div class="help"></div></div>
@@ -405,22 +409,24 @@
                 <center><div class="win98button" style="margin-top:3px;" onclick="pyroshuffle()"><butlabel id="pyrobutton">Definately.</butlabel></div></center>
         </div></div>
         
-        <script> var pyrotabs = 2, pyrocurrentactive = 2, window1 = true, window2 = true; //Amount of windows #ref0036, current active windows #ref0035, boolean valdation for window 1 and 2 #ref0034
-            function pyrowindow(){ if(pyrotabs == 0){ taskbar[2].marginLeft = "-20000px"; tasktrue[2] = false; taskon[2] = false; taskreset()}} //#ref0036; math check for the amount of windows for #ref2000 & #ref2001 to be OPEN, if none, closes taskbar.
-            function pyrocurrentopen(){ if(pyrocurrentactive == 0){ ButtonOpen[2] = false; taskreset()}} //#ref0035 math check for the amount of windows for #ref2000 & #ref2001 to be ACTIVE, if none, closes taskbar.
+        <script>
+            function pyrowindow(){ if(pyrowindows.length == 0){ taskbar[2].marginLeft = "-20000px"; tasktrue[2] = false; taskreset()}}
+            function pyrocurrentopen(){ if(pyrocurrentactive == 0){ ButtonOpen[2] = false; taskreset()}} 
             
-            var pyro = document.getElementById("pyro").style, pyrowin = document.getElementById("pyrowindow").style, pyroimg = document.getElementById("pyroimage").style, pyrotxt = document.getElementById("pyrotext").style //#ref5014 #ref2001
-            function pyroactive() {vunnyactive(); pyro.zIndex = cal; pyro.marginLeft = "0px"; pyrowin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"; pyrotext.style.color = curactivetitle;} //#ref5027 + //#ref5028 / //#ref0033
-            function pyroclose() {inactiveall(); window1 = false; pyrotabs = pyrotabs - 1; pyrowindow(); pyro.marginLeft = "-20000px"} //#ref5029
-            function pyrominimize() {inactiveall(); pyro.marginLeft = "-20000px"; pyrocurrentopen()} //#ref5030
+            var pyro = document.getElementById("pyro").style, pyrowin = document.getElementById("pyrowindow").style, 
+                pyroimg = document.getElementById("pyroimage").style, pyrotxt = document.getElementById("pyrotext").style
+            function pyroactive() {vunnyactive(); pyro.zIndex = cal; pyro.marginLeft = "0px"; pyrotext.style.color = curactivetitle
+                pyrowin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"}
+            function pyroclose() {inactiveall(); pyrowindows[0] = false; pyrotabs = pyrotabs - 1; pyrowindow(); pyro.marginLeft = "-20000px"}
+            function pyrominimize() {inactiveall(); pyro.marginLeft = "-20000px"; pyrocurrentopen()}
 
-            function vunnyactive(){calupdate(); curtaskact = 2; activatetask()} function vunnyopen(){vunnyactive(); pyroactive(); pyrotabs = 2; //#ref5027.1 + Enables max amount of Vunny windows. #ref0034
-                if (window1 == true){pyro.marginLeft = "0px"; pyro.zIndex = cal + 1} if (window2 == true){ cat.marginLeft = "0px"; pyro.zIndex = cal}} //Positions windows to the desktop.
+            function vunnyactive(){calupdate(); curtaskact = 2; activatetask()} function vunnyopen(){vunnyactive(); pyroactive(); pyrotabs = 2;
+                if (pyrowindows[0] == true){pyro.marginLeft = "0px"; pyro.zIndex = cal + 1} if (pyrowindows[1] == true){ cat.marginLeft = "0px"; pyro.zIndex = cal}}
             //Resets images on windows for the random image function for #ref2000 & #ref2001
-            function vunnywindowreset(){ window1 = true; window2 = true; tick = 3; //sets both #ref2000 & #ref2001 to being active on the screen, resets the random image generator.
-                if (tick == 3) { pyroimg.backgroundImage = github + "img/windows/ezgif-2-c475330a8091.gif')"; catimg.backgroundImage = github + "img/windows/Untitled-5.jpg')"}} //default image
-            function vunnypositionreset() {calupdate(); pyro.left = "12%"; pyro.top = "58%"; cat.left = "4%"; cat.top = "68%"} //#ref5031 for #ref2000 & #ref2001
-            function vunnyminimize(){inactiveall(); pyro.marginLeft = "-20000px"; cat.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 2} //#ref5030 for #ref2000 & #ref2001
+            function vunnywindowreset(){ pyrowindows = [true, true]; tick = 3; 
+                if (tick == 3) { pyroimg.backgroundImage = github + "img/windows/ezgif-2-c475330a8091.gif')"; catimg.backgroundImage = github + "img/windows/Untitled-5.jpg')"}}
+            function vunnypositionreset() {calupdate(); pyro.left = "12%"; pyro.top = "58%"; cat.left = "4%"; cat.top = "68%"}
+            function vunnyminimize(){inactiveall(); pyro.marginLeft = "-20000px"; cat.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 2} 
 
             var myPix = new Array(
                 github + "img/Funni/1.jpg')", github + "img/Funni/2.jpg')", github + "img/Funni/3.jpg')", github + "img/Funni/4.jpg')", github + "img/Funni/5.jpg')",
@@ -459,7 +465,7 @@
                 pyrobutton.textContent = "Definately"; pyrotxt.textContent = '💯 Wubba lubba dub dub!';}} </script>
         
 <!-- Embedded Media Player ------------------------------------------------------------------------------>
-        <div class="win98post" style="position: fixed; margin-left:-20000px; left: 300px; top: 200px;" onmousedown="embedactive()" id="embed"> <!--#ref2003-->
+        <div class="win98post" style="position: fixed; margin-left:-20000px; left: 300px; top: 200px;" onmousedown="embedactive()" id="embed">
             <div class="win98titlebarc" onclick="embedclose()"><div class="close"></div></div>
             <div class="win98titlebarh" onclick="fullscreenembed()" id="embedmaxtitle"> <div class="maximize" id="embedmaximize"></div></div>
             <div class="win98titlebarh" onclick="embedminimize()"> <div class="minimize"></div></div>
@@ -470,7 +476,7 @@
                 <div class="post-header" style="height: 27px; margin-top:-6px; padding:0px;">
                     <fieldset style="position:absolute; height: 21px; width:562px; margin-left:-7px; padding:2px;" id="playerfs">     
                         <!-- Left side of the top container -->
-                        <div class="small_seperator" style="margin-top:1px; height:17px;"></div> <!-- Left side of the Bottom container -->
+                        <div class="small_seperator" style="margin-top:1px; height:17px;"></div>
                         <div style="position:absolute; margin-left:11px; margin-top:5px;">A<udl>d</udl>dress</div>
                         <ul class="tree-view" style="position:absolute; width:406px; height: 17px; padding:2px; margin-left:55px" id="playertv">
                             <div class="menufavouriteslink" style="position:absolute; margin-top:-1px;"></div>
@@ -492,8 +498,8 @@
                                 <div class="submenu18" onclick="nextVideo()"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Skip to next video </label></div>
                                 <div class="submenu18" onclick="previousVideo()"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Skip to previous video </label></div>
                                 <div class="menuapplicationsplit" style="width:100%; margin-top:1px; margin-bottom:1px;"></div>
-                                <div class="submenu18" onclick="increaseskip(); videolinkdropdown()"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Increase jump speed by 5 </label></div> <!--increases #ref0048 by 5-->
-                                <div class="submenu18" onclick="decreaseskip(); videolinkdropdown()"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Decrease jump speed by 5 </label></div> <!--decreases #ref0048 by 5-->
+                                <div class="submenu18" onclick="increaseskip(); videolinkdropdown()"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Increase jump speed by 5 </label></div>
+                                <div class="submenu18" onclick="decreaseskip(); videolinkdropdown()"><label style="margin-left: 4px; margin-top: 3px; cursor:pointer"> Decrease jump speed by 5 </label></div>
                                 <div class="menuapplicationsplit" style="width:100%; margin-top:1px; margin-bottom:1px;"></div>
                         </div></div>
                         
@@ -506,19 +512,19 @@
                     <div id="player" style="height: 315px; width: 560px; background:var(--black)"></div></ul>
  
                 <div style="height:56px; width:100%;">
-                    <div class="wieldset" style="width:550px; height:4px; margin-top:12px; margin-left:-2px;" id="playerws"> <!--#ref0039-->
+                    <div class="wieldset" style="width:550px; height:4px; margin-top:12px; margin-left:-2px;" id="playerws">
                         <div style="position:absolute; margin-top:-2px; margin-left:-1px;"><div class="video_progressbar"><div id="progressBar"><div></div></div></div>
                     <div class="buttons" style="margin-top:3px; margin-bottom:2px">
-                        <div class="playbutton" onclick="startVideo()"></div> <!--#ref0051-->
-                        <div class="pausebutton" onclick="pauseVideo()"></div> <!--#ref0052-->
-                        <div class="stopbutton" onclick="stopVideo()"></div> <!--#ref0053-->
+                        <div class="playbutton" onclick="startVideo()"></div>
+                        <div class="pausebutton" onclick="pauseVideo()"></div>
+                        <div class="stopbutton" onclick="stopVideo()"></div>
                         <div class="big_seperator" style="height:18px; margin-top:4px"></div>
-                        <div class="previousbutton" onclick="previousVideo()" id="previousbuttonembed"></div> <!--#ref0045-->
-                        <div class="rewindbutton" onmousedown="rewindVideo()" onmouseup="end()"></div> <!--#ref0046-->
-                        <div class="fastforwardbutton" onmousedown="forwardVideo()" onmouseup="end()"></div> <!--#ref0047-->
-                        <div class="nextbutton" onclick="nextVideo()" id="nextbuttonembed"></div> <!--#ref0048-->
+                        <div class="previousbutton" onclick="previousVideo()" id="previousbuttonembed"></div>
+                        <div class="rewindbutton" onmousedown="rewindVideo()" onmouseup="end()"></div>
+                        <div class="fastforwardbutton" onmousedown="forwardVideo()" onmouseup="end()"></div>
+                        <div class="nextbutton" onclick="nextVideo()" id="nextbuttonembed"></div>
                         <div class="big_seperator" style="height:18px; margin-top:4px;"></div>
-                        <div class="shufflebutton" onclick="shuffleVideo()" style="filter: invert(var(--shuffleinvert));"></div> <!--#ref0044-->
+                        <div class="shufflebutton" onclick="shuffleVideo()" style="filter: invert(var(--shuffleinvert));"></div>
                         <div class="big_seperator" style="height:18px; margin-top:4px;"></div></div></div>
                     
                     <div style="float:right; margin-top:11px;">
@@ -526,8 +532,8 @@
                         <div class="volumedown" style="position: absolute; margin-left: 22px; margin-top:12px" onclick="videovolumedown()"></div>
                         <div class="volumeup" style="position: absolute; margin-left: 22px; margin-top:0px" onclick="videovolumeup()"></div></div>
 
-                    <ul class="tree-view" style="width:552px; height:12px; margin:-6px; margin-top:36px; background: var(--alwaysblack); color:var(--alwayswhite)" id="playertext"></ul> <!--#ref0049-->
-                    <div style="float:right; margin-top:-12px;" id="playerspeed"></div> <!--States current speed of #ref0048-->
+                    <ul class="tree-view" style="width:552px; height:12px; margin:-6px; margin-top:36px; background: var(--alwaysblack); color:var(--alwayswhite)" id="playertext"></ul>
+                    <div style="float:right; margin-top:-12px;" id="playerspeed"></div>
                 </div></div>
         </div></div>
                 
@@ -541,68 +547,60 @@
             function embedpositionreset() {calupdate(); embed.left = "300px"; embed.top = "200px"; embed.zIndex = cal; embedactive()}
             function embedminimize(){inactiveall(); notes.marginLeft = "-20000px";}
 
-            var mediaURLin; document.getElementById("mediaplayer").addEventListener("keyup", function(event) { //button listener while prompt text is active.
-                if (event.keyCode === 13) { event.preventDefault(); document.getElementById("mediain").click()}}); //listens for the enter key
-                
-            function mediainput(){ mediaURLin = document.getElementById("mediaplayer").value; inprompt = inprompt + "#read: " + mediaURLin; println(); //mediaplayer input + prompt print
-                mediaURLin = mediaURLin.replace("https://www.youtube.com/", "").replace("https://youtu.be/","").replace("playlist?list=","").replace("watch?v=","").replace(" ",""); //gets rid of pointless url junk
+            var mediaURLin; 
+            document.getElementById("mediaplayer").addEventListener("keyup", function(event) {if (event.keyCode === 13) { event.preventDefault(); document.getElementById("mediain").click()}}); 
+            function mediainput(){ mediaURLin = document.getElementById("mediaplayer").value; inprompt = inprompt + "#read: " + mediaURLin; println();
+                mediaURLin = mediaURLin.replace("https://www.youtube.com/", "").replace("https://youtu.be/","").replace("playlist?list=","").replace("watch?v=","").replace(" ","")
                 inprompt = inprompt + "^" + mediaURLin.length + ", id:" + mediaURLin; println(); videoclear(); playlistlaunch(); var index = 0, videoin = "";
-                if(mediaURLin.length < 20){ // checks if the value is short enough to be considered a regular video url
-                    if(mediaURLin.includes("&") == true){var temp = mediaURLin.split('&'), videoin = temp[0], timein = temp[1]; timein = timein.replace("t=","").replace("s","") //figures out if the timestamp uses & and gets the time.
-                    } else if(mediaURLin.includes("?") == true){var temp = mediaURLin.split('?'), videoin = temp[0], timein = temp[1]; timein = timein.replace("t=","").replace("s","") //figures out if the timestamp uses ? and gets the time.
+                if(mediaURLin.length < 20){
+                    if(mediaURLin.includes("&") == true){var temp = mediaURLin.split('&'), videoin = temp[0], timein = temp[1]; timein = timein.replace("t=","").replace("s","")
+                    } else if(mediaURLin.includes("?") == true){var temp = mediaURLin.split('?'), videoin = temp[0], timein = temp[1]; timein = timein.replace("t=","").replace("s","") 
                     } else { videoin = mediaURLin; timein = 0 }; 
-                    player.loadVideoById({'videoId':videoin,'startSeconds': timein}) //if the video is default url without a timestamp, just push the video.
-                    inprompt = inprompt + "Playing: $video = " + videoin; println();println(); //prints the current playing video
-                } else { var index = 0, temp = mediaURLin.split('&'); //else divide the url by &
-                    for(var i = 0; i < temp.length; i++){ temp[i] = temp[i].replace("list=", ""); //loops through to remove uneeded url junk
-                        if(mediaURLin.includes("t=") == true){timein = temp[i].replace("t=","").replace("s","")} //if includes a timestamp, remove it and store to timein
-                        if(temp[i].includes("index=") == true){temp[i] = temp[i].replace("index=",""); index = temp[i]; index = -(-index + 2)} //if includes index value, store to index.
-                        if(temp[i].length == 34){ loadPlaylist = temp[i] }; inprompt = inprompt + i + ":" + temp[i] + " "}; //loops through and checks if the string is a playlist ID and prints to console.
-                    player.loadPlaylist({'list':loadPlaylist, 'index': index, 'startSeconds': timein}); println(); //pushes the stored strings above.
-                    inprompt = inprompt + "Playing: $playlist:" + index + "&" + loadPlaylist; println(); println()}} //prints debug into the console
+                    player.loadVideoById({'videoId':videoin,'startSeconds': timein})
+                    inprompt = inprompt + "Playing: $video = " + videoin; println(); println()
+                } else { var index = 0, temp = mediaURLin.split('&');
+                    for(var i = 0; i < temp.length; i++){ temp[i] = temp[i].replace("list=", "")
+                        if(mediaURLin.includes("t=") == true){timein = temp[i].replace("t=","").replace("s","")}
+                        if(temp[i].includes("index=") == true){temp[i] = temp[i].replace("index=",""); index = temp[i]; index = -(-index + 2)}
+                        if(temp[i].length == 34){ loadPlaylist = temp[i] }; inprompt = inprompt + i + ":" + temp[i] + " "}
+                    player.loadPlaylist({'list':loadPlaylist, 'index': index, 'startSeconds': timein}); println()
+                    inprompt = inprompt + "Playing: $playlist:" + index + "&" + loadPlaylist; println(); println()}}
 
-            var videovol = 100; //sets default volume which is changed through //#ref0042
-            function videomute() { if(player.isMuted()){player.unMute()} else {player.mute()}} //this currently doesn't work, Idk why.
-            function videovolumedown() { if(videovol > 0){videovol = videovol - 20; player.setVolume(videovol)}} //volume limiter from 0, decreases volume of #ref0042
-            function videovolumeup() { if(videovol < 100){videovol = videovol + 20; player.setVolume(videovol)}} //volume limiter to 100, increases volume of #ref0042
-            //enforces media player to be cleaned on video startup #ref0037
-            function videoclear() {shuffle = true; shuffleVideo()} //#ref0043
-            //updates progression bar 10 times a second, but updates 100 times a second to remove animation jank-ness.
-                //#ref0048                //#ref0043                                     //#ref0045            //#ref0050            //#ref0054             //#ref0055
+            var videovol = 100; function videomute() {if(player.isMuted()){player.unMute()} else {player.mute()}}
+            function videovolumedown() {if(videovol > 0){videovol = videovol - 10; player.setVolume(videovol)}} 
+            function videovolumeup() { if(videovol < 100){videovol = videovol + 10; player.setVolume(videovol)}}
+
             var currentskiptime = 10; var shuffle = false; var fullscreenactive = false; var shuffletext = "", currentplaylist = "", currentlyplaying = "", loadPlaylist = "", player, mytimer;
             var tag = document.createElement('script'); tag.src = "https://www.youtube.com/iframe_api"; firstScriptTag = document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); //#ref5014
             var playerfs = document.getElementById("playerfs").style, playerws = document.getElementById("playerws").style, playertv = document.getElementById("playertv").style, playerul = document.getElementById("playerul").style;
 
-            function progress(percent, $element) { var progressBarWidth = percent * $element.width() / 100; //progressbar = (progress percentage * width of player / 100).
-                $element.find('div').animate({ width: progressBarWidth }, {duration: 10})} //pushes updates for //#ref0039
-            function onYouTubeIframeAPIReady() {$('#progressBar').show(); //when player is ready, load #ref0038
-                player = new YT.Player('player', { height: '315', width: '560', videoId: '', //generates widths of player and clears video ID
-                events: {'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange, 'onError': onPlayerError}, //assigns events to functions #ref0040, #ref0041
-                playerVars: {controls: 0, autoplay: 0, modestbranding:1, showinfo: 0, disablekb: 0}})} //player settings
-            function onPlayerReady(event) {urlupdate(); event.target.loadPlaylist({list: "", index: 0, suggestedQuality: "small"})} //#ref0040
-            
+            function progress(percent, $element) { var progressBarWidth = percent * $element.width() / 100; $element.find('div').animate({ width: progressBarWidth }, {duration: 10})}
+            function onYouTubeIframeAPIReady() {$('#progressBar').show(); 
+                player = new YT.Player('player', { height: '315', width: '560', videoId: '',
+                events: {'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange, 'onError': onPlayerError},
+                playerVars: {controls: 0, autoplay: 0, modestbranding:1, showinfo: 0, disablekb: 0}})}
+            function onPlayerReady(event) {urlupdate(); event.target.loadPlaylist({list: "", index: 0, suggestedQuality: "small"})}
+
+            function startVideo() {player.playVideo()} function pauseVideo() {player.pauseVideo()} function stopVideo() {player.stopVideo()}
+            function previousVideo() {if(currentplaylist !== ""){player.previousVideo(); playertext.textContent = "Playing previous video"}}
+            function nextVideo() {if(currentplaylist !== ""){player.nextVideo(); playertext.textContent = "Playing next video"}}
+
             function end() {clearInterval(counter)}
-            //basic player functionality.
-            function startVideo() {player.playVideo()} function pauseVideo() {player.pauseVideo()} function stopVideo() {player.stopVideo()} //#ref0051, #ref0052, #ref0053
-            function previousVideo() {if(currentplaylist !== ""){player.previousVideo(); playertext.textContent = "Playing previous video"}} //#ref0045: Plays the previous video IF there is a playlist.
-            function nextVideo() {if(currentplaylist !== ""){player.nextVideo(); playertext.textContent = "Playing next video"}} //#ref0048: Plays the next video IF there is a playlist.
-            //fast forward and rewind functionality
             function forwardVideo() { player.seekTo((player.getCurrentTime() + currentskiptime)); var skipamount = 1; playertext.textContent = "Skipped " + (skipamount * currentskiptime) + " seconds ahead";
-                counter = setInterval(function() {skipamount++; player.seekTo((player.getCurrentTime() + currentskiptime)); //#ref0047: skips time forward based on #ref0048
-                playertext.textContent = "Skipped " + (skipamount * currentskiptime) + " seconds ahead"; playstateupdateforward(); playerspeed.textContext = currentskiptime}, 200)} //States current time of #ref0048 with #ref0049
+                counter = setInterval(function() {skipamount++; player.seekTo((player.getCurrentTime() + currentskiptime))
+                playertext.textContent = "Skipped " + (skipamount * currentskiptime) + " seconds ahead"; playstateupdateforward(); playerspeed.textContext = currentskiptime}, 200)}
             function rewindVideo() { player.seekTo((player.getCurrentTime() - currentskiptime)); var skipamount = 1; playertext.textContent = "Rewinded " + (skipamount * currentskiptime) + " seconds";
-                counter = setInterval(function() {skipamount++; player.seekTo((player.getCurrentTime() - currentskiptime)); //#ref0046: skips time forward based on #ref0048
-                playertext.textContent = "Rewinded " + (skipamount * currentskiptime) + " seconds"; playstateupdatebackward(); playerspeed.textContext = currentskiptime}, 200)} //States current time of #ref0048 with #ref0049
+                counter = setInterval(function() {skipamount++; player.seekTo((player.getCurrentTime() - currentskiptime))
+                playertext.textContent = "Rewinded " + (skipamount * currentskiptime) + " seconds"; playstateupdatebackward(); playerspeed.textContext = currentskiptime}, 200)}
             function increaseskip() { if(currentskiptime < 120){currentskiptime = currentskiptime + 5;}} function decreaseskip() { if(currentskiptime > 5){currentskiptime = currentskiptime - 5;}}
-            //shuffle settings for #ref2003
-            function shuffleVideo(){ if(shuffle == true){player.setShuffle(false); shuffle = false; docelem.style.setProperty('--shuffleinvert', 0.5); shuffletext = ""} //shuffle mode disabled, adjusts #ref0044, and clears #ref0045
-                else if(shuffle == false){player.setShuffle(true); shuffle = true; docelem.style.setProperty('--shuffleinvert', shuffleflop); shuffletext = "Shuffle Enabled : "}} //shuffle mode enabled, adjusts #ref0044 and states mode with #ref0045
-            //prevents #ref0044 from being enabled without a playlist, and changes colour depending on status and theme.
-            var nextbutton = document.getElementById("nextbuttonembed").style, previousbutton = document.getElementById("previousbuttonembed").style
-            function shufflecolour(){ if(currentplaylist !== ""){ //check for playlist through #ref0050
-                if(preinvert == 1){nextbutton.filter="invert(1)"; previousbutton.filter="invert(1)" } else if(preinvert == 0) {dnextbutton.filter="invert(0%)"; previousbutton.filter="invert(0%)"}  //Icon adjustment for lightmode enabled for #ref0044.
-                } else {nextbutton.filter="invert(0.5)"; previousbutton.filter="invert(0.5)"}} //turns #ref0044 off if there's no playlist loaded.
             
+            function shuffleVideo(){ if(shuffle == true){player.setShuffle(false); shuffle = false; docelem.style.setProperty('--shuffleinvert', 0.5); shuffletext = ""} 
+                else if(shuffle == false){player.setShuffle(true); shuffle = true; docelem.style.setProperty('--shuffleinvert', shuffleflop); shuffletext = "Shuffle Enabled : "}}
+            var nextbutton = document.getElementById("nextbuttonembed").style, previousbutton = document.getElementById("previousbuttonembed").style
+            function shufflecolour(){ if(currentplaylist !== ""){ if(preinvert == 1){nextbutton.filter="invert(1)"; previousbutton.filter="invert(1)"} 
+                else if(preinvert == 0) {dnextbutton.filter="invert(0%)"; previousbutton.filter="invert(0%)"}} else {nextbutton.filter="invert(0.5)"; previousbutton.filter="invert(0.5)"}}
+                
+            function videoclear() {shuffle = true; shuffleVideo()}
             function playlistlaunch(){embedtask(); player.loadVideoById({'videoId':'','startSeconds': 0}); loadPlaylist = currentplaylist; loadPlaylist = loadPlaylist.replace("list=", ''); loadPlaylist = loadPlaylist.replace("&", '')} 
             function playerupdate() {currentlyplaying = player.getVideoUrl(); if(fullscreenactive == false){playerurlupdate()} urlupdate(); shufflecolour()}
             
@@ -611,8 +609,7 @@
                 if(currentplaylist !== ""){document.getElementById("playlistlink").href = "https://www.youtube.com/playlist?" + currentplaylist} else {document.getElementById("playlistlink").href = ""}
                 document.getElementById("videolink").href = currentlyplaying; document.getElementById("videoandplaylistlink").href = player.getVideoUrl()}
             function playerupdate() {currentlyplaying = player.getVideoUrl(); if(fullscreenactive == false){playerurlupdate()} urlupdate(); shufflecolour()}
-            
-            //fullscreen toggle
+
             var fullscreenactive = false; var embedmaximize = document.getElementById("embedmaximize").style, embedtitle = document.getElementById("embedmaxtitle");
             function fullscreenembed(){ if(fullscreenactive == false){ fullscreenactive = true; playerupdate();
                     document.getElementById("player").style.width = "1066px"; document.getElementById("player").style.height = "600px"; playertext.style.width = "1058px"; playerws.width = "1056px"; playerul.width = "1066px"; 
@@ -621,7 +618,6 @@
                     document.getElementById("player").style.width = "560px"; document.getElementById("player").style.height = "315px"; playertext.style.width = "552px"; playerws.width = "550px"; playerul.width = "560px"; 
                     playerfs.width = "562px"; playertv.width = "406px"; docelem.style.setProperty('--slider', "550px"); embedmaximize.backgroundPosition = "-98px -215px"; embedtitletitle = "Maximize"; playstateupdate()}}
             
-            //desktop icons
             function twilightload() {embedtask(); videoclear(); videolinkdropdownclose(); currentplaylist = ""; player.loadVideoById({'videoId':'6BJFnnWVNRU','startSeconds': 0}); playertext.textContent = "Asking Twilight Sparkle for help.";}
             function rct2load(){embedtask(); videoclear(); videolinkdropdownclose(); currentplaylist = ""; player.loadVideoById({'videoId':'W_4uRZFVKPE','startSeconds': 985}); playertext.textContent = "Playing 'Roller Coaster Tycoon 2: Merry-Go-Round Music'";}
             function startmenuembed(){embedtask(); videoclear(); videolinkdropdownclose(); currentplaylist = ""; player.loadVideoById({'videoId':'T6fqtJbVoFI','startSeconds': 0}); playertext.textContent = "Opening Windows Embedded Mediaplayer"; stopVideo()}
@@ -642,13 +638,13 @@
             
             //play state updating
             function playstateupdateforward() { var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime() + currentskiptime;
-                if(playerTotalTime > playerCurrentTime){ var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))} else {nextVideo()}} //if #ref0038 > 100, skip video.
+                if(playerTotalTime > playerCurrentTime){ var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))} else {nextVideo()}}
             function playstateupdatebackward() {var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime() - currentskiptime;
-                var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))} //enforces #ref0038 update
+                var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))}
             function playstateupdate(){ var playerTotalTime = player.getDuration(); var playerCurrentTime = player.getCurrentTime();
-                var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))} //enforces #ref0038 update
-            function playstate() {playertext.textContent = shuffletext + "Playing"} //enforces player state as playing.
-            //#ref0041: Updates the console at the bottom left with the current players state.
+                var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; progress(playerTimeDifference, $('#progressBar'))} 
+            function playstate() {playertext.textContent = shuffletext + "Playing"} 
+
             function changeplayerstate(playerStatus) {
                 if (playerStatus == -1) { setTimeout(function() {playertext.textContent = shuffletext + "Stopped"}, 200)
                 } else if (playerStatus == 0) { setTimeout(function() {playertext.textContent = shuffletext + "Ended"}, 200)
@@ -658,14 +654,13 @@
                 } else if (playerStatus == 5) { setTimeout(function() {playertext.textContent = shuffletext + "Queued"}, 200)}}
             function onPlayerError(event) {player.nextVideo(); playertext.textContent = "Youtube loading error on previous video, video has been skipped."}
 
-            function onPlayerStateChange(event) { changeplayerstate(event.data);
-                if (event.data == YT.PlayerState.PLAYING) { var playerTotalTime = player.getDuration();
+            function onPlayerStateChange(event) { changeplayerstate(event.data); if (event.data == YT.PlayerState.PLAYING) { var playerTotalTime = player.getDuration();
                     mytimer = setInterval(function() { var playerCurrentTime = player.getCurrentTime(); var playerTimeDifference = (playerCurrentTime / playerTotalTime) * 100; 
-                        if (playerCurrentTime < playerTotalTime){ progress(playerTimeDifference, $('#progressBar'))}}, 100)} else {clearTimeout(mytimer)}} //#ref0038
+                        if (playerCurrentTime < playerTotalTime){ progress(playerTimeDifference, $('#progressBar'))}}, 100)} else {clearTimeout(mytimer)}}
         </script>
 
 <!-- Latest updates message box ------------------------------------------------------------------------------>
-        <div class="win98post" style="height: 50px; width:306px; top: 62%; left: 1465px; margin-left: -20000px" onmousedown="messageactive();" id="message"> <!--#ref2004-->
+        <div class="win98post" style="height: 50px; width:306px; top: 62%; left: 1465px; margin-left: -20000px" onmousedown="messageactive();" id="message">
              <div class="win98titlebarc" title="Close" onclick="messageclose()"><div class="close"></div></div>
              <div class="win98titlebarh" title="Maximize" onclick="patchnotestask()"><div class="maximize"></div></div>
              <div class="win98titlebarh" title="Help" onclick="twilightload()"> <div class="help"></div></div>
@@ -676,7 +671,7 @@
 
         <!-- Patchnotes update  ------------------------------------------------------------------------------>
         
-        <div class="win98post" style="margin-left: -20000px" onmousedown="patchnotesactive();" id="note"> <!--#ref2005-->
+        <div class="win98post" style="margin-left: -20000px" onmousedown="patchnotesactive();" id="note">
             <div class="win98titlebarc" title="Close" onclick="patchnotesclose()"><div class="close"></div></div>
             <div class="win98titlebarh" title="Restore down" onclick="patchnotesclose(); messageopen()"><div class="restore"></div></div>
             <div class="win98titlebarh" title="Minimize" onclick="patchnotesminimize();"> <div class="minimize"></div></div>
@@ -686,7 +681,7 @@
             <div class="post-header" style="height: 24px; width: 467px; margin-top:-2px">
                 <fieldset style="position:absolute; height: 21px; width: 465px; margin-top:4px; margin-left:2px; padding:2px; display: inline;"> 
                 
-                    <div class="small_seperator" style="margin-top:1px; height:17px;"></div> <!-- Left side of the Bottom container -->
+                    <div class="small_seperator" style="margin-top:1px; height:17px;"></div>
                     <div class="container" style="margin-left:12px; margin-top:5px; width:400px;">A<udl>d</udl>dress</div>
                     
                     <ul class="tree-view" style="position:absolute; width:350px; height:9px; margin-left:55px; margin-top:-17px;">
@@ -711,12 +706,12 @@
         </div>
 
         <script>
-            var message = document.getElementById("message").style, messagewin = document.getElementById("messagewindow").style, messagetext = document.getElementById("messagetext").style; //#ref5014
+            var message = document.getElementById("message").style, messagewin = document.getElementById("messagewindow").style, messagetext = document.getElementById("messagetext").style;
             function messageactive() {calupdate(); message.zIndex = cal; messagewin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"; messagetext.color = curactivetitle}; function messageclose(){message.marginLeft = "-20000px"}
             function messageopen(){calupdate(); message.marginLeft = "0px"; message.left = "77%"; message.top = "62%"; message.zIndex = cal}
             
             var patchlogs = "https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/patch%20logs";
-            var notes = document.getElementById("note").style, notewin = document.getElementById("notewindow").style, notetext = document.getElementById("notetext").style; //#ref5014
+            var notes = document.getElementById("note").style, notewin = document.getElementById("notewindow").style, notetext = document.getElementById("notetext").style;
             function patchnotesactive() {calupdate(); notes.zIndex = cal; internetwin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"; notetext.color = curactivetitle; notes.marginLeft = "0px"; curtaskact = 5; activatetask()}
             function patchnotesclose() {inactiveall(); notes.marginLeft = "-20000px"; taskbar[5].marginLeft = "-20000px"; tasktrue[5] = false; taskon[5] = false; taskreset()}
             function patchnotesopen() {calupdate(); notes.zIndex = cal; notes.marginLeft = "0px"; notes.left = "67%"; notes.top = "4%"; patchnotesactive(); $.get(patchlogs, function(data) { $( "patchnotes" ).last().html( data ); }, 'text')}
@@ -786,7 +781,7 @@
                     <div class="win98buttona" style="margin-left:199px"><center><butlabel onclick="clockclose();">Okay</butlabel></div></div>
         </div></div>
         
-        <script> var docclock = document.getElementById("clock").style; docclockwin = document.getElementById("clockwindow").style; //#ref5014
+        <script> var docclock = document.getElementById("clock").style; docclockwin = document.getElementById("clockwindow").style;
             function clockactive() {calupdate(); docclock.zIndex = cal; docclockwin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")";}
             function clockclose() {inactiveall(); docclock.marginLeft = "-20000px"; docclock.right = "-100%"; monthdropdefa(); yeardropbackfa()}
             function clockopen() {inactiveall(); clockactive(); docclock.left = "75%"; docclock.top = "50%"; docclock.marginLeft = "0px"; clocku()}
@@ -802,7 +797,7 @@
             function yearadd() {yearmath = yearmath + 1; clocku(); yeardropback(); monthdropdefa()}; function yearsub() {yearmath = yearmath - 1; clocku(); yeardropback(); monthdropdefa()} </script>
 
 <!-- Internet Explorer rendering ------------------------------------------------------------------------------------->
-        <div class="win98post" style="margin-left: -20000px" onmousedown="internetactive();" id="internet"> <!--#ref2007-->
+        <div class="win98post" style="margin-left: -20000px" onmousedown="internetactive();" id="internet">
             <div class="win98titlebarc" title="Close" onclick="internetclose()"><div class="close"></div></div>
             <div class="win98titlebarh" title="Minimize"onclick="internetminimize()"> <div class="minimize"></div></div>
             <div class="win98titlebarh" title="Help" onclick="twilightload()"> <div class="help"></div></div>
@@ -853,7 +848,7 @@
             function internetminimize(){inactiveall(); internet.marginLeft = "-20000px"} </script>
 
 <!-- notepad rendering ------------------------------------------------------------------------------------->
-        <div class="win98post" style="margin-left:-20000px" onmousedown="notepadactive();" id="notepad"> <!--#ref2007-->
+        <div class="win98post" style="margin-left:-20000px" onmousedown="notepadactive();" id="notepad">
             <div class="win98titlebarc" title="Close" onclick="notepadclose()"><div class="close"></div></div>
             <div class="win98titlebarh" title="Minimize" onclick="notepadminimize()"> <div class="minimize"></div></div>
             <div class="win98titlebarh" title="Help" onclick="twilightload()"> <div class="help"></div></div>
@@ -869,13 +864,11 @@
                     <textarea name="textarea" style="height:230px; width:460px; min-width:350px; min-height:200px; max-height:400px; max-width:760px; overflow: scroll;" id="notepad"></textarea></ul>
         </div></div>
         
-        <script>
-            var notepad = document.getElementById("notepad").style, notepadwin = document.getElementById("notepadwindow").style, notepadtitle = document.getElementById("notepadtitle").style;//#ref5014
+        <script> var notepad = document.getElementById("notepad").style, notepadwin = document.getElementById("notepadwindow").style, notepadtitle = document.getElementById("notepadtitle").style;//#ref5014
             function notepadactive() {calupdate(); notepad.marginLeft = "0px"; notepad.zIndex = cal; notepadwin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"; notepadtitle.color = curactivetitle; curtaskact = 7; activatetask()} //#ref5028
             function notepadclose() {inactiveall(); notepad.marginLeft = "-20000px"; notepadtaskbar.marginLeft = "-20000px"; tasktrue[7] = false; task7on[7] = false; taskreset(); notepadrestart()}
             function notepadpositionreset() {calupdate(); notepad.left = "375px"; notepad.top = "217px"; notepad.zIndex = cal; notepadactive()}
-            function notepadminimize(){inactiveall(); notepad.marginLeft = "-20000px"}
-        </script>
+            function notepadminimize(){inactiveall(); notepad.marginLeft = "-20000px"}</script>
         
 <!-- command prompt rendering ------------------------------------------------------------------------------>
         <div class="win98post" style="margin-left: -20000px; min-width: 500px; max-width: 910px; max-height:860px;" onmousedown="promptactive();" id="prompt"> <!--#ref2007-->
@@ -892,19 +885,19 @@
         </div></ul></div></div>
         
         <script>
-            var prompt = document.getElementById("prompt").style, promptwin = document.getElementById("promptwindow").style, prompttitle = document.getElementById("prompttitle").style;//#ref5014
+            var prompt = document.getElementById("prompt").style, promptwin = document.getElementById("promptwindow").style, prompttitle = document.getElementById("prompttitle").style;
             function promptactive() {calupdate(); prompt.zIndex = cal; prompt.marginLeft = "0px"; promptwin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"; prompttitle.color = curactivetitle; curtaskact = 6; activatetask()}
             function promptclose() {inactiveall(); prompt.marginLeft = "-20000px"; taskbar[6].marginLeft = "-20000px"; tasktrue[6] = false; taskon[6] = false; taskreset(); promptrestart()}
             function promptpositionreset() {calupdate(); prompt.left = "300px"; prompt.top = "200px"; prompt.zIndex = cal; promptactive()}
             function promptminimize(){inactiveall(); prompt.marginLeft = "-20000px"; inactiveall()}
         
-            var datestring, config, loadedconfig, config, inprompt = "", loaded, consolein, imageElement, imageElementBack, upkeyin; //global varable storage.
+            var datestring, config, loadedconfig, config, inprompt = "", loaded, consolein, imageElement, imageElementBack, upkeyin;
             var consoleback = "#000", consoletext = "#fff", word1, word2, word3, word4, word5, upkeyin, currunning;
-            var consoleout = document.getElementById("currentact"), consolein = document.getElementById("prompttext").value, prompttitle = document.getElementById("prompttitle"); //current line in console and console out.
+            var consoleout = document.getElementById("currentact"), consolein = document.getElementById("prompttext").value, prompttitle = document.getElementById("prompttitle"); 
             
             function htmlupdate() { $.get(config, function(data) {inprompt = inprompt + data;}, 'text')}
-            document.getElementById("prompttext").addEventListener("keyup", function(event) { //button listener while prompt text is active.
-                if (event.keyCode === 13) { event.preventDefault(); document.getElementById("promptin").click(); }}); //listens for the enter key
+            document.getElementById("prompttext").addEventListener("keyup", function(event) {
+                if (event.keyCode === 13) { event.preventDefault(); document.getElementById("promptin").click()}}); 
             function consoleinput(){ consolein = document.getElementById("prompttext").value; consoleread(); document.getElementById("prompttext").value = ""; }
             
             function println() {inprompt = inprompt + "\n"; consoleout.innerHTML = inprompt}
@@ -1121,8 +1114,8 @@
                                 <div class="droptext" onclick="tileitem()">Tile</div>
                     </div></ul></div>
                            
-                    <script> var desktopdrop = false, desktopmode = document.getElementById("desktopmode").style, ofdesktopmode = document.getElementById("ofdesktop"); abody = document.getElementById("body").style; //#ref5022 through #ref0002
-                        function desktopdropdown(){if (desktopdrop == false) {desktopmode.marginLeft = "-2px"; ; desktopdrop = true } else if (desktopdrop == true){desktopmode.marginLeft = "-20000px";; desktopdrop = false}} //ref1023 & ref1024
+                    <script> var desktopdrop = false, desktopmode = document.getElementById("desktopmode").style, ofdesktopmode = document.getElementById("ofdesktop"); abody = document.getElementById("body").style;
+                        function desktopdropdown(){if (desktopdrop == false) {desktopmode.marginLeft = "-2px"; ; desktopdrop = true } else if (desktopdrop == true){desktopmode.marginLeft = "-20000px";; desktopdrop = false}}
                         function desktopexit(){desktopmode.marginLeft = "-20000px"; desktopdrop = false} //ref1025 of #ref0002
                         function tileitem(){ofdesktopmode.textContent = 'Tile'; abody.backgroundSize = "auto"; abody.objectFit = "none"; abody.backgroundRepeat = "repeat"; abody.backgroundAttachment = "scroll"} 
                         function fillitem(){ofdesktopmode.textContent = 'Fill'; abody.backgroundSize = "cover"; abody.objectFit = "auto"; abody.backgroundRepeat = "no-repeat"; abody.backgroundAttachment = "fixed"} </script>
@@ -1131,31 +1124,31 @@
                         <div style="position: absolute; margin-top:-3px; margin-left:-3px; width:247px; height:93px; overflow-y: scroll; overflow-x: hidden">
                             <div class="wallpapermenu" onclick="wallpaperoptionnone()"><div class="none" style="margin-top:-1px;"></div>
                                 <div class="filled" id="wallpaperoverlay1"><!--ref#0026-->
-                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> None </label></div></div> <!--#ref0004-->
+                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> None </label></div></div>
                             <div class="wallpapermenu" style="margin-top:18px" onclick="wallpaperoption1(); wallpapercust()"><div class="menuapplications10" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay2">
-                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Default </label></div></div> <!--#ref0005-->
+                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Default </label></div></div>
                             <div class="wallpapermenu" style="margin-top:36px;" onclick="wallpaperoption2(); wallpapercust()"><div class="menuapplications10" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay3">
-                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Octavia's Study </label></div></div> <!--#ref0006-->
+                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Octavia's Study </label></div></div>
                             <div class="wallpapermenu" style="margin-top:72px" onclick="wallpaperoption3(); wallpapercust()"> <div class="menuapplications10" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay4" title="submitted by Matt in the discord server">
-                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer" title="submitted by Matt in the discord server"> Star Trek (Submitted by Matt)</label></div></div> <!--#ref0007-->
+                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer" title="submitted by Matt in the discord server"> Star Trek (Submitted by Matt)</label></div></div>
                             <div class="wallpapermenu" style="margin-top:54px" onclick="wallpaperoption4(); wallpapercust()"><div class="menuapplications10" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay5">
-                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Neon Genesis Evangelion </label></div></div> <!--#ref0008-->
+                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Neon Genesis Evangelion </label></div></div>
                             <div class="wallpapermenu" style="margin-top:90px" onclick="wallpaperoption5(); wallpapercust()"><div class="menuapplications10" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay6" title="submitted by Xal in the discord server">
-                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Battlefield Girls (Submitted by Xal)</label></div></div> <!--#ref0009-->
+                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Battlefield Girls (Submitted by Xal)</label></div></div>
                             <div class="wallpapermenu" style="margin-top:108px" onclick="wallpaperoption6(); wallpapercust()"><div class="menuapplications10" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay7" title="submitted by Thea Vanherst">
-                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Vinyl Scratch (Submitted by Thea)</label></div></div> <!--#ref0010-->
+                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Vinyl Scratch (Submitted by Thea)</label></div></div>
                             <div class="wallpapermenu" style="margin-top:126px" onclick="wallpaperoption7(); wallpapercust()"><div class="menuapplications10" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay8" title="submitted by Millie in the discord server">
-                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Clouds at Midnight (Submitted by Millie) </label></div></div> <!--#ref0011-->
+                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Clouds at Midnight (Submitted by Millie) </label></div></div>
                             <div class="wallpapermenu" style="margin-top:146px" onclick="wallpaperoption8(); wallpapercust()"><div class="menuapplications10" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay9" title="submitted by Qhetha in the discord server">
-                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Desert Highway (Submitted by Qhetha)  </label></div></div> <!--#ref0012-->
+                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Desert Highway (Submitted by Qhetha)  </label></div></div>
                             <div class="wallpapermenu" style="margin-top:166px" onclick="wallpaperoption9(); wallpapercust()"><div class="menuapplications10" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay10" title="Created by Phil-Nye in the discord server">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Aesthetic (Created by Phil-Nye)</label></div></div>
@@ -1170,23 +1163,21 @@
                     </div></ul>
             </fieldset></div>
                         
-            <script>
-                var wpo = [document.getElementById("wallpaperoverlay1").style, document.getElementById("wallpaperoverlay2").style, document.getElementById("wallpaperoverlay3").style, //#ref5014
-                    document.getElementById("wallpaperoverlay4").style, document.getElementById("wallpaperoverlay5").style, document.getElementById("wallpaperoverlay6").style, //#ref5014
-                    document.getElementById("wallpaperoverlay7").style, document.getElementById("wallpaperoverlay8").style, document.getElementById("wallpaperoverlay9").style, //#ref5014
-                    document.getElementById("wallpaperoverlay10").style, document.getElementById("wallpaperoverlay11").style, document.getElementById("wallpaperoverlay12").style]; //#ref5014
-                var cwpp = "#c0c0c0", curwp = "", wpn = "", wps = ""; //#ref5014 //#ref5015, #ref5016
-                function wallpaperupdate(){abody.backgroundImage = curwp; dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp; CSGOsidebar1.backgroundImage = curwp; CSGOsidebar2.backgroundImage = curwp} //#ref5021 //#ref5020
-                function wpp(){ dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp; document.getElementById("apperancepreview").style.backgroundImage = curwp; iconpre.backgroundImage = curwp} //#ref5021 //#ref0020 //#ref0019 
-                //ref#0025 wallpaper changes based on ref#0026, changes on click to be previewed through #ref5021
-                function wwpno(){ wpo[wpn].backgroundColor = cwpp; curwp = github + wps; wpp(); wpcr()} function wpcr() { for(var i = 0; wpo.length > i; i++){wpo[i].backgroundColor = ""}}//#ref0019
-                function wallpaperoptionnone(){wpcr(); wpn = 0; wps =  "none"; wwpno()} function wallpaperoption1(){wpn = 1; wps = "img/wallpapers/wallpaper32.png')"; wwpno();} //#ref5019 for #ref0004 //#ref5019 for #ref0005
-                function wallpaperoption2(){wpn = 2; wps = "img/wallpapers/study.png')"; wwpno()} function wallpaperoption3(){wpn = 3; wps = "img/wallpapers/startrek.png')"; wwpno()} //#ref5019 for #ref0006 //#ref5019 for #ref0007
-                function wallpaperoption4(){wpn = 4; wps = "img/wallpapers/unknown.png')"; wwpno()} function wallpaperoption5(){wpn = 5; wps = "img/wallpapers/anime.png')"; wwpno()} //#ref5019 for #ref0008 //#ref5019 for #ref0009
-                function wallpaperoption6(){wpn = 6; wps = "img/wallpapers/vinyl.png')"; wwpno()} function wallpaperoption7(){wpn = 7; wps = "img/wallpapers/lynn.png')"; wwpno()} //#ref5019 for #ref0010 //#ref5019 for #ref0011
-                function wallpaperoption8(){wpn = 8; wps = "img/wallpapers/Untitled-3.jpg')"; wwpno()} function wallpaperoption9(){wpn = 9; wps = "img/wallpapers/Untitled-4.jpg')"; wwpno()} //#ref5019 for #ref0012 //#ref5019 for #ref0013
-                function wallpaperoption10(){wpn = 10; wps = "img/wallpapers/macro.png')"; wwpno()} function wallpaperoption11(){wpn = 11; wps = "img/wallpapers/ResidentEvil.png')"; wwpno()} //#ref5019 for #ref0012 //#ref5019 for #ref0013
-            </script>
+            <script>var wpo = [document.getElementById("wallpaperoverlay1").style, document.getElementById("wallpaperoverlay2").style, document.getElementById("wallpaperoverlay3").style,
+                    document.getElementById("wallpaperoverlay4").style, document.getElementById("wallpaperoverlay5").style, document.getElementById("wallpaperoverlay6").style,
+                    document.getElementById("wallpaperoverlay7").style, document.getElementById("wallpaperoverlay8").style, document.getElementById("wallpaperoverlay9").style,
+                    document.getElementById("wallpaperoverlay10").style, document.getElementById("wallpaperoverlay11").style, document.getElementById("wallpaperoverlay12").style],
+                    cwpp = "#c0c0c0", curwp = "", wpn = "", wps = "";
+                function wallpaperupdate(){abody.backgroundImage = curwp; dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp; CSGOsidebar1.backgroundImage = curwp; CSGOsidebar2.backgroundImage = curwp} 
+                function wpp(){ dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp; document.getElementById("apperancepreview").style.backgroundImage = curwp; iconpre.backgroundImage = curwp}
+
+                function wwpno(){ wpo[wpn].backgroundColor = cwpp; curwp = github + wps; wpp(); wpcr()} function wpcr() { for(var i = 0; wpo.length > i; i++){wpo[i].backgroundColor = ""}}
+                function wallpaperoptionnone(){wpcr(); wpn = 0; wps =  "none"; wwpno()} function wallpaperoption1(){wpn = 1; wps = "img/wallpapers/wallpaper32.png')"; wwpno()}
+                function wallpaperoption2(){wpn = 2; wps = "img/wallpapers/study.png')"; wwpno()} function wallpaperoption3(){wpn = 3; wps = "img/wallpapers/startrek.png')"; wwpno()}
+                function wallpaperoption4(){wpn = 4; wps = "img/wallpapers/unknown.png')"; wwpno()} function wallpaperoption5(){wpn = 5; wps = "img/wallpapers/anime.png')"; wwpno()}
+                function wallpaperoption6(){wpn = 6; wps = "img/wallpapers/vinyl.png')"; wwpno()} function wallpaperoption7(){wpn = 7; wps = "img/wallpapers/lynn.png')"; wwpno()}
+                function wallpaperoption8(){wpn = 8; wps = "img/wallpapers/Untitled-3.jpg')"; wwpno()} function wallpaperoption9(){wpn = 9; wps = "img/wallpapers/Untitled-4.jpg')"; wwpno()}
+                function wallpaperoption10(){wpn = 10; wps = "img/wallpapers/macro.png')"; wwpno()} function wallpaperoption11(){wpn = 11; wps = "img/wallpapers/ResidentEvil.png')"; wwpno()}</script>
             
             <!-- --------------------------------------- screensaver tab --------------------------------------- -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="screensaver">
@@ -1200,9 +1191,9 @@
                                 <div class="dropbutton-pres" style="margin-left:154px"><div class="scrolldown"></div></div>
                                 <div class="droptext" onclick="none()" id="none">(none)</div></div></ul> <!--#ref0019-->
                         
-                        <script> var ssdrop = false, thescreen = document.getElementById("thescreensaver").style; //#ref5022 through #ref0018
-                            function ssdropdown(){if (ssdrop == false) {thescreen.marginLeft = "-2px"; ssdrop = true } else if (ssdrop == true){thescreen.marginLeft = "-20000px"; ssdrop = false }} //#ref5023 //#ref5024
-                            function ssdropdownclose(){thescreen.marginLeft = "-20000px"; ssdrop = false} //#ref5025
+                        <script> var ssdrop = false, thescreen = document.getElementById("thescreensaver").style;
+                            function ssdropdown(){if (ssdrop == false) {thescreen.marginLeft = "-2px"; ssdrop = true } else if (ssdrop == true){thescreen.marginLeft = "-20000px"; ssdrop = false}}
+                            function ssdropdownclose(){thescreen.marginLeft = "-20000px"; ssdrop = false}
                             function none(){document.getElementById("currentscreensaver").textContent="(none)"} </script>
 
                         <div class="win98buttondisa" style="margin-left:182px; width:67px; margin-top:2px;"><center><butdislabel>Save As...</butdislabel></center></div>
@@ -1255,116 +1246,113 @@
                                
                 <div style="margin-left:12px; margin-top: 10px;"> <label>Scheme</label><br> <!-- line 1 -->
                     <ul class="tree-view"  style="position: absolute; width:186px; height: 17px; padding:2px" onclick="schemedropdown()" onmouseleave="schemeexit()">
-                        <div style="padding: 3px 3px 2px 2px" id="currentscheme">Windows 98</div><div class="dropbutton"><div class="scrolldown"></div></div><!--#ref0023-->
-                        <div class="dropmenu" style="width: 185px; margin-left: -20000px;" id="scheme"><!--dropdown menu for schemes, #ref0000-->
+                        <div style="padding: 3px 3px 2px 2px" id="currentscheme">Windows 98</div><div class="dropbutton"><div class="scrolldown"></div></div>
+                        <div class="dropmenu" style="width: 185px; margin-left: -20000px;" id="scheme">
                             <div class="dropbutton-pres" style="margin-left:171px"><div class="scrolldown"></div></div>
-                            <div class="droptext" onclick="windows98()"           id="windows98scheme"    >Windows 98                </div> <!--#ref0024-->
-                            <div class="droptext" onclick="evangelionmode()"      id="evangelionscheme"   >Neon Genesis Evangelion   </div> <!--#ref0025-->
-                            <div class="droptext" onclick="Octavia()"             id="Octavia"            >Octavia's Study           </div> <!--#ref0026-->
-                            <div class="droptext" onclick="girlsdayout()"         id="girlsdayout"        >A Girls Day Out           </div> <!--#ref0027-->
-                            <div class="droptext" onclick="milyvean()"            id="milyvean"           >Clouds at Midnight        </div> <!--#ref0028-->
-                            <div class="droptext" onclick="vapourwave()"          id="aesthetic"          >Aesthetic                 </div> <!--#ref0029-->
-                            <div class="droptext" onclick="contrastmodescheme1()" id="contrastmodescheme1">High Contrast Mode 1      </div> <!--#ref0030-->
-                            <div class="droptext" onclick="contrastmodescheme2()" id="contrastmodescheme2">High Contrast Mode 2      </div> <!--#ref0031--> </div></ul>
+                            <div class="droptext" onclick="windows98()"           id="windows98scheme"    >Windows 98               </div>
+                            <div class="droptext" onclick="evangelionmode()"      id="evangelionscheme"   >Neon Genesis Evangelion  </div>
+                            <div class="droptext" onclick="Octavia()"             id="Octavia"            >Octavia's Study          </div>
+                            <div class="droptext" onclick="girlsdayout()"         id="girlsdayout"        >A Girls Day Out          </div>
+                            <div class="droptext" onclick="milyvean()"            id="milyvean"           >Clouds at Midnight       </div>
+                            <div class="droptext" onclick="vapourwave()"          id="aesthetic"          >Aesthetic                </div>
+                            <div class="droptext" onclick="contrastmodescheme1()" id="contrastmodescheme1">High Contrast Mode 1     </div>
+                            <div class="droptext" onclick="contrastmodescheme2()" id="contrastmodescheme2">High Contrast Mode 2     </div></div></ul>
                             
                     <script>
-                        var ccwhite, cclightg, ccsilver, ccmidgray, ccgray, ccblack, ccblue, ccprussian, ccwincyan, ccyellow, ccfont, cchover, ccatext, prewhite, //#ref5026 //#ref5003
-                            cpwhite, cplightg, cpsilver, cpmidgray, cpgray, cpblack, cpblue, cpprussian, cpwincyan, cpyellow, cpfont, cphover, cpatext, preblack, //#ref5026 //#ref5003
-                            prewallpaper, prespritesheet, curspritesheet, preactivetitle, curactivetitle, preinvert, curinvert, discheckinv, enacheckinv, invcheckinv, //#ref5026 //#ref5003//#ref5022
+                        var ccwhite, cclightg, ccsilver, ccmidgray, ccgray, ccblack, ccblue, ccprussian, ccwincyan, ccyellow, ccfont, cchover, ccatext, prewhite,
+                            cpwhite, cplightg, cpsilver, cpmidgray, cpgray, cpblack, cpblue, cpprussian, cpwincyan, cpyellow, cpfont, cphover, cpatext, preblack,
+                            prewallpaper, prespritesheet, curspritesheet, preactivetitle, curactivetitle, preinvert, curinvert, discheckinv, enacheckinv, invcheckinv, 
                             curtbgradactive1, curtbgradactive2, pretbgradactive1, pretbgradactive2, curtbgradinactive1, curtbgradinactive2, pretbgradinactive1, pretbgradinactive2;
                             
-                            schemedrop = false, ctoggle = false, themecurrent = "lightmode", //#ref5026 //#ref5003//#ref5022
+                            schemedrop = false, ctoggle = false, themecurrent = "lightmode", 
                             deskico = [document.getElementById("desktopico1").style, document.getElementById("desktopico2").style, document.getElementById("desktopico3").style, document.getElementById("desktopico4").style, 
                             document.getElementById("desktopico5").style, document.getElementById("desktopico6").style, document.getElementById("desktopico7").style, document.getElementById("desktopico8").style];
         
                         var currentsch = document.getElementById("currentscheme"), scheme = document.getElementById("scheme").style; function schemeexit(){scheme.marginLeft = "-20000px"; schemedrop = false}
-                        function schemedropdown(){ if (schemedrop == false) {scheme.marginLeft = "-2px"; schemedrop = true} else if (schemedrop == true){scheme.marginLeft = "-20000px"; schemedrop = false}} //#ref5023 //#ref5024
+                        function schemedropdown(){ if (schemedrop == false) {scheme.marginLeft = "-2px"; schemedrop = true} else if (schemedrop == true){scheme.marginLeft = "-20000px"; schemedrop = false}}
 
-                        function windows98(){           currentsch.textContent="Windows 98";              copi = 12; cpick(); wallpaperoption1(); lightmode(); themepreviewchange()} //#ref0024 wallpaper #ref0005
-                        function evangelionmode(){      currentsch.textContent="Neon Genesis Evangelion"; copi = 18; cpick(); wallpaperoption4(); darkmode(); themepreviewchange()} //#ref0025 wallpaper #ref0008
-                        function Octavia(){             currentsch.textContent="Octavia's Study";         copi = 17; cpick(); wallpaperoption2(); darkmode(); themepreviewchange()} //#ref0026 wallpaper #ref0006
-                        function girlsdayout(){         currentsch.textContent="A Girls Day Out";         copi = 19; cpick(); wallpaperoption5(); tankmode(); themepreviewchange()} //#ref0027 wallpaper #ref0009
-                        function milyvean(){            currentsch.textContent="Clouds at Midnight";      copi = 18; cpick(); wallpaperoption7(); lightmode(); themepreviewchange()} //#ref0028 wallpaper #ref0011
-                        function vapourwave(){          currentsch.textContent="Aesthetic";               copi = 20; cpick(); wallpaperoption8(); neonmode(); themepreviewchange()} //#ref0029 wallpaper #ref0012
-                        function contrastmodescheme1(){ currentsch.textContent="High Contrast Mode 1";    highcontrast1(); wallpaperoptionnone(); contrastmode1();  themepreviewchange()} //#ref0030 wallpaper #ref0021
-                        function contrastmodescheme2(){ currentsch.textContent="High Contrast Mode 2";    highcontrast2(); wallpaperoptionnone(); tcontrastmode2(); themepreviewchange()} //#ref0031 wallpaper #ref0022
-                        function wallpapercust() {      currentsch.textContent="(Custom)"} //changes text on current active theme to "custom" #ref0023
+                        function windows98(){           currentsch.textContent="Windows 98";              copi = 12; cpick(); wallpaperoption1(); lightmode(); themepreviewchange()} 
+                        function evangelionmode(){      currentsch.textContent="Neon Genesis Evangelion"; copi = 18; cpick(); wallpaperoption4(); darkmode(); themepreviewchange()}
+                        function Octavia(){             currentsch.textContent="Octavia's Study";         copi = 17; cpick(); wallpaperoption2(); darkmode(); themepreviewchange()}
+                        function girlsdayout(){         currentsch.textContent="A Girls Day Out";         copi = 19; cpick(); wallpaperoption5(); tankmode(); themepreviewchange()}
+                        function milyvean(){            currentsch.textContent="Clouds at Midnight";      copi = 18; cpick(); wallpaperoption7(); lightmode(); themepreviewchange()}
+                        function vapourwave(){          currentsch.textContent="Aesthetic";               copi = 20; cpick(); wallpaperoption8(); neonmode(); themepreviewchange()}
+                        function contrastmodescheme1(){ currentsch.textContent="High Contrast Mode 1";    highcontrast1(); wallpaperoptionnone(); contrastmode1();  themepreviewchange()}
+                        function contrastmodescheme2(){ currentsch.textContent="High Contrast Mode 2";    highcontrast2(); wallpaperoptionnone(); tcontrastmode2(); themepreviewchange()}
+                        function wallpapercust() {      currentsch.textContent="(Custom)"}
 
-                        function darkmode(){pretaskbartxt = "#9f9f9f"; pretaskbartxtprs = "#fff"; preactivetitle = "#fff"; preinactivetitle = "#fff"; //#ref5001 //changes preview theme to darkmode
-                            pretbgradinactive1 = "#323232"; pretbgradinactive2 = "#151515"; pretbgradactive1 = "#202020"; pretbgradactive2 = "#676767"; //#ref5002
-                            cpwhite = "#545454"; cplightg = "#9f9f9f"; cpsilver = "#3f3f3f"; cpmidgray = "#ababab"; cpgray = "#292929"; cpblack = "#000"; cpblue = "#fccc39"; //#ref5003
-                            cpprussian = "#00207c"; cpwincyan = "#008080"; cpyellow = "#c0c0c0"; cpfont = "#c0c0c0"; cchover = "#fff"; cpatext = "#fff"; preinvert = 1; shuffleflop = 1; 
-                            discheckinv = 0.4; enacheckinv = 0.8; invcheckinv = 0.65; prespritesheet = github + "img/spritesheet.png')"; cwpp = "#292929"} //#ref5000//#ref5005
+                        function darkmode(){pretaskbartxt = "#9f9f9f"; pretaskbartxtprs = "#fff"; preactivetitle = "#fff"; preinactivetitle = "#fff";
+                            pretbgradinactive1 = "#323232"; pretbgradinactive2 = "#151515"; pretbgradactive1 = "#202020"; pretbgradactive2 = "#676767";
+                            cpwhite = "#545454"; cplightg = "#9f9f9f"; cpsilver = "#3f3f3f"; cpmidgray = "#ababab"; cpgray = "#292929"; cpblack = "#000"; cpblue = "#fccc39";
+                            cpprussian = "#da3624"; cpwincyan = "#008080"; cpyellow = "#c0c0c0"; cpfont = "#c0c0c0"; cchover = "#fff"; cpatext = "#fff"; preinvert = 1; shuffleflop = 1; 
+                            discheckinv = 0.4; enacheckinv = 0.8; invcheckinv = 0.65; prespritesheet = github + "img/spritesheet.png')"; cwpp = "#292929"}
                             
-                        function tankmode(){pretaskbartxt = "#000"; pretaskbartxtprs = "#000"; preactivetitle = "#fff"; preinactivetitle = "#607060"; //#ref5001 //changes preview theme to a ww1 inspired theme with army greens.
-                            pretbgradinactive1 = "#483038"; pretbgradinactive2 = "#483038"; pretbgradactive1 = "#404840"; pretbgradactive2 = "#404840"; //#ref5002
-                            cpwhite = "#7d8f7d"; cplightg = "#607060"; cpsilver = "#607060"; cpmidgray = "#404840"; cpgray = "#404840"; cpblack = "#0a0a0a"; cpblue = "#fff"; //#ref5003
+                        function tankmode(){pretaskbartxt = "#000"; pretaskbartxtprs = "#000"; preactivetitle = "#fff"; preinactivetitle = "#607060";
+                            pretbgradinactive1 = "#483038"; pretbgradinactive2 = "#483038"; pretbgradactive1 = "#404840"; pretbgradactive2 = "#404840";
+                            cpwhite = "#7d8f7d"; cplightg = "#607060"; cpsilver = "#607060"; cpmidgray = "#404840"; cpgray = "#404840"; cpblack = "#0a0a0a"; cpblue = "#fff";
                             cpprussian = "#481212"; cpwincyan = "#008080"; cpyellow = "#ffff00"; cpfont = "#000"; cchover = "#fff"; cpatext = "#000"; preinvert = 0; shuffleflop = 0; 
-                            discheckinv = 0.4; enacheckinv = 0.8; invcheckinv = 0.65; prespritesheet = github + "img/spritesheet.png')"; cwpp = "#607060"} //#ref5000//#ref5005
+                            discheckinv = 0.4; enacheckinv = 0.8; invcheckinv = 0.65; prespritesheet = github + "img/spritesheet.png')"; cwpp = "#607060"}
                         
-                        function lightmode(){pretaskbartxt = "#000"; pretaskbartxtprs = "#000"; preactivetitle = "#fff"; preinactivetitle = "#fff"; //#ref5001 //changes preview theme to default windows 98.
-                            pretbgradinactive1 = "#878787"; pretbgradinactive2 = "#a2a2a2"; pretbgradactive1 = "#00087f"; pretbgradactive2 = "#0884ce"; //#ref5002
-                            cpwhite = "#fff"; cplightg = "#dfdfdf"; cpsilver = "#c0c0c0"; cpmidgray = "#ababab"; cpgray = "#808080"; cpblack = "#0a0a0a"; cpblue = "#0000FF"; //#ref5003
+                        function lightmode(){pretaskbartxt = "#000"; pretaskbartxtprs = "#000"; preactivetitle = "#fff"; preinactivetitle = "#fff";
+                            pretbgradinactive1 = "#878787"; pretbgradinactive2 = "#a2a2a2"; pretbgradactive1 = "#00087f"; pretbgradactive2 = "#0884ce";
+                            cpwhite = "#fff"; cplightg = "#dfdfdf"; cpsilver = "#c0c0c0"; cpmidgray = "#ababab"; cpgray = "#808080"; cpblack = "#0a0a0a"; cpblue = "#0000FF";
                             cpprussian = "#00207c"; cpwincyan = "#008080"; cpyellow = "#ffff00"; cpfont = "#000"; cphover = "#fff"; cpatext = "#000"; preinvert = 0; shuffleflop = 0; 
-                            discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; prespritesheet = github + "img/spritesheet.png')"; cwpp = "#c0c0c0"} //#ref5000//#ref5005
+                            discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; prespritesheet = github + "img/spritesheet.png')"; cwpp = "#c0c0c0"}
                             
-                        function neonmode(){pretaskbartxt = "#000"; pretaskbartxtprs = "#000"; preactivetitle = "#fff"; preinactivetitle = "#00554d"; //#ref5001 //Vapourwave theme, using pastel pink and pastel blue.
-                            pretbgradinactive1 = "#00bfbc"; pretbgradinactive2 = "#ec91a2"; pretbgradactive1 = "#01bfbc"; pretbgradactive2 = "#ca9cb9"; //#ref5002
-                            cpwhite = "#f7dbd7"; cplightg = "#fae0e4"; cpsilver = "#f4c1ca"; cpmidgray = "#e08998"; cpgray = "#de4560"; cpblack = "#0a0a0a"; cpblue = "#00bfbc"; //#ref5003
+                        function neonmode(){pretaskbartxt = "#000"; pretaskbartxtprs = "#000"; preactivetitle = "#fff"; preinactivetitle = "#00554d";
+                            pretbgradinactive1 = "#00bfbc"; pretbgradinactive2 = "#ec91a2"; pretbgradactive1 = "#01bfbc"; pretbgradactive2 = "#ca9cb9";
+                            cpwhite = "#f7dbd7"; cplightg = "#fae0e4"; cpsilver = "#f4c1ca"; cpmidgray = "#e08998"; cpgray = "#de4560"; cpblack = "#0a0a0a"; cpblue = "#00bfbc";
                             cpprussian = "#a2dbd2"; cpwincyan = "#008080"; cpyellow = "#ffff00"; cpfont = "#000"; cphover = "#fff"; cpatext = "#000"; preinvert = 0; shuffleflop = 0; 
-                            discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; prespritesheet = github + "img/spritesheet.png')"; cwpp = "#a2dbd2"} //#ref5000//#ref5005
+                            discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; prespritesheet = github + "img/spritesheet.png')"; cwpp = "#a2dbd2"}
                         
-                        function contrastmode1(){pretaskbartxt = "#fff"; pretaskbartxtprs = "#0000ff"; preactivetitle = "#fff"; preinactivetitle = "#000"; //#ref5001  //high contrast theme (cyan and blue)
-                            pretbgradinactive1 = "#00ffff"; pretbgradinactive2 = "#00ffff"; pretbgradactive1 = "#0000ff"; pretbgradactive2 = "#0000ff"; //#ref5002
-                            cpwhite = "#000"; cplightg = "#dfdfdf"; cpsilver = "#000"; cpmidgray = "#ababab"; cpgray = "#808080"; cpblack = "#fff"; cpblue = "#00ffff"; //#ref5003
+                        function contrastmode1(){pretaskbartxt = "#fff"; pretaskbartxtprs = "#0000ff"; preactivetitle = "#fff"; preinactivetitle = "#000";
+                            pretbgradinactive1 = "#00ffff"; pretbgradinactive2 = "#00ffff"; pretbgradactive1 = "#0000ff"; pretbgradactive2 = "#0000ff";
+                            cpwhite = "#000"; cplightg = "#dfdfdf"; cpsilver = "#000"; cpmidgray = "#ababab"; cpgray = "#808080"; cpblack = "#fff"; cpblue = "#00ffff";
                             cpprussian = "#0000ff"; cpwincyan = "#008080"; cpyellow = "#ffff00"; cpfont = "#ffff00"; cphover = "#fff"; cpatext = "#fff"; preinvert = 1; shuffleflop = 1; 
-                            discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; prespritesheet = github + "img/spritesheet.png')"; cwpp = "#0000ff"} //#ref5000//#ref5005
+                            discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; prespritesheet = github + "img/spritesheet.png')"; cwpp = "#0000ff"}
                             
-                        function contrastmode2(){pretaskbartxt = "#fff"; pretaskbartxtprs = "#0000ff"; preactivetitle = "#000"; preinactivetitle = "#000"; //#ref5001 //high contrast theme (green and yellow)
-                            pretbgradinactive1 = "#ffff00"; pretbgradinactive2 = "#ffff00"; pretbgradactive1 = "#00ff00"; pretbgradactive2 = "#00ff00"; //#ref5002
-                            cpwhite = "#000"; cplightg = "#dfdfdf"; cpsilver = "#000"; cpmidgray = "#ababab"; cpgray = "#808080"; cpblack = "#fff"; cpblue = "#00ff00"; //#ref5003
+                        function contrastmode2(){pretaskbartxt = "#fff"; pretaskbartxtprs = "#0000ff"; preactivetitle = "#000"; preinactivetitle = "#000";
+                            pretbgradinactive1 = "#ffff00"; pretbgradinactive2 = "#ffff00"; pretbgradactive1 = "#00ff00"; pretbgradactive2 = "#00ff00";
+                            cpwhite = "#000"; cplightg = "#dfdfdf"; cpsilver = "#000"; cpmidgray = "#ababab"; cpgray = "#808080"; cpblack = "#fff"; cpblue = "#00ff00";
                             cpprussian = "#00ff00"; cpwincyan = "#008080"; cpyellow = "#ffff00"; cpfont = "#ffff00"; cphover = "#fff"; cpatext = "#00ff00"; preinvert = 1; shuffleflop = 1; 
-                            discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; prespritesheet = github + "img/spritesheet.png')"; cwpp = "#00ff00"} //#ref5000//#ref5005
+                            discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; prespritesheet = github + "img/spritesheet.png')"; cwpp = "#00ff00"}
 
-                        function highcontrast1() {currentcolour = "#00ffff"; fontcolour = "#000"; backcolourpreview(); ctoggle = true; contrastscheme()} //changes the current colours to cyan and font colour to white. //#ref0021
-                        function highcontrast2() {currentcolour = "#00ff00"; fontcolour = "#000"; backcolourpreview(); ctoggle = true; contrastscheme()} //changes the current colours to green and font colour to white. //#ref0022
-                        function contrastscheme(){ctoggle = true; cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; iconpre.backgroundColor = "#000";  ap.style.backgroundColor = "#000"} //changes backgrounds to black.
+                        function highcontrast1() {currentcolour = "#00ffff"; fontcolour = "#000"; backcolourpreview(); ctoggle = true; contrastscheme()}
+                        function highcontrast2() {currentcolour = "#00ff00"; fontcolour = "#000"; backcolourpreview(); ctoggle = true; contrastscheme()}
+                        function contrastscheme(){ctoggle = true; cpc.style.backgroundColor = "#000"; cpo.style.backgroundColor = "#000"; iconpre.backgroundColor = "#000"; ap.style.backgroundColor = "#000"}
 
-                        function themepreviewchange() {//changes the current preview colours based on variables set earlier
-                            docelem.style.setProperty('--prewhite', cpwhite); docelem.style.setProperty('--pregray', cpgray); docelem.style.setProperty('--prelightg', cplightg); docelem.style.setProperty('--preblack', cpblack); 
-                            docelem.style.setProperty('--presilver', cpsilver); docelem.style.setProperty('--preprussian', cpprussian); docelem.style.setProperty('--premidgray', cpmidgray);
-                            docelem.style.setProperty('--prefont', cpfont); docelem.style.setProperty('--prehover', cphover); docelem.style.setProperty('--preblue', cpblue); docelem.style.setProperty('--preyellow', cpyellow); 
-                            docelem.style.setProperty('--preactivetitle', preactivetitle); docelem.style.setProperty('--preinactivetitle', preinactivetitle); docelem.style.setProperty('--preinvert', preinvert);
-                            document.getElementById("previewwin1").style.background = "linear-gradient(90deg, " + pretbgradinactive1 + "," + pretbgradinactive2 + ")"; 
-                            document.getElementById("previewwin2").style.background = "linear-gradient(90deg, " + pretbgradactive1 + "," + pretbgradactive2 + ")"; 
-                            document.getElementById("previewwin3").style.background = "linear-gradient(90deg, " + pretbgradactive1 + "," + pretbgradactive2 + ")"; 
-                            docelem.style.setProperty('--prespritesheet', prespritesheet); inprompt = inprompt + "Theme Preview Loaded."; println()} //logs if preview has been loaded
+                        function themepreviewchange() {
+                            docelem.style.setProperty('--prewhite', cpwhite); docelem.style.setProperty('--pregray', cpgray); docelem.style.setProperty('--prelightg', cplightg); docelem.style.setProperty('--preblack', cpblack)
+                            docelem.style.setProperty('--presilver', cpsilver); docelem.style.setProperty('--preprussian', cpprussian); docelem.style.setProperty('--premidgray', cpmidgray)
+                            docelem.style.setProperty('--prefont', cpfont); docelem.style.setProperty('--prehover', cphover); docelem.style.setProperty('--preblue', cpblue); docelem.style.setProperty('--preyellow', cpyellow)
+                            docelem.style.setProperty('--preactivetitle', preactivetitle); docelem.style.setProperty('--preinactivetitle', preinactivetitle); docelem.style.setProperty('--preinvert', preinvert)
+                            document.getElementById("previewwin1").style.background = "linear-gradient(90deg, " + pretbgradinactive1 + "," + pretbgradinactive2 + ")"
+                            document.getElementById("previewwin2").style.background = "linear-gradient(90deg, " + pretbgradactive1 + "," + pretbgradactive2 + ")"
+                            document.getElementById("previewwin3").style.background = "linear-gradient(90deg, " + pretbgradactive1 + "," + pretbgradactive2 + ")"
+                            docelem.style.setProperty('--prespritesheet', prespritesheet); inprompt = inprompt + "Theme Preview Loaded."; println()}
                         
-                        function themechange() {ccprussian = cpprussian; ccwincyan = cpwincyan; ccyellow = cpyellow; ccfont = cpfont; cchover = cphover; ccwhite = cpwhite; cclightg = cplightg; 
-                            ccsilver = cpsilver; ccmidgray = cpmidgray; ccgray = cpgray; ccblack = cpblack; ccblue = cpblue; curspritesheet = prespritesheet;
-                            curtbgradactive1 = pretbgradactive1; curtbgradactive2 = pretbgradactive2; curtbgradinactive1 = pretbgradinactive1; curtbgradinactive2 = pretbgradinactive2;
-                            docelem.style.setProperty('--white', ccwhite); docelem.style.setProperty('--gray', ccgray); docelem.style.setProperty('--lightg', cclightg); docelem.style.setProperty('--black', ccblack); 
-                            docelem.style.setProperty('--silver', ccsilver); docelem.style.setProperty('--prussian', ccprussian); docelem.style.setProperty('--midgray', ccmidgray); docelem.style.setProperty('--wincyan', ccwincyan);
-                            docelem.style.setProperty('--font', ccfont); docelem.style.setProperty('--hover', cchover); docelem.style.setProperty('--blue', ccblue); docelem.style.setProperty('--yellow', ccyellow); 
+                        function themechange() {ccprussian = cpprussian; ccwincyan = cpwincyan; ccyellow = cpyellow; ccfont = cpfont; cchover = cphover; ccwhite = cpwhite; cclightg = cplightg
+                            ccsilver = cpsilver; ccmidgray = cpmidgray; ccgray = cpgray; ccblack = cpblack; ccblue = cpblue; curspritesheet = prespritesheet
+                            curtbgradactive1 = pretbgradactive1; curtbgradactive2 = pretbgradactive2; curtbgradinactive1 = pretbgradinactive1; curtbgradinactive2 = pretbgradinactive2
+                            docelem.style.setProperty('--white', ccwhite); docelem.style.setProperty('--gray', ccgray); docelem.style.setProperty('--lightg', cclightg); docelem.style.setProperty('--black', ccblack)
+                            docelem.style.setProperty('--silver', ccsilver); docelem.style.setProperty('--prussian', ccprussian); docelem.style.setProperty('--midgray', ccmidgray); docelem.style.setProperty('--wincyan', ccwincyan)
+                            docelem.style.setProperty('--font', ccfont); docelem.style.setProperty('--hover', cchover); docelem.style.setProperty('--blue', ccblue); docelem.style.setProperty('--yellow', ccyellow)
                             curinvert = preinvert; ccatext = cpatext; docelem.style.setProperty('--invert', curinvert); docelem.style.setProperty('--atext', ccatext);
 
                             docelem.style.setProperty('--taskbarstarttop1', ccgray); docelem.style.setProperty('--taskbarstarttop2', ccblack); curactivetitle = preactivetitle; curinactivetitle = preinactivetitle;
-                            docelem.style.setProperty('--taskbarstartbottom1', ccwhite); docelem.style.setProperty('--taskbarstartbottom2', cclightg); taskbartext = pretaskbartxt; taskbartextpressed = pretaskbartxtprs; 
-                            for(var temp = 1; taskbarfont.length > temp; temp++){ taskbarfont[temp].color = taskbartext}; for(scf = 0; smu.length > scf; scf++){smu[scf].backgroundColor = ccsilver; smu[scf].color = ccfont}
+                            docelem.style.setProperty('--taskbarstartbottom1', ccwhite); docelem.style.setProperty('--taskbarstartbottom2', cclightg); taskbartext = pretaskbartxt; taskbartextpressed = pretaskbartxtprs;
+                            for(var temp = 1; taskbarfont.length > temp; temp++){taskbarfont[temp].color = taskbartext}; for(var temp = 0; smu.length > temp; temp++){scf = temp; startoff()}
  
-                            docelem.style.setProperty('--curactivetitle', curactivetitle); docelem.style.setProperty('--curinactivetitle', curinactivetitle); docelem.style.setProperty('--curspritesheet', curspritesheet);//adjusts spritesheets
+                            docelem.style.setProperty('--curactivetitle', curactivetitle); docelem.style.setProperty('--curinactivetitle', curinactivetitle); docelem.style.setProperty('--curspritesheet', curspritesheet)
                             docelem.style.setProperty('--discheckinv', discheckinv); docelem.style.setProperty('--enacheckinv', enacheckinv); docelem.style.setProperty('--invcheckinv', invcheckinv); 
-                            
-                            shufflecolour(); desktopiconchange(); wwpno(); clocku(); inactiveall(); diskactive();
-                            
-                            var dtil = 0; 
+ 
+                            var dtil = 0; shufflecolour(); desktopiconchange(); wwpno(); clocku(); inactiveall(); diskactive(); 
                             if (dicotoggle == true){for(var i = 0; deskico.length > i; i++){deskico[i].width = "72px"; deskico[i].height = "72px"; var temp1 = dtil + "px"; var temp2 = "-0px"; deskico[i].backgroundPosition = temp1 + " " + temp2; dtil = dtil - 72}
                                 } else {for(var i = "0"; deskico.length > i; i++){deskico[i].width = "36px"; deskico[i].height = "36px"; var temp1 = dtil + "px"; var temp2 = "-72px"; deskico[i].backgroundPosition = temp1 + " " + temp2; dtil = dtil - 36}}
                             if (nsfwtoggle == true){nsfwoptions.marginLeft = "0px"; nsfwoptions.marginTop = "0px"} else {nsfwoptions.marginLeft = "-20000px"; nsfwoptions.marginTop = "-80px"}
                             if (csgotoggle == true){CSon = true; desktopleft = "-340px"; desktop.left = desktopleft; desktop.top = "5px"; ranCSno = 1; CSGOsidebar1.opacity = 1; CSGOsidebar2.opacity = 1; CSGOsidebar3.opacity = 0.2; changeCSGO();
                                 } else {CSon = false; desktopleft = "0px"; desktop.left = desktopleft; desktop.top = "0px"; CSGOsidebar1.opacity = 0; CSGOsidebar2.opacity = 0; CSGOsidebar3.opacity = 0; changeCSGO()}
-       
-                            inprompt = inprompt + "Theme Loaded."; println()} //logs if the preview theme has been turned into the current theme active.
+                            inprompt = inprompt + "Theme Loaded."; println()}
                     </script>
                         
                     <div class="win98buttondisa" style="margin-left:199px; width:67px"><center><butdislabel>Save As...</butdislabel></center></div>
@@ -1379,11 +1367,11 @@
                             <div style="padding: 3px 3px 2px 2px" id="currentitem">Desktop</div><div class="dropbutton"><div class="scrolldown"></div></div>
                             <div class="dropmenu" style="width: 185px; margin-left: -20000px" id="item">
                                 <div class="dropbutton-pres" style="margin-left:172px"><div class="scrolldown"></div></div>
-                                <div class="droptext" onclick="desktopitem()" id="desktopitem">Desktop</div></div></ul> <!--#ref0032-->
+                                <div class="droptext" onclick="desktopitem()" id="desktopitem">Desktop</div></div></ul>
                                 
-                        <script> var itemdrop = false; item = document.getElementById("item").style; function itemexit(){item.marginLeft = "-20000px"; schemedrop = false} //#ref5022 //#ref5025 
-                            function itemdropdown(){if (itemdrop == false) {item.marginLeft = "-2px"; itemdrop = true} else if (itemdrop == true){item.marginLeft = "-20000px"; itemdrop = false}} //#ref5023 //#ref5024
-                            function desktopitem(){document.getElementById("desktopitem").textContent="Desktop"} </script> <!--#ref0032-->
+                        <script> var itemdrop = false; item = document.getElementById("item").style; function itemexit(){item.marginLeft = "-20000px"; schemedrop = false}
+                            function itemdropdown(){if (itemdrop == false) {item.marginLeft = "-2px"; itemdrop = true} else if (itemdrop == true){item.marginLeft = "-20000px"; itemdrop = false}}
+                            function desktopitem(){document.getElementById("desktopitem").textContent="Desktop"} </script>
                             
                         <ul class="tree-view" style="position:absolute; width:49px; height:17px; margin-left:199px; padding:2px; background: var(--silver);">
                             <div style="margin-top: 17px; margin-left:34px">
@@ -1418,7 +1406,6 @@
 
                             function colourpicker(){if (colourpicked == false){coloursampler.marginLeft = "-2px"; colourpicked = true} else if (colourpicked == true ){coloursampler.marginLeft = "-20000px"; colourpicked = false}}
                             function colourpickerexit(){coloursampler.marginLeft = "-20000px"; colourpicked = false} function fcw(){fontcolour = "#fff"} function fcb(){fontcolour = "#000"}
-
                             function backcolourset(){document.body.style.backgroundColor = currentcolour; docelem.style.setProperty('--desktopicon', currentcolour); docelem.style.setProperty('--desktoptext', fontcolour); //changes desktop icon span colour + backround colour.
                                 if(ctoggle == true){document.body.style.backgroundColor = "#000"; iconpre.backgroundColor = "#000"; cpc.backgroundColor = "#000"; cpo.backgroundColor = "#000"; ap.backgroundColor = "#000"}}
                             function cpick(){if(copi == 1){currentcolour = "#fff"; fcb()} else if (copi == 2){currentcolour = "#000"; fcw()} else if (copi == 3){currentcolour = "#c2c6ca"; fcb()} else if (copi == 4){currentcolour = "#85898d"; fcw()
@@ -1493,7 +1480,7 @@
                                 <div class="droptext" onclick="dsheetpetra()">Petra Revisit</div>   
                                 <div class="droptext" onclick="dsheetcaddyog()">Thealonic</div>
                                 <div class="droptext" onclick="dsheetcaddycl()">Thealonic Oldschool</div>
-                                <div class="droptext" onclick="dsheetprat()">Prat</div></div></ul> <!--#ref0032-->
+                                <div class="droptext" onclick="dsheetprat()">Prat</div></div></ul>
                                 
                         <div class="win98button" style="float:right; width:78px; margin-top: -21px; margin-right:4.5px;" onclick="dsheetpetra(); desktopiconchange()"><center><butlabel>Default Icon</butlabel></center></div>
                         <div class="win98button" style="float:right; width:78px; margin-top: -21px; margin-right:8px;" onclick="desktopiconchange()"><center><butlabel>Change Icon...</butlabel></center></div></div>
@@ -1508,7 +1495,6 @@
                     function dsheetcaddyog(){document.getElementById("currentdsheet").textContent="Caddy OG"; predesktopsheet = github + "img/desktopspritesheet3.png')"; desktopiconpreview()} 
                     function dsheetcaddycl(){document.getElementById("currentdsheet").textContent="Caddy Classic"; predesktopsheet = github + "img/desktopspritesheet4.png')"; desktopiconpreview()} 
                     function dsheetprat(){document.getElementById("currentdsheet").textContent="Prat"; predesktopsheet = github + "img/desktopspritesheet5.png')"; desktopiconpreview()} 
-                    
                     function desktopiconpreview(){docelem.style.setProperty('--predesktopsheet', predesktopsheet); curdesktopsheet = predesktopsheet}
                     function desktopiconchange(){docelem.style.setProperty('--curdesktopsheet', curdesktopsheet)}</script> 
                         
@@ -1597,11 +1583,11 @@
             function tabreset(){ effz.zIndex  = 2; setz.zIndex  = 2; bacz.zIndex  = 2; scrz.zIndex  = 2; appz.zIndex  = 2; a.width = "63px"; a.height = "16px"; a.marginTop = "6px"; a.marginLeft = " 11px"; a.zIndex = 1; 
                 b.width = "68px"; b.height = "16px"; b.marginTop = "6px"; b.marginLeft = " 80px"; b.zIndex = 1; c.width = "65px"; c.height = "16px"; c.marginTop = "6px"; c.marginLeft = "154px"; c.zIndex = 1; 
                 d.width = "38px"; d.height = "16px"; d.marginTop = "6px"; d.marginLeft = "225px"; d.zIndex = 1; e.width = "45px"; e.height = "16px"; e.marginTop = "6px"; e.marginLeft = "269px"; e.zIndex = 1} 
-            function backgroundtab(){bacz.zIndex  = 9; a.zIndex = 10; a.width = "71px"; a.marginLeft = "6px"; a.marginTop = "5px"; a.height = "17px"} //#ref5016 #ref5018:
-            function screensavertab(){scrz.zIndex  = 9; b.zIndex = 10; b.width = "72px"; b.marginLeft = "78px"; b.marginTop = "5px"; b.height = "17px"} //#ref5016 #ref5018:
-            function appearancetab(){appz.zIndex  = 9; c.zIndex = 10; c.width = "69px"; c.marginLeft = "152px"; c.marginTop = "5px"; c.height = "17px"} //#ref5016 #ref5018:
-            function effectstab(){effz.zIndex  = 9; d.zIndex = 10; d.width = "42px"; d.marginLeft = "223px"; d.marginTop = "5px"; d.height = "17px"} //#ref5016 #ref5018:
-            function settingstab(){setz.zIndex = 9; e.zIndex = 10; e.width = "51px"; e.marginLeft = "267px"; e.marginTop = "5px"; e.height = "17px"} //#ref5016 #ref5018: </script> 
+            function backgroundtab(){bacz.zIndex  = 9; a.zIndex = 10; a.width = "71px"; a.marginLeft = "6px"; a.marginTop = "5px"; a.height = "17px"}
+            function screensavertab(){scrz.zIndex  = 9; b.zIndex = 10; b.width = "72px"; b.marginLeft = "78px"; b.marginTop = "5px"; b.height = "17px"}
+            function appearancetab(){appz.zIndex  = 9; c.zIndex = 10; c.width = "69px"; c.marginLeft = "152px"; c.marginTop = "5px"; c.height = "17px"}
+            function effectstab(){effz.zIndex  = 9; d.zIndex = 10; d.width = "42px"; d.marginLeft = "223px"; d.marginTop = "5px"; d.height = "17px"}
+            function settingstab(){setz.zIndex = 9; e.zIndex = 10; e.width = "51px"; e.marginLeft = "267px"; e.marginTop = "5px"; e.height = "17px"}</script> 
         
 <!-- Window box handling ------------------------------------------------------------------------------>
         <div class="win98post" style="z-index: 10; margin-left: 200000px; height: 112px; width: 284px; top: 40%; left:  40%;" id="logoff" onmousedown="logonactive();">
@@ -1637,7 +1623,7 @@
                         <div class="post-header" style="height: 46px; margin-top:-6px;">
                             <fieldset style="position:absolute; height: 44px; width: 467px; margin-left:-6px; padding:2px"> 
                                 
-                                <div style="width:38px; height:21px; background:black; float:right;"><div class="windowsexplorerlogo"></div></div> <!-- right side of the top container -->
+                                <div style="width:38px; height:21px; background:black; float:right;"><div class="windowsexplorerlogo"></div></div>
                                 <div class="big_seperator" style="float:right; height:21px; margin-top:0px;"></div>
                                 {block:NoteCount} 
                                     <div style="float:right; margin-top:4px; margin-right:3px;">{NoteCountWithLabel}</div>
@@ -1793,17 +1779,17 @@
                         <div class="content body" style="margin-left: -6px; margin-right: -6px; margin-top: -7px; margin-bottom: -6px; width:455px; height:18px; cursor:default;"> 
                             <fieldset style="position: absolute; width:358px; height:11px; padding:4px">
                                 <div class="menufind4" style="margin-top:-4px; margin-left:-2px; margin-right:1.5px;"></div> 
-                                {block:ContentSource}<a href="{SourceURL}" target="_blank" style="color:var(--blue); font-weight:700;" title="Source">{SourceTitle}</a>,{/block:ContentSource}{block:RebloggedFrom} 
+                                {block:ContentSource}<a href="{SourceURL}" target="_blank" style="color:var(--blue); font-weight:700" title="Source">{SourceTitle}</a>,{/block:ContentSource}{block:RebloggedFrom} 
                                 {lang:Reblogged from}: <a href="{ReblogParentURL}" target="_blank" style="color: var(--gray) font-weight:700" title="Reblogged from">{ReblogParentName}</a>{/block:RebloggedFrom}
-                                {block:NotReblog}Posted by <a href="https://twitter.com/VeryVhersty" target="_blank" style="color:var(--blue); font-weight: bold;">Thea Vanherst</a>{/block:NotReblog}
+                                {block:NotReblog}Posted by <a href="https://twitter.com/VeryVhersty" target="_blank" style="color:var(--blue); font-weight:700">Thea Vanherst</a>{/block:NotReblog}
                             </fieldset>
                             <fieldset style="position: absolute; width: 46px; height: 11px; padding:4px; padding-left:5px; margin-left: 369px" title="Post type">{PostType}</fieldset>
                             <fieldset style="position: absolute; width: 35px; height: 11px; padding:4px; margin-left: 428px"></fieldset></div>
                 </div></div>
             {/block:Posts}
         </div>
-        {block:NextPage}<div style="height:50px;"></div>{/block:NextPage} <!--adjusts gap at the bottom of the page-->
-        {block:PostNotes}<div style="height:10px;"></div>{/block:PostNotes} <!--adjusts gap at the bottom of the page-->
+        {block:NextPage}<div style="height:50px;"></div>{/block:NextPage}
+        {block:PostNotes}<div style="height:10px;"></div>{/block:PostNotes}
         
         <script>
             $(".plinks-con").click(function(){if (plinksdrop == false){$(this).find("postdrop").css("margin-left", "49px"); plinksdrop = true 
@@ -1841,63 +1827,42 @@
             <!-- Start menu closed -->
             <div style="position: fixed; bottom: 0%; bottom: 24px;" onmouseleave="">
                 <div class="win98post" id="startmenu" style="width:163px; height: 377px; margin-top:-383px; margin-left: 200000px"> 
+                    <div style="position:absolute;"></div><div class="startmenubarback"></div><div class="startmenubar"></div><div class="startmenubartext"></div>
+                    
                     <div style="margin-left: 20px; margin-top: -3px">
-                        <!-- windows gradient bar -->
-                        <div class="windowsstartmenubar" style="height:51px; margin-left:-21px; margin-top:3px;"></div>
-                        <div class="windowsstartmenubar" style="height:51px; margin-left:-21px; margin-top:53px;"></div>
-                        <div class="windowsstartmenubar" style="height:51px; margin-left:-21px; margin-top:103px;"></div>
-                        <div class="windowsstartmenubar" style="height:51px; margin-left:-21px; margin-top:153px;"></div>
-                        <div class="windowsstartmenubar" style="height:51px; margin-left:-21px; margin-top:203px;"></div>
-                        <div class="windowsstartmenubar" style="margin-top:224px; margin-left:-21px;"></div>
-                        <!-- Patchnotes -->
                         <label style="margin-top:3px;"><div class="submenu36" style="width: 141px; height:36px" onclick="messageclose(); patchnotestask()">
                             <div class="patchnotes"></div><label><labs><underline>U</underline>pdate log</labs></label></div></label>
-                        <!-- verticalsplitterER -->
                         <div class="menuapplicationsplit" style="width:139px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px"> </div>
-                        <!-- Programs -->
-                        <label><div class="submenu36" style="width: 142px;" id="menuprograms" onmouseover="programsopen()" onmouseout="programsclosed()"> 
+                        <label><div class="submenu36" id="menuprograms" onmouseover="programsopen()" onmouseout="programsclosed()"> 
                             <div class="menuprograms"></div><label><labs><underline>P</underline>rograms </labs></label><div class="lmenuarrow" id="menuarrow"></div></div></label>
-                        <!-- Favourites -->
-                        <label><div class="submenu36" style="width: 142px;" id="menufavourites" onmouseover="favouritesopen()" onmouseout="favouritesclosed()"> 
+                        <label><div class="submenu36"  id="menufavourites" onmouseover="favouritesopen()" onmouseout="favouritesclosed()"> 
                             <div class="menufavourites"></div><label><labs>My F<underline>a</underline>vourites </labs></label><div class="lmenuarrow" id="menuarrow2"></div></div></label>
-                        <!-- Documents -->  
-                        <label><div class="submenu36" style="width: 142px;" id="menudocuments" onmouseover="documentsopen()" onmouseout="documentsclosed()"> 
+                        <label><div class="submenu36" id="menudocuments" onmouseover="documentsopen()" onmouseout="documentsclosed()"> 
                             <div class="menudocuments"></div><label><labs><underline>D</underline>ocuments </labs></label><div class="lmenuarrow" id="menuarrow3"></div></div></label>
-                        <!-- Settings -->
-                        <label><div class="submenu36" style="width: 142px;" id="menusettings" onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
+                        <label><div class="submenu36"  id="menusettings" onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
                             <div class="menusettings"></div><label><labs><underline>S</underline>ettings </labs></label><div class="lmenuarrow" id="menuarrow4"></div></div></label>
-                        <!-- Find -->
-                        <label><div class="submenu36" style="width: 142px;" id="menufind" onmouseover="findopen()" onmouseout="findclosed()"> 
+                        <label><div class="submenu36" id="menufind" onmouseover="findopen()" onmouseout="findclosed()"> 
                             <div class="menufind"></div><label><labs><underline>F</underline>ind </labs></label><div class="lmenuarrow" id="menuarrow5"></div></div></label>
-                        <!--command console submenu -->
-                        <label><div class="submenu36" style="width: 142px;">
+                        <label><div class="submenu36">
                             <div class="menushutdown"></div><label><labs><underline>R</underline>un</labs></label></div></label>
-                        <!-- verticalsplitterER -->
                         <div class="menuapplicationsplit" style="width:139px; margin-left: 2px; margin-top: 3px; margin-bottom: 4px"></div>
-                        <!-- source code -->  
                         <label><a href="https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/main"><div class="submenu36" style="width: 142px;">
                             <div class="menuhelp"></div><label><labs><underline>S</underline>ource-code </labs></label></div></a></label>
-                        <!-- support development -->
                         <label><a href="https://paypal.me/TheaVanherst"><div class="submenu36" style="width: 142px;">
-                            <div class="menurun" ></div><label><labs><underline>S</underline>upport development </labs></label></div></a></label>   
-                        <!--Log off submenu -->
-                        <label><div class="submenu36" style="width: 142px;" onclick="logonactive(); shutdownno();">
+                            <div class="menurun"></div><label><labs><underline>S</underline>upport development </labs></label></div></a></label>  
+                        <label><div class="submenu36" onclick="logonactive(); shutdownno();">
                             <div class="menulogoff"></div><label><labs><underline>L</underline>og off </labs></label></div></label>  
                     </div>
 
 <!-- Programs menu rendering ------------------------------------------------------------------------------>
                     <div class="win98post" style="margin-left: 20000px; margin-top: -336px; width: 133px; height: 140px" id="programsmenu" 
                         onmouseover="programsopen()" onmouseout="programsclosed()"> 
-                        <!-- Accessories -->
                         <div class="submenu20" id="accessories" onmouseover="accessoriesopen()" onmouseout="accessoriesclose()">
-                            <div class="menuprograms123"></div><label><labc> Accessories  </labc></label><div class="smenuarrow" id="submenuarrow2"></div></div>
-                        <!-- Online Services -->
+                            <div class="menuprograms123"></div><label><labc> Accessories </labc></label><div class="smenuarrow" id="submenuarrow2"></div></div>
                         <div class="submenu20" id="onlineservices" onmouseover="onlineservicesopen()" onmouseout="onlineservicesclose()"> 
                             <div class="menuprograms123" id="onlineservices"></div><label><labc> Online Services </labc></label><div class="smenuarrow" id="submenuarrow3"></div></div>
-                        <!-- Startup -->
                         <div class="submenu20" id="startup" onmouseover="startupopen()" onmouseout="startupclose()">
                             <div class="menuprograms123"></div><label><labc> Startup </labc></label><div class="smenuarrow" id="submenuarrow4"></div></div>
-                            
                         <div class="submenu20" onclick="internettask()"><div class="menuprograms4"></div><label><labc> Internet Explorer </labc></label></div>
                         <div class="submenu20" onclick="prompttask()"><div class="menuprograms5"></div><label><labc> MS-DOS Prompt </labc></label></div>
                         <div class="submenu20"><div class="menuprograms6"></div><label><labc> Outlook Express </labc></label></div>
@@ -1906,19 +1871,14 @@
                             <!--Accessories submenu -->
                         <div class="win98post" style="margin-left: 20000px; margin-top:-143px; width:131px; height:220px" id="menuaccessoriessubmenu" 
                              onmouseover="accessoriesopen()" onmouseout="accessoriesclose()"> 
-                            <!-- Communication -->
                             <div class="submenu20" id="communications" onmouseover="communicationsopen()" onmouseout="communicationsclose();">
                                 <div class="menuprograms123"></div><label><labc> Communication </labc></label><div class="smenuarrow" id="menuarrow2"></div></div>
-                            <!-- Entertainment -->
                             <div class="submenu20" id="entertainment" onmouseover="entertainmentopen()" onmouseout="entertainmentclose()">
                                 <div class="menuprograms123"></div><label><labc> Entertainment </labc></label><div class="smenuarrow" id="menuarrow3"></div></div>
-                            <!-- Games -->
                             <div class="submenu20" id="games" onmouseover="gamesopen()" onmouseout="gamesclose()">
                                 <div class="menuprograms123"></div><label><labc> Games </labc></label><div class="smenuarrow" id="menuarrow4"></div></div>
-                            <!-- Internet Tools -->
                             <div class="submenu20" id="internettools" onmouseover="internettoolsopen()" onmouseout="internettoolsclose()">
                                 <div class="menuprograms123"></div><label><labc> Internet Tools </labc></label><div class="smenuarrow" id="menuarrow5"></div></div>
-                            <!-- System Tools -->
                             <div class="submenu20" id="systemtools" onmouseover="systemtoolsopen()" onmouseout="systemtoolsclose()">
                                 <div class="menuprograms123"></div><label><labc> System Tools </labc></label><div class="smenuarrow" id="menuarrow6"></div></div>
 
@@ -1934,8 +1894,7 @@
                                 <div class="submenu20"><div class="menucommunications1"></div><label><labc> Dial-up Networking </labc></label></div>
                                 <div class="submenu20"><div class="menucommunications2"></div><label><labc> Hyper Terminal </labc></label></div>
                                 <div class="submenu20"><div class="menucommunications3"></div><label><labc> ISDN Configuration Wizard </labc></label></div>
-                                <div class="submenu20"><div class="menucommunications4"></div><label><labc> Phone Dialer </labc></label></div>
-                            </div>
+                                <div class="submenu20"><div class="menucommunications4"></div><label><labc> Phone Dialer </labc></label></div></div>
                                             
                             <div class="win98post" style="margin-left: 20000px; margin-top:-203px; width:203px; height:100px" id="menuentertainmentsubmenu" 
                                  onmouseover="entertainmentopen()" onmouseout="entertainmentclose()"> 
@@ -1943,24 +1902,21 @@
                                 <div class="submenu20"><div class="menuentertainment2"></div><label><labc> Interactive CD Player </labc></label></div>
                                 <div class="submenu20"><div class="menuentertainment3"></div><label><labc> Sound Recorder </labc></label></div>
                                 <div class="submenu20"><div class="menuentertainment4"></div><label><labc> Volume Control </labc></label></div>
-                                <div class="submenu20" onclick="startmenuembed()"><div class="menuentertainment5"></div><label><labc> Windows Embedded Media Player </labc></label></div>
-                            </div>
+                                <div class="submenu20" onclick="startmenuembed()"><div class="menuentertainment5"></div><label><labc> Windows Embedded Media Player </labc></label></div></div>
                                             
                             <div class="win98post" style="margin-left: 20000px; margin-top:-183px; width:183px; height:80px" id="gamessubmenu" 
                                 onmouseover="gamesopen()" onmouseout="gamesclose()"> 
                                 <div class="submenu20"><div class="menugames1"></div><label><labc> Freecell </labc></label></div>
                                 <div class="submenu20"><div class="menugames2"></div><label><labc> Hearts </labc></label></div>
                                 <div class="submenu20"><div class="menugames3"></div><label><labc> Minesweeper </labc></label></div>
-                                <div class="submenu20"><div class="menugames4"></div><label><labc> Solitaire </labc></label></div>
-                            </div>
+                                <div class="submenu20"><div class="menugames4"></div><label><labc> Solitaire </labc></label></div></div>
                                             
                             <div class="win98post" style="margin-left: 20000px; margin-top:-163px; width:183px; height:80px" id="internettoolssubmenu" 
                                  onmouseover="internettoolsopen()" onmouseout="internettoolsclose()"> 
                                 <div class="submenu20"><div class="menuinternettools1"></div><label><labc> Internet Connection Wizard </labc></label></div>
                                 <div class="submenu20"><div class="menuinternettools2"></div><label><labc> Microsoft Chat </labc></label></div>
                                 <div class="submenu20"><div class="menuinternettools3"></div><label><labc> NetMeeting </labc></label></div>
-                                <div class="submenu20"><div class="menuinternettools4"></div><label><labc> Personal Webserver </labc></label></div>
-                            </div>
+                                <div class="submenu20"><div class="menuinternettools4"></div><label><labc> Personal Webserver </labc></label></div></div>
                                             
                             <div class="win98post" style="margin-left: 20000px; margin-top:-143px; width:183px; height:260px" id="systemtoolssubmenu" 
                                  onmouseover="systemtoolsopen()" onmouseout="systemtoolsclose()"> 
@@ -1976,8 +1932,8 @@
                                 <div class="submenu20"><div class="menusystemtools10"></div><label><labc> Scheduled Tasks </labc></label></div>
                                 <div class="submenu20"><div class="menusystemtools11"></div><label><labc> System Information </labc></label></div>
                                 <div class="submenu20"><div class="menusystemtools12"></div><label><labc> System Monitor </label></div>
-                                <div class="submenu20"><div class="menusystemtools13"></div><label><labc> Welcome to Windows </labc></label></div>
-                        </div></div>
+                                <div class="submenu20"><div class="menusystemtools13"></div><label><labc> Welcome to Windows </labc></label></div></div>
+                        </div>
                                 
                         <div class="win98post" style="margin-left: 20000px; margin-top:-123px; width:110px; height:60px; " id="onlineservicessubmenu" 
                             onmouseover="onlineservicesopen()" onmouseout="onlineservicesclose()"> 
@@ -2003,12 +1959,10 @@
                         <a href="hhttps://thealonic.tumblr.com/" target="_blank"><div class="submenu20">
                             <div class="menufavouriteslink"></div><label><labc> Thealonic </labc></label></div></a>
                         <!-- Channels Submenu -->
-                        <div class="win98post" style="margin-left: 20000px; margin-top: -83px; width:89px; height: 20px;" id="channelssubmenu"
-                            onmouseover="channelsopen()" onmouseout="channelsclose()">
+                        <div class="win98post" style="margin-left: 20000px; margin-top: -83px; width:89px; height: 20px;" id="channelssubmenu" onmouseover="channelsopen()" onmouseout="channelsclose()">
                             <dislabel style="margin-left: 20px; margin-top: 3px">(Empty)</dislabel></div>
                             <!-- links submenu -->
-                        <div class="win98post" style="margin-left: 20000px; margin-top: -63px; width: 228px; height:60px" id="linkssubmenu" 
-                             onmouseover="linksopen()" onmouseout="linksclose()"> 
+                        <div class="win98post" style="margin-left: 20000px; margin-top: -63px; width: 228px; height:60px" id="linkssubmenu" onmouseover="linksopen()" onmouseout="linksclose()"> 
                             <div class="submenu20" onclick="ovfvpload()"><div class="menufavouriteslink"></div><label><labc>The Official Very Funny Video Playlist</labc></label></div></a>
                             <div class="submenu20" onclick="csgoload()"><div class="menufavouriteslink"></div><label><labc>CSGO Funny Moments</labc></label></div>
                             <div class="submenu20" onclick=""><div class="menudocumentssound"></div><label><labc>The 787 Survival Challange</labc></label></div></div>
@@ -2042,45 +1996,35 @@
                         <a href="https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/main" target="_blank"><div class="submenu20">
                             <div class="menudocumentsdoc"></div><label><labc> Thealonic.doc </labc></label></div></a>
 
-                        <div class="win98post" style="margin-left: 20000px; margin-top: -83px; width: 160px; height:67px" id="vherstysubmenu" 
-                             onmouseover="vherstyopen()" onmouseout="vherstyclose()"> 
-                            <a href="https://veryvhersty.tumblr.com/" target="_blank"><div class="submenu20">
-                                <div class="menufavouriteslink"></div><label><labc> Vhersty </labc></label></div></a>
+                        <div class="win98post" style="margin-left: 20000px; margin-top: -83px; width: 160px; height:67px" id="vherstysubmenu" onmouseover="vherstyopen()" onmouseout="vherstyclose()"> 
+                            <a href="https://veryvhersty.tumblr.com/" target="_blank"><div class="submenu20"><div class="menufavouriteslink"></div><label><labc> Vhersty </labc></label></div></a>
                             <div class="startmenusplitter"></div>
                             <div class="submenu20" onclick="win98load()"><div class="menufavouriteslink"></div><label><labc>Windows 98 Development</labc></label></div>
                             <div class="submenu20" onclick="csgoload()"><div class="menufavouriteslink"></div><label><labc>CSGO Funny Moments</labc></label></div></div>
                     </div>
                      
 <!-- Settings menu rendering ------------------------------------------------------------------------------>
-                    <div class="win98post" style="margin-left: 200000px; margin-top: -228px; width: 160px; height:128px" id="settingsmenu" 
-                         onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
-                        <!-- Control panel -->
+                    <div class="win98post" style="margin-left: 200000px; margin-top: -228px; width: 160px; height:128px" id="settingsmenu" onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
                         <div class="submenu20"><div class="menusettings1"></div><label><labc> Control panel </labc></label></div>
                         <div class="submenu20"><div class="menusettings2"></div><label onclick="backgroundtab(); disktask(); menuclosed()"><labc> Display Properties </labc></label></div>
                         <div class="submenu20"><div class="menusettings3"></div><label><labc> Taskbar & Start menu </labc></label></div>
                         <div class="submenu20"><div class="menusettings4"></div><label><labc> Folder options... </labc></label></div>
-                        <!-- Active desktop -->
                         <div class="submenu20" onmouseover="activeopen();" onmouseout="activeclose();" id="activedesktop">
-                            <div class="menusettings5"></div><label><labc> Active desktop </labc></label> 
-                                <div class="smenuarrow" id="submenuarrow31"></div></div>
-                        <!-- verticalsplitterER -->
+                            <div class="menusettings5"></div><label><labc> Active desktop </labc></label><div class="smenuarrow" id="submenuarrow31"></div></div>
                         <div class="startmenusplitter"></div>
-                        <!--Folder options -->
                         <div class="submenu20" style="margin-top: 3px"><div class="menusettings6"></div><label><labc>Windows Update</labc></label></div>
                         <!-- Activedesktop submenu -->
                         <div class="win98post" style="margin-left:-20000px; margin-top:-50px; width:170px; height:40px" id="activedesktopsubmenu" onmouseover="activeopen()" onmouseout="activeclose()">
-                            <div class="submenu20" style="cursor: pointer;"><label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="messageopen(); menuclosed()"> 🧮 brain go brrrrr </label></div>
-                            <div class="submenu20" style="cursor: pointer;"><label style="margin-top: 3px; margin-left: 28px; cursor: pointer;" onclick="vunnytask(); vunnypositionreset(); menuclosed()"> 👿 very.unvunny</label></div>
-                        </div>
+                            <div class="submenu20" onclick="messageopen(); menuclosed()"><label style="margin-top: -2px"><labc> 🧮 brain go brrrrr </labc></label></div>
+                            <div class="submenu20" onclick="vunnytask(); vunnypositionreset(); menuclosed()"><label style="margin-top: -2px"><labc> 👿 very.unvunny </labc></label></div></div>
                     </div>
                               
 <!-- Find menu rendering ------------------------------------------------------------------------------>
-                    <div class="win98post" style="margin-left: 20000px; margin-top: -192px" id="findmenu"
-                         onmouseover="findopen()"onmouseout="findclosed()";>
-                        <div class="submenu20" style="width: 116px; height:20px"><div class="menufind1"></div><label><labc> Files or folders...</labc></label></div>
-                        <div class="submenu20" style="width: 116px; height:20px"><div class="menufind2"></div><label><labc> Computer...</labc></label></div>
-                        <div class="submenu20" style="width: 116px; height:20px"><div class="menufind3"></div><label><labc> On the Internet...</labc></label></div>
-                        <div class="submenu20" style="width: 116px; height:20px"><div class="menufind4"></div><label><labc> People</labc></label></div></div>
+                    <div class="win98post" style="margin-left: 20000px; margin-top: -192px; width: 130px;" id="findmenu" onmouseover="findopen()"onmouseout="findclosed()";>
+                        <div class="submenu20"><div class="menufind1"></div><label><labc> Files or folders...</labc></label></div>
+                        <div class="submenu20"><div class="menufind2"></div><label><labc> Computer...</labc></label></div>
+                        <div class="submenu20"><div class="menufind3"></div><label><labc> On the Internet...</labc></label></div>
+                        <div class="submenu20"><div class="menufind4"></div><label><labc> People</labc></label></div></div>
             </div></div>
             
 <!-- startmenu scripts + end ------------------------------------------------------------------------------>
@@ -2098,15 +2042,15 @@
 <!-- Taskbar Rendering  ------------------------------------------------------------------------------>
             <div style="margin-top: -24px">
                 <!-- taskbar application icons -->
-                <div class="big_seperator" style="margin-left:60px; margin-right:1px;"> </div> 
-                <div class="small_seperator" style="cursor:e-resize; margin-right:-1px;"> </div>
+                <div class="big_seperator" style="margin-left:60px; margin-right:1px;"></div> 
+                <div class="small_seperator" style="cursor:e-resize; margin-right:-1px;"></div>
                 <div class="taskbaricons">
                     <div class="taskbaricon1" style="cursor:pointer;" onclick="tumblrtoggle();"></div>
                     <div class="taskbaricon2"></div>
-                    <div class="taskbaricon3" style="cursor:pointer;" onclick="messageopen();"></div> <!-- active desktop icon -->
+                    <div class="taskbaricon3" style="cursor:pointer;" onclick="messageopen();"></div>
                     <div class="taskbaricon4"></div></div>
-                <taskbar class="big_seperator" style="margin-left:-1px; margin-right:1px;"> </taskbar>
-                <taskbar class="small_seperator" style="cursor:e-resize"> </taskbar>
+                <div class="big_seperator" style="margin-left:-1px; margin-right:1px;"></div>
+                <div class="small_seperator" style="cursor:e-resize"></div>
                 
                 <div class="taskbartask1" style="cursor:pointer" onmousedown="button = 1; tasktoggle()" id="taskapp1">
                     <div class="title-bar-text" id="taskapp1font">🍭 very.vunnies</div></div>
@@ -2138,9 +2082,9 @@
                             case "4m" :embedminimize(); break; case "4a": embedactive(); break; case "5m": patchnoteminimize(); break; case "5a": patchnotesactive(); break; case "6m": promptminimize(); break; case "6a": promptactive(); break;
                             case "7m": notepadminimize(); break; case "7a": notepadactive(); break; case "8m": internetminimize(); break; case "8a": internetactive(); break}; button = 0; menuclosed()}
 
-                    function vunnytask(){vunnywindowreset(); catactive(); pyroactive(); task = 2; taskposopen()}; function disktask(){diskopen(); appearancetab(); task = 3; taskposopen()} //tasks 2 + 3
-                    function embedtask(){embedactive(); task = 4; taskposopen()}; function patchnotestask(){messageclose(); task = 5; patchnotesopen(); taskposopen()} //tasks 4 + 5
-                    function prompttask(){promptactive(); task = 6; taskposopen()}; function notepadtask(){notepadpositionreset(); task = 7; taskposopen()} //tasks 6 + 7
+                    function vunnytask(){vunnywindowreset(); catactive(); pyroactive(); task = 2; taskposopen()}; function disktask(){diskopen(); appearancetab(); task = 3; taskposopen()}
+                    function embedtask(){embedactive(); task = 4; taskposopen()}; function patchnotestask(){messageclose(); task = 5; patchnotesopen(); taskposopen()}
+                    function prompttask(){promptactive(); task = 6; taskposopen()}; function notepadtask(){notepadpositionreset(); task = 7; taskposopen()}
                     function internettask(){internetpositionreset(); task = 8; taskposopen()} //tasks 8
 
                     function taskreset(){currenttask = currenttask - 1; for (var v = 1; v < tasktrue.length; v++){ if(v !== curtaskact){ if(taskpos[v] > taskpos[curtaskact]){ if(taskon[v] == true){ 
@@ -2160,15 +2104,14 @@
                 var infScr = $('body').hasClass('infinite_scrolling'), twoCol = $('body').hasClass('two_column'), $container = $('#desktop');
                 if( infScr && twoCol ){ 
                     $container.imagesLoaded(function(){$container.masonry({itemSelector:'.window', isAnimated: true})});
-                    $container.infinitescroll({itemSelector: '.window'}, 
-                    function(newElements) { 
+                    $container.infinitescroll({itemSelector: '.window'}, function(newElements) { 
                         $(this).find(".title-bar-98").css("background", "linear-gradient(90deg, " + curtbgradinactive1 + "," + curtbgradinactive2 + ")")
                         $(".window").click(function(){calupdate(); tumblractive(); $(this).css("z-index", cal); var desktopleft
-                            $(this).find(".title-bar-98").css("background", "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"); $(this).find(".title-bar-text").css("color", curactivetitle)});
+                            $(this).find(".title-bar-98").css("background", "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"); 
+                            $(this).find(".title-bar-text").css("color", curactivetitle)});
                         $(".plinks-con").click(function(){if (plinksdrop == false){$(this).find("postdrop").css("margin-left", "49px"); plinksdrop = true 
                             } else if (plinksdrop == true){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false}})
                         $(".plinks-con").mouseleave(function(){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false})
-                        
                         var $newElems = $( newElements ).hide();
                         $newElems.imagesLoaded(function(){ $newElems.show();
                             var $newElemsIDs = $newElems.map(function () { return this.id; }).get();
@@ -2185,7 +2128,7 @@
             function drawFace(ctx, radius) { ctx.beginPath(); ctx.arc(0, 0, radius, 0, 2*Math.PI); ctx.fillStyle = ccsilver; ctx.fill()}
             
             function drawTime(ctx, radius){ var now = new Date(); var hour = now.getHours(); var minute = now.getMinutes() + minutemath; var second = now.getSeconds();
-                hour=hour%12; hour=(hour*Math.PI/6)+(minute*Math.PI/(6*60))+(second*Math.PI/(360*60)); drawHand(ctx, hour, radius*0.5, radius*0.05); //hand drawing functions
+                hour=hour%12; hour=(hour*Math.PI/6)+(minute*Math.PI/(6*60))+(second*Math.PI/(360*60)); drawHand(ctx, hour, radius*0.5, radius*0.05);
                 minute=(minute*Math.PI/30)+(second*Math.PI/(30*60)); drawHand(ctx, minute, radius*0.8, radius*0.05);
                 second=(second*Math.PI/30); drawHand(ctx, second, radius*0.9, radius*0.005)} //hand drawing functions
 
@@ -2201,7 +2144,7 @@
             function dragElement(elmnt) { var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
                 if (document.getElementById(elmnt.id + "window")) {document.getElementById(elmnt.id + "window").onmousedown = dragMouseDown} else { elmnt.onmousedown = dragMouseDown}
             function dragMouseDown(e) { e = e || window.event; e.preventDefault(); pos3 = e.clientX; pos4 = e.clientY; document.onmouseup = closeDragElement; document.onmousemove = elementDrag}
-            function elementDrag(e) { e = e || window.event;  e.preventDefault(); pos1 = pos3 - e.clientX; pos2 = pos4 - e.clientY; pos3 = e.clientX; pos4 = e.clientY;  //if(pos1 < 0){pos1 = 0}
+            function elementDrag(e) { e = e || window.event;  e.preventDefault(); pos1 = pos3 - e.clientX; pos2 = pos4 - e.clientY; pos3 = e.clientX; pos4 = e.clientY;
                 elmnt.style.top = (elmnt.offsetTop - pos2) + "px"; elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";} //if(elmnt.offsetTop < 0){elmnt.style.top = elmnt.offsetTop - pos2}
             function closeDragElement() {document.onmouseup = null; document.onmousemove = null}}
         
@@ -2220,8 +2163,8 @@
                 document.getElementById("menuarrow5").style, document.getElementById("menuarrow6").style], sarr = [document.getElementById("submenuarrow2").style, document.getElementById("submenuarrow3").style, 
                 document.getElementById("submenuarrow4").style, document.getElementById("submenuarrow21").style, document.getElementById("submenuarrow22").style, document.getElementById("submenuarrow23").style, 
                 document.getElementById("submenuarrow24").style, document.getElementById("submenuarrow31").style], scf
-            
-            function starton() {smu[scf].style.backgroundColor = ccprussian; smu[scf].color = cchover} function startoff() {smu[scf].style.backgroundColor = ccsilver; smu[scf].color = ccfont; sms[scf].style.marginLeft = "200000px"} 
+
+            function starton() {smu[scf].style.backgroundColor = ccprussian; smu[scf].style.color = cchover} function startoff() {smu[scf].style.backgroundColor = ccsilver; smu[scf].style.color = ccfont; sms[scf].style.marginLeft = "200000px"} 
             function programsopen() {scf=0; starton(); sms[scf].style.marginLeft = "161px"} function programsclosed() {scf=0; startoff()} function accessoriesopen() {scf=1; starton(); sms[scf].style.marginLeft = "130px"} function accessoriesclose() {scf=1; startoff()}
             function communicationsopen() {scf=2; starton(); sms[scf].style.marginLeft = "130px"} function communicationsclose() {scf=2; startoff()} function entertainmentopen() {scf=3; starton(); sms[scf].style.marginLeft = "130px"} function entertainmentclose() {scf=3; startoff()}
             function gamesopen() {scf=4; starton(); sms[scf].style.marginLeft = "130px"} function gamesclose() {scf=4; startoff()} function internettoolsopen() {scf=5; starton(); sms[scf].style.marginLeft = "130px"} function internettoolsclose() {scf=5; startoff()}
