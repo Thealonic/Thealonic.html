@@ -1,17 +1,17 @@
-<!--                                                              
-                                       .uef^"                                            .u+=~~~+u.    
-                     ...     ..      :d88E                    .u    .     .xn!~%x.      z8F      `8N.  
-                  :~""888h.:^"888:   `888E            .u    .d88B :@8c   x888   888.   d88L       98E  
-                 8X   `8888X  8888>   888E .z8k    ud8888. ="8888f8888r X8888   8888:  98888bu.. .@*   
-                X888n. 8888X  ?888>   888E~?888L :888'8888. 4888>'88"   88888   X8888  "88888888NNu.   
-                '88888 8888X   ?**h.  888E  888E d888 '88%" 4888> '     88888   88888>  "*8888888888i  
-                  `*88 8888~ x88x.    888E  888E 8888.+"    4888>       `8888   88888X  .zf""*8888888L 
-                 ..<"  88*`  88888X   888E  888E 8888L     .d888L .+      `"**~ 88888> d8F      ^%888E 
-                  :888888H.    `%88> m888N= 888>  "88888%    "Y"        '8888>  8888~  '%N.       d*"  
-                 <  `"888888:    X"   `Y"   888     "YP'                 888"  :88%       ^"====="`    
-                       %888888x.-`         J88"                           ^"===""                      
-                         ""**""            @%                                                           
-                                          :"                                                             
+<!--
+                                       .uef^"                                            .u+=~~~+u.
+                     ...     ..      :d88E                    .u    .     .xn!~%x.      z8F      `8N.
+                  :~""888h.:^"888:   `888E            .u    .d88B :@8c   x888   888.   d88L       98E
+                 8X   `8888X  8888>   888E .z8k    ud8888. ="8888f8888r X8888   8888:  98888bu.. .@*
+                X888n. 8888X  ?888>   888E~?888L :888'8888. 4888>'88"   88888   X8888  "88888888NNu.
+                '88888 8888X   ?**h.  888E  888E d888 '88%" 4888> '     88888   88888>  "*8888888888i
+                  `*88 8888~ x88x.    888E  888E 8888.+"    4888>       `8888   88888X  .zf""*8888888L
+                 ..<"  88*`  88888X   888E  888E 8888L     .d888L.        `"**~ 88888> d8F      ^%888E
+                  :888888H.    `%88> m888N= 888>  "88888%    "Y"        '8888>  8888~  '%N.       d*"
+                 <  `"888888:    X"   `Y"   888     "YP'                 888"  :88%       ^"====="`
+                       %888888x.-`         J88"                           ^Y+==""
+                         ""**""            @%
+                                          :"
                        <!--https://twitter.com/VeryVhersty // https://veryvhersty.tumblr.com/-->
 
 <!-- Script setup ------------------------------------------------------------------------------>
@@ -42,8 +42,8 @@
                     --font: #000; --hover: #fff; --atext: #000; --curinactivetitle: #fff; --curactivetitle: #fff; --consoleback: #000; --consoletext: #fff; --desktopicon: #008080; --desktoptext: #fff;
                     --curfont: 'ms_sans_serifregular'; --curfontbold: 'ms_sans_serif_boldregular'; --curfontsize: 11px;
 
-                    --prewhite: #fff; --prelightg: #dfdfdf;  --presilver: #c0c0c0; --premidgray: #ababab; --pregray: #808080; --preblack: #0a0a0a; --preprussian: #00207c ; --predesktopicon: #008080; --preyellow: #ffff00; 
-                    --prefont: #000; --prehover: #fff; --preactivetitle: #fff; --preinactivetitle: #fff; --preicotext: #fff;
+                    --prewhite: #fff; --prelightg: #dfdfdf;  --presilver: #c0c0c0; --premidgray: #ababab; --pregray: #808080; --preblack: #0a0a0a; --preprussian: #00207c ; --preyellow: #ffff00; 
+                    --predesktopicon: #008080; --prefont: #000; --prehover: #fff; --preactivetitle: #fff; --preinactivetitle: #fff; --preicotext: #fff;
                     
                     --taskbarstarttop1: #808080; --taskbarstarttop2: #0a0a0a; --taskbarstartbottom1: #fff; --taskbarstartbottom2: #dfdfdf; --alwayswhite: #fff; --alwaysblack: #000;
                     --taskbar1top1: #fff; --taskbar1top2: #dfdfdf; --taskbar1bottom1: #808080; --taskbar1bottom2: #0a0a0a; --taskbar2top1: #fff; --taskbar2top2: #dfdfdf; --taskbar2bottom1: #808080; --taskbar2bottom2: #0a0a0a; 
@@ -57,21 +57,22 @@
                     --preboxshadowraised: inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite);
                     --preboxshadowpressed: inset 1px 1px var(--preblack), inset -1px -1px var(--prewhite), inset -2px -2px var(--prelightg), inset 2px 2px var(--pregray);
                     --curulshadow: inset -1px -1px var(--white), inset 1px 1px var(--gray), inset -2px -2px var(--lightg), inset 2px 2px var(--black);
-                    --curpopshadow: inset -1px -1px var(--black), inset 1px 1px var(--white), inset -2px -2px var(--gray), inset 2px 2px var(--lightg);
-            }
-
+                    --curpopshadow: inset -1px -1px var(--black), inset 1px 1px var(--white), inset -2px -2px var(--gray), inset 2px 2px var(--lightg);}
             /* desktop config settings */
             body {padding: auto auto auto auto; background: var(--wincyan); font-family:var(--curfont); font-size:var(--curfontsize); width:1920px; height:1080px; overflow-x: hidden;}
             #desktop, .navigation {margin: auto auto auto auto; width: 1010px; font-family:var(--curfont); font-size:var(--curfontsize)} body.permalink_page #desktop, body.permalink_page .navigation {width: 480px}
 
 /* mass css storage ------------------------------------------------------------------------------*/
             .window, .win98post, .win98titlebarc, .win98titlebarh, .win98button, .win98buttona, .win98buttondis, .win98buttondisa, .buttonsmalla, .buttonsmalldis, 
-            .win98buttonscrollinactive, .win98scrollinactive, .dropbutton {box-shadow:var(--curboxshadowraised); background:var(--silver); padding:3px}
+            .scrollbinactive, .win98buttonscrollinactive, .dropbutton {box-shadow:var(--curboxshadowraised); background:var(--silver); padding:3px}
             .prepost, .pretitlebarbutton, .prescroll, .prebutton {box-shadow: var(--preboxshadowraised); background:var(--presilver); padding:3px}
             .tinyarrowdisableddown, .smallarrowdisableddown, .arrowdisableddown, .tinyarrowdisabledup, .arrowdisableup, .lmenuarrow, 
             .smenuarrow, .tinyarrowdown, .smallarrowdown {background-image: var(--curspritesheet); filter: invert(var(--invert))}
-            .thealonicpreview, .veryvherstypreview, .twitterpreview, .askiconpreview, .discordlinkpreview, .officialfunnypreview, .rct2preview, 
-            .justicepreview {background-image: var(--predesktopsheet); height: var(--smicoh); width: var(--smicoh); margin-bottom: 6px}
+            
+            .win98titlebarc:active, .win98titlebarh:active, .win98button:active, .win98buttona:active, .buttonsmalla:active, .dropbutton-pres {box-shadow:var(--curboxshadowpressed)}
+            
+            .pretitle-bar-text, .title-bar-text {letter-spacing: 0.5px; margin-right:24px; padding:1px 4px 2px 4px; font-weight:700}
+            .win98titlebarc, .win98titlebarh, .pretitlebarbutton {width:10px; height:8px; float:right; margin:2px 2px 2px 2px}
             
 /* Desktop setup css ------------------------------------------------------------------------------*/
             /* taskbar icon setup */
@@ -85,27 +86,20 @@
 /* Window bar handling ------------------------------------------------------------------------------*/
             /* custom css for post windows apposed to the default win98 css */
             .win98post{position:fixed; color:var(--font)} .window {position: absolute; z-index: 4} .window-body{margin: 8px; color:var(--font)}
-            .title-bar-98{color: var(--curinactivetitle); background: linear-gradient(90deg, #878787, #a2a2a2); height:18px; width:100%; font-weight:700}
-            .title-bar-text {color: var(--curinactivetitle); letter-spacing: 0.5px; margin-right:24px; padding:1px 4px 2px 4px}
+            .title-bar-98{background: linear-gradient(90deg, #878787, #a2a2a2); height:18px; width:100%} .title-bar-text {color: var(--curinactivetitle)}
             .win98innerbox {box-shadow: var(--curpopshadow); background:var(--silver); padding:3px; position: absolute; color: var(--font)}
-            /* window title bar button handling */
-            .win98titlebarc {width:10px; height:8px; float:right; margin:2px 2px 0px 2px} .win98titlebarc:active {box-shadow:var(--curboxshadowpressed)}
-            .win98titlebarh {width:10px; height:8px; float:right; margin-top:2px} .win98titlebarh:active {box-shadow:var(--curboxshadowpressed)}
-            .win98buttonscrollinactive {width: 10px; height: 10px; float:right; margin-left: 1px; position: absolute}
+            .win98titlebarh {margin:2px 0px 0px 0px} .scrollbinactive {width: 10px; height: 10px; float:right; margin-left: 1px; position: absolute}
             /* General button handling */
             .win98button, .win98buttona, .win98buttondis, .win98buttondisa, .prebutton {width:70px; height:16px;}
-            .win98button {cursor:pointer} .win98button:active {box-shadow:var(--curboxshadowpressed)}
-            .win98buttona {cursor:pointer; position:absolute} .win98buttona:active {box-shadow:var(--curboxshadowpressed)}
+            .win98button {cursor:pointer} .win98buttona {cursor:pointer; position:absolute} 
             .win98buttondis {margin-bottom: 4px} .win98buttondisa {margin-bottom: 4px; position:absolute}
+            .buttonsmalla, .buttonsmalldis {width:9px; height:2px; position:absolute; margin-top: -8px}
             
             butlabel {display:inline-flex; align-items: center; color: var(--text); pointer: cursor; margin-top: 2px} 
             butdislabel {color:var(--gray); text-shadow:1px 1px 0 var(--white); display:inline-flex; align-items: center; margin-top: 2px} 
             
-            .buttonsmalla {width:9px; height:2px; position:absolute; margin-top: -8px} .buttonsmalla:active {box-shadow:var(--curboxshadowpressed)}
-            .buttonsmalldis {width:9px; height:2px; position:absolute; margin-top: -8px}
-            
-            .scrollbarmiddle {height: 2px; width: 2px; background-image: var(--scrollbar); background-repeat: repeat; background: var(--white)}
-            .win98scrollinactive {width:10px; height: 10px; float:right; position: absolute}
+            .scrollbarmiddle {height: 2px; width: 2px; background-image: var(--scrollbar); background-repeat: repeat; background-color: var(--white)}
+            .win98buttonscrollinactive {width:10px; height: 10px; float:right; position: absolute}
             .win98tab {box-shadow:inset -1px 0px var(--black), inset 1px 1px var(--white), inset -2px 0px var(--gray),inset 2px 2px var(--lightg); background:var(--silver);
                        padding:3px; border-radius: 2px; position: absolute; z-index:; 1; color: var(--font); height:16px; margin-top:6px}
             
@@ -116,7 +110,7 @@
             .droptext {height: 11px; width: 100%; padding:2px 3px 1px 2px; background:var(--white); color:var(--font)} 
             .droptext:hover {padding:1px 3px 0px 2px; background:var(--prussian); color:var(--hover); border-style: dotted; border-width: 1px; border-color: var(--yellow)}
             .dropbutton {width: 10px; height: 8px; float:right; float:right; margin-top:-17px; width:10px; height:11px}
-            .dropbutton-pres {width: 10px; height: 8px; box-shadow:var(--curboxshadowpressed); background:var(--silver); float:right; margin-right:-2px; margin-top: -18px; width:10px; height:11px; padding:3px; position:absolute;}
+            .dropbutton-pres {width: 10px; height: 8px; background:var(--silver); float:right; margin-right:-2px; margin-top: -18px; width:10px; height:11px; padding:3px; position:absolute;}
             
             .colourselect {height: 12px; width: 12px; padding:2px; box-shadow: var(--curulshadow); border-style: solid; border-width: 1px; border-color:var(--silver); margin:-1px -1px 0px 0px; display: inline-block}
             .colourselect:hover {box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--white), inset -2px -2px var(--black), inset 2px 2px var(--black); border-color: black}
@@ -128,26 +122,28 @@
             .tagged {font-size: 9px; opacity: 0.5} .filled {width:100%; height:100%}
             
 /* Desktop preview css ------------------------------------------------------------------------------*/
-            .thealonicpreview {background-position: -0px -72px} .veryvherstypreview {background-position: -36px -72px} .twitterpreview {background-position: -72px -72px} .askiconpreview {background-position: -107px -72px}
-            .discordlinkpreview {background-position: -144px -72px} .rct2preview { background-position: -216px -72px} .officialfunnypreview {background-position: -180px -72px} .justicepreview {background-position: -252px -72px} 
+            .thealonicpreview, .veryvherstypreview, .twitterpreview, .askiconpreview, .discordlinkpreview, .officialfunnypreview, .rct2preview, 
+            .justicepreview {background-image: var(--predesktopsheet); height: var(--smicoh); width: var(--smicoh); margin-bottom: 6px}
+            
+            .thealonicpreview {background-position: -0px -72px} .veryvherstypreview {background-position: -36px -72px} 
+            .twitterpreview {background-position: -72px -72px} .askiconpreview {background-position: -107px -72px}
+            .discordlinkpreview {background-position: -144px -72px} .rct2preview { background-position: -216px -72px} 
+            .officialfunnypreview {background-position: -180px -72px} .justicepreview {background-position: -252px -72px} 
             .preicocon {width:var(--smicow); height:var(--smicoh); display: inline-block; margin-left:16px; vertical-align: top} 
             preico {cursor: pointer; max-width: auto; display:inline-flex; align-items: center; color: var(--preicotext); background: var(--predesktopicon)} 
             
 /* window preview handling ------------------------------------------------------------------------------*/
             .prepost, .pretitlebarbutton, .prescroll, .prebutton {box-shadow: var(--preboxshadowraised); background:var(--presilver); padding:3px}
-
-            .prepost{position: absolute; color: var(--prefont)} 
-            .pretitle-bar-text {color: var(--preactivetitle); letter-spacing:0.5; margin-right:24px; padding:1px 4px 2px 4px; font-weight:700}
-            .pretitlebarbutton {width: 10px; height: 8px; float:right; margin-top:2px; margin-right:2px} .pretitlebarbutton:active {box-shadow:var(--preboxshadowpressed)}
-            .prescroll {width:10px; height: 10px; float:right; position: absolute; cursor: pointer} .prescroll:active {box-shadow:var(--preboxshadowpressed)}
-            .prebutton {cursor:pointer; color:var(--prefont)} .prebutton:active {box-shadow:var(--preboxshadowpressed)}
+            
+            .pretitlebarbutton {margin:2px 2px 0px 0px}
+            .prepost{position: absolute; color: var(--prefont)} .pretitle-bar-text {color: var(--preactivetitle)}
+            .prescroll {width:10px; height: 10px; float:right; position: absolute; cursor: pointer} .prebutton {cursor:pointer; color:var(--prefont)}
              prebutlabel {display:inline-flex; align-items: center; color: var(--preblack); pointer: cursor; margin-top: 2px} 
              prebutdislabel {color:var(--pregray); text-shadow:1px 1px 0 var(--prewhite); display:inline-flex; align-items: center; margin-top: 2px} 
             
-            preul.tree-view {margin-top: 4px; display: block; padding: 6px; margin: 0; color: var(--preblack);
-                box-shadow: inset -1px -1px var(--prewhite),inset 1px 1px var(--pregray),inset -2px -2px var(--prelightg),inset 2px 2px var(--preblack)}
-            prefieldset{border: none; padding:10px; padding-block-start: 8px; margin:0; color: var(--preblack);
-                box-shadow: inset -1px -1px var(--prewhite), inset 1px 1px var(--pregray), inset -2px -2px var(--pregray), inset 2px 2px var(--prelightg)}
+            preul.tree-view, prefieldset{margin:0; color: var(--preblack)}
+            preul.tree-view {margin-top: 4px; display: block; padding: 6px; box-shadow: inset -1px -1px var(--prewhite),inset 1px 1px var(--pregray),inset -2px -2px var(--prelightg),inset 2px 2px var(--preblack)}
+            prefieldset{border: none; padding:10px; box-shadow: inset -1px -1px var(--prewhite), inset 1px 1px var(--pregray), inset -2px -2px var(--pregray), inset 2px 2px var(--prelightg)}
             
             .prehelp, .preclose {background-image: var(--curspritesheet); width:12px; height:10px; margin-top: -1px; margin-left: -1px; filter: invert(var(--preinvert))} 
             .prehelp {background-position: -66px -215px} .preclose {background-position: -114px -215px} .prescrolldown {background-position: 0px -212px} .prescrollup {background-position:  -32px -212px}
@@ -158,12 +154,15 @@
             .help {background-position: -66px -215px} .minimize {background-position: -82px -215px} 
             .maximize {background-position: -98px -215px} .close {background-position: -114px -215px} .restore {background-position: -303px -215px}
         
-            .scrollup, .scrollright, .scrolldown, .scrollleft, .cornerpeice, .smallscrollup, .smallscrolldown 
-            {background-image: var(--curspritesheet); height: 16px; width: 16px; margin-top: -3px; margin-left: -3px; filter: invert(var(--invert))}
+            .scrollup, .scrollright, .scrolldown, .scrollleft, .cornerpeice, .smallscrollup, .smallscrolldown {background-image: var(--curspritesheet); 
+                height: 16px; width: 16px; margin-top: -3px; margin-left: -3px; filter: invert(var(--invert))}
             .scrolldown {background-position: 0px -212px} .scrollleft { background-position: -16px -212px} 
             .scrollup {background-position:  -32px -212px} .scrollright {background-position: -48px -212px}
-            .smallscrollup {background-position: -38px -218px; height: 2px; width: 3px; margin-left:3px; margin-top:0px} 
-            .smallscrolldown {background-position: -6px -220px; height: 2px; width: 3px; margin-left:3px; margin-top:0px} 
+            .smallscrollup, .smallscrolldown { height: 2px; width: 3px; margin-left:3px; margin-top:0px}
+            .smallscrollup {background-position: -38px -218px} .smallscrolldown {background-position: -6px -220px} 
+
+            .tinyarrowdisableddown, .smallarrowdisableddown, .arrowdisableddown, .tinyarrowdisabledup, .arrowdisableup, .lmenuarrow, 
+            .smenuarrow, .tinyarrowdown, .smallarrowdown {background-image: var(--curspritesheet); filter: invert(var(--invert))}
 
             .tinyarrowdisableddown {height: 3px; width: 4px; background-position: -6px -220px; filter: invert(0.5); margin-left:3px} 
             .smallarrowdisableddown {height: 4px; width: 6px; background-position: -5px -219px; filter: invert(0.5)}
@@ -171,10 +170,9 @@
             .tinyarrowdisabledup {height: 2px; width: 3px; background-position: -38px -218px; filter: invert(0.5); margin-left:3px}
             .arrowdisableup {height: 16px; width: 16px; background-position: -32px -212px; filter: invert(0.5); margin-top:-3px; margin-left:-3px}
             
-            .smenuarrow {height:  7px; width:  4px; background-position: -54px -216px; margin: auto; float: right; margin-right:6px; margin-top: 7px} 
-            .lmenuarrow {height:  7px; width:  4px; background-position: -54px -216px; margin: auto; float: right; margin-top:15px; margin-right: 5px}
-            .tinyarrowdown {height:  5px; width:  7px; background-position: -6px -220px; margin: auto; float: right}
-            .smallarrowdown {height:  3px; width:  5px; background-position: -5px -219px; margin: auto; float: right}
+            .smenuarrow, .lmenuarrow, .tinyarrowdown, .smallarrowdown{ margin: auto; float: right; height: 7px; width: 4px;}
+            .smenuarrow {background-position: -54px -216px; margin-right:6px; margin-top: 7px} .lmenuarrow {background-position: -54px -216px; margin-top:15px; margin-right: 5px}
+            .tinyarrowdown {background-position: -6px -220px; height: 5px; width: 7px} .smallarrowdown {background-position: -5px -219px; height: 3px; width: 5px}
             
             .disabletickbox, .invisibtickbox{ height: 14px; width: 14px; margin:-2px; position: absolute}
             .disabletickbox {filter: invert(var(--discheckinv)); background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')}
@@ -189,8 +187,7 @@
             
             .submenu18, .submenu20, .submenu36 {background:var(--silver); color: var(--text); width:100%}
             .submenu18:hover, .submenu20:hover, .submenu36:hover{ background:var(--prussian); color:var(--hover); width:100%}
-            .submenu18 {height: 18px} .submenu18:hover {height: 18px} .submenu20 {height: 20px} 
-            .submenu20:hover {height: 20px} .submenu36 {height: 36px} .submenu36:hover {height: 36px}
+            .submenu18, .submenu18:hover {height: 18px} .submenu20, .submenu20:hover {height: 20px} .submenu36, .submenu36:hover {height: 36px}
             
             .patchnotes, .menuprograms, .menudocuments, .menufavourites, .menushutdown, .logofficon, .menusettings, .menufind, .menuhelp, .menurun,
             .menulogoff, .shutdownicon{ background-image: var(--curspritesheet); margin: auto; float: left; height: 36px; width: 36px}
@@ -1676,7 +1673,7 @@
                                 
                                 <div class="small_seperator" style="position:absolute; margin-top:1px; height:17px; margin-left:2px"></div>
                                 <a href="https://thealonic.tumblr.com/">
-                                    <div class="explorerback" style="margin-left:8px; width:20px; height:20px; display: inline-block"></div>
+                                    <div class="explorerback" style="margin-left:5px; width:20px; height:20px; display: inline-block"></div>
                                     <div class="reflinkblack" style="margin-top:5px; display: inline-block">Back</div></a>
                                     
                                 <div style="margin-top:5px; display: inline-block">
@@ -1690,7 +1687,7 @@
                                    
                                 <div class="menuapplicationsplit" style="position:absolute; width:468px"> </div>
                                 <div class="small_seperator" style="position:absolute; margin-top:3px; height:17px; margin-left:1px"></div> <!-- Left side of the Bottom container -->
-                                <div style="margin-left:11px; margin-top:7px; ">A<udl>d</udl>dress</div>
+                                <div style="margin-left:8px; margin-top:7px; ">A<udl>d</udl>dress</div>
                                 
                                 <div class="plinks-con" style="float:right; margin-top:-12px; height:22px; width:49px; cursor:pointer;">
                                     <div style="margin-top:11px; float:right">
@@ -1706,10 +1703,10 @@
                                 </postdrop></div>
                                 <div class="big_seperator" style="float:right; height:21px; margin-top:-17px; margin-right:-2px"></div> 
 
-                                <a href="{Permalink}"><div style="float:right; height:22px; width:49px; margin-top:-17px;">
+                                <a href="{Permalink}"><div style="float:right; height:22px; width:44px; margin-top:-17px;">
                                     <div class="explorergo" style="margin-left:5px;"></div> <div class="reflinkblack" style="margin-top:5px;">Go</div></div></a>
                                 
-                                <ul class="tree-view" style="float:right; width:300px; height:9px; margin-top:-17px; overflow:hidden">
+                                <ul class="tree-view" style="float:right; width:308px; height:9px; margin-top:-17px; overflow:hidden">
                                     <div class="win98buttonscrollinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px; width:10px; height:11px">
                                         <div class="arrowdisableddown" style="margin-left:-4px"></div></div>
                                     <div class="menufavouriteslink" style="position:absolute; margin-top:-5px; margin-left:-5px"></div>
