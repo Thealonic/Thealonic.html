@@ -61,18 +61,9 @@
             /* desktop config settings */
             body {padding: auto auto auto auto; background: var(--wincyan); font-family:var(--curfont); font-size:var(--curfontsize); width:1920px; height:1080px; overflow-x: hidden;}
             #desktop, .navigation {margin: auto auto auto auto; width: 1010px; font-family:var(--curfont); font-size:var(--curfontsize)} body.permalink_page #desktop, body.permalink_page .navigation {width: 480px}
-
-/* mass css storage ------------------------------------------------------------------------------*/
-            .window, .win98post, .win98titlebarc, .win98titlebarh, .win98button, .win98buttona, .win98buttondis, .win98buttondisa, .buttonsmalla, .buttonsmalldis, 
-            .scrollbinactive, .win98buttonscrollinactive, .dropbutton {box-shadow:var(--curboxshadowraised); background:var(--silver); padding:3px}
-            .prepost, .pretitlebarbutton, .prescroll, .prebutton {box-shadow: var(--preboxshadowraised); background:var(--presilver); padding:3px}
-            .tinyarrowdisableddown, .smallarrowdisableddown, .arrowdisableddown, .tinyarrowdisabledup, .arrowdisableup, .lmenuarrow, 
-            .smenuarrow, .tinyarrowdown, .smallarrowdown {background-image: var(--curspritesheet); filter: invert(var(--invert))}
             
-            .win98titlebarc:active, .win98titlebarh:active, .win98button:active, .win98buttona:active, .buttonsmalla:active, .dropbutton-pres {box-shadow:var(--curboxshadowpressed)}
-            
-            .pretitle-bar-text, .title-bar-text {letter-spacing: 0.5px; margin-right:24px; padding:1px 4px 2px 4px; font-weight:700}
-            .win98titlebarc, .win98titlebarh, .pretitlebarbutton {width:10px; height:8px; float:right; margin:2px 2px 2px 2px}
+            .pretitle-bar-text, .title-bar-text {letter-spacing: 0.5px; margin-right:24px; padding:1px 4px 2px 4px; font-weight:700; cursor:default}
+            .win98titlebarc, .win98titlebarh, .pretitlebarbutton {width:10px; height:8px; float:right; margin:2px 2px 2px 2px; cursor: pointer}
             
 /* Desktop setup css ------------------------------------------------------------------------------*/
             /* taskbar icon setup */
@@ -84,21 +75,24 @@
             .discordlink {background-position: -288px -0px} .officialfunny {background-position: -360px -0px} .rct2 {background-position: -432px -0px} .justice {background-position: -504px -0px}
 
 /* Window bar handling ------------------------------------------------------------------------------*/
+            .window, .win98post, .win98titlebarc, .win98titlebarh, .win98button, .win98buttona, .win98buttondis, .win98buttondisa, .buttonsmalla, .buttonsmalldis, 
+            .scrollbinactive, .win98buttonscrollinactive, .dropbutton {box-shadow:var(--curboxshadowraised); background:var(--silver); padding:3px}
+            .win98titlebarc:active, .win98titlebarh:active, .win98button:active, .win98buttona:active, .buttonsmalla:active, .dropbutton-pres {box-shadow:var(--curboxshadowpressed)}
             /* custom css for post windows apposed to the default win98 css */
             .win98post{position:fixed; color:var(--font)} .window {position: absolute; z-index: 4} .window-body{margin: 8px; color:var(--font)}
-            .title-bar-98{background: linear-gradient(90deg, #878787, #a2a2a2); height:18px; width:100%} .title-bar-text {color: var(--curinactivetitle)}
+            .title-bar-98{background: linear-gradient(90deg, #878787, #a2a2a2); height:18px; width:100%; } .title-bar-text {color: var(--curinactivetitle)}
             .win98innerbox {box-shadow: var(--curpopshadow); background:var(--silver); padding:3px; position: absolute; color: var(--font)}
             .win98titlebarh {margin:2px 0px 0px 0px} .scrollbinactive {width: 10px; height: 10px; float:right; margin-left: 1px; position: absolute}
             /* General button handling */
-            .win98button, .win98buttona, .win98buttondis, .win98buttondisa, .prebutton {width:70px; height:16px;}
-            .win98button {cursor:pointer} .win98buttona {cursor:pointer; position:absolute} 
+            .win98button, .win98buttona, .win98buttondis, .win98buttondisa, .prebutton {width:70px; height:16px}
+            .win98button {cursor:pointer} .win98buttona {cursor:pointer; position:absolute}
             .win98buttondis {margin-bottom: 4px} .win98buttondisa {margin-bottom: 4px; position:absolute}
             .buttonsmalla, .buttonsmalldis {width:9px; height:2px; position:absolute; margin-top: -8px}
             
             butlabel {display:inline-flex; align-items: center; color: var(--text); pointer: cursor; margin-top: 2px} 
             butdislabel {color:var(--gray); text-shadow:1px 1px 0 var(--white); display:inline-flex; align-items: center; margin-top: 2px} 
             
-            .scrollbarmiddle {height: 2px; width: 2px; background-image: var(--scrollbar); background-repeat: repeat; background-color: var(--white)}
+            .scrollbarmiddle {height: 2px; width: 2px; background-image: var(--scrollbar); background-repeat: repeat;}
             .win98buttonscrollinactive {width:10px; height: 10px; float:right; position: absolute}
             .win98tab {box-shadow:inset -1px 0px var(--black), inset 1px 1px var(--white), inset -2px 0px var(--gray),inset 2px 2px var(--lightg); background:var(--silver);
                        padding:3px; border-radius: 2px; position: absolute; z-index:; 1; color: var(--font); height:16px; margin-top:6px}
@@ -179,6 +173,11 @@
             .invisibtickbox {filter: invert(var(--invert)); background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickboxinv.png')}
             .invisibtickbox:hover {filter: invert(var(--invcheckinv)); background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')}
  
+            .big_seperator { float: left; border-left: 1px solid var(--gray); border-right: 1px solid var(--lightg); height: 22px; margin-top: 2px; margin-left: -1px} /*thin seperator but tall*/
+            .small_seperator { float: left;  border-left: 1px solid var(--white); border-top: 1px solid var(--white); margin-top: 3px; margin-left: 1px; height:17px; 
+                border-right: 1px solid var(--gray); border-bottom: 1px solid var(--gray); background-color: var(--silver); width: 1px; height: 18px}
+            .menuapplicationsplit { border-bottom: 1px solid var(--white); background: var(--gray); height: 1px; width: 1px}
+ 
 /* Start bar handling ------------------------------------------------------------------------------*/
             .win98start{box-shadow:inset -1px -1px var(--taskbarstarttop2), inset 1px 1px var(--taskbarstartbottom2), inset -2px -2px var(--taskbarstarttop1), inset 2px 2px var(--taskbarstartbottom1); 
                 background:var(--silver); padding:3px; color:var(--font); height: 16px; width: 50px; margin-left: 2px; margin-top: 2px; margin-right: 2px}
@@ -195,13 +194,17 @@
             .menusettings {background-position: -144px 0px} .menufind {background-position: -180px  0px} .menuhelp {background-position: -216px -36px} .menurun {background-position: -252px -36px}
             .menulogoff {background-position: -288px 0px} .menushutdown {background-position: -324px 0px} .logofficon {background-position: -288px -36px} .shutdownicon {background-position: -324px -36px}
             /* start menu submenu icon references */
-            .menuprograms123, .menuprograms4, .menuprograms5, .menuprograms6, .menuprograms7, .menufind1, .menufind2, .menufind3, .menufind4, .menusettings1, .menusettings2, .menusettings3, .menusettings4, .menusettings5, .menusettings6,
-            .menuapplications7, .menuapplications8, .menuapplications9, .menuapplications10, .menuapplications11, .menuapplications12, .menuapplications13, .menuapplications14, .menuapplications15, .explorerlinks, .none, .menucommunications1, 
-            .menucommunications2, .menucommunications3, .menucommunications4, .taskbaricon1, .taskbaricon2, .taskbaricon3, .taskbaricon4,  .calendar, .explorergo, .explorerback, .menufavouritesfolder, .menufavouriteslink, .menusystemtools1, 
-            .menusystemtools2, .menusystemtools3, .menusystemtools4, .menusystemtools5, .menusystemtools6, .menusystemtools7, .menusystemtools8, .menusystemtools9, .menusystemtools10, .menusystemtools11, .menusystemtools12, .menusystemtools13, 
-            .menuinternettools1, .menuinternettools2, .menuinternettools3, .menuinternettools4, .menuentertainment1, .menuentertainment2, .menuentertainment3, .menuentertainment4, .menuentertainment5, .menuentertainment, .menusettings1, 
-            .menusettings2, .menusettings3, .menusettings4, .menusettings5, .menusettings6, .menugames1, .menugames2, .menugames3, .menugames4,  .menudocuments1, .menudocumentssound, .menudocumentsfolder 
+            .menuprograms123, .menuprograms4, .menuprograms5, .menuprograms6, .menuprograms7, .menufind1, .menufind2, .menufind3, .menufind4, 
+            .menusettings1, .menusettings2, .menusettings3, .menusettings4, .menusettings5, .menusettings6, .menuapplications7, .menuapplications8, .menuapplications9, 
+            .menuapplications10, .menuapplications11, .menuapplications12, .menuapplications13, .menuapplications14, .menuapplications15, .explorerlinks, .none, 
+            .menucommunications1, .menucommunications2, .menucommunications3, .menucommunications4, .taskbaricon1, .taskbaricon2, .taskbaricon3, .taskbaricon4,  
+            .calendar, .explorergo, .explorerback, .menufavouritesfolder, .menufavouriteslink, .menuinternettools1, .menuinternettools2, .menuinternettools3, .menuinternettools4, 
+            .menusystemtools1,  .menusystemtools2, .menusystemtools3, .menusystemtools4, .menusystemtools5, .menusystemtools6, .menusystemtools7, .menusystemtools8, 
+            .menusystemtools9, .menusystemtools10, .menusystemtools11, .menusystemtools12, .menusystemtools13, .menudocumentssound, .menudocumentsfolder,
+            .menuentertainment1, .menuentertainment2, .menuentertainment3, .menuentertainment4, .menuentertainment5, .menuentertainment,  .menudocuments1,
+            .menusettings1, .menusettings2, .menusettings3, .menusettings4, .menusettings5, .menusettings6, .menugames1, .menugames2, .menugames3, .menugames4
             {background-image: var(--curspritesheet); margin: auto; float: left; height: 20px; width: 20px}
+            
             .menuapplications7 {background-position: -20px -92px} /* calc */ .menuapplications12 {background-position: 0px -112px} /* ask */ .menuapplications8 {background-position: -40px -92px} /* img */ 
             .menuapplications13 {background-position: -20px -112px} /* yahoo */ .menuapplications9 {background-position: -60px -92px} /* wordpad */ .menuapplications14 {background-position: -40px -112px} /* msn */
             .menuapplications10 {background-position: -80px -92px} /* paint */ .menuapplications15 {background-position: -60px -112px} /* prodigy */ .menuapplications11 {background-position: -100px -92px} /* notepad */ 
@@ -237,21 +240,16 @@
             .taskbartask6 {box-shadow:inset -1px -1px var(--taskbar6bottom2), inset 1px 1px var(--taskbar6top2), inset -2px -2px var(--taskbar6bottom1), inset 2px 2px var(--taskbar6top1)}
             .taskbartask7 {box-shadow:inset -1px -1px var(--taskbar7bottom2), inset 1px 1px var(--taskbar7top2), inset -2px -2px var(--taskbar7bottom1), inset 2px 2px var(--taskbar7top1)}
             .taskbartask8 {box-shadow:inset -1px -1px var(--taskbar8bottom2), inset 1px 1px var(--taskbar8top2), inset -2px -2px var(--taskbar8bottom1), inset 2px 2px var(--taskbar8top1)}
-            
-            .big_seperator { float: left; border-left: 1px solid var(--gray); border-right: 1px solid var(--lightg); height: 22px; margin-top: 2px; margin-left: -1px} /*thin seperator but tall*/
-            .small_seperator { float: left; border: 1px solid var(--white), 1px solid var(--white), 1px solid var(--gray), 1px solid var(--gray); margin-top: 3px; margin-left: 1px; height:17px; background: var(--silver); width: 1px; height: 18px} /*thin seperator but tall*/
-            .menuapplicationsplit { border-bottom: 1px solid var(--white); background: var(--gray); height: 1px; width: 1px}
+
             .startmenusplitter { border-bottom: 1px solid var(--white); background: var(--gray); height: 1px; width: 156px; margin-left: 2px; margin-top:3px; margin-bottom:2px}
             
             .start_bar {position: fixed; background: var(--silver); bottom: 0; height: 28px; width: 100%; z-index: 3; margin-left:-8px} 
             .start_bar .top_border {border-bottom: 1px solid var(--lightg); border-top: 1px solid var(--white)}
-            .start_bar .time {line-height: 18px; float: right; margin-right: 10px; color:var(--text)} 
-            .taskbaricons {float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px}
+            .start_bar .time {line-height: 18px; float: right; margin-right: 10px; color:var(--text)} .taskbaricons {float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px}
             .windowsstartmenubar {background-image: var(--curspritesheet); height: 159px; width:  21px; background-position: -339px -72px; position:absolute; float: left}
     
             .clock{ box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray); padding:2px; float:right; width:96px; height:18px; margin-right:2px; margin-top:2px}
-            .calendar { float: left; margin-top: 1px; margin-left: 3px} 
-            .taskbaricons { float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px}
+            .calendar { float: left; margin-top: 1px; margin-left: 3px} .taskbaricons { float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px}
 
 /* Message box reference sheets ------------------------------------------------------------------------------*/
             .displayboxdisplay, .displayboxdisplayde {height:169px; margin-left:-16px; position:absolute; margin-top:-16px}
@@ -273,27 +271,21 @@
             
 /* Formatting ref css ------------------------------------------------------------------------------*/
             ul.tree-view {margin-top: 4px; display: block; background: var(--white); color:var(--text); box-shadow: var(--curulshadow); padding: 6px; margin: 0}
-            ul.tree-view a {text-decoration: none; color: var(--black)} 
-            ul.tree-view a:focus {background: var(--prussian); color: var(--white)}
+            ul.tree-view a {text-decoration: none; color: var(--black)} ul.tree-view a:focus {background: var(--prussian); color: var(--white)}
             ul.tree-view ul {margin-top: 4px; margin-left: 12px; padding-left: 16px; border-left: 1px dotted var(--gray)} 
-            ul.tree-view ul>li {position:relative} 
+            ul.tree-view ul>li {position:relative} ul.tree-view li {margin-top: 4px; list-style-type: none} 
             ul.tree-view ul>li:before {content:""; display: block; position: absolute; left: -16px; top: 6px; width: 12px; border-bottom: 1px dotted var(--gray)}
             ul.tree-view ul>li:last-child:after {content:""; display: block; position:absolute; left: -20px; top: 7px; bottom:0; width: 8px; background: var(--white)}
-            ul.tree-view li {margin-top: 4px; list-style-type: none}  
-            ul.tree-view ul details>summary:before{margin-left: -22px; position: relative; z-index: 1}
-            ul.tree-view details {margin-top:0} 
-            ul.tree-view details[open] summary {margin-bottom: 0} 
-            ul.tree-view details[open]>summary:before {content: "-"}
+            ul.tree-view ul details>summary:before{margin-left: -22px; position: relative; z-index: 1} ul.tree-view details {margin-top:0} 
+            ul.tree-view details[open] summary {margin-bottom: 0} ul.tree-view details[open]>summary:before {content: "-"}
             ul.tree-view details>summary:before {text-align: center; display: block; float: left; content: "+"; border: 1px solid var(--gray); 
                 width: 8px; height: 9px; line-height: 8px; margin-right: 5px; padding-left: 1px; background: var(--white)}
 
             ul.tick-box {display: block; background: var(--white); color:var(--text); position: absolute; width:9px; height: 9px; padding:2px; margin: 0; margin-top: 7px; margin-left:3px; box-shadow: var(--curulshadow)}
             ticklabel {display:inline-flex; algin-items: center; color: var(--text); margin-left: 22px; margin-top:7px}
             ul.selection {margin-top: 4px; display: block; background: var(--silver); color:var(--text); width:40px; height:9px; box-shadow: var(--curulshadow); padding: 6px; margin: 0}
-            .field-row{display:flex; align-items: center}
-            .field-row>*+*{ margin-left: 6px} 
-            .field-row-stacked{display:flex; flex-direction: column} 
-            .field-row-stacked *+*{ margin-top: 6px}
+            .field-row{display:flex; align-items: center} .field-row>*+*{ margin-left: 6px} 
+            .field-row-stacked{display:flex; flex-direction: column} .field-row-stacked *+*{ margin-top: 6px}
             
             a {color: var(--text); text-decoration: none} a:hover {text-decoration: underline; color: var(--hover)} 
             strong {color: var(--blue)}; udl {text-decoration-line: underline}
@@ -308,52 +300,35 @@
             
 /* tumblr post handling ------------------------------------------------------------------------------*/
             .posts .photo img.image {display: block; width: 100%; height:auto} .posts .audio img.artwork { display: block; width: 100%; height:auto}
-            .posts .html_photoset {position: relative; display: block; width: 100%; height:auto;} .posts .photoset { position: relative; height:auto}
+            .posts .html_photoset {position: relative; display: block; width: 100%; height:auto} .posts .photoset { position: relative; height:auto}
             .posts p:empty {display: none} .posts div:empty {display: none} .posts .with_caption {margin-bottom: 1em} .hide_if_last:last-child { display: none} 
             body.permalink_page .posts .controls {display: none} #content #posts #tags .comma:last-child {display: none}
             
-            .content p > img {max-width: 100%; border-radius: 0} 
-            .content p {margin: 0 0 0.85em 0}
-            .meta div {margin: 0 0 0.4em 0 !important} 
-            .meta div a { text-decoration: none} 
-            .meta div:last-child {margin-bottom: 0 !important} /* bottom of posts before footer */
-            .content p:last-child {margin-bottom: 0 !important} 
-            .content blockquote:last-child {margin-bottom: 0 !important} 
+            .content p > img {max-width: 100%; border-radius: 0} .content p {margin: 0 0 0.85em 0}
+            .meta div {margin: 0 0 0.4em 0 !important} .meta div a { text-decoration: none} .meta div:last-child {margin-bottom: 0 !important} /* bottom of posts before footer */
+            .content p:last-child {margin-bottom: 0 !important} .content blockquote:last-child {margin-bottom: 0 !important} 
             
-            blockquote, ul, ol  {margin: 0 0 0.8em 0}
-            blockquote {margin-left: 2px; padding-left: 4px; margin-top:-5px; margin-bottom:5px; border-left: 2px solid var(--midgray); border-left: 2px solid var(--midgray)} /* lines at the side of posts */
-            .quote .dash {float: left; padding: 0 2px 0 2px} 
-            .quote .source {float: left} 
-            .chat .line:last-of-type {margin-bottom: 0} 
-            .chat ul {padding: 0; list-style: none} 
-            .chat ol {padding: 0; list-style: none}
+            blockquote, ul, ol  {margin: 0 0 0.8em 0} blockquote {margin-left: 2px; padding-left: 4px; margin-top:-5px; margin-bottom:5px; border-left: 2px solid var(--midgray); border-left: 2px solid var(--midgray)} /* lines at the side of posts */
+            .quote .dash {float: left; padding: 0 2px 0 2px} .quote .source {float: left} .chat .line:last-of-type {margin-bottom: 0} .chat ul {padding: 0; list-style: none} .chat ol {padding: 0; list-style: none}
             
-            .body img {max-width: 100%; overflow: hidden} 
-            .caption img { max-width: 100%; overflow: hidden} 
-            img.full_image {width: 451px; overflow: hidden}
-            .middle img {max-width: 451px; width: 100%; height: 100%; display: block} a img {border: 0}
+            .body img {max-width: 100%; overflow: hidden} .caption img { max-width: 100%; overflow: hidden} 
+            img.full_image {width: 451px; overflow: hidden} .middle img {max-width: 451px; width: 100%; height: 100%; display: block} a img {border: 0}
             
-            .audio_container {overflow: hidden; position: relative; width: 100px} 
-            .tumblr_audio_player {width: 100%} 
-            .posts .audio .audio_player embed {display: block}
-            .soundcloud_audio_player {width: 100%;} .spotify_audio_player { height: 80px !important; width:100%}
+            .audio_container {overflow: hidden; position: relative; width: 100px} .posts .audio .audio_player embed {display: block}
+            .soundcloud_audio_player, .tumblr_audio_player {width: 100%} .spotify_audio_player { height: 80px !important; width:100%}
             .tumblr_video_container {position: relative; width:auto !important; height:auto !important; padding: auto}
 
             .like-b {position:relative; display:inline-block; height:1em; line-height:1em; color:var(--text); background: var(--silver)} 
             .like-b .like_button iframe {position:absolute; opacity:0; background: var(--silver)}
-            .like-b .liked + .b {color:inherit;} .like-b .liked + .b:after {content:'d'} 
-            .like-b:hover {color:var(--hover); text-decoration-line: underline} 
+            .like-b .liked + .b {color:inherit;} .like-b .liked + .b:after {content:'d'} .like-b:hover {color:var(--hover); text-decoration-line: underline} 
 
-            .notes {margin-top:0px; text-align:left} 
-            ol.notes {padding: 2px; list-style-type: none; max-height: 320px; width:463px; overflow:auto; margin-top:-6px} 
+            ol.notes {padding: 2px; list-style-type: none; max-height: 320px; width:463px; overflow:auto; margin-top:-6px} ul, ol {padding: 0 0 0 18px} /*infinate scroll*/
             ol.notes li.note img.avatar {vertical-align: -4px; margin-right: 4px; width: 16px; height:16px; margin-top:-2px; margin-bottom;-2px} 
-            ol.notes li.note .answer_content {font-weight: normal}
-            ol.notes li.note blockquote {padding: 4px 10px; margin: 10px 0px 0px 25px} 
-            ol.notes li.note blockquote a {text-decoration: none; color: var(--blue)} 
-            ul, ol {padding: 0 0 0 18px} /*infinate scroll*/
-
-            textarea {font-family:monospace;  font-size:var(--curfontsize); border:none; outline:none; background:none; color: var(--alwaysblack)}
-            input{font-family:var(--curfont); font-size:var(--curfontsize); border:none; outline:none; background:none; color:var(--alwayswhite); width: 100%; height:16px; padding:0px; display: block; white-space: pre-wrap}
+            ol.notes li.note .answer_content {font-weight: normal} ol.notes li.note blockquote a {text-decoration: none; color: var(--blue)} 
+            ol.notes li.note blockquote {padding: 4px 10px; margin: 10px 0px 0px 25px} .notes {margin-top:0px; text-align:left} 
+            
+            textarea, input{font-size:var(--curfontsize); border:none; outline:none; background:none} textarea {font-family:monospace; color: var(--alwaysblack)}
+            input{font-family:var(--curfont); color:var(--alwayswhite); width: 100%; height:16px; padding:0px; display: block; white-space: pre-wrap}
             #progressBar {width: var(--slider); height: 6px; background: var(--silver); display: none; margin-top: 1px} #progressBar div {height: 100%; width: 0; background: var(--atext)}
             
             @font-face { font-family: 'ms_sans_serifregular'; font-weight: normal; font-style: normal;
@@ -373,16 +348,16 @@
         
         <div class="icons" style="padding-top: 20px; z-index:1" onclick="menuclosed()">
             <a href="https://thealonic.tumblr.com/"><center><div class="thealonic" id="desktopico1"></div>
-                    <ico>Thealonic</ico></icon></center></a>
+                <ico>Thealonic</ico></icon></center></a>
                     
             <a href="https://veryvhersty.tumblr.com/" target="_blank"><center><div class="veryvhersty" id="desktopico2"></div>
-                    <ico>Very.Vhersty</ico></center></a>
+                <ico>Very.Vhersty</ico></center></a>
                     
             <a href="https://twitter.com/VeryVhersty" target="_blank"><center><div class="twitter" id="desktopico3"></div>
-                    <ico style="margin-left:0.5px;">Art Posting</ico></center></a>
+                <ico style="margin-left:0.5px;">Art Posting</ico></center></a>
                     
-            {block:AskEnabled}<a href="/ask" class="ask" target="_blank">
-                <center><div class="askicon" id="desktopico4"></div><ico>Ask Mommy</ico></center></a>{/block:AskEnabled}
+            {block:AskEnabled}<a href="/ask" class="ask" target="_blank"><center><div class="askicon" id="desktopico4"></div>
+                <ico>Ask Mommy</ico></center></a>{/block:AskEnabled}
                 
             <a href="https://discord.gg/KDQcXs7" target="_blank"><center><div class="discordlink" id="desktopico5"></div>
                 <ico>Self-Governed</ico><ico style="margin-left:0.5px;">Shitposters</ico></center></a>
@@ -539,8 +514,8 @@
                         <div class="stopbutton" onclick="stopVideo()"></div> <!--#ref0053-->
                         <div class="big_seperator" style="height:18px; margin-top:4px"></div>
                         <div class="previousbutton" onclick="previousVideo()" id="previousbuttonembed"></div> <!--#ref0045-->
-                        <div class="rewindbutton" onclick="rewindVideo()"></div> <!--#ref0046-->
-                        <div class="fastforwardbutton" onclick="forwardVideo()"></div> <!--#ref0047-->
+                        <div class="rewindbutton" onmousedown="rewindVideo()" onmouseup="end()"></div> <!--#ref0046-->
+                        <div class="fastforwardbutton" onmousedown="forwardVideo()" onmouseup="end()"></div> <!--#ref0047-->
                         <div class="nextbutton" onclick="nextVideo()" id="nextbuttonembed"></div> <!--#ref0048-->
                         <div class="big_seperator" style="height:18px; margin-top:4px;"></div>
                         <div class="shufflebutton" onclick="shuffleVideo()" style="filter: invert(var(--shuffleinvert));"></div> <!--#ref0044-->
@@ -606,15 +581,18 @@
                 playerVars: {controls: 0, autoplay: 0, modestbranding:1, showinfo: 0, disablekb: 0}})} //player settings
             function onPlayerReady(event) {urlupdate(); event.target.loadPlaylist({list: "", index: 0, suggestedQuality: "small"})} //#ref0040
             
+            function end() {clearInterval(counter)}
             //basic player functionality.
             function startVideo() {player.playVideo()} function pauseVideo() {player.pauseVideo()} function stopVideo() {player.stopVideo()} //#ref0051, #ref0052, #ref0053
             function previousVideo() {if(currentplaylist !== ""){player.previousVideo(); playertext.textContent = "Playing previous video"}} //#ref0045: Plays the previous video IF there is a playlist.
             function nextVideo() {if(currentplaylist !== ""){player.nextVideo(); playertext.textContent = "Playing next video"}} //#ref0048: Plays the next video IF there is a playlist.
             //fast forward and rewind functionality
-            function forwardVideo() { player.seekTo((player.getCurrentTime() + currentskiptime)); //#ref0047: skips time forward based on #ref0048
-                playertext.textContent = "Skipped " + currentskiptime + " seconds ahead"; playstateupdateforward(); playerspeed.textContext = currentskiptime;} //States current time of #ref0048 with #ref0049
-            function rewindVideo() { player.seekTo((player.getCurrentTime() - currentskiptime)); //#ref0046: skips time forward based on #ref0048
-                playertext.textContent = "Rewinded " + currentskiptime + " seconds"; playstateupdatebackward(); playerspeed.textContext = currentskiptime;} //States current time of #ref0048 with #ref0049
+            function forwardVideo() { player.seekTo((player.getCurrentTime() + currentskiptime)); var skipamount = 1; playertext.textContent = "Skipped " + (skipamount * currentskiptime) + " seconds ahead";
+                counter = setInterval(function() {skipamount++; player.seekTo((player.getCurrentTime() + currentskiptime)); //#ref0047: skips time forward based on #ref0048
+                playertext.textContent = "Skipped " + (skipamount * currentskiptime) + " seconds ahead"; playstateupdateforward(); playerspeed.textContext = currentskiptime}, 200)} //States current time of #ref0048 with #ref0049
+            function rewindVideo() { player.seekTo((player.getCurrentTime() - currentskiptime)); var skipamount = 1; playertext.textContent = "Rewinded " + (skipamount * currentskiptime) + " seconds";
+                counter = setInterval(function() {skipamount++; player.seekTo((player.getCurrentTime() - currentskiptime)); //#ref0046: skips time forward based on #ref0048
+                playertext.textContent = "Rewinded " + (skipamount * currentskiptime) + " seconds"; playstateupdatebackward(); playerspeed.textContext = currentskiptime}, 200)} //States current time of #ref0048 with #ref0049
             function increaseskip() { if(currentskiptime < 120){currentskiptime = currentskiptime + 5;}} function decreaseskip() { if(currentskiptime > 5){currentskiptime = currentskiptime - 5;}}
             //shuffle settings for #ref2003
             function shuffleVideo(){ if(shuffle == true){player.setShuffle(false); shuffle = false; docelem.style.setProperty('--shuffleinvert', 0.5); shuffletext = ""} //shuffle mode disabled, adjusts #ref0044, and clears #ref0045
@@ -999,7 +977,7 @@
                     if(function2 == "break"){
                         if(loaded !== undefined){
                             inprompt = inprompt + "Fetching " + loaded; println();
-                            fetch(config).then(res => res.text()) .then(data => {config = data.split('\n')});
+                            fetch(config).then(res => res.text()) .then(data => {config = data.split("\n")});
                             inprompt = inprompt + "Done."; println(); println();
                         } else { inprompt = inprompt + "Error 203: " + "'" + loaded + "' is not a valid config."; println(); println() }}
                         
@@ -1139,17 +1117,13 @@
                             <div style="padding: 3px 3px 2px 2px" id="ofdesktop">(none)</div><div class="dropbutton"><div class="scrolldown"></div></div>
                             <div class="dropmenu" style="width:61px; margin-left: -20000px;" id="desktopmode">
                                 <div class="dropbutton-pres" style="margin-left:47px"><div class="scrolldown"></div></div>
-                                <div class="droptext" onclick="centeritem()">Center</div>
                                 <div class="droptext" onclick="fillitem()">Fill</div>
-                                <div class="droptext" onclick="tileitem()">Span</div>
-                                <div class="droptext" onclick="stretchitem()">Stretch</div>
+                                <div class="droptext" onclick="tileitem()">Tile</div>
                     </div></ul></div>
                            
                     <script> var desktopdrop = false, desktopmode = document.getElementById("desktopmode").style, ofdesktopmode = document.getElementById("ofdesktop"); abody = document.getElementById("body").style; //#ref5022 through #ref0002
                         function desktopdropdown(){if (desktopdrop == false) {desktopmode.marginLeft = "-2px"; ; desktopdrop = true } else if (desktopdrop == true){desktopmode.marginLeft = "-20000px";; desktopdrop = false}} //ref1023 & ref1024
                         function desktopexit(){desktopmode.marginLeft = "-20000px"; desktopdrop = false} //ref1025 of #ref0002
-                        function centeritem(){ofdesktopmode.textContent = 'No Repeat'; abody.objectFit = "center"} 
-                        function Stretchitem(){ofdesktopmode.textContent = 'Fill'; abody.backgroundSize = "cover"; abody.objectFit = "auto"; abody.backgroundRepeat = "no-repeat"; abody.backgroundAttachment = "fixed"} 
                         function tileitem(){ofdesktopmode.textContent = 'Tile'; abody.backgroundSize = "auto"; abody.objectFit = "none"; abody.backgroundRepeat = "repeat"; abody.backgroundAttachment = "scroll"} 
                         function fillitem(){ofdesktopmode.textContent = 'Fill'; abody.backgroundSize = "cover"; abody.objectFit = "auto"; abody.backgroundRepeat = "no-repeat"; abody.backgroundAttachment = "fixed"} </script>
                         
@@ -1647,8 +1621,7 @@
             function logreset() {inactiveall(); logoff.left = "40%"; logoff.top = "40%"; logonactive()}; function logoffno() { logoff.marginLeft = "-20000px"; logoff.zIndex = "1"} </script>
         
 <!-- Windows 98 desktop handling ------------------------------------------------------------------------------>
-        {block:Pagination} <div class="navigation cf" id="i_nav"> {block:NextPage}<a class="next" id="i_next" href="{NextPage}">{lang:Next} &rarr;</a>{/block:NextPage}
-            {block:PreviousPage}<a class="prev" href="{PreviousPage}">&larr; {lang:Previous}</a>{/block:PreviousPage}</div>{/block:Pagination}
+        {block:Pagination}<div class="navigation cf" id="i_nav">{block:NextPage}<a href="{NextPage}"></a>{/block:NextPage}{block:PreviousPage}<a href="{PreviousPage}"></a>{/block:PreviousPage}</div>{/block:Pagination}
         
 <!-- Tumblr Post handler ------------------------------------------------------------------------------>
         <div id="desktop" style="width:1010px; margin-top:20px;">
@@ -1673,7 +1646,7 @@
                                 
                                 <div class="small_seperator" style="position:absolute; margin-top:1px; height:17px; margin-left:2px"></div>
                                 <a href="https://thealonic.tumblr.com/">
-                                    <div class="explorerback" style="margin-left:5px; width:20px; height:20px; display: inline-block"></div>
+                                    <div class="explorerback" style="margin-left:9px; width:20px; height:20px; display: inline-block"></div>
                                     <div class="reflinkblack" style="margin-top:5px; display: inline-block">Back</div></a>
                                     
                                 <div style="margin-top:5px; display: inline-block">
@@ -1687,7 +1660,7 @@
                                    
                                 <div class="menuapplicationsplit" style="position:absolute; width:468px"> </div>
                                 <div class="small_seperator" style="position:absolute; margin-top:3px; height:17px; margin-left:1px"></div> <!-- Left side of the Bottom container -->
-                                <div style="margin-left:8px; margin-top:7px; ">A<udl>d</udl>dress</div>
+                                <div style="margin-left:10px; margin-top:7px; ">A<udl>d</udl>dress</div>
                                 
                                 <div class="plinks-con" style="float:right; margin-top:-12px; height:22px; width:49px; cursor:pointer;">
                                     <div style="margin-top:11px; float:right">
@@ -1706,7 +1679,7 @@
                                 <a href="{Permalink}"><div style="float:right; height:22px; width:44px; margin-top:-17px;">
                                     <div class="explorergo" style="margin-left:5px;"></div> <div class="reflinkblack" style="margin-top:5px;">Go</div></div></a>
                                 
-                                <ul class="tree-view" style="float:right; width:308px; height:9px; margin-top:-17px; overflow:hidden">
+                                <ul class="tree-view" style="float:right; width:305px; height:9px; margin-top:-17px; overflow:hidden">
                                     <div class="win98buttonscrollinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px; width:10px; height:11px">
                                         <div class="arrowdisableddown" style="margin-left:-4px"></div></div>
                                     <div class="menufavouriteslink" style="position:absolute; margin-top:-5px; margin-left:-5px"></div>
@@ -1715,7 +1688,7 @@
 
 <!-- Post window body ------------------------------------------------------------------------------>
                         <ul class="tree-view" style="margin-left:-6px; margin-bottom:26px; width: 471px; margin-top:4px; padding:0px; overflow:hidden; background: var(--white)"> 
-                            <div class="scrollbarmiddle" style="margin-left: 2px; height: 100%; width:467px; margin-top:2px; margin-bottom:2px; background: var(--midgray);">
+                            <div class="scrollbarmiddle" style="margin-left: 2px; height: 100%; width:467px; margin-top:2px; margin-bottom:2px; background-color: var(--midgray);">
                                 <div style="max-width: 451px; background:var(--white); overflow:hidden; color:var(--text);"> <!-- 428px wide, 451 including scrollwheel + padding -->
                                 <!-- Text posts -->
                                     <div class="win98buttonscrollinactive" style="margin-left: 451px;"><div class="arrowdisableup"></div></div>
