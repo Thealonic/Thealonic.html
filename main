@@ -28,7 +28,7 @@
                $(this).parents('.tumblr_video_container').css({ width: Math.floor($(this).width() * ( scale + 1 ) / 2), height: Math.floor($(this).height() * ( scale + 1 ) / 2)})})})
               
         var github = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/", readme = "//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/README.md";
-        var updateon = "17:19pm on March 23th, 2021. [GMT]", updatedfrom = "Thea Vanherst"; 
+        var updateon = "21:55pm on March 27th, 2021. [GMT]", updatedfrom = "Thea Vanherst"; 
         var curtaskact = undefined, currenttask = 1, cal = 5, docelem = document.documentElement, plinksdrop = false; function calupdate(){inactiveall(); cal = cal + 1};
         function latestupdate() {document.getElementById("lastupdate").textContent = updateon; document.getElementById("updatedby").textContent = updatedfrom} //"Pixelated MS Sans Serif"
     </script>
@@ -62,7 +62,7 @@
                     --distextshadow: 1px 1px 0 var(--white)}
                     
             /* desktop config settings */
-            body {margin: 0 auto; background: var(--wincyan); font-family:var(--curfont); font-size:var(--curfontsize); width:100% height:1080px; overflow-x: hidden;}
+            body {margin: 0 auto; background: var(--wincyan); font-family:var(--curfont); font-size:var(--curfontsize); width:100% height:100%; overflow-x: hidden;}
             #desktop, .navigation {margin: 0 auto; width: 100%; font-family:var(--curfont); font-size:var(--curfontsize)} body.permalink_page #desktop, body.permalink_page .navigation {width: 480px}
             
             .pretitle-bar-text, .title-bar-text {letter-spacing: 0.5px; margin-right:24px; padding:1px 4px 2px 4px; font-weight:700; cursor:default}
@@ -70,7 +70,7 @@
             
 /* Desktop setup css ------------------------------------------------------------------------------*/
             /* taskbar icon setup */
-            .icons {padding: -10px; width: 78px; height:100%; float: left; position: fixed; z-index: 1; margin-top: -20px; cursor: pointer}
+            .icons {padding: -10px; width: 78px; height:100%; float: left; position: fixed; z-index: 1; margin-top: -20px; margin-left:10px; cursor: pointer}
             ico {cursor: pointer; display:inline-flex; color: var(--desktoptext); background: var(--desktopicon); margin-top:-1px} icon {background: var(--desktopicom); color: var(--desktoptext)} 
             
             .thealonic, .veryvhersty, .twitter, .askicon, .discordlink, .officialfunny, .rct2, .justice {background-image: var(--curdesktopsheet); height: 72px; width: 72px; margin-bottom: 3px; margin-top: 6px}
@@ -190,44 +190,89 @@
             .menusettings {background-position: -144px 0px} .menufind {background-position: -180px  0px} .menuhelp {background-position: -216px -36px} .menurun {background-position: -252px -36px}
             .menulogoff {background-position: -288px 0px} .menushutdown {background-position: -324px 0px} .logofficon {background-position: -288px -36px} .shutdownicon {background-position: -324px -36px}
             /* start menu submenu icon references */
-            .menuprograms123, .menuprograms4, .menuprograms5, .menuprograms6, .menuprograms7, .menufind1, .menufind2, .menufind3, .menufind4, 
-            .menusettings1, .menusettings2, .menusettings3, .menusettings4, .menusettings5, .menusettings6, .menuapplications7, .menuapplications8, .menuapplications9, 
-            .menuapplications10, .menuapplications11, .menuapplications12, .menuapplications13, .menuapplications14, .menuapplications15, .explorerlinks, .none, 
+            .menuprograms1, .menuprograms2, .menuprograms3, .menuprograms4, .menuprograms5, .menufind1, .menufind2, .menufind3, .menufind4, 
+            .menusettings1, .menusettings2, .menusettings3, .menusettings4, .menusettings5, .menusettings6, .menuapplications1, .menuapplications2, .menuapplications3, 
+            .menuapplications4, .menuapplications5, .menuapplications6, .menuapplications7, .menuapplications8, .menuapplications9, .explorerlinks, .none, 
             .menucommunications1, .menucommunications2, .menucommunications3, .menucommunications4, .taskbaricon1, .taskbaricon2, .taskbaricon3, .taskbaricon4,  
-            .calendar, .explorergo, .explorerback, .menufavouritesfolder, .menufavouriteslink, .menuinternettools1, .menuinternettools2, .menuinternettools3, .menuinternettools4, 
+            .calendar, .explorergo, .explorerback, .menudocuments6, .menudocuments5, .menuinternettools1, .menuinternettools2, .menuinternettools3, .menuinternettools4, 
             .menusystemtools1,  .menusystemtools2, .menusystemtools3, .menusystemtools4, .menusystemtools5, .menusystemtools6, .menusystemtools7, .menusystemtools8, 
-            .menusystemtools9, .menusystemtools10, .menusystemtools11, .menusystemtools12, .menusystemtools13, .menudocumentssound, .menudocumentsfolder,
+            .menusystemtools9, .menusystemtools10, .menusystemtools11, .menusystemtools12, .menusystemtools13, .menudocuments2, .menudocuments3,
             .menuentertainment1, .menuentertainment2, .menuentertainment3, .menuentertainment4, .menuentertainment5, .menuentertainment,  .menudocuments1,
             .menusettings1, .menusettings2, .menusettings3, .menusettings4, .menusettings5, .menusettings6, .menugames1, .menugames2, .menugames3, .menugames4
             {background-image: var(--curspritesheet); margin: auto; float: left; height: 20px; width: 20px}
             
-            .menuapplications7 {background-position: -20px -92px} /* calc */ .menuapplications12 {background-position: 0px -112px} /* ask */ .menuapplications8 {background-position: -40px -92px} /* img */ 
-            .menuapplications13 {background-position: -20px -112px} /* yahoo */ .menuapplications9 {background-position: -60px -92px} /* wordpad */ .menuapplications14 {background-position: -40px -112px} /* msn */
-            .menuapplications10 {background-position: -80px -92px} /* paint */ .menuapplications15 {background-position: -60px -112px} /* prodigy */ .menuapplications11 {background-position: -100px -92px} /* notepad */ 
-            .menuentertainment1 {background-position: 0px -152px} /* Cd player */ .menucommunications1 {background-position: 0px -132px} /* Dial Up */ .menuentertainment2 {background-position: -20px -152px} /* Cd Burner */
-            .menucommunications2 {background-position: -20px -132px} /* Hyper terminal */ .menuentertainment3 {background-position: -40px -152px} /* Cd Recorder */ .menucommunications3 {background-position: -40px -132px} /* Configurations */ 
-            .menuentertainment4 {background-position: -60px -152px} /* Volume Player */ .menucommunications4 {background-position: -60px -132px} /* Phone Dialup */ .menuentertainment5 {background-position: -80px -152px} /* Media Player */
-            .menugames1 {background-position: 0px -172px} /* Freecell */ .menuinternettools1 {background-position: -140px -72px} /* Internet wizard */ .menugames2 {background-position: -20px -172px} /* Hearts */ 
-            .menuinternettools2 {background-position: -160px -72px} /* Microsoft chat */ .menugames3 {background-position: -40px -172px} /* Minesweeper */ .menuinternettools3 {background-position: -180px -72px} /* Net meeting */
-            .menugames4 {background-position: -60px -172px} /* Solitar */ .menuinternettools4 {background-position: -200px -72px} /* Personal Webserver */ .menusystemtools1 {background-position: -140px -92px} /* character map */ 
-            .menusystemtools11 {background-position: -140px -112px} /* systeminfo */ .menusystemtools2 {background-position: -160px -92px} /* clipboard viewer */ .menusystemtools12 {background-position: -160px -112px} /* systemmonitor */
-            .menusystemtools3 {background-position: -180px -92px} /* disk cleanup */ .menusystemtools13 {background-position: -180px -112px} /* welcometowindows */ .menusystemtools4 {background-position: -200px -92px} /* disk defrag */ 
-            .explorerlinks {background-position: -153px -222px; height:  5px; width:  4px; margin-top:-14px; filter: invert(var(--invert))} .menusystemtools5 {background-position: -220px -92px} /* drive converter */ 
-            .menuprograms123 {background-position: 0px  -72px} /* folder icon */ .menusystemtools6 {background-position: -240px -92px} /* maintain wizard */ .menuprograms4 {background-position: -140px -132px} /* internet explorer */
-            .menusystemtools7 {background-position: -260px -92px} /* net watcher */ .menuprograms5 {background-position: -160px -132px} /* MSDOS */ .menusystemtools8 {background-position: -280px -92px} /* resource meter */ 
-            .menuprograms6 {background-position: -180px -132px} /* Outlook Express */ .menusystemtools9 {background-position: -300px -92px} /* scandisk */ .menuprograms7 {background-position: -200px -132px} /* Windows Explorer */
-            .menusystemtools10 {background-position: -320px  -92px} /* schedualed tasks */ .menusettings1 {background-position: -140px -172px} /* control panel */ .menudocuments1 {background-position: -140px -152px} /* my documents */ 
-            .menusettings2 {background-position: -160px -172px} /* printers */ .menudocumentssound {background-position: -160px -152px} /* sound files */ .menusettings3 {background-position: -180px -172px} /* taskbar */
-            .menudocumentsfolder {background-position: -180px -152px} /* document file */ .menusettings4 {background-position: -200px -172px} /* folder options */ .menudocumentsdoc {background-position: -220px -152px} /* document file */ 
-            .menusettings5 {background-position: -220px -172px} /* Active desktop */ .menufavouriteslink {background-position: -200px -152px} /* favourates link */ .menusettings6 {background-position: -240px -172px} /* windows update */
-            .menufavouritesfolder {background-position: -180px -152px} /* favourite folder */ .taskbaricon1 {background-position: 0px -192px} .menufind1 {background-position: -140px -192px} /* files or folders */ 
-            .taskbaricon2 {background-position: -20px -192px; margin-left: 2px} .menufind2 {background-position: -160px -192px} /* computer */ .taskbaricon3 {background-position: -40px -192px; margin-left: 2px} /* active desktop */
-            .menufind3 {background-position: -180px -192px} /* on the internet */ .taskbaricon4 {background-position: -60px -192px; margin-left: 2px} .menufind4 {background-position: -200px -192px} /* people */ 
-            .calendar {background-position: -82px -194px; margin-left: 2px; height: 16px; width: 16px} /* calender icon */ .none {background-position: -100px -192px; height: 18px; width: 18px} /* none */
-            .explorergo {background-position: -101px -72px; filter: invert(var(--invert))} .explorerback {background-position: -121px -72px; filter: invert(var(--invert))}
+            .menuinternettools1 {background-position: -140px -72px} /* Internet wiz*/ 
+            .menuinternettools2 {background-position: -160px -72px} /* Microsoft chat */ 
+            .menuinternettools3 {background-position: -180px -72px} /* Net meeting */
+            .menuinternettools4 {background-position: -200px -72px} /* Personal Webserver */ 
+            
+            .menusystemtools1 {background-position: -140px -92px} /* character map */ 
+            .menusystemtools2 {background-position: -160px -92px} /* clipboard viewer */ 
+            .menusystemtools3 {background-position: -180px -92px} /* disk cleanup */ 
+            .menusystemtools4 {background-position: -200px -92px} /* disk defrag */   
+            .menusystemtools5 {background-position: -220px -92px} /* drive converter */  
+            .menusystemtools6 {background-position: -240px -92px} /* maintain wizard */
+            .menusystemtools7 {background-position: -260px -92px} /* net watcher */   
+            .menusystemtools8 {background-position: -280px -92px} /* resource meter */   
+            .menusystemtools9 {background-position: -300px -92px} /* scandisk */ 
+            .menusystemtools10 {background-position: -320px  -92px} /* schedualed*/   
+            .menusystemtools11 {background-position: -140px -112px} /* systeminfo */     
+            .menusystemtools12 {background-position: -160px -112px} /* systemmonitor */
+            .menusystemtools13 {background-position: -180px -112px} /* welcometowindows */ 
+            
+            .menuapplications1 {background-position: -20px -92px} /* calc */          
+            .menuapplications2 {background-position: -40px -92px} /* img */              
+            .menuapplications3 {background-position: -60px -92px} /* wordpad */ 
+            .menuapplications4 {background-position: -80px -92px} /* paint */         
+            .menuapplications5 {background-position: -100px -92px} /* notepad */         
+            .menuapplications6 {background-position: 0px -112px} /* ask */
+            .menuapplications7 {background-position: -20px -112px} /* yahoo */        
+            .menuapplications8 {background-position: -40px -112px} /* msn */
+            .menuapplications9 {background-position: -60px -112px} /* prodigy */ 
+            
+            .menucommunications1 {background-position: 0px -132px} /* Dial Up */      
+            .menucommunications2 {background-position: -20px -132px} /* Hyperterminal */ 
+            .menucommunications3 {background-position: -40px -132px} /* Configurations */ 
+            .menucommunications4 {background-position: -60px -132px} /* Phone Dial */ 
+            
+            .menuprograms1 {background-position: 0px  -72px} /* folder icon */        
+            .menuprograms2 {background-position: -140px -132px} /* internet explorer */  
+            .menuprograms3 {background-position: -160px -132px} /* MSDOS */
+            .menuprograms4 {background-position: -180px -132px} /* Outlook Express */ 
+            .menuprograms5 {background-position: -200px -132px} /* Windows Explorer */
+            
+            .menuentertainment1 {background-position: 0px -152px} /* Cd player */     
+            .menuentertainment2 {background-position: -20px -152px} /* Cd Burner */      
+            .menuentertainment3 {background-position: -40px -152px} /* Cd Recorder */ 
+            .menuentertainment4 {background-position: -60px -152px} /* Volume Play */ 
+            .menuentertainment5 {background-position: -80px -152px} /* Media Player */
+            
+            .menudocuments1 {background-position: -140px -152px} /* my documents */   
+            .menudocuments2 {background-position: -160px -152px} /* sound files */       
+            .menudocuments3 {background-position: -180px -152px} /* document file */ 
+            .menudocuments4 {background-position: -220px -152px} /* document file */  
+            .menudocuments5 {background-position: -200px -152px} /* favourates link */   
+            .menudocuments6 {background-position: -180px -152px} /* favourite folder */ 
+            
+            .menugames1 {background-position: 0px -172px} /* Freecell */              
+            .menugames2 {background-position: -20px -172px} /* Hearts */                 
+            .menugames3 {background-position: -40px -172px} /* Minesweeper */ 
+            .menugames4 {background-position: -60px -172px} /* Solitar */ 
+            
+            .menusettings1 {background-position: -140px -172px} /* control panel */   
+            .menusettings2 {background-position: -160px -172px} /* printers */           
+            .menusettings3 {background-position: -180px -172px} /* taskbar */
+            .menusettings4 {background-position: -200px -172px} /* folder options */  
+            .menusettings5 {background-position: -220px -172px} /* Active desktop */     
+            .menusettings6 {background-position: -240px -172px} /* windows update */
 
-            .taskbartask1, .taskbartask2, .taskbartask3, .taskbartask4, .taskbartask5, .taskbartask6, .taskbartask7, .taskbartask8 
-                {float: left; width: 160px; height: 18px; margin-top: 2px; margin-left: -20000px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; font-weight:700}
+            .menufind1 {background-position: -140px -192px} /* files or folders */    
+            .menufind2 {background-position: -160px -192px} /* computer */               
+            .menufind3 {background-position: -180px -192px} /* on the internet */ 
+            .menufind4 {background-position: -200px -192px} /* people */ 
+
+            .taskbartask1, .taskbartask2, .taskbartask3, .taskbartask4, .taskbartask5, .taskbartask6, .taskbartask7, .taskbartask8 {
+                float: left; width: 160px; height: 18px; margin-top: 2px; margin-left: -20000px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; font-weight:700}
             .taskbartask1 {box-shadow:inset -1px -1px var(--taskbar1bottom2), inset 1px 1px var(--taskbar1top2), inset -2px -2px var(--taskbar1bottom1), inset 2px 2px var(--taskbar1top1); margin-left: 167px}
             .taskbartask2 {box-shadow:inset -1px -1px var(--taskbar2bottom2), inset 1px 1px var(--taskbar2top2), inset -2px -2px var(--taskbar2bottom1), inset 2px 2px var(--taskbar2top1)}
             .taskbartask3 {box-shadow:inset -1px -1px var(--taskbar3bottom2), inset 1px 1px var(--taskbar3top2), inset -2px -2px var(--taskbar3bottom1), inset 2px 2px var(--taskbar3top1)}
@@ -238,17 +283,26 @@
             .taskbartask8 {box-shadow:inset -1px -1px var(--taskbar8bottom2), inset 1px 1px var(--taskbar8top2), inset -2px -2px var(--taskbar8bottom1), inset 2px 2px var(--taskbar8top1)}
 
             .startmenusplitter { border-bottom: 1px solid var(--white); background: var(--gray); height: 1px; width: 156px; margin-left: 2px; margin-top:3px; margin-bottom:2px}
-            
             .start_bar {position: fixed; background: var(--silver); bottom: 0; height: 28px; width: 100%; z-index: 3} 
             .start_bar .top_border {border-bottom: 1px solid var(--lightg); border-top: 1px solid var(--white)}
             .start_bar .time {line-height: 18px; float: right; margin-right: 10px; color:var(--text)} .taskbaricons {float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px}
-            
+
+            .taskbaricon1, .taskbaricon2, .taskbaricon3, .taskbaricon4 {margin-left: 2px}
+            .taskbaricon1 {background-position: 0px -192px} .taskbaricon2 {background-position: -20px -192px} 
+            .taskbaricon3 {background-position: -40px -192px} .taskbaricon4 {background-position: -60px -192px} 
+
+            .calendar {background-position: -82px -194px; margin-left: 2px; height: 16px; width: 16px; margin-top: 1px; margin-left: 3px} /* calender icon */ 
+            .none {background-position: -100px -192px; height: 18px; width: 18px} /* none */
+            .explorergo {background-position: -101px -72px; filter: invert(var(--invert))} 
+            .explorerback {background-position: -121px -72px; filter: invert(var(--invert))}
+            .explorerlinks {background-position: -153px -222px; height:  5px; width:  4px; margin-top:-14px; filter: invert(var(--invert))} 
+
             .startmenubar, .startmenubartext {background-image: var(--curspritesheet); height: 159px; width: 21px; bottom:0; background-position: -339px -72px; position:absolute; float: left;}
             .startmenubar {opacity: 0.5;  filter: invert(var(--invert))} .startmenubartext {height: 109px; background-position: -318px -122px} 
             .startmenubarback {width: 21px; height:377px; background-color:var(--prussian); position:absolute;}
     
             .clock{ box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray); padding:2px; float:right; width:96px; height:18px; margin-right:2px; margin-top:2px}
-            .calendar { float: left; margin-top: 1px; margin-left: 3px} .taskbaricons { float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px}
+            .taskbaricons { float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px}
 
 /* Message box reference sheets ------------------------------------------------------------------------------*/
             .displayboxdisplay, .displayboxdisplayde {height:169px; margin-left:-16px; position:absolute; margin-top:-16px}
@@ -471,7 +525,7 @@
                         <div class="small_seperator" style="margin-top:1px; height:17px;"></div>
                         <div style="position:absolute; margin-left:11px; margin-top:5px;">A<udl>d</udl>dress</div>
                         <ul class="tree-view" style="position:absolute; width:406px; height: 17px; padding:2px; margin-left:55px" id="playertv">
-                            <div class="menufavouriteslink" style="position:absolute; margin-top:-1px;"></div>
+                            <div class="menudocuments5" style="position:absolute; margin-top:-1px;"></div>
                             <input type="text" style="margin-left:21px" id="mediaplayer"></input>
                             <div class="dropbutton" style="margin-top:-16px;"><div class="arrowdisableddown"></div></div></ul>
                         <button id="mediain" onclick="mediainput()" value="" style="position:absolute; margin-left:-20000px"></button>
@@ -537,7 +591,7 @@
             function embedactive() {calupdate(); embed.zIndex = cal; embed.marginLeft = "0px"; embedwin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"; embedtext.color = curactivetitle; curtaskact = 4; activatetask()}
             function embedclose() {inactiveall(); embed.marginLeft = "-20000px"; taskbar[4].marginLeft = "-20000px"; tasktrue[4] = false; taskon[4] = false; taskreset(); stopVideo()}
             function embedpositionreset() {calupdate(); embed.left = "300px"; embed.top = "200px"; embed.zIndex = cal; embedactive()}
-            function embedminimize(){inactiveall(); notes.marginLeft = "-20000px";}
+            function embedminimize(){inactiveall(); embed.marginLeft = "-20000px";}
 
             document.getElementById("mediaplayer").addEventListener("keyup", function(event) {if (event.keyCode === 13) { event.preventDefault(); document.getElementById("mediain").click()}}); 
             function mediainput(){ mediaURLin = document.getElementById("mediaplayer").value; inprompt = inprompt + "#read: " + mediaURLin; println();
@@ -677,7 +731,7 @@
                     
                     <ul class="tree-view" style="position:absolute; width:350px; height:9px; margin-left:55px; margin-top:-17px;">
                     <div class="dropbutton" style="margin:-4px;"><div class="arrowdisableddown"></div></div>
-                        <div class="menufavouriteslink" style="margin:-5px;"></div><div style="margin-top:-1px; margin-left:16px;">https://thealonic.tumblr.com/patch-notes</div></ul>
+                        <div class="menudocuments5" style="margin:-5px;"></div><div style="margin-top:-1px; margin-left:16px;">https://thealonic.tumblr.com/patch-notes</div></ul>
                     <div style="margin-left:418px; margin-top:-12px; width:49px;"><div class="explorergo" style="margin-left:5px; margin-top:-5px"></div> <div class="reflinkblack">Go</div></div>
                 </fieldset>
             </div>
@@ -818,7 +872,7 @@
                     <ul class="tree-view" style="position:absolute; width:700px; height:9px; margin-left:55.5px; overflow:hidden;">
                         <div class="buttonscrollinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px; width:10px; height:11px;">
                             <div class="arrowdisableddown" style="margin-left:-4px;"></div></div>
-                        <div class="menufavouriteslink" style="position:absolute; margin-top:-5px; margin-left:-5px;"></div>
+                        <div class="menudocuments5" style="position:absolute; margin-top:-5px; margin-left:-5px;"></div>
                         <div style="margin-top:-1px; margin-left:16.5px;" id="iefhtml"></div></ul>
                                 
                     <a href="{Permalink}"><div style="position: absolute; margin-left:768px; height:22px; width:49px;">
@@ -1115,39 +1169,39 @@
                             <div class="wallpapermenu" onclick="wpn = 0; wallpapercall()"><div class="none" style="margin-top:-1px;"></div>
                                 <div class="filled" id="wallpaperoverlay1"><!--ref#0026-->
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> None </label></div></div>
-                            <div class="wallpapermenu" style="margin-top:18px" onclick="wpn = 1; wallpapercall()"><div class="menuapplications10" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:18px" onclick="wpn = 1; wallpapercall()"><div class="menuapplications4" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay2">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Default </label></div></div>
-                            <div class="wallpapermenu" style="margin-top:36px;" onclick="wpn = 2; wallpapercall()"><div class="menuapplications10" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:36px;" onclick="wpn = 2; wallpapercall()"><div class="menuapplications4" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay3">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Octavia's Study </label></div></div>
-                            <div class="wallpapermenu" style="margin-top:72px" onclick="wpn = 3; wallpapercall()"> <div class="menuapplications10" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:72px" onclick="wpn = 3; wallpapercall()"> <div class="menuapplications4" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay4" title="submitted by Matt in the discord server">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer" title="submitted by Matt in the discord server"> Star Trek (Submitted by Matt)</label></div></div>
-                            <div class="wallpapermenu" style="margin-top:54px" onclick="wpn = 4; wallpapercall()"><div class="menuapplications10" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:54px" onclick="wpn = 4; wallpapercall()"><div class="menuapplications4" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay5">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Neon Genesis Evangelion </label></div></div>
-                            <div class="wallpapermenu" style="margin-top:90px" onclick="wpn = 5; wallpapercall()"><div class="menuapplications10" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:90px" onclick="wpn = 5; wallpapercall()"><div class="menuapplications4" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay6" title="submitted by Xal in the discord server">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Battlefield Girls (Submitted by Xal)</label></div></div>
-                            <div class="wallpapermenu" style="margin-top:108px" onclick="wpn = 6; wallpapercall()"><div class="menuapplications10" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:108px" onclick="wpn = 6; wallpapercall()"><div class="menuapplications4" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay7" title="submitted by Thea Vanherst">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Vinyl Scratch (Submitted by Thea)</label></div></div>
-                            <div class="wallpapermenu" style="margin-top:126px" onclick="wpn = 7; wallpapercall()"><div class="menuapplications10" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:126px" onclick="wpn = 7; wallpapercall()"><div class="menuapplications4" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay8" title="submitted by Millie in the discord server">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Clouds at Midnight (Submitted by Millie) </label></div></div>
-                            <div class="wallpapermenu" style="margin-top:146px" onclick="wpn = 8; wallpapercall()"><div class="menuapplications10" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:146px" onclick="wpn = 8; wallpapercall()"><div class="menuapplications4" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay9" title="submitted by Qhetha in the discord server">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Desert Highway (Submitted by Qhetha)  </label></div></div>
-                            <div class="wallpapermenu" style="margin-top:166px" onclick="wpn = 9; wallpapercall()"><div class="menuapplications10" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:166px" onclick="wpn = 9; wallpapercall()"><div class="menuapplications4" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay10" title="Created by Phil-Nye in the discord server">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Aesthetic (Created by Phil-Nye)</label></div></div>
                                     
                             <div style="margin-top:-80px; margin-left: -20000px" id="nsfwoptions">
-                                <div class="wallpapermenu" style="margin-top:186px;" onclick="wpn = 10; wallpapercall()"><div class="menuapplications11" style="margin-top:-1px"></div>
+                                <div class="wallpapermenu" style="margin-top:186px;" onclick="wpn = 10; wallpapercall()"><div class="menuapplications5" style="margin-top:-1px"></div>
                                     <div class="filled" id="wallpaperoverlay11">
                                         <label style="margin: 3px 2px 0px 0px; cursor:pointer">The Small Brown Fox</label></div></div>
-                                <div class="wallpapermenu" style="margin-top:206px;" onclick="wpn = 11; wallpapercall()"><div class="menuapplications11" style="margin-top:-1px"></div>
+                                <div class="wallpapermenu" style="margin-top:206px;" onclick="wpn = 11; wallpapercall()"><div class="menuapplications5" style="margin-top:-1px"></div>
                                     <div class="filled" id="wallpaperoverlay12">
                                         <label style="margin: 3px 2px 0px 0px; cursor:pointer">Resident Evil</label></div></div></div>
                     </div></ul>
@@ -1241,7 +1295,7 @@
                             
                     <script> var ccwhite, cclightg, ccsilver, ccmidgray, ccgray, ccblack, ccblue, ccprussian, ccwincyan, ccyellow, ccfont, cchover, ccatext, prewhite,
                             cpwhite, cplightg, cpsilver, cpmidgray, cpgray, cpblack, cpblue, cpprussian, cpwincyan, cpyellow, cpfont, cphover, cpatext, preblack,
-                            prewallpaper, prespritesheet, curspritesheet, preactivetitle, curactivetitle, preinvert, curinvert, discheckinv, enacheckinv, invcheckinv, 
+                            prewallpaper, prespritesheet, curspritesheet, preactivetitle, curactivetitle, preinvert, curinvert, discheckinv, enacheckinv, invcheckinv, varinvert,
                             curtbgradactive1, curtbgradactive2, pretbgradactive1, pretbgradactive2, curtbgradinactive1, curtbgradinactive2, pretbgradinactive1, pretbgradinactive2,
                             schemedrop = false, ctoggle = false, themecurrent = "lightmode"; function wallpapercust() {currentsch.textContent="(Custom)"} 
                         var deskico = [document.getElementById("desktopico1").style, document.getElementById("desktopico2").style, document.getElementById("desktopico3").style, document.getElementById("desktopico4").style, 
@@ -1309,15 +1363,16 @@
                             docelem.style.setProperty('--silver', ccsilver); docelem.style.setProperty('--prussian', ccprussian); docelem.style.setProperty('--midgray', ccmidgray); docelem.style.setProperty('--wincyan', ccwincyan)
                             docelem.style.setProperty('--font', ccfont); docelem.style.setProperty('--hover', cchover); docelem.style.setProperty('--blue', ccblue); docelem.style.setProperty('--yellow', ccyellow)
                             curinvert = preinvert; ccatext = cpatext; docelem.style.setProperty('--invert', curinvert); docelem.style.setProperty('--atext', ccatext)
-
+                            
                             docelem.style.setProperty('--taskbarstarttop1', ccgray); docelem.style.setProperty('--taskbarstarttop2', ccblack); curactivetitle = preactivetitle; curinactivetitle = preinactivetitle
                             docelem.style.setProperty('--taskbarstartbottom1', ccwhite); docelem.style.setProperty('--taskbarstartbottom2', cclightg); taskbartext = pretaskbartxt; taskbartextpressed = pretaskbartxtprs
-                            for(var temp = 1; taskbarfont.length > temp; temp++){taskbarfont[temp].color = taskbartext}; for(var temp = 0; smu.length > temp; temp++){scf = temp; startoff()}
+                            for(var temp = 1; taskbarfont.length > temp; temp++){taskbarfont[temp].color = taskbartext}; for(var temp = 0; smu.length > temp; temp++){scf = temp; startsubmenuc()}
  
                             docelem.style.setProperty('--curactivetitle', curactivetitle); docelem.style.setProperty('--curinactivetitle', curinactivetitle); docelem.style.setProperty('--curspritesheet', curspritesheet)
                             docelem.style.setProperty('--discheckinv', discheckinv); docelem.style.setProperty('--enacheckinv', enacheckinv); docelem.style.setProperty('--invcheckinv', invcheckinv)
  
                             var dtil = 0; shufflecolour(); desktopiconchange(); wwpno(); clocku(); inactiveall(); diskactive()
+                            if (curinvert == 1){varinvert = 0;} else {varinvert = 1;}
                             if (dicotoggle == true){for(var i = 0; deskico.length > i; i++){deskico[i].width = "72px"; deskico[i].height = "72px"; var temp1 = dtil + "px"; var temp2 = "-0px"
                                 deskico[i].backgroundPosition = temp1 + " " + temp2; dtil = dtil - 72}} else {for(var i = "0"; deskico.length > i; i++){deskico[i].width = "36px"
                                 deskico[i].height = "36px"; var temp1 = dtil + "px"; var temp2 = "-72px"; deskico[i].backgroundPosition = temp1 + " " + temp2; dtil = dtil - 36}}
@@ -1634,7 +1689,7 @@
                                 <ul class="tree-view" style="float:right; width:305px; height:9px; margin-top:-17px; overflow:hidden">
                                     <div class="buttonscrollinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px; width:10px; height:11px">
                                         <div class="arrowdisableddown" style="margin-left:-4px"></div></div>
-                                    <div class="menufavouriteslink" style="position:absolute; margin-top:-5px; margin-left:-5px"></div>
+                                    <div class="menudocuments5" style="position:absolute; margin-top:-5px; margin-left:-5px"></div>
                                     <div style="margin-top:-1px; margin-left:16px">https://thealonic.tumblr.com/post/{PostID}</div></ul>
                         </fieldset></div>
 
@@ -1688,13 +1743,10 @@
                                     {/block:Link}
                         
                                     {block:Chat}
+                                        {block:Title}{Title}{/block:Title}
                                         <div style="padding: 3px;">
-                                            {block:Title}<div class="title">𝖁𝖍𝖊𝖗𝟗𝟖</div>{/block:Title}
-                                            <div class="content body">
-                                                {block:Lines}
-                                                    <div class="line">{block:Label}<strong>{Label}</strong>{/block:Label}{Line}</div>
-                                                {/block:Lines}      
-                                        </div></div>
+                                            {block:Lines}<div class="line">{block:Label}<strong>{Label}</strong>{/block:Label}{Line}</div>{/block:Lines}      
+                                        </div>
                                     {/block:Chat}
                         
                                     {block:Video}
@@ -1804,15 +1856,15 @@
                         <label style="margin-top:3px;"><div class="submenu36" style="width: 141px; height:36px" onclick="messageclose(); patchnotestask()">
                             <div class="patchnotes"></div><label><labs><underline>U</underline>pdate log</labs></label></div></label>
                         <div class="menuapplicationsplit" style="width:139px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px"> </div>
-                        <label><div class="submenu36" id="menuprograms" onmouseover="programsopen()" onmouseout="programsclosed()"> 
-                            <div class="menuprograms"></div><label><labs><underline>P</underline>rograms </labs></label><div class="lmenuarrow" id="menuarrow"></div></div></label>
-                        <label><div class="submenu36"  id="menufavourites" onmouseover="favouritesopen()" onmouseout="favouritesclosed()"> 
+                        <label><div class="submenu36" id="menuprograms" onmouseover="scf=0; startsubmenuo()" onmouseout="scf=0; startsubmenuc()"> 
+                            <div class="menuprograms"></div><label><labs><underline>P</underline>rograms </labs></label><div class="lmenuarrow" id="menuarrow1"></div></div></label>
+                        <label><div class="submenu36"  id="menufavourites" onmouseover="scf=9; startsubmenuo()" onmouseout="scf=9; startsubmenuc()"> 
                             <div class="menufavourites"></div><label><labs>My F<underline>a</underline>vourites </labs></label><div class="lmenuarrow" id="menuarrow2"></div></div></label>
-                        <label><div class="submenu36" id="menudocuments" onmouseover="documentsopen()" onmouseout="documentsclosed()"> 
+                        <label><div class="submenu36" id="menudocuments" onmouseover="scf=13; startsubmenuo()" onmouseout="scf=13; startsubmenuc()"> 
                             <div class="menudocuments"></div><label><labs><underline>D</underline>ocuments </labs></label><div class="lmenuarrow" id="menuarrow3"></div></div></label>
-                        <label><div class="submenu36"  id="menusettings" onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
+                        <label><div class="submenu36"  id="menusettings" onmouseover="scf=14; startsubmenuo()" onmouseout="scf=14; startsubmenuc()"> 
                             <div class="menusettings"></div><label><labs><underline>S</underline>ettings </labs></label><div class="lmenuarrow" id="menuarrow4"></div></div></label>
-                        <label><div class="submenu36" id="menufind" onmouseover="findopen()" onmouseout="findclosed()"> 
+                        <label><div class="submenu36" id="menufind" onmouseover="scf=16; startsubmenuo()" onmouseout="scf=16; startsubmenuc()"> 
                             <div class="menufind"></div><label><labs><underline>F</underline>ind </labs></label><div class="lmenuarrow" id="menuarrow5"></div></div></label>
                         <label><div class="submenu36">
                             <div class="menushutdown"></div><label><labs><underline>R</underline>un</labs></label></div></label>
@@ -1826,71 +1878,71 @@
                     </div>
 
 <!-- Programs menu rendering ------------------------------------------------------------------------------>
-                    <div class="win98post" style="margin-left: 20000px; margin-top: -336px; width: 133px; height: 140px" id="programsmenu" 
-                        onmouseover="programsopen()" onmouseout="programsclosed()"> 
-                        <div class="submenu20" id="accessories" onmouseover="accessoriesopen()" onmouseout="accessoriesclose()">
-                            <div class="menuprograms123"></div><label><labc> Accessories </labc></label><div class="smenuarrow" id="submenuarrow2"></div></div>
-                        <div class="submenu20" id="onlineservices" onmouseover="onlineservicesopen()" onmouseout="onlineservicesclose()"> 
-                            <div class="menuprograms123" id="onlineservices"></div><label><labc> Online Services </labc></label><div class="smenuarrow" id="submenuarrow3"></div></div>
-                        <div class="submenu20" id="startup" onmouseover="startupopen()" onmouseout="startupclose()">
-                            <div class="menuprograms123"></div><label><labc> Startup </labc></label><div class="smenuarrow" id="submenuarrow4"></div></div>
-                        <div class="submenu20" onclick="internettask()"><div class="menuprograms4"></div><label><labc> Internet Explorer </labc></label></div>
-                        <div class="submenu20" onclick="prompttask()"><div class="menuprograms5"></div><label><labc> MS-DOS Prompt </labc></label></div>
-                        <div class="submenu20"><div class="menuprograms6"></div><label><labc> Outlook Express </labc></label></div>
-                        <div class="submenu20"><div class="menuprograms7"></div><label><labc> Windows Explorer </labc></label></div>
+                    <div class="win98post" style="margin-top: -336px; width: 133px; height: 140px" id="programsmenu" 
+                        onmouseover="scf=0; startsubmenuo()" onmouseout="scf=0; startsubmenuc()"> 
+                        <div class="submenu20" id="accessories" onmouseover="scf=1; startsubmenuo()" onmouseout="scf=1; startsubmenuc()">
+                            <div class="menuprograms1"></div><label><labc> Accessories </labc></label><div class="smenuarrow" id="menuarrow6"></div></div>
+                        <div class="submenu20" id="onlineservices" onmouseover="scf=7; startsubmenuo()" onmouseout="scf=7; startsubmenuc()"> 
+                            <div class="menuprograms1" id="onlineservices"></div><label><labc> Online Services </labc></label><div class="smenuarrow" id="menuarrow7"></div></div>
+                        <div class="submenu20" id="startup" onmouseover="scf=8; startsubmenuo()" onmouseout="scf=8; startsubmenuc()">
+                            <div class="menuprograms1"></div><label><labc> Startup </labc></label><div class="smenuarrow" id="menuarrow8"></div></div>
+                        <div class="submenu20" onclick="internettask()"><div class="menuprograms2"></div><label><labc> Internet Explorer </labc></label></div>
+                        <div class="submenu20" onclick="prompttask()"><div class="menuprograms3"></div><label><labc> MS-DOS Prompt </labc></label></div>
+                        <div class="submenu20"><div class="menuprograms4"></div><label><labc> Outlook Express </labc></label></div>
+                        <div class="submenu20"><div class="menuprograms5"></div><label><labc> Windows Explorer </labc></label></div>
                             
                             <!--Accessories submenu -->
-                        <div class="win98post" style="margin-left: 20000px; margin-top:-143px; width:131px; height:220px" id="menuaccessoriessubmenu" 
-                             onmouseover="accessoriesopen()" onmouseout="accessoriesclose()"> 
-                            <div class="submenu20" id="communications" onmouseover="communicationsopen()" onmouseout="communicationsclose();">
-                                <div class="menuprograms123"></div><label><labc> Communication </labc></label><div class="smenuarrow" id="menuarrow2"></div></div>
-                            <div class="submenu20" id="entertainment" onmouseover="entertainmentopen()" onmouseout="entertainmentclose()">
-                                <div class="menuprograms123"></div><label><labc> Entertainment </labc></label><div class="smenuarrow" id="menuarrow3"></div></div>
-                            <div class="submenu20" id="games" onmouseover="gamesopen()" onmouseout="gamesclose()">
-                                <div class="menuprograms123"></div><label><labc> Games </labc></label><div class="smenuarrow" id="menuarrow4"></div></div>
-                            <div class="submenu20" id="internettools" onmouseover="internettoolsopen()" onmouseout="internettoolsclose()">
-                                <div class="menuprograms123"></div><label><labc> Internet Tools </labc></label><div class="smenuarrow" id="menuarrow5"></div></div>
-                            <div class="submenu20" id="systemtools" onmouseover="systemtoolsopen()" onmouseout="systemtoolsclose()">
-                                <div class="menuprograms123"></div><label><labc> System Tools </labc></label><div class="smenuarrow" id="menuarrow6"></div></div>
+                        <div class="win98post" style="margin-top:-143px; width:131px; height:220px" id="menuaccessoriessubmenu" 
+                            onmouseover="scf=1; startsubmenuo()" onmouseout="scf=1; startsubmenuc()"> 
+                            <div class="submenu20" id="communications" onmouseover="scf=2; startsubmenuo()" onmouseout="scf=2; startsubmenuc()">
+                                <div class="menuprograms1"></div><label><labc> Communication </labc></label><div class="smenuarrow" id="menuarrow9"></div></div>
+                            <div class="submenu20" id="entertainment" onmouseover="scf=3; startsubmenuo()" onmouseout="scf=3; startsubmenuc()">
+                                <div class="menuprograms1"></div><label><labc> Entertainment </labc></label><div class="smenuarrow" id="menuarrow10"></div></div>
+                            <div class="submenu20" id="games" onmouseover="scf=4; startsubmenuo()" onmouseout="scf=4; startsubmenuc()">
+                                <div class="menuprograms1"></div><label><labc> Games </labc></label><div class="smenuarrow" id="menuarrow18"></div></div>
+                            <div class="submenu20" id="internettools" onmouseover="scf=5; startsubmenuo()" onmouseout="scf=5; startsubmenuc()">
+                                <div class="menuprograms1"></div><label><labc> Internet Tools </labc></label><div class="smenuarrow" id="menuarrow11"></div></div>
+                            <div class="submenu20" id="systemtools" onmouseover="scf=6; startsubmenuo()" onmouseout="scf=6; startsubmenuc()">
+                                <div class="menuprograms1"></div><label><labc> System Tools </labc></label><div class="smenuarrow" id="menuarrow12"></div></div>
 
                             <div class="submenu20"><div class="menufind4"></div><label><labc> Address book </labc></label></div>
-                            <div class="submenu20"><div class="menuapplications7"></div><label><labc> Calculator </labc></label></div>
-                            <div class="submenu20"><div class="menuapplications8"></div><label><labc> Imaging </labc></label></div>
-                            <div class="submenu20" onclick="notepadtask()"><div class="menuapplications9"></div><label><labc> Notepad </labc></label></div>
-                            <div class="submenu20"><div class="menuapplications10"></div><label><labc> Paint </labc></label></div>
-                            <div class="submenu20"><div class="menuapplications11"></div><label><labc> Wordpad </labc></label></div>
+                            <div class="submenu20"><div class="menuapplications1"></div><label><labc> Calculator </labc></label></div>
+                            <div class="submenu20"><div class="menuapplications2"></div><label><labc> Imaging </labc></label></div>
+                            <div class="submenu20" onclick="notepadtask()"><div class="menuapplications3"></div><label><labc> Notepad </labc></label></div>
+                            <div class="submenu20"><div class="menuapplications4"></div><label><labc> Paint </labc></label></div>
+                            <div class="submenu20"><div class="menuapplications5"></div><label><labc> Wordpad </labc></label></div>
                                 
-                            <div class="win98post" style="margin-left: 20000px; margin-top:-223px; width:181px; height:80px" id="menucommunicationssubmenu" 
-                                onmouseover="communicationsopen()" onmouseout="communicationsclose()"> 
+                            <div class="win98post" style="margin-top:-223px; width:181px; height:80px" id="menucommunicationssubmenu" 
+                                onmouseover="scf=2; startsubmenuo()" onmouseout="scf=2; startsubmenuc()"> 
                                 <div class="submenu20"><div class="menucommunications1"></div><label><labc> Dial-up Networking </labc></label></div>
                                 <div class="submenu20"><div class="menucommunications2"></div><label><labc> Hyper Terminal </labc></label></div>
                                 <div class="submenu20"><div class="menucommunications3"></div><label><labc> ISDN Configuration Wizard </labc></label></div>
                                 <div class="submenu20"><div class="menucommunications4"></div><label><labc> Phone Dialer </labc></label></div></div>
                                             
-                            <div class="win98post" style="margin-left: 20000px; margin-top:-203px; width:203px; height:100px" id="menuentertainmentsubmenu" 
-                                 onmouseover="entertainmentopen()" onmouseout="entertainmentclose()"> 
+                            <div class="win98post" style="margin-top:-203px; width:203px; height:100px" id="menuentertainmentsubmenu" 
+                                 onmouseover="scf=3; startsubmenuo()" onmouseout="scf=3; startsubmenuc()"> 
                                 <div class="submenu20"><div class="menuentertainment1"></div><label><labc> CD Player </labc></label></div>
                                 <div class="submenu20"><div class="menuentertainment2"></div><label><labc> Interactive CD Player </labc></label></div>
                                 <div class="submenu20"><div class="menuentertainment3"></div><label><labc> Sound Recorder </labc></label></div>
                                 <div class="submenu20"><div class="menuentertainment4"></div><label><labc> Volume Control </labc></label></div>
                                 <div class="submenu20" onclick="startmenuembed()"><div class="menuentertainment5"></div><label><labc> Windows Embedded Media Player </labc></label></div></div>
                                             
-                            <div class="win98post" style="margin-left: 20000px; margin-top:-183px; width:183px; height:80px" id="gamessubmenu" 
-                                onmouseover="gamesopen()" onmouseout="gamesclose()"> 
+                            <div class="win98post" style="margin-top:-183px; width:183px; height:80px" id="gamessubmenu" 
+                                onmouseover="scf=4; startsubmenuo()" onmouseout="scf=4; startsubmenuc()"> 
                                 <div class="submenu20"><div class="menugames1"></div><label><labc> Freecell </labc></label></div>
                                 <div class="submenu20"><div class="menugames2"></div><label><labc> Hearts </labc></label></div>
                                 <div class="submenu20"><div class="menugames3"></div><label><labc> Minesweeper </labc></label></div>
                                 <div class="submenu20"><div class="menugames4"></div><label><labc> Solitaire </labc></label></div></div>
                                             
-                            <div class="win98post" style="margin-left: 20000px; margin-top:-163px; width:183px; height:80px" id="internettoolssubmenu" 
-                                 onmouseover="internettoolsopen()" onmouseout="internettoolsclose()"> 
+                            <div class="win98post" style="margin-top:-163px; width:183px; height:80px" id="internettoolssubmenu" 
+                                onmouseover="scf=5; startsubmenuo()" onmouseout="scf=5; startsubmenuc()"> 
                                 <div class="submenu20"><div class="menuinternettools1"></div><label><labc> Internet Connection Wizard </labc></label></div>
                                 <div class="submenu20"><div class="menuinternettools2"></div><label><labc> Microsoft Chat </labc></label></div>
                                 <div class="submenu20"><div class="menuinternettools3"></div><label><labc> NetMeeting </labc></label></div>
                                 <div class="submenu20"><div class="menuinternettools4"></div><label><labc> Personal Webserver </labc></label></div></div>
                                             
-                            <div class="win98post" style="margin-left: 20000px; margin-top:-143px; width:183px; height:260px" id="systemtoolssubmenu" 
-                                 onmouseover="systemtoolsopen()" onmouseout="systemtoolsclose()"> 
+                            <div class="win98post" style="margin-top:-183px; width:183px; height:260px" id="systemtoolssubmenu" 
+                                onmouseover="scf=6; startsubmenuo()" onmouseout="scf=6; startsubmenuc()"> 
                                 <div class="submenu20"><div class="menusystemtools1"></div><label><labc> Character Map </labc></label></div>
                                 <div class="submenu20"><div class="menusystemtools2"></div><label><labc> Clipboard Viewer </labc></label></div>
                                 <div class="submenu20"><div class="menusystemtools3"></div><label><labc> Disk Cleanup </labc></label></div>
@@ -1906,42 +1958,42 @@
                                 <div class="submenu20"><div class="menusystemtools13"></div><label><labc> Welcome to Windows </labc></label></div></div>
                         </div>
                                 
-                        <div class="win98post" style="margin-left: 20000px; margin-top:-123px; width:110px; height:60px; " id="onlineservicessubmenu" 
-                            onmouseover="onlineservicesopen()" onmouseout="onlineservicesclose()"> 
-                            <div class="submenu20"><div class="menuapplications12"></div><label><labc> Ask Jeeves </labc></label></div>
-                            <div class="submenu20"><div class="menuapplications13"></div><label><labc> Yahoo! Mail </labc></label></div>
-                            <div class="submenu20"><div class="menuapplications14"></div><label><labc> MSN </labc></label></div></div>
+                        <div class="win98post" style="margin-top:-123px; width:110px; height:60px; " id="onlineservicessubmenu" 
+                            onmouseover="scf=7; startsubmenuo()" onmouseout="scf=7; startsubmenuc()"> 
+                            <div class="submenu20"><div class="menuapplications6"></div><label><labc> Ask Jeeves </labc></label></div>
+                            <div class="submenu20"><div class="menuapplications7"></div><label><labc> Yahoo! Mail </labc></label></div>
+                            <div class="submenu20"><div class="menuapplications8"></div><label><labc> MSN </labc></label></div></div>
                                 
-                        <div class="win98post" style="margin-left: 20000px; margin-top:-103px; width:89px; height: 20px;" id="startupsubmenu"
-                            onmouseover="startupopen()" onmouseout="startupclose()">
+                        <div class="win98post" style="margin-top:-103px; width:89px; height: 20px;" id="startupsubmenu"
+                            onmouseover="scf=8; startsubmenuo()" onmouseout="scf=8; startsubmenuc()">
                             <dislabel style="margin-left: 20px; margin-top: 3px">(Empty)</dislabel></div>
                     </div>
         
 <!-- Favourites menu rendering------------------------------------------------------------------------------>
-                    <div class="win98post" style="margin-left: 20000px; margin-top: -300px; width: 149px; height:80px" id="favouritesmenu" 
-                        onmouseover="favouritesopen()" onmouseout="favouritesclosed()"> 
+                    <div class="win98post" style="margin-top: -300px; width: 149px; height:80px" id="favouritesmenu" 
+                        onmouseover="scf=9; startsubmenuo()" onmouseout="scf=9; startsubmenuc()"> 
                         <!-- Channels -->
-                        <div class="submenu20" onmouseover="channelsopen()" onmouseout="channelsclose()" id="channels">
-                            <div class="menufavouritesfolder"></div><label><labc> Channels </labc></label><div class="smenuarrow" id="submenuarrow21"></div></div>
-                        <div class="submenu20" onmouseover="linksopen()" onmouseout="linksclose()" id="links">
-                            <div class="menufavouritesfolder"></div><label><labc> Funnies </labc></label><div class="smenuarrow" id="submenuarrow22"></div></div>
-                        <div class="submenu20" onmouseover="mediaopen()" onmouseout="mediaclose()" id="media">
-                            <div class="menufavouritesfolder"></div><label><labc> Music Playlists </labc></label><div class="smenuarrow" id="submenuarrow23"></div></div>
+                        <div class="submenu20" onmouseover="scf=10; startsubmenuo()" onmouseout="scf=10; startsubmenuc()" id="channels">
+                            <div class="menudocuments6"></div><label><labc> Channels </labc></label><div class="smenuarrow" id="menuarrow13"></div></div>
+                        <div class="submenu20" onmouseover="scf=11; startsubmenuo()" onmouseout="scf=11; startsubmenuc()" id="links">
+                            <div class="menudocuments6"></div><label><labc> Funnies </labc></label><div class="smenuarrow" id="menuarrow14"></div></div>
+                        <div class="submenu20" onmouseover="scf=12; startsubmenuo()" onmouseout="scf=12; startsubmenuc()" id="media">
+                            <div class="menudocuments6"></div><label><labc> Music Playlists </labc></label><div class="smenuarrow" id="menuarrow15"></div></div>
                         <a href="hhttps://thealonic.tumblr.com/" target="_blank"><div class="submenu20">
-                            <div class="menufavouriteslink"></div><label><labc> Thealonic </labc></label></div></a>
+                            <div class="menudocuments5"></div><label><labc> Thealonic </labc></label></div></a>
                         <!-- Channels Submenu -->
-                        <div class="win98post" style="margin-left: 20000px; margin-top: -83px; width:89px; height: 20px;" id="channelssubmenu" onmouseover="channelsopen()" onmouseout="channelsclose()">
+                        <div class="win98post" style="margin-top: -83px; width:89px; height: 20px;" id="channelssubmenu" onmouseover="scf=10; startsubmenuo()" onmouseout="scf=10; startsubmenuc()">
                             <dislabel style="margin-left: 20px; margin-top: 3px">(Empty)</dislabel></div>
                             <!-- links submenu -->
-                        <div class="win98post" style="margin-left: 20000px; margin-top: -63px; width: 228px; height:60px" id="linkssubmenu" onmouseover="linksopen()" onmouseout="linksclose()"> 
-                            <div class="submenu20" onclick="ovfvpload()"><div class="menufavouriteslink"></div><label><labc>The Official Very Funny Video Playlist</labc></label></div></a>
-                            <div class="submenu20" onclick="csgoload()"><div class="menufavouriteslink"></div><label><labc>CSGO Funny Moments</labc></label></div>
-                            <div class="submenu20" onclick=""><div class="menudocumentssound"></div><label><labc>The 787 Survival Challange</labc></label></div></div>
+                        <div class="win98post" style="margin-top: -63px; width: 228px; height:60px" id="linkssubmenu" onmouseover="scf=11; startsubmenuo()" onmouseout="scf=11; startsubmenuc()"> 
+                            <div class="submenu20" onclick="ovfvpload()"><div class="menudocuments5"></div><label><labc>The Official Very Funny Video Playlist</labc></label></div></a>
+                            <div class="submenu20" onclick="csgoload()"><div class="menudocuments5"></div><label><labc>CSGO Funny Moments</labc></label></div>
+                            <div class="submenu20" onclick=""><div class="menudocuments2"></div><label><labc>The 787 Survival Challange</labc></label></div></div>
                         <!-- Music submenu -->
-                        <div class="win98post" style="margin-left: 20000px; margin-top: -43px; width: 160px; height:195px" id="mediasubmenu" 
-                             onmouseover="mediaopen()" onmouseout="mediaclose()"> 
+                        <div class="win98post" style="margin-top: -63px; width: 160px; height:195px" id="mediasubmenu" 
+                            onmouseover="scf=12; startsubmenuo()" onmouseout="scf=12; startsubmenuc()"> 
                             <div class="submenu20" onclick="gabetousleload()"><div class="menuentertainment5"></div><label><labc>Gabetousle</labc></label></div>
-                            <div class="submenu20" onclick="gabetousleload()"><div class="menudocumentssound"></div><label><labc>Rocking, Rollin n' Boneing.</labc></label></div>
+                            <div class="submenu20" onclick="gabetousleload()"><div class="menudocuments2"></div><label><labc>Rocking, Rollin n' Boneing.</labc></label></div>
                             <div class="submenu20" onclick="mlpload()"><div class="menuentertainment5"></div><label><labc>The My Little Pony playlist</labc></label></div>
                             <div class="startmenusplitter"></div>
                             <div class="submenu20" onclick="Crossload()"><div class="menuentertainment5"></div><label><labc>Justice - Cross</labc></label></div>
@@ -1954,44 +2006,44 @@
                     </div></div>
 
 <!-- Documents menu rendering ------------------------------------------------------------------------------>
-                    <div class="win98post" style="margin-left: 20000px; margin-top: -264px; width: 160px; height:108px" id="documentsmenu" onmouseover="documentsopen()" onmouseout="documentsclosed()"> 
+                    <div class="win98post" style="margin-top: -264px; width: 160px; height:108px" id="documentsmenu" onmouseover="scf=13; startsubmenuo()" onmouseout="scf=13; startsubmenuc()"> 
                         <!-- My Documents -->
                         <div class="submenu20"><div class="menudocuments1"></div><label><labc> My Documents </labc></label></div>
                         <div class="startmenusplitter"></div>
-                        <div class="submenu20" onmouseover="vherstyopen()" onmouseout="vherstyclose()" id="vherstymenu">
-                            <div class="menufavouritesfolder"></div><label><labc> Very Vhersty </labc></label><div class="smenuarrow" id="submenuarrow24"></div></div>
+                        <div class="submenu20" onmouseover="scf=17; startsubmenuo()" onmouseout="scf=17; startsubmenuc()" id="vherstymenu">
+                            <div class="menudocuments6"></div><label><labc> Very Vhersty </labc></label><div class="smenuarrow" id="menuarrow16"></div></div>
                             
-                        <div class="submenu20"><div class="menudocumentssound"></div><label><labc> Braden+.wav </labc></label></div>
-                        <div class="submenu20"><div class="menudocumentssound"></div><label><labc> OurHeartlessMaster.wav </labc></label></div>
+                        <div class="submenu20"><div class="menudocuments2"></div><label><labc> Braden+.wav </labc></label></div>
+                        <div class="submenu20"><div class="menudocuments2"></div><label><labc> OurHeartlessMaster.wav </labc></label></div>
                         
                         <a href="https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/main" target="_blank"><div class="submenu20">
-                            <div class="menudocumentsdoc"></div><label><labc> Thealonic.doc </labc></label></div></a>
+                            <div class="menudocuments4"></div><label><labc> Thealonic.doc </labc></label></div></a>
 
-                        <div class="win98post" style="margin-left: 20000px; margin-top: -83px; width: 160px; height:67px" id="vherstysubmenu" onmouseover="vherstyopen()" onmouseout="vherstyclose()"> 
-                            <a href="https://veryvhersty.tumblr.com/" target="_blank"><div class="submenu20"><div class="menufavouriteslink"></div><label><labc> Vhersty </labc></label></div></a>
+                        <div class="win98post" style="margin-top: -83px; width: 160px; height:67px" id="vherstysubmenu" onmouseover="scf=17; startsubmenuo()" onmouseout="scf=17; startsubmenuc()"> 
+                            <a href="https://veryvhersty.tumblr.com/" target="_blank"><div class="submenu20"><div class="menudocuments5"></div><label><labc> Vhersty </labc></label></div></a>
                             <div class="startmenusplitter"></div>
-                            <div class="submenu20" onclick="win98load()"><div class="menufavouriteslink"></div><label><labc>Windows 98 Development</labc></label></div>
-                            <div class="submenu20" onclick="csgoload()"><div class="menufavouriteslink"></div><label><labc>CSGO Funny Moments</labc></label></div></div>
+                            <div class="submenu20" onclick="win98load()"><div class="menudocuments5"></div><label><labc>Windows 98 Development</labc></label></div>
+                            <div class="submenu20" onclick="csgoload()"><div class="menudocuments5"></div><label><labc>CSGO Funny Moments</labc></label></div></div>
                     </div>
                      
 <!-- Settings menu rendering ------------------------------------------------------------------------------>
-                    <div class="win98post" style="margin-left: 200000px; margin-top: -228px; width: 160px; height:128px" id="settingsmenu" onmouseover="settingsopen()" onmouseout="settingsclosed()"> 
+                    <div class="win98post" style="margin-top: -228px; width: 160px; height:128px" id="settingsmenu" onmouseover="scf=14; startsubmenuo()" onmouseout="scf=14; startsubmenuc()"> 
                         <div class="submenu20"><div class="menusettings1"></div><label><labc> Control panel </labc></label></div>
                         <div class="submenu20"><div class="menusettings2"></div><label onclick="backgroundtab(); disktask(); menuclosed()"><labc> Display Properties </labc></label></div>
                         <div class="submenu20"><div class="menusettings3"></div><label><labc> Taskbar & Start menu </labc></label></div>
                         <div class="submenu20"><div class="menusettings4"></div><label><labc> Folder options... </labc></label></div>
-                        <div class="submenu20" onmouseover="activeopen();" onmouseout="activeclose();" id="activedesktop">
-                            <div class="menusettings5"></div><label><labc> Active desktop </labc></label><div class="smenuarrow" id="submenuarrow31"></div></div>
+                        <div class="submenu20" onmouseover="scf=15; startsubmenuo()" onmouseout="scf=15; startsubmenuc()" id="activedesktop">
+                            <div class="menusettings5"></div><label><labc> Active desktop </labc></label><div class="smenuarrow" id="menuarrow17"></div></div>
                         <div class="startmenusplitter"></div>
                         <div class="submenu20" style="margin-top: 3px"><div class="menusettings6"></div><label><labc>Windows Update</labc></label></div>
                         <!-- Activedesktop submenu -->
-                        <div class="win98post" style="margin-left:-20000px; margin-top:-50px; width:170px; height:40px" id="activedesktopsubmenu" onmouseover="activeopen()" onmouseout="activeclose()">
+                        <div class="win98post" style="margin-top:-50px; width:170px; height:40px" id="activedesktopsubmenu" onmouseover="scf=15; startsubmenuo()" onmouseout="scf=15; startsubmenuc()">
                             <div class="submenu20" onclick="messageopen(); menuclosed()"><label style="margin-top: -2px"><labc> 🧮 brain go brrrrr </labc></label></div>
                             <div class="submenu20" onclick="vunnytask(); vunnypositionreset(); menuclosed()"><label style="margin-top: -2px"><labc> 👿 very.unvunny </labc></label></div></div>
                     </div>
                               
 <!-- Find menu rendering ------------------------------------------------------------------------------>
-                    <div class="win98post" style="margin-left: 20000px; margin-top: -192px; width: 130px;" id="findmenu" onmouseover="findopen()"onmouseout="findclosed()";>
+                    <div class="win98post" style="margin-top: -192px; width: 130px;" id="findmenu" onmouseover="scf=16; startsubmenuo()" onmouseout="scf=16; startsubmenuc()";>
                         <div class="submenu20"><div class="menufind1"></div><label><labc> Files or folders...</labc></label></div>
                         <div class="submenu20"><div class="menufind2"></div><label><labc> Computer...</labc></label></div>
                         <div class="submenu20"><div class="menufind3"></div><label><labc> On the Internet...</labc></label></div>
@@ -2008,8 +2060,16 @@
                         docelem.style.setProperty('--taskbarstartbottom1', ccblack); docelem.style.setProperty('--taskbarstartbottom2', ccgray)}}
                 function menuclosed(){startmenu.marginLeft = "200000px"; startButtonOpen = false;
                     docelem.style.setProperty('--taskbarstarttop1', ccgray); docelem.style.setProperty('--taskbarstarttop2', ccblack);
-                    docelem.style.setProperty('--taskbarstartbottom1', ccwhite); docelem.style.setProperty('--taskbarstartbottom2', cclightg)} </script>
-            
+                    docelem.style.setProperty('--taskbarstartbottom1', ccwhite); docelem.style.setProperty('--taskbarstartbottom2', cclightg)} 
+                
+                var smu=['menuprograms','accessories','communications','entertainment','games','internettools','systemtools','onlineservices', 'startup','menufavourites','channels','links','media','menudocuments','menusettings','activedesktop',
+                    'menufind','vherstymenu'], sms = ['programsmenu','menuaccessoriessubmenu','menucommunicationssubmenu','menuentertainmentsubmenu','gamessubmenu','internettoolssubmenu','systemtoolssubmenu','onlineservicessubmenu', 'startupsubmenu',
+                    'favouritesmenu', 'channelssubmenu','linkssubmenu','mediasubmenu','documentsmenu','settingsmenu','activedesktopsubmenu','findmenu','vherstysubmenu'], marr = ['menuarrow1','menuarrow6','menuarrow9','menuarrow10','menuarrow18',
+                    'menuarrow11','menuarrow12','menuarrow7','menuarrow8','menuarrow2','menuarrow13','menuarrow14','menuarrow15','menuarrow3','menuarrow4','menuarrow17','menuarrow5','menuarrow16'],
+                    sbn=['130px','133px','148px','158px','161px','163px','200000px'],sbm='margin-left',scf = 0,sbc,geb,sma,cac;sbp=[sbn[4],sbn[0],sbn[0],sbn[0],sbn[0],sbn[0],sbn[0],sbn[1],sbn[1],sbn[4],sbn[2],sbn[2],sbn[2],sbn[4],sbn[4],sbn[3],sbn[4],sbn[4]]
+                function starttemp(){document.getElementById(smu[scf]).style.backgroundColor=cac[0];document.getElementById(smu[scf]).style.color=cac[2];document.getElementById(marr[scf]).style.filter="invert("+cac[2]+")"}
+                function startsubmenuo(){sbc='#'+sms[scf];cac=[ccprussian,cchover,varinvert];starttemp();$(sbc).css(sbm,sbp[scf])};function startsubmenuc(){sbc ='#'+sms[scf];cac=[ccsilver,ccfont,curinvert];starttemp();$(sbc).css(sbm,sbn[6])}</script>
+                
 <!-- Taskbar Rendering  ------------------------------------------------------------------------------>
             <div style="margin-top: -24px">
                 <!-- taskbar application icons -->
@@ -2046,8 +2106,8 @@
                         taskbar = [undefined, document.getElementById("taskapp1").style, document.getElementById("taskapp2").style, document.getElementById("taskapp3").style, document.getElementById("taskapp4").style, 
                         document.getElementById("taskapp5").style, document.getElementById("taskapp6").style, document.getElementById("taskapp7").style, document.getElementById("taskapp8").style],
                         taskbarfont = [undefined, document.getElementById("taskapp1font").style, document.getElementById("taskapp2font").style, document.getElementById("taskapp3font").style, document.getElementById("taskapp4font").style,
-                        document.getElementById("taskapp5font").style, document.getElementById("taskapp6font").style, document.getElementById("taskapp7font").style, document.getElementById("taskapp8font").style]
-                    
+                        document.getElementById("taskapp5font").style, document.getElementById("taskapp6font").style, document.getElementById("taskapp7font").style, document.getElementById("taskapp8font").style] //leave this as js, dipshit.
+
                     function tasktoggle() {if (ButtonOpen[button] == false) { funccall = button + "m"} else if (ButtonOpen[button] == true){ funccall = button + "a"; ButtonOpen[button] = false } switch (funccall) {
                             case "1m": tumblrminimize(); break; case "1a": tumblractive(); break; case "2m": vunnyminimize(); break; case "2a": vunnyopen(); break; case "3m": diskminimize(); break; case "3a": diskactive(); break; 
                             case "4m" :embedminimize(); break; case "4a": embedactive(); break; case "5m": patchnoteminimize(); break; case "5a": patchnotesactive(); break; case "6m": promptminimize(); break; case "6a": promptactive(); break;
@@ -2072,41 +2132,34 @@
 <!-- On page load handling ------------------------------------------------------------------------------>
         <script>
             $(document).ready(function(){
-                
-                var height = $(".window").find("iframe").attr("height");
-                        $(".window").find("iframe").css("height", height + "px");
-                
                 var infScr = $('body').hasClass('infinite_scrolling'), twoCol = $('body').hasClass('two_column'), $container = $('#desktop');
                 if( infScr && twoCol ){
                     $container.imagesLoaded(function(){$container.masonry({itemSelector:'.window', isAnimated: true})});
                     $container.infinitescroll({itemSelector: '.window'}, function(newElements) { 
-   
-                        var height = $(".window").find(".photoset").attr("height");
-                        $(".window").find("iframe").css("height", height + "px");
+                        var $newElems = $( newElements ).hide()
+                        var height = $(".window").find(".photoset").attr("height")
+                        $(".window").find(".photoset").css("height", height + "px")
                         
                         $(this).find(".title-bar-98").css("background", "linear-gradient(90deg, " + curtbgradinactive1 + "," + curtbgradinactive2 + ")")
                         $(".window").click(function(){calupdate(); tumblractive(); $(this).css("z-index", cal); var desktopleft
-                            $(this).find(".title-bar-98").css("background", "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"); 
+                            $(this).find(".title-bar-98").css("background", "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")")
                             $(this).find(".title-bar-text").css("color", curactivetitle)});
                             
                         $(".plinks-con").click(function(){if (plinksdrop == false){$(this).find("postdrop").css("margin-left", "49px"); plinksdrop = true 
                             } else if (plinksdrop == true){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false}})
                         $(".plinks-con").mouseleave(function(){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false})
                         
-                        var $newElems = $( newElements ).hide();
-                        $newElems.imagesLoaded(function(){ $newElems.show();
-                            var $newElemsIDs = $newElems.map(function () { return this.id; }).get();
+                        $newElems.imagesLoaded(function(){ $newElems.show()
+                            var $newElemsIDs = $newElems.map(function () {return this.id}).get()
                             $container.masonry('appended', $newElems)})})}
-
-                window.setInterval(updateClock(), 6000); updateClock()});
+                window.setInterval(updateClock, 6000); updateClock()});
 
             function updateClock(){var date = new Date(), mins = date.getMinutes(), hrs = date.getHours(), ext = "AM";
                 if(hrs > 12){ var ext = "PM"; var hrs = hrs - parseInt(12)}
                 if(hrs < 10){var hrs = "00"+hrs} if(mins < 10){var mins = "0"+mins}
-                var currentTime = hrs + ":" + mins + " " + ext; $('#showClock').html(currentTime)}
+                var currentTime = hrs + ":" + mins + " " + ext; $('desktop').find("#showClock").html(currentTime)}
             
 //-- clock for clockbox ------------------------------------------------------------------------------>
-
             var canvas = document.getElementById("canvas"), ctx = canvas.getContext("2d"), radius = canvas.height / 2, hand = 1;
             ctx.translate(radius, radius); radius = radius * 0.90; setInterval(drawClock, 1000);
             function drawClock() { drawFace(ctx, radius); drawTime(ctx, radius)}
@@ -2132,33 +2185,6 @@
             function elementDrag(e) { e = e || window.event;  e.preventDefault(); pos1 = pos3 - e.clientX; pos2 = pos4 - e.clientY; pos3 = e.clientX; pos4 = e.clientY;
                 elmnt.style.top = (elmnt.offsetTop - pos2) + "px"; elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";} //if(elmnt.offsetTop < 0){elmnt.style.top = elmnt.offsetTop - pos2}
             function closeDragElement() {document.onmouseup = null; document.onmousemove = null}}
-        
-//-- Startmenu script handling ------------------------------------------------------------------------------>
-            var smu = [document.getElementById("menuprograms"), document.getElementById("accessories"), document.getElementById("communications"), document.getElementById("entertainment"),
-                document.getElementById("games"), document.getElementById("internettools"), document.getElementById("systemtools"), document.getElementById("onlineservices"),
-                document.getElementById("startup"), document.getElementById("menufavourites"), document.getElementById("channels"), document.getElementById("links"),
-                document.getElementById("media"), document.getElementById("menudocuments"), document.getElementById("menusettings"), document.getElementById("activedesktop"),
-                document.getElementById("menufind"), document.getElementById("vherstymenu")], sms = [ document.getElementById("programsmenu"), document.getElementById("menuaccessoriessubmenu"), 
-                document.getElementById("menucommunicationssubmenu"), document.getElementById("menuentertainmentsubmenu"), document.getElementById("gamessubmenu"), document.getElementById("internettoolssubmenu"), 
-                document.getElementById("systemtoolssubmenu"), document.getElementById("onlineservicessubmenu"), document.getElementById("startupsubmenu"), document.getElementById("favouritesmenu"), 
-                document.getElementById("channelssubmenu"), document.getElementById("linkssubmenu"), document.getElementById("mediasubmenu"), document.getElementById("documentsmenu"), 
-                document.getElementById("settingsmenu"), document.getElementById("activedesktopsubmenu"), document.getElementById("findmenu"), document.getElementById("vherstysubmenu")],
-            marr = [document.getElementById("menuarrow").style, document.getElementById("menuarrow2").style, document.getElementById("menuarrow3").style, document.getElementById("menuarrow4").style,
-                document.getElementById("menuarrow5").style, document.getElementById("menuarrow2").style, document.getElementById("menuarrow3").style, document.getElementById("menuarrow4").style, 
-                document.getElementById("menuarrow5").style, document.getElementById("menuarrow6").style], sarr = [document.getElementById("submenuarrow2").style, document.getElementById("submenuarrow3").style, 
-                document.getElementById("submenuarrow4").style, document.getElementById("submenuarrow21").style, document.getElementById("submenuarrow22").style, document.getElementById("submenuarrow23").style, 
-                document.getElementById("submenuarrow24").style, document.getElementById("submenuarrow31").style], scf
-
-            function starton() {smu[scf].style.backgroundColor = ccprussian; smu[scf].style.color = cchover} function startoff() {smu[scf].style.backgroundColor = ccsilver; smu[scf].style.color = ccfont; sms[scf].style.marginLeft = "200000px"} 
-            function programsopen() {scf=0; starton(); sms[scf].style.marginLeft = "161px"} function programsclosed() {scf=0; startoff()} function accessoriesopen() {scf=1; starton(); sms[scf].style.marginLeft = "130px"} function accessoriesclose() {scf=1; startoff()}
-            function communicationsopen() {scf=2; starton(); sms[scf].style.marginLeft = "130px"} function communicationsclose() {scf=2; startoff()} function entertainmentopen() {scf=3; starton(); sms[scf].style.marginLeft = "130px"} function entertainmentclose() {scf=3; startoff()}
-            function gamesopen() {scf=4; starton(); sms[scf].style.marginLeft = "130px"} function gamesclose() {scf=4; startoff()} function internettoolsopen() {scf=5; starton(); sms[scf].style.marginLeft = "130px"} function internettoolsclose() {scf=5; startoff()}
-            function systemtoolsopen() {scf=6; starton(); sms[scf].style.marginTop = "-163px"} function systemtoolsclose() {scf=6; startoff()} function onlineservicesopen() {scf=7; starton(); sms[scf].style.marginLeft = "133px"} function onlineservicesclose() {scf=7; startoff()}
-            function startupopen() {scf=8; starton(); sms[scf].style.marginLeft = "133px"} function startupclose() {scf=8; startoff()} function favouritesopen() {scf=9; starton(); sms[scf].style.marginLeft = "161px"} function favouritesclosed() {scf=9; startoff()}
-            function channelsopen() {scf=10; starton(); sms[scf].style.marginLeft = "148px"} function channelsclose() {scf=10; startoff()} function linksopen() {scf=11; starton(); sms[scf].style.marginLeft = "148px"} function linksclose() {scf=11; startoff()}
-            function mediaopen() {scf=12; starton(); sms[scf].style.marginLeft = "148px"} function mediaclose() {scf=12; startoff()} function documentsopen() {scf=13; starton(); sms[scf].style.marginLeft = "161px"} function documentsclosed() {scf=13; startoff()}
-            function settingsopen() {scf=14; starton(); sms[scf].style.marginLeft = "161px"} function settingsclosed() {scf=14; startoff()} function activeopen() {scf=15; starton(); sms[scf].style.marginLeft = "158px"} function activeclose() {scf=15; startoff()}
-            function findopen() {scf=16; starton(); sms[scf].style.marginLeft = "161px"} function findclosed() {scf=16; startoff()} function vherstyopen() {scf=17; starton(); sms[scf].style.marginLeft = "161px"} function vherstyclose() {scf=17; startoff()}
         </script>
     </body>
 </html>
