@@ -1,7 +1,36 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll; padding-right: 4px;">
 <ul>
-<li><strong style="color: var(--atext);"><strong style="color: var(--atext);">2021 March 27th (210327)</strong><strong style="color: var(--atext);"><strong style="color: var(--atext);"><strong style="color: var(--atext);"><br /></strong></strong></strong></strong>
+<li><strong style="color: var(--atext);"><strong style="color: var(--atext);"><strong style="color: var(--atext);"><strong style="color: var(--atext);">2021 March 27th (210327)</strong></strong></strong></strong><em> - "</em><em><em>The </em>Spritesheet Update"</em><strong style="color: var(--atext);"><strong style="color: var(--atext);"><strong style="color: var(--atext);"><strong style="color: var(--atext);"><br /></strong></strong></strong></strong>
+<ul>
+<li><strong>Changes to Start Menu</strong><br />
+<ul>
+<li><strong>Rehauled and redesigned startmenu sprites / icons.<br /></strong></li>
+<li>Reorganised Start Menu icons inside the icon spritesheet to be easier to manage and customise.<strong><br /></strong></li>
+<li>Startmenu Icons now use a seperate spritesheet to Windows Assets.</li>
+<li>Startmenu Sidebar now has a seperate spritesheet.</li>
+</ul>
+<ol>
+<li>Reorganised startmenu icons on the backend.</li>
+<li>- Fixed the Run Icon not being the correct asset.</li>
+</ol></li>
+<li>Display property wallpaper icons now have their own unique icons, instead of referencing the start menu.</li>
+<li><strong>Major CSS rehaul for ALL sprites and icons in Vher98.</strong></li>
+<li>Other backend tweaks.</li>
+</ul>
+<ol>
+<li>- Fixed font colours automatically adjusting back to their original colour, regardless of submenu context.</li>
+<li>- Fixed drop down menus not automatically closing on mouse leave.</li>
+</ol></li>
+<li><strong style="color: var(--atext);"><strong style="color: var(--atext);"><strong style="color: var(--atext);">2021 March 28th (210328)</strong></strong></strong>
+<ul>
+<li><strong>Optimised Start Menu to it&rsquo;s final form. (There&rsquo;s no more that can be done here)</strong></li>
+</ul>
+<ol>
+<li>- Fixed Embedded Media Player not minimizing, and minimizing notepad instead.</li>
+<li>- <strong>Startmenu submenu arrows are now functioning again from leaving it out of the previous start menu rewrite.</strong></li>
+</ol></li>
+<li><strong style="color: var(--atext);">2021 March 27th (210327)</strong>
 <ul>
 <li><strong>All dropdown menus are now more space efficent and more optimised.</strong></li>
 <li><strong>Wallpaper options no longer rely on individual functions, </strong>making them more optimal.</li>
@@ -12,10 +41,10 @@
 </ul>
 <ol>
 <li><strong>- Fixed scaling related bugs with photosets.</strong></li>
-<li>- Fixed post alignment to the center, regardless of resolution rather than it being fixed.</li>
+<li><strong>- Fixed issues with post alignment to the center, regardless of resolution.</strong></li>
 <li>- Fixed Scheme preview showing off the current active spritesheet instead of preview spritesheet.</li>
 </ol></li>
-<li><strong style="color: var(--atext);">2021 March 26th (210326)</strong><strong style="color: var(--atext);"><strong style="color: var(--atext);"><strong style="color: var(--atext);"><br /></strong></strong></strong>
+<li><strong style="color: var(--atext);">2021 March 26th (210326)</strong>
 <ul>
 <li>CSS optimisations and tweaks</li>
 <li>Holding the fast forward and rewind button in the embedded media player will now repeat the function alongside stating the current amount of time that has been skipped.</li>
