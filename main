@@ -28,16 +28,15 @@
                $(this).parents('.tumblr_video_container').css({ width: Math.floor($(this).width() * ( scale + 1 ) / 2), height: Math.floor($(this).height() * ( scale + 1 ) / 2)})})})
               
         var github = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/", readme = "//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/README.md";
-        var updateon = "21:55pm on March 27th, 2021. [GMT]", updatedfrom = "Thea Vanherst"; 
+        var updateon = "02:19am on March 30th, 2021. [GMT]", updatedfrom = "Thea Vanherst"; 
         var curtaskact = undefined, currenttask = 1, cal = 5, docelem = document.documentElement, plinksdrop = false; function calupdate(){inactiveall(); cal = cal + 1};
         function latestupdate() {document.getElementById("lastupdate").textContent = updateon; document.getElementById("updatedby").textContent = updatedfrom} //"Pixelated MS Sans Serif"
     </script>
     
-    <head> <!-- Setup -->
-        <meta name="description" value="{MetaDescription}" /><link rel="shortcut icon" href="{Favicon}"/><meta charset="utf-8" />
-        <style type="text/css"> :root { --curspritesheet: " "; --prespritesheet: " "; --predesktopsheet: " "; --curdesktopsheet: " ";
-                    --scrollbar: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/scrollbarempty.png');
-
+    <head> <meta name="description" value="{MetaDescription}" /><link rel="shortcut icon" href="{Favicon}"/><meta charset="utf-8" /><style type="text/css"> 
+            :root { --curspritesheet: " "; --prespritesheet: " "; --scrollbar: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/scrollbarempty.png');
+                    --predesktopsheet: " "; --curdesktopsheet: " "; --startbar: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/startbar.png');
+                    
                     --white: #fff; --lightg: #dfdfdf;  --silver: #c0c0c0; --midgray: #ababab; --gray: #808080; --black: #0a0a0a; --blue: #0000ff; --prussian: #00207c ; --wincyan: #008080; --yellow: #ffff00; 
                     --font: #000; --hover: #fff; --atext: #000; --curinactivetitle: #fff; --curactivetitle: #fff; --consoleback: #000; --consoletext: #fff; --desktopicon: #008080; --desktoptext: #fff;
                     --curfont: 'ms_sans_serifregular'; --curfontbold: 'ms_sans_serif_boldregular'; --curfontsize: 11px;
@@ -52,276 +51,201 @@
                     --taskbar7top1: #fff; --taskbar7top2: #dfdfdf; --taskbar7bottom1: #808080; --taskbar7bottom2: #0a0a0a; --taskbar8top1: #fff; --taskbar8top2: #dfdfdf; --taskbar8bottom1: #808080; --taskbar8bottom2: #0a0a0a;
                     --slider: 550px; --invert: 0; --preinvert: 0; --shuffleinvert: 0.5; --discheckinv: 0.6; --enacheckinv: 0.2; --invcheckinv: 0.35; --smicow: 42px; --smicoh: 36px;
                     
-                    --curboxshadowraised: inset -1px -1px var(--black), inset 1px 1px var(--lightg), inset -2px -2px var(--gray), inset 2px 2px var(--white);
-                    --curboxshadowpressed: inset 1px 1px var(--black), inset -1px -1px var(--white), inset -2px -2px var(--lightg), inset 2px 2px var(--gray);
-                    --preboxshadowraised: inset -1px -1px var(--preblack), inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray), inset 2px 2px var(--prewhite);
-                    --preboxshadowpressed: inset 1px 1px var(--preblack), inset -1px -1px var(--prewhite), inset -2px -2px var(--prelightg), inset 2px 2px var(--pregray);
-                    --curulshadow: inset -1px -1px var(--white), inset 1px 1px var(--gray), inset -2px -2px var(--lightg), inset 2px 2px var(--black);
-                    --curpopshadow: inset -1px -1px var(--black), inset 1px 1px var(--white), inset -2px -2px var(--gray), inset 2px 2px var(--lightg);
-                    --curtabshadow: inset -1px 0px var(--black), inset 1px 1px var(--white), inset -2px 0px var(--gray),inset 2px 2px var(--lightg);
+                    --curboxshadowraised: inset -1px -1px var(--black),   inset 1px 1px var(--lightg),    inset -2px -2px var(--gray),     inset 2px 2px var(--white);
+                    --curboxshadowpressed:inset 1px 1px var(--black),     inset -1px -1px var(--white),   inset -2px -2px var(--lightg),   inset 2px 2px var(--gray);
+                    --preboxshadowraised: inset -1px -1px var(--preblack),inset 1px 1px var(--prelightg), inset -2px -2px var(--pregray),  inset 2px 2px var(--prewhite);
+                    --preboxshadowpressed:inset 1px 1px var(--preblack),  inset -1px -1px var(--prewhite),inset -2px -2px var(--prelightg),inset 2px 2px var(--pregray);
+                    --curulshadow:  inset -1px -1px var(--white),inset 1px 1px var(--gray), inset -2px -2px var(--lightg),inset 2px 2px var(--black);
+                    --curpopshadow: inset -1px -1px var(--black),inset 1px 1px var(--white),inset -2px -2px var(--gray),  inset 2px 2px var(--lightg);
+                    --curtabshadow: inset -1px 0px var(--black), inset 1px 1px var(--white),inset -2px 0px var(--gray),   inset 2px 2px var(--lightg);
                     --distextshadow: 1px 1px 0 var(--white)}
-                    
             /* desktop config settings */
             body {margin: 0 auto; background: var(--wincyan); font-family:var(--curfont); font-size:var(--curfontsize); width:100% height:100%; overflow-x: hidden;}
             #desktop, .navigation {margin: 0 auto; width: 100%; font-family:var(--curfont); font-size:var(--curfontsize)} body.permalink_page #desktop, body.permalink_page .navigation {width: 480px}
-            
-            .pretitle-bar-text, .title-bar-text {letter-spacing: 0.5px; margin-right:24px; padding:1px 4px 2px 4px; font-weight:700; cursor:default}
-            .win98titlebarc, .win98titlebarh, .pretitlebarbutton {width:10px; height:8px; float:right; margin:2px 2px 2px 2px; cursor: pointer}
-            
 /* Desktop setup css ------------------------------------------------------------------------------*/
             /* taskbar icon setup */
-            .icons {padding: -10px; width: 78px; height:100%; float: left; position: fixed; z-index: 1; margin-top: -20px; margin-left:10px; cursor: pointer}
-            ico {cursor: pointer; display:inline-flex; color: var(--desktoptext); background: var(--desktopicon); margin-top:-1px} icon {background: var(--desktopicom); color: var(--desktoptext)} 
+            .icons{padding:-10px;width:78px;height:100%;float:left;position:fixed;z-index: 1;margin-top:-20px;margin-left:10px;cursor:pointer}
+            ico{cursor:pointer;display:inline-flex;color:var(--desktoptext);background:var(--desktopicon);margin-top:-1px}icon{background:var(--desktopicom);color:var(--desktoptext)} 
             
-            .thealonic, .veryvhersty, .twitter, .askicon, .discordlink, .officialfunny, .rct2, .justice {background-image: var(--curdesktopsheet); height: 72px; width: 72px; margin-bottom: 3px; margin-top: 6px}
-            .thealonic {background-position: -0px -0px} .veryvhersty {background-position: -72px -0px} .twitter {background-position: -144px -0px} .askicon {background-position: -216px -0px}
-            .discordlink {background-position: -288px -0px} .officialfunny {background-position: -360px -0px} .rct2 {background-position: -432px -0px} .justice {background-position: -504px -0px}
-
-/* Window bar handling ------------------------------------------------------------------------------*/
-            .window, .win98post, .win98titlebarc, .win98titlebarh, .win98button, .win98buttona, .win98buttondis, .win98buttondisa, .buttonsmalla, .buttonsmalldis, 
-            .scrollbinactive, .buttonscrollinactive, .dropbutton {box-shadow:var(--curboxshadowraised); background:var(--silver); padding:3px}
-            .win98titlebarc:active, .win98titlebarh:active, .win98button:active, .win98buttona:active, .buttonsmalla:active, .dropbutton-pres {box-shadow:var(--curboxshadowpressed)}
-            /* custom css for post windows apposed to the default win98 css */
-            .win98post, .window, .win98innerbox, .scrollbinactive {position: absolute; color:var(--font)}
-            .window {position: absolute; z-index: 4} .window-body{margin: 8px; color:var(--font)}
-            .title-bar-98{background: linear-gradient(90deg, #878787, #a2a2a2); height:18px; width:100%} .title-bar-text {color: var(--curinactivetitle)}
-            .win98innerbox {box-shadow: var(--curpopshadow); background:var(--silver); padding:3px}
-            .win98titlebarh {margin:2px 0px 0px 0px} .scrollbinactive {width: 10px; height: 10px; float:right; margin-left: 1px}
-            /* General button handling */
-            .win98buttona, .win98buttondisa, .buttonscrollinactive, .win98tab{position:absolute}
-            .buttonsmalla, .buttonsmalldis {position:absolute; width:9px; height:2px; margin-top: -8px}
-            .win98buttona, .win98buttondisa, .win98button, .win98buttondis, .prebutton {width:70px; height:16px}
-            .win98button, .win98buttona {cursor:pointer} .win98buttondis, .win98buttondisa {margin-bottom: 4px}
-            
-            prebutlabel, prebutdislabel, preico, butlabel, label, butdislabel {display:inline-flex; align-items: center; color: var(--text)} 
-            .prepost, .prebutton, prebutlabel, butlabel {pointer: cursor} prebutlabel, prebutdislabel, butlabel, butdislabel {margin-top: 2px} 
-            butdislabel, dislabel, butdislabel{align-items: center; color:var(--gray); text-shadow:var(--distextshadow)}
-            
-            .scrollbarmiddle {height: 2px; width: 2px; background-image: var(--scrollbar); background-repeat: repeat}
-            .prescroll, .buttonscrollinactive {width:10px; height: 10px; float:right} .win98tab, .scrollbarmiddle{ background-color:var(--silver); color: var(--text)}
-            .win98tab {box-shadow:var(--curtabshadow); align-items: center; padding:5px 3px 3px 3px; border-radius: 2px; position: absolute}
-            
-/* Menu css ------------------------------------------------------------------------------*/
-            .dropmenu, .droptext, .wallpapermenu{ background: var(--white); color:var(--font)} .dropmenu, .dropbutton-pres, .wallpapermenu{position: absolute}
-            .wallpapermenu:hover, .droptext:hover{ background:var(--prussian); color:var(--hover); border-style: dotted; border-color: var(--yellow)}
-            
-            .dropbutton, .dropbutton-pres {width: 10px; height: 11px; float:right}
-            .dropmenu {margin-top: 20px; z-index: 20000000; margin-top:1px} .colourselect .dropselc {padding:2px; display: inline-block}
-            .droptext {height: 11px; width: 100%; padding:2px 3px 1px 2px} .droptext:hover {padding:1px 3px 0px 2px; border-width: 1px}
-            .dropbutton {margin-top:-17px} .dropbutton-pres {background:var(--silver); margin-right:-2px; margin-top: -18px; padding:3px}
-            
-            .colourselect {height: 12px; width: 12px; box-shadow: var(--curulshadow); border-style: solid; border-width: 1px; border-color:var(--silver); margin:-1px -1px 0px 0px}
-            .colourselect:hover {box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--white), inset -2px -2px var(--black), inset 2px 2px var(--black); border-color: black}
-            
-            .wallpapermenu {width:227px; cursor:pointer; height: 17px; width: 100%; border-style: dotted; border-width: 1px; border-color: var(--white); z-index:4}
-            .wallpapermenu:hover {z-index:10} .tagged {font-size: 9px; opacity: 0.5} .filled {width:100%; height:100%}
-            
+            .thealonic,.veryvhersty,.twitter,.askicon,.discordlink,.officialfunny,.rct2,.justice{background-image:var(--curdesktopsheet);height:72px;width:72px;margin-bottom:3px;margin-top:6px}
+            .thealonic  {background-position:  -0px -0px}  .veryvhersty{background-position: -72px -0px} .twitter{background-position:-144px -0px}.askicon{background-position:-216px -0px}
+            .discordlink{background-position:-288px -0px}.officialfunny{background-position:-360px -0px}.rct2    {background-position:-432px -0px}.justice{background-position:-504px -0px}
 /* Desktop preview css ------------------------------------------------------------------------------*/
-            .thealonicpreview, .veryvherstypreview, .twitterpreview, .askiconpreview, .discordlinkpreview, .officialfunnypreview, .rct2preview, 
-            .justicepreview {background-image: var(--predesktopsheet); height: var(--smicoh); width: var(--smicoh); margin-bottom: 6px}
-            
-            .thealonicpreview {background-position: -0px -72px} .veryvherstypreview {background-position: -36px -72px} 
-            .twitterpreview {background-position: -72px -72px} .askiconpreview {background-position: -107px -72px}
-            .discordlinkpreview {background-position: -144px -72px} .rct2preview { background-position: -216px -72px} 
-            .officialfunnypreview {background-position: -180px -72px} .justicepreview {background-position: -252px -72px} 
             .preicocon {width:var(--smicow); height:var(--smicoh); display: inline-block; margin-left:16px; vertical-align: top} 
             preico {cursor: pointer; max-width: auto; color: var(--preicotext); background: var(--predesktopicon)} 
             
+            .thealonicpreview, .veryvherstypreview, .twitterpreview, .askiconpreview, .discordlinkpreview, .officialfunnypreview, .rct2preview, 
+            .justicepreview {background-image:var(--predesktopsheet);height:var(--smicoh);width: var(--smicoh);margin-bottom: 6px}
+            .thealonicpreview    {background-position:-0px   -72px}.veryvherstypreview{background-position:-36px -72px} 
+            .twitterpreview      {background-position:-72px  -72px}.askiconpreview    {background-position:-107px -72px}
+            .discordlinkpreview  {background-position:-144px -72px}.rct2preview       {background-position:-216px -72px} 
+            .officialfunnypreview{background-position:-180px -72px}.justicepreview    {background-position:-252px -72px} 
+
+/* Window bar handling ------------------------------------------------------------------------------*/
+            .window,.win98post,.win98titlebarc,.win98titlebarh,.win98button,.win98buttona,.win98buttondis,.win98buttondisa,.buttonsmalla,.buttonsmalldis, 
+            .scrollbinactive,.buttonscrollinactive,.dropbutton{box-shadow:var(--curboxshadowraised);background:var(--silver);padding:3px}
+            .win98titlebarc:active,.win98titlebarh:active,.win98button:active,.win98buttona:active,.buttonsmalla:active,.dropbutton-pres{box-shadow:var(--curboxshadowpressed)}
+
+            .win98post,.window,.win98innerbox,.scrollbinactive{position:absolute;color:var(--font)}.window{position:absolute;z-index:4}
+            .title-bar-98{background:linear-gradient(90deg, #878787, #a2a2a2);height:18px;width:100%}.title-bar-text{color:var(--curinactivetitle)}
+            .window-body{margin:8px;color:var(--font)}.win98innerbox{box-shadow:var(--curpopshadow);background:var(--silver);padding:3px}
+            .win98titlebarh{margin:2px 0px 0px 0px}.scrollbinactive{width:10px;height:10px;float:right;margin-left:1px}
+
+            .win98buttona,.win98buttondisa,.buttonscrollinactive,.win98tab{position:absolute}.win98buttondis,.win98buttondisa{margin-bottom: 4px}
+            .buttonsmalla,.buttonsmalldis{position:absolute;width:9px; height:2px;margin-top:-8px}
+            .win98buttona,.win98buttondisa,.win98button,.win98buttondis,.prebutton{width:70px;height:16px}
+            
+            .scrollbarmiddle{height:2px;width:2px;background-image:var(--scrollbar);background-repeat:repeat}
+            .prescroll,.buttonscrollinactive{width:10px;height:10px;float:right}.win98tab,.scrollbarmiddle{ background-color:var(--silver); color: var(--text)}
+            .win98tab{box-shadow:var(--curtabshadow);align-items:center;padding:5px 3px 3px 3px; border-radius: 2px; position:absolute}
+            .windowsexplorerlogo{background-image:var(--curspritesheet);margin-top:2px;height:16px;width:20px;background-position:-101px -283px;float:right;margin-right:9px}
+            
+/* desktop pre and cur handling ------------------------------------------------------------------------------*/
+            .title-bar-text,.pretitle-bar-text{letter-spacing:0.5px;margin-right:24px;padding:1px 4px 2px 4px;font-weight:700; cursor:default}
+            .win98titlebarc,.win98titlebarh,.pretitlebarbutton{width:10px; height:8px; float:right; margin:2px 2px 2px 2px; cursor: pointer}
+            
+            prebutlabel,prebutdislabel,preico,butlabel,label,butdislabel{display:inline-flex;align-items:center;color:var(--text)} 
+            .win98button,.win98buttona,.prepost,.prebutton,prebutlabel,butlabel{pointer:cursor} prebutlabel,prebutdislabel,butlabel,butdislabel{margin-top:2px} 
+            butdislabel,dislabel,butdislabel{align-items:center;color:var(--gray);text-shadow:var(--distextshadow)}
+            
 /* window preview handling ------------------------------------------------------------------------------*/
-            .prepost, .pretitlebarbutton, .prescroll, .prebutton {box-shadow: var(--preboxshadowraised); background:var(--presilver); padding:3px; color: var(--prefont)}
-            .pretitlebarbutton {margin:2px 2px 0px 0px} .prescroll, .prepost{position: absolute} .pretitle-bar-text {color: var(--preactivetitle)}
-            prebutdislabel {color:var(--pregray); text-shadow:1px 1px 0 var(--prewhite)} prebutlabel, preul.tree-view, prefieldset{margin:0; color: var(--preblack)}
-            preul.tree-view {margin-top: 4px; display: block; padding: 6px; box-shadow: inset -1px -1px var(--prewhite),inset 1px 1px var(--pregray),inset -2px -2px var(--prelightg),inset 2px 2px var(--preblack)}
-            prefieldset{border: none; padding:10px; box-shadow: inset -1px -1px var(--prewhite), inset 1px 1px var(--pregray), inset -2px -2px var(--pregray), inset 2px 2px var(--prelightg)}
+            .prepost,.pretitlebarbutton,.prescroll,.prebutton{box-shadow: var(--preboxshadowraised);background:var(--presilver);color: var(--prefont);padding:3px;}
+            .pretitlebarbutton{margin:2px 2px 0px 0px}.prescroll,.prepost{position:absolute}.pretitle-bar-text{color:var(--preactivetitle)}
+            prebutdislabel{color:var(--pregray);text-shadow:1px 1px 0 var(--prewhite)}prebutlabel,preul.tree-view,prefieldset{margin:0;color:var(--preblack)}
+            preul.tree-view{margin-top:4px;display:block;padding: 6px; box-shadow:inset -1px -1px var(--prewhite),inset 1px 1px var(--pregray),inset -2px -2px var(--prelightg),inset 2px 2px var(--preblack)}
+            prefieldset{border:none;padding:10px;box-shadow:inset -1px -1px var(--prewhite),inset 1px 1px var(--pregray),inset -2px -2px var(--pregray), inset 2px 2px var(--prelightg)}
             
-            .prehelp, .preclose, .prescrollup, .prescrolldown{filter: invert(var(--preinvert)); background-image: var(--prespritesheet)}
-            .prehelp, .preclose {width:12px; height:10px; margin-top: -1px; margin-left: -1px} .prescrollup, .prescrolldown {height: 16px; width: 16px; margin-top: -3px; margin-left: -3px} 
-            .prehelp {background-position: -66px -215px} .preclose {background-position: -114px -215px} .prescrolldown {background-position: 0px -212px} .prescrollup {background-position:  -32px -212px}
+/* Menu css ------------------------------------------------------------------------------*/
+            .dropmenu,.droptext,.wallpapermenu{background:var(--white);color:var(--font)}.dropmenu,.dropbutton-pres,.wallpapermenu{position:absolute}
+            .wallpapermenu:hover,.droptext:hover{background:var(--prussian);color:var(--hover);border-style: dotted;border-color:var(--yellow)}
             
+            .dropbutton,.dropbutton-pres{width:10px;height:11px;float:right}
+            .dropmenu{margin-top:20px;z-index:20000000; margin-top:1px}.colourselect,.dropselc{padding:2px;display:inline-block}
+            .droptext{height:11px;width:100%;padding:2px 3px 1px 2px}.droptext:hover{padding:1px 3px 0px 2px;border-width: 1px}
+            .dropbutton{margin-top:-17px}.dropbutton-pres{background:var(--silver);margin-right:-2px;margin-top: -18px;padding:3px}
+            
+            .colourselect{height: 12px;width:12px;box-shadow:var(--curulshadow);border-style:solid;border-width:1px;border-color:var(--silver);margin:-1px -1px 0px 0px}
+            .colourselect:hover{box-shadow:inset -1px -1px var(--white),inset 1px 1px var(--white),inset -2px -2px var(--black),inset 2px 2px var(--black);border-color:black}
+            
+            .wallpapermenu{width:227px;cursor:pointer;height:17px;width:100%;border-style:dotted;border-width:1px;border-color:var(--white);z-index:4}
+            .wallpapermenu:hover{z-index:10}.tagged{font-size:9px;opacity:0.5}.filled{width:100%;height:100%}
+
 /* Window icon handling ------------------------------------------------------------------------------*/
-            .help, .minimize, .maximize, .close, .restore {background-image: var(--curspritesheet); 
-                width:12px; height:10px; margin-top: -1px; margin-left: -1px; filter: invert(var(--invert))}
-            .help {background-position: -66px -215px} .minimize {background-position: -82px -215px} 
-            .maximize {background-position: -98px -215px} .close {background-position: -114px -215px} .restore {background-position: -303px -215px}
+            .help,.minimize,.maximize,.close,.restore{background-image: var(--curspritesheet);width:11px;height:11px;filter: invert(var(--invert));margin-left:-1px;margin-top:-2px;}
+            .help    {background-position:-111px -309px}.minimize{background-position:-101px -309px}.restore{background-position:-118px -299px}
+            .maximize{background-position:-128px -299px}.close   {background-position:-108px -299px}
         
-            .scrollup, .scrollright, .scrolldown, .scrollleft, .cornerpeice, .smallscrollup, .smallscrolldown {background-image: var(--curspritesheet); 
-                height: 16px; width: 16px; margin-top: -3px; margin-left: -3px; filter: invert(var(--invert))}
-            .scrolldown {background-position: 0px -212px} .scrollleft { background-position: -16px -212px} 
-            .scrollup {background-position:  -32px -212px} .scrollright {background-position: -48px -212px}
-            .smallscrollup, .smallscrolldown { height: 2px; width: 3px; margin-left:3px; margin-top:0px}
-            .smallscrollup {background-position: -38px -218px} .smallscrolldown {background-position: -6px -220px} 
+            .arrowup,.arrowright,.arrowdown,.arrowleft, .smallarrowdown,.smenuarrow,.lmenuarrow,.tinyarrowup,.tinyarrowdown{background-image: var(--curspritesheet); filter: invert(var(--invert))}
+            .tinyarrowdisdown,.tinyarrowdisup,.arrowdisdown,.arrowdisup,.smallarrowdisdown{background-image: var(--curspritesheet); filter: invert(0.5)}
 
-            .tinyarrowdisableddown, .smallarrowdisableddown, .arrowdisableddown, .tinyarrowdisabledup, .arrowdisableup, .lmenuarrow, 
-            .smenuarrow, .tinyarrowdown, .smallarrowdown {background-image: var(--curspritesheet); filter: invert(var(--invert))}
+            .smallarrowdisdown,.smallarrowdown{height: 3px;width:5px}            .arrowleft,.arrowright          {width:6px;height:9px}
+            .arrowdown,.arrowdisdown          {background-position:-100px -299px}.arrowup,.arrowdisup            {background-position:-100px -304px}
+            .tinyarrowup,.tinyarrowdisup      {background-position:-128px -287px}.tinyarrowdown,.tinyarrowdisdown{background-position:-132px -287px}
+            
+            .arrowleft        {background-position:-128px -309px}.arrowright    {background-position:-133px -309px}
+            .smallarrowdisdown{background-position:-102px -301px}.smallarrowdown{background-position:-102px -301px}
+            .smenuarrow       {margin-right:6px;margin-top:7px}  .lmenuarrow    {margin-top:15px;margin-right:5px}
+            
+            .arrowdisdown,.arrowdisup,.arrowdown,.arrowup{width:9px;height:6px;margin-left:1px;margin-top:2px}
+            .smenuarrow,.lmenuarrow{background-position:-134px -310px;float:right;height:7px;width:4px}
+            .tinyarrowdisdown,.tinyarrowdisup,.tinyarrowup,.tinyarrowdown{height:2px;width:3px;margin-left:3px;margin-top:0px}
 
-            .tinyarrowdisableddown {height: 3px; width: 4px; background-position: -6px -220px; filter: invert(0.5); margin-left:3px} 
-            .smallarrowdisableddown {height: 4px; width: 6px; background-position: -5px -219px; filter: invert(0.5)}
-            .arrowdisableddown {height: 16px; width: 16px; background-position: 1px -212px; filter: invert(0.5); margin-top:-3px; margin-left:-3px} 
-            .tinyarrowdisabledup {height: 2px; width: 3px; background-position: -38px -218px; filter: invert(0.5); margin-left:3px}
-            .arrowdisableup {height: 16px; width: 16px; background-position: -32px -212px; filter: invert(0.5); margin-top:-3px; margin-left:-3px}
+            .disabletickbox,.invisibtickbox {height: 14px; width: 14px; margin:-2px; position: absolute}
+            .disabletickbox,.invisibtickbox:hover {background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')}
+            .disabletickbox{filter: invert(var(--discheckinv))} .invisibtickbox:hover {filter: invert(var(--invcheckinv))}
+            .invisibtickbox{filter: invert(var(--invert)); background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickboxinv.png')}
             
-            .smenuarrow, .lmenuarrow, .tinyarrowdown, .smallarrowdown{ margin: auto; float: right; height: 7px; width: 4px;}
-            .smenuarrow {background-position: -54px -216px; margin-right:6px; margin-top: 7px} .lmenuarrow {background-position: -54px -216px; margin-top:15px; margin-right: 5px}
-            .tinyarrowdown {background-position: -6px -220px; height: 5px; width: 7px} .smallarrowdown {background-position: -5px -219px; height: 3px; width: 5px}
-            
-            .disabletickbox, .invisibtickbox{ height: 14px; width: 14px; margin:-2px; position: absolute}
-            .disabletickbox {filter: invert(var(--discheckinv)); background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')}
-            .invisibtickbox {filter: invert(var(--invert)); background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickboxinv.png')}
-            .invisibtickbox:hover {filter: invert(var(--invcheckinv)); background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/tickbox.png')}
-            
-            .big_seperator { float: left; border-left: 1px solid var(--gray); border-right: 1px solid var(--lightg); height: 22px; margin-top: 2px; margin-left: -1px} /*thin seperator but tall*/
-            .small_seperator { float: left; border-left: 1px solid var(--white); border-top: 1px solid var(--white); margin-top: 3px; margin-left: 1px
-                border-right: 1px solid var(--gray); border-bottom: 1px solid var(--gray); background-color: var(--silver); width: 1px; height: 18px}
-            .menuapplicationsplit { border-bottom: 1px solid var(--white); background: var(--gray); height: 1px; width: 1px}
- 
+            .big_seperator  {float:left;border-left: 1px solid var(--gray); border-right:1px solid var(--lightg);margin-top:2px;height:22px;margin-left:-1px} /*thin seperator but tall*/
+            .small_seperator{float:left;border-left: 1px solid var(--white);border-top:  1px solid var(--white); margin-top:3px;height:18px;margin-left: 1px
+                border-right: 1px solid var(--gray);border-bottom:1px solid var(--gray);background-color:var(--silver); width: 1px;} 
+            .menuapplicationsplit{border-bottom:1px solid var(--white);background:var(--gray);height:1px;width:1px}
+
+/* window preview handling ------------------------------------------------------------------------------*/
+            .prehelp,.preclose,.prearrowup,.prearrowdown{filter: invert(var(--preinvert)); background-image: var(--prespritesheet)}
+            .prehelp,.preclose       {width:11px;height:11px;margin-left:-1px;margin-top:-2px}.prehelp     {background-position:-111px -309px}.preclose  {background-position:-108px -299px}
+            .prearrowup,.prearrowdown{width: 9px;height: 6px;margin-left: 1px;margin-top: 2px}.prearrowdown{background-position:-100px -299px}.prearrowup{background-position:-100px -304px}
+
 /* Start bar handling ------------------------------------------------------------------------------*/
             .win98start{box-shadow:inset -1px -1px var(--taskbarstarttop2), inset 1px 1px var(--taskbarstartbottom2), inset -2px -2px var(--taskbarstarttop1), inset 2px 2px var(--taskbarstartbottom1); 
                 background:var(--silver); padding:3px; color:var(--font); height: 16px; width: 50px; margin-left: 2px; margin-top: 2px; margin-right: 2px}
-            .windowsexplorerlogo {background-image: var(--curspritesheet); margin-top:2px; height: 16px; width: 20px; background-position: -158px -212px; float:right; margin-right:9px}
-            .windowslogo {background-image: var(--curspritesheet); height: 16px; width: 18px; background-position: -178px -212px}
+
+            .submenu18,.submenu20,.submenu36{background:var(--silver);color: var(--text);width:100%}
+            .submenu18:hover,.submenu20:hover,.submenu36:hover{background:var(--prussian);color:var(--hover);width:100%}
+            .submenu18,.submenu18:hover{height:18px}.submenu20,.submenu20:hover{height:20px}.submenu36,.submenu36:hover{height:36px;width: 142px}
             
-            .submenu18, .submenu20, .submenu36 {background:var(--silver); color: var(--text); width:100%}
-            .submenu18:hover, .submenu20:hover, .submenu36:hover{ background:var(--prussian); color:var(--hover); width:100%}
-            .submenu18, .submenu18:hover {height: 18px} .submenu20, .submenu20:hover {height: 20px} .submenu36, .submenu36:hover {height: 36px; width: 142px}
-            
-            .patchnotes, .menuprograms, .menudocuments, .menufavourites, .menushutdown, .logofficon, .menusettings, .menufind, .menuhelp, .menurun,
-            .menulogoff, .shutdownicon{ background-image: var(--curspritesheet); margin: auto; float: left; height: 36px; width: 36px}
-            .patchnotes {background-position: 0px 0px} .menuprograms {background-position: -36px 0px} .menudocuments {background-position: -108px   0px} .menufavourites {background-position: -72px 0px}
-            .menusettings {background-position: -144px 0px} .menufind {background-position: -180px  0px} .menuhelp {background-position: -216px -36px} .menurun {background-position: -252px -36px}
-            .menulogoff {background-position: -288px 0px} .menushutdown {background-position: -324px 0px} .logofficon {background-position: -288px -36px} .shutdownicon {background-position: -324px -36px}
+            .patchnotes,.menuprograms,.menudocuments,.menufavourites,.menurun,.menusettings,.menufind,.menuhelp,.menusupport,.menulogoff{ background-image: var(--curspritesheet); margin: auto; float: left; height: 36px; width: 36px}
+            .patchnotes  {background-position:-140px 0px}   .menuprograms{background-position:-140px -36px} .menudocuments{background-position:-140px -108px}.menufavourites{background-position:-140px -72px}
+            .menusettings{background-position:-140px -144px}.menufind    {background-position:-140px -180px}.menuhelp     {background-position:-140px -252px}.menurun       {background-position:-140px 216px}
+            .menulogoff  {background-position:-140px -324px}.menurun     {background-position:-140px -216px}.menusupport  {background-position:-140px -288px} 
             /* start menu submenu icon references */
-            .menuprograms1, .menuprograms2, .menuprograms3, .menuprograms4, .menuprograms5, .menufind1, .menufind2, .menufind3, .menufind4, 
-            .menusettings1, .menusettings2, .menusettings3, .menusettings4, .menusettings5, .menusettings6, .menuapplications1, .menuapplications2, .menuapplications3, 
-            .menuapplications4, .menuapplications5, .menuapplications6, .menuapplications7, .menuapplications8, .menuapplications9, .explorerlinks, .none, 
-            .menucommunications1, .menucommunications2, .menucommunications3, .menucommunications4, .taskbaricon1, .taskbaricon2, .taskbaricon3, .taskbaricon4,  
-            .calendar, .explorergo, .explorerback, .menudocuments6, .menudocuments5, .menuinternettools1, .menuinternettools2, .menuinternettools3, .menuinternettools4, 
-            .menusystemtools1,  .menusystemtools2, .menusystemtools3, .menusystemtools4, .menusystemtools5, .menusystemtools6, .menusystemtools7, .menusystemtools8, 
-            .menusystemtools9, .menusystemtools10, .menusystemtools11, .menusystemtools12, .menusystemtools13, .menudocuments2, .menudocuments3,
-            .menuentertainment1, .menuentertainment2, .menuentertainment3, .menuentertainment4, .menuentertainment5, .menuentertainment,  .menudocuments1,
-            .menusettings1, .menusettings2, .menusettings3, .menusettings4, .menusettings5, .menusettings6, .menugames1, .menugames2, .menugames3, .menugames4
-            {background-image: var(--curspritesheet); margin: auto; float: left; height: 20px; width: 20px}
+            .menucommunications1,.menucommunications2,.menucommunications3,.menucommunications4,.menuentertainment1,.menuentertainment2,.menuentertainment3,.menuentertainment4,.menuentertainment5,.menufind1,.menufind2,.menufind3,.menufind4
+            .menugames1,.menugames2,.menugames3,.menugames4,.menuinternettools1,.menuinternettools2,.menuinternettools3,.menuinternettools4,.menudocuments1,.menudocuments2,.menudocuments3,.menudocuments4,.menudocuments5,.menudocuments6,.menudocuments7,
+            .menusystemtools1,.menusystemtools2,.menusystemtools3,.menusystemtools4,.menusystemtools5,.menusystemtools6,.menusystemtools7,.menusystemtools8,.menusystemtools9,.menusystemtools10,.menusystemtools11,.menusystemtools12,.menusystemtools13,
+            .menuapplications1,.menuapplications2,.menuapplications3,.menuapplications4,.menuapplications5,.menuapplications6,.menuonline1,.menuonline2,.menuonline3,.menuonline4,.menusettings1,.menusettings2,.menusettings3,.menusettings4,.menusettings5,
+            .menuprograms1,.menuprograms2,.menuprograms3,.menuprograms4,.menuprograms5,.menusettings6,.menufind1,.menufind2,.menufind3,.menufind4 {margin: auto; float: left; height: 20px; width: 20px; background-image: var(--curspritesheet)}
             
-            .menuinternettools1 {background-position: -140px -72px} /* Internet wiz*/ 
-            .menuinternettools2 {background-position: -160px -72px} /* Microsoft chat */ 
-            .menuinternettools3 {background-position: -180px -72px} /* Net meeting */
-            .menuinternettools4 {background-position: -200px -72px} /* Personal Webserver */ 
-            
-            .menusystemtools1 {background-position: -140px -92px} /* character map */ 
-            .menusystemtools2 {background-position: -160px -92px} /* clipboard viewer */ 
-            .menusystemtools3 {background-position: -180px -92px} /* disk cleanup */ 
-            .menusystemtools4 {background-position: -200px -92px} /* disk defrag */   
-            .menusystemtools5 {background-position: -220px -92px} /* drive converter */  
-            .menusystemtools6 {background-position: -240px -92px} /* maintain wizard */
-            .menusystemtools7 {background-position: -260px -92px} /* net watcher */   
-            .menusystemtools8 {background-position: -280px -92px} /* resource meter */   
-            .menusystemtools9 {background-position: -300px -92px} /* scandisk */ 
-            .menusystemtools10 {background-position: -320px  -92px} /* schedualed*/   
-            .menusystemtools11 {background-position: -140px -112px} /* systeminfo */     
-            .menusystemtools12 {background-position: -160px -112px} /* systemmonitor */
-            .menusystemtools13 {background-position: -180px -112px} /* welcometowindows */ 
-            
-            .menuapplications1 {background-position: -20px -92px} /* calc */          
-            .menuapplications2 {background-position: -40px -92px} /* img */              
-            .menuapplications3 {background-position: -60px -92px} /* wordpad */ 
-            .menuapplications4 {background-position: -80px -92px} /* paint */         
-            .menuapplications5 {background-position: -100px -92px} /* notepad */         
-            .menuapplications6 {background-position: 0px -112px} /* ask */
-            .menuapplications7 {background-position: -20px -112px} /* yahoo */        
-            .menuapplications8 {background-position: -40px -112px} /* msn */
-            .menuapplications9 {background-position: -60px -112px} /* prodigy */ 
-            
-            .menucommunications1 {background-position: 0px -132px} /* Dial Up */      
-            .menucommunications2 {background-position: -20px -132px} /* Hyperterminal */ 
-            .menucommunications3 {background-position: -40px -132px} /* Configurations */ 
-            .menucommunications4 {background-position: -60px -132px} /* Phone Dial */ 
-            
-            .menuprograms1 {background-position: 0px  -72px} /* folder icon */        
-            .menuprograms2 {background-position: -140px -132px} /* internet explorer */  
-            .menuprograms3 {background-position: -160px -132px} /* MSDOS */
-            .menuprograms4 {background-position: -180px -132px} /* Outlook Express */ 
-            .menuprograms5 {background-position: -200px -132px} /* Windows Explorer */
-            
-            .menuentertainment1 {background-position: 0px -152px} /* Cd player */     
-            .menuentertainment2 {background-position: -20px -152px} /* Cd Burner */      
-            .menuentertainment3 {background-position: -40px -152px} /* Cd Recorder */ 
-            .menuentertainment4 {background-position: -60px -152px} /* Volume Play */ 
-            .menuentertainment5 {background-position: -80px -152px} /* Media Player */
-            
-            .menudocuments1 {background-position: -140px -152px} /* my documents */   
-            .menudocuments2 {background-position: -160px -152px} /* sound files */       
-            .menudocuments3 {background-position: -180px -152px} /* document file */ 
-            .menudocuments4 {background-position: -220px -152px} /* document file */  
-            .menudocuments5 {background-position: -200px -152px} /* favourates link */   
-            .menudocuments6 {background-position: -180px -152px} /* favourite folder */ 
-            
-            .menugames1 {background-position: 0px -172px} /* Freecell */              
-            .menugames2 {background-position: -20px -172px} /* Hearts */                 
-            .menugames3 {background-position: -40px -172px} /* Minesweeper */ 
-            .menugames4 {background-position: -60px -172px} /* Solitar */ 
-            
-            .menusettings1 {background-position: -140px -172px} /* control panel */   
-            .menusettings2 {background-position: -160px -172px} /* printers */           
-            .menusettings3 {background-position: -180px -172px} /* taskbar */
-            .menusettings4 {background-position: -200px -172px} /* folder options */  
-            .menusettings5 {background-position: -220px -172px} /* Active desktop */     
-            .menusettings6 {background-position: -240px -172px} /* windows update */
+            .menucommunications1{background-position:-0px -0px}  .menucommunications2{background-position:-20px -0px}  .menucommunications3{background-position:-40px -0px}  .menucommunications4{background-position:-60px -0px}
+            .menuentertainment1 {background-position:-0px -20px} .menuentertainment2 {background-position:-20px -20px} .menuentertainment3 {background-position:-40px -20px} .menuentertainment4 {background-position:-60px -20px} .menuentertainment5{background-position:-80px -20px}
+            .menugames1         {background-position:-0px -40px} .menugames2         {background-position:-20px -40px} .menugames3         {background-position:-40px -40px} .menugames4         {background-position:-60px -40px}
+            .menuinternettools1 {background-position:-0px -60px} .menuinternettools2 {background-position:-20px -60px} .menuinternettools3 {background-position:-40px -60px} .menuinternettools4 {background-position:-60px -60px}
+            .menusystemtools1   {background-position:-0px -80px} .menusystemtools2   {background-position:-20px -80px} .menusystemtools3   {background-position:-40px -80px} .menusystemtools4   {background-position:-60px -80px} .menusystemtools5  {background-position:-80px -80px} .menusystemtools6 {background-position:-100px -80px} .menusystemtools7{background-position:-120px -80px}
+            .menusystemtools8   {background-position:-0px -100px}.menusystemtools9   {background-position:-20px -100px}.menusystemtools10  {background-position:-40px -100px}.menusystemtools11  {background-position:-60px -100px}.menusystemtools12 {background-position:-80px -100px}.menusystemtools13{background-position:-100px -100px}
+            .menuapplications1  {background-position:-0px -120px}.menuapplications2  {background-position:-20px -120px}.menuapplications3  {background-position:-40px -120px}.menuapplications4  {background-position:-60px -120px}.menuapplications5 {background-position:-80px -120px}.menuapplications6{background-position:-100px -120px}
+            .menuonline1        {background-position:-0px -140px}.menuonline2        {background-position:-20px -140px}.menuonline3        {background-position:-40px -140px}.menuonline4        {background-position:-60px -140px}
+            .menuprograms1      {background-position:-0px -160px}.menuprograms2      {background-position:-20px -160px}.menuprograms3      {background-position:-40px -160px}.menuprograms4      {background-position:-60px -160px}.menuprograms5     {background-position:-80px -160px}
+            .menudocuments1     {background-position:-0px -180px}.menudocuments2     {background-position:-20px -180px}.menudocuments3     {background-position:-40px -180px}.menudocuments4     {background-position:-60px -180px}.menudocuments5    {background-position:-80px -180px}.menudocuments6   {background-position:-100px -180px}.menudocuments7  {background-position:-120px -180px}
+            .menusettings1      {background-position:-0px -200px}.menusettings2      {background-position:-20px -200px}.menusettings3      {background-position:-40px -200px}.menusettings4      {background-position:-60px -200px}.menusettings5     {background-position:-80px -200px}.menusettings6    {background-position:-100px -200px}
+            .menufind1          {background-position:-0px -220px}.menufind2          {background-position:-20px -220px}.menufind3          {background-position:-40px -220px}.menufind4          {background-position:-60px -220px}
 
-            .menufind1 {background-position: -140px -192px} /* files or folders */    
-            .menufind2 {background-position: -160px -192px} /* computer */               
-            .menufind3 {background-position: -180px -192px} /* on the internet */ 
-            .menufind4 {background-position: -200px -192px} /* people */ 
+            .taskbartask1,.taskbartask2,.taskbartask3,.taskbartask4,.taskbartask5,.taskbartask6,.taskbartask7,.taskbartask8 {
+                float:left;width:160px;height:18px;margin-top: 2px;background:var(--silver);padding:2px;color:var(--font);margin-left:-200000px;background-repeat:repeat;position:absolute;font-weight:700}
+            .taskbartask1{box-shadow:inset -1px -1px var(--taskbar1bottom2),inset 1px 1px var(--taskbar1top2),inset -2px -2px var(--taskbar1bottom1),inset 2px 2px var(--taskbar1top1);margin-left: 167px}
+            .taskbartask2{box-shadow:inset -1px -1px var(--taskbar2bottom2),inset 1px 1px var(--taskbar2top2),inset -2px -2px var(--taskbar2bottom1),inset 2px 2px var(--taskbar2top1)}
+            .taskbartask3{box-shadow:inset -1px -1px var(--taskbar3bottom2),inset 1px 1px var(--taskbar3top2),inset -2px -2px var(--taskbar3bottom1),inset 2px 2px var(--taskbar3top1)}
+            .taskbartask4{box-shadow:inset -1px -1px var(--taskbar4bottom2),inset 1px 1px var(--taskbar4top2),inset -2px -2px var(--taskbar4bottom1),inset 2px 2px var(--taskbar4top1)}
+            .taskbartask5{box-shadow:inset -1px -1px var(--taskbar5bottom2),inset 1px 1px var(--taskbar5top2),inset -2px -2px var(--taskbar5bottom1),inset 2px 2px var(--taskbar5top1)}
+            .taskbartask6{box-shadow:inset -1px -1px var(--taskbar6bottom2),inset 1px 1px var(--taskbar6top2),inset -2px -2px var(--taskbar6bottom1),inset 2px 2px var(--taskbar6top1)}
+            .taskbartask7{box-shadow:inset -1px -1px var(--taskbar7bottom2),inset 1px 1px var(--taskbar7top2),inset -2px -2px var(--taskbar7bottom1),inset 2px 2px var(--taskbar7top1)}
+            .taskbartask8{box-shadow:inset -1px -1px var(--taskbar8bottom2),inset 1px 1px var(--taskbar8top2),inset -2px -2px var(--taskbar8bottom1),inset 2px 2px var(--taskbar8top1)}
 
-            .taskbartask1, .taskbartask2, .taskbartask3, .taskbartask4, .taskbartask5, .taskbartask6, .taskbartask7, .taskbartask8 {
-                float: left; width: 160px; height: 18px; margin-top: 2px; margin-left: -20000px; background:var(--silver); padding:2px; color:var(--font); background-repeat: repeat; position:absolute; font-weight:700}
-            .taskbartask1 {box-shadow:inset -1px -1px var(--taskbar1bottom2), inset 1px 1px var(--taskbar1top2), inset -2px -2px var(--taskbar1bottom1), inset 2px 2px var(--taskbar1top1); margin-left: 167px}
-            .taskbartask2 {box-shadow:inset -1px -1px var(--taskbar2bottom2), inset 1px 1px var(--taskbar2top2), inset -2px -2px var(--taskbar2bottom1), inset 2px 2px var(--taskbar2top1)}
-            .taskbartask3 {box-shadow:inset -1px -1px var(--taskbar3bottom2), inset 1px 1px var(--taskbar3top2), inset -2px -2px var(--taskbar3bottom1), inset 2px 2px var(--taskbar3top1)}
-            .taskbartask4 {box-shadow:inset -1px -1px var(--taskbar4bottom2), inset 1px 1px var(--taskbar4top2), inset -2px -2px var(--taskbar4bottom1), inset 2px 2px var(--taskbar4top1)}
-            .taskbartask5 {box-shadow:inset -1px -1px var(--taskbar5bottom2), inset 1px 1px var(--taskbar5top2), inset -2px -2px var(--taskbar5bottom1), inset 2px 2px var(--taskbar5top1)}
-            .taskbartask6 {box-shadow:inset -1px -1px var(--taskbar6bottom2), inset 1px 1px var(--taskbar6top2), inset -2px -2px var(--taskbar6bottom1), inset 2px 2px var(--taskbar6top1)}
-            .taskbartask7 {box-shadow:inset -1px -1px var(--taskbar7bottom2), inset 1px 1px var(--taskbar7top2), inset -2px -2px var(--taskbar7bottom1), inset 2px 2px var(--taskbar7top1)}
-            .taskbartask8 {box-shadow:inset -1px -1px var(--taskbar8bottom2), inset 1px 1px var(--taskbar8top2), inset -2px -2px var(--taskbar8bottom1), inset 2px 2px var(--taskbar8top1)}
+            .taskbaricon1,.taskbaricon2,.taskbaricon3,.taskbaricon4 {background-image: var(--curspritesheet); margin: auto; float: left; height: 20px; width: 20px; margin-left: 2px}
+            .taskbaricon1 {background-position:-0px -320px}.taskbaricon2{background-position: -20px -320px} .taskbaricon3 {background-position: -40px -320px} .taskbaricon4 {background-position: -60px -320px} 
 
-            .startmenusplitter { border-bottom: 1px solid var(--white); background: var(--gray); height: 1px; width: 156px; margin-left: 2px; margin-top:3px; margin-bottom:2px}
-            .start_bar {position: fixed; background: var(--silver); bottom: 0; height: 28px; width: 100%; z-index: 3} 
-            .start_bar .top_border {border-bottom: 1px solid var(--lightg); border-top: 1px solid var(--white)}
-            .start_bar .time {line-height: 18px; float: right; margin-right: 10px; color:var(--text)} .taskbaricons {float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px}
+            .windowslogo,.calendar,.none,.wallpaper,.explorergo,.explorerback,.explorerlinks{background-image:var(--curspritesheet);margin: auto;float:left;height:16px;width:18px}
+            .explorergo,.explorerback,.explorerlinks{height: 20px;width: 20px;filter: invert(var(--invert))}
+            .windowslogo{background-position:-120px -322px;position:absolute}                              .calendar     {background-position:-80px  -320px;margin-top:1px;margin-left:3px}
+            .none       {background-position:-120px -340px}.wallpaper   {background-position:-120px -160px}.wallpapernsfw{background-position:-100px -180px}
+            .explorergo {background-position: -60px -340px}.explorerback{background-position: -80px -340px}.explorerlinks{background-position:-122px -284px;height:5px;width:4px;margin-top:-14px} 
+            
+            .startmenusplitter{border-bottom: 1px solid var(--white);background:var(--gray);height: 1px;width:156px;margin-left:2px;margin-top:3px;margin-bottom:2px}
+            .start_bar{position:fixed;background:var(--silver);bottom:0;height:28px;width:100%;z-index:10000000}.start_bar .top_border{border-bottom:1px solid var(--lightg);border-top:1px solid var(--white)}
 
-            .taskbaricon1, .taskbaricon2, .taskbaricon3, .taskbaricon4 {margin-left: 2px}
-            .taskbaricon1 {background-position: 0px -192px} .taskbaricon2 {background-position: -20px -192px} 
-            .taskbaricon3 {background-position: -40px -192px} .taskbaricon4 {background-position: -60px -192px} 
-
-            .calendar {background-position: -82px -194px; margin-left: 2px; height: 16px; width: 16px; margin-top: 1px; margin-left: 3px} /* calender icon */ 
-            .none {background-position: -100px -192px; height: 18px; width: 18px} /* none */
-            .explorergo {background-position: -101px -72px; filter: invert(var(--invert))} 
-            .explorerback {background-position: -121px -72px; filter: invert(var(--invert))}
-            .explorerlinks {background-position: -153px -222px; height:  5px; width:  4px; margin-top:-14px; filter: invert(var(--invert))} 
-
-            .startmenubar, .startmenubartext {background-image: var(--curspritesheet); height: 159px; width: 21px; bottom:0; background-position: -339px -72px; position:absolute; float: left;}
-            .startmenubar {opacity: 0.5;  filter: invert(var(--invert))} .startmenubartext {height: 109px; background-position: -318px -122px} 
-            .startmenubarback {width: 21px; height:377px; background-color:var(--prussian); position:absolute;}
+            .startmenubar, .startmenubartext{background-image:var(--startbar);height:105px;width:21px;bottom:3px;position:absolute;float:left} 
+            .startmenubar{opacity:50%;filter:invert(var(--invert));background-position:-21px -0px}.startmenubarback{width:21px;height:377px;background-color:var(--prussian);position:absolute;}
     
-            .clock{ box-shadow: inset -1px -1px var(--white), inset 1px 1px var(--gray); padding:2px; float:right; width:96px; height:18px; margin-right:2px; margin-top:2px}
-            .taskbaricons { float: left; margin-top: 3px; margin-left: 5px; margin-right: 2px}
-
+            .clock{box-shadow:inset -1px -1px var(--white),inset 1px 1px var(--gray);padding:2px;float:right;width:96px;height:18px;margin-right:2px;margin-top:2px}
+            .taskbaricons {float:left;margin-top:3px;margin-left:5px;margin-right:2px}.start_bar.time{float:right;margin-right:8px;color:var(--text)}
+            
 /* Message box reference sheets ------------------------------------------------------------------------------*/
-            .displayboxdisplay, .displayboxdisplayde {height:169px; margin-left:-16px; position:absolute; margin-top:-16px}
-            .displayboxdisplay { width:184px; background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/display%20window.png')}
-            .displaycolour { width:153px; height: 13px; background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/display%20colour.png'); z-index:20}
-            .displayboxdisplayde { width:173px; filter: invert(var(--invert)); background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/display%20window2.png')}
+            .displayboxdisplay,.displayboxdisplayde {height:169px;margin-left:-16px;position:absolute;margin-top:-16px}
+            .displayboxdisplay  {width:184px;background-image:url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/display%20window.png')}
+            .displaycolour      {width:153px;z-index:20;height:13px;background-image:url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/display%20colour.png');}
+            .displayboxdisplayde{width:173px;filter:invert(var(--invert));background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/display%20window2.png')}
             
-            .displaycolourback, .displaycolourbackb { width:152px; height:112px; z-index:1; background-size: auto; background-size: 152px 132px}
-            .displaycolourback { margin-top:27px} .displaycolourbackb { margin-top:37px; background: var(--wincyan)}
-            .energysaving { width: 71px; height: 42px; background-image: url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/energy.png')}
-            .currentclock { width:127px; height:127px; background-image: url('https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/clock.png')}
+            .displaycolourback,.displaycolourbackb{width:152px;height:112px;z-index:1;background-size:auto;background-size:152px 132px}
+            .displaycolourback{margin-top:27px}.displaycolourbackb{margin-top:37px;background:var(--wincyan)}
+            .energysaving{width: 71px;height: 42px;background-image:url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/energy.png')}
+            .currentclock{width:127px;height:127px;background-image:url('https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/clock.png')}
             
-            .playbutton, .pausebutton, .stopbutton, .shufflebutton, .nextbutton, .fastforwardbutton, .rewindbutton, .previousbutton, .volumeup, .volumedown {
-                background-image: var(--curspritesheet); height: 13px; width: 13px; margin: 6px; float: left; filter: invert(var(--invert)); cursor:pointer}
-            .playbutton {background-position: -198px -213px} .pausebutton {background-position: -211px -213px} .stopbutton {background-position: -225px -213px} 
-            .shufflebutton {background-position: -266px -213px; width:17px} .fastforwardbutton { background-position: -253px -213px; width: 9px} .rewindbutton { background-position: -241px -213px; width: 9px} 
-            .previousbutton { background-position: -237px -213px} .nextbutton { background-position: -252px -213px;}
-            .volumeup {background-position: -284px -215px; height: 9px; width: 9px} .volumedown { background-position: -293px -215px; height: 9px; width: 9px}
-            
+            .playbutton,.pausebutton,.stopbutton,.shufflebutton,.nextbutton,.fastforwardbutton,.rewindbutton,.previousbutton,.volumeup,.volumedown{
+                background-image: var(--curspritesheet);width:10px;height:11px;margin:6px; margin-top:8px;float:left;filter:invert(var(--invert));cursor:pointer}
+            .pausebutton{background-position:-121px -289px;margin-top:7px}.playbutton   {background-position:-100px -270px;width:13px;height:13px;margin-top:6px} 
+            .stopbutton {background-position:-130px -289px;margin-top:7px}.shufflebutton{background-position:-112px -270px;width:16px;height:13px;margin-top:6px}
+            .fastforwardbutton,.nextbutton,.rewindbutton,.previousbutton{height:9px; width:13px}.volumeup,.volumedown{height:5px;width:5px;margin-top:12px}
+            .rewindbutton     {background-position:-130px -278px;width:9px}.previousbutton{background-position:-128px -278px}
+            .fastforwardbutton{background-position:-128px -270px;width:9px}.nextbutton    {background-position:-128px -270px}
+            .volumeup         {background-position:-122px -314px}          .volumedown    {background-position:-122px -309px}
+ 
 /* Formatting ref css ------------------------------------------------------------------------------*/
             ul.tree-view {margin-top: 4px; display: block; background: var(--white); color:var(--text); box-shadow: var(--curulshadow); padding: 6px; margin: 0}
             ul.tree-view a {text-decoration: none; color: var(--black)} ul.tree-view a:focus {background: var(--prussian); color: var(--white)}
@@ -341,7 +265,7 @@
             .field-row-stacked{display:flex; flex-direction: column} .field-row-stacked *+*{ margin-top: 6px}
             
             a {color: var(--text); text-decoration: none} a:hover {text-decoration: underline; color: var(--hover)} 
-            strong {color: var(--blue)}; udl {text-decoration-line: underline}
+            strong {color: var(--blue)}; udl {text-decoration-line: underline} b {letter-spacing: 0.5px}
             
             .reflinkblack { color: var(--atext)} .reflinkblack:hover { color: var(--blue); text-decoration-line: underline}
             console {padding:0px; margin:-2px; display: block; margin-left: 0; margin-right: 0; letter-spacing: -1px; white-space: pre-wrap; font-family: monospace}
@@ -389,9 +313,9 @@
     </style></head>
 
 <!-- Page rendering ------------------------------------------------------------------------------>
-    <script> function defaultpageload() {fillitem(); dsheetpetra(); desktopiconchange(); evangelionmode(); backcolourset(); wallpaperupdate(); themechange(); evangelionmode()} </script>
+    <script> function defaultpageload() {fillitem();dsheetpetra();desktopiconchange();evangelionmode();backcolourset();wallpaperupdate();themechange();evangelionmode()} </script>
     <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" 
-          onload="latestupdate(); defaultpageload(); {block:HomePage}messageopen(); vunnytask(); vunnypositionreset();{/block:HomePage} disktask(); diskminimize(); promptrestart(); tumblractive()">
+          onload="latestupdate();defaultpageload();{block:HomePage}messageopen();vunnytask();vunnypositionreset();{/block:HomePage}disktask();diskminimize();promptrestart();tumblractive()">
      <title>𝖁𝖍𝖊𝖗𝟗𝟖</title>
      
 <!-- desktop handling ------------------------------------------------------------------------------>
@@ -527,7 +451,7 @@
                         <ul class="tree-view" style="position:absolute; width:406px; height: 17px; padding:2px; margin-left:55px" id="playertv">
                             <div class="menudocuments5" style="position:absolute; margin-top:-1px;"></div>
                             <input type="text" style="margin-left:21px" id="mediaplayer"></input>
-                            <div class="dropbutton" style="margin-top:-16px;"><div class="arrowdisableddown"></div></div></ul>
+                            <div class="dropbutton" style="margin-top:-16px;"><div class="arrowdisdown"></div></div></ul>
                         <button id="mediain" onclick="mediainput()" value="" style="position:absolute; margin-left:-20000px"></button>
                         
                         <div class="plinks-con" style="float:right; height:22px; width:52px; cursor:pointer;" onclick="videolinkdropdown()">
@@ -730,7 +654,7 @@
                     <div class="container" style="margin-left:12px; margin-top:5px; width:400px;">A<udl>d</udl>dress</div>
                     
                     <ul class="tree-view" style="position:absolute; width:350px; height:9px; margin-left:55px; margin-top:-17px;">
-                    <div class="dropbutton" style="margin:-4px;"><div class="arrowdisableddown"></div></div>
+                    <div class="dropbutton" style="margin:-4px;"><div class="arrowdisdown"></div></div>
                         <div class="menudocuments5" style="margin:-5px;"></div><div style="margin-top:-1px; margin-left:16px;">https://thealonic.tumblr.com/patch-notes</div></ul>
                     <div style="margin-left:418px; margin-top:-12px; width:49px;"><div class="explorergo" style="margin-left:5px; margin-top:-5px"></div> <div class="reflinkblack">Go</div></div>
                 </fieldset>
@@ -777,10 +701,10 @@
                     <!-- dropdown menu container for months -->
                     <ul class="tree-view"  style="position: absolute; width:70px; height: 17px; padding:2px; margin-top:13px" onmouseleave="monthmenuclose()">
                         <div style="padding: 1px 2px 2px 2px; border-style: dotted; border-width: 1px" id="month" onclick="monthmenudrop()"></div> 
-                        <div class="dropbutton" onclick="monthmenudrop()"><div class="scrolldown"></div></div>
+                        <div class="dropbutton" onclick="monthmenudrop()"><div class="arrowdown"></div></div>
                         <div class="dropmenu" style="position:absolute; width: 69px; margin-left: -200000px;" id="monthmenu">
                             <!-- dropdown men for month selecting -->
-                            <div class="dropbutton-pres" style="margin-left:56px" onclick="monthmenuclose()"><div class="scrolldown"></div></div>
+                            <div class="dropbutton-pres" style="margin-left:56px" onclick="monthmenuclose()"><div class="arrowdown"></div></div>
                             <div class="droptext" onclick="jan()">January</div><div class="droptext" onclick="feb()">Febuary</div><div class="droptext" onclick="mar()">March</div>  
                             <div class="droptext" onclick="apr()">April</div><div class="droptext" onclick="may()">May</div><div class="droptext" onclick="jun()">June</div>  
                             <div class="droptext" onclick="jul()">July</div><div class="droptext" onclick="aug()">August</div><div class="droptext" onclick="sep()">September</div> 
@@ -789,8 +713,8 @@
                     <ul class="tree-view" style="position: absolute; width:76px; height: 17px; padding:2px; margin-top:13px; margin-left: 82px;">
                         <div style="padding: 1px 2px 2px 2px; border-style: dotted; border-width: 1px" id="year"></div>
                         <div style="margin-left:61px">
-                            <div class="buttonsmalla" style="margin-top: -17px" onclick="yearadd()"><div class="smallscrollup"></div></div>
-                            <div class="buttonsmalla" onclick="yearsub()"><div class="smallscrolldown"></div></div></div>
+                            <div class="buttonsmalla" style="margin-top: -17px" onclick="yearadd()"><div class="tinyarrowup"></div></div>
+                            <div class="buttonsmalla" onclick="yearsub()"><div class="tinyarrowdown"></div></div></div>
                     </ul>
                         
                     <script>
@@ -815,7 +739,7 @@
                 
                 <fieldset style="position:absolute; width:379px; height:55px; margin-left: 12px; margin-top: 234px;"><inboxlabel> <udl>Time <udl> z</udl>one</inboxlabel>
                     <ul class="tree-view"  style="position: absolute; width:373px; height: 17px; padding:2px; margin-top:7px; margin-left:1px;"><div style="padding: 3px 2px 2px 2px;">(GMT 0:00) London, Greenwich Mean Time </div>
-                        <div class="win98buttona" style="margin-top: -17px; margin-left:357px; width:10px; height:11px;"><div class="scrolldown" style="margin-left:-3px;"></div></div>
+                        <div class="win98buttona" style="margin-top: -17px; margin-left:357px; width:10px; height:11px;"><div class="arrowdown"></div></div>
                     <ul class="tree-view" style="position: absolute; padding:2px; width:9px; height: 9px; margin-top: 13px; margin-left:-3px; background: var(--silver);"><div class="disabletickbox"></div></ul>
                             <dislabel style="position:absolute; margin-left:15px; margin-top: 14px; display: inline-block;">Automatically adjust clock for daylight savings</dislabel></fieldset></div>
                 
@@ -871,7 +795,7 @@
                     <div style="position:absolute; margin-left:12px; margin-top:5px">A<udl>d</udl>dress</div>
                     <ul class="tree-view" style="position:absolute; width:700px; height:9px; margin-left:55.5px; overflow:hidden;">
                         <div class="buttonscrollinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px; width:10px; height:11px;">
-                            <div class="arrowdisableddown" style="margin-left:-4px;"></div></div>
+                            <div class="arrowdisdown"></div></div>
                         <div class="menudocuments5" style="position:absolute; margin-top:-5px; margin-left:-5px;"></div>
                         <div style="margin-top:-1px; margin-left:16.5px;" id="iefhtml"></div></ul>
                                 
@@ -1151,9 +1075,9 @@
                         <label style="position: absolute; margin-top: 60px;">Display</label>
                         
                         <ul class="tree-view" style="position: absolute; margin-top: 75px; width:62px; height: 17px; padding:2px" onclick="desktopdropdown()" onmouseleave="desktopexit()">
-                            <div style="padding: 3px 3px 2px 2px" id="ofdesktop">(none)</div><div class="dropbutton"><div class="scrolldown"></div></div>
+                            <div style="padding: 3px 3px 2px 2px" id="ofdesktop">(none)</div><div class="dropbutton"><div class="arrowdown"></div></div>
                             <div class="dropmenu" style="width:61px; margin-left: -20000px;">
-                                <div class="dropbutton-pres" style="margin-left:47px"><div class="scrolldown"></div></div>
+                                <div class="dropbutton-pres" style="margin-left:47px"><div class="arrowdown"></div></div>
                                 <div class="droptext" onclick="fillitem()">Fill</div><div class="droptext" onclick="centeritem()">Center</div>
                                 <div class="droptext" onclick="tileitem()">Tile</div><div class="droptext" onclick="containitem()">Contain</div>
                     </div></ul></div>
@@ -1169,39 +1093,39 @@
                             <div class="wallpapermenu" onclick="wpn = 0; wallpapercall()"><div class="none" style="margin-top:-1px;"></div>
                                 <div class="filled" id="wallpaperoverlay1"><!--ref#0026-->
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> None </label></div></div>
-                            <div class="wallpapermenu" style="margin-top:18px" onclick="wpn = 1; wallpapercall()"><div class="menuapplications4" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:18px" onclick="wpn = 1; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay2">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Default </label></div></div>
-                            <div class="wallpapermenu" style="margin-top:36px;" onclick="wpn = 2; wallpapercall()"><div class="menuapplications4" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:36px;" onclick="wpn = 2; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay3">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Octavia's Study </label></div></div>
-                            <div class="wallpapermenu" style="margin-top:72px" onclick="wpn = 3; wallpapercall()"> <div class="menuapplications4" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:72px" onclick="wpn = 3; wallpapercall()"> <div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay4" title="submitted by Matt in the discord server">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer" title="submitted by Matt in the discord server"> Star Trek (Submitted by Matt)</label></div></div>
-                            <div class="wallpapermenu" style="margin-top:54px" onclick="wpn = 4; wallpapercall()"><div class="menuapplications4" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:54px" onclick="wpn = 4; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay5">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Neon Genesis Evangelion </label></div></div>
-                            <div class="wallpapermenu" style="margin-top:90px" onclick="wpn = 5; wallpapercall()"><div class="menuapplications4" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:90px" onclick="wpn = 5; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay6" title="submitted by Xal in the discord server">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Battlefield Girls (Submitted by Xal)</label></div></div>
-                            <div class="wallpapermenu" style="margin-top:108px" onclick="wpn = 6; wallpapercall()"><div class="menuapplications4" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:108px" onclick="wpn = 6; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay7" title="submitted by Thea Vanherst">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Vinyl Scratch (Submitted by Thea)</label></div></div>
-                            <div class="wallpapermenu" style="margin-top:126px" onclick="wpn = 7; wallpapercall()"><div class="menuapplications4" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:126px" onclick="wpn = 7; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay8" title="submitted by Millie in the discord server">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Clouds at Midnight (Submitted by Millie) </label></div></div>
-                            <div class="wallpapermenu" style="margin-top:146px" onclick="wpn = 8; wallpapercall()"><div class="menuapplications4" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:146px" onclick="wpn = 8; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay9" title="submitted by Qhetha in the discord server">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Desert Highway (Submitted by Qhetha)  </label></div></div>
-                            <div class="wallpapermenu" style="margin-top:166px" onclick="wpn = 9; wallpapercall()"><div class="menuapplications4" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:166px" onclick="wpn = 9; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay10" title="Created by Phil-Nye in the discord server">
                                     <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Aesthetic (Created by Phil-Nye)</label></div></div>
                                     
                             <div style="margin-top:-80px; margin-left: -20000px" id="nsfwoptions">
-                                <div class="wallpapermenu" style="margin-top:186px;" onclick="wpn = 10; wallpapercall()"><div class="menuapplications5" style="margin-top:-1px"></div>
+                                <div class="wallpapermenu" style="margin-top:186px;" onclick="wpn = 10; wallpapercall()"><div class="wallpapernsfw" style="margin-top:-1px"></div>
                                     <div class="filled" id="wallpaperoverlay11">
                                         <label style="margin: 3px 2px 0px 0px; cursor:pointer">The Small Brown Fox</label></div></div>
-                                <div class="wallpapermenu" style="margin-top:206px;" onclick="wpn = 11; wallpapercall()"><div class="menuapplications5" style="margin-top:-1px"></div>
+                                <div class="wallpapermenu" style="margin-top:206px;" onclick="wpn = 11; wallpapercall()"><div class="wallpapernsfw" style="margin-top:-1px"></div>
                                     <div class="filled" id="wallpaperoverlay12">
                                         <label style="margin: 3px 2px 0px 0px; cursor:pointer">Resident Evil</label></div></div></div>
                     </div></ul>
@@ -1225,9 +1149,9 @@
                     <fieldset style="width:336px; height:50px; margin-left: 12px; margin-top: 49px;"><inboxlabel> Screen Saver </inboxlabel>
                         
                         <ul class="tree-view"  style="position: absolute; width:168px; height: 17px; padding:2px; margin-top:3px">
-                            <div style="padding: 3px 3px 2px 2px" id="currentscreensaver">(none)</div><div class="dropbutton"><div class="scrolldown"></div></div> <!--#ref0018-->
+                            <div style="padding: 3px 3px 2px 2px" id="currentscreensaver">(none)</div><div class="dropbutton"><div class="arrowdown"></div></div> <!--#ref0018-->
                             <div class="dropmenu" style="width: 167px; margin-left: -20000px">
-                                <div class="dropbutton-pres" style="margin-left:154px"><div class="scrolldown"></div></div>
+                                <div class="dropbutton-pres" style="margin-left:154px"><div class="arrowdown"></div></div>
                                 <div class="droptext" onclick="none()" id="none">(none)</div></div></ul> <!--#ref0019-->
                             <script>function none(){document.getElementById("currentscreensaver").textContent="(none)"} </script>
 
@@ -1242,8 +1166,8 @@
                         <div style="margin-left:208px; margin-top:-24px">
                             <butdislabel>Wait:</butdislabel>
                             <ul class="selection" style="margin-left:29px; margin-top: -15px"><div style="margin-top: 13px; margin-left:29px">
-                                <div class="buttonsmalldis" style="margin-top: -17px"><div class="tinyarrowdisabledup"></div></div>
-                                <div class="buttonsmalldis" onclick="yearsub()"><div class="tinyarrowdisableddown"></div></div></div></ul>
+                                <div class="buttonsmalldis" style="margin-top: -17px"><div class="tinyarrowdisup"></div></div>
+                                <div class="buttonsmalldis" onclick="yearsub()"><div class="tinyarrowdisdown"></div></div></div></ul>
                             <butdislabel style="position:absolute; margin-top:-18px; margin-left:87px">minutes</butdislabel>
                     </div></fieldset>
                     
@@ -1269,8 +1193,8 @@
                             <prefieldset style="margin-left:4px; margin-top:-1px; padding:2px 4px 1px 4px"> Selected </prefieldset>
                             <preul class="tree-view" style="width:286px; height:85px; margin-top:3px; margin-left:-4px;">
                                 <div style="position:absolute; background: var(--premidgray); margin-left: 274px; width:16px; height:84px"></div>
-                                <div style="margin-left: 274px"><div class="prescroll" style="margin-top:-4px"><div class="prescrollup"></div></div>
-                                    <div class="prescroll" style="margin-top:73px"><div class="prescrolldown"></div></div></div></preul></div></div>
+                                <div style="margin-left: 274px"><div class="prescroll" style="margin-top:-4px"><div class="prearrowup"></div></div>
+                                    <div class="prescroll" style="margin-top:73px"><div class="prearrowdown"></div></div></div></preul></div></div>
                         
                     <div class="prepost" style="height:72px; width:201px; margin-left:20px; margin-top: 100px;">
                         <div class="pretitlebarbutton" title="Close"><div class="preclose"></div></div><div class="pretitlebarbutton" title="Help"> <div class="prehelp"></div></div>
@@ -1281,9 +1205,9 @@
                                
                 <div style="margin-left:12px; margin-top: 10px;"> <label>Scheme</label><br> <!-- line 1 -->
                     <ul class="tree-view"  style="position: absolute; width:186px; height: 17px; padding:2px">
-                        <div style="padding: 3px 3px 2px 2px" id="currentscheme">Windows 98</div><div class="dropbutton"><div class="scrolldown"></div></div>
+                        <div style="padding: 3px 3px 2px 2px" id="currentscheme">Windows 98</div><div class="dropbutton"><div class="arrowdown"></div></div>
                         <div class="dropmenu" style="width: 185px; margin-left: -20000px;" id="scheme">
-                            <div class="dropbutton-pres" style="margin-left:171px"><div class="scrolldown"></div></div>
+                            <div class="dropbutton-pres" style="margin-left:171px"><div class="arrowdown"></div></div>
                             <div class="droptext" onclick="windows98()"           id="windows98scheme"    >Windows 98               </div>
                             <div class="droptext" onclick="evangelionmode()"      id="evangelionscheme"   >Neon Genesis Evangelion  </div>
                             <div class="droptext" onclick="Octavia()"             id="Octavia"            >Octavia's Study          </div>
@@ -1313,22 +1237,22 @@
                             pretbgradinactive1 = "#323232"; pretbgradinactive2 = "#151515"; pretbgradactive1 = "#202020"; pretbgradactive2 = "#676767";
                             cpwhite = "#545454"; cplightg = "#9f9f9f"; cpsilver = "#3f3f3f"; cpmidgray = "#ababab"; cpgray = "#292929"; cpblack = "#000"; cpblue = "#fccc39";
                             cpprussian = "#da3624"; cpwincyan = "#008080"; cpyellow = "#c0c0c0"; cpfont = "#c0c0c0"; cchover = "#fff"; cpatext = "#fff"; preinvert = 1; shuffleflop = 1; 
-                            discheckinv = 0.4; enacheckinv = 0.8; invcheckinv = 0.65; prespritesheet = github + "img/spritesheet.png')"; cwpp = "#292929"}
+                            discheckinv = 0.4; enacheckinv = 0.8; invcheckinv = 0.65; prespritesheet = github + "img/spritesheeti.png')"; cwpp = "#292929"}
                         function tankmode(){pretaskbartxt = "#000"; pretaskbartxtprs = "#000"; preactivetitle = "#fff"; preinactivetitle = "#607060";
                             pretbgradinactive1 = "#483038"; pretbgradinactive2 = "#483038"; pretbgradactive1 = "#404840"; pretbgradactive2 = "#404840";
                             cpwhite = "#7d8f7d"; cplightg = "#607060"; cpsilver = "#607060"; cpmidgray = "#404840"; cpgray = "#404840"; cpblack = "#0a0a0a"; cpblue = "#fff";
                             cpprussian = "#481212"; cpwincyan = "#008080"; cpyellow = "#ffff00"; cpfont = "#000"; cchover = "#fff"; cpatext = "#000"; preinvert = 0; shuffleflop = 0; 
-                            discheckinv = 0.4; enacheckinv = 0.8; invcheckinv = 0.65; prespritesheet = github + "img/spritesheet.png')"; cwpp = "#607060"}
+                            discheckinv = 0.4; enacheckinv = 0.8; invcheckinv = 0.65; prespritesheet = github + "img/spritesheeti.png')"; cwpp = "#607060"}
                         function lightmode(){pretaskbartxt = "#000"; pretaskbartxtprs = "#000"; preactivetitle = "#fff"; preinactivetitle = "#fff";
                             pretbgradinactive1 = "#878787"; pretbgradinactive2 = "#a2a2a2"; pretbgradactive1 = "#00087f"; pretbgradactive2 = "#0884ce";
                             cpwhite = "#fff"; cplightg = "#dfdfdf"; cpsilver = "#c0c0c0"; cpmidgray = "#ababab"; cpgray = "#808080"; cpblack = "#0a0a0a"; cpblue = "#0000FF";
                             cpprussian = "#00207c"; cpwincyan = "#008080"; cpyellow = "#ffff00"; cpfont = "#000"; cphover = "#fff"; cpatext = "#000"; preinvert = 0; shuffleflop = 0; 
-                            discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; prespritesheet = github + "img/spritesheet.png')"; cwpp = "#c0c0c0"}
+                            discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; prespritesheet = github + "img/spritesheeti.png')"; cwpp = "#c0c0c0"}
                         function neonmode(){pretaskbartxt = "#000"; pretaskbartxtprs = "#000"; preactivetitle = "#fff"; preinactivetitle = "#00554d";
                             pretbgradinactive1 = "#00bfbc"; pretbgradinactive2 = "#ec91a2"; pretbgradactive1 = "#01bfbc"; pretbgradactive2 = "#ca9cb9";
                             cpwhite = "#f7dbd7"; cplightg = "#fae0e4"; cpsilver = "#f4c1ca"; cpmidgray = "#e08998"; cpgray = "#de4560"; cpblack = "#0a0a0a"; cpblue = "#00bfbc";
                             cpprussian = "#a2dbd2"; cpwincyan = "#008080"; cpyellow = "#ffff00"; cpfont = "#000"; cphover = "#fff"; cpatext = "#000"; preinvert = 0; shuffleflop = 0; 
-                            discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; prespritesheet = github + "img/spritesheet.png')"; cwpp = "#a2dbd2"}
+                            discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; prespritesheet = github + "img/spritesheeti.png')"; cwpp = "#a2dbd2"}
                             
                         function contrastmodescheme1(){ currentsch.textContent="High Contrast Mode 1"; highcontrast1(); wpn = 0; wallpapercall(); contrastmode1(); themepreviewchange()}
                         function contrastmodescheme2(){ currentsch.textContent="High Contrast Mode 2"; highcontrast2(); wpn = 0; wallpapercall(); contrastmode2(); themepreviewchange()}
@@ -1338,12 +1262,12 @@
                             pretbgradinactive1 = "#00ffff"; pretbgradinactive2 = "#00ffff"; pretbgradactive1 = "#0000ff"; pretbgradactive2 = "#0000ff"; currentcolour = "#00ffff"
                             cpwhite = "#000"; cplightg = "#dfdfdf"; cpsilver = "#000"; cpmidgray = "#ababab"; cpgray = "#808080"; cpblack = "#fff"; cpblue = "#00ffff";
                             cpprussian = "#0000ff"; cpwincyan = "#008080"; cpyellow = "#ffff00"; cpfont = "#ffff00"; cphover = "#fff"; cpatext = "#fff"; preinvert = 1; shuffleflop = 1; 
-                            discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; prespritesheet = github + "img/spritesheet.png')"; cwpp = "#0000ff"; highcontrast()}
+                            discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; prespritesheet = github + "img/spritesheeti.png')"; cwpp = "#0000ff"; highcontrast()}
                         function contrastmode2(){pretaskbartxt = "#fff"; pretaskbartxtprs = "#0000ff"; preactivetitle = "#000"; preinactivetitle = "#000"
                             pretbgradinactive1 = "#ffff00"; pretbgradinactive2 = "#ffff00"; pretbgradactive1 = "#00ff00"; pretbgradactive2 = "#00ff00"; currentcolour = "#00ff00"
                             cpwhite = "#000"; cplightg = "#dfdfdf"; cpsilver = "#000"; cpmidgray = "#ababab"; cpgray = "#808080"; cpblack = "#fff"; cpblue = "#00ff00"
                             cpprussian = "#00ff00"; cpwincyan = "#008080"; cpyellow = "#ffff00"; cpfont = "#ffff00"; cphover = "#fff"; cpatext = "#00ff00"; preinvert = 1; shuffleflop = 1
-                            discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; prespritesheet = github + "img/spritesheet.png')"; cwpp = "#00ff00"; highcontrast()}
+                            discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; prespritesheet = github + "img/spritesheeti.png')"; cwpp = "#00ff00"; highcontrast()}
 
                         function themepreviewchange() {docelem.style.setProperty('--prespritesheet', prespritesheet); docelem.style.setProperty('--preinvert', preinvert);
                             docelem.style.setProperty('--prewhite', cpwhite); docelem.style.setProperty('--pregray', cpgray); docelem.style.setProperty('--prespritesheet', prespritesheet);
@@ -1392,16 +1316,16 @@
                         <dislabel style="position:absolute; margin-left:312px">Colour 2</dislabel></div><br></div>
                         <!-- line 2 -->  
                         <ul class="tree-view" style="position: absolute; width:186px; height: 17px; padding:2px">
-                            <div style="padding: 3px 3px 2px 2px" id="currentitem">Desktop</div><div class="dropbutton"><div class="scrolldown"></div></div>
+                            <div style="padding: 3px 3px 2px 2px" id="currentitem">Desktop</div><div class="dropbutton"><div class="arrowdown"></div></div>
                             <div class="dropmenu" style="width: 185px; margin-left: -20000px" id="item">
-                                <div class="dropbutton-pres" style="margin-left:172px"><div class="scrolldown"></div></div>
+                                <div class="dropbutton-pres" style="margin-left:172px"><div class="arrowdown"></div></div>
                                 <div class="droptext" onclick="desktopitem()" id="desktopitem">Desktop</div></div></ul>
                             <script> function desktopitem(){document.getElementById("desktopitem").textContent="Desktop"} </script>
                             
                         <ul class="tree-view" style="position:absolute; width:49px; height:17px; margin-left:199px; padding:2px; background: var(--silver);">
                             <div style="margin-top: 17px; margin-left:34px">
-                                <div class="buttonsmalldis" style="margin-top: -17px"><div class="tinyarrowdisabledup"></div></div>
-                                <div class="buttonsmalldis" onclick="yearsub()"><div class="tinyarrowdisableddown"></div></div></div></ul>
+                                <div class="buttonsmalldis" style="margin-top: -17px"><div class="tinyarrowdisup"></div></div>
+                                <div class="buttonsmalldis" onclick="yearsub()"><div class="tinyarrowdisdown"></div></div></div></ul>
                         
                         <div class="win98buttondisa" style="margin-left:262px; width:38px; height:17px; padding: 2px;" onclick="cpick(); colourpicker()"> 
                             <div class="big_seperator" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
@@ -1443,7 +1367,7 @@
 
                         <div class="win98buttondisa" style="margin-left:312px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
                             <div class="big_seperator" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
-                            <div class="smallarrowdisableddown" style="margin-left: 31px; margin-top:7px"></div></div><br><br>
+                            <div class="smallarrowdisdown" style="margin-left: 31px; margin-top:7px"></div></div><br><br>
                     </div>
                     <!-- line 3 -->
                     <div style="margin-top:5px;">
@@ -1453,14 +1377,14 @@
                         
                         <ul class="tree-view"  style="position: absolute; width:186px; height: 17px; padding:2px; background: var(--silver);">
                             <dislabel style="position:absolute; padding: 3px 3px 2px 2px">MS Sans Serif</dislabel>
-                            <div style="padding: 3px 3px 2px 2px; color:rgba(0,0,0,0)">a</div><div class="dropbutton"><div class="arrowdisableddown"></div></div></ul>
+                            <div style="padding: 3px 3px 2px 2px; color:rgba(0,0,0,0)">a</div><div class="dropbutton"><div class="arrowdisdown"></div></div></ul>
                         <ul class="tree-view" style="position:absolute; width:50px; height: 17px; padding:2px; margin-left:199px; background:var(--silver)">
                             <dislabel style="position:absolute; padding: 3px 3px 2px 2px">11</dislabel>
-                            <div style="padding: 5px 3px 0px 0px; color:rgba(0,0,0,0)">a</div><div class="dropbutton"><div class="arrowdisableddown"></div></div></ul>
+                            <div style="padding: 5px 3px 0px 0px; color:rgba(0,0,0,0)">a</div><div class="dropbutton"><div class="arrowdisdown"></div></div></ul>
                             
                         <div class="win98buttondisa" style="margin-left:262px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
                             <div class="big_seperator" style="position: absolute; margin-top:1px; height: 14px; margin-left: 28px"></div>
-                            <div class="smallarrowdisableddown" style="margin-left: 31px; margin-top:7px"></div></div> 
+                            <div class="smallarrowdisdown" style="margin-left: 31px; margin-top:7px"></div></div> 
                             
                         <div class="win98buttondisa" style="width:15px; height:15px; margin-left:313px;">
                             <dislabel style="position:absolute; font-weight:700; margin-left:4px; margin-top:1px; ">B</dislabel></div>
@@ -1498,9 +1422,9 @@
    
                     <div style="margin-top: 7px">
                         <ul class="tree-view" style="width:143px; height: 17px; padding:2px">
-                            <div style="padding: 3px 3px 2px 2px" id="currentdsheet"></div><div class="dropbutton"><div class="scrolldown"></div></div>
+                            <div style="padding: 3px 3px 2px 2px" id="currentdsheet"></div><div class="dropbutton"><div class="arrowdown"></div></div>
                             <div class="dropmenu" style="width: 142px; margin-left: -20000px" id="dsheet">
-                                <div class="dropbutton-pres" style="margin-left:129px"><div class="scrolldown"></div></div>
+                                <div class="dropbutton-pres" style="margin-left:129px"><div class="arrowdown"></div></div>
                                 <div class="droptext" onclick="dsheetpetraOG()">Petra Classic</div>  
                                 <div class="droptext" onclick="dsheetpetra()">Petra Revisit</div>   
                                 <div class="droptext" onclick="dsheetcaddyog()">Thealonic</div>
@@ -1558,9 +1482,9 @@
                     <fieldset style="width:149px; height:39px">
 
                         <ul class="tree-view" style="position: absolute; width:151px; height: 17px; padding:2px; margin-left:-3px;">
-                            <div style="padding:3px 2px 2px 2px" id="currentbitcol">High Colour (16-bit)</div><div class="dropbutton"><div class="scrolldown"></div></div>
+                            <div style="padding:3px 2px 2px 2px" id="currentbitcol">High Colour (16-bit)</div><div class="dropbutton"><div class="arrowdown"></div></div>
                             <div class="dropmenu" style="width: 150px; margin-left: -20000px" id="colour">
-                                <div class="dropbutton-pres" style="margin-left:137px"><div class="scrolldown"></div></div>
+                                <div class="dropbutton-pres" style="margin-left:137px"><div class="arrowdown"></div></div>
                                 <div class="droptext" onclick="sixteenbitcolour()">High Colour (16-bit)</div></div></ul>
 
                         <script> function sixteenbitcolour(){document.getElementById("currentbitcol").textContent="High Colour (16-bit)"}</script>
@@ -1688,7 +1612,7 @@
                                 
                                 <ul class="tree-view" style="float:right; width:305px; height:9px; margin-top:-17px; overflow:hidden">
                                     <div class="buttonscrollinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px; width:10px; height:11px">
-                                        <div class="arrowdisableddown" style="margin-left:-4px"></div></div>
+                                        <div class="arrowdisdown"></div></div>
                                     <div class="menudocuments5" style="position:absolute; margin-top:-5px; margin-left:-5px"></div>
                                     <div style="margin-top:-1px; margin-left:16px">https://thealonic.tumblr.com/post/{PostID}</div></ul>
                         </fieldset></div>
@@ -1698,7 +1622,7 @@
                             <div class="scrollbarmiddle" style="margin-left: 2px; height: 100%; width:467px; margin-top:2px; margin-bottom:2px; background-color: var(--midgray);">
                                 <div style="max-width: 451px; background:var(--white); overflow:hidden; color:var(--text);"> <!-- 428px wide, 451 including scrollwheel + padding -->
                                 <!-- Text posts -->
-                                    <div class="buttonscrollinactive" style="margin-left: 451px;"><div class="arrowdisableup"></div></div>
+                                    <div class="buttonscrollinactive" style="margin-left: 451px;"><div class="arrowdisup"></div></div>
                                     {block:Text}
                                         <div style="padding: 3px; max-width:451px;">
                                             {block:Title}<div class="title-bar-text" style="margin-left:3px; font-size: 2rem; color: var(--atext); margin-bottom:-7px; margin-top:-3px">𝖁𝖍𝖊𝖗𝟗𝟖</div>{/block:Title}
@@ -1772,7 +1696,7 @@
                                     {/block:Answer}
                                     
                                     <div class="buttonscrollinactive" style="margin-top:-16px; margin-left:451px;">
-                                        <div class="arrowdisableddown" style="margin-top:-3px; margin-left:-3px"></div></div>
+                                        <div class="arrowdisdown"></div></div>
                                 </div>
                             </div>
                         </ul> 
@@ -1814,6 +1738,7 @@
         <script>
             $("ul").click(function(){ if (schemedrop == false) {$(this).find(".dropmenu").css("margin-left", "-2px"); schemedrop = true //dropdown menus
                 } else if (schemedrop == true){$(this).find(".dropmenu").css("margin-left", "-20000px"); schemedrop = false}})
+            $("ul").mouseleave(function(){$(this).find(".dropmenu").css("margin-left", "-20000px"); schemedrop = false})
                 
             $(".plinks-con").click(function(){if (plinksdrop == false){$(this).find("postdrop").css("margin-left", "49px"); plinksdrop = true 
                 } else if (plinksdrop == true){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false}})
@@ -1833,20 +1758,18 @@
                     docelem.style.setProperty('--taskbar' + i + 'top1', ccwhite); docelem.style.setProperty('--taskbar' + i + 'top2', cclightg)
                     docelem.style.setProperty('--taskbar' + i + 'bottom1', ccgray); docelem.style.setProperty('--taskbar' + i + 'bottom2', ccblack)}}}
             function activatetask(){ButtonOpen[curtaskact] = false; taskbar[curtaskact].backgroundImage = github + "img/scrollbarempty.png')"; 
-                taskbar[curtaskact].backgroundColor = ccwhite; taskbarfont[curtaskact].color = taskbartextpressed; curtaskact
+                taskbar[curtaskact].backgroundColor = ccwhite; taskbarfont[curtaskact].color = taskbartextpressed;
                 docelem.style.setProperty('--taskbar' + curtaskact + 'top1', ccblack); docelem.style.setProperty('--taskbar' + curtaskact + 'top2', ccgray);
                 docelem.style.setProperty('--taskbar' + curtaskact + 'bottom1', cclightg); docelem.style.setProperty('--taskbar' + curtaskact + 'bottom2', ccwhite)}
         </script>
 
 <!-- Taskbar Rendering ------------------------------------------------------------------------------>
         <!-- Start bar rendering -->
-        <div class="start_bar" id="start" style= "z-index:100000000">
+        <div class="start_bar" id="start">
             <div class="top_border"></div> <!-- top line render-->
-
             <!-- Start button toggle -->
             <div class="win98start" onclick="startpress();" style="margin-right:4px;"> 
-                <div class="windowslogo"></div><div class="title-bar-text" style="position:absolute; margin-left:17.5px; margin-top:-15px; color:var(--text); font-weight:700;">Start</div></div>
-                
+                <div class="windowslogo"></div><b style="position:absolute; margin-left:23px; margin-top:2px">Start</b></div>
             <!-- Start menu closed -->
             <div style="position: fixed; bottom: 0%; bottom: 24px;" onmouseleave="">
                 <div class="win98post" id="startmenu" style="width:163px; height: 377px; margin-top:-383px; margin-left: 200000px"> 
@@ -1867,12 +1790,12 @@
                         <label><div class="submenu36" id="menufind" onmouseover="scf=16; startsubmenuo()" onmouseout="scf=16; startsubmenuc()"> 
                             <div class="menufind"></div><label><labs><underline>F</underline>ind </labs></label><div class="lmenuarrow" id="menuarrow5"></div></div></label>
                         <label><div class="submenu36">
-                            <div class="menushutdown"></div><label><labs><underline>R</underline>un</labs></label></div></label>
+                            <div class="menurun"></div><label><labs><underline>R</underline>un</labs></label></div></label>
                         <div class="menuapplicationsplit" style="width:139px; margin-left: 2px; margin-top: 3px; margin-bottom: 4px"></div>
                         <label><a href="https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/main"><div class="submenu36" style="width: 142px;">
                             <div class="menuhelp"></div><label><labs><underline>S</underline>ource-code </labs></label></div></a></label>
                         <label><a href="https://paypal.me/TheaVanherst"><div class="submenu36" style="width: 142px;">
-                            <div class="menurun"></div><label><labs><underline>S</underline>upport development </labs></label></div></a></label>  
+                            <div class="menusupport"></div><label><labs><underline>S</underline>upport development </labs></label></div></a></label>  
                         <label><div class="submenu36" onclick="logonactive(); shutdownno();">
                             <div class="menulogoff"></div><label><labs><underline>L</underline>og off </labs></label></div></label>  
                     </div>
@@ -1905,12 +1828,12 @@
                             <div class="submenu20" id="systemtools" onmouseover="scf=6; startsubmenuo()" onmouseout="scf=6; startsubmenuc()">
                                 <div class="menuprograms1"></div><label><labc> System Tools </labc></label><div class="smenuarrow" id="menuarrow12"></div></div>
 
-                            <div class="submenu20"><div class="menufind4"></div><label><labc> Address book </labc></label></div>
-                            <div class="submenu20"><div class="menuapplications1"></div><label><labc> Calculator </labc></label></div>
-                            <div class="submenu20"><div class="menuapplications2"></div><label><labc> Imaging </labc></label></div>
-                            <div class="submenu20" onclick="notepadtask()"><div class="menuapplications3"></div><label><labc> Notepad </labc></label></div>
-                            <div class="submenu20"><div class="menuapplications4"></div><label><labc> Paint </labc></label></div>
-                            <div class="submenu20"><div class="menuapplications5"></div><label><labc> Wordpad </labc></label></div>
+                            <div class="submenu20"><div class="menuapplications1"></div><label><labc> Address book </labc></label></div>
+                            <div class="submenu20"><div class="menuapplications2"></div><label><labc> Calculator </labc></label></div>
+                            <div class="submenu20"><div class="menuapplications3"></div><label><labc> Imaging </labc></label></div>
+                            <div class="submenu20" onclick="notepadtask()"><div class="menuapplications4"></div><label><labc> Notepad </labc></label></div>
+                            <div class="submenu20"><div class="menuapplications5"></div><label><labc> Paint </labc></label></div>
+                            <div class="submenu20"><div class="menuapplications6"></div><label><labc> Wordpad </labc></label></div>
                                 
                             <div class="win98post" style="margin-top:-223px; width:181px; height:80px" id="menucommunicationssubmenu" 
                                 onmouseover="scf=2; startsubmenuo()" onmouseout="scf=2; startsubmenuc()"> 
@@ -1960,9 +1883,9 @@
                                 
                         <div class="win98post" style="margin-top:-123px; width:110px; height:60px; " id="onlineservicessubmenu" 
                             onmouseover="scf=7; startsubmenuo()" onmouseout="scf=7; startsubmenuc()"> 
-                            <div class="submenu20"><div class="menuapplications6"></div><label><labc> Ask Jeeves </labc></label></div>
-                            <div class="submenu20"><div class="menuapplications7"></div><label><labc> Yahoo! Mail </labc></label></div>
-                            <div class="submenu20"><div class="menuapplications8"></div><label><labc> MSN </labc></label></div></div>
+                            <div class="submenu20"><div class="menuonline1"></div><label><labc> Ask Jeeves </labc></label></div>
+                            <div class="submenu20"><div class="menuonline2"></div><label><labc> Yahoo! Mail </labc></label></div>
+                            <div class="submenu20"><div class="menuonline3"></div><label><labc> MSN </labc></label></div></div>
                                 
                         <div class="win98post" style="margin-top:-103px; width:89px; height: 20px;" id="startupsubmenu"
                             onmouseover="scf=8; startsubmenuo()" onmouseout="scf=8; startsubmenuc()">
@@ -1974,11 +1897,11 @@
                         onmouseover="scf=9; startsubmenuo()" onmouseout="scf=9; startsubmenuc()"> 
                         <!-- Channels -->
                         <div class="submenu20" onmouseover="scf=10; startsubmenuo()" onmouseout="scf=10; startsubmenuc()" id="channels">
-                            <div class="menudocuments6"></div><label><labc> Channels </labc></label><div class="smenuarrow" id="menuarrow13"></div></div>
+                            <div class="menuprograms1"></div><label><labc> Channels </labc></label><div class="smenuarrow" id="menuarrow13"></div></div>
                         <div class="submenu20" onmouseover="scf=11; startsubmenuo()" onmouseout="scf=11; startsubmenuc()" id="links">
-                            <div class="menudocuments6"></div><label><labc> Funnies </labc></label><div class="smenuarrow" id="menuarrow14"></div></div>
+                            <div class="menuprograms1"></div><label><labc> Funnies </labc></label><div class="smenuarrow" id="menuarrow14"></div></div>
                         <div class="submenu20" onmouseover="scf=12; startsubmenuo()" onmouseout="scf=12; startsubmenuc()" id="media">
-                            <div class="menudocuments6"></div><label><labc> Music Playlists </labc></label><div class="smenuarrow" id="menuarrow15"></div></div>
+                            <div class="menuprograms1"></div><label><labc> Music Playlists </labc></label><div class="smenuarrow" id="menuarrow15"></div></div>
                         <a href="hhttps://thealonic.tumblr.com/" target="_blank"><div class="submenu20">
                             <div class="menudocuments5"></div><label><labc> Thealonic </labc></label></div></a>
                         <!-- Channels Submenu -->
@@ -2011,7 +1934,7 @@
                         <div class="submenu20"><div class="menudocuments1"></div><label><labc> My Documents </labc></label></div>
                         <div class="startmenusplitter"></div>
                         <div class="submenu20" onmouseover="scf=17; startsubmenuo()" onmouseout="scf=17; startsubmenuc()" id="vherstymenu">
-                            <div class="menudocuments6"></div><label><labc> Very Vhersty </labc></label><div class="smenuarrow" id="menuarrow16"></div></div>
+                            <div class="menudocuments3"></div><label><labc> Very Vhersty </labc></label><div class="smenuarrow" id="menuarrow16"></div></div>
                             
                         <div class="submenu20"><div class="menudocuments2"></div><label><labc> Braden+.wav </labc></label></div>
                         <div class="submenu20"><div class="menudocuments2"></div><label><labc> OurHeartlessMaster.wav </labc></label></div>
@@ -2067,9 +1990,10 @@
                     'favouritesmenu', 'channelssubmenu','linkssubmenu','mediasubmenu','documentsmenu','settingsmenu','activedesktopsubmenu','findmenu','vherstysubmenu'], marr = ['menuarrow1','menuarrow6','menuarrow9','menuarrow10','menuarrow18',
                     'menuarrow11','menuarrow12','menuarrow7','menuarrow8','menuarrow2','menuarrow13','menuarrow14','menuarrow15','menuarrow3','menuarrow4','menuarrow17','menuarrow5','menuarrow16'],
                     sbn=['130px','133px','148px','158px','161px','163px','200000px'],sbm='margin-left',scf = 0,sbc,geb,sma,cac;sbp=[sbn[4],sbn[0],sbn[0],sbn[0],sbn[0],sbn[0],sbn[0],sbn[1],sbn[1],sbn[4],sbn[2],sbn[2],sbn[2],sbn[4],sbn[4],sbn[3],sbn[4],sbn[4]]
-                function starttemp(){document.getElementById(smu[scf]).style.backgroundColor=cac[0];document.getElementById(smu[scf]).style.color=cac[2];document.getElementById(marr[scf]).style.filter="invert("+cac[2]+")"}
-                function startsubmenuo(){sbc='#'+sms[scf];cac=[ccprussian,cchover,varinvert];starttemp();$(sbc).css(sbm,sbp[scf])};function startsubmenuc(){sbc ='#'+sms[scf];cac=[ccsilver,ccfont,curinvert];starttemp();$(sbc).css(sbm,sbn[6])}</script>
-                
+                function starttemp(){document.getElementById(smu[scf]).style.backgroundColor=cac[0];document.getElementById(smu[scf]).style.color=cac[1];document.getElementById(marr[scf]).style.filter="invert("+cac[2]+")"}
+                function startsubmenuo(){sbc='#'+sms[scf];cac=[ccprussian,cchover,varinvert];starttemp();$(sbc).css(sbm,sbp[scf])};function startsubmenuc(){sbc ='#'+sms[scf];cac=[ccsilver,ccfont,curinvert];starttemp();$(sbc).css(sbm,sbn[6])}
+            </script>
+     
 <!-- Taskbar Rendering  ------------------------------------------------------------------------------>
             <div style="margin-top: -24px">
                 <!-- taskbar application icons -->
@@ -2100,8 +2024,7 @@
                 <div class="taskbartask8" style="cursor:pointer" onmousedown="button = 8; tasktoggle()" id="taskapp8"> 
                     <div class="title-bar-text" id="taskapp8font">🌍 Internet Explorer</div></div>
                 
-                <script>
-                    var button = 0, task = 0, funccall = 0, taskpos = [undefined, 0, 0, 0, 0, 0, 0, 0, 0], ButtonOpen = [undefined, true, false, false, false, false, false, false, false]
+                <script>var button = 0, task = 0, funccall = 0, taskpos = [undefined, 0, 0, 0, 0, 0, 0, 0, 0], ButtonOpen = [undefined, true, false, false, false, false, false, false, false]
                         taskon = [undefined, true, false, false, false, false, false, false, false], tasktrue = [undefined, true, false, false, false, false, false, false, false],
                         taskbar = [undefined, document.getElementById("taskapp1").style, document.getElementById("taskapp2").style, document.getElementById("taskapp3").style, document.getElementById("taskapp4").style, 
                         document.getElementById("taskapp5").style, document.getElementById("taskapp6").style, document.getElementById("taskapp7").style, document.getElementById("taskapp8").style],
