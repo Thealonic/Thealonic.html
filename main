@@ -68,34 +68,35 @@
             ico{cursor:pointer;display:inline-flex;color:var(--desktoptext);background:var(--desktopicon);margin-top:-1px}icon{background:var(--desktopicom);color:var(--desktoptext)} 
             
             .thealonic,.veryvhersty,.twitter,.askicon,.discordlink,.officialfunny,.rct2,.justice{background-image:var(--curdesktopsheet);height:72px;width:72px;margin-bottom:3px;margin-top:6px}
-            .thealonic  {background-position:  -0px -0px}  .veryvhersty{background-position: -72px -0px} .twitter{background-position:-144px -0px}.askicon{background-position:-216px -0px}
-            .discordlink{background-position:-288px -0px}.officialfunny{background-position:-360px -0px}.rct2    {background-position:-432px -0px}.justice{background-position:-504px -0px}
+            .thealonic  {background-position:  -0px -0px}  .veryvhersty{background-position: -72px -0px}.twitter{background-position:-144px -0px}.askicon{background-position:-216px -0px}
+            .discordlink{background-position:-288px -0px}.officialfunny{background-position:-360px -0px}.rct2   {background-position:-432px -0px}.justice{background-position:-504px -0px}
 /* Desktop preview css ------------------------------------------------------------------------------*/
-            .preicocon {width:var(--smicow); height:var(--smicoh); display: inline-block; margin-left:16px; vertical-align: top} 
-            preico {cursor: pointer; max-width: auto; color: var(--preicotext); background: var(--predesktopicon)} 
+            .preicocon{width:var(--smicow); height:var(--smicoh); display: inline-block; margin-left:16px; vertical-align: top} 
+             preico   {cursor: pointer; max-width: auto; color: var(--preicotext); background: var(--predesktopicon)} 
             
             .thealonicpreview, .veryvherstypreview, .twitterpreview, .askiconpreview, .discordlinkpreview, .officialfunnypreview, .rct2preview, 
-            .justicepreview {background-image:var(--predesktopsheet);height:var(--smicoh);width: var(--smicoh);margin-bottom: 6px}
+            .justicepreview      {background-image:var(--predesktopsheet);height:var(--smicoh);width: var(--smicoh);margin-bottom: 6px}
             .thealonicpreview    {background-position:-0px   -72px}.veryvherstypreview{background-position:-36px -72px} 
             .twitterpreview      {background-position:-72px  -72px}.askiconpreview    {background-position:-107px -72px}
             .discordlinkpreview  {background-position:-144px -72px}.rct2preview       {background-position:-216px -72px} 
             .officialfunnypreview{background-position:-180px -72px}.justicepreview    {background-position:-252px -72px} 
 
 /* Window bar handling ------------------------------------------------------------------------------*/
-            .pretitle-bar-text, .title-bar-text {letter-spacing: 0.5px; margin-right:24px; padding:1px 4px 2px 4px; font-weight:700; cursor:default}
-            .win98titlebarc, .win98titlebarh{width:10px; height:8px; float:right; margin:2px 2px 2px 2px; cursor: pointer}
+            .pretitle-bar-text,.title-bar-text{letter-spacing: 0.5px; margin-right:24px; padding:1px 4px 2px 4px; font-weight:700; cursor:default}
+            .win98titlebarc,   .win98titlebarh{width:10px; height:8px; float:right; margin:2px 2px 2px 2px; cursor: pointer}
             
             .window,.win98post,.win98titlebarc,.win98titlebarh,.win98button,.win98buttona,.win98buttondis,.win98buttondisa,.buttonsmalla,.buttonsmalldis, 
             .scrollbinactive,.buttonscrollinactive,.dropbutton{box-shadow:var(--curboxshadowraised);background:var(--silver);padding:3px}
             .win98titlebarc:active,.win98titlebarh:active,.win98button:active,.win98buttona:active,.buttonsmalla:active,.dropbutton-pres{box-shadow:var(--curboxshadowpressed)}
 
-            .win98post,.window,.win98innerbox,.scrollbinactive{position:absolute;color:var(--font)}.window{position:absolute;z-index:4}
-            .title-bar-98{background:linear-gradient(90deg, #878787, #a2a2a2);height:18px;width:100%}.title-bar-text{color:var(--curinactivetitle)}
-            .window-body{margin:8px;color:var(--font)}.win98innerbox{box-shadow:var(--curpopshadow);background:var(--silver);padding:3px}
-            .win98titlebarh{margin:2px 0px 0px 0px}.scrollbinactive{width:10px;height:10px;float:right;margin-left:1px}
+            .win98post,.window,.win98innerbox,.scrollbinactive{position:absolute;color:var(--font)}
+            .win98innerbox {box-shadow:var(--curpopshadow);background:var(--silver);padding:3px}
+            .window        {position:absolute;z-index:4} .title-bar-98   {background:linear-gradient(90deg, #878787, #a2a2a2);height:18px;width:100%}
+            .window-body   {margin:8px;color:var(--font)}.title-bar-text {color:var(--curinactivetitle)}
+            .win98titlebarh{margin:2px 0px 0px 0px}      .scrollbinactive{width:10px;height:10px;float:right;margin-left:1px}
 
             .win98buttona,.win98buttondisa,.buttonscrollinactive,.win98tab{position:absolute}.win98buttondis,.win98buttondisa{margin-bottom: 4px}
-            .buttonsmalla,.buttonsmalldis{position:absolute;width:9px; height:2px;margin-top:-8px}
+            .buttonsmalla,.buttonsmalldis{position:absolute;width:9px;height:2px;margin-top:-8px}
             .win98buttona,.win98buttondisa,.win98button,.win98buttondis,.prebutton{width:70px;height:16px}
             
             .scrollbarmiddle{height:2px;width:2px;background-image:var(--scrollbar);background-repeat:repeat}
@@ -105,19 +106,22 @@
             
 /* desktop pre and cur handling ------------------------------------------------------------------------------*/
             .title-bar-text,.pretitle-bar-text{letter-spacing:0.5px;margin-right:24px;padding:1px 4px 2px 4px;font-weight:700; cursor:default}
-            prebutlabel,prebutdislabel,preico,butlabel,label,butdislabel{display:inline-flex; align-items:center;color:var(--text)} 
-            .win98button,.win98buttona,.prepost,.prebutton,prebutlabel,butlabel{pointer:cursor} prebutlabel,prebutdislabel,butlabel,butdislabel{margin-top:2px} 
-            startdistxt,butdislabel,dislabel,butdislabel{align-items:center;color:var(--gray);text-shadow:var(--distextshadow)}startdistxt{margin-left: 26px;margin-top:3px;position:absolute}
+             prebutlabel, prebutdislabel, preico,  butlabel, label,   butdislabel{display:inline-flex; align-items:center;color:var(--text)} 
+            .win98button,.win98buttona,  .prepost,.prebutton,butlabel,prebutlabel{pointer:cursor}
+            prebutlabel,prebutdislabel,butlabel,butdislabel{margin-top:2px}startdistxt{margin-left: 26px;margin-top:3px;position:absolute}
+            startdistxt,butdislabel,   dislabel,butdislabel{align-items:center;color:var(--gray);text-shadow:var(--distextshadow)}
             
 /* window preview handling ------------------------------------------------------------------------------*/
             .prepost,.pretitlebarbutton,.prescroll,.prebutton{box-shadow: var(--preboxshadowraised);background:var(--presilver);color: var(--prefont);padding:3px;}
-            .pretitlebarbutton{margin:2px 2px 0px 0px}.prescroll,.prepost{position:absolute}.pretitlebarbutton {width:10px; height:8px; float:right; margin:2px 2px 2px 2px; cursor: pointer}
-            prebutdislabel{color:var(--pregray);text-shadow:1px 1px 0 var(--prewhite)}prebutlabel,preul.tree-view,prefieldset{margin:0;color:var(--preblack)}.pretitle-bar-text{color:var(--preactivetitle)}
+            .pretitlebarbutton{margin:2px 2px 0px 0px}
+            .pretitle-bar-text{color:var(--preactivetitle)}.pretitlebarbutton {width:10px; height:8px; float:right; margin:2px 2px 2px 2px; cursor: pointer}
+            
+            prebutdislabel{color:var(--pregray);text-shadow:1px 1px 0 var(--prewhite)}prebutlabel,preul.tree-view,prefieldset{margin:0;color:var(--preblack)}
             preul.tree-view{margin-top:4px;display:block;padding: 6px; box-shadow:inset -1px -1px var(--prewhite),inset 1px 1px var(--pregray),inset -2px -2px var(--prelightg),inset 2px 2px var(--preblack)}
             prefieldset{border:none;padding:10px;box-shadow:inset -1px -1px var(--prewhite),inset 1px 1px var(--pregray),inset -2px -2px var(--pregray), inset 2px 2px var(--prelightg)}
             
 /* Menu css ------------------------------------------------------------------------------*/
-            .dropmenu,.droptext,.wallpapermenu{background:var(--white);color:var(--font)}.dropmenu,.dropbutton-pres,.wallpapermenu{position:absolute}
+            .dropmenu,.droptext,.wallpapermenu  {background:var(--white);color:var(--font)}.dropmenu,.dropbutton-pres,.wallpapermenu{position:absolute}
             .wallpapermenu:hover,.droptext:hover{background:var(--prussian);color:var(--hover);border-style: dotted;border-color:var(--yellow)}
             
             .dropbutton,.dropbutton-pres{width:10px;height:11px;float:right}
@@ -1989,12 +1993,12 @@
                     docelem.style.setProperty('--taskbarstartbottom1', ccwhite); docelem.style.setProperty('--taskbarstartbottom2', cclightg)} 
                 
                 var smu=['menuprograms','accessories','communications','entertainment','games','internettools','systemtools','onlineservices', 'startup','menufavourites','channels','links','media','menudocuments','menusettings','activedesktop',
-                    'menufind','vherstymenu'], sms = ['programsmenu','menuaccessoriessubmenu','menucommunicationssubmenu','menuentertainmentsubmenu','gamessubmenu','internettoolssubmenu','systemtoolssubmenu','onlineservicessubmenu', 'startupsubmenu',
-                    'favouritesmenu', 'channelssubmenu','linkssubmenu','mediasubmenu','documentsmenu','settingsmenu','activedesktopsubmenu','findmenu','vherstysubmenu'], marr = ['menuarrow1','menuarrow6','menuarrow9','menuarrow10','menuarrow18',
+                    'menufind','vherstymenu'],sms=['programsmenu','menuaccessoriessubmenu','menucommunicationssubmenu','menuentertainmentsubmenu','gamessubmenu','internettoolssubmenu','systemtoolssubmenu','onlineservicessubmenu', 'startupsubmenu',
+                    'favouritesmenu', 'channelssubmenu','linkssubmenu','mediasubmenu','documentsmenu','settingsmenu','activedesktopsubmenu','findmenu','vherstysubmenu'],marr=['menuarrow1','menuarrow6','menuarrow9','menuarrow10','menuarrow18',
                     'menuarrow11','menuarrow12','menuarrow7','menuarrow8','menuarrow2','menuarrow13','menuarrow14','menuarrow15','menuarrow3','menuarrow4','menuarrow17','menuarrow5','menuarrow16'],
-                    sbn=['130px','133px','148px','158px','161px','163px','200000px'],sbm='margin-left',scf = 0,sbc,geb,sma,cac;sbp=[sbn[4],sbn[0],sbn[0],sbn[0],sbn[0],sbn[0],sbn[0],sbn[1],sbn[1],sbn[4],sbn[2],sbn[2],sbn[2],sbn[4],sbn[4],sbn[3],sbn[4],sbn[4]]
+                    sbn=['130px','133px','148px','158px','161px','163px','200000px'],sbm='margin-left',scf=0,sbc,geb,sma,cac;sbp=[sbn[4],sbn[0],sbn[0],sbn[0],sbn[0],sbn[0],sbn[0],sbn[1],sbn[1],sbn[4],sbn[2],sbn[2],sbn[2],sbn[4],sbn[4],sbn[3],sbn[4],sbn[4]]
                 function starttemp(){document.getElementById(smu[scf]).style.backgroundColor=cac[0];document.getElementById(smu[scf]).style.color=cac[1];document.getElementById(marr[scf]).style.filter="invert("+cac[2]+")"}
-                function startsubmenuo(){sbc='#'+sms[scf];cac=[ccprussian,cchover,varinvert];starttemp();$(sbc).css(sbm,sbp[scf])};function startsubmenuc(){sbc ='#'+sms[scf];cac=[ccsilver,ccfont,curinvert];starttemp();$(sbc).css(sbm,sbn[6])}
+                function startsubmenuo(){sbc='#'+sms[scf];cac=[ccprussian,cchover,varinvert];starttemp();$(sbc).css(sbm,sbp[scf])};function startsubmenuc(){sbc='#'+sms[scf];cac=[ccsilver,ccfont,curinvert];starttemp();$(sbc).css(sbm,sbn[6])}
             </script>
      
 <!-- Taskbar Rendering  ------------------------------------------------------------------------------>
@@ -2047,8 +2051,7 @@
                     function taskreset(){currenttask = currenttask - 1; for (var v = 1; v < tasktrue.length; v++){ if(v !== curtaskact){ if(taskpos[v] > taskpos[curtaskact]){ if(taskon[v] == true){ 
                         taskpos[v] = taskpos[v] - 168; taskbar[v].marginLeft = taskpos[v] + "px"}}}} inprompt = inprompt + "current tasks active: " + currenttask; println()}
                     function taskposopen(){ if(taskon[task] == false){ if(ButtonOpen[task] == false){currenttask = currenttask + 1}; taskbar[task].marginLeft = (currenttask * 168) + "px"; 
-                        taskpos[task] = (currenttask * 168); taskon[task] = true; inprompt = inprompt + "current tasks active: " + currenttask; println()}}
-                </script>
+                        taskpos[task] = (currenttask * 168); taskon[task] = true; inprompt = inprompt + "current tasks active: " + currenttask; println()}}</script>
                  
                 <div class="clock"> <div class="calendar" style="cursor: pointer;" onclick="clockopen();"> </div>
                     <div class="menuentertainment3" style="margin-top:-1px; margin-left:1px;"></div>
