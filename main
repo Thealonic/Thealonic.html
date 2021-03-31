@@ -28,7 +28,7 @@
                $(this).parents('.tumblr_video_container').css({ width: Math.floor($(this).width() * ( scale + 1 ) / 2), height: Math.floor($(this).height() * ( scale + 1 ) / 2)})})})
               
         var github = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/", readme = "//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/README.md";
-        var updateon = "02:19am on March 30th, 2021. [GMT]", updatedfrom = "Thea Vanherst"; 
+        var updateon = "05:06am on March 31st, 2021. [GMT]", updatedfrom = "Thea Vanherst"; 
         var curtaskact = undefined, currenttask = 1, cal = 5, docelem = document.documentElement, plinksdrop = false; function calupdate(){inactiveall(); cal = cal + 1};
         function latestupdate() {document.getElementById("lastupdate").textContent = updateon; document.getElementById("updatedby").textContent = updatedfrom} //"Pixelated MS Sans Serif"
     </script>
@@ -101,22 +101,19 @@
             
             .scrollbarmiddle{height:2px;width:2px;background-image:var(--scrollbar);background-repeat:repeat}
             .prescroll,.buttonscrollinactive{width:10px;height:10px;float:right}.win98tab,.scrollbarmiddle{ background-color:var(--silver); color: var(--text)}
-            .win98tab{box-shadow:var(--curtabshadow);align-items:center;padding:5px 3px 3px 3px; border-radius: 2px; position:absolute}
+            .win98tab{box-shadow:var(--curtabshadow);align-items:center;padding:5px 3px 1px 3px; border-radius: 2px; position:absolute}
             .windowsexplorerlogo{background-image:var(--curspritesheet);margin-top:2px;height:16px;width:20px;background-position:-101px -283px;float:right;margin-right:9px}
             
 /* desktop pre and cur handling ------------------------------------------------------------------------------*/
             .title-bar-text,.pretitle-bar-text{letter-spacing:0.5px;margin-right:24px;padding:1px 4px 2px 4px;font-weight:700; cursor:default}
-             prebutlabel, prebutdislabel, preico,  butlabel, label,   butdislabel{display:inline-flex; align-items:center;color:var(--text)} 
-            .win98button,.win98buttona,  .prepost,.prebutton,butlabel,prebutlabel{pointer:cursor}
-            prebutlabel,prebutdislabel,butlabel,butdislabel{margin-top:2px}startdistxt{margin-left: 26px;margin-top:3px;position:absolute}
-            startdistxt,butdislabel,   dislabel,butdislabel{align-items:center;color:var(--gray);text-shadow:var(--distextshadow)}
+            prebutlabel,prebutdislabel,preico,butlabel,label,butdislabel{display:inline-flex; align-items:center;color:var(--text)} 
+            .win98button,.win98buttona,.prepost,.prebutton,prebutlabel,butlabel{pointer:cursor} prebutlabel,prebutdislabel,butlabel,butdislabel{margin-top:2px} 
+            startdistxt,butdislabel,dislabel,butdislabel{align-items:center;color:var(--gray);text-shadow:var(--distextshadow)}startdistxt{margin-left: 26px;margin-top:3px;position:absolute}
             
 /* window preview handling ------------------------------------------------------------------------------*/
             .prepost,.pretitlebarbutton,.prescroll,.prebutton{box-shadow: var(--preboxshadowraised);background:var(--presilver);color: var(--prefont);padding:3px;}
-            .pretitlebarbutton{margin:2px 2px 0px 0px}
-            .pretitle-bar-text{color:var(--preactivetitle)}.pretitlebarbutton {width:10px; height:8px; float:right; margin:2px 2px 2px 2px; cursor: pointer}
-            
-            prebutdislabel{color:var(--pregray);text-shadow:1px 1px 0 var(--prewhite)}prebutlabel,preul.tree-view,prefieldset{margin:0;color:var(--preblack)}
+            .pretitlebarbutton{margin:2px 2px 0px 0px}.prescroll,.prepost{position:absolute}.pretitlebarbutton {width:10px; height:8px; float:right; margin:2px 2px 2px 2px; cursor: pointer}
+            prebutdislabel{color:var(--pregray);text-shadow:1px 1px 0 var(--prewhite)}prebutlabel,preul.tree-view,prefieldset{margin:0;color:var(--preblack)}.pretitle-bar-text{color:var(--preactivetitle)}
             preul.tree-view{margin-top:4px;display:block;padding: 6px; box-shadow:inset -1px -1px var(--prewhite),inset 1px 1px var(--pregray),inset -2px -2px var(--prelightg),inset 2px 2px var(--preblack)}
             prefieldset{border:none;padding:10px;box-shadow:inset -1px -1px var(--prewhite),inset 1px 1px var(--pregray),inset -2px -2px var(--pregray), inset 2px 2px var(--prelightg)}
             
@@ -164,8 +161,10 @@
             .big_seperator14,.big_seperator18,.big_seperator21{float:left;border-left: 1px solid var(--gray); border-right:1px solid var(--lightg);margin-left:-1px} /*thin seperator but tall*/
             .big_seperator14{height:14px}.big_seperator18{height:18px}.big_seperator21{height:21px}
             
-            .small_seperator{float:left;border-left: 1px solid var(--white);border-top:  1px solid var(--white); margin-top:3px;height:18px;margin-left: 1px
+            .small_seperator17,.small_seperator19{float:left;border-left: 1px solid var(--white);border-top:  1px solid var(--white); margin-top:1px; margin-left: 1px
                 border-right: 1px solid var(--gray);border-bottom:1px solid var(--gray);background-color:var(--silver); width: 1px;} 
+            .small_seperator17{height:17px}.small_seperator19{height:19px}
+                
             .menuapplicationsplit{border-bottom:1px solid var(--white);background:var(--gray);height:1px;width:1px}
 
 /* window preview handling ------------------------------------------------------------------------------*/
@@ -454,7 +453,7 @@
                 <div class="post-header" style="height: 27px; margin-top:-6px; padding:0px;">
                     <fieldset style="position:absolute; height: 21px; width:562px; margin-left:-7px; padding:2px;" id="playerfs">     
                         <!-- Left side of the top container -->
-                        <div class="small_seperator" style="margin-top:1px; height:17px;"></div>
+                        <div class="small_seperator17"></div>
                         <div style="position:absolute; margin-left:11px; margin-top:5px;">A<udl>d</udl>dress</div>
                         <ul class="tree-view" style="position:absolute; width:406px; height: 17px; padding:2px; margin-left:55px" id="playertv">
                             <div class="menudocuments4" style="position:absolute; margin-top:-1px;"></div>
@@ -657,7 +656,7 @@
             <div class="post-header" style="height: 24px; width: 467px; margin-top:-2px">
                 <fieldset style="position:absolute; height: 21px; width: 465px; margin-top:4px; margin-left:2px; padding:2px; display: inline;"> 
                 
-                    <div class="small_seperator" style="margin-top:1px; height:17px;"></div>
+                    <div class="small_seperator17"></div>
                     <div class="container" style="margin-left:12px; margin-top:5px; width:400px;">A<udl>d</udl>dress</div>
                     
                     <ul class="tree-view" style="position:absolute; width:350px; height:9px; margin-left:55px; margin-top:-17px;">
@@ -780,7 +779,7 @@
             <div class="window-body" style="margin:1px">
             
                 <fieldset style="width:818px; height:85px; padding:2px">
-                    <div class="small_seperator" style="margin:1px; height:17px;"></div>
+                    <div class="small_seperator17" style="margin:1px"></div>
                     <div style="margin:2px; margin-left:10px">
                         <div class="dropselc" style="width:25px"><udl>F</udl>ile</div>
                         <div class="dropselc" style="width:26px"><udl>E</udl>dit</div>
@@ -788,7 +787,7 @@
                         <div class="dropselc" style="width:30px"><udl>H</udl>elp</div></div>
                     <div class="menuapplicationsplit" style="width:819px; margin-left:-1px; margin-top: 3px;"> </div>
                     
-                    <div class="small_seperator" style="margin:1px; height:35px;"></div>
+                    <div class="small_seperator17" style="margin:1px; height:35px;"></div>
                     <div style="margin:2px; margin-left:10px; height:34px; ">
                         <div class="dropselc" style="width:25px"><udl>F</udl>ile</div>
                         <div class="dropselc" style="width:26px"><udl>E</udl>dit</div>
@@ -796,7 +795,7 @@
                         <div class="dropselc" style="width:30px"><udl>H</udl>elp</div></div>               
                     
                     <div class="menuapplicationsplit" style="width:819px; margin-left:-1px; margin-top: 3px;"> </div>
-                    <div class="small_seperator" style="margin:1px; height:17px;"></div>
+                    <div class="small_seperator17" style="margin:1px"></div>
                     
                     <div style="position:absolute; margin-left:12px; margin-top:5px">A<udl>d</udl>dress</div>
                     <ul class="tree-view" style="position:absolute; width:700px; height:9px; margin-left:55.5px; overflow:hidden;">
@@ -1083,7 +1082,7 @@
                         <ul class="tree-view" style="position: absolute; margin-top: 75px; width:62px; height: 17px; padding:2px" onclick="desktopdropdown()" onmouseleave="desktopexit()">
                             <div style="padding: 3px 3px 2px 2px" id="ofdesktop">(none)</div><div class="dropbutton"><div class="arrowdown"></div></div>
                             <div class="dropmenu" style="width:61px; margin-left: -20000px;">
-                                <div class="dropbutton-pres" style="margin-left:47px"><div class="arrowdown"></div></div>
+                                <div class="dropbutton-pres" style="margin-left:48px"><div class="arrowdown"></div></div>
                                 <div class="droptext" onclick="fillitem()">Fill</div><div class="droptext" onclick="centeritem()">Center</div>
                                 <div class="droptext" onclick="tileitem()">Tile</div><div class="droptext" onclick="containitem()">Contain</div>
                     </div></ul></div>
@@ -1211,9 +1210,9 @@
                                
                 <div style="margin-left:12px; margin-top: 10px;"> <label>Scheme</label><br> <!-- line 1 -->
                     <ul class="tree-view"  style="position: absolute; width:186px; height: 17px; padding:2px">
-                        <div style="padding: 3px 3px 2px 2px" id="currentscheme">Windows 98</div><div class="dropbutton"><div class="arrowdown"></div></div>
+                        <div style="padding: 3px 3px 2px 2px" id="currentscheme"></div><div class="dropbutton"><div class="arrowdown"></div></div>
                         <div class="dropmenu" style="width: 185px; margin-left: -20000px;" id="scheme">
-                            <div class="dropbutton-pres" style="margin-left:171px"><div class="arrowdown"></div></div>
+                            <div class="dropbutton-pres" style="margin-left:172px"><div class="arrowdown"></div></div>
                             <div class="droptext" onclick="windows98()"           id="windows98scheme"    >Windows 98               </div>
                             <div class="droptext" onclick="evangelionmode()"      id="evangelionscheme"   >Neon Genesis Evangelion  </div>
                             <div class="droptext" onclick="Octavia()"             id="Octavia"            >Octavia's Study          </div>
@@ -1557,13 +1556,12 @@
             function logonactive(){calupdate(); logoff.style.zIndex = cal; logoff.style.marginLeft = "0px"; logoffwin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"; logofftext.color = curactivetitle; logoff.marginLeft = "0px";}
             function logreset() {inactiveall(); logoff.left = "40%"; logoff.top = "40%"; logonactive()}; function logoffno() { logoff.marginLeft = "-20000px"; logoff.zIndex = "1"} </script>
         
-<!-- Windows 98 desktop handling ------------------------------------------------------------------------------>
+<!-- Tumblr Post handler ------------------------------------------------------------------------------>
         {block:Pagination}<div class="navigation cf" id="i_nav">{block:NextPage}<a href="{NextPage}"></a>{/block:NextPage}{block:PreviousPage}<a href="{PreviousPage}"></a>{/block:PreviousPage}</div>{/block:Pagination}
         
-<!-- Tumblr Post handler ------------------------------------------------------------------------------>
         <div id="desktop" style="width:1010px; margin-top:20px;" id="desktop">
             {block:Posts}
-                <div class="window" style="width: 475px; margin: 10.5px">
+                <div class="window" style="width: 475px; margin: 10.5px; {block:PermalinkPage} margin: 10px {/block:PermalinkPage}">
                     <div class="win98titlebarc"><div class="close"></div></div>
                     <div class="win98titlebarh"> <div class="maximize"></div></div>
                     <div class="win98titlebarh" onclick="tumblrminimize();"> <div class="minimize"></div></div>
@@ -1571,33 +1569,36 @@
                     <div class="title-bar-98"><div class="title-bar-text" id="tumblrtext">🍭 very.vunnies on Tumblr - Internet Explorer</div></div>
                     <div class="window-body"> 
                         
-                        <div class="post-header" style="height: 46px; margin-top:-6px;">
+                        <div class="post-header" style="height: 46px; margin-top:-6px;"> <!-- idk what this does -->
                             <fieldset style="position:absolute; height: 44px; width: 467px; margin-left:-6px; padding:2px"> 
                                 
                                 <div style="width:38px; height:21px; background:black; float:right;"><div class="windowsexplorerlogo"></div></div>
                                 <div class="big_seperator21" style="float:right"></div>
                                 {block:NoteCount} 
-                                    <div style="float:right; margin-top:4px; margin-right:3px;">{NoteCountWithLabel}</div>
-                                    <div class="big_seperator21" style="float:right; margin-right:5px"></div>
+                                    <div style="float:right; margin:5px">{NoteCountWithLabel}</div>
+                                    <div class="big_seperator21" style="float:right; margin-right:2px"></div>
                                 {/block:NoteCount}
-                                
-                                <div class="small_seperator" style="margin-top:1px; height:17px; margin-left:2px; margin-right:3px"></div>
-                                {block:PermalinkPage}<a href="https://thealonic.tumblr.com/">
-                                    <div class="explorerback" style="width:20px; height:20px; display: inline-block"></div>
-                                    <div class="reflinkblack" style="margin-top:5px; display: inline-block; margin-right:8px">Back</div></a>{/block:PermalinkPage}
-                                    
+                                <div class="small_seperator17"></div>
+                                {block:PermalinkPage}
+                                    <a href="https://thealonic.tumblr.com/">
+                                        <div class="explorerback" style="display: inline; margin-left:2px"></div>
+                                        <div class="reflinkblack" style="display: inline; margin:5px">Back</div></a>
+                                {/block:PermalinkPage}
                                 <div style="margin-top:5px; height:16px; display: inline-block">
-                                    {block:PermalinkPage}<div class="big_seperator21" style="margin-top:-5px"></div>{/block:PermalinkPage}
+                                    {block:PermalinkPage}
+                                        <div class="big_seperator21" style="margin-top:-5px;"></div>
+                                    {/block:PermalinkPage}
                                     {block:RebloggedFrom}
-                                    <div style="margin-left:3px">
-                                        Posted on <strong style="color: var(--blue); display: inline-block" title="Day of posting">{ShortMonth} {DayOfMonth}{DayOfMonthSuffix} </strong>
-                                        at: <b style="color: var(--blue); display: inline-block" title="Time of posting"> {12Hour}:{Minutes} {CapitalAmPm}</b>, {Year}{/block:RebloggedFrom} </div>
+                                        <div style="margin-left:7px">
+                                            Posted on <strong style="color: var(--blue); display: inline-block" title="Day of posting">{ShortMonth} {DayOfMonth}{DayOfMonthSuffix} </strong>
+                                            at: <b style="color: var(--blue); display: inline-block" title="Time of posting"> {12Hour}:{Minutes} {CapitalAmPm}</b>, {Year}</div>
+                                    {/block:RebloggedFrom}
                                     {block:NotReblog} 
                                         <label>Posted by</label><strong style="color: var(--blue); cursor:default;" title="Day of posting">Thealonic</strong>
                                         <label style="margin-left:2px;">{TimeAgo}</label>.{/block:NotReblog}</div>
                                    
                                 <div class="menuapplicationsplit" style="position:absolute; width:468px"> </div>
-                                <div class="small_seperator" style="position:absolute; margin-top:3px; height:17px; margin-left:2px"></div> <!-- Left side of the Bottom container -->
+                                <div class="small_seperator17" style="position:absolute; margin-top:3px"></div> <!-- Left side of the Bottom container -->
                                 <div style="margin-left:10px; margin-top:7px; ">A<udl>d</udl>dress</div>
                                 
                                 <div class="plinks-con" style="float:right; margin-top:-12px; height:22px; width:49px; cursor:pointer;">
@@ -1610,8 +1611,7 @@
                                             <div class="submenu18"><label><labe> Previous image </labe></label></div>
                                             <div class="menuapplicationsplit" style="width:100%; margin-top:1px; margin-bottom:1px;"></div>
                                             <div class="submenu18"><label><labe> Set wallpaper as (Tiled) </labe></label></div>
-                                            <div class="submenu18"><label><labe> Set wallpaper as (Centered) </labe></label></div></div>
-                                </postdrop></div>
+                                            <div class="submenu18"><label><labe> Set wallpaper as (Centered) </labe></label></div></div></postdrop></div>
 
                                 <div class="big_seperator21" style="float:right; margin-top:-17px; margin-right:-2px"></div> 
 
@@ -1625,7 +1625,6 @@
                                     <div style="margin-top:-1px; margin-left:16px">thealonic.tumblr.com/post/{PostID}</div></ul>
                         </fieldset></div>
 
-<!-- Post window body ------------------------------------------------------------------------------>
                         <ul class="tree-view" style="margin-left:-6px; margin-bottom:26px; width: 471px; margin-top:4px; padding:0px; overflow:hidden; background: var(--white)"> 
                             <div class="scrollbarmiddle" style="margin-left: 2px; height: 100%; width:467px; margin-top:2px; margin-bottom:2px; background-color: var(--midgray);">
                                 <div style="max-width: 451px; background:var(--white); overflow:hidden; color:var(--text);"> <!-- 428px wide, 451 including scrollwheel + padding -->
@@ -1713,8 +1712,7 @@
                             <ul class="tree-view" style="width:467px; margin-left:-6px; margin-bottom:26px; margin-top:-20px; padding:2px;"> 
                                 <div class="notes" style="width:100%; margin-top:6px; margin-bottom:-9px; margin-right:-2px;">{PostNotes}</div></ul>
                         {/block:PostNotes}{/block:PermalinkPage}
-                        
-<!-- Bottom post handling ------------------------------------------------------------------------------>
+
                         {block:HasTags}
                             <label style="position:absolute; height: 16px; max-width:410px; margin-top:-25px; margin-left:-4px; overflow:hidden; color: gray">
                                 {block:Tags}<a href="{TagURL}" style="color: grey; white-space: nowrap; margin-left:2px">{Tag}</a><div class="comma">, </div>{/block:Tags}
@@ -1740,8 +1738,8 @@
                 </div></div>
             {/block:Posts}
         </div>
-        {block:NextPage}<div style="height:50px;"></div>{/block:NextPage}
-        {block:PostNotes}<div style="height:10px;"></div>{/block:PostNotes}
+        
+        {block:NextPage}<div style="height:50px;"></div>{/block:NextPage}{block:PostNotes}<div style="height:10px;"></div>{/block:PostNotes}
         
         <script>
             $("ul").click(function(){ if (schemedrop == false) {$(this).find(".dropmenu").css("margin-left", "-2px"); schemedrop = true //dropdown menus
@@ -1768,8 +1766,7 @@
             function activatetask(){ButtonOpen[curtaskact] = false; taskbar[curtaskact].backgroundImage = github + "img/scrollbarempty.png')"; 
                 taskbar[curtaskact].backgroundColor = ccwhite; taskbarfont[curtaskact].color = taskbartextpressed;
                 docelem.style.setProperty('--taskbar' + curtaskact + 'top1', ccblack); docelem.style.setProperty('--taskbar' + curtaskact + 'top2', ccgray);
-                docelem.style.setProperty('--taskbar' + curtaskact + 'bottom1', cclightg); docelem.style.setProperty('--taskbar' + curtaskact + 'bottom2', ccwhite)}
-        </script>
+                docelem.style.setProperty('--taskbar' + curtaskact + 'bottom1', cclightg); docelem.style.setProperty('--taskbar' + curtaskact + 'bottom2', ccwhite)}</script>
 
 <!-- Taskbar Rendering ------------------------------------------------------------------------------>
         <!-- Start bar rendering -->
@@ -2004,15 +2001,15 @@
 <!-- Taskbar Rendering  ------------------------------------------------------------------------------>
             <div style="margin-top: -24px">
                 <!-- taskbar application icons -->
-                <div class="big_seperator21" style="margin-left:60px; margin-right:2px; margin-top:2px"></div> 
-                <div class="small_seperator" style="cursor:e-resize; margin-right:-1px;"></div>
+                <div class="big_seperator21" style="margin:2px; margin-left:60px"></div> 
+                <div class="small_seperator19" style=" margin-top:2px"></div>
                 <div class="taskbaricons">
-                    <div class="taskbaricon1" style="cursor:pointer;" onclick="tumblrtoggle();"></div>
+                    <div class="taskbaricon1" style="cursor:pointer; margin-left:-2px" onclick="tumblrtoggle();"></div>
                     <div class="taskbaricon2"></div>
                     <div class="taskbaricon3" style="cursor:pointer;" onclick="messageopen();"></div>
                     <div class="taskbaricon4"></div></div>
-                <div class="big_seperator21" style="margin-left:-1px; margin-right:2px; margin-top:2px"></div>
-                <div class="small_seperator" style="cursor:e-resize"></div>
+                <div class="big_seperator21" style="margin:2px"></div>
+                <div class="small_seperator19" style="margin-top:2px"></div>
                 
                 <div class="taskbartask1" style="cursor:pointer" onmousedown="button = 1; tasktoggle()" id="taskapp1">
                     <div class="title-bar-text" id="taskapp1font">🍭 very.vunnies</div></div>
