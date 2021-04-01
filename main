@@ -90,8 +90,8 @@
             .win98titlebarc:active,.win98titlebarh:active,.win98button:active,.win98buttona:active,.buttonsmalla:active,.dropbutton-pres{box-shadow:var(--curboxshadowpressed)}
 
             .win98post,.window,.win98innerbox,.scrollbinactive{position:absolute;color:var(--font)}
-            .win98innerbox {box-shadow:var(--curpopshadow);background:var(--silver);padding:3px}
-            .window        {position:absolute;z-index:4} .title-bar-98   {background:linear-gradient(90deg, #878787, #a2a2a2);height:18px;width:100%}
+            .win98post     {position:fixed}              .win98innerbox  {box-shadow:var(--curpopshadow);background:var(--silver);padding:3px}
+            .window        {position:absolute}           .title-bar-98   {background:linear-gradient(90deg, #878787, #a2a2a2);height:18px;width:100%}
             .window-body   {margin:8px;color:var(--font)}.title-bar-text {color:var(--curinactivetitle)}
             .win98titlebarh{margin:2px 0px 0px 0px}      .scrollbinactive{width:10px;height:10px;float:right;margin-left:1px}
 
@@ -169,7 +169,7 @@
 
 /* window preview handling ------------------------------------------------------------------------------*/
             .prehelp,.preclose,.prearrowup,.prearrowdown{filter: invert(var(--preinvert)); background-image: var(--prespritesheet)}
-            .prehelp,.preclose       {width:11px;height:11px;margin-left:-1px;margin-top:-2px}.prehelp     {background-position:-111px -309px}.preclose  {background-position:-108px -299px}
+            .prehelp,   .preclose    {width:11px;height:11px;margin-left:-1px;margin-top:-2px}.prehelp     {background-position:-111px -309px}.preclose  {background-position:-108px -299px}
             .prearrowup,.prearrowdown{width: 9px;height: 6px;margin-left: 1px;margin-top: 2px}.prearrowdown{background-position:-100px -299px}.prearrowup{background-position:-100px -304px}
 
 /* Start bar handling ------------------------------------------------------------------------------*/
@@ -232,7 +232,7 @@
     
             .clock{box-shadow:inset -1px -1px var(--white),inset 1px 1px var(--gray);padding:2px;float:right;width:96px;height:18px;margin-right:2px;margin-top:2px}
             .taskbaricons {float:left;margin-top:3px;margin-left:5px;margin-right:2px}.start_bar.time{float:right;margin-right:8px;color:var(--text)}
-            
+                
 /* Message box reference sheets ------------------------------------------------------------------------------*/
             .displayboxdisplay,.displayboxdisplayde {height:169px;margin-left:-16px;position:absolute;margin-top:-16px}
             .displayboxdisplay  {width:184px;background-image:url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/display%20window.png')}
@@ -272,7 +272,7 @@
             .field-row-stacked{display:flex; flex-direction: column} .field-row-stacked *+*{ margin-top: 6px}
             
             a {color: var(--text); text-decoration: none} a:hover {text-decoration: underline; color: var(--hover)} 
-            strong {color: var(--blue)}; udl {text-decoration-line: underline} b {letter-spacing: 1px}
+            strong {color: var(--blue)}udl{text-decoration-line: underline}b{letter-spacing: 1px}.pad{padding:3px}
             
             .reflinkblack { color: var(--atext)} .reflinkblack:hover { color: var(--blue); text-decoration-line: underline}
             console {padding:0px; margin:-2px; display: block; margin-left: 0; margin-right: 0; letter-spacing: -1px; white-space: pre-wrap; font-family: monospace}
@@ -292,13 +292,12 @@
             .meta div {margin: 0 0 0.4em 0 !important} .meta div a { text-decoration: none} .meta div:last-child {margin-bottom: 0 !important} /* bottom of posts before footer */
             .content p:last-child {margin-bottom: 0 !important} .content blockquote:last-child {margin-bottom: 0 !important} 
             
-            blockquote, ul, ol  {margin: 0 0 0.8em 0} blockquote {margin-left: 2px; padding-left: 4px; margin-top:-5px; margin-bottom:5px; border-left: 2px solid var(--midgray); border-left: 2px solid var(--midgray)} /* lines at the side of posts */
+            blockquote,ul,ol{margin: 0 0 0.8em 0}blockquote{padding-left: 4px; margin-top:-6px; margin-bottom:5px; border-left: 1px solid var(--gray)} /* lines at the side of posts */
             .quote .dash {float: left; padding: 0 2px 0 2px} .quote .source {float: left} .chat .line:last-of-type {margin-bottom: 0} .chat ul {padding: 0; list-style: none} .chat ol {padding: 0; list-style: none}
             
-            .body img {max-width: 100%; overflow: hidden} .caption img { max-width: 100%; overflow: hidden} 
-            img.full_image {width: 451px; overflow: hidden} .middle img {max-width: 451px; width: 100%; height: 100%; display: block} a img {border: 0}
+            .caption img  {max-width:100%;overflow:hidden}.body img  {max-width:100%;overflow:hidden}
+            img.full_image{width:451px;overflow:hidden}   .middle img{max-width: 451px; width: 100%; height: 100%; display: block} a img {border: 0}
             
-            .audio_container {overflow: hidden; position: relative; width: 100px} .posts .audio .audio_player embed {display: block}
             .soundcloud_audio_player, .tumblr_audio_player {width: 100%} .spotify_audio_player {height: 80px !important; width:100%}
             .tumblr_video_container {position: relative; width:auto !important; height:auto !important; padding: auto}
 
@@ -314,6 +313,21 @@
             textarea, input{font-size:var(--curfontsize); border:none; outline:none; background:none} textarea {font-family:monospace; color: var(--alwaysblack)}
             input{font-family:var(--curfont); color:var(--alwayswhite); width: 100%; height:16px; padding:0px; display: block; white-space: pre-wrap}
             #progressBar {width: var(--slider); height: 6px; background: var(--silver); display: none; margin-top: 1px} #progressBar div {height: 100%; width: 0; background: var(--atext)}
+            
+            ::-webkit-scrollbar { 
+                width: 7px;
+                background-color: #7bd4e7;
+                border: 3px solid white;
+                height:7px;
+            }
+                
+            ::-webkit-scrollbar-thumb { 
+                background-color: #7bd4e7;
+                border: 2px solid white;
+                height: 5px;
+                width: 5px;
+            }
+            
             
             @font-face { font-family: 'ms_sans_serifregular'; font-weight: normal; font-style: normal;
                 src: url(data:application/font-woff;charset=utf-8;base64,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) format('woff');}
@@ -507,9 +521,9 @@
                         <div class="big_seperator18" style="margin-top:4px;"></div></div></div>
                     
                     <div style="float:right; margin-top:11px;">
-                        <div class="menuentertainment3" style="margin-right:9px" onclick="videomute()"></div>
-                        <div class="volumedown" style="position: absolute; margin-left: 22px; margin-top:12px" onclick="videovolumedown()"></div>
-                        <div class="volumeup" style="position: absolute; margin-left: 22px; margin-top:0px" onclick="videovolumeup()"></div></div>
+                        <div class="menuentertainment3" style="margin-right:7px" onclick="videomute()"></div>
+                        <div class="volumedown" style="position: absolute; margin-left: 25px; margin-top:14px" onclick="videovolumedown()"></div>
+                        <div class="volumeup" style="position: absolute; margin-left: 25px; margin-top:1px" onclick="videovolumeup()"></div></div>
 
                     <ul class="tree-view" style="width:552px; height:12px; margin:-6px; margin-top:36px; background: var(--alwaysblack); color:var(--alwayswhite)" id="playertext"></ul>
                     <div style="float:right; margin-top:-12px;" id="playerspeed"></div>
@@ -595,7 +609,7 @@
             function playlistcue() {videoclear(); playlistlaunch(); player.loadPlaylist({'list':loadPlaylist, 'index': 0})}
             
             function startmenuembed() {playlistempty(); player.loadVideoById({'videoId':'T6fqtJbVoFI','startSeconds': 0}); playertext.textContent = "Opening Windows Embedded Mediaplayer"; stopVideo()}
-            function twilightload() {playlistempty(); player.loadVideoById({'videoId':'6BJFnnWVNRU','startSeconds': 0}); playertext.textContent = "Asking Twilight Sparkle for help.";}
+            function twilightload() {playlistempty(); player.loadVideoById({'videoId':'6BJFnnWVNRU','startSeconds': 0}); playertext.textContent = "Asking Twilight Sparkle for help."}
             function rct2load() {playlistempty(); player.loadVideoById({'videoId':'W_4uRZFVKPE','startSeconds': 985}); playertext.textContent = "Playing 'Roller Coaster Tycoon 2: Merry-Go-Round Music'"}
             //my playlists
             function ovfvpload(){currentplaylist = "list=PLNcem2Adr0D44UVfxg8EmzL8yP0EyDuJU&"; playlistcue(); playertext.textContent = "Playing 'The Official Very Funny Video Playlist'."}
@@ -761,7 +775,7 @@
             function clockopen() {inactiveall(); clockactive(); docclock.left = "75%"; docclock.top = "50%"; docclock.marginLeft = "0px"; clocku()}
             
             var da = new Date(), monthArr = ["January", "February","March", "April", "May", "June", "July", "August", "September", "October", "November","December"]; realmonth = true, yearmath = 0, daymath = 0, minutemath = 0, hourmath = 0;
-            if (minutemath > 60){minutemath - 60; hourmath + 1;} if(minutemath < 0){ minutemath + 60; hourmath - 1}; if (hourmath > 24){hourmath - 24; daymath + 1;} if(hourmath < 0){ hourmath + 24; daymath - 1}
+            if (minutemath > 60){minutemath - 60; hourmath + 1} if(minutemath < 0){ minutemath + 60; hourmath - 1}; if (hourmath > 24){hourmath - 24; daymath + 1} if(hourmath < 0){ hourmath + 24; daymath - 1}
             
             function clocku(){date = da.getDate() + daymath; year = da.getFullYear() + yearmath; if(realmonth == true){monthno = da.getMonth(); month = monthArr[monthno]};
                 document.getElementById("month").innerHTML = month; document.getElementById("year").innerHTML = year}
@@ -1540,30 +1554,30 @@
             function settingstab(){setz.zIndex = 9; e.zIndex = 10; e.width = "51px"; e.marginLeft = "267px"; e.marginTop = "5px"; e.height = "17px"}</script> 
         
 <!-- Window box handling ------------------------------------------------------------------------------>
-        <div class="win98post" style="z-index: 10; margin-left: 200000px; height: 112px; width: 284px; top: 40%; left:  40%;" id="logoff" onmousedown="logonactive();">
-            <div class="win98titlebarbuttonc" title="Close" onclick="logoffno()"><div class="close"></div></div>
-            <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarbutton" title="help"> <div class="help"></div></div></a> 
+        <div class="win98post" style="margin-left: 200000px; height: 112px; width: 284px" id="logoff" onmousedown="logonactive();">
+            <div class="win98titlebarc" title="Close" onclick="logoffno()"><div class="close"></div></div>
+            <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarh" title="help"> <div class="help"></div></div></a> 
             <div class="title-bar-98" id="logoffwindow"> <div class="title-bar-text" id="logofftext">💤 Log off Windows
             </div></div><div class="window-body" style="padding: 13px; margin-top:5px;">
                 <div class="logofficon" style="float: left;"></div> 
                 <label style="margin-top: 5px; margin-left: 24px; cursor:default"> Are you sure you want to log off? </label></div>
-            <div class="window-body" style="padding: 3px 3px 3px 3px">
+            <div class="window-body"><div class="pad">
                 <center> <div class="win98buttona" style="margin-left:63px; width:60px;" onclick="location.href='https://thealonic.tumblr.com/loggedout'"> <p style="margin-top: 1px">  Yes </p> </div> 
                     <div class="win98buttona" style="margin-left:135px; width:60px;" onclick="logoffno()"> <p style="margin-top: 1px"> No </p> </div> </center>
-        </div></div>
+        </div></div></div>
         
         <script> var logoff = document.getElementById("logoff").style; var logoffwin = document.getElementById("logoffwindow").style; var logofftext = document.getElementById("logofftext").style;
-            function logonactive(){calupdate(); logoff.style.zIndex = cal; logoff.style.marginLeft = "0px"; logoffwin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"; logofftext.color = curactivetitle; logoff.marginLeft = "0px";}
+            function logonactive(){calupdate(); logoff.zIndex = cal; logoff.marginLeft = "0px"; logoffwin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"; logofftext.color = curactivetitle; logoff.marginLeft = "0px";}
             function logreset() {inactiveall(); logoff.left = "40%"; logoff.top = "40%"; logonactive()}; function logoffno() { logoff.marginLeft = "-20000px"; logoff.zIndex = "1"} </script>
         
 <!-- Tumblr Post handler ------------------------------------------------------------------------------>
         {block:Pagination}<div class="navigation cf" id="i_nav">{block:NextPage}<a href="{NextPage}"></a>{/block:NextPage}{block:PreviousPage}<a href="{PreviousPage}"></a>{/block:PreviousPage}</div>{/block:Pagination}
-        
+
         <div id="desktop" style="width:1010px; margin-top:20px;" id="desktop">
             {block:Posts}
                 <div class="window" style="width: 475px; margin: 10.5px; {block:PermalinkPage} margin: 10px {/block:PermalinkPage}">
                     <div class="win98titlebarc"><div class="close"></div></div>
-                    <div class="win98titlebarh"> <div class="maximize"></div></div>
+                    <div class="win98titlebarh" onclick="tumblrclose()"><div class="maximize"></div></div>
                     <div class="win98titlebarh" onclick="tumblrminimize();"> <div class="minimize"></div></div>
                     <div class="win98titlebarh" onclick="twilightload()"> <div class="help"></div></div>
                     <div class="title-bar-98"><div class="title-bar-text" id="tumblrtext">🍭 very.vunnies on Tumblr - Internet Explorer</div></div>
@@ -1576,7 +1590,7 @@
                                 <div class="big_seperator21" style="float:right"></div>
                                 {block:NoteCount} 
                                     <div style="float:right; margin:5px">{NoteCountWithLabel}</div>
-                                    <div class="big_seperator21" style="float:right; margin-right:2px"></div>
+                                    <div class="big_seperator21" style="float:right"></div>
                                 {/block:NoteCount}
                                 <div class="small_seperator17"></div>
                                 {block:PermalinkPage}
@@ -1589,7 +1603,7 @@
                                         <div class="big_seperator21" style="margin-top:-5px;"></div>
                                     {/block:PermalinkPage}
                                     {block:RebloggedFrom}
-                                        <div style="margin-left:7px">
+                                        <div style="margin-left:5px">
                                             Posted on <strong style="color: var(--blue); display: inline-block" title="Day of posting">{ShortMonth} {DayOfMonth}{DayOfMonthSuffix} </strong>
                                             at: <b style="color: var(--blue); display: inline-block" title="Time of posting"> {12Hour}:{Minutes} {CapitalAmPm}</b>, {Year}</div>
                                     {/block:RebloggedFrom}
@@ -1598,8 +1612,8 @@
                                         <label style="margin-left:2px;">{TimeAgo}</label>.{/block:NotReblog}</div>
                                    
                                 <div class="menuapplicationsplit" style="position:absolute; width:468px"> </div>
-                                <div class="small_seperator17" style="position:absolute; margin-top:3px"></div> <!-- Left side of the Bottom container -->
-                                <div style="margin-left:10px; margin-top:7px; ">A<udl>d</udl>dress</div>
+                                <div class="small_seperator17" style="position:absolute; margin-top:3px; margin-left:2px"></div> <!-- Left side of the Bottom container -->
+                                <div style="margin-left:9px; margin-top:7px; ">A<udl>d</udl>dress</div>
                                 
                                 <div class="plinks-con" style="float:right; margin-top:-12px; height:22px; width:49px; cursor:pointer;">
                                     <div style="margin-top:11px; float:right">
@@ -1618,93 +1632,84 @@
                                 <a href="{Permalink}"><div style="float:right; height:22px; width:44px; margin-top:-17px;">
                                     <div class="explorergo" style="margin-left:5px;"></div> <div class="reflinkblack" style="margin-top:5px;">Go</div></div></a>
                                 
-                                <ul class="tree-view" style="float:right; width:305px; height:9px; margin-top:-17px; overflow:hidden">
+                                <ul class="tree-view" style="float:right; width:309px; height:9px; margin-top:-17px; overflow:hidden">
                                     <div class="buttonscrollinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px; width:10px; height:11px">
                                         <div class="arrowdisdown"></div></div>
                                     <div class="menudocuments4" style="margin-top:-5px; margin-left:-5px"></div>
                                     <div style="margin-top:-1px; margin-left:16px">thealonic.tumblr.com/post/{PostID}</div></ul>
                         </fieldset></div>
-
-                        <ul class="tree-view" style="margin-left:-6px; margin-bottom:26px; width: 471px; margin-top:4px; padding:0px; overflow:hidden; background: var(--white)"> 
-                            <div class="scrollbarmiddle" style="margin-left: 2px; height: 100%; width:467px; margin-top:2px; margin-bottom:2px; background-color: var(--midgray);">
-                                <div style="max-width: 451px; background:var(--white); overflow:hidden; color:var(--text);"> <!-- 428px wide, 451 including scrollwheel + padding -->
-                                <!-- Text posts -->
-                                    <div class="buttonscrollinactive" style="margin-left: 451px;"><div class="arrowdisup"></div></div>
-                                    {block:Text}
-                                        <div style="padding: 3px; max-width:451px;">
-                                            {block:Title}<div class="title-bar-text" style="margin-left:3px; font-size: 2rem; color: var(--atext); margin-bottom:-7px; margin-top:-3px">𝖁𝖍𝖊𝖗𝟗𝟖</div>{/block:Title}
-                                            <div class="content caption" style="width: 100%; height: 100%;"> {Body} </div>
-                                        </div>
-                                    {/block:Text}
-                                                
-                                    {block:Photo}
-                                        <img src="{PhotoURL-400}" class="full_image" style="margin-bottom:-4px; width: 451px; height:100%" alt="{PhotoAlt}"> </img> <!-- image -->
-                                        {block:Caption} <div class="content caption" style="padding: 3px"> {Caption} </div> {/block:Caption}
-                                    {/block:Photo}
-
-                                    {block:Photos}
-                                        <center>
-                                        {block:indexpage}<img src="{PhotoURL-500}" alt="{PhotoAlt}" style="width:453px; height:100%"/>{/block:indexpage}
-                                        </center>
-                                        {block:Caption}<div class="content caption" style="padding: 3px">{Caption}</div>{/block:Caption}
-                                    {/block:Photos}
-                                    
-                                    {block:Photoset}
-                                        {Photoset} {block:Caption}<div class="content caption" style="margin-left:2px; height:100%">{Caption}</div>{/block:Caption}
-                                    {/block:Photoset}
-                         
-                                    {block:Quote}
-                                        <div style="padding: 3px;">
-                                            <div class="content caption" style="margin-left:1px;"> "{Quote}" </div> <!-- quote itself -->
-                                            {block:Source} <div class="dash" style="margin-left:2px"> &mdash; </div> <div class="source" style="margin-left:2px"> {Source} </div> {/block:Source}
-                                        </div>
-                                    {/block:Quote}
-                         
-                                    {block:Link}
-                                        <div style="width:451px; height:84px; background: var(--white);">
-                                            <a href="{URL}" class="title" {Target} style="color: var(--blue);"> 
-                                                <div style="position:absolute; font-size:14px; font-weight:700; width:367px;">
-                                                <center style="margin-top:31px; margin-left:-50px;">{Name}</center></div></a>
-                                            <div style="float:right; width:84px; height:84px; background: var(--blue); background-size: 84px 84px; background-image: url('https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/ezgif-2-7dbe0869fce0.gif');"></div>
-                                        </div>
-                                        {block:Description}
-                                            <div class="menuapplicationsplit" style="width:451px; margin-bottom:-2px;"></div>
-                                            <div style="padding: 3px;">{Description}</div>
-                                        {/block:Description}
-                                    {/block:Link}
                         
-                                    {block:Chat}
-                                        {block:Title}{Title}{/block:Title}
-                                        <div style="padding: 3px;">
-                                            {block:Lines}<div class="line">{block:Label}<strong>{Label}</strong>{/block:Label}{Line}</div>{/block:Lines}      
-                                        </div>
-                                    {/block:Chat}
+                        <ul class="tree-view" style="margin-left:-6px; margin-bottom:26px; width: 467px; margin-top:4px; padding:2px; overflow:hidden; background-image:var(--scrollbar); background-color: var(--midgray)"> 
+                            <div style="max-width: 451px; background:var(--white); overflow:hidden"> <!-- 428px wide, 451 including scrollwheel + padding -->
+                            <!-- Text posts -->
+                                <div class="buttonscrollinactive" style="margin-left: 451px;"><div class="arrowdisup"></div></div>
+                                {block:Text}
+                                    <div class="pad">{block:Title}<div class="title-bar-text" style="margin-left:3px; font-size: 2rem; color: var(--atext); margin-bottom:-7px; margin-top:-3px">𝖁𝖍𝖊𝖗𝟗𝟖</div>{/block:Title}
+                                    <div class="content caption"> {Body} </div></div>
+                                {/block:Text}
+                                            
+                                {block:Photo}
+                                    <img src="{PhotoURL-400}" class="full_image" style="margin-bottom:-4px; width: 451px; height:100%" alt="{PhotoAlt}"> </img> <!-- image -->
+                                    {block:Caption}<div class="menuapplicationsplit" style="width:100%; margin-top:-2px"> </div>
+                                    <div class="content caption"><div class="pad">{Caption}</div></div>{/block:Caption}
+                                {/block:Photo}
+                                
+                                {block:Photos}
+                                    <center>{block:indexpage}<div class="menuapplicationsplit" style="width:100%; margin-top:-2px"> </div>
+                                    <img src="{PhotoURL-500}" alt="{PhotoAlt}" style="width:453px; height:100%"/>{/block:indexpage}</center>
+                                    {block:Caption}<div class="content caption"><div class="pad">{Caption}</div></div>{/block:Caption}
+                                {/block:Photos}
+                                
+                                {block:Photoset}
+                                    {Photoset} {block:Caption}<div class="menuapplicationsplit" style="width:100%; margin-top:-2px"> </div>
+                                    <div class="content caption" style="margin-left:2px"><div class="pad">{Caption}</div></div>{/block:Caption}
+                                {/block:Photoset}
+                         
+                                {block:Quote}
+                                    <div class="pad">
+                                        <div class="content caption" style="margin-left:1px;"> "{Quote}" </div> <!-- quote itself -->
+                                        {block:Source} <div class="dash" style="margin-left:2px"> &mdash; </div> <div class="source" style="margin-left:2px"> {Source} </div> {/block:Source}</div>
+                                {/block:Quote}
+                         
+                                {block:Link}
+                                    <div style="width:451px; height:84px; background: var(--white);">
+                                        <a href="{URL}" class="title" {Target} style="color: var(--blue);"> 
+                                            <div style="position:absolute; font-size:14px; font-weight:700; width:367px;">
+                                            <center style="margin-top:31px; margin-left:-50px;">{Name}</center></div></a>
+                                        <div style="float:right; width:84px; height:84px; background: var(--blue); background-size: 84px 84px; 
+                                            background-image: url('https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/ezgif-2-7dbe0869fce0.gif');"></div>
+                                    </div>
+                                    {block:Description}<div class="menuapplicationsplit" style="width:451px; margin-bottom:-2px;"></div><div class="pad">{Description}</div>{/block:Description}
+                                {/block:Link}
                         
-                                    {block:Video}
-                                        <div class="video"  data-from-page="{CurrentPage}" style="height:100%; margin-bottom:-2px">{Video-500}</div>
-                                        {block:Caption}<div class="content caption" style="padding: 3px">{Caption}</div>{/block:Caption}
-                                    {/block:Video}
-
-                                    {block:Audio}
-                                        <div class="audioContainer" style="width: 100%; margin-bottom: -3px"> {block:AudioEmbed}{AudioEmbed color="white"}{/block:AudioEmbed} </div> <!-- Audio container --> 
-                                        {block:Caption}
-                                            <div class="menuapplicationsplit" style="width:100%;"> </div>
-                                            <div class="content caption" style="margin-top:-30px"> {Caption} </div> <!-- image caption -->
-                                        {/block:Caption}
-                                    {/block:Audio}
+                                {block:Chat}
+                                    {block:Title}{Title}{/block:Title}
+                                    {block:Lines}<div class="line"><div class="pad">{block:Label}<strong>{Label}</strong>{/block:Label}{Line}</div></div>{/block:Lines}
+                                {/block:Chat}
+                        
+                                {block:Video}
+                                    <div class="video"  data-from-page="{CurrentPage}" style="height:100%; margin-bottom:-2px">{Video-500}</div>
+                                    {block:Caption}<div class="content caption" style="padding: 3px">{Caption}</div>{/block:Caption}
+                                {/block:Video}
+                                
+                                {block:Audio}
+                                    <div class="audioContainer" style="width: 100%"> {block:AudioEmbed}{AudioEmbed}{/block:AudioEmbed} </div> <!-- Audio container --> 
+                                    {block:Caption}
+                                        <div class="menuapplicationsplit" style="width:100%; margin-top:-2px"> </div>
+                                        <div class="content caption" style="margin-top:-4px"><div class="pad">{Caption}</div></div> <!-- image caption -->
+                                    {/block:Caption}
+                                {/block:Audio}
                                                 
-                                    {block:Answer}
-                                        <div class="content body" style="max-width: 451px; padding:3px; margin-bottom:-2px">
-                                            <strong style="color: var(--blue)"> {lang:Asker asked 2}:</strong>
-                                            {Question} 
-                                            {block:NotReblog} <div class="answerer"><strong style="color: var(--blue)"> Mommy answered; </strong></div> {/block:NotReblog}
-                                            <!--{block:RebloggedFrom} <strong style="color: var(--blue)">{answerer} answered;</strong> {/block:RebloggedFrom}-->
-                                            <div style="margin-top:2px; margin-bottom:3px">{Replies}</div></div>
-                                    {/block:Answer}
+                                {block:Answer}
+                                    <div class="content body" style="margin-bottom:-2px"><div class="pad">
+                                        <strong style="color: var(--blue)"> {lang:Asker asked 2}:</strong>
+                                        {Question} 
+                                        {block:NotReblog} <div class="answerer"><strong style="color: var(--blue)"> Mommy answered; </strong></div> {/block:NotReblog}
+                                        <!--{block:RebloggedFrom} <strong style="color: var(--blue)">{answerer} answered;</strong> {/block:RebloggedFrom}-->
+                                        <div style="margin-top:2px; margin-bottom:3px">{Replies}</div></div></div>
+                                {/block:Answer}
                                     
-                                    <div class="buttonscrollinactive" style="margin-top:-16px; margin-left:451px;">
-                                        <div class="arrowdisdown"></div></div>
-                                </div>
+                                <div class="buttonscrollinactive" style="margin-top:-16px; margin-left:451px;"><div class="arrowdisdown"></div></div>
                             </div>
                         </ul> 
 
@@ -1726,15 +1731,15 @@
                             <div class="b" style="background: var(--silver); padding: 0px 2px 2px 6px; margin-left:-4px">like</div>-->
                         </a></div>
                         <!-- blogger container + recolour -->
-                        <div class="content body" style="margin-left: -6px; margin-right: -6px; margin-top: -7px; margin-bottom: -6px; width:455px; height:18px; cursor:default;"> 
-                            <fieldset style="position: absolute; width:358px; height:11px; padding:4px">
+                        <div style="margin:-7px">
+                            <fieldset style="display:inline; width:378px; height:11px; padding:4px; margin-right:3px">
                                 <div class="menufind4" style="margin-top:-4px; margin-left:-2px; margin-right:1.5px;"></div> 
                                 {block:ContentSource} <a href="{SourceURL}"target="_blank" title="Source"><b style="color:var(--blue)">{SourceTitle}</b></a>,{/block:ContentSource}{block:RebloggedFrom} 
                                 {lang:Reblogged from}: <a href="{ReblogParentURL}" target="_blank" title="Reblogged from"><b style="color: var(--blue)">{ReblogParentName}</b></a>{/block:RebloggedFrom}
                                 {block:NotReblog}Posted by <a href="https://twitter.com/VeryVhersty" target="_blank"><b style="color:var(--blue)">Thea Vanherst</b></a>{/block:NotReblog}
                             </fieldset>
-                            <fieldset style="position: absolute; width: 46px; height: 11px; padding:4px; padding-left:5px; margin-left: 369px" title="Post type">{PostType}</fieldset>
-                            <fieldset style="position: absolute; width: 35px; height: 11px; padding:4px; margin-left: 428px"></fieldset></div>
+                            <fieldset style="display:inline; width: 16px; height: 11px; padding:4px; margin-right:3px; color:rgba(0,0,0,0)"> lol </fieldset>
+                            <fieldset style="display:inline; width: 46px; height: 11px; padding:4px 4px 4px 6px" title="Post type">{PostType}</fieldset></div>
                 </div></div>
             {/block:Posts}
         </div>
@@ -1752,7 +1757,7 @@
             $(".window").click(function(){calupdate(); tumblractive(); $(this).css("z-index", cal); var desktopleft
                 $(this).find(".title-bar-98").css("background", "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"); $(this).find(".title-bar-text").css("color", curactivetitle)});
             
-            function tumblractive() {calupdate(); curtaskact = 1; activatetask(); desktop.left = desktopleft; document.body.style.overflowY = "scroll"}
+            function tumblractive() {curtaskact = 1; activatetask(); desktop.left = desktopleft; document.body.style.overflowY = "scroll"}
             function tumblrminimize() {inactiveall(); desktop.left = "-20000px"; document.body.style.position = "hidden"}
 
 //   inactive toggle ------------------------------------------------------------------------------>
