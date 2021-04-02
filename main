@@ -28,7 +28,7 @@
                $(this).parents('.tumblr_video_container').css({ width: Math.floor($(this).width() * ( scale + 1 ) / 2), height: Math.floor($(this).height() * ( scale + 1 ) / 2)})})})
               
         var github = "url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/", readme = "//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/README.md";
-        var updateon = "05:06am on March 31st, 2021. [GMT]", updatedfrom = "Thea Vanherst"; 
+        var updateon = "10:33am on April 1st, 2021. [GMT]", updatedfrom = "Thea Vanherst";
         var curtask = undefined, currenttask = 1, cal = 5, docelem = document.documentElement, plinksdrop = false; function calupdate(){inactiveall(); cal = cal + 1};
         function latestupdate() {document.getElementById("lastupdate").textContent = updateon; document.getElementById("updatedby").textContent = updatedfrom} //"Pixelated MS Sans Serif"
     </script>
@@ -1087,7 +1087,7 @@
                     document.getElementById("wallpaperoverlay7").style, document.getElementById("wallpaperoverlay8").style, document.getElementById("wallpaperoverlay9").style,
                     document.getElementById("wallpaperoverlay10").style, document.getElementById("wallpaperoverlay11").style, document.getElementById("wallpaperoverlay12").style],
                     wpstorage = ["none", "img/wallpapers/wallpaper32.png')", "img/wallpapers/study.png')", "img/wallpapers/startrek.png')", "img/wallpapers/unknown.png')", 
-                    "img/wallpapers/anime.png')", "img/wallpapers/vinyl.png')", "img/wallpapers/lynn.png')", "img/wallpapers/lynn.png')", "img/wallpapers/Untitled-4.jpg')", 
+                    "img/wallpapers/anime.png')", "img/wallpapers/vinyl.png')", "img/wallpapers/lynn.png')", "img/wallpapers/Untitled-3.jpg')", "img/wallpapers/Untitled-4.jpg')", 
                     "img/wallpapers/macro.png')", "img/wallpapers/ResidentEvil.png')"], cwpp = "#c0c0c0", curwp = "", wpn = "", wps = "";
                 function wallpaperupdate(){abody.backgroundImage = curwp; dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp; CSGOsidebar1.backgroundImage = curwp; CSGOsidebar2.backgroundImage = curwp} 
                 function wpp(){dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp; document.getElementById("apperancepreview").style.backgroundImage = curwp; iconpre.backgroundImage = curwp}
@@ -1206,7 +1206,7 @@
                             pretbgradinactive2=curcolsch[5];pretbgradactive1=curcolsch[6];pretbgradactive2=curcolsch[7];cpwhite=curcolsch[8];cplightg=curcolsch[9];cpsilver=curcolsch[10];cpmidgray=curcolsch[11];
                             cpgray=curcolsch[12];cpblack=curcolsch[13];cpblue=curcolsch[14];cpprussian=curcolsch[15];cpwincyan=curcolsch[16];cpyellow=curcolsch[17];cpfont=curcolsch[18];cphover=curcolsch[19];
                             cpatext=curcolsch[20];preinvert=curcolsch[21];shuffleflop=curcolsch[22];discheckinv=curcolsch[23];enacheckinv=curcolsch[24];invcheckinv=curcolsch[25];prespritesheet=github+curcolsch[26];
-                            cwpp=curcolsch[27];if(curcolsch.length == 28){currentcolour=curcolsch[28]}
+                            cwpp=curcolsch[27];if(curcolsch.length == 29){currentcolour=curcolsch[29]}
                             
                             docelem.style.setProperty('--prespritesheet', prespritesheet); docelem.style.setProperty('--preinvert', preinvert);
                             docelem.style.setProperty('--prewhite', cpwhite); docelem.style.setProperty('--pregray', cpgray); docelem.style.setProperty('--prespritesheet', prespritesheet);
@@ -1957,19 +1957,19 @@
                 <div class="taskbartask8" style="cursor:pointer" onmousedown="curtask = 8; tasktoggle()" id="taskapp8"> 
                     <div class="title-bar-text" id="taskapp8font">🌍 Internet Explorer</div></div>
                 
-                <script>var task = 0, funccall = 0, taskpos = [undefined, 0, 0, 0, 0, 0, 0, 0, 0], ButtonOpen = [undefined, true, false, false, false, false, false, false, false],
-                        taskon = [undefined, true, false, false, false, false, false, false, false], tasktrue = [undefined, true, false, false, false, false, false, false, false],
-                        taskbar = [undefined, document.getElementById("taskapp1").style, document.getElementById("taskapp2").style, document.getElementById("taskapp3").style, document.getElementById("taskapp4").style, 
-                        document.getElementById("taskapp5").style, document.getElementById("taskapp6").style, document.getElementById("taskapp7").style, document.getElementById("taskapp8").style],
-                        taskbarfont = [undefined, document.getElementById("taskapp1font").style, document.getElementById("taskapp2font").style, document.getElementById("taskapp3font").style, document.getElementById("taskapp4font").style,
-                        document.getElementById("taskapp5font").style, document.getElementById("taskapp6font").style, document.getElementById("taskapp7font").style, document.getElementById("taskapp8font").style] //leave this as js, dipshit.
+                <script>var task=0,funccall=0,taskpos=[undefined,0,0,0,0,0,0,0,0],ButtonOpen=[undefined, true, false, false, false, false, false, false, false],
+                        taskon=[undefined,true,false,false,false,false,false,false,false],tasktrue=[undefined, true, false, false, false, false, false, false, false],
+                        taskbar=[undefined,document.getElementById("taskapp1").style,document.getElementById("taskapp2").style,document.getElementById("taskapp3").style,document.getElementById("taskapp4").style, 
+                        document.getElementById("taskapp5").style,document.getElementById("taskapp6").style,document.getElementById("taskapp7").style,document.getElementById("taskapp8").style],
+                        taskbarfont=[undefined,document.getElementById("taskapp1font").style,document.getElementById("taskapp2font").style, document.getElementById("taskapp3font").style,document.getElementById("taskapp4font").style,
+                        document.getElementById("taskapp5font").style,document.getElementById("taskapp6font").style,document.getElementById("taskapp7font").style,document.getElementById("taskapp8font").style] //leave this as js, dipshit.
                         
-                    function tasktoggle() {
-                        if(ButtonOpen[curtask]==false){minimizewindow();if(curtask==2){curtask=1;minimizewindow()}}
-                        else if(ButtonOpen[curtask]==true){if(curtask==2){
+                    function tasktoggle() { if(ButtonOpen[curtask]==false){if(curtask==1){tumblrminimize()
+                        }else if(curtask==2){minimizewindow();curtask=1;minimizewindow()}else{minimizewindow()}
+                        }else if(ButtonOpen[curtask]==true){if(curtask==1){tumblractive()}else if(curtask==2){
                                 if(window2==true){curtask=2;currentwindow();cat.marginLeft="0px";cat.zIndex=cal}
                                 if(window1==true){curtask=1;currentwindow();pyro.marginLeft="0px";pyro.zIndex=cal}
-                            }else{currentwindow()}ButtonOpen[curtask]=false;} curtask=0;menuclosed()}
+                            }else{currentwindow()}ButtonOpen[curtask]=false} curtask=0;menuclosed()}
 
                     function vunnytask(){   cat.style.left="4%";        cat.style.top="68%";       curtask = 1; currentwindow()
                                             pyro.style.left="12%";      pyro.style.top="58%";      curtask = 2; currentwindow(); taskposopen(); vunnywindowreset();} 
