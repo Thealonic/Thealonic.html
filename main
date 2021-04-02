@@ -231,7 +231,7 @@
             .startmenubar{opacity:50%;filter:invert(var(--invert));background-position:-21px -0px}.startmenubarback{width:21px;height:377px;background-color:var(--prussian);position:absolute;}
     
             .clock{box-shadow:inset -1px -1px var(--white),inset 1px 1px var(--gray);padding:2px;float:right;width:96px;height:18px;margin-right:2px;margin-top:2px}
-            .taskbaricons {float:left;margin-top:3px;margin-left:5px;margin-right:2px}.start_bar.time{float:right;margin-right:8px;color:var(--text)}
+            .taskbaricons {float:left;margin-top:3px;margin-left:1px;margin-right:1px}.start_bar.time{float:right;margin-right:8px;color:var(--text)}
                 
 /* Message box reference sheets ------------------------------------------------------------------------------*/
             .displayboxdisplay,.displayboxdisplayde {height:169px;margin-left:-16px;position:absolute;margin-top:-16px}
@@ -244,10 +244,13 @@
             .energysaving{width: 71px;height: 42px;background-image:url('//raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/energy.png')}
             .currentclock{width:127px;height:127px;background-image:url('https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/img/windows/clock.png')}
             
+            .logofficon{background-image: var(--curspritesheet);margin:auto;float:left;height:36px;width:36px}
+            .logofficon{background-position:-140px -324px}
+            
             .playbutton,.pausebutton,.stopbutton,.shufflebutton,.nextbutton,.fastforwardbutton,.rewindbutton,.previousbutton,.volumeup,.volumedown{
                 background-image: var(--curspritesheet);width:10px;height:11px;margin:6px; margin-top:8px;float:left;filter:invert(var(--invert));cursor:pointer}
-            .pausebutton{background-position:-121px -289px;margin-top:7px}.playbutton   {background-position:-100px -270px;width:13px;height:13px;margin-top:6px} 
-            .stopbutton {background-position:-130px -289px;margin-top:7px}.shufflebutton{background-position:-112px -270px;width:16px;height:13px;margin-top:6px}
+            .pausebutton {background-position:-121px -289px;margin-top:7px}.playbutton    {background-position:-100px -270px;width:13px;height:13px;margin-top:6px} 
+            .stopbutton  {background-position:-130px -289px;margin-top:7px}.shufflebutton {background-position:-112px -270px;width:16px;height:13px;margin-top:6px}
             .fastforwardbutton,.nextbutton,.rewindbutton,.previousbutton{height:9px; width:13px}.volumeup,.volumedown{height:5px;width:5px;margin-top:12px}
             .rewindbutton     {background-position:-130px -278px;width:9px}.previousbutton{background-position:-128px -278px}
             .fastforwardbutton{background-position:-128px -270px;width:9px}.nextbutton    {background-position:-128px -270px}
@@ -312,23 +315,11 @@
             
             textarea, input{font-size:var(--curfontsize); border:none; outline:none; background:none} textarea {font-family:monospace; color: var(--alwaysblack)}
             input{font-family:var(--curfont); color:var(--alwayswhite); width: 100%; height:16px; padding:0px; display: block; white-space: pre-wrap}
+            
             #progressBar {width: var(--slider); height: 6px; background: var(--silver); display: none; margin-top: 1px} #progressBar div {height: 100%; width: 0; background: var(--atext)}
-            
-            ::-webkit-scrollbar { 
-                width: 7px;
-                background-color: #7bd4e7;
-                border: 3px solid white;
-                height:7px;
-            }
-                
-            ::-webkit-scrollbar-thumb { 
-                background-color: #7bd4e7;
-                border: 2px solid white;
-                height: 5px;
-                width: 5px;
-            }
-            
-            
+            ::-webkit-scrollbar {opacity:0; width:0px}
+            ::-webkit-scrollbar-thumb {opacity:0; width:0px}
+
             @font-face { font-family: 'ms_sans_serifregular'; font-weight: normal; font-style: normal;
                 src: url(data:application/font-woff;charset=utf-8;base64,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) format('woff');}
     </style></head>
@@ -336,7 +327,7 @@
 <!-- Page rendering ------------------------------------------------------------------------------>
     <script> function defaultpageload() {fillitem();dsheetpetra();desktopiconchange();evangelionmode();backcolourset();wallpaperupdate();themechange();evangelionmode()} </script>
     <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" 
-          onload="latestupdate();defaultpageload();{block:HomePage}messageopen();vunnytask();vunnypositionreset();{/block:HomePage}disktask();diskminimize();promptrestart();tumblractive()">
+          onload="latestupdate();defaultpageload();{block:HomePage}messageopen();vunnytask();{/block:HomePage}disktask(); tabreset(); appearancetab(); curtaskact = 3; minimizewindow(); promptrestart();tumblractive()">
      <title>𝖁𝖍𝖊𝖗𝟗𝟖</title>
      
 <!-- desktop handling ------------------------------------------------------------------------------>
@@ -378,90 +369,64 @@
             $('document').ready(function(){setInterval(function(){CS = " "; ranCSno1 = Math.floor(Math.random() * CSLength); changeCSGO()}, CSframes[ranCSno1])})</script>
     
 <!-- VUNNY message box rendering ------------------------------------------------------------------------------>
-        <div class="win98post" style="position: fixed; width: 206px; margin-left:-20000px;" onmousedown="catactive();" id="cat">
-            <div class="win98titlebarc" onclick="catclose();"><div class="close"></div></div>
-            <div class="win98titlebarh" onclick="catminimize();"> <div class="minimize"></div></div>
+        <script>var pyrotabs = 2, pyrocurrentactive = 2, window1 = true, window2 = true;
+            function pyrowindow(){pyrotabs = pyrotabs - 1; if(pyrotabs == 0){taskbar[2].marginLeft = "-20000px"; tasktrue[2] = false; taskon[2] = false; taskreset()}}
+            function vunnycheck(){if(pyrocurrentactive == 0){ ButtonOpen[2] = false; taskreset()}}</script>
+        
+        <div class="win98post" style="position: fixed; width: 206px; margin-left:-20000px;" onmousedown="curtaskact = 2; currentwindow()" id="cat">
+            <div class="win98titlebarc" onclick="curtaskact = 2; inactivewindow(); window2 = false; pyrowindow()"><div class="close"></div></div>
+            <div class="win98titlebarh" onclick="curtaskact = 2; minimizewindow(); vunnycheck()"> <div class="minimize"></div></div>
             <div class="win98titlebarh" onclick="twilightload()"> <div class="help"></div></div>
-            <div class="title-bar-98" id="catwindow"> <div class="title-bar-text" id="cattext">💯 BOUNCY CEMENT</div></div>
+            <div class="title-bar-98" id="catwindow"> <div class="title-bar-text" id="cattitle">💯 BOUNCY CEMENT</div></div>
             <div class="window-body" style="margin: 3px 2px 3px 2px"> 
                 <ul class="tree-view" style="padding:2px;"><img style="margin-bottom:-3px; margin-left:-1px; margin-top:-1px; width:200px; height:200px; background-size: 200px 200px;" id="catimage"></ul>
                 <center><div class="win98buttondis" style="margin-top:3px;"><butdislabel>Asshole</butdislabel></div></center>
         </div></div>
 
-        <script>var cat = document.getElementById("cat").style; catwin = document.getElementById("catwindow").style; cattext = document.getElementById("cattext").style; catimg = document.getElementById("catimage").style//#ref5014  #ref2000
-            function catactive() {vunnyactive(); cat.zIndex = cal; catwin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"; cattext.color = curactivetitle; cat.marginLeft = "0px"} //#ref5027 + //#ref5028 / //#ref0033
-            function catclose() {inactiveall(); window2 = false; pyrotabs = pyrotabs - 1; pyrowindow(); cat.marginLeft = "-20000px"} //#ref5029
-            function catminimize() {inactiveall(); cat.marginLeft = "-20000px"; pyrocurrentopen()} //#ref5030 </script>
-
-        <div class="win98post" style="position: fixed; width: 206px; margin-left:-20000px;" onmousedown="pyroactive();" id="pyro">
-            <div class="win98titlebarc" onclick="pyroclose();"><div class="close"></div></div>
-            <div class="win98titlebarh" onclick="pyrominimize();"> <div class="minimize"></div></div>
+        <div class="win98post" style="position: fixed; width: 206px; margin-left:-20000px;" onmousedown="curtaskact = 1; currentwindow()" id="pyro">
+            <div class="win98titlebarc" onclick="curtaskact = 1; inactivewindow(); window1 = false; pyrowindow();"><div class="close"></div></div>
+            <div class="win98titlebarh" onclick="curtaskact = 1; minimizewindow(); vunnycheck()"> <div class="minimize"></div></div>
             <div class="win98titlebarh" onclick="twilightload()"> <div class="help"></div></div>
-            <div class="title-bar-98" id="pyrowindow"> <div class="title-bar-text" id="pyrotext">💯 Wubba lubba dub dub!</div></div>
+            <div class="title-bar-98" id="pyrowindow"> <div class="title-bar-text" id="pyrotitle">💯 Wubba lubba dub dub!</div></div>
             <div class="window-body" style="margin: 3px 2px 3px 2px">
                 <ul class="tree-view" style="padding:2px;"><img style="margin-bottom:-3px; margin-left:-1px; margin-top:-1px; width:200px; height:200px; background-size: 200px 200px;" id="pyroimage"/></ul>
                 <center><div class="win98button" style="margin-top:3px;" onclick="pyroshuffle()"><butlabel id="pyrobutton">Definately.</butlabel></div></center>
         </div></div>
         
-        <script>var pyrotabs = 2, pyrocurrentactive = 2, window1 = true, window2 = true;
-            function pyrowindow(){ if(pyrotabs == 0){ taskbar[2].marginLeft = "-20000px"; tasktrue[2] = false; taskon[2] = false; taskreset()}}
-            function pyrocurrentopen(){ if(pyrocurrentactive == 0){ ButtonOpen[2] = false; taskreset()}}
-
-            var pyro = document.getElementById("pyro").style, pyrowin = document.getElementById("pyrowindow").style, pyroimg = document.getElementById("pyroimage").style, pyrotxt = document.getElementById("pyrotext").style
-            function pyroactive() {vunnyactive(); pyro.zIndex = cal; pyro.marginLeft = "0px"; pyrowin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"; pyrotext.style.color = curactivetitle}
-            function pyroclose() {inactiveall(); window1 = false; pyrotabs = pyrotabs - 1; pyrowindow(); pyro.marginLeft = "-20000px"}
-            function pyrominimize() {inactiveall(); pyro.marginLeft = "-20000px"; pyrocurrentopen()}
-            
-            function vunnyactive(){calupdate(); curtaskact = 2; activatetask()} function vunnyopen(){vunnyactive(); pyroactive(); pyrotabs = 2
-                if (window1 == true){pyro.marginLeft = "0px"; pyro.zIndex = cal + 1} if (window2 == true){ cat.marginLeft = "0px"; pyro.zIndex = cal}}
-            function vunnywindowreset(){ window1 = true; window2 = true; tick = 3
-                if (tick == 3) { pyroimg.backgroundImage = github + "img/windows/ezgif-2-c475330a8091.gif')"; catimg.backgroundImage = github + "img/windows/Untitled-5.jpg')"}}
-            function vunnypositionreset() {calupdate(); pyro.left = "12%"; pyro.top = "58%"; cat.left = "4%"; cat.top = "68%"}
-            function vunnyminimize(){inactiveall(); pyro.marginLeft = "-20000px"; cat.marginLeft = "-20000px"; pyrocurrentactive = pyrocurrentactive - 2}
-
-            var myPix = new Array(
-                github + "img/Funni/1.jpg')", github + "img/Funni/2.jpg')", github + "img/Funni/3.jpg')", github + "img/Funni/4.jpg')", github + "img/Funni/5.jpg')",
-                github + "img/Funni/6.jpg')", github + "img/Funni/7.jpg')", github + "img/Funni/8.png')", github + "img/Funni/9.jpg')", github + "img/Funni/10.jpg')",
-                github + "img/Funni/11.jpg')", github + "img/Funni/12.jpg')", github + "img/Funni/13.jpg')", github + "img/Funni/14.jpg')", github + "img/Funni/15.jpg')",
-                github + "img/Funni/16.jpg')", github + "img/Funni/17.jpg')", github + "img/Funni/18.jpg')", github + "img/Funni/19.jpg')", github + "img/Funni/20.jpg')",
-                github + "img/Funni/21.jpg')", github + "img/Funni/22.jpg')", github + "img/Funni/23.jpg')", github + "img/Funni/24.png')", github + "img/Funni/25.jpg')",
-                github + "img/Funni/26.jpg')", github + "img/Funni/27.png')", github + "img/Funni/28.png')", github + "img/Funni/29.jpg')", github + "img/Funni/30.jpg')",
-                github + "img/Funni/31.jpg')", github + "img/Funni/32.jpg')", github + "img/Funni/33.jpg')", github + "img/Funni/34.jpg')", github + "img/Funni/35.jpg')",
-                github + "img/Funni/36.jpg')", github + "img/Funni/37.jpg')", github + "img/Funni/38.png')", github + "img/Funni/39.jpg')", github + "img/Funni/40.jpg')");
-            
-            var r_text = new Array (); 
-                r_text[0] = "frog"; r_text[1] = "bueno"; r_text[2] = "helpful book"; r_text[3] = "Going down under"; r_text[4] = "Soviet Nun"; 
-                r_text[5] = "Optic fibre cable"; r_text[6] = "Cum Dungeon"; r_text[7] = "You guys wipe?"; r_text[8] = "Bojack horseman (IRL)"; r_text[9] = "Froggers"; 
-                r_text[10] = "Hello, mr freeman."; r_text[11] = "ur toes, hand em over"; r_text[12] = "December 8, 1980"; r_text[13] = "Maxcumfoe"; r_text[14] = "kity"; 
-                r_text[15] = ""; r_text[16] = "ok epic"; r_text[17] = "Adventure time fans"; r_text[18] = "Sinking feeling"; r_text[19] = "LinusDeadTips"; 
-                r_text[20] = "New dis, who phone?"; r_text[21] = "life style"; r_text[22] = "Wide Phil"; r_text[23] = "fly eater"; r_text[24] = "Grand Theft Alien"; 
-                r_text[25] = "Emoji Jackson"; r_text[26] = "next time eat a salad"; r_text[27] = "BORN TO FUCK"; r_text[28] = "Homer Himphom"; r_text[29] = "Jojo reference"; 
-                r_text[30] = "howdy partner"; r_text[31] = "cat"; r_text[32] = "december 2018"; r_text[33] = ";)"; r_text[34] = "connect 4"; 
-                r_text[35] = "yeah I like ASS"; r_text[36] = "FUCK HARDER SNAKE"; r_text[37] = "Korean Border"; r_text[38] = ":)"; r_text[39] = "It seems today"; 
-            
+        <script>
             var pyrobutton = document.getElementById("pyrobutton"), tick = 3, beforehand = "💯 ";
-            function pyroshuffle(){ //#ref2002
+            var myPix = ["img/Funni/1.jpg')","img/Funni/2.jpg')","img/Funni/3.jpg')","img/Funni/4.jpg')","img/Funni/5.jpg')","img/Funni/6.jpg')","img/Funni/7.jpg')","img/Funni/8.png')","img/Funni/9.jpg')","img/Funni/10.jpg')",
+                "img/Funni/11.jpg')","img/Funni/12.jpg')","img/Funni/13.jpg')","img/Funni/14.jpg')","img/Funni/15.jpg')","img/Funni/16.jpg')","img/Funni/17.jpg')","img/Funni/18.jpg')","img/Funni/19.jpg')","img/Funni/20.jpg')",
+                "img/Funni/21.jpg')","img/Funni/22.jpg')","img/Funni/23.jpg')","img/Funni/24.png')","img/Funni/25.jpg')","img/Funni/26.jpg')","img/Funni/27.png')","img/Funni/28.png')","img/Funni/29.jpg')","img/Funni/30.jpg')",
+                "img/Funni/31.jpg')","img/Funni/32.jpg')","img/Funni/33.jpg')","img/Funni/34.jpg')","img/Funni/35.jpg')","img/Funni/36.jpg')","img/Funni/37.jpg')","img/Funni/38.png')","img/Funni/39.jpg')","img/Funni/40.jpg')"],
+                
+                r_text = ["frog", "bueno", "helpful book", "Going down under", "Soviet Nun", "Optic fibre cable", "Cum Dungeon", "You guys wipe?", "Bojack horseman (IRL)", "Froggers",
+                    "Hello, mr freeman.", "ur toes, hand em over", "December 8, 1980", "Maxcumfoe", "kity", "", "ok epic", "Adventure time fans", "Sinking feeling", "LinusDeadTips",
+                    "New dis, who phone?", "life style", "Wide Phil", "fly eater", "Grand Theft Alien", "Emoji Jackson", "next time eat a salad", "BORN TO FUCK", "Homer Himphom", "Jojo reference",
+                    "howdy partner", "cat", "december 2018", ";)", "connect 4", "yeah I like ASS", "FUCK HARDER SNAKE", "Korean Border", ":)", "It seems today"]
+                    
+            function pyroshuffle(){
                 var randomNum = Math.floor(Math.random() * myPix.length), randomNum2;
                 if (tick !== 0){ randomNum2 = Math.floor(Math.random() * myPix.length);
-                    if(randomNum2 !== randomNum){randomNum = randomNum2
-                        pyrotext.textContent = beforehand + r_text[randomNum]; 
-                        pyroimg.backgroundImage = myPix[randomNum]; randomNum = randomNum2;
-                    } else { randomNum2 = Math.floor(Math.random() * myPix.length); randomNum = randomNum2;
-                        pyrotxt.textContent = beforehand + r_text[randomNum]; 
-                        pyroimg.backgroundImage = + myPix[randomNum]; randomNum = randomNum2;}
+                    pyrotitle.textContent = beforehand + r_text[randomNum]; 
+                    pyroimage.style.backgroundImage = github + myPix[randomNum]
                     if(tick == 3){ pyrobutton.textContent = "Probably!"}
                     if(tick == 2){ pyrobutton.textContent = "Maybe?"}
                     if(tick == 1){ pyrobutton.textContent = "No."} tick = tick - 1;
-                } else { pyro.marginLeft = "-20000px"; pyrotabs = pyrotabs - 1; window1 = false; pyrowindow(); inactiveall();
-                pyrobutton.textContent = "Definately"; pyrotxt.textContent = '💯 Wubba lubba dub dub!';}} </script>
+                } else { pyro.marginLeft = "-20000px"; window1 = false; pyrowindow(); inactiveall();
+                pyrobutton.textContent = "Definately"; pyrotitle.textContent = '💯 Wubba lubba dub dub!'}}
+            
+            function vunnywindowreset(){ window1 = true; window2 = true; curtaskact = 2; currentwindow(); curtaskact = 1; currentwindow(); tick = 3;
+                if (tick == 3) {pyroimage.style.backgroundImage = github + "img/windows/ezgif-2-c475330a8091.gif')"; 
+                                catimage.style.backgroundImage = github + "img/windows/Untitled-5.jpg')"}} </script>
         
 <!-- Embedded Media Player ------------------------------------------------------------------------------>
-        <div class="win98post" style="position: fixed; margin-left:-20000px; left: 300px; top: 200px;" onmousedown="embedactive()" id="embed">
-            <div class="win98titlebarc" onclick="embedclose()"><div class="close"></div></div>
+        <div class="win98post" style="position: fixed; margin-left:-20000px; left: 300px; top: 200px;" onmousedown="curtaskact = 4; currentwindow()" id="embed">
+            <div class="win98titlebarc" onclick="curtaskact = 4; inactivewindow()"><div class="close"></div></div>
             <div class="win98titlebarh" onclick="fullscreenembed()" id="embedmaxtitle"> <div class="maximize" id="embedmaximize"></div></div>
-            <div class="win98titlebarh" onclick="embedminimize()"> <div class="minimize"></div></div>
+            <div class="win98titlebarh" onclick="curtaskact = 4; inactivewindow(); stopVideo()"> <div class="minimize"></div></div>
             <div class="win98titlebarh" onclick="twilightload()"> <div class="help"></div></div>
-            <div class="title-bar-98" id="embedwindow"> <div class="title-bar-text" id="embedtext">🎬 Windows Embedded Media Player</div></div>
+            <div class="title-bar-98" id="embedwindow"> <div class="title-bar-text" id="embedtitle">🎬 Windows Embedded Media Player</div></div>
             <div class="window-body" style="padding:0px"> 
             
                 <div class="post-header" style="height: 27px; margin-top:-6px; padding:0px;">
@@ -531,13 +496,7 @@
         </div></div>
                 
         <script>
-            var mediaURLin, embed = document.getElementById("embed").style, embedwin = document.getElementById("embedwindow").style; embedtext = document.getElementById("embedtext").style; //#ref5014
-            function embedactive() {calupdate(); embed.zIndex = cal; embed.marginLeft = "0px"; embedwin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"; embedtext.color = curactivetitle; curtaskact = 4; activatetask()}
-            function embedclose() {inactiveall(); embed.marginLeft = "-20000px"; taskbar[4].marginLeft = "-20000px"; tasktrue[4] = false; taskon[4] = false; taskreset(); stopVideo()}
-            function embedpositionreset() {calupdate(); embed.left = "300px"; embed.top = "200px"; embed.zIndex = cal; embedactive()}
-            function embedminimize(){inactiveall(); embed.marginLeft = "-20000px";}
-
-            document.getElementById("mediaplayer").addEventListener("keyup", function(event) {if (event.keyCode === 13) { event.preventDefault(); document.getElementById("mediain").click()}}); 
+            var mediaURLin; document.getElementById("mediaplayer").addEventListener("keyup", function(event) {if (event.keyCode === 13) { event.preventDefault(); document.getElementById("mediain").click()}}); 
             function mediainput(){ mediaURLin = document.getElementById("mediaplayer").value; inprompt = inprompt + "#read: " + mediaURLin; println();
                 mediaURLin = mediaURLin.replace("https://www.youtube.com/", "").replace("https://youtu.be/","").replace("playlist?list=","").replace("watch?v=","").replace(" ","")
                 inprompt = inprompt + "^" + mediaURLin.length + ", id:" + mediaURLin; println(); videoclear(); playlistlaunch(); var index = 0, videoin = "";
@@ -600,11 +559,11 @@
             var fullscreenactive = false; var embedmaximize = document.getElementById("embedmaximize").style, embedtitle = document.getElementById("embedmaxtitle");
             function fullscreenembed(){ if(fullscreenactive == false){ fullscreenactive = true; playerupdate();
                     document.getElementById("player").style.width = "1066px"; document.getElementById("player").style.height = "600px"; playertext.style.width = "1058px"; playerws.width = "1056px"; playerul.width = "1066px"; 
-                    playerfs.width = "1068px"; playertv.width = "908px"; docelem.style.setProperty('--slider', "1056px"); embedmaximize.backgroundPosition = "-303px -215px"; embedtitle.title = "Restore down"; playstateupdate()
+                    playerfs.width = "1068px"; playertv.width = "908px"; docelem.style.setProperty('--slider', "1056px"); embedmaximize.backgroundPosition = "-118px -299px"; embedtitle.title = "Restore down"; playstateupdate()
                 } else { fullscreenactive = false; playerupdate()
                     document.getElementById("player").style.width = "560px"; document.getElementById("player").style.height = "315px"; playertext.style.width = "552px"; playerws.width = "550px"; playerul.width = "560px"; 
-                    playerfs.width = "562px"; playertv.width = "406px"; docelem.style.setProperty('--slider', "550px"); embedmaximize.backgroundPosition = "-98px -215px"; embedtitletitle = "Maximize"; playstateupdate()}}
-            
+                    playerfs.width = "562px"; playertv.width = "406px"; docelem.style.setProperty('--slider', "550px"); embedmaximize.backgroundPosition = "-128px -299px"; embedtitletitle = "Maximize"; playstateupdate()}}
+
             function playlistempty() {embedtask(); videoclear(); videolinkdropdownclose(); currentplaylist = ""}
             function playlistcue() {videoclear(); playlistlaunch(); player.loadPlaylist({'list':loadPlaylist, 'index': 0})}
             
@@ -651,21 +610,20 @@
 <!-- Latest updates message box ------------------------------------------------------------------------------>
         <div class="win98post" style="height: 50px; width:306px; top: 62%; left: 1465px; margin-left: -20000px" onmousedown="messageactive();" id="message">
              <div class="win98titlebarc" title="Close" onclick="messageclose()"><div class="close"></div></div>
-             <div class="win98titlebarh" title="Maximize" onclick="patchnotestask()"><div class="maximize"></div></div>
+             <div class="win98titlebarh" title="Maximize" onclick="notestask()"><div class="maximize"></div></div>
              <div class="win98titlebarh" title="Help" onclick="twilightload()"> <div class="help"></div></div>
-             <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="title-bar-text" id="messagetext">🧮 brain go brrrrr</div></div>
+             <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="title-bar-text" id="messagetitle">🧮 brain go brrrrr</div></div>
              <div class="window-body" style="margin-right: 4px; margin-top: 5px; margin-bottom: 3px; padding:2px">
                 <p style="color: var(--blue); margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <label style="color: var(--ccblack)" id="lastupdate"></label></p></div>
         </div>
 
         <!-- Patchnotes update  ------------------------------------------------------------------------------>
-        
-        <div class="win98post" style="margin-left: -20000px" onmousedown="patchnotesactive();" id="note">
-            <div class="win98titlebarc" title="Close" onclick="patchnotesclose()"><div class="close"></div></div>
-            <div class="win98titlebarh" title="Restore down" onclick="patchnotesclose(); messageopen()"><div class="restore"></div></div>
-            <div class="win98titlebarh" title="Minimize" onclick="patchnotesminimize();"> <div class="minimize"></div></div>
+        <div class="win98post" style="margin-left: -20000px" onmousedown="curtaskact = 5; currentwindow()" id="note">
+            <div class="win98titlebarc" title="Close" onclick="curtaskact = 5; inactivewindow()"><div class="close"></div></div>
+            <div class="win98titlebarh" title="Restore down" onclick="curtaskact = 5; inactivewindow(); messageopen()"><div class="restore"></div></div>
+            <div class="win98titlebarh" title="Minimize" onclick="curtaskact = 5; minimizewindow()"> <div class="minimize"></div></div>
             <div class="win98titlebarh" title="Help" onclick="twilightload()"> <div class="help"></div></div>
-            <div class="title-bar-98" id="notewindow"> <div class="title-bar-text" id="notetext">🧮 𝖁𝖍𝖊𝖗𝟗𝟖 Patchnotes</div></div>
+            <div class="title-bar-98" id="notewindow"> <div class="title-bar-text" id="notetitle">🧮 𝖁𝖍𝖊𝖗𝟗𝟖 Patchnotes</div></div>
             
             <div class="post-header" style="height: 24px; width: 467px; margin-top:-2px">
                 <fieldset style="position:absolute; height: 21px; width: 465px; margin-top:4px; margin-left:2px; padding:2px; display: inline;"> 
@@ -675,7 +633,7 @@
                     
                     <ul class="tree-view" style="position:absolute; width:350px; height:9px; margin-left:55px; margin-top:-17px;">
                     <div class="dropbutton" style="margin:-4px;"><div class="arrowdisdown"></div></div>
-                        <div class="menudocuments5" style="margin:-5px;"></div><div style="margin-top:-1px; margin-left:16px;">https://thealonic.tumblr.com/patch-notes</div></ul>
+                        <div class="menufind1" style="margin:-5px;"></div><div style="margin-top:-1px; margin-left:16px;">https://thealonic.tumblr.com/patch-notes</div></ul>
                     <div style="margin-left:418px; margin-top:-12px; width:49px;"><div class="explorergo" style="margin-left:5px; margin-top:-5px"></div> <div class="reflinkblack">Go</div></div>
             </fieldset></div>
             
@@ -693,21 +651,11 @@
             </div></div>
         </div>
 
-        <script>
-            var message = document.getElementById("message").style, messagewin = document.getElementById("messagewindow").style, messagetext = document.getElementById("messagetext").style;
-            function messageactive() {calupdate(); message.zIndex = cal; messagewin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"; messagetext.color = curactivetitle}; function messageclose(){message.marginLeft = "-20000px"}
-            function messageopen(){calupdate(); message.marginLeft = "0px"; message.left = "77%"; message.top = "62%"; message.zIndex = cal}
-            
-            var patchlogs = "https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/patch%20logs";
-            var notes = document.getElementById("note").style, notewin = document.getElementById("notewindow").style, notetext = document.getElementById("notetext").style;
-            function patchnotesactive() {calupdate(); notes.zIndex = cal; internetwin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"; notetext.color = curactivetitle; notes.marginLeft = "0px"; curtaskact = 5; activatetask()}
-            function patchnotesclose() {inactiveall(); notes.marginLeft = "-20000px"; taskbar[5].marginLeft = "-20000px"; tasktrue[5] = false; taskon[5] = false; taskreset()}
-            function patchnotesopen() {calupdate(); notes.zIndex = cal; notes.marginLeft = "0px"; notes.left = "67%"; notes.top = "4%"; patchnotesactive(); $.get(patchlogs, function(data) { $( "patchnotes" ).last().html( data ); }, 'text')}
-            function patchnoteminimize() {inactiveall(); notes.marginLeft = "-20000px"}
-        </script>
+        <script> function messageactive(){calupdate(); message.style.zIndex = cal; messagewindow.style.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"; messagetitle.style.color = curactivetitle}; 
+            function messageclose(){message.style.marginLeft = "-20000px"} function messageopen(){calupdate(); message.style.marginLeft = "0px"; message.left = "77%"; message.top = "62%"; message.style.zIndex = cal}
+            var patchlogs = "https://raw.githubusercontent.com/VeryVhersty/Thealonic.html/main/patch%20logs"; function notesupdate(){$.get(patchlogs, function(data) { $( "patchnotes" ).last().html( data ); }, 'text')}</script>
 
 <!-- Time / date properties rendering ------------------------------------------------------------------------------>
-
         <div class="win98post" style="height: 409px; width: 442px; position: fixed; margin-left:-20000px;" onmousedown="clockactive()" id="clock"> <!--#ref2006-->
             <div class="win98titlebarc" title="Close" onclick="clockclose()"><div class="close"></div></div>
             <div class="win98titlebarh" title="Minimize" onclick="twilightload()"> <div class="help"></div></div>
@@ -785,9 +733,9 @@
             function yearadd() {yearmath = yearmath + 1; clocku(); yeardropback(); monthdropdefa()}; function yearsub() {yearmath = yearmath - 1; clocku(); yeardropback(); monthdropdefa()} </script>
 
 <!-- Internet Explorer rendering ------------------------------------------------------------------------------------->
-        <div class="win98post" style="margin-left: -20000px" onmousedown="internetactive();" id="internet">
-            <div class="win98titlebarc" title="Close" onclick="internetclose()"><div class="close"></div></div>
-            <div class="win98titlebarh" title="Minimize"onclick="internetminimize()"> <div class="minimize"></div></div>
+        <div class="win98post" style="margin-left: -20000px" onmousedown="curtaskact = 8; currentwindow()" id="internet">
+            <div class="win98titlebarc" title="Close" onclick="curtaskact = 8; inactivewindow()"><div class="close"></div></div>
+            <div class="win98titlebarh" title="Minimize"onclick="curtaskact = 8; minimizewindow()"> <div class="minimize"></div></div>
             <div class="win98titlebarh" title="Help" onclick="twilightload()"> <div class="help"></div></div>
             <div class="title-bar-98" id="internetwindow"> <div class="title-bar-text" id="internettitle">🌍 Internet Explorer</div></div>
             <div class="window-body" style="margin:1px">
@@ -828,17 +776,12 @@
                 <iframe src="https://www.bing.com/" style="width:818px; height:604px" frameBorder="0" id="iexplorerframe"></iframe></ul>
         </div></div>
         
-        <script> var iframe = document.getElementById('iexplorerframe'); $(iframe).contents().find("iefhtml").html();
-            var internet = document.getElementById("internet").style, internetwin = document.getElementById("internetwindow").style, internettitle = document.getElementById("internettitle").style;//#ref5014
-            function internetactive() {calupdate(); internet.marginLeft = "0px"; internet.marginLeft = "0px"; internetwin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"; internettitle.color = curactivetitle; curtaskact = 8; activatetask()} //#ref5028
-            function internetclose() {inactiveall(); internet.marginLeft = "-20000px"; taskbar[8].marginLeft = "-20000px"; tasktrue[8] = false; taskon[8] = false; taskreset()}
-            function internetpositionreset() {calupdate(); internet.left = "375px"; internet.top = "217px"; internet.zIndex = cal; internetactive()}
-            function internetminimize(){inactiveall(); internet.marginLeft = "-20000px"} </script>
+        <script> var iframe = document.getElementById('iexplorerframe'); $(iframe).contents().find("iefhtml").html();</script>
 
 <!-- notepad rendering ------------------------------------------------------------------------------------->
-        <div class="win98post" style="margin-left:-20000px" onmousedown="notepadactive();" id="notepad">
-            <div class="win98titlebarc" title="Close" onclick="notepadclose()"><div class="close"></div></div>
-            <div class="win98titlebarh" title="Minimize" onclick="notepadminimize()"> <div class="minimize"></div></div>
+        <div class="win98post" style="margin-left:-20000px" onmousedown="curtaskact = 7; currentwindow()" id="notepad">
+            <div class="win98titlebarc" title="Close" onclick="curtaskact = 7; inactivewindow()"><div class="close"></div></div>
+            <div class="win98titlebarh" title="Minimize" onclick="curtaskact = 7; minimizewindow()"> <div class="minimize"></div></div>
             <div class="win98titlebarh" title="Help" onclick="twilightload()"> <div class="help"></div></div>
             <div class="title-bar-98" id="notepadwindow"> <div class="title-bar-text" id="notepadtitle">📄 Notepad</div></div>
             <div class="window-body" style="margin:1px">
@@ -851,17 +794,11 @@
                 <ul class="tree-view" style="background: var(--alwayswhite); color: var(--alwaysblack); padding:2px;">
                     <textarea name="textarea" style="height:230px; width:460px; min-width:350px; min-height:200px; max-height:400px; max-width:760px; overflow: scroll;" id="notepad"></textarea></ul>
         </div></div>
-        
-        <script> var notepad = document.getElementById("notepad").style, notepadwin = document.getElementById("notepadwindow").style, notepadtitle = document.getElementById("notepadtitle").style;//#ref5014
-            function notepadactive() {calupdate(); notepad.marginLeft = "0px"; notepad.zIndex = cal; notepadwin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"; notepadtitle.color = curactivetitle; curtaskact = 7; activatetask()} //#ref5028
-            function notepadclose() {inactiveall(); notepad.marginLeft = "-20000px"; notepadtaskbar.marginLeft = "-20000px"; tasktrue[7] = false; task7on[7] = false; taskreset(); notepadrestart()}
-            function notepadpositionreset() {calupdate(); notepad.left = "375px"; notepad.top = "217px"; notepad.zIndex = cal; notepadactive()}
-            function notepadminimize(){inactiveall(); notepad.marginLeft = "-20000px"}</script>
-        
+
 <!-- command prompt rendering ------------------------------------------------------------------------------>
-        <div class="win98post" style="margin-left: -20000px; min-width: 500px; max-width: 910px; max-height:860px;" onmousedown="promptactive();" id="prompt"> <!--#ref2007-->
-            <div class="win98titlebarc" title="Close" onclick="promptclose()"><div class="close"></div></div>
-            <div class="win98titlebarh" title="Minimize" onclick="promptminimize();"> <div class="minimize"></div></div>
+        <div class="win98post" style="margin-left: -20000px; min-width: 500px" onmousedown="curtaskact = 6; currentwindow()" id="prompt"> <!--#ref2007-->
+            <div class="win98titlebarc" title="Close" onclick="curtaskact = 6; inactivewindow()"><div class="close"></div></div>
+            <div class="win98titlebarh" title="Minimize" onclick="curtaskact = 6; minimizewindow()"> <div class="minimize"></div></div>
             <div class="win98titlebarh" title="Help" onclick="twilightload()"> <div class="help"></div></div>
             <div class="title-bar-98" id="promptwindow"> <div class="title-bar-text" id="prompttitle">🎱 Command Prompt</div></div>
             <div class="window-body" style="margin:1px; margin-top:2px">
@@ -873,19 +810,14 @@
         </div></ul></div></div>
         
         <script>
-            var prompt = document.getElementById("prompt").style, promptwin = document.getElementById("promptwindow").style, prompttitle = document.getElementById("prompttitle").style;
-            function promptactive() {calupdate(); prompt.zIndex = cal; prompt.marginLeft = "0px"; promptwin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"; prompttitle.color = curactivetitle; curtaskact = 6; activatetask()}
-            function promptclose() {inactiveall(); prompt.marginLeft = "-20000px"; taskbar[6].marginLeft = "-20000px"; tasktrue[6] = false; taskon[6] = false; taskreset(); promptrestart()}
-            function promptpositionreset() {calupdate(); prompt.left = "300px"; prompt.top = "200px"; prompt.zIndex = cal; promptactive()}
-            function promptminimize(){inactiveall(); prompt.marginLeft = "-20000px"; inactiveall()}
-        
             var datestring, config, loadedconfig, config, inprompt = "", loaded, consolein, imageElement, imageElementBack, upkeyin;
             var consoleback = "#000", consoletext = "#fff", word1, word2, word3, word4, word5, upkeyin, currunning;
-            var consoleout = document.getElementById("currentact"), consolein = document.getElementById("prompttext").value, prompttitle = document.getElementById("prompttitle"); 
+            var consoleout = document.getElementById("currentact"), prompt = document.getElementById("prompt").style, 
+                consolein = document.getElementById("prompttext").value, prompttitle = document.getElementById("prompttitle"); 
             
             function htmlupdate() { $.get(config, function(data) {inprompt = inprompt + data;}, 'text')}
-            document.getElementById("prompttext").addEventListener("keyup", function(event) {
-                if (event.keyCode === 13) { event.preventDefault(); document.getElementById("promptin").click()}}); 
+                document.getElementById("prompttext").addEventListener("keyup", function(event) {
+                    if (event.keyCode === 13) { event.preventDefault(); document.getElementById("promptin").click()}}); 
             function consoleinput(){ consolein = document.getElementById("prompttext").value; consoleread(); document.getElementById("prompttext").value = ""; }
             
             function println() {inprompt = inprompt + "\n"; consoleout.innerHTML = inprompt}
@@ -912,7 +844,7 @@
                 } else if (function1 == "player"){
                     if(function4 == undefined){
                         if (function2 == "push"){
-                            embedactive(); document.getElementById("mediaplayer").value = function3; mediainput();
+                            curtaskact = 4; currentwindow(); document.getElementById("mediaplayer").value = function3; mediainput();
                         } else if (function2 == "fullscreen"){
                             if (function3 == "true"){ fullscreenactive = false; fullscreenembed()
                             } else if (function3 == "false"){ fullscreenactive = true; fullscreenembed()
@@ -1069,10 +1001,10 @@
         </script>
         
 <!-- Display properties rendering ------------------------------------------------------------------------------>
-        <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; left: 1465px; margin-left:-20000px; z-index:5;" onmousedown="diskactive()" id="disk"> <!--#ref2008-->
-            <div class="win98titlebarc" title="Close" onclick="diskclose()"><div class="close"></div></div>
+        <div class="win98post" style="height: 444px; width: 398px; position: fixed; top: 13%; left: 1465px; margin-left:-20000px; z-index:5;" onmousedown="curtaskact = 3; currentwindow();" id="disk"> <!--#ref2008-->
+            <div class="win98titlebarc" title="Close" onclick="curtaskact = 3; inactivewindow()"><div class="close"></div></div>
             <div class="win98titlebarh" title="Help" onclick="twilightload()"> <div class="help"></div></div>
-            <div class="title-bar-98" id="diskwindow"> <div class="title-bar-text" id="disktext">📺 Display Properties</div></div>
+            <div class="title-bar-98" id="diskwindow"> <div class="title-bar-text" id="disktitle">📺 Display Properties</div></div>
             
             <div class="win98tab" style="width:71px; margin-left:6px" onclick="tabreset(); backgroundtab();" id="backgroundtab"><center>Background</center></div>
             <div class="win98tab" style="width:68px; margin-left:80px"  onclick="tabreset(); screensavertab();" id="screenSavertab"><center>Screen Saver</center></div>
@@ -1111,42 +1043,42 @@
                         <div style="position: absolute; margin-top:-3px; margin-left:-3px; width:247px; height:93px; overflow-y: scroll; overflow-x: hidden">
                             <div class="wallpapermenu" onclick="wpn = 0; wallpapercall()"><div class="none" style="margin-top:-1px;"></div>
                                 <div class="filled" id="wallpaperoverlay1"><!--ref#0026-->
-                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> None </label></div></div>
+                                    <label style="margin: 3px 2px 3px 0px; cursor:pointer"> None </label></div></div>
                             <div class="wallpapermenu" style="margin-top:18px" onclick="wpn = 1; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay2">
-                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Default </label></div></div>
+                                    <label style="margin: 3px 2px 3px 0px; cursor:pointer"> Default </label></div></div>
                             <div class="wallpapermenu" style="margin-top:36px;" onclick="wpn = 2; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay3">
-                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Octavia's Study </label></div></div>
+                                    <label style="margin: 3px 2px 3px 0px; cursor:pointer"> Octavia's Study </label></div></div>
                             <div class="wallpapermenu" style="margin-top:72px" onclick="wpn = 3; wallpapercall()"> <div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay4" title="submitted by Matt in the discord server">
-                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer" title="submitted by Matt in the discord server"> Star Trek (Submitted by Matt)</label></div></div>
+                                    <label style="margin: 3px 2px 3px 0px; cursor:pointer" title="submitted by Matt in the discord server"> Star Trek (Submitted by Matt)</label></div></div>
                             <div class="wallpapermenu" style="margin-top:54px" onclick="wpn = 4; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay5">
-                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Neon Genesis Evangelion </label></div></div>
+                                    <label style="margin: 3px 2px 3px 0px; cursor:pointer"> Neon Genesis Evangelion </label></div></div>
                             <div class="wallpapermenu" style="margin-top:90px" onclick="wpn = 5; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay6" title="submitted by Xal in the discord server">
-                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Battlefield Girls (Submitted by Xal)</label></div></div>
+                                    <label style="margin: 3px 2px 3px 0px; cursor:pointer"> Battlefield Girls (Submitted by Xal)</label></div></div>
                             <div class="wallpapermenu" style="margin-top:108px" onclick="wpn = 6; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay7" title="submitted by Thea Vanherst">
-                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Vinyl Scratch (Submitted by Thea)</label></div></div>
+                                    <label style="margin: 3px 2px 3px 0px; cursor:pointer"> Vinyl Scratch (Submitted by Thea)</label></div></div>
                             <div class="wallpapermenu" style="margin-top:126px" onclick="wpn = 7; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay8" title="submitted by Millie in the discord server">
-                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Clouds at Midnight (Submitted by Millie) </label></div></div>
+                                    <label style="margin: 3px 2px 3px 0px; cursor:pointer"> Clouds at Midnight (Submitted by Millie) </label></div></div>
                             <div class="wallpapermenu" style="margin-top:146px" onclick="wpn = 8; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay9" title="submitted by Qhetha in the discord server">
-                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Desert Highway (Submitted by Qhetha)  </label></div></div>
+                                    <label style="margin: 3px 2px 3px 0px; cursor:pointer"> Desert Highway (Submitted by Qhetha)  </label></div></div>
                             <div class="wallpapermenu" style="margin-top:166px" onclick="wpn = 9; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay10" title="Created by Phil-Nye in the discord server">
-                                    <label style="margin: 3px 2px 0px 0px; cursor:pointer"> Aesthetic (Created by Phil-Nye)</label></div></div>
+                                    <label style="margin: 3px 2px 3px 0px; cursor:pointer"> Aesthetic (Created by Phil-Nye)</label></div></div>
                                     
                             <div style="margin-top:-80px; margin-left: -20000px" id="nsfwoptions">
                                 <div class="wallpapermenu" style="margin-top:186px;" onclick="wpn = 10; wallpapercall()"><div class="wallpapernsfw" style="margin-top:-1px"></div>
                                     <div class="filled" id="wallpaperoverlay11">
-                                        <label style="margin: 3px 2px 0px 0px; cursor:pointer">The Small Brown Fox</label></div></div>
+                                        <label style="margin: 3px 2px 3px 0px; cursor:pointer">The Small Brown Fox</label></div></div>
                                 <div class="wallpapermenu" style="margin-top:206px;" onclick="wpn = 11; wallpapercall()"><div class="wallpapernsfw" style="margin-top:-1px"></div>
                                     <div class="filled" id="wallpaperoverlay12">
-                                        <label style="margin: 3px 2px 0px 0px; cursor:pointer">Resident Evil</label></div></div></div>
+                                        <label style="margin: 3px 2px 3px 0px; cursor:pointer">Resident Evil</label></div></div></div>
                     </div></ul>
             </fieldset></div>
                         
@@ -1172,7 +1104,7 @@
                             <div class="dropmenu" style="width: 167px; margin-left: -20000px">
                                 <div class="dropbutton-pres" style="margin-left:154px"><div class="arrowdown"></div></div>
                                 <div class="droptext" onclick="none()" id="none">(none)</div></div></ul> <!--#ref0019-->
-                            <script>function none(){document.getElementById("currentscreensaver").textContent="(none)"} </script>
+                            <script>function none(){currentscreensaver.textContent="(none)"} </script>
 
                         <div class="win98buttondisa" style="margin-left:182px; width:67px; margin-top:2px;"><center><butdislabel>Save As...</butdislabel></center></div>
                         <div class="win98buttondisa" style="margin-left:262px; width:68px; margin-top:2px;"><center><butdislabel>Preview</butdislabel></center></div>
@@ -1314,7 +1246,7 @@
                             docelem.style.setProperty('--curactivetitle', curactivetitle); docelem.style.setProperty('--curinactivetitle', curinactivetitle); docelem.style.setProperty('--curspritesheet', curspritesheet)
                             docelem.style.setProperty('--discheckinv', discheckinv); docelem.style.setProperty('--enacheckinv', enacheckinv); docelem.style.setProperty('--invcheckinv', invcheckinv)
  
-                            var dtil = 0; shufflecolour(); desktopiconchange(); wwpno(); clocku(); inactiveall(); diskactive()
+                            var dtil = 0; shufflecolour(); desktopiconchange(); wwpno(); clocku(); inactiveall(); curtaskact = 3; currentwindow();
                             if (curinvert == 1){varinvert = 0;} else {varinvert = 1;}
                             if (dicotoggle == true){for(var i = 0; deskico.length > i; i++){deskico[i].width = "72px"; deskico[i].height = "72px"; var temp1 = dtil + "px"; var temp2 = "-0px"
                                 deskico[i].backgroundPosition = temp1 + " " + temp2; dtil = dtil - 72}} else {for(var i = "0"; deskico.length > i; i++){deskico[i].width = "36px"
@@ -1339,7 +1271,7 @@
                             <div class="dropmenu" style="width: 185px; margin-left: -20000px" id="item">
                                 <div class="dropbutton-pres" style="margin-left:172px"><div class="arrowdown"></div></div>
                                 <div class="droptext" onclick="desktopitem()" id="desktopitem">Desktop</div></div></ul>
-                            <script> function desktopitem(){document.getElementById("desktopitem").textContent="Desktop"} </script>
+                            <script> function desktopitem(){desktopitem.textContent="Desktop"} </script>
                             
                         <ul class="tree-view" style="position:absolute; width:49px; height:17px; margin-left:199px; padding:2px; background: var(--silver);">
                             <div style="margin-top: 17px; margin-left:34px">
@@ -1457,11 +1389,11 @@
                 <script> let previewico = [document.getElementById("previewi1").style, document.getElementById("previewi2").style, document.getElementById("previewi3").style, document.getElementById("previewi4").style,
                         document.getElementById("previewi5").style, document.getElementById("previewi6").style, document.getElementById("previewi7").style, document.getElementById("previewi8").style];
                     var predesktopsheet, curdesktopsheet;
-                    function dsheetpetra(){document.getElementById("currentdsheet").textContent="Petra Revisit"; predesktopsheet = github + "img/desktopspritesheet2.png')"; desktopiconpreview()}   
-                    function dsheetpetraOG(){document.getElementById("currentdsheet").textContent="Petra Classic"; predesktopsheet = github + "img/desktopspritesheet.png')"; desktopiconpreview()} 
-                    function dsheetcaddyog(){document.getElementById("currentdsheet").textContent="Caddy OG"; predesktopsheet = github + "img/desktopspritesheet3.png')"; desktopiconpreview()} 
-                    function dsheetcaddycl(){document.getElementById("currentdsheet").textContent="Caddy Classic"; predesktopsheet = github + "img/desktopspritesheet4.png')"; desktopiconpreview()} 
-                    function dsheetprat(){document.getElementById("currentdsheet").textContent="Prat"; predesktopsheet = github + "img/desktopspritesheet5.png')"; desktopiconpreview()} 
+                    function dsheetpetra(){currentdsheet.textContent="Petra Revisit"; predesktopsheet = github + "img/desktopspritesheet2.png')"; desktopiconpreview()}   
+                    function dsheetpetraOG(){currentdsheet.textContent="Petra Classic"; predesktopsheet = github + "img/desktopspritesheet.png')"; desktopiconpreview()} 
+                    function dsheetcaddyog(){currentdsheet.textContent="Caddy OG"; predesktopsheet = github + "img/desktopspritesheet3.png')"; desktopiconpreview()} 
+                    function dsheetcaddycl(){currentdsheet.textContent="Caddy Classic"; predesktopsheet = github + "img/desktopspritesheet4.png')"; desktopiconpreview()} 
+                    function dsheetprat(){currentdsheet.textContent="Prat"; predesktopsheet = github + "img/desktopspritesheet5.png')"; desktopiconpreview()} 
                     function desktopiconpreview(){docelem.style.setProperty('--predesktopsheet', predesktopsheet); curdesktopsheet = predesktopsheet}
                     function desktopiconchange(){docelem.style.setProperty('--curdesktopsheet', curdesktopsheet)}</script> 
                         
@@ -1506,7 +1438,7 @@
                                 <div class="dropbutton-pres" style="margin-left:137px"><div class="arrowdown"></div></div>
                                 <div class="droptext" onclick="sixteenbitcolour()">High Colour (16-bit)</div></div></ul>
 
-                        <script> function sixteenbitcolour(){document.getElementById("currentbitcol").textContent="High Colour (16-bit)"}</script>
+                        <script> function sixteenbitcolour(){currentbitcol.textContent="High Colour (16-bit)"}</script>
                 
                         <ul class="tree-view" style="position: absolute; width:151px; height: 13px; padding:2px; margin-left:-3px; margin-top:25px;"><div class="displaycolour" style="position:absolute; width:151px"></div></ul>
                 </fieldset></div>
@@ -1529,15 +1461,11 @@
             <!-- --------------------------------------- footer --------------------------------------- -->
             <div style="margin-top: 395px">
                 <div class="win98buttona" style="margin-left:316px;" onclick="wallpaperupdate(); backcolourset(); themechange()"><center><butlabel>Apply</butlabel></center></div>
-                <div class="win98buttona" style="margin-left:234px;" onclick="diskclose()"><center><butlabel>Cancel</butlabel></center></div>
-                <div class="win98buttona" style="margin-left:152px;" onclick="wallpaperupdate(); backcolourset(); themechange(); diskclose()"><center><butlabel>Okay</butlabel></center></div></div>
+                <div class="win98buttona" style="margin-left:234px;" onclick="curtaskact = 3; inactivewindow()"><center><butlabel>Cancel</butlabel></center></div>
+                <div class="win98buttona" style="margin-left:152px;" onclick="wallpaperupdate(); backcolourset(); themechange(); curtaskact = 3; inactivewindow()"><center><butlabel>Okay</butlabel></center></div></div>
         </div>
         
-        <script> var disk = document.getElementById("disk").style; diskwin = document.getElementById("diskwindow").style, disktext = document.getElementById("disktext").style;
-            function diskactive() {calupdate(); disk.zIndex = cal; disk.marginLeft = "0px"; disk.marginTop = "0px"; diskwin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"; disktext.color = curactivetitle; curtaskact = 3; activatetask()}
-            function diskopen() {inactiveall(); tabreset(); diskactive(); disk.left = "1465px"; disk.top = "13%"} function diskminimize() {inactiveall(); disk.marginLeft = "-20000px"}
-            function diskclose() {inactiveall(); inactiveall(); disk.marginLeft = "-20000px"; disk.marginTop = "-20000px"; taskbar[3].marginLeft = "-20000px"; tasktrue[3] = false; taskon[3] = false; taskreset()}
-            
+        <script> 
             var dcb1 = document.getElementById("dcb1").style, dcb2 = document.getElementById("dcb2").style, dcb3 = document.getElementById("dcb3").style, iconpre = document.getElementById("iconpreview").style; 
             var a = document.getElementById("backgroundtab").style, b = document.getElementById("screenSavertab").style, c = document.getElementById("appearancetab").style, 
                 d = document.getElementById("effectstab").style, e = document.getElementById("settingstab").style;
@@ -1554,21 +1482,20 @@
             function settingstab(){setz.zIndex = 9; e.zIndex = 10; e.width = "51px"; e.marginLeft = "267px"; e.marginTop = "5px"; e.height = "17px"}</script> 
         
 <!-- Window box handling ------------------------------------------------------------------------------>
-        <div class="win98post" style="margin-left: 200000px; height: 112px; width: 284px" id="logoff" onmousedown="logonactive();">
+        <div class="win98post" style="margin-left: 200000px; height: 100px; width: 250px" id="logoff" onmousedown="logonactive();">
             <div class="win98titlebarc" title="Close" onclick="logoffno()"><div class="close"></div></div>
             <a href="https://www.youtube.com/watch?v=6BJFnnWVNRU" target="_blank"><div class="win98titlebarh" title="help"> <div class="help"></div></div></a> 
-            <div class="title-bar-98" id="logoffwindow"> <div class="title-bar-text" id="logofftext">💤 Log off Windows
-            </div></div><div class="window-body" style="padding: 13px; margin-top:5px;">
-                <div class="logofficon" style="float: left;"></div> 
-                <label style="margin-top: 5px; margin-left: 24px; cursor:default"> Are you sure you want to log off? </label></div>
-            <div class="window-body"><div class="pad">
-                <center> <div class="win98buttona" style="margin-left:63px; width:60px;" onclick="location.href='https://thealonic.tumblr.com/loggedout'"> <p style="margin-top: 1px">  Yes </p> </div> 
-                    <div class="win98buttona" style="margin-left:135px; width:60px;" onclick="logoffno()"> <p style="margin-top: 1px"> No </p> </div> </center>
+            <div class="title-bar-98" id="logoffwindow"> <div class="title-bar-text" id="logofftext">💤 Log off Windows</div></div>
+            <div class="window-body">
+                <div class="logofficon"style="float: left;"></div> 
+                <label style="margin-top:11px;margin-left: 14px; cursor:default"> Are you sure you want to log off? </label></div>
+            <center><div style="margin-top:18px;">
+                <div class="win98button" style="display:inline-block" onclick="location.href='https://thealonic.tumblr.com/loggedout'"><butlabel>Yes</butlabel></div> 
+                <div class="win98button" style="display:inline-block" onclick="logoffno()"><butlabel>No</butlabel></div></center>
         </div></div></div>
         
-        <script> var logoff = document.getElementById("logoff").style; var logoffwin = document.getElementById("logoffwindow").style; var logofftext = document.getElementById("logofftext").style;
-            function logonactive(){calupdate(); logoff.zIndex = cal; logoff.marginLeft = "0px"; logoffwin.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"; logofftext.color = curactivetitle; logoff.marginLeft = "0px";}
-            function logreset() {inactiveall(); logoff.left = "40%"; logoff.top = "40%"; logonactive()}; function logoffno() { logoff.marginLeft = "-20000px"; logoff.zIndex = "1"} </script>
+        <script>function logonactive(){calupdate(); logoff.style.zIndex = cal; logoff.style.left = "40%"; logoff.style.top = "40%"; logoff.style.marginLeft = "0px"; logofftext.style.color = curactivetitle; logoff.style.marginLeft = "0px";
+            logoffwindow.style.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"} function logoffno() {logoff.style.marginLeft = "-20000px"; logoff.style.zIndex = "1"} </script>
         
 <!-- Tumblr Post handler ------------------------------------------------------------------------------>
         {block:Pagination}<div class="navigation cf" id="i_nav">{block:NextPage}<a href="{NextPage}"></a>{/block:NextPage}{block:PreviousPage}<a href="{PreviousPage}"></a>{/block:PreviousPage}</div>{/block:Pagination}
@@ -1754,13 +1681,22 @@
             $(".plinks-con").click(function(){if (plinksdrop == false){$(this).find("postdrop").css("margin-left", "49px"); plinksdrop = true 
                 } else if (plinksdrop == true){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false}})
             $(".plinks-con").mouseleave(function(){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false})
-            $(".window").click(function(){calupdate(); tumblractive(); $(this).css("z-index", cal); var desktopleft
+            $(".window").click(function(){calupdate(); desktop.left = desktopleft; document.body.style.overflowY = "scroll"; $(this).css("z-index", cal); var desktopleft
                 $(this).find(".title-bar-98").css("background", "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"); $(this).find(".title-bar-text").css("color", curactivetitle)});
             
-            function tumblractive() {curtaskact = 1; activatetask(); desktop.left = desktopleft; document.body.style.overflowY = "scroll"}
+            function tumblractive() {calupdate(); curtaskact = 1; activatetask(); desktop.left = desktopleft; document.body.style.overflowY = "scroll"}
             function tumblrminimize() {inactiveall(); desktop.left = "-20000px"; document.body.style.position = "hidden"}
 
-//   inactive toggle ------------------------------------------------------------------------------>
+//   window toggles ------------------------------------------------------------------------------>
+            var windowon = [undefined, "pyro","cat","disk","embed","note","prompt","notepad","internet"], winprocess;
+            function winprocess() {calupdate(); winp = windowon[curtaskact]}
+            function currentwindow(){winprocess(); document.getElementById(winp).style.zIndex = cal; document.getElementById(winp).style.marginLeft = "0px"
+                document.getElementById(winp+"window").style.background = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")"
+                document.getElementById(winp+"title").style.color = curactivetitle; if(curtaskact == 1){curtaskact = 2;} activatetask()}
+            function inactivewindow(){winprocess(); document.getElementById(winp).style.marginLeft = "-20000px"; 
+                tasktrue[curtaskact] = false; taskon[curtaskact] = false; taskbar[curtaskact].marginLeft = "-20000px"; taskreset()}
+            function minimizewindow(){winprocess(); document.getElementById(winp).style.marginLeft = "-20000px"}
+
             var desktop = document.getElementById("desktop").style, titlebar = "linear-gradient(90deg, " + curtbgradactive1 + "," + curtbgradactive2 + ")";
             function inactiveall() {var timer = 0; if (timer < 1){timer = 1; menuclosed();
                 $(".win98post").find(".title-bar-98").css("background", "linear-gradient(90deg, " + curtbgradinactive1 + "," + curtbgradinactive2 + ")"); $(".win98post").find(".title-bar-text").css("color", curinactivetitle)
@@ -1779,14 +1715,14 @@
             <div class="top_border"></div> <!-- top line render-->
             <!-- Start button toggle -->
             <div class="win98start" onclick="startpress();" style="margin-right:4px;"> 
-                <div class="windowslogo"></div><b style="position:absolute; margin-left:23px; margin-top:2px">Start</b></div>
+                <div class="windowslogo"></div><b style="position:absolute; margin-left:21px; margin-top:2px">Start</b></div>
             <!-- Start menu closed -->
             <div style="position: fixed; bottom: 0%; bottom: 24px;" onmouseleave="">
                 <div class="win98post" id="startmenu" style="width:163px; height: 377px; margin-top:-383px; margin-left: 200000px"> 
                     <div style="position:absolute;"></div><div class="startmenubarback"></div><div class="startmenubar"></div><div class="startmenubartext"></div>
                     
                     <div style="margin-left: 20px; margin-top: -3px">
-                        <label style="margin-top:3px;"><div class="submenu36" style="width: 141px; height:36px" onclick="messageclose(); patchnotestask()">
+                        <label style="margin-top:3px;"><div class="submenu36" style="width: 141px; height:36px" onclick="messageclose(); notestask()">
                             <div class="patchnotes"></div><label><labs><underline>U</underline>pdate log</labs></label></div></label>
                         <div class="menuapplicationsplit" style="width:139px; margin-left: 2px; margin-top: 3px; margin-bottom: 3px"> </div>
                         <label><div class="submenu36" id="menuprograms" onmouseover="scf=0; startsubmenuo()" onmouseout="scf=0; startsubmenuc()"> 
@@ -1806,7 +1742,7 @@
                             <div class="menuhelp"></div><label><labs><underline>S</underline>ource-code </labs></label></div></a></label>
                         <label><a href="https://paypal.me/TheaVanherst"><div class="submenu36" style="width: 142px;">
                             <div class="menusupport"></div><label><labs><underline>S</underline>upport development</labs></label></div></a></label>  
-                        <label><div class="submenu36" onclick="logonactive(); shutdownno();">
+                        <label><div class="submenu36" onclick="logonactive()">
                             <div class="menulogoff"></div><label><labs><underline>L</underline>og off</labs></label></div></label>  
                     </div>
 
@@ -1971,7 +1907,7 @@
                         <!-- Activedesktop submenu -->
                         <div class="win98post" style="margin-top:-50px; width:170px; height:40px" id="activedesktopsubmenu" onmouseover="scf=15; startsubmenuo()" onmouseout="scf=15; startsubmenuc()">
                             <div class="submenu20" onclick="messageopen(); menuclosed()"><label><labc style="margin-top: 2px"> 🧮 brain go brrrrr </labc></label></div>
-                            <div class="submenu20" onclick="vunnytask(); vunnypositionreset(); menuclosed()"><label><labc style="margin-top: 2px"> 👿 very.unvunny </labc></label></div></div>
+                            <div class="submenu20" onclick="vunnytask(); menuclosed()"><label><labc style="margin-top: 2px"> 👿 very.unvunny </labc></label></div></div>
                     </div>
                               
 <!-- Find menu rendering ------------------------------------------------------------------------------>
@@ -2009,9 +1945,9 @@
                 <div class="big_seperator21" style="margin:2px; margin-left:60px"></div> 
                 <div class="small_seperator19" style=" margin-top:2px"></div>
                 <div class="taskbaricons">
-                    <div class="taskbaricon1" style="cursor:pointer; margin-left:-2px" onclick="tumblrtoggle();"></div>
+                    <div class="taskbaricon1" style="cursor:pointer" onclick="internettask()"></div>
                     <div class="taskbaricon2"></div>
-                    <div class="taskbaricon3" style="cursor:pointer;" onclick="messageopen();"></div>
+                    <div class="taskbaricon3" style="cursor:pointer" onclick="messageopen();"></div>
                     <div class="taskbaricon4"></div></div>
                 <div class="big_seperator21" style="margin:2px"></div>
                 <div class="small_seperator19" style="margin-top:2px"></div>
@@ -2033,27 +1969,40 @@
                 <div class="taskbartask8" style="cursor:pointer" onmousedown="button = 8; tasktoggle()" id="taskapp8"> 
                     <div class="title-bar-text" id="taskapp8font">🌍 Internet Explorer</div></div>
                 
-                <script>var button = 0, task = 0, funccall = 0, taskpos = [undefined, 0, 0, 0, 0, 0, 0, 0, 0], ButtonOpen = [undefined, true, false, false, false, false, false, false, false]
+                <script>var button = 0, task = 0, funccall = 0, taskpos = [undefined, 0, 0, 0, 0, 0, 0, 0, 0], ButtonOpen = [undefined, true, false, false, false, false, false, false, false],
+                        taskon = [undefined, true, false, false, false, false, false, false, false], tasktrue = [undefined, true, false, false, false, false, false, false, false],
                         taskon = [undefined, true, false, false, false, false, false, false, false], tasktrue = [undefined, true, false, false, false, false, false, false, false],
                         taskbar = [undefined, document.getElementById("taskapp1").style, document.getElementById("taskapp2").style, document.getElementById("taskapp3").style, document.getElementById("taskapp4").style, 
                         document.getElementById("taskapp5").style, document.getElementById("taskapp6").style, document.getElementById("taskapp7").style, document.getElementById("taskapp8").style],
                         taskbarfont = [undefined, document.getElementById("taskapp1font").style, document.getElementById("taskapp2font").style, document.getElementById("taskapp3font").style, document.getElementById("taskapp4font").style,
                         document.getElementById("taskapp5font").style, document.getElementById("taskapp6font").style, document.getElementById("taskapp7font").style, document.getElementById("taskapp8font").style] //leave this as js, dipshit.
+                        
+                    function tasktoggle() {
+                        if (ButtonOpen[button] == false) { funccall = button + "m"} else if (ButtonOpen[button] == true){ funccall = button + "a"; ButtonOpen[button] = false } switch (funccall) {
+                            case "1m": tumblrminimize();                 break; case "1a": tumblractive(); break; 
+                            case "2m": curtaskact = 2; minimizewindow(); curtaskact = 1; minimizewindow(); break; 
+                            case "2a": if (window2 == true){curtaskact = 2; currentwindow(); cat.marginLeft = "0px";  cat.zIndex = cal}
+                                       if (window1 == true){curtaskact = 1; currentwindow(); pyro.marginLeft = "0px"; pyro.zIndex = cal + 1} break; 
+                            case "3m": curtaskact = 3; minimizewindow(); break; case "3a": curtaskact = 3; currentwindow(); break; 
+                            case "4m": curtaskact = 4; minimizewindow(); break; case "4a": curtaskact = 4; currentwindow(); break; 
+                            case "5m": curtaskact = 5; minimizewindow(); break; case "5a": curtaskact = 5; currentwindow(); break; 
+                            case "6m": curtaskact = 6; minimizewindow(); break; case "6a": curtaskact = 6; currentwindow(); break;
+                            case "7m": curtaskact = 7; minimizewindow(); break; case "7a": curtaskact = 7; currentwindow(); break; 
+                            case "8m": curtaskact = 8; minimizewindow(); break; case "8a": curtaskact = 8; currentwindow(); break}; button = 0; menuclosed()}
 
-                    function tasktoggle() {if (ButtonOpen[button] == false) { funccall = button + "m"} else if (ButtonOpen[button] == true){ funccall = button + "a"; ButtonOpen[button] = false } switch (funccall) {
-                            case "1m": tumblrminimize(); break; case "1a": tumblractive(); break; case "2m": vunnyminimize(); break; case "2a": vunnyopen(); break; case "3m": diskminimize(); break; case "3a": diskactive(); break; 
-                            case "4m" :embedminimize(); break; case "4a": embedactive(); break; case "5m": patchnoteminimize(); break; case "5a": patchnotesactive(); break; case "6m": promptminimize(); break; case "6a": promptactive(); break;
-                            case "7m": notepadminimize(); break; case "7a": notepadactive(); break; case "8m": internetminimize(); break; case "8a": internetactive(); break}; button = 0; menuclosed()}
-
-                    function vunnytask(){vunnywindowreset(); catactive(); pyroactive(); task = 2; taskposopen()}; function disktask(){diskopen(); appearancetab(); task = 3; taskposopen()}
-                    function embedtask(){embedactive(); task = 4; taskposopen()}; function patchnotestask(){messageclose(); task = 5; patchnotesopen(); taskposopen()}
-                    function prompttask(){promptactive(); task = 6; taskposopen()}; function notepadtask(){notepadpositionreset(); task = 7; taskposopen()}
-                    function internettask(){internetpositionreset(); task = 8; taskposopen()} //tasks 8
-
-                    function taskreset(){currenttask = currenttask - 1; for (var v = 1; v < tasktrue.length; v++){ if(v !== curtaskact){ if(taskpos[v] > taskpos[curtaskact]){ if(taskon[v] == true){ 
-                        taskpos[v] = taskpos[v] - 168; taskbar[v].marginLeft = taskpos[v] + "px"}}}} inprompt = inprompt + "current tasks active: " + currenttask; println()}
-                    function taskposopen(){ if(taskon[task] == false){ if(ButtonOpen[task] == false){currenttask = currenttask + 1}; taskbar[task].marginLeft = (currenttask * 168) + "px"; 
-                        taskpos[task] = (currenttask * 168); taskon[task] = true; inprompt = inprompt + "current tasks active: " + currenttask; println()}}</script>
+                    function vunnytask(){   cat.style.left="4%";        cat.style.top="68%";       curtaskact = 1; currentwindow()
+                                            pyro.style.left="12%";      pyro.style.top="58%";      curtaskact = 2; currentwindow(); task = 2; taskposopen(); vunnywindowreset();} 
+                    function disktask(){    disk.left="1465px";         disk.top="13%";            curtaskact = 3; currentwindow(); task = 3; taskposopen()}
+                    function embedtask(){   embed.left="300px";         embed.top="200px";         curtaskact = 4; currentwindow(); task = 4; taskposopen()}
+                    function notestask(){   note.style.left="67%";      note.style.top="4%";       curtaskact = 5; currentwindow(); task = 5; taskposopen(); messageclose(); notesupdate()}
+                    function prompttask(){  prompt.left="300px";        prompt.top="200px";        curtaskact = 6; currentwindow(); task = 6; taskposopen()}
+                    function notepadtask(){ notepad.style.left="375px"; notepad.style.top="217px"; curtaskact = 7; currentwindow(); task = 7; taskposopen()}
+                    function internettask(){internet.style.left="375px";internet.style.top="117px";curtaskact = 8; currentwindow(); task = 8; taskposopen()}
+                    
+                    function taskreset(){currenttask=currenttask- 1;for(var v=1;v<tasktrue.length;v++){if(v!==curtaskact){if(taskpos[v]>taskpos[curtaskact]){if(taskon[v]==true){ 
+                        taskpos[v]=taskpos[v]- 168;taskbar[v].marginLeft=taskpos[v]+"px"}}}}inprompt=inprompt+"current tasks active: "+currenttask;println()}
+                    function taskposopen(){if(taskon[task]==false){if(ButtonOpen[task]==false){currenttask=currenttask+ 1};taskbar[task].marginLeft=(currenttask*168)+"px"; 
+                        taskpos[task]=(currenttask*168);taskon[task]=true;inprompt=inprompt+"current tasks active: "+currenttask;println()}}</script>
                  
                 <div class="clock"> <div class="calendar" style="cursor: pointer;" onclick="clockopen();"> </div>
                     <div class="menuentertainment3" style="margin-top:-1px; margin-left:1px;"></div>
@@ -2111,7 +2060,7 @@
             dragElement(document.getElementById("logoff")); dragElement(document.getElementById("clock")); dragElement(document.getElementById("internet"));
             
             function dragElement(elmnt) { var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-                if (document.getElementById(elmnt.id + "window")) {document.getElementById(elmnt.id + "window").onmousedown = dragMouseDown} else { elmnt.onmousedown = dragMouseDown}
+                if (document.getElementById(elmnt.id + "window")) {document.getElementById(elmnt.id + "window").onmousedown = dragMouseDown} else {elmnt.onmousedown = dragMouseDown}
             function dragMouseDown(e) { e = e || window.event; e.preventDefault(); pos3 = e.clientX; pos4 = e.clientY; document.onmouseup = closeDragElement; document.onmousemove = elementDrag}
             function elementDrag(e) { e = e || window.event;  e.preventDefault(); pos1 = pos3 - e.clientX; pos2 = pos4 - e.clientY; pos3 = e.clientX; pos4 = e.clientY;
                 elmnt.style.top = (elmnt.offsetTop - pos2) + "px"; elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";} //if(elmnt.offsetTop < 0){elmnt.style.top = elmnt.offsetTop - pos2}
