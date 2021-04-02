@@ -231,7 +231,7 @@
             .startmenubar{opacity:50%;filter:invert(var(--invert));background-position:-21px -0px}.startmenubarback{width:21px;height:377px;background-color:var(--prussian);position:absolute;}
     
             .clock{box-shadow:inset -1px -1px var(--white),inset 1px 1px var(--gray);padding:2px;float:right;width:96px;height:18px;margin-right:2px;margin-top:2px}
-            .taskbaricons {float:left;margin-top:3px;margin-left:1px;margin-right:1px}.start_bar.time{float:right;margin-right:8px;color:var(--text)}
+            .taskbaricons {float:left;margin-top:3px;margin-left:1px;margin-right:1px}.time{float:right;margin-right:5px;margin-top:3px;color:var(--text)}
                 
 /* Message box reference sheets ------------------------------------------------------------------------------*/
             .displayboxdisplay,.displayboxdisplayde {height:169px;margin-left:-16px;position:absolute;margin-top:-16px}
@@ -1175,52 +1175,40 @@
                             schemedrop = false, ctoggle = false, themecurrent = "lightmode"; function wallpapercust() {currentsch.textContent="(Custom)"} 
                         var deskico = [document.getElementById("desktopico1").style, document.getElementById("desktopico2").style, document.getElementById("desktopico3").style, document.getElementById("desktopico4").style, 
                             document.getElementById("desktopico5").style, document.getElementById("desktopico6").style, document.getElementById("desktopico7").style, document.getElementById("desktopico8").style];
-                        var currentsch = document.getElementById("currentscheme"), scheme = document.getElementById("scheme").style;
+                        var currentsch = document.getElementById("currentscheme"), scheme = document.getElementById("scheme").style, curcolsch
 
-                        function windows98(){ currentsch.textContent="Windows 98"; copi = 12; cpick(); wpn = 1; wallpapercall(); lightmode(); themepreviewchange()} 
-                        function evangelionmode(){ currentsch.textContent="Neon Genesis Evangelion"; copi = 18; cpick(); wpn = 4; wallpapercall(); darkmode(); themepreviewchange()}
-                        function Octavia(){ currentsch.textContent="Octavia's Study"; copi = 17; cpick();wpn = 2; wallpapercall(); darkmode(); themepreviewchange()}
-                        function girlsdayout(){ currentsch.textContent="A Girls Day Out"; copi = 19; cpick(); wpn = 5; wallpapercall(); tankmode(); themepreviewchange()}
-                        function milyvean(){ currentsch.textContent="Clouds at Midnight"; copi = 18; cpick(); wpn = 7; wallpapercall(); lightmode(); themepreviewchange()}
-                        function vapourwave(){ currentsch.textContent="Aesthetic"; copi = 20; cpick(); wpn = 8; wallpapercall(); neonmode(); themepreviewchange()}
+                        function windows98(){currentsch.textContent="Windows 98"; copi = 12; cpick(); wpn = 1; wallpapercall(); curcolsch=schemes[2]; themepreviewchange()} 
+                        function evangelionmode(){currentsch.textContent="Neon Genesis Evangelion"; copi = 18; cpick(); wpn = 4; wallpapercall(); curcolsch=schemes[0]; themepreviewchange()}
+                        function Octavia(){currentsch.textContent="Octavia's Study"; copi = 17; cpick();wpn = 2; wallpapercall(); curcolsch=schemes[0]; themepreviewchange()}
+                        function girlsdayout(){currentsch.textContent="A Girls Day Out"; copi = 19; cpick(); wpn = 5; wallpapercall(); curcolsch=schemes[1]; themepreviewchange()}
+                        function milyvean(){currentsch.textContent="Clouds at Midnight"; copi = 18; cpick(); wpn = 7; wallpapercall(); curcolsch=schemes[2]; themepreviewchange()}
+                        function vapourwave(){currentsch.textContent="Aesthetic"; copi = 20; cpick(); wpn = 8; wallpapercall(); curcolsch=schemes[3]; themepreviewchange()}
+                        function contrastmodescheme1(){currentsch.textContent="High Contrast Mode 1"; highcontrast1(); wpn = 0; wallpapercall(); curcolsch=schemes[4]; themepreviewchange(); highcontrast()}
+                        function contrastmodescheme2(){currentsch.textContent="High Contrast Mode 2"; highcontrast2(); wpn = 0; wallpapercall(); curcolsch=schemes[5]; themepreviewchange(); highcontrast()}
 
-                        function darkmode(){pretaskbartxt = "#9f9f9f"; pretaskbartxtprs = "#fff"; preactivetitle = "#fff"; preinactivetitle = "#fff";
-                            pretbgradinactive1 = "#323232"; pretbgradinactive2 = "#151515"; pretbgradactive1 = "#202020"; pretbgradactive2 = "#676767";
-                            cpwhite = "#545454"; cplightg = "#9f9f9f"; cpsilver = "#3f3f3f"; cpmidgray = "#ababab"; cpgray = "#292929"; cpblack = "#000"; cpblue = "#fccc39";
-                            cpprussian = "#da3624"; cpwincyan = "#008080"; cpyellow = "#c0c0c0"; cpfont = "#c0c0c0"; cchover = "#fff"; cpatext = "#fff"; preinvert = 1; shuffleflop = 1; 
-                            discheckinv = 0.4; enacheckinv = 0.8; invcheckinv = 0.65; prespritesheet = github + "img/spritesheeti.png')"; cwpp = "#292929"}
-                        function tankmode(){pretaskbartxt = "#000"; pretaskbartxtprs = "#000"; preactivetitle = "#fff"; preinactivetitle = "#607060";
-                            pretbgradinactive1 = "#483038"; pretbgradinactive2 = "#483038"; pretbgradactive1 = "#404840"; pretbgradactive2 = "#404840";
-                            cpwhite = "#7d8f7d"; cplightg = "#607060"; cpsilver = "#607060"; cpmidgray = "#404840"; cpgray = "#404840"; cpblack = "#0a0a0a"; cpblue = "#fff";
-                            cpprussian = "#481212"; cpwincyan = "#008080"; cpyellow = "#ffff00"; cpfont = "#000"; cchover = "#fff"; cpatext = "#000"; preinvert = 0; shuffleflop = 0; 
-                            discheckinv = 0.4; enacheckinv = 0.8; invcheckinv = 0.65; prespritesheet = github + "img/spritesheeti.png')"; cwpp = "#607060"}
-                        function lightmode(){pretaskbartxt = "#000"; pretaskbartxtprs = "#000"; preactivetitle = "#fff"; preinactivetitle = "#fff";
-                            pretbgradinactive1 = "#878787"; pretbgradinactive2 = "#a2a2a2"; pretbgradactive1 = "#00087f"; pretbgradactive2 = "#0884ce";
-                            cpwhite = "#fff"; cplightg = "#dfdfdf"; cpsilver = "#c0c0c0"; cpmidgray = "#ababab"; cpgray = "#808080"; cpblack = "#0a0a0a"; cpblue = "#0000FF";
-                            cpprussian = "#00207c"; cpwincyan = "#008080"; cpyellow = "#ffff00"; cpfont = "#000"; cphover = "#fff"; cpatext = "#000"; preinvert = 0; shuffleflop = 0; 
-                            discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; prespritesheet = github + "img/spritesheeti.png')"; cwpp = "#c0c0c0"}
-                        function neonmode(){pretaskbartxt = "#000"; pretaskbartxtprs = "#000"; preactivetitle = "#fff"; preinactivetitle = "#00554d";
-                            pretbgradinactive1 = "#00bfbc"; pretbgradinactive2 = "#ec91a2"; pretbgradactive1 = "#01bfbc"; pretbgradactive2 = "#ca9cb9";
-                            cpwhite = "#f7dbd7"; cplightg = "#fae0e4"; cpsilver = "#f4c1ca"; cpmidgray = "#e08998"; cpgray = "#de4560"; cpblack = "#0a0a0a"; cpblue = "#00bfbc";
-                            cpprussian = "#a2dbd2"; cpwincyan = "#008080"; cpyellow = "#ffff00"; cpfont = "#000"; cphover = "#fff"; cpatext = "#000"; preinvert = 0; shuffleflop = 0; 
-                            discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; prespritesheet = github + "img/spritesheeti.png')"; cwpp = "#a2dbd2"}
-                            
-                        function contrastmodescheme1(){ currentsch.textContent="High Contrast Mode 1"; highcontrast1(); wpn = 0; wallpapercall(); contrastmode1(); themepreviewchange()}
-                        function contrastmodescheme2(){ currentsch.textContent="High Contrast Mode 2"; highcontrast2(); wpn = 0; wallpapercall(); contrastmode2(); themepreviewchange()}
-                        
+                        var darkmode = ["#9f9f9f","#fff","#fff","#fff","#323232","#151515","#202020","#676767","#545454","#9f9f9f","#3f3f3f","#ababab","#292929","#000","#fccc39",
+                            "#da3624","#008080","#c0c0c0","#c0c0c0","#fff","#fff",1,1,0.4,0.8,0.65,"img/spritesheeti.png')","#292929"],
+                            tankmode = ["#000","#000","#fff","#607060","#483038","#483038","#404840","#404840","#7d8f7d","#607060","#607060","#404840","#404840","#0a0a0a","#fff",
+                            "#481212","#008080","#ffff00","#000","#fff","#000",0,0,0.4,0.8,0.65,"img/spritesheeti.png')","#607060"],
+                            lightmode = ["#000","#000","#fff","#fff","#878787","#a2a2a2","#00087f","#0884ce","#fff","#dfdfdf","#c0c0c0","#ababab","#808080","#0a0a0a","#0000FF",
+                            "#00207c","#008080","#ffff00","#000","#fff","#000",0,0,0.6,0.2,0.35,"img/spritesheeti.png')","#c0c0c0"],
+                            neonmode = ["#000","#000","#fff","#00554d","#00bfbc","#ec91a2","#01bfbc","#ca9cb9","#f7dbd7","#fae0e4","#f4c1ca","#e08998","#de4560","#0a0a0a","#00bfbc",
+                            "#a2dbd2","#008080","#ffff00","#000","#fff","#000",0,0,0.6,0.2,0.35,"img/spritesheeti.png')","#a2dbd2"],
+                            contras1 = ["#fff","#0000ff","#fff","#000","#00ffff","#0000ff","#0000ff","#00ffff","#000","#dfdfdf","#000","#ababab","#808080","#fff","#00ffff",
+                            "#0000ff","#008080","#ffff00","#ffff00","#fff","#fff",1,1,0.6,0.2,0.35,"img/spritesheeti.png')","#0000ff","#00ffff"],
+                            contras2 = ["#fff","#0000ff","#000","#000","#ffff00","#ffff00","#00ff00","#00ff00","#000","#dfdfdf","#000","#ababab","#808080","#fff","#00ff00",
+                            "#00ff00","#008080","#ffff00","#ffff00","#fff","#00ff00",1,1,0.6,0.2,0.35,"img/spritesheeti.png')","#00ff00", "#00ff00"];
+                        var schemes = [darkmode,tankmode,lightmode,neonmode,contras1,contras2]
+
                         function highcontrast() {fontcolour = "#000"; wwpno(); curwp = cpwhite; wpp(); wpcr(); ctoggle = true}
-                        function contrastmode1(){pretaskbartxt = "#fff"; pretaskbartxtprs = "#0000ff"; preactivetitle = "#fff"; preinactivetitle = "#000";
-                            pretbgradinactive1 = "#00ffff"; pretbgradinactive2 = "#00ffff"; pretbgradactive1 = "#0000ff"; pretbgradactive2 = "#0000ff"; currentcolour = "#00ffff"
-                            cpwhite = "#000"; cplightg = "#dfdfdf"; cpsilver = "#000"; cpmidgray = "#ababab"; cpgray = "#808080"; cpblack = "#fff"; cpblue = "#00ffff";
-                            cpprussian = "#0000ff"; cpwincyan = "#008080"; cpyellow = "#ffff00"; cpfont = "#ffff00"; cphover = "#fff"; cpatext = "#fff"; preinvert = 1; shuffleflop = 1; 
-                            discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; prespritesheet = github + "img/spritesheeti.png')"; cwpp = "#0000ff"; highcontrast()}
-                        function contrastmode2(){pretaskbartxt = "#fff"; pretaskbartxtprs = "#0000ff"; preactivetitle = "#000"; preinactivetitle = "#000"
-                            pretbgradinactive1 = "#ffff00"; pretbgradinactive2 = "#ffff00"; pretbgradactive1 = "#00ff00"; pretbgradactive2 = "#00ff00"; currentcolour = "#00ff00"
-                            cpwhite = "#000"; cplightg = "#dfdfdf"; cpsilver = "#000"; cpmidgray = "#ababab"; cpgray = "#808080"; cpblack = "#fff"; cpblue = "#00ff00"
-                            cpprussian = "#00ff00"; cpwincyan = "#008080"; cpyellow = "#ffff00"; cpfont = "#ffff00"; cphover = "#fff"; cpatext = "#00ff00"; preinvert = 1; shuffleflop = 1
-                            discheckinv = 0.6; enacheckinv = 0.2; invcheckinv = 0.35; prespritesheet = github + "img/spritesheeti.png')"; cwpp = "#00ff00"; highcontrast()}
-
-                        function themepreviewchange() {docelem.style.setProperty('--prespritesheet', prespritesheet); docelem.style.setProperty('--preinvert', preinvert);
+                        
+                        function themepreviewchange() {pretaskbartxt=curcolsch[0];pretaskbartxtprs=curcolsch[1];preactivetitle=curcolsch[2];preinactivetitle=curcolsch[3];pretbgradinactive1=curcolsch[4];
+                            pretbgradinactive2=curcolsch[5];pretbgradactive1=curcolsch[6];pretbgradactive2=curcolsch[7];cpwhite=curcolsch[8];cplightg=curcolsch[9];cpsilver=curcolsch[10];cpmidgray=curcolsch[11];
+                            cpgray=curcolsch[12];cpblack=curcolsch[13];cpblue=curcolsch[14];cpprussian=curcolsch[15];cpwincyan=curcolsch[16];cpyellow=curcolsch[17];cpfont=curcolsch[18];cphover=curcolsch[19];
+                            cpatext=curcolsch[20];preinvert=curcolsch[21];shuffleflop=curcolsch[22];discheckinv=curcolsch[23];enacheckinv=curcolsch[24];invcheckinv=curcolsch[25];prespritesheet=github+curcolsch[26];
+                            cwpp=curcolsch[27];if(curcolsch.length == 28){currentcolour=curcolsch[28]}
+                            
+                            docelem.style.setProperty('--prespritesheet', prespritesheet); docelem.style.setProperty('--preinvert', preinvert);
                             docelem.style.setProperty('--prewhite', cpwhite); docelem.style.setProperty('--pregray', cpgray); docelem.style.setProperty('--prespritesheet', prespritesheet);
                             docelem.style.setProperty('--preblack', cpblack); docelem.style.setProperty('--presilver', cpsilver); docelem.style.setProperty('--preprussian', cpprussian); 
                             docelem.style.setProperty('--premidgray', cpmidgray); docelem.style.setProperty('--prefont', cpfont); docelem.style.setProperty('--prehover', cphover); 
@@ -1381,7 +1369,7 @@
                                 <div class="droptext" onclick="dsheetcaddyog()">Thealonic</div>
                                 <div class="droptext" onclick="dsheetcaddycl()">Thealonic Oldschool</div>
                                 <div class="droptext" onclick="dsheetprat()">Prat</div></div></ul>
-                                
+                        
                         <div class="win98button" style="float:right; width:78px; margin-top: -21px; margin-right:4.5px;" onclick="dsheetpetra(); desktopiconchange()"><center><butlabel>Default Icon</butlabel></center></div>
                         <div class="win98button" style="float:right; width:78px; margin-top: -21px; margin-right:8px;" onclick="desktopiconchange()"><center><butlabel>Change Icon...</butlabel></center></div></div>
                 </fieldset>
@@ -1991,18 +1979,18 @@
                             case "8m": curtaskact = 8; minimizewindow(); break; case "8a": curtaskact = 8; currentwindow(); break}; button = 0; menuclosed()}
 
                     function vunnytask(){   cat.style.left="4%";        cat.style.top="68%";       curtaskact = 1; currentwindow()
-                                            pyro.style.left="12%";      pyro.style.top="58%";      curtaskact = 2; currentwindow(); task = 2; taskposopen(); vunnywindowreset();} 
-                    function disktask(){    disk.left="1465px";         disk.top="13%";            curtaskact = 3; currentwindow(); task = 3; taskposopen()}
-                    function embedtask(){   embed.left="300px";         embed.top="200px";         curtaskact = 4; currentwindow(); task = 4; taskposopen()}
-                    function notestask(){   note.style.left="67%";      note.style.top="4%";       curtaskact = 5; currentwindow(); task = 5; taskposopen(); messageclose(); notesupdate()}
-                    function prompttask(){  prompt.left="300px";        prompt.top="200px";        curtaskact = 6; currentwindow(); task = 6; taskposopen()}
-                    function notepadtask(){ notepad.style.left="375px"; notepad.style.top="217px"; curtaskact = 7; currentwindow(); task = 7; taskposopen()}
-                    function internettask(){internet.style.left="375px";internet.style.top="117px";curtaskact = 8; currentwindow(); task = 8; taskposopen()}
+                                            pyro.style.left="12%";      pyro.style.top="58%";      curtaskact = 2; currentwindow(); taskposopen(); vunnywindowreset();} 
+                    function disktask(){    disk.left="1465px";         disk.top="13%";            curtaskact = 3; currentwindow(); taskposopen()}
+                    function embedtask(){   embed.left="300px";         embed.top="200px";         curtaskact = 4; currentwindow(); taskposopen()}
+                    function notestask(){   note.style.left="67%";      note.style.top="4%";       curtaskact = 5; currentwindow(); taskposopen(); messageclose(); notesupdate()}
+                    function prompttask(){  prompt.left="300px";        prompt.top="200px";        curtaskact = 6; currentwindow(); taskposopen()}
+                    function notepadtask(){ notepad.style.left="375px"; notepad.style.top="217px"; curtaskact = 7; currentwindow(); taskposopen()}
+                    function internettask(){internet.style.left="375px";internet.style.top="117px";curtaskact = 8; currentwindow(); taskposopen()}
                     
                     function taskreset(){currenttask=currenttask- 1;for(var v=1;v<tasktrue.length;v++){if(v!==curtaskact){if(taskpos[v]>taskpos[curtaskact]){if(taskon[v]==true){ 
                         taskpos[v]=taskpos[v]- 168;taskbar[v].marginLeft=taskpos[v]+"px"}}}}inprompt=inprompt+"current tasks active: "+currenttask;println()}
-                    function taskposopen(){if(taskon[task]==false){if(ButtonOpen[task]==false){currenttask=currenttask+ 1};taskbar[task].marginLeft=(currenttask*168)+"px"; 
-                        taskpos[task]=(currenttask*168);taskon[task]=true;inprompt=inprompt+"current tasks active: "+currenttask;println()}}</script>
+                    function taskposopen(){if(taskon[curtaskact]==false){if(ButtonOpen[curtaskact]==false){currenttask=currenttask+ 1};taskbar[curtaskact].marginLeft=(currenttask*168)+"px"; 
+                        taskpos[curtaskact]=(currenttask*168);taskon[curtaskact]=true;inprompt=inprompt+"current tasks active: "+currenttask;println()}}</script>
                  
                 <div class="clock"> <div class="calendar" style="cursor: pointer;" onclick="clockopen();"> </div>
                     <div class="menuentertainment3" style="margin-top:-1px; margin-left:1px;"></div>
