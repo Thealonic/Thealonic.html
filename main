@@ -37,7 +37,7 @@
                     --curfont: 'ms_sans_serifregular'; --curfontbold: 'ms_sans_serif_boldregular'; --curfontsize: 11px;
 
                     --prewhite: #fff; --prelightg: #dfdfdf;  --presilver: #c0c0c0; --premidgray: #ababab; --pregray: #808080; --preblack: #0a0a0a; --preprussian: #00207c ; --preyellow: #ffff00; 
-                    --predesktopicon: #008080; --prefont: #000; --prehover: #fff; --preactivetitle: #fff; --precolsch[3]: #fff; --preicotext: #fff;
+                    --predesktopicon: #008080; --prefont: #000; --prehover: #fff; --preactivetitle: #fff; --preinactivetitle: #fff; --preicotext: #fff;
                     
                     --taskbarstarttop1: #808080; --taskbarstarttop2: #0a0a0a; --taskbarstartbottom1: #fff; --taskbarstartbottom2: #dfdfdf; --alwayswhite: #fff; --alwaysblack: #000;
                     --taskbar1top1: #fff; --taskbar1top2: #dfdfdf; --taskbar1bottom1: #808080; --taskbar1bottom2: #0a0a0a; --taskbar2top1: #fff; --taskbar2top2: #dfdfdf; --taskbar2bottom1: #808080; --taskbar2bottom2: #0a0a0a; 
@@ -163,7 +163,7 @@
             .menuapplicationsplit{border-bottom:1px solid var(--white);background:var(--gray);height:1px;width:1px}
 
 /* window preview handling ------------------------------------------------------------------------------*/
-            .prehelp,.preclose,.prearrowup,.prearrowdown{filter: invert(var(--precolsch[21])); background-image: var(--prespritesheet)}
+            .prehelp,.preclose,.prearrowup,.prearrowdown{filter: invert(var(--preinvert)); background-image: var(--prespritesheet)}
             .prehelp,   .preclose    {width:11px;height:11px;margin-left:-1px;margin-top:-2px}.prehelp     {background-position:-111px -309px}.preclose  {background-position:-108px -299px}
             .prearrowup,.prearrowdown{width: 9px;height: 6px;margin-left: 1px;margin-top: 2px}.prearrowdown{background-position:-100px -299px}.prearrowup{background-position:-100px -304px}
 
@@ -199,8 +199,8 @@
             .menusettings1      {background-position:-0px -200px}.menusettings2      {background-position:-20px -200px}.menusettings3      {background-position:-40px -200px}.menusettings4      {background-position:-60px -200px}.menusettings5     {background-position:-80px -200px}.menusettings6    {background-position:-100px -200px}
             .menufind1          {background-position:-0px -220px}.menufind2          {background-position:-20px -220px}.menufind3          {background-position:-40px -220px}.menufind4          {background-position:-60px -220px}
 
-            .taskbartask1,.taskbartask2,.taskbartask3,.taskbartask4,.taskbartask5,.taskbartask6,.taskbartask7,.taskbartask8 {
-                float:left;width:160px;height:18px;margin-top: 2px;background:var(--silver);padding:2px;color:var(--font);margin-left:-200000px;background-repeat:repeat;position:absolute;font-weight:700}
+            .taskbartask1,.taskbartask2,.taskbartask3,.taskbartask4,.taskbartask5,.taskbartask6,.taskbartask7,.taskbartask8 { cursor:pointer; float:left;
+                width:160px;height:18px;margin-top: 2px;background:var(--silver);padding:2px;color:var(--font);margin-left:-200000px;background-repeat:repeat;position:absolute;font-weight:700}
             .taskbartask1{box-shadow:inset -1px -1px var(--taskbar1bottom2),inset 1px 1px var(--taskbar1top2),inset -2px -2px var(--taskbar1bottom1),inset 2px 2px var(--taskbar1top1);margin-left: 167px}
             .taskbartask2{box-shadow:inset -1px -1px var(--taskbar2bottom2),inset 1px 1px var(--taskbar2top2),inset -2px -2px var(--taskbar2bottom1),inset 2px 2px var(--taskbar2top1)}
             .taskbartask3{box-shadow:inset -1px -1px var(--taskbar3bottom2),inset 1px 1px var(--taskbar3top2),inset -2px -2px var(--taskbar3bottom1),inset 2px 2px var(--taskbar3top1)}
@@ -770,8 +770,6 @@
                 <ul class="tree-view" style="padding:2px; width:818px; height:604px; margin-top:1px;">
                 <iframe src="https://www.bing.com/" style="width:818px; height:604px" frameBorder="0" id="iexplorerframe"></iframe></ul>
         </div></div>
-        
-        <script> var iframe = document.getElementById('iexplorerframe'); $(iframe).contents().find("iefhtml").html();</script>
 
 <!-- notepad rendering ------------------------------------------------------------------------------------->
         <div class="win98post" style="margin-left:-20000px" onmousedown="curtask = 7; currentwindow()" id="notepad">
@@ -809,6 +807,7 @@
             var consoleback = "#000", consoletext = "#fff", word1, word2, word3, word4, word5, upkeyin, currunning;
             var consoleout = document.getElementById("currentact"), prompt = document.getElementById("prompt").style, 
                 consolein = document.getElementById("prompttext").value, prompttitle = document.getElementById("prompttitle"); 
+             var iframe = document.getElementById('iexplorerframe'); $(iframe).contents().find("iefhtml").html();
             
             function htmlupdate() { $.get(config, function(data) {inprompt = inprompt + data;}, 'text')}
                 document.getElementById("prompttext").addEventListener("keyup", function(event) {
@@ -1129,7 +1128,7 @@
                     
                     <div class="prepost" style="height: 137px; width:300px;">
                         <div class="pretitlebarbutton" title="Close"><div class="preclose"></div></div><div class="pretitlebarbutton" title="Help"> <div class="prehelp"></div></div>
-                        <div class="pretitle-bar-posts" id="previewwin1"> <div class="pretitle-bar-text" style="color: var(--precolsch[3]);">💤 Inactive Window</div></div></div>
+                        <div class="pretitle-bar-posts" id="previewwin1"> <div class="pretitle-bar-text" style="color: var(--preinactivetitle);">💤 Inactive Window</div></div></div>
                     
                     <div class="prepost" style="height: 137px; width:300px; margin-top:24px; margin-left:5px">
                         <div class="pretitlebarbutton" title="Close"><div class="preclose"></div></div><div class="pretitlebarbutton" title="Help"> <div class="prehelp"></div></div>
@@ -1163,20 +1162,18 @@
                             <div class="droptext" onclick="contrastmodescheme1()" id="contrastmodescheme1">High Contrast Mode 1     </div>
                             <div class="droptext" onclick="contrastmodescheme2()" id="contrastmodescheme2">High Contrast Mode 2     </div></div></ul>
                             
-                    <script>
-                        var ctoggle = false, themecurrent = 2; function wallpapercust() {currentsch.textContent="(Custom)"} 
+                    <script>var ctoggle = false, themecurrent = 2; function wallpapercust() {currentsch.textContent="(Custom)"} var varinvert,shuffleflop,currentcolour,prewallpaper,gradient;
                         var deskico = [document.getElementById("desktopico1").style, document.getElementById("desktopico2").style, document.getElementById("desktopico3").style, document.getElementById("desktopico4").style, 
                             document.getElementById("desktopico5").style, document.getElementById("desktopico6").style, document.getElementById("desktopico7").style, document.getElementById("desktopico8").style];
-                        var currentsch = document.getElementById("currentscheme"), scheme = document.getElementById("scheme").style;
 
-                        function windows98(){currentsch.textContent="Windows 98"; copi = 12; cpick(); wpn = 1; wallpapercall(); themecurrent = 2; themepreviewchange()} 
-                        function evangelionmode(){currentsch.textContent="Neon Genesis Evangelion"; copi = 18; cpick(); wpn = 4; wallpapercall(); themecurrent = 0; themepreviewchange()}
-                        function Octavia(){currentsch.textContent="Octavia's Study"; copi = 17; cpick();wpn = 2; wallpapercall(); themecurrent = 0; themepreviewchange()}
-                        function girlsdayout(){currentsch.textContent="A Girls Day Out"; copi = 19; cpick(); wpn = 5; wallpapercall(); themecurrent = 1; themepreviewchange()}
-                        function milyvean(){currentsch.textContent="Clouds at Midnight"; copi = 18; cpick(); wpn = 7; wallpapercall(); themecurrent = 2; themepreviewchange()}
-                        function vapourwave(){currentsch.textContent="Aesthetic"; copi = 20; cpick(); wpn = 8; wallpapercall(); themecurrent = 3; themepreviewchange()}
-                        function contrastmodescheme1(){currentsch.textContent="High Contrast Mode 1"; wpn = 0; wallpapercall(); themecurrent = 4; themepreviewchange(); highcontrast()}
-                        function contrastmodescheme2(){currentsch.textContent="High Contrast Mode 2"; wpn = 0; wallpapercall(); themecurrent = 5; themepreviewchange(); highcontrast()}
+                        function windows98(){currentscheme.textContent="Windows 98"; copi = 12; cpick(); wpn = 1; wallpapercall(); themecurrent = 2; themepreviewchange()} 
+                        function evangelionmode(){currentscheme.textContent="Neon Genesis Evangelion"; copi = 18; cpick(); wpn = 4; wallpapercall(); themecurrent = 0; themepreviewchange()}
+                        function Octavia(){currentscheme.textContent="Octavia's Study"; copi = 17; cpick();wpn = 2; wallpapercall(); themecurrent = 0; themepreviewchange()}
+                        function girlsdayout(){currentscheme.textContent="A Girls Day Out"; copi = 19; cpick(); wpn = 5; wallpapercall(); themecurrent = 1; themepreviewchange()}
+                        function milyvean(){currentscheme.textContent="Clouds at Midnight"; copi = 18; cpick(); wpn = 7; wallpapercall(); themecurrent = 2; themepreviewchange()}
+                        function vapourwave(){currentscheme.textContent="Aesthetic"; copi = 20; cpick(); wpn = 8; wallpapercall(); themecurrent = 3; themepreviewchange()}
+                        function contrastmodescheme1(){currentscheme.textContent="High Contrast Mode 1"; themecurrent = 4; themepreviewchange(); highcontrast()}
+                        function contrastmodescheme2(){currentscheme.textContent="High Contrast Mode 2"; themecurrent = 5; themepreviewchange(); highcontrast()}
 
                         var darkmode = ["#9f9f9f","#fff","#fff","#fff","#323232","#151515","#202020","#676767","#545454","#9f9f9f","#3f3f3f","#ababab",
                                 "#292929","#000","#fccc39","#da3624","#008080","#c0c0c0","#c0c0c0","#fff","#fff",1,1,0.4,0.8,0.65,"#292929",undefined],
@@ -1189,40 +1186,31 @@
                             contras1 = ["#fff","#0000ff","#fff","#000","#00ffff","#0000ff","#0000ff","#00ffff","#000","#dfdfdf","#000","#ababab",
                                 "#808080","#fff","#00ffff","#0000ff","#008080","#ffff00","#ffff00","#fff","#fff",1,1,0.6,0.2,0.35,"#0000ff","#00ffff"],
                             contras2 = ["#fff","#0000ff","#000","#000","#ffff00","#ffff00","#00ff00","#00ff00","#000","#dfdfdf","#000","#ababab",
-                                "#808080","#fff","#00ff00","#00ff00","#008080","#ffff00","#ffff00","#fff","#00ff00",1,1,0.6,0.2,0.35,"#00ff00", "#00ff00"];
-                                
-                        var schemes = [darkmode,tankmode,lightmode,neonmode,contras1,contras2],curcolsch = schemes[2], precolsch, varinvert, shuffleflop, currentcolour, prewallpaper;
-                        var preactive = [undefined,undefined,'--preactivetitle','--preinactivetitle',undefined,undefined,undefined,undefined,'--prewhite','--prelightg','--presilver','--premidgray',
-                            '--preblack','--preblue','--preprussian',undefined,'--preyellow','--prefont','--prehover',undefined,'--preinvert']
+                                "#808080","#fff","#00ff00","#00ff00","#008080","#ffff00","#ffff00","#fff","#00ff00",1,1,0.6,0.2,0.35,"#00ff00","#00ff00"];
+                        var schemes = [darkmode,tankmode,lightmode,neonmode,contras1,contras2],curcolsch=schemes[2],precolsch=schemes[2];
+                        
+                        var preactive = [undefined,undefined,'--preactivetitle','--preinactivetitle',undefined,undefined,undefined,undefined,'--prewhite','--prelightg','--presilver','--premidgray','--pregray',
+                            '--preblack','--preblue','--preprussian',undefined,'--preyellow','--prefont','--prehover',undefined,'--preinvert',undefined,undefined,undefined,undefined]
                         var active = [undefined,undefined,'--curactivetitle','--curinactivetitle',undefined,undefined,undefined,undefined,'--white','--lightg','--silver','--midgray','--gray',
                             '--black','--blue','--prussian','--wincyan','--yellow','--font', '--hover','--atext','--invert',undefined,'--discheckinv','--enacheckinv','--invcheckinv']
                         
-                        function highcontrast() {fontcolour = "#000"; wwpno(); curwp = precolsch[8]; wpp(); wpcr(); ctoggle = true} var discheckinv,enacheckinv,invcheckinv
+                        function highcontrast(){fontcolour="#000";wwpno();curwp=precolsch[8];wpp();wpcr();ctoggle=true;wpn=0;wallpapercall()}var discheckinv,enacheckinv,invcheckinv
+                        function themepreviewchange(){precolsch=undefined;precolsch=schemes[themecurrent];for(var i=0;i<preactive.length;i++){docelem.style.setProperty(preactive[i],precolsch[i])}
+                            gradient="linear-gradient(90deg, "+precolsch[6]+","+precolsch[7]+")";$("#previewwin2").css("background",gradient);$("#previewwin3").css("background",gradient)
+                            gradient="linear-gradient(90deg, "+precolsch[4]+","+precolsch[5]+")";$("#previewwin1").css("background",gradient);inprompt=inprompt+"Theme Preview Loaded.";println()}
                         
-                        function themepreviewchange() { precolsch = undefined; precolsch = schemes[themecurrent]
-                            for(var i = 0; i<preactive.length; i++){docelem.style.setProperty(preactive[i], precolsch[i])}
-                            gradient = "linear-gradient(90deg, " + precolsch[4] + "," + precolsch[5] + ")";
-                            inprompt = inprompt + "Theme Preview Loaded."; println()}
-                        
-                        function themechange() { curcolsch = undefined; curcolsch = schemes[themecurrent]
-                            for(var i = 0; i<active.length; i++){docelem.style.setProperty(active[i], curcolsch[i])}
-                            for(var temp = 1; taskbarfont.length > temp; temp++){taskbarfont[temp].color = curcolsch[0]}; 
-                            for(var temp = 0; smu.length > temp; temp++){scf = temp; startsubmenuc()}
+                        function themechange(){curcolsch=undefined;curcolsch=schemes[themecurrent]; for(var i=0;i<active.length;i++){docelem.style.setProperty(active[i],curcolsch[i])}
+                            for(var temp=1;taskbarfont.length>temp;temp++){taskbarfont[temp].color=curcolsch[0]}; for(var temp=0;smu.length>temp;temp++){scf=temp;startsubmenuc()}
+                            docelem.style.setProperty('--taskbarstarttop1',curcolsch[12]);docelem.style.setProperty('--taskbarstarttop2',curcolsch[13]); 
+                            docelem.style.setProperty('--taskbarstartbottom1',curcolsch[8]);docelem.style.setProperty('--taskbarstartbottom2',curcolsch[9]);
                             
-                            docelem.style.setProperty('--taskbarstarttop1', curcolsch[12]); docelem.style.setProperty('--taskbarstarttop2', curcolsch[13]); 
-                            docelem.style.setProperty('--taskbarstartbottom1', curcolsch[8]); docelem.style.setProperty('--taskbarstartbottom2', curcolsch[9]);
-                            
-                            var dtil = 0; shufflecolour(); desktopiconchange(); wwpno(); clocku(); inactiveall(); curtask = 3; currentwindow();
-                            if (curcolsch[21] == 1){varinvert = 0;} else {varinvert = 1;}
-                            if (dicotoggle == true){for(var i = 0; deskico.length > i; i++){deskico[i].width = "72px"; deskico[i].height = "72px"; var temp1 = dtil + "px"; var temp2 = "-0px"
-                                deskico[i].backgroundPosition = temp1 + " " + temp2; dtil = dtil - 72}} else {for(var i = "0"; deskico.length > i; i++){deskico[i].width = "36px"
-                                deskico[i].height = "36px"; var temp1 = dtil + "px"; var temp2 = "-72px"; deskico[i].backgroundPosition = temp1 + " " + temp2; dtil = dtil - 36}}
-                            if (nsfwtoggle == true){nsfwoptions.marginLeft = "0px"; nsfwoptions.marginTop = "0px"} else {nsfwoptions.marginLeft = "-20000px"; nsfwoptions.marginTop = "-80px"}
-                            if (csgotoggle == true){CSon = true; var w = window.innerWidth; desktopleft = ((w / 2) + (w / 3)) - window.innerWidth + "px"; desktop.left = desktopleft; desktop.top = "5px"; 
-                                console.log(desktopleft); ranCSno = 1; CSGOsidebar1.opacity = 1; CSGOsidebar2.opacity = 1; CSGOsidebar3.opacity = 0.2; changeCSGO()
-                            } else {CSon = false; desktopleft = "0px"; desktop.left = desktopleft; desktop.top = "0px"
-                                CSGOsidebar1.opacity = 0; CSGOsidebar2.opacity = 0; CSGOsidebar3.opacity = 0; changeCSGO()}; inprompt = inprompt + "Theme Loaded."; println()}
-                    </script>
+                            var dtil=0;shufflecolour();desktopiconchange();wwpno();clocku();inactiveall();curtask=3;currentwindow();if(curcolsch[21]==1){varinvert=0;}else{varinvert=1}
+                            if(dicotoggle==true){for(var i=0;deskico.length>i;i++){deskico[i].width="72px";deskico[i].height="72px";var temp1=dtil+"px",temp2="-0px";deskico[i].backgroundPosition=temp1+" "+temp2;dtil=dtil- 72}
+                                }else{for(var i ="0";deskico.length>i;i++){deskico[i].width="36px";deskico[i].height="36px";var temp1=dtil+"px",temp2="-72px";deskico[i].backgroundPosition=temp1+" "+temp2;dtil=dtil- 36}}
+                            if(nsfwtoggle==true){nsfwoptions.marginLeft="0px";nsfwoptions.marginTop="0px"}else{nsfwoptions.marginLeft="-20000px";nsfwoptions.marginTop="-80px"}
+                            if(csgotoggle==true){CSon=true;CSGOsidebar2.opacity=1;CSGOsidebar3.opacity=0.2;var w=window.innerWidth;desktopleft=((w/2)+(w/3))-window.innerWidth+"px";desktop.left=desktopleft;desktop.top="5px";
+                                ranCSno=1;CSGOsidebar1.opacity=1}else{CSon=false;desktopleft="0px";desktop.left=desktopleft;desktop.top="0px";CSGOsidebar1.opacity=0;CSGOsidebar2.opacity=0;CSGOsidebar3.opacity=0}
+                            changeCSGO();inprompt=inprompt+"Theme Loaded.";println()}</script>
                         
                     <div class="win98buttondisa" style="margin-left:199px; width:67px"><center><butdislabel>Save As...</butdislabel></center></div>
                     <div class="win98buttondisa" style="margin-left:280px; width:68px"><center><butdislabel>Load...</butdislabel></center></div><br><br>
@@ -1485,7 +1473,7 @@
                                     <div style="float:right; margin:5px">{NoteCountWithLabel}</div>
                                     <div class="big_seperator21" style="float:right"></div>
                                 {/block:NoteCount}
-                                <div class="small_seperator17"></div>
+                                <div class="small_seperator17" style="margin-left:2px"></div>
                                 {block:PermalinkPage}
                                     <a href="https://thealonic.tumblr.com/">
                                         <div class="explorerback" style="display: inline; margin-left:2px"></div>
@@ -1529,7 +1517,7 @@
                                     <div class="buttonscrollinactive" style="position:relative; float:right; margin-right:-4px; margin-top:-4px; width:10px; height:11px">
                                         <div class="arrowdisdown"></div></div>
                                     <div class="menudocuments4" style="margin-top:-5px; margin-left:-5px"></div>
-                                    <div style="margin-top:-1px; margin-left:16px">thealonic.tumblr.com/post/{PostID}</div></ul>
+                                    <div style="margin-top:-1px; margin-left:16px">www.thealonic.tumblr.com/post/{PostID}</div></ul>
                         </fieldset></div>
                         
                         <ul class="tree-view" style="margin-left:-6px; margin-bottom:26px; width: 467px; margin-top:4px; padding:2px; overflow:hidden; background-image:var(--scrollbar); background-color: var(--midgray)"> 
@@ -1884,10 +1872,8 @@
             </div></div>
             
 <!-- startmenu scripts + end ------------------------------------------------------------------------------>
-            <script>  var startButtonOpen = false, startmenu = document.getElementById("startmenu").style;
-                function startpress() {if (startButtonOpen == true) {startmenu.marginLeft = "200000px"; startButtonOpen = false;
-                        docelem.style.setProperty('--taskbarstarttop1', curcolsch[12]); docelem.style.setProperty('--taskbarstarttop2', curcolsch[13]);
-                        docelem.style.setProperty('--taskbarstartbottom1', curcolsch[8]); docelem.style.setProperty('--taskbarstartbottom2', curcolsch[9]);
+            <script>var startButtonOpen = false, startmenu = document.getElementById("startmenu").style;
+                function startpress() {if (startButtonOpen == true) {menuclosed()
                     } else if(startButtonOpen == false) { startmenu.marginLeft = "0px"; startButtonOpen = true; 
                         docelem.style.setProperty('--taskbarstarttop1', curcolsch[8]); docelem.style.setProperty('--taskbarstarttop2', curcolsch[9]);
                         docelem.style.setProperty('--taskbarstartbottom1', curcolsch[13]); docelem.style.setProperty('--taskbarstartbottom2', curcolsch[12])}}
@@ -1901,8 +1887,7 @@
                     'menuarrow11','menuarrow12','menuarrow7','menuarrow8','menuarrow2','menuarrow13','menuarrow14','menuarrow15','menuarrow3','menuarrow4','menuarrow17','menuarrow5','menuarrow16'],
                     sbn=['130px','133px','148px','158px','161px','163px','200000px'],sbm='margin-left',scf=0,sbc,geb,sma,cac;sbp=[sbn[4],sbn[0],sbn[0],sbn[0],sbn[0],sbn[0],sbn[0],sbn[1],sbn[1],sbn[4],sbn[2],sbn[2],sbn[2],sbn[4],sbn[4],sbn[3],sbn[4],sbn[4]]
                 function starttemp(){document.getElementById(smu[scf]).style.backgroundColor=cac[0];document.getElementById(smu[scf]).style.color=cac[1];document.getElementById(marr[scf]).style.filter="invert("+cac[2]+")"}
-                function startsubmenuo(){sbc='#'+sms[scf];cac=[curcolsch[15],curcolsch[19],varinvert];starttemp();$(sbc).css(sbm,sbp[scf])};function startsubmenuc(){sbc='#'+sms[scf];cac=[curcolsch[10],curcolsch[18],curcolsch[21]];starttemp();$(sbc).css(sbm,sbn[6])}
-            </script>
+                function startsubmenuo(){sbc='#'+sms[scf];cac=[curcolsch[15],curcolsch[19],varinvert];starttemp();$(sbc).css(sbm,sbp[scf])};function startsubmenuc(){sbc='#'+sms[scf];cac=[curcolsch[10],curcolsch[18],curcolsch[21]];starttemp();$(sbc).css(sbm,sbn[6])}</script>
      
 <!-- Taskbar Rendering  ------------------------------------------------------------------------------>
             <div style="margin-top: -24px">
@@ -1917,21 +1902,21 @@
                 <div class="big_seperator21" style="margin:2px"></div>
                 <div class="small_seperator19" style="margin-top:2px"></div>
                 
-                <div class="taskbartask1" style="cursor:pointer" onmousedown="curtask = 1; tasktoggle()" id="taskapp1">
+                <div class="taskbartask1" onmousedown="curtask = 1; tasktoggle()" id="taskapp1">
                     <div class="title-bar-text" id="taskapp1font">🍭 very.vunnies</div></div>
-                <div class="taskbartask2" style="cursor:pointer" onmousedown="curtask = 2; tasktoggle()" id="taskapp2">
+                <div class="taskbartask2" onmousedown="curtask = 2; tasktoggle()" id="taskapp2">
                     <div class="title-bar-text" id="taskapp2font">👿 very.unvunny</div></div>
-                <div class="taskbartask3" style="cursor:pointer" onmousedown="curtask = 3; tasktoggle()" id="taskapp3">
+                <div class="taskbartask3" onmousedown="curtask = 3; tasktoggle()" id="taskapp3">
                     <div class="title-bar-text" id="taskapp3font">📺 Display Properties</div></div>
                 <div class="taskbartask4" style="cursor:pointer" onmousedown="curtask = 4; tasktoggle()" id="taskapp4">
                     <div class="title-bar-text" id="taskapp4font">🎬 Media Player</div></div>
-                <div class="taskbartask5" style="cursor:pointer" onmousedown="curtask = 5; tasktoggle()" id="taskapp5"> 
+                <div class="taskbartask5" onmousedown="curtask = 5; tasktoggle()" id="taskapp5"> 
                     <div class="title-bar-text" id="taskapp5font">🧮 Patch Notes</div></div>
-                <div class="taskbartask6" style="cursor:pointer" onmousedown="curtask = 6; tasktoggle()" id="taskapp6"> 
+                <div class="taskbartask6" onmousedown="curtask = 6; tasktoggle()" id="taskapp6"> 
                     <div class="title-bar-text" id="taskapp6font">🎱 Command Prompt</div></div>
-                <div class="taskbartask7" style="cursor:pointer" onmousedown="curtask = 7; tasktoggle()" id="taskapp7"> 
+                <div class="taskbartask7" onmousedown="curtask = 7; tasktoggle()" id="taskapp7"> 
                     <div class="title-bar-text" id="taskapp7font">📄 Notepad</div></div>
-                <div class="taskbartask8" style="cursor:pointer" onmousedown="curtask = 8; tasktoggle()" id="taskapp8"> 
+                <div class="taskbartask8" onmousedown="curtask = 8; tasktoggle()" id="taskapp8"> 
                     <div class="title-bar-text" id="taskapp8font">🌍 Internet Explorer</div></div>
                 
                 <script>var task=0,funccall=0,taskpos=[undefined,0,0,0,0,0,0,0,0],ButtonOpen=[undefined, true, false, false, false, false, false, false, false],
@@ -1970,6 +1955,13 @@
 <!-- On page load handling ------------------------------------------------------------------------------>
         <script>
             $(document).ready(function(){
+                $('.video iframe:not(.tumblr_video_iframe)').each(function(){ var scale = $(this).parents('.video').width() / 500;
+                   $(this).attr({ width: Math.floor($(this).attr('width') * scale), height: Math.floor($(this).attr('height') * scale), margin: "0px" })});
+                $('.tumblr_video_iframe').each(function(){ var scale = $(this).parents('.video').width() / 500;
+                   $(this).css({'transform': 'scale(' + scale + ')', 'margin': (250 * ( scale - 1 ) + 'px' ), 
+                                'margin-top': (450 * ( scale - 1 ) + 'px' ), 'margin-bottom': (450 * ( scale - 1 ) + 'px' )});
+                   $(this).parents('.tumblr_video_container').css({ width: Math.floor($(this).width() * ( scale + 1 / 2)), height: Math.floor($(this).height() * ( scale - 1) / 2)})})
+                
                 var infScr = $('body').hasClass('infinite_scrolling'), twoCol = $('body').hasClass('two_column'), $container = $('#desktop');
                 if( infScr && twoCol ){
                     $container.imagesLoaded(function(){$container.masonry({itemSelector:'.window', isAnimated: true})});
@@ -1977,8 +1969,6 @@
                         var $newElems = $( newElements ).hide()
                         var height = $(".window").find(".photoset").attr("height")
                         $(".window").find(".photoset").css("height", height + "px")
-
-                        document.getElementsByClassName("video").getElementsByTagName("iframe").maxWidth = "451px"
 
                         $(this).find(".title-bar-98").css("background", "linear-gradient(90deg, " + curcolsch[4] + "," + curcolsch[5] + ")")
                         $(".window").click(function(){calupdate(); tumblractive(); $(this).css("z-index", cal); var desktopleft
