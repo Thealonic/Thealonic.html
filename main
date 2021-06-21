@@ -1085,11 +1085,10 @@
                     "img/wallpapers/anime.png')", "img/wallpapers/vinyl.png')", "img/wallpapers/lynn.png')", "img/wallpapers/Untitled-3.jpg')", "img/wallpapers/Untitled-4.jpg')", 
                     "img/wallpapers/macro.png')", "img/wallpapers/ResidentEvil.png')"], curwp = "", wpn = "", wps = "";
                 function wallpaperupdate(){abody.backgroundImage = curwp; dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp; CSGOsidebar1.backgroundImage = curwp; CSGOsidebar2.backgroundImage = curwp} 
-                function wallpapercall(){wps = wpstorage[wpn]; curwp = github + wps // updates the wallpaper currently selected and stores it, and updates it.
-                    wpo[wpn].backgroundColor = curcolsch[26] // updates background colour of wallpaper selection
-                    for(var i = 0; wpo.length > i; i++){wpo[i].backgroundColor = ""} //updates the actual background previews to their default new colours.
-                    dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp; // updates the desktop previews
-                    ap.backgroundImage = curwp; iconpre.backgroundImage = curwp} // updates wallpaper preview and icon preview backgrounds
+                function wpp(){dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp; document.getElementById("apperancepreview").style.backgroundImage = curwp; iconpre.backgroundImage = curwp}
+                function wwpno(){wpo[wpn].backgroundColor = curcolsch[26]; curwp = github + wps; wpp(); wpcr()} 
+                function wpcr() {for(var i = 0; wpo.length > i; i++){wpo[i].backgroundColor = ""}}
+                function wallpapercall(){wps = wpstorage[wpn]; wwpno()}</script>
             </script>
             
             <!-- --------------------------------------- screensaver tab --------------------------------------- -->
@@ -1177,8 +1176,8 @@
                         function girlsdayout(){currentscheme.textContent="A Girls Day Out"; copi = 19; cpick(); wpn = 5; wallpapercall(); themecurrent = 1; themepreviewchange()}
                         function milyvean(){currentscheme.textContent="Clouds at Midnight"; copi = 18; cpick(); wpn = 7; wallpapercall(); themecurrent = 2; themepreviewchange()}
                         function vapourwave(){currentscheme.textContent="Aesthetic"; copi = 20; cpick(); wpn = 8; wallpapercall(); themecurrent = 3; themepreviewchange()}
-                        function contrastmodescheme1(){currentscheme.textContent="High Contrast Mode 1"; copi = 11; cpick(); themecurrent = 4; themepreviewchange(); highcontrast()}
-                        function contrastmodescheme2(){currentscheme.textContent="High Contrast Mode 2"; copi = 7; cpick(); themecurrent = 5; themepreviewchange(); highcontrast()}
+                        function contrastmodescheme1(){currentscheme.textContent="High Contrast Mode 1"; themecurrent = 4; highcontrast(); themepreviewchange()}
+                        function contrastmodescheme2(){currentscheme.textContent="High Contrast Mode 2"; themecurrent = 5; highcontrast(); themepreviewchange()}
 
                         var darkmode = ["#9f9f9f","#fff","#fff","#fff","#323232","#151515","#202020","#676767","#545454","#9f9f9f","#3f3f3f","#ababab",
                                 "#292929","#000","#fccc39","#da3624","#008080","#c0c0c0","#c0c0c0","#fff","#fff",1,1,0.4,0.8,0.65,"#292929",undefined],
@@ -1193,22 +1192,15 @@
                             contras2 = ["#fff","#0000ff","#000","#000","#ffff00","#ffff00","#00ff00","#00ff00","#000","#dfdfdf","#000","#ababab",
                                 "#808080","#fff","#00ff00","#00ff00","#008080","#ffff00","#ffff00","#fff","#00ff00",1,1,0.6,0.2,0.35,"#00ff00","#00ff00"];
                         var schemes = [darkmode,tankmode,lightmode,neonmode,contras1,contras2],curcolsch=schemes[2],precolsch=schemes[2];
-                        
                         var preactive = [undefined,undefined,'--preactivetitle','--preinactivetitle',undefined,undefined,undefined,undefined,'--prewhite','--prelightg','--presilver','--premidgray','--pregray',
                             '--preblack','--preblue','--preprussian',undefined,'--preyellow','--prefont','--prehover',undefined,'--preinvert',undefined,undefined,undefined,undefined]
                         var active = [undefined,undefined,'--curactivetitle','--curinactivetitle',undefined,undefined,undefined,undefined,'--white','--lightg','--silver','--midgray','--gray',
                             '--black','--blue','--prussian','--wincyan','--yellow','--font', '--hover','--atext','--invert',undefined,'--discheckinv','--enacheckinv','--invcheckinv']
-                        
                         var discheckinv,enacheckinv,invcheckinv
-                        function highcontrast(){
-                            fontcolour="#000"; docelem.style.setProperty('--preicotext', fontcolour);
-                            ctoggle=true;wpn=0;
-                            
-                        }
-                        function themepreviewchange(){
-                            precolsch=undefined; precolsch=schemes[themecurrent]; 
-                            for(var i=0;i<preactive.length;i++){
-                                docelem.style.setProperty(preactive[i],precolsch[i])}
+                        
+                        function highcontrast(){fontcolour="#000";wwpno();curwp=precolsch[8];wpp();wpcr();ctoggle=true;wpn=0;wallpapercall()}
+                        
+                        function themepreviewchange(){precolsch=undefined; precolsch=schemes[themecurrent]; for(var i=0;i<preactive.length;i++){docelem.style.setProperty(preactive[i],precolsch[i])}
                             gradient="linear-gradient(90deg, "+precolsch[6]+","+precolsch[7]+")";$("#previewwin2").css("background",gradient);$("#previewwin3").css("background",gradient)
                             gradient="linear-gradient(90deg, "+precolsch[4]+","+precolsch[5]+")";$("#previewwin1").css("background",gradient);inprompt=inprompt+"Theme Preview Loaded.";println()}
                         
@@ -1216,8 +1208,9 @@
                             for(var temp=1;taskbarfont.length>temp;temp++){taskbarfont[temp].color=curcolsch[0]}; for(var temp=0;smu.length>temp;temp++){scf=temp;startsubmenuc()}
                             docelem.style.setProperty('--taskbarstarttop1',curcolsch[12]);docelem.style.setProperty('--taskbarstarttop2',curcolsch[13]); 
                             docelem.style.setProperty('--taskbarstartbottom1',curcolsch[8]);docelem.style.setProperty('--taskbarstartbottom2',curcolsch[9]);
+                            var dtil=0;shufflecolour();desktopiconchange();wallpapercall();clocku();inactiveall();curtask=3;currentwindow();
+                            if(curcolsch[21]==1){varinvert=0;}else{varinvert=1}
                             
-                            var dtil=0;shufflecolour();desktopiconchange();wallpapercall();clocku();inactiveall();curtask=3;currentwindow();if(curcolsch[21]==1){varinvert=0;}else{varinvert=1}
                             if(dicotoggle==true){for(var i=0;deskico.length>i;i++){deskico[i].width="72px";deskico[i].height="72px";var temp1=dtil+"px",temp2="-0px";deskico[i].backgroundPosition=temp1+" "+temp2;dtil=dtil- 72}
                                 }else{for(var i ="0";deskico.length>i;i++){deskico[i].width="36px";deskico[i].height="36px";var temp1=dtil+"px",temp2="-72px";deskico[i].backgroundPosition=temp1+" "+temp2;dtil=dtil- 36}}
                             if(nsfwtoggle==true){nsfwoptions.marginLeft="0px";nsfwoptions.marginTop="0px"}else{nsfwoptions.marginLeft="-20000px";nsfwoptions.marginTop="-80px"}
@@ -1957,7 +1950,7 @@
                     function notepadtask(){ notepad.style.left="375px"; notepad.style.top="217px"; curtask = 7; currentwindow(); taskposopen()}
                     function internettask(){internet.style.left="375px";internet.style.top="117px";curtask = 8; currentwindow(); taskposopen()}
                     
-                    function taskreset(){for(var v=1;v<tasktrue.length;v++){if(1>curtask){if(taskpos[v]>taskpos[curtask]){if(taskon[v]==true){
+                     function taskreset(){currenttask=currenttask- 1;for(var v=1;v<tasktrue.length;v++){if(v!==curtask){if(taskpos[v]>taskpos[curtask]){if(taskon[v]==true){
                         taskpos[v]=taskpos[v]- 168;taskbar[v].marginLeft=taskpos[v]+"px"}}}}inprompt=inprompt+"current tasks active: "+currenttask;println()}
                     function taskposopen(){if(taskon[curtask]==false){if(ButtonOpen[curtask]==false){currenttask=currenttask+ 1};taskbar[curtask].marginLeft=(currenttask*168)+"px";
                         taskpos[curtask]=(currenttask*168);taskon[curtask]=true;inprompt=inprompt+"current tasks active: "+currenttask;println()}}</script>
