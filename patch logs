@@ -1,13 +1,25 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll; padding-right: 4px;">
 <ul>
-<li><strong style="color: var(--atext);">2021 April 2nd (210402)</strong>
+<li><strong style="color: var(--atext);">2021 June 21st (210621)</strong><strong style="color: var(--atext);"><strong style="color: var(--atext);"><br /></strong></strong>
 <ul>
-<li><strong>Schemes rewrite: </strong>Schemes are now reliant on arrays of hexcodes and invert values, rather than independant functions being called.</li>
+<li>Removed some features of window height adjustment after page addition and adjusted prioritising.</li>
+<li>Theoretically optimised theme changing, but it&rsquo;s JS so probably not.</li>
+<li>Updated URL sources according to latest rebrand.</li>
+<li>Updated double printlines in the command prompt.</li>
+</ul>
+<ol>
+<li>- Fixed the taskbar clock, which wasn&rsquo;t previously working at all.</li>
+<li>- Fixed a bug where closing &ldquo;Very.Unvunny&rdquo; would push back the current active tasks by two slots.</li>
+<li>- Fixed the scheme preview background colour of the high contrast modes.</li>
+</ol></li>
+<li><strong style="color: var(--atext);">2021 April 2nd (210402) - <em>Scheme rewrite</em><br /></strong>
+<ul>
+<li><strong>Schemes are now reliant on arrays of hexcodes and invert values, rather than independant functions being called.</strong></li>
 <li><strong>Scheme load optimisations</strong></li>
 </ul>
 <ol>
-<li>- Fixed inconsistant video margins after video rescaling.</li>
+<li>-<strong> Fixed inconsistant video margins after video rescaling.</strong></li>
 <li>- Fixed preview window titlebars from not being coloured active.</li>
 </ol></li>
 <li><strong style="color: var(--atext);">2021 April 1st (210401) <em>- Task Logic Update </em></strong>
@@ -1825,5 +1837,3 @@
 <li>Removed &ldquo;Snake&rdquo; message box.</li>
 </ul>
 </li>
-</ul>
-</div>
