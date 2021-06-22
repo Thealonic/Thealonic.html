@@ -689,8 +689,10 @@
                         
                         function monthyearclear() { monthdropdefa(); yeardropbackfa()}; function realmon(){realmonth = false; clocku(); monthdropback(); monthmenuclose()}
                         var monthv = document.getElementById("month").style, yearv = document.getElementById("year").style;
-                        function monthdropback() {monthv.backgroundColor = curcolsch[15]; monthv.color = cctext; monthv.borderColor = curcolsch[17]}; function monthdropdefa() {monthv.backgroundColor = curcolsch[8]; monthv.color = curcolsch[13]; monthv.borderColor = curcolsch[8]}
-                        function yeardropback() {yearv.backgroundColor = curcolsch[15]; yearv.color = cctext; yearv.borderColor = curcolsch[17]}; function yeardropbackfa() {yearv.backgroundColor = curcolsch[8]; yearv.color = curcolsch[13]; yearv.borderColor = curcolsch[8]}
+                        function monthdropback() { monthv.backgroundColor = curcolsch[15]; monthv.color = cctext; monthv.borderColor = curcolsch[17]}; 
+                        function monthdropdefa() { monthv.backgroundColor = curcolsch[8]; monthv.color = curcolsch[13]; monthv.borderColor = curcolsch[8]}
+                        function yeardropback() { yearv.backgroundColor = curcolsch[15]; yearv.color = cctext; yearv.borderColor = curcolsch[17]}; 
+                        function yeardropbackfa(){ yearv.backgroundColor = curcolsch[8]; yearv.color = curcolsch[13]; yearv.borderColor = curcolsch[8]}
                     </script> 
                             
                     <ul class="tree-view" style="position: absolute; width:158px; height: 126px; padding:2px; margin-top:45px"></ul></fieldset>
@@ -720,7 +722,9 @@
             var da = new Date(), monthArr = ["January", "February","March", "April", "May", "June", "July", "August", "September", "October", "November","December"]; realmonth = true, yearmath = 0, daymath = 0, minutemath = 0, hourmath = 0;
             if (minutemath > 60){minutemath - 60; hourmath + 1} if(minutemath < 0){ minutemath + 60; hourmath - 1}; if (hourmath > 24){hourmath - 24; daymath + 1} if(hourmath < 0){ hourmath + 24; daymath - 1}
             
-            function clocku(){date = da.getDate() + daymath; year = da.getFullYear() + yearmath; if(realmonth == true){monthno = da.getMonth(); month = monthArr[monthno]};
+            function clocku(){
+                date = da.getDate() + daymath; year = da.getFullYear() + yearmath
+                if(realmonth == true){monthno = da.getMonth(); month = monthArr[monthno]}
                 document.getElementById("month").innerHTML = month; document.getElementById("year").innerHTML = year}
                  
             function minuteadd() {minutemath = minutemath + 1; clocku()}; function minutesub() {minutemath = minutemath - 1; clocku()}
@@ -1028,67 +1032,87 @@
                                 <div class="droptext" onclick="tileitem()">Tile</div><div class="droptext" onclick="containitem()">Contain</div>
                     </div></ul></div>
                            
-                    <script> var ofdesktopmode = document.getElementById("ofdesktop"); abody = document.getElementById("body").style;
-                        function tileitem(){ofdesktopmode.textContent = 'Tile'; abody.backgroundSize = "auto"; abody.objectFit = "none"; abody.backgroundRepeat = "repeat"; abody.backgroundAttachment = "scroll"; abody.backgroundPosition = "top-left"} 
-                        function centeritem(){ofdesktopmode.textContent = 'Center'; abody.backgroundSize = "auto"; abody.objectFit = "none"; abody.backgroundRepeat = "no-repeat"; abody.backgroundAttachment = "fixed"; abody.backgroundPosition = "center"} 
-                        function containitem(){ofdesktopmode.textContent = 'Contain'; abody.backgroundSize = "contain"; abody.objectFit = "none"; abody.backgroundRepeat = "no-repeat"; abody.backgroundAttachment = "fixed"; abody.backgroundPosition = "center"} 
-                        function fillitem(){ofdesktopmode.textContent = 'Fill'; abody.backgroundSize = "cover"; abody.objectFit = "auto"; abody.backgroundRepeat = "no-repeat"; abody.backgroundAttachment = "fixed"; abody.backgroundPosition = "center"} </script>
+                    <script> 
+                        var ofdesktopmode = document.getElementById("ofdesktop"), abody = document.getElementById("body").style;
+                        function tileitem(){
+                            ofdesktopmode.textContent = 'Tile'; abody.backgroundSize = "auto"; abody.objectFit = "none"; 
+                            abody.backgroundRepeat = "repeat"; abody.backgroundAttachment = "scroll"; abody.backgroundPosition = "top-left"} 
+                        function centeritem(){
+                            ofdesktopmode.textContent = 'Center'; abody.backgroundSize = "auto"; abody.objectFit = "none"; 
+                            abody.backgroundRepeat = "no-repeat"; abody.backgroundAttachment = "fixed"; abody.backgroundPosition = "center"} 
+                        function containitem(){
+                            ofdesktopmode.textContent = 'Contain'; abody.backgroundSize = "contain"; abody.objectFit = "none";
+                            abody.backgroundRepeat = "no-repeat"; abody.backgroundAttachment = "fixed"; abody.backgroundPosition = "center"} 
+                        function fillitem(){
+                            ofdesktopmode.textContent = 'Fill'; abody.backgroundSize = "cover"; abody.objectFit = "auto";
+                            abody.backgroundRepeat = "no-repeat"; abody.backgroundAttachment = "fixed"; abody.backgroundPosition = "center"} 
+                    </script>
                         
                     <ul class="tree-view" style="width:240px; height:86px; margin-top: 2px; margin-left:4px;">
                         <div style="position: absolute; margin-top:-3px; margin-left:-3px; width:247px; height:93px; overflow-y: scroll; overflow-x: hidden">
-                            <div class="wallpapermenu" onclick="wpn = 0; wallpapercall()"><div class="none" style="margin-top:-1px;"></div>
+                            <div class="wallpapermenu" onclick="wpn = 0; wwpno()"><div class="none" style="margin-top:-1px;"></div>
                                 <div class="filled" id="wallpaperoverlay1"><!--ref#0026-->
                                     <label style="margin: 3px 2px 3px 0px; cursor:pointer"> None </label></div></div>
-                            <div class="wallpapermenu" style="margin-top:18px" onclick="wpn = 1; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:18px" onclick="wpn = 1; wwpno()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay2">
                                     <label style="margin: 3px 2px 3px 0px; cursor:pointer"> Default </label></div></div>
-                            <div class="wallpapermenu" style="margin-top:36px;" onclick="wpn = 2; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:36px;" onclick="wpn = 2; wwpno()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay3">
                                     <label style="margin: 3px 2px 3px 0px; cursor:pointer"> Octavia's Study </label></div></div>
-                            <div class="wallpapermenu" style="margin-top:72px" onclick="wpn = 3; wallpapercall()"> <div class="wallpaper" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:72px" onclick="wpn = 3; wwpno()"> <div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay4" title="submitted by Matt in the discord server">
                                     <label style="margin: 3px 2px 3px 0px; cursor:pointer" title="submitted by Matt in the discord server"> Star Trek (Submitted by Matt)</label></div></div>
-                            <div class="wallpapermenu" style="margin-top:54px" onclick="wpn = 4; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:54px" onclick="wpn = 4; wwpno()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay5">
                                     <label style="margin: 3px 2px 3px 0px; cursor:pointer"> Neon Genesis Evangelion </label></div></div>
-                            <div class="wallpapermenu" style="margin-top:90px" onclick="wpn = 5; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:90px" onclick="wpn = 5; wwpno()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay6" title="submitted by Xal in the discord server">
                                     <label style="margin: 3px 2px 3px 0px; cursor:pointer"> Battlefield Girls (Submitted by Xal)</label></div></div>
-                            <div class="wallpapermenu" style="margin-top:108px" onclick="wpn = 6; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:108px" onclick="wpn = 6; wwpno()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay7" title="submitted by Thea Vanherst">
                                     <label style="margin: 3px 2px 3px 0px; cursor:pointer"> Vinyl Scratch (Submitted by Thea)</label></div></div>
-                            <div class="wallpapermenu" style="margin-top:126px" onclick="wpn = 7; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:126px" onclick="wpn = 7; wwpno()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay8" title="submitted by Millie in the discord server">
                                     <label style="margin: 3px 2px 3px 0px; cursor:pointer"> Clouds at Midnight (Submitted by Millie) </label></div></div>
-                            <div class="wallpapermenu" style="margin-top:146px" onclick="wpn = 8; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:146px" onclick="wpn = 8; wwpno()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay9" title="submitted by Qhetha in the discord server">
                                     <label style="margin: 3px 2px 3px 0px; cursor:pointer"> Desert Highway (Submitted by Qhetha)  </label></div></div>
-                            <div class="wallpapermenu" style="margin-top:166px" onclick="wpn = 9; wallpapercall()"><div class="wallpaper" style="margin-top:-1px"></div>
+                            <div class="wallpapermenu" style="margin-top:166px" onclick="wpn = 9; wwpno()"><div class="wallpaper" style="margin-top:-1px"></div>
                                 <div class="filled" id="wallpaperoverlay10" title="Created by Phil-Nye in the discord server">
                                     <label style="margin: 3px 2px 3px 0px; cursor:pointer"> Aesthetic (Created by Phil-Nye)</label></div></div>
                                     
                             <div style="margin-top:-80px; margin-left: -20000px" id="nsfwoptions">
-                                <div class="wallpapermenu" style="margin-top:186px;" onclick="wpn = 10; wallpapercall()"><div class="wallpapernsfw" style="margin-top:-1px"></div>
+                                <div class="wallpapermenu" style="margin-top:186px;" onclick="wpn = 10; wwpno()"><div class="wallpapernsfw" style="margin-top:-1px"></div>
                                     <div class="filled" id="wallpaperoverlay11">
                                         <label style="margin: 3px 2px 3px 0px; cursor:pointer">The Small Brown Fox</label></div></div>
-                                <div class="wallpapermenu" style="margin-top:206px;" onclick="wpn = 11; wallpapercall()"><div class="wallpapernsfw" style="margin-top:-1px"></div>
+                                <div class="wallpapermenu" style="margin-top:206px;" onclick="wpn = 11; wwpno()"><div class="wallpapernsfw" style="margin-top:-1px"></div>
                                     <div class="filled" id="wallpaperoverlay12">
                                         <label style="margin: 3px 2px 3px 0px; cursor:pointer">Resident Evil</label></div></div></div>
                     </div></ul>
             </fieldset></div>
                         
-            <script>var wpo = [document.getElementById("wallpaperoverlay1").style, document.getElementById("wallpaperoverlay2").style, document.getElementById("wallpaperoverlay3").style,
+            <script>
+                var wpo = [document.getElementById("wallpaperoverlay1").style, document.getElementById("wallpaperoverlay2").style, document.getElementById("wallpaperoverlay3").style,
                     document.getElementById("wallpaperoverlay4").style, document.getElementById("wallpaperoverlay5").style, document.getElementById("wallpaperoverlay6").style,
                     document.getElementById("wallpaperoverlay7").style, document.getElementById("wallpaperoverlay8").style, document.getElementById("wallpaperoverlay9").style,
                     document.getElementById("wallpaperoverlay10").style, document.getElementById("wallpaperoverlay11").style, document.getElementById("wallpaperoverlay12").style],
-                    wpstorage = ["none", "img/wallpapers/wallpaper32.png')", "img/wallpapers/study.png')", "img/wallpapers/startrek.png')", "img/wallpapers/unknown.png')", 
+                    wpstorage = ["none", "img/wallpapers/wallpaper32.png')", "img/wallpapers/study.png')", "img/wallpapers/startrek.png')", "img/wallpapers/unknown.png')",
                     "img/wallpapers/anime.png')", "img/wallpapers/vinyl.png')", "img/wallpapers/lynn.png')", "img/wallpapers/Untitled-3.jpg')", "img/wallpapers/Untitled-4.jpg')", 
-                    "img/wallpapers/macro.png')", "img/wallpapers/ResidentEvil.png')"], curwp = "", wpn = "", wps = "";
-                function wallpaperupdate(){abody.backgroundImage = curwp; dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp; CSGOsidebar1.backgroundImage = curwp; CSGOsidebar2.backgroundImage = curwp} 
-                function wpp(){dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp; document.getElementById("apperancepreview").style.backgroundImage = curwp; iconpre.backgroundImage = curwp}
-                function wwpno(){wpo[wpn].backgroundColor = curcolsch[26]; curwp = github + wps; wpp(); wpcr()} 
-                function wpcr() {for(var i = 0; wpo.length > i; i++){wpo[i].backgroundColor = ""}}
-                function wallpapercall(){wps = wpstorage[wpn]; wwpno()}</script>
+                    "img/wallpapers/macro.png')", "img/wallpapers/ResidentEvil.png')"], wpn = "", //wallpapers array storage + number to address wallpaper from the array
+                    curwp = "", //currentwallpaper from the wallpaper storage array
+                    wps = ""; //wallpaper final url (github + wpstorage[wpn]) (final wallpaper storage)
+                function wallpaperupdate(){
+                    abody.backgroundImage = curwp; CSGOsidebar1.backgroundImage = curwp; CSGOsidebar2.backgroundImage = curwp //desktop body and CSGOmode sidebar
+                    dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp} //wallpaper previews
+                function wwpno(){
+                    wps = wpstorage[wpn]
+                    wpo[wpn].backgroundColor = curcolsch[26];
+                    curwp = github + wps; wpp(); wpcr()} 
+                function wpp(){
+                    ap.backgroundImage = curwp; iconpre.backgroundImage = curwp //scheme appearance preview + icon preview
+                    dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp}
+                function wpcr() {
+                    for(var i = 0; wpo.length > i; i++){wpo[i].backgroundColor = ""}}
             </script>
             
             <!-- --------------------------------------- screensaver tab --------------------------------------- -->
@@ -1170,14 +1194,14 @@
                         var deskico = [document.getElementById("desktopico1").style, document.getElementById("desktopico2").style, document.getElementById("desktopico3").style, document.getElementById("desktopico4").style, 
                             document.getElementById("desktopico5").style, document.getElementById("desktopico6").style, document.getElementById("desktopico7").style, document.getElementById("desktopico8").style];
 
-                        function windows98(){currentscheme.textContent="Windows 98"; copi = 12; cpick(); wpn = 1; wallpapercall(); themecurrent = 2; themepreviewchange()} 
-                        function evangelionmode(){currentscheme.textContent="Neon Genesis Evangelion"; copi = 18; cpick(); wpn = 4; wallpapercall(); themecurrent = 0; themepreviewchange()}
-                        function Octavia(){currentscheme.textContent="Octavia's Study"; copi = 17; cpick();wpn = 2; wallpapercall(); themecurrent = 0; themepreviewchange()}
-                        function girlsdayout(){currentscheme.textContent="A Girls Day Out"; copi = 19; cpick(); wpn = 5; wallpapercall(); themecurrent = 1; themepreviewchange()}
-                        function milyvean(){currentscheme.textContent="Clouds at Midnight"; copi = 18; cpick(); wpn = 7; wallpapercall(); themecurrent = 2; themepreviewchange()}
-                        function vapourwave(){currentscheme.textContent="Aesthetic"; copi = 20; cpick(); wpn = 8; wallpapercall(); themecurrent = 3; themepreviewchange()}
-                        function contrastmodescheme1(){currentscheme.textContent="High Contrast Mode 1"; themecurrent = 4; highcontrast(); themepreviewchange()}
-                        function contrastmodescheme2(){currentscheme.textContent="High Contrast Mode 2"; themecurrent = 5; highcontrast(); themepreviewchange()}
+                        function windows98(){currentscheme.textContent="Windows 98"; copi = 12; cpick(); wpn = 1; wwpno(); themecurrent = 2; themepreviewchange()} 
+                        function evangelionmode(){currentscheme.textContent="Neon Genesis Evangelion"; copi = 18; cpick(); wpn = 4; wwpno(); themecurrent = 0; themepreviewchange()}
+                        function Octavia(){currentscheme.textContent="Octavia's Study"; copi = 17; cpick();wpn = 2; wwpno(); themecurrent = 0; themepreviewchange()}
+                        function girlsdayout(){currentscheme.textContent="A Girls Day Out"; copi = 19; cpick(); wpn = 5; wwpno(); themecurrent = 1; themepreviewchange()}
+                        function milyvean(){currentscheme.textContent="Clouds at Midnight"; copi = 18; cpick(); wpn = 7; wwpno(); themecurrent = 2; themepreviewchange()}
+                        function vapourwave(){currentscheme.textContent="Aesthetic"; copi = 20; cpick(); wpn = 8; wwpno(); themecurrent = 3; themepreviewchange()}
+                        function contrastmodescheme1(){currentscheme.textContent="High Contrast Mode 1"; copi = 2; cpick(); wwpno(); themecurrent = 4; themepreviewchange()}
+                        function contrastmodescheme2(){currentscheme.textContent="High Contrast Mode 2"; copi = 2; cpick(); wwpno(); themecurrent = 5; themepreviewchange()}
 
                         var darkmode = ["#9f9f9f","#fff","#fff","#fff","#323232","#151515","#202020","#676767","#545454","#9f9f9f","#3f3f3f","#ababab",
                                 "#292929","#000","#fccc39","#da3624","#008080","#c0c0c0","#c0c0c0","#fff","#fff",1,1,0.4,0.8,0.65,"#292929",undefined],
@@ -1189,8 +1213,8 @@
                                 "#de4560","#0a0a0a","#00bfbc","#a2dbd2","#008080","#ffff00","#000","#fff","#000",0,0,0.6,0.2,0.35,"#a2dbd2",undefined],
                             contras1 = ["#fff","#0000ff","#fff","#000","#00ffff","#0000ff","#0000ff","#00ffff","#000","#dfdfdf","#000","#ababab",
                                 "#808080","#fff","#00ffff","#0000ff","#008080","#ffff00","#ffff00","#fff","#fff",1,1,0.6,0.2,0.35,"#0000ff","#00ffff"],
-                            contras2 = ["#fff","#0000ff","#000","#000","#ffff00","#ffff00","#00ff00","#00ff00","#000","#dfdfdf","#000","#ababab",
-                                "#808080","#fff","#00ff00","#00ff00","#008080","#ffff00","#ffff00","#fff","#00ff00",1,1,0.6,0.2,0.35,"#00ff00","#00ff00"];
+                            contras2 = ["#fff","#0000ff","#000","#000","#ffff00","#ffff00","#00ff00","#00ff00","#000","#dfdfdf","#000","#ababab",                           //I genuinelly don't know what these colours do.
+                                "#808080","#fff","#00ff00","#00ff00","#008080","#ffff00","#ffff00","#fff","#00ff00",1,1,0.6,0.2,0.35,"#00ff00","#00ff00"];                  //I assigned them like 3 months ago and didn't comment on what they did.
                         var schemes = [darkmode,tankmode,lightmode,neonmode,contras1,contras2],curcolsch=schemes[2],precolsch=schemes[2];
                         var preactive = [undefined,undefined,'--preactivetitle','--preinactivetitle',undefined,undefined,undefined,undefined,'--prewhite','--prelightg','--presilver','--premidgray','--pregray',
                             '--preblack','--preblue','--preprussian',undefined,'--preyellow','--prefont','--prehover',undefined,'--preinvert',undefined,undefined,undefined,undefined]
@@ -1198,25 +1222,61 @@
                             '--black','--blue','--prussian','--wincyan','--yellow','--font', '--hover','--atext','--invert',undefined,'--discheckinv','--enacheckinv','--invcheckinv']
                         var discheckinv,enacheckinv,invcheckinv
                         
-                        function highcontrast(){fontcolour="#000";wwpno();curwp=precolsch[8];wpp();wpcr();ctoggle=true;wpn=0;wallpapercall()}
+                        function highcontrast(){wwpno();wpp();wpcr();ctoggle = true;wpn = 0;wwpno()}
                         
-                        function themepreviewchange(){precolsch=undefined; precolsch=schemes[themecurrent]; for(var i=0;i<preactive.length;i++){docelem.style.setProperty(preactive[i],precolsch[i])}
-                            gradient="linear-gradient(90deg, "+precolsch[6]+","+precolsch[7]+")";$("#previewwin2").css("background",gradient);$("#previewwin3").css("background",gradient)
-                            gradient="linear-gradient(90deg, "+precolsch[4]+","+precolsch[5]+")";$("#previewwin1").css("background",gradient);inprompt=inprompt+"Theme Preview Loaded.";println()}
+                        function themepreviewchange(){
+                            precolsch=schemes[themecurrent]; //confirms the current active scheme.
+                            for(var i=0;i<preactive.length;i++){
+                                docelem.style.setProperty(preactive[i],precolsch[i])} 
+                            gradient="linear-gradient(90deg, "+precolsch[6]+","+precolsch[7]+")"; gradient="linear-gradient(90deg, "+precolsch[4]+","+precolsch[5]+")" //titlebar gradients previews
+                            $("#previewwin1").css("background",gradient); $("#previewwin2").css("background",gradient); $("#previewwin3").css("background",gradient)
+                            curcolsch = precolsch; //needs this to fix the colour issue for when theme change happens after pressing apply the second time.
+                            if(precolsch==contras1 || precolsch==contras2){ fontcolour = "#000" } //checks if the theme is a high contrast theme so it will change the desktop icon font 
+                                                                                                  //colour accordingly, this needs to be after the background colour changer.
+                            inprompt = inprompt+"Theme Preview Loaded.";println()} //updates command prompt
                         
-                        function themechange(){curcolsch=undefined;curcolsch=schemes[themecurrent]; for(var i=0;i<active.length;i++){docelem.style.setProperty(active[i],curcolsch[i])}
-                            for(var temp=1;taskbarfont.length>temp;temp++){taskbarfont[temp].color=curcolsch[0]}; for(var temp=0;smu.length>temp;temp++){scf=temp;startsubmenuc()}
-                            docelem.style.setProperty('--taskbarstarttop1',curcolsch[12]);docelem.style.setProperty('--taskbarstarttop2',curcolsch[13]); 
-                            docelem.style.setProperty('--taskbarstartbottom1',curcolsch[8]);docelem.style.setProperty('--taskbarstartbottom2',curcolsch[9]);
-                            var dtil=0;shufflecolour();desktopiconchange();wallpapercall();clocku();inactiveall();curtask=3;currentwindow();
-                            if(curcolsch[21]==1){varinvert=0;}else{varinvert=1}
+                        function themechange(){
+                            for(var i=0;i<active.length;i++){
+                                docelem.style.setProperty(active[i],curcolsch[i])}
+                            for(var temp=1;taskbarfont.length>temp;temp++){
+                                taskbarfont[temp].color=curcolsch[0]} 
+                            for(var temp=0;smu.length>temp;temp++){scf=temp;startsubmenuc()}
+                                docelem.style.setProperty('--taskbarstarttop1',curcolsch[12]); docelem.style.setProperty('--taskbarstarttop2',curcolsch[13]); 
+                                docelem.style.setProperty('--taskbarstartbottom1',curcolsch[8]); docelem.style.setProperty('--taskbarstartbottom2',curcolsch[9]);
+                            shufflecolour(); desktopiconchange(); clocku(); 
+                            inactiveall(); curtask = 3; currentwindow(); //updates the current window to be infront after theme change.
                             
-                            if(dicotoggle==true){for(var i=0;deskico.length>i;i++){deskico[i].width="72px";deskico[i].height="72px";var temp1=dtil+"px",temp2="-0px";deskico[i].backgroundPosition=temp1+" "+temp2;dtil=dtil- 72}
-                                }else{for(var i ="0";deskico.length>i;i++){deskico[i].width="36px";deskico[i].height="36px";var temp1=dtil+"px",temp2="-72px";deskico[i].backgroundPosition=temp1+" "+temp2;dtil=dtil- 36}}
-                            if(nsfwtoggle==true){nsfwoptions.marginLeft="0px";nsfwoptions.marginTop="0px"}else{nsfwoptions.marginLeft="-20000px";nsfwoptions.marginTop="-80px"}
-                            if(csgotoggle==true){CSon=true;CSGOsidebar2.opacity=1;CSGOsidebar3.opacity=0.2;var w=window.innerWidth;desktopleft=((w/2)+(w/3))-window.innerWidth+"px";desktop.left=desktopleft;desktop.top="5px";
-                                ranCSno=1;CSGOsidebar1.opacity=1}else{CSon=false;desktopleft="0px";desktop.left=desktopleft;desktop.top="0px";CSGOsidebar1.opacity=0;CSGOsidebar2.opacity=0;CSGOsidebar3.opacity=0}
-                            changeCSGO();inprompt=inprompt+"Theme Loaded.";println()}</script>
+                            if(curcolsch[21] == 1){varinvert = 0
+                            }else{varinvert = 1}
+                            var dtil = 0
+                            if(dicotoggle==true){
+                                for(var i = 0; deskico.length > i; i++){
+                                    deskico[i].width = "72px"; deskico[i].height="72px" //loops through preview icons, fixes the current
+                                    var temp1 = dtil + "px", temp2 = "-0px" //sets current background placement variables
+                                    deskico[i].backgroundPosition = temp1 + " " + temp2 //sets the background position of the icon
+                                    dtil = dtil - 72} //horizontal displacement on the image map for large icons
+                            }else if(dicotoggle == false){
+                                for(var i = 0; deskico.length > i; i++){
+                                    deskico[i].width = "36px"; deskico[i].height = "36px" //loops through preview icons, fixes the current
+                                    var temp1 = dtil + "px", temp2 = "-72px" //sets current background placement variables
+                                    deskico[i].backgroundPosition = temp1 + " " + temp2 //sets the background position of the icon
+                                    dtil = dtil - 36}} //horizontal displacement on the image map for small icons
+                                    
+                            if(nsfwtoggle==true){ nsfwoptions.marginLeft="0px"; nsfwoptions.marginTop="0px"
+                            }else{ nsfwoptions.marginLeft="-20000px"; nsfwoptions.marginTop="-80px"}
+                                
+                            if(csgotoggle==true){ CSon=true
+                                ranCSno=1
+                                var w=window.innerWidth; desktopleft=((w/2)+(w/3))-window.innerWidth+"px";
+                                desktop.left=desktopleft; desktop.top="5px";
+                                CSGOsidebar1.opacity=1; CSGOsidebar2.opacity=1; CSGOsidebar3.opacity=0.2; 
+                            }else{ CSon=false
+                                desktopleft="0px"; desktop.left=desktopleft; desktop.top="0px";
+                                CSGOsidebar1.opacity=0; CSGOsidebar2.opacity=0; CSGOsidebar3.opacity=0}
+                            
+                            changeCSGO();
+                            inprompt=inprompt+"Theme Loaded.";println()}
+                    </script>
                         
                     <div class="win98buttondisa" style="margin-left:199px; width:67px"><center><butdislabel>Save As...</butdislabel></center></div>
                     <div class="win98buttondisa" style="margin-left:280px; width:68px"><center><butdislabel>Load...</butdislabel></center></div><br><br>
@@ -1262,7 +1322,7 @@
                         </div></div> 
                         
                         <script> var colourpicked = false, fontcolour = "#fff", copi = "", coloursampler = document.getElementById("coloursampler").style,
-                            cpo = document.getElementById("currentpickedo").style; cpc = document.getElementById("currentpickedc").style; ap = document.getElementById("apperancepreview").style;
+                            cpo = document.getElementById("currentpickedo").style, cpc = document.getElementById("currentpickedc").style, ap = document.getElementById("apperancepreview").style; // scheme preview
 
                             function colourpicker(){if (colourpicked == false){coloursampler.marginLeft = "-2px"; colourpicked = true} else if (colourpicked == true ){coloursampler.marginLeft = "-20000px"; colourpicked = false}}
                             function colourpickerexit(){coloursampler.marginLeft = "-20000px"; colourpicked = false} function fcw(){fontcolour = "#fff"} function fcb(){fontcolour = "#000"}
@@ -1361,30 +1421,83 @@
                         
                 <fieldset style="width:336px; height:118px; margin-left: 12px; margin-top: 20px;"><inboxlabel> Visual Effects </inboxlabel>
                     <div style="margin-top:-58px; position:absolute">
-                    <ul class="tick-box" id="effectstick0"><div class="invisibtickbox" style="background-image: url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/img/tickbox.png')" id="effect0"onclick="largepicotoggle()"></div></ul><ticklabel for="effectstick0" onclick="largepicotoggle()">Preview desktop icons as smaller icons</ticklabel></div>
-                    <ul class="tick-box" id="effectstick1"><div class="invisibtickbox" style="background-image: url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/img/tickbox.png')" id="effect1" onclick="largedicotoggle()"></div></ul><ticklabel for="effectstick1" onclick="largedicotoggle()">Use large desktop icons</ticklabel>
-                    <ul class="tick-box" id="effectstick2" style="background: var(--silver)"><div class="disabletickbox" id="effect2"></div></ul><ticklabel for="effectstick2">Show desktop icons using all possible colours</ticklabel>
-                    <ul class="tick-box" id="effectstick3" style="background: var(--silver)"><div class="disabletickbox" id="effect3" onclick="tickdragtoggle()"></div></ul><ticklabel for="effectstick3" onclick="tickdragtoggle()">Allow all windows to be draggable</ticklabel>
-                    <ul class="tick-box" id="effectstick4"><div class="invisibtickbox" id="effect4" onclick="ticknsfwtoggle()"></div></ul><ticklabel for="effectstick4" onclick="ticknsfwtoggle()">Enable NSFW desktop options</ticklabel>
-                    <ul class="tick-box" id="effectstick5" style="background: var(--silver)"><div class="disabletickbox" id="effect5"></div></ul><ticklabel for="effectstick5">Show window contents while dragging</ticklabel>
-                    <ul class="tick-box" id="effectstick6"><div class="invisibtickbox" id="effect6" onclick="tickcsgotoggle()"></div></ul><ticklabel for="effectstick6" onclick="tickcsgotoggle()">Enable "CSGO desktop" mode</ticklabel>
-            </fieldset></div>
+                    <ul class="tick-box" id="effectstick0"><div class="invisibtickbox" style="background-image: url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/img/tickbox.png')" id="effect0"onclick="largepicotoggle()"></div></ul>
+                    <ticklabel for="effectstick0" onclick="largepicotoggle()">Preview desktop icons as smaller icons</ticklabel></div>
+                    
+                    <ul class="tick-box" id="effectstick1"><div class="invisibtickbox" style="background-image: url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/img/tickbox.png')" id="effect1" onclick="largedicotoggle()"></div></ul>
+                    <ticklabel for="effectstick1" onclick="largedicotoggle()">Use large desktop icons</ticklabel>
+                    
+                    <ul class="tick-box" id="effectstick2" style="background: var(--silver)"><div class="disabletickbox" id="effect2"></div></ul>
+                    <ticklabel for="effectstick2">Show desktop icons using all possible colours</ticklabel>
+                    
+                    <ul class="tick-box" id="effectstick3" style="background: var(--silver)"><div class="disabletickbox" id="effect3" onclick="tickdragtoggle()"></div></ul>
+                    <ticklabel for="effectstick3" onclick="tickdragtoggle()">Allow all windows to be draggable</ticklabel>
+                    
+                    <ul class="tick-box" id="effectstick4"><div class="invisibtickbox" id="effect4" onclick="ticknsfwtoggle()"></div></ul>
+                    <ticklabel for="effectstick4" onclick="ticknsfwtoggle()">Enable NSFW desktop options</ticklabel>
+                    
+                    <ul class="tick-box" id="effectstick5" style="background: var(--silver)"><div class="disabletickbox" id="effect5"></div></ul>
+                    <ticklabel for="effectstick5">Show window contents while dragging</ticklabel>
+                    
+                    <ul class="tick-box" id="effectstick6"><div class="invisibtickbox" id="effect6" onclick="tickcsgotoggle()"></div></ul>
+                    <ticklabel for="effectstick6" onclick="tickcsgotoggle()">Enable "CSGO desktop" mode</ticklabel>
+                </fieldset>
+            </div>
             
-            <script> var picotoggle = false, dicotoggle = true, nsfwtoggle = false, csgotoggle = false, dragtoggle = true, nsfwoptions = document.getElementById("nsfwoptions").style, iconscont = document.getElementById("iconscont").style
-                CSGOsidebar1 = document.getElementById("CSGOsidebar1").style, CSGOsidebar2 = document.getElementById("CSGOsidebar2").style, CSGOsidebar3 = document.getElementById("CSGOsidebar3").style,
-                effect = [document.getElementById("effect0").style, document.getElementById("effect1").style, document.getElementById("effect2").style, document.getElementById("effect3").style, document.getElementById("effect4").style, 
-                document.getElementById("effect5").style, document.getElementById("effect6").style];
+            <script> //Effects table toggles
+                var picotoggle = false, dicotoggle = true, nsfwtoggle = false, csgotoggle = false, dragtoggle = true //default floptoggle values
+                var nsfwoptions = document.getElementById("nsfwoptions").style, iconscont = document.getElementById("iconscont").style
+                var CSGOsidebar1 = document.getElementById("CSGOsidebar1").style, CSGOsidebar2 = document.getElementById("CSGOsidebar2").style, CSGOsidebar3 = document.getElementById("CSGOsidebar3").style
+                var effect = [document.getElementById("effect0").style, document.getElementById("effect1").style, document.getElementById("effect2").style, document.getElementById("effect3").style, 
+                    document.getElementById("effect4").style, document.getElementById("effect5").style, document.getElementById("effect6").style]; //array storage for tickboxes.
 
-                function largepicotoggle(){ var dtil = 0; if(picotoggle == false){ 
-                    picotoggle = true; effect[0].backgroundImage = "url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/img/tickbox.png')"; docelem.style.setProperty('--smicow', '78px'); docelem.style.setProperty('--smicoh', '72px'); iconscont.width = "766px"; 
-                        for(var i = 0; previewico.length > i; i++){var temp1 = dtil + "px"; var temp2 = "-0px"; previewico[i].backgroundPosition = temp1 + " " + temp2; dtil = dtil - 72}
-                    } else {picotoggle = false; effect[0].backgroundImage = ""; docelem.style.setProperty('--smicow', '42px'); docelem.style.setProperty('--smicoh', '36px'); iconscont.width = "480px"
-                        for(var i = "0"; previewico.length > i; i++){var temp1 = dtil + "px"; var temp2 = "-72px"; previewico[i].backgroundPosition = temp1 + " " + temp2; dtil = dtil - 36}}}
-                function largedicotoggle(){if(dicotoggle == false){dicotoggle = true; effect[1].backgroundImage = "url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/img/tickbox.png')"} else if (dicotoggle == true){dicotoggle = false; effect[1].backgroundImage = ""}}
-                function tickdragtoggle(){if (dragtoggle == false){dragtoggle = true; effect[3].backgroundImage = "url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/img/tickbox.png')"} else if (dragtoggle == true){dragtoggle = false; effect[3].backgroundImage = ""}}
-                function ticknsfwtoggle(){if (nsfwtoggle == false){nsfwtoggle = true; effect[4].backgroundImage = "url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/img/tickbox.png')"} else if (nsfwtoggle == true){nsfwtoggle = false; effect[4].backgroundImage = ""}}
-                function tickcsgotoggle(){if (csgotoggle == false){csgotoggle = true; effect[6].backgroundImage = "url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/img/tickbox.png')"; prewallpaper = wps; wps = "img/wallpapers/vinylchrys.gif')"; wallpapercall(); 
-                    } else if (csgotoggle == true){csgotoggle = false; effect[6].backgroundImage = ""; wps = prewallpaper; wallpapercall()}} </script>
+                function largepicotoggle(){ var dtil = 0; //current pixel placement reset + var creation.
+                    
+                    if(picotoggle == false){ picotoggle = true //switches flop to on
+                        effect[0].backgroundImage = "url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/img/tickbox.png')"; //changes the tickbox background to a tick
+                        docelem.style.setProperty('--smicow', '78px'); docelem.style.setProperty('--smicoh', '72px') //changes icon size storage to large.
+                        iconscont.width = "766px"; //this fixes the scrollbar by changing the container width, because.
+                        for(var i = 0; previewico.length > i; i++){ //loops through preview icons, fixes the current
+                            var temp1 = dtil + "px", temp2 = "-0px" //placement of the icons due to everything having
+                            previewico[i].backgroundPosition = temp1 + " " + temp2 //to be fixed relative to the left, 
+                            dtil = dtil - 72} //rather than margin left, because reasons lol.
+                            
+                    } else {picotoggle = false; //switches flop to on
+                        effect[0].backgroundImage = ""; //changes the tickbox background to a blank background
+                        docelem.style.setProperty('--smicow', '42px'); docelem.style.setProperty('--smicoh', '36px') //changes icon size storage to small.
+                        iconscont.width = "480px" //this fixes the scrollbar by changing the container width, because.
+                        for(var i = "0"; previewico.length > i; i++){ //loops through preview icons, fixes the current
+                            var temp1 = dtil + "px", temp2 = "-72px" //placement of the icons due to everything having
+                            previewico[i].backgroundPosition = temp1 + " " + temp2 //to be fixed relative to the left, 
+                            dtil = dtil - 36}}} //rather than margin left, because reasons lol.
+                       
+                function largedicotoggle(){
+                    if(dicotoggle == false){ dicotoggle = true //switches flop to on
+                        effect[1].backgroundImage = "url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/img/tickbox.png')" //changes the tickbox background to a tick
+                    } else if (dicotoggle == true){ dicotoggle = false //switches flop to off
+                        effect[1].backgroundImage = ""}} //changes the tickbox background to a blank background
+                        
+                function tickdragtoggle(){ //doesn't do anything yet
+                    if (dragtoggle == false){ dragtoggle = true //switches flop to on
+                        effect[3].backgroundImage = "url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/img/tickbox.png')" //changes the tickbox background to a tick
+                    } else if (dragtoggle == true){dragtoggle = false //switches flop to off
+                        effect[3].backgroundImage = ""}} //changes the tickbox background to a blank background
+                        
+                function ticknsfwtoggle(){
+                    if (nsfwtoggle == false){ nsfwtoggle = true //switches flop to on + also does the toggle for the options in the wallpaper menu
+                        effect[4].backgroundImage = "url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/img/tickbox.png')" //changes the tickbox background to a tick
+                    } else if (nsfwtoggle == true){nsfwtoggle = false //switches flop to off
+                        effect[4].backgroundImage = ""}} //changes the tickbox background to a blank background
+                        
+                function tickcsgotoggle(){
+                    if (csgotoggle == false){ csgotoggle = true //switches flop to on + also does the toggle for the options in the wallpaper menu
+                        effect[6].backgroundImage = "url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/img/tickbox.png')" //changes the tickbox background to a tick
+                        wps = "img/wallpapers/vinylchrys.gif')"; 
+                        prewallpaper = wps; wwpno()
+                    } else if (csgotoggle == true){ csgotoggle = false //switches flop to off
+                        effect[6].backgroundImage = ""; //changes the tickbox background to a blank background
+                        wps = prewallpaper; wwpno()}} 
+            </script>
             
             <!-- --------------------------------------- settings tab --------------------------------------- -->
             <div class="win98innerbox" style="margin-top: 26px; width:380px; height:356px; margin-left:6px; z-index:2" id="settings">
