@@ -1,15 +1,20 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll; padding-right: 4px;">
 <ul>
-<li><strong style="color: var(--atext);">2021 June 21st (210621)</strong><strong style="color: var(--atext);"><strong style="color: var(--atext);"><br /></strong></strong>
+<li><strong style="color: var(--atext);">2021 July 2nd (020721)</strong><strong style="color: var(--atext);"><strong style="color: var(--atext);"><br /></strong></strong>
 <ul>
-<li>Improved commenting in the backend</li>
+<li><strong>Added way more commenting on the backend</strong></li>
 <li>Changed JS layout to make it more readable and easier to understand.</li>
-<li><em>Tweaks to themes</em></li>
+<li><em>Page loading optimisations to do with themes.</em></li>
+<li><strong>Removed the "Time and Date" window.</strong> (It's not very efficently coded or adds anything to the site, it's not a needed feature.)</li>
 </ul>
 <ol>
 <li>- Fixed the issue with high contrast themes not removing the background.</li>
 <li>- Fixed high contrast themes changing the current active colour once applied is pressed for a second time.</li>
+<li>- When pressing apply to apply an active theme, now updates the hover effect of the currently selected wallpaper.</li>
+<li>- Fixed a major bug where colours will change after selecting a theme and click on the display properties.</li>
+<li>- Fixed desktop icon colour backgrounds being one colour behind at all times.</li>
+<li>- Fixed desktop icon preview font colour always being black.</li>
 </ol></li>
 <li><strong style="color: var(--atext);">2021 June 21st (210621)</strong><strong style="color: var(--atext);"><strong style="color: var(--atext);"><br /></strong></strong>
 <ul>
