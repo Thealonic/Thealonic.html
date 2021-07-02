@@ -77,7 +77,7 @@
             .officialfunnypreview{background-position:-180px -72px}.justicepreview    {background-position:-252px -72px} 
 
 /* Window bar handling ------------------------------------------------------------------------------*/
-            .pretitle-bar-text,.title-bar-text{letter-spacing: 0.5px; margin-right:24px; padding:1px 4px 2px 4px; font-weight:700; cursor:default}
+            .pretitle-bar-text,.title-bar-text{letter-spacing: 0.5px; margin-right:24px; padding:1px 4px 2px 4px; font-weight:bold; cursor:default}
             .win98titlebarc,   .win98titlebarh{width:10px; height:8px; float:right; margin:2px 2px 2px 2px; cursor: pointer}
             
             .window,.win98post,.win98titlebarc,.win98titlebarh,.win98button,.win98buttona,.win98buttondis,.win98buttondisa,.buttonsmalla,.buttonsmalldis, 
@@ -453,8 +453,12 @@
                                 <div class="menuapplicationsplit" style="width:100%; margin-top:1px; margin-bottom:1px;"></div>
                         </div></div>
                         
-                        <script>var videolinksdrop = false, videolink = document.getElementById("tumblrlinkdrop").style; function videolinkdropdownclose(){videolink.marginLeft = "-20000px"; videolinksdrop = false}
-                            function videolinkdropdown(){ if (videolinksdrop == false) {videolink.marginLeft = "50px"; videolinksdrop = true } else if (videolinksdrop == true){videolink.marginLeft = "-20000px"; videolinksdrop = false}}</script>
+                        <script>
+                            var videolinksdrop = false, videolink = document.getElementById("tumblrlinkdrop").style; 
+                            function videolinkdropdownclose(){videolink.marginLeft = "-20000px"; videolinksdrop = false}
+                            function videolinkdropdown(){ if (videolinksdrop == false) {videolink.marginLeft = "50px"; videolinksdrop = true 
+                                } else if (videolinksdrop == true){videolink.marginLeft = "-20000px"; videolinksdrop = false}}
+                        </script>
                         
                         <div class="big_seperator21" style="float:right; margin-right:-4px"></div> 
                         <div style="float:right; height:22px; width:49px; margin-right:-6px;" onpress="mediainput()">
@@ -508,33 +512,41 @@
                         if(temp[i].length == 34){ loadPlaylist = temp[i] }; inprompt = inprompt + i + ":" + temp[i] + " "}
                     player.loadPlaylist({'list':loadPlaylist, 'index': index, 'startSeconds': timein}); println()
                     inprompt = inprompt + "Playing: $playlist:" + index + "&" + loadPlaylist; doubleln()}}
-
-            var videovol = 100; function videomute() {if(player.isMuted()){player.unMute()} else {player.mute()}}
-            function videovolumedown() {if(videovol > 0){videovol = videovol - 10; player.setVolume(videovol)}} function videovolumeup() {if(videovol < 100){videovol = videovol + 10; player.setVolume(videovol)}}
-
-            var currentskiptime = 10; var shuffle = false; var fullscreenactive = false; var shuffletext = "", currentplaylist = "", currentlyplaying = "", loadPlaylist = "", player, mytimer;
+            
+            var shuffle = false, fullscreenactive = false; //current player toggles
+            var shuffletext = "", currentplaylist = "", currentlyplaying = "", loadPlaylist = "", player, mytimer; //string storage
+            var currentskiptime = 10, videovol = 100; //default player values
+            
             var tag = document.createElement('script'); tag.src = "https://www.youtube.com/iframe_api"; firstScriptTag = document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); //#ref5014
             var playerfs = document.getElementById("playerfs").style, playerws = document.getElementById("playerws").style, playertv = document.getElementById("playertv").style, playerul = document.getElementById("playerul").style;
 
-            function progress(percent, $element) { var progressBarWidth = percent * $element.width() / 100; $element.find('div').animate({ width: progressBarWidth }, {duration: 10})}
+            function progress(percent, $element) {var progressBarWidth=percent*$element.width()/100; $element.find('div').animate({width:progressBarWidth},{duration:10})}
             function onYouTubeIframeAPIReady() {$('#progressBar').show(); 
                 player = new YT.Player('player', { height: '315', width: '560', videoId: '',
                 events: {'onReady': onPlayerReady, 'onStateChange': onPlayerStateChange, 'onError': onPlayerError},
                 playerVars: {controls: 0, autoplay: 0, modestbranding:1, showinfo: 0, disablekb: 0}})}
             function onPlayerReady(event) {urlupdate(); event.target.loadPlaylist({list: "", index: 0, suggestedQuality: "small"})}
-
-            function startVideo() {player.playVideo()} function pauseVideo() {player.pauseVideo()} function stopVideo() {player.stopVideo()}
+            
+            function startVideo() {player.playVideo()} 
+            function pauseVideo() {player.pauseVideo()} 
+            function stopVideo() {player.stopVideo()}
             function previousVideo() {if(currentplaylist !== ""){player.previousVideo(); playertext.textContent = "Playing previous video"}}
             function nextVideo() {if(currentplaylist !== ""){player.nextVideo(); playertext.textContent = "Playing next video"}}
-
-            function end() {clearInterval(counter)}
+            
+            function videomute() {if(player.isMuted()){player.unMute()} else {player.mute()}}
+            function videovolumedown() {if(videovol > 0){videovol = videovol - 10; player.setVolume(videovol)}} 
+            function videovolumeup() {if(videovol < 100){videovol = videovol + 10; player.setVolume(videovol)}}
+            
             function forwardVideo() { player.seekTo((player.getCurrentTime() + currentskiptime)); var skipamount = 1; playertext.textContent = "Skipped " + (skipamount * currentskiptime) + " seconds ahead";
                 counter = setInterval(function() {skipamount++; player.seekTo((player.getCurrentTime() + currentskiptime))
                 playertext.textContent = "Skipped " + (skipamount * currentskiptime) + " seconds ahead"; playstateupdateforward(); playerspeed.textContext = currentskiptime}, 200)}
             function rewindVideo() { player.seekTo((player.getCurrentTime() - currentskiptime)); var skipamount = 1; playertext.textContent = "Rewinded " + (skipamount * currentskiptime) + " seconds";
                 counter = setInterval(function() {skipamount++; player.seekTo((player.getCurrentTime() - currentskiptime))
                 playertext.textContent = "Rewinded " + (skipamount * currentskiptime) + " seconds"; playstateupdatebackward(); playerspeed.textContext = currentskiptime}, 200)}
-            function increaseskip() { if(currentskiptime < 120){currentskiptime = currentskiptime + 5;}} function decreaseskip() { if(currentskiptime > 5){currentskiptime = currentskiptime - 5;}}
+            function end() {clearInterval(counter)}
+                
+            function increaseskip() { if(currentskiptime < 120){currentskiptime = currentskiptime + 5;}} 
+            function decreaseskip() { if(currentskiptime > 5){currentskiptime = currentskiptime - 5;}}
             
             function shuffleVideo(){ if(shuffle == true){player.setShuffle(false); shuffle = false; docelem.style.setProperty('--shuffleinvert', 0.5); shuffletext = ""} 
                 else if(shuffle == false){player.setShuffle(true); shuffle = true; docelem.style.setProperty('--shuffleinvert', curcolsch[22]); shuffletext = "Shuffle Enabled : "}}
@@ -543,7 +555,8 @@
                 else if(precolsch[21] == 0) {dnextbutton.filter="invert(0%)"; previousbutton.filter="invert(0%)"}} else {nextbutton.filter="invert(0.5)"; previousbutton.filter="invert(0.5)"}}
                 
             function playlistlaunch(){embedtask(); player.loadVideoById({'videoId':'','startSeconds': 0}); loadPlaylist = currentplaylist; loadPlaylist = loadPlaylist.replace("list=", ''); loadPlaylist = loadPlaylist.replace("&", '')} 
-            function videoclear() {shuffle = true; shuffleVideo()} function playerupdate() {currentlyplaying = player.getVideoUrl(); if(fullscreenactive == false){playerurlupdate()} urlupdate(); shufflecolour()}
+            function playerupdate() {currentlyplaying = player.getVideoUrl(); if(fullscreenactive == false){playerurlupdate()} urlupdate(); shufflecolour()}
+            function videoclear() {shuffle = true; shuffleVideo()} 
             
             function playerurlupdate(){currentlyplaying = currentlyplaying.replace(currentplaylist, '')} 
             function urlupdate(){ document.getElementById("mediaplayer").value = currentlyplaying;
@@ -551,7 +564,7 @@
                 document.getElementById("videolink").href = currentlyplaying; document.getElementById("videoandplaylistlink").href = player.getVideoUrl()}
             function playerupdate() {currentlyplaying = player.getVideoUrl(); if(fullscreenactive == false){playerurlupdate()} urlupdate(); shufflecolour()}
 
-            var fullscreenactive = false; var embedmaximize = document.getElementById("embedmaximize").style, embedtitle = document.getElementById("embedmaxtitle");
+            var fullscreenactive = false, embedmaximize = document.getElementById("embedmaximize").style, embedtitle = document.getElementById("embedmaxtitle");
             function fullscreenembed(){ if(fullscreenactive == false){ fullscreenactive = true; playerupdate();
                     document.getElementById("player").style.width = "1066px"; document.getElementById("player").style.height = "600px"; playertext.style.width = "1058px"; playerws.width = "1056px"; playerul.width = "1066px"; 
                     playerfs.width = "1068px"; playertv.width = "908px"; docelem.style.setProperty('--slider', "1056px"); embedmaximize.backgroundPosition = "-118px -299px"; embedtitle.title = "Restore down"; playstateupdate()
@@ -593,7 +606,7 @@
                 } else if (playerStatus == 0) { setTimeout(function() {playertext.textContent = shuffletext + "Ended"}, 200)
                 } else if (playerStatus == 1) { setTimeout(function() {playertext.textContent = shuffletext + "Playing"}, 500)
                 } else if (playerStatus == 2) { setTimeout(function() {playertext.textContent = shuffletext + "Paused"}, 200)
-                } else if (playerStatus == 3) { playerupdate(); setTimeout(function() {playertext.textContent = shuffletext + "Buffering";}, 200)
+                } else if (playerStatus == 3) { playerupdate(); setTimeout(function() {playertext.textContent = shuffletext + "Buffering"}, 200)
                 } else if (playerStatus == 5) { setTimeout(function() {playertext.textContent = shuffletext + "Queued"}, 200)}}
             function onPlayerError(event) {player.nextVideo(); playertext.textContent = "Youtube loading error on previous video, video has been skipped."}
 
@@ -1092,27 +1105,35 @@
             </fieldset></div>
                         
             <script>
-                var wpo = [document.getElementById("wallpaperoverlay1").style, document.getElementById("wallpaperoverlay2").style, document.getElementById("wallpaperoverlay3").style,
-                    document.getElementById("wallpaperoverlay4").style, document.getElementById("wallpaperoverlay5").style, document.getElementById("wallpaperoverlay6").style,
-                    document.getElementById("wallpaperoverlay7").style, document.getElementById("wallpaperoverlay8").style, document.getElementById("wallpaperoverlay9").style,
-                    document.getElementById("wallpaperoverlay10").style, document.getElementById("wallpaperoverlay11").style, document.getElementById("wallpaperoverlay12").style],
-                    wpstorage = ["none", "img/wallpapers/wallpaper32.png')", "img/wallpapers/study.png')", "img/wallpapers/startrek.png')", "img/wallpapers/unknown.png')",
-                    "img/wallpapers/anime.png')", "img/wallpapers/vinyl.png')", "img/wallpapers/lynn.png')", "img/wallpapers/Untitled-3.jpg')", "img/wallpapers/Untitled-4.jpg')", 
+                    //background hover storage
+                var wpo = [document.getElementById("wallpaperoverlay1").style, document.getElementById("wallpaperoverlay2").style, document.getElementById("wallpaperoverlay3").style,  //stores wallpaper current selection data.
+                    document.getElementById("wallpaperoverlay4").style, document.getElementById("wallpaperoverlay5").style, document.getElementById("wallpaperoverlay6").style,         //which is the hover effect on the first tab
+                    document.getElementById("wallpaperoverlay7").style, document.getElementById("wallpaperoverlay8").style, document.getElementById("wallpaperoverlay9").style,         //but this is for reference data so it can
+                    document.getElementById("wallpaperoverlay10").style, document.getElementById("wallpaperoverlay11").style, document.getElementById("wallpaperoverlay12").style]      //apply colours permenantly. 
+                    
+                    //wallpaper var storage
+                var wpstorage = ["none", "img/wallpapers/wallpaper32.png')", "img/wallpapers/study.png')", "img/wallpapers/startrek.png')", "img/wallpapers/unknown.png')",
+                    "img/wallpapers/anime.png')", "img/wallpapers/vinyl.png')", "img/wallpapers/lynn.png')", "img/wallpapers/Untitled-3.jpg')", "img/wallpapers/Untitled-4.jpg')",      //stores short wallpaper URLS
                     "img/wallpapers/macro.png')", "img/wallpapers/ResidentEvil.png')"], wpn = "", //wallpapers array storage + number to address wallpaper from the array
                     curwp = "", //currentwallpaper from the wallpaper storage array
                     wps = ""; //wallpaper final url (github + wpstorage[wpn]) (final wallpaper storage)
+                    
                 function wallpaperupdate(){
                     abody.backgroundImage = curwp; CSGOsidebar1.backgroundImage = curwp; CSGOsidebar2.backgroundImage = curwp //desktop body and CSGOmode sidebar
                     dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp} //wallpaper previews
+                    
                 function wwpno(){
-                    wps = wpstorage[wpn]
-                    wpo[wpn].backgroundColor = curcolsch[26];
-                    curwp = github + wps; wpp(); wpcr()} 
-                function wpp(){
-                    ap.backgroundImage = curwp; iconpre.backgroundImage = curwp //scheme appearance preview + icon preview
-                    dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp}
+                    wps = wpstorage[wpn] //grabs the short URL for the wallpaper
+                    wpcr() //resets the currently active wallpaper hover colour to the background colour.
+                    wpo[wpn].backgroundColor = curcolsch[26] //sets the current active wallpaper based on currently active scheme, and then updates it with new scheme's colours.
+                    curwp = github + wps //updates the current short wallpaper url to the github link to generate the full URL to then be used as a reference var.
+                    wpp()} //updates the wallpaper previews with the current active wallpaper.
+                    
+                function wpp(){ //this has to be seperate so it can update every time the theme is applied.
+                    ap.backgroundImage = curwp; iconpre.backgroundImage = curwp 
+                    dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp}//scheme appearance preview + icon preview
                 function wpcr() {
-                    for(var i = 0; wpo.length > i; i++){wpo[i].backgroundColor = ""}}
+                    for(var i = 0; wpo.length > i; i++){wpo[i].backgroundColor = ""}} //resets the currently active wallpaper hover colour to the background colour.
             </script>
             
             <!-- --------------------------------------- screensaver tab --------------------------------------- -->
@@ -1200,8 +1221,8 @@
                         function girlsdayout(){currentscheme.textContent="A Girls Day Out"; copi = 19; cpick(); wpn = 5; wwpno(); themecurrent = 1; themepreviewchange()}
                         function milyvean(){currentscheme.textContent="Clouds at Midnight"; copi = 18; cpick(); wpn = 7; wwpno(); themecurrent = 2; themepreviewchange()}
                         function vapourwave(){currentscheme.textContent="Aesthetic"; copi = 20; cpick(); wpn = 8; wwpno(); themecurrent = 3; themepreviewchange()}
-                        function contrastmodescheme1(){currentscheme.textContent="High Contrast Mode 1"; copi = 2; cpick(); wwpno(); themecurrent = 4; themepreviewchange()}
-                        function contrastmodescheme2(){currentscheme.textContent="High Contrast Mode 2"; copi = 2; cpick(); wwpno(); themecurrent = 5; themepreviewchange()}
+                        function contrastmodescheme1(){currentscheme.textContent="High Contrast Mode 1"; copi = 2; cpick(); wpn = 0; wwpno(); themecurrent = 4; highcontrast(); themepreviewchange()}
+                        function contrastmodescheme2(){currentscheme.textContent="High Contrast Mode 2"; copi = 2; cpick(); wpn = 0; wwpno(); themecurrent = 5; highcontrast(); themepreviewchange()}
 
                         var darkmode = ["#9f9f9f","#fff","#fff","#fff","#323232","#151515","#202020","#676767","#545454","#9f9f9f","#3f3f3f","#ababab",
                                 "#292929","#000","#fccc39","#da3624","#008080","#c0c0c0","#c0c0c0","#fff","#fff",1,1,0.4,0.8,0.65,"#292929",undefined],
@@ -1215,14 +1236,16 @@
                                 "#808080","#fff","#00ffff","#0000ff","#008080","#ffff00","#ffff00","#fff","#fff",1,1,0.6,0.2,0.35,"#0000ff","#00ffff"],
                             contras2 = ["#fff","#0000ff","#000","#000","#ffff00","#ffff00","#00ff00","#00ff00","#000","#dfdfdf","#000","#ababab",                           //I genuinelly don't know what these colours do.
                                 "#808080","#fff","#00ff00","#00ff00","#008080","#ffff00","#ffff00","#fff","#00ff00",1,1,0.6,0.2,0.35,"#00ff00","#00ff00"];                  //I assigned them like 3 months ago and didn't comment on what they did.
-                        var schemes = [darkmode,tankmode,lightmode,neonmode,contras1,contras2],curcolsch=schemes[2],precolsch=schemes[2];
+                        var schemes = [darkmode,tankmode,lightmode,neonmode,contras1,contras2],curcolsch=schemes[2],precolsch=schemes[2];           //scheme theme names, stored to refernce the theme arrays.
+                        
                         var preactive = [undefined,undefined,'--preactivetitle','--preinactivetitle',undefined,undefined,undefined,undefined,'--prewhite','--prelightg','--presilver','--premidgray','--pregray',
                             '--preblack','--preblue','--preprussian',undefined,'--preyellow','--prefont','--prehover',undefined,'--preinvert',undefined,undefined,undefined,undefined]
                         var active = [undefined,undefined,'--curactivetitle','--curinactivetitle',undefined,undefined,undefined,undefined,'--white','--lightg','--silver','--midgray','--gray',
                             '--black','--blue','--prussian','--wincyan','--yellow','--font', '--hover','--atext','--invert',undefined,'--discheckinv','--enacheckinv','--invcheckinv']
                         var discheckinv,enacheckinv,invcheckinv
                         
-                        function highcontrast(){wwpno();wpp();wpcr();ctoggle = true;wpn = 0;wwpno()}
+                        function highcontrast(){
+                            wpp(); wpcr(); ctoggle = true}
                         
                         function themepreviewchange(){
                             precolsch=schemes[themecurrent]; //confirms the current active scheme.
@@ -1421,10 +1444,12 @@
                         
                 <fieldset style="width:336px; height:118px; margin-left: 12px; margin-top: 20px;"><inboxlabel> Visual Effects </inboxlabel>
                     <div style="margin-top:-58px; position:absolute">
-                    <ul class="tick-box" id="effectstick0"><div class="invisibtickbox" style="background-image: url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/img/tickbox.png')" id="effect0"onclick="largepicotoggle()"></div></ul>
+                    <ul class="tick-box" id="effectstick0">
+                        <div class="invisibtickbox" style="background-image: url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/img/tickbox.png')" id="effect0"onclick="largepicotoggle()"></div></ul>
                     <ticklabel for="effectstick0" onclick="largepicotoggle()">Preview desktop icons as smaller icons</ticklabel></div>
                     
-                    <ul class="tick-box" id="effectstick1"><div class="invisibtickbox" style="background-image: url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/img/tickbox.png')" id="effect1" onclick="largedicotoggle()"></div></ul>
+                    <ul class="tick-box" id="effectstick1">
+                        <div class="invisibtickbox" style="background-image: url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/img/tickbox.png')" id="effect1" onclick="largedicotoggle()"></div></ul>
                     <ticklabel for="effectstick1" onclick="largedicotoggle()">Use large desktop icons</ticklabel>
                     
                     <ul class="tick-box" id="effectstick2" style="background: var(--silver)"><div class="disabletickbox" id="effect2"></div></ul>
