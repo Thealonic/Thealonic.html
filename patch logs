@@ -1,12 +1,18 @@
-<div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
+<<div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll; padding-right: 4px;">
 <ul>
 <li><strong style="color: var(--atext);">2021 July 2nd (020721)</strong><strong style="color: var(--atext);"><strong style="color: var(--atext);"><br /></strong></strong>
 <ul>
 <li><strong>Added way more commenting on the backend</strong></li>
+<li>Page loading optimisations to do with themes.</li>
+<li><strong>Added a dropdown menu on the Background tab of the display properties</strong>
+<ul>
+<li>Added "Relative" setting, which fixes the image to the current screen position<strong><br /></strong></li>
+<li>Added "Absolute" setting, which fixes the image to the visable area.</li>
+</ul>
+</li>
 <li>Changed JS layout to make it more readable and easier to understand.</li>
-<li><em>Page loading optimisations to do with themes.</em></li>
-<li><strong>Removed the "Time and Date" window.</strong> (It's not very efficently coded or adds anything to the site, it's not a needed feature.)</li>
+<li><strong>Removed the &ldquo;Time and Date&rdquo; window.</strong> (It&rsquo;s not very efficently coded or adds anything to the site, it&rsquo;s not a needed feature.)</li>
 </ul>
 <ol>
 <li>- Fixed the issue with high contrast themes not removing the background.</li>
