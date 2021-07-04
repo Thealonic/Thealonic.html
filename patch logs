@@ -1,16 +1,33 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll; padding-right: 4px;">
 <ul>
-<li><strong style="color: var(--atext);">2021 July 2nd (020721)</strong><strong style="color: var(--atext);"><strong style="color: var(--atext);"><br /></strong></strong>
+<li><strong style="color: var(--atext);">2021 July 3rd (210703)</strong><strong style="color: var(--atext);"><strong style="color: var(--atext);"><strong style="color: var(--atext);"><br /></strong></strong></strong>
+<ul>
+<li><strong>Adjusted the Last Updated box</strong>
+<ul>
+<li>Added &ldquo;Patch Notes" button, which bring up the patchnotes <strong><br /></strong></li>
+<li>Added &ldquo;Bug Reports" button, which brings up a list of currently noted bugs.</li>
+<li>Removed Maxmize button, and replaced it with the Patch Notes button.</li>
+</ul>
+</li>
+<li><strong>Added a dropdown menu on the Background tab of the display properties</strong>
+<ul>
+<li>Added &ldquo;Relative&rdquo; setting, which fixes the image to the current screen position<strong><br /></strong></li>
+<li>Added &ldquo;Absolute&rdquo; setting, which fixes the image to the visable area.</li>
+</ul>
+</li>
+<li>Optimised desktop icon scheme loading, and tweaked how Vher98 loads them.</li>
+<li>Pressing Apply in the display properties now applies the current preview of icons to the desktop.</li>
+<li>Changing theme Colours now changes the Scheme name to "Custom", similar to what happens when changing wallpapers.</li>
+</ul>
+<ol>
+<li>- Fixed the desktop icon previews needing to be toggled once before working.</li>
+<li>- Fixed desktop icon previews being always inverted to what it should be.</li>
+</ol></li>
+<li><strong style="color: var(--atext);">2021 July 2nd (210702)</strong><strong style="color: var(--atext);"><strong style="color: var(--atext);"><br /></strong></strong>
 <ul>
 <li><strong>Added way more commenting on the backend</strong></li>
 <li>Page loading optimisations to do with themes.</li>
-<li><strong>Added a dropdown menu on the Background tab of the display properties</strong>
-<ul>
-<li>Added "Relative" setting, which fixes the image to the current screen position<strong><br /></strong></li>
-<li>Added "Absolute" setting, which fixes the image to the visable area.</li>
-</ul>
-</li>
 <li>Changed JS layout to make it more readable and easier to understand.</li>
 <li><strong>Removed the &ldquo;Time and Date&rdquo; window.</strong> (It&rsquo;s not very efficently coded or adds anything to the site, it&rsquo;s not a needed feature.)</li>
 </ul>
