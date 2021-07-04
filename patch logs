@@ -1,6 +1,18 @@
 <div class="win98container" style="position: absolute; margin-top: -24px; margin-left: 448px; height: 100px; width: 10px; z-index: 100000000000000;"></div>
 <div class="container" style="margin-left: -4px; margin-top: 8px; margin-right: -20px; margin-bottom: -3px; max-height: 720px; overflow-y: scroll; padding-right: 4px;">
 <ul>
+<li><strong>2021 July 4th (210704)</strong> <em>- The "Long Needed Optimisation" update<strong style="color: var(--atext);"><strong style="color: var(--atext);"><strong style="color: var(--atext);"><strong style="color: var(--atext);"><br /></strong></strong></strong></strong></em>
+<ul>
+<li>Optimised task management, and how tasks are called</li>
+<li><strong>Optimised the function that calls task positions to be reset</strong></li>
+<li><strong>Optimised tab switching in Display Properties</strong></li>
+<li><strong>Optimised colour selection in Display Propertes</strong>.</li>
+<li>Added tons more commenting to the backend</li>
+</ul>
+<ol>
+<li>- Fixed the colour sampler &amp; preview wallpapers not changing colour.</li>
+<li>- Fixed the Media Player not able to go into fullscreen mode.</li>
+</ol></li>
 <li><strong style="color: var(--atext);">2021 July 3rd (210703)</strong><strong style="color: var(--atext);"><strong style="color: var(--atext);"><strong style="color: var(--atext);"><br /></strong></strong></strong>
 <ul>
 <li><strong>Adjusted the Last Updated box</strong>
@@ -16,13 +28,15 @@
 <li>Added &ldquo;Absolute&rdquo; setting, which fixes the image to the visable area.</li>
 </ul>
 </li>
-<li>Optimised desktop icon scheme loading, and tweaked how Vher98 loads them.</li>
 <li>Pressing Apply in the display properties now applies the current preview of icons to the desktop.</li>
-<li>Changing theme Colours now changes the Scheme name to "Custom", similar to what happens when changing wallpapers.</li>
+<li>Changing theme Colours now changes the Scheme name to &ldquo;Custom&rdquo;, similar to what happens when changing wallpapers.</li>
+<li>Optimised desktop icon scheme loading, and tweaked how Vher98 loads them.</li>
+<li>Optimised page loading by removing any uneeded references through using &ldquo;document.getElementById&rdquo;.</li>
 </ul>
 <ol>
 <li>- Fixed the desktop icon previews needing to be toggled once before working.</li>
 <li>- Fixed desktop icon previews being always inverted to what it should be.</li>
+<li>- Fixed the Random Image generator from not closing after pressing &ldquo;ok&rdquo; 4 times.</li>
 </ol></li>
 <li><strong style="color: var(--atext);">2021 July 2nd (210702)</strong><strong style="color: var(--atext);"><strong style="color: var(--atext);"><br /></strong></strong>
 <ul>
