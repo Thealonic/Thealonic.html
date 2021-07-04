@@ -1,4 +1,4 @@
-<<!--
+<!--
                                        .uef^"                                            .u+=~~~+u.
                      ...     ..      :d88E                    .u    .     .xn!~%x.      z8F      `8N.
                   :~""888h.:^"888:   `888E            .u    .d88B :@8c   x888   888.   d88L       98E
@@ -21,7 +21,7 @@
     <script src="//static.tumblr.com/fpdiq1j/GV9n0wdlc/jquery.infinitescroll.min.js"></script>
     <script> 
         var github = "url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/", readme = "//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/README.md";
-        var updateon = "06:10am on April 2st, 2021. [GMT]", updatedfrom = "Thea Vanherst"; function calupdate(){inactiveall(); cal = cal + 1};
+        var updateon = "02:44am on July 3rd, 2021. [GMT]", updatedfrom = "Thea Vanherst"; function calupdate(){inactiveall(); cal = cal + 1};
         var curtask = undefined, currenttask = 1, cal = 5, docelem = document.documentElement, plinksdrop = false, schemedrop = false;
         function latestupdate() {document.getElementById("lastupdate").textContent = updateon; document.getElementById("updatedby").textContent = updatedfrom} //"Pixelated MS Sans Serif"
     </script>
@@ -104,7 +104,7 @@
             prebutlabel,prebutdislabel,preico,butlabel,label,butdislabel{display:inline-flex; align-items:center;color:var(--text)} 
             .win98button,.win98buttona,.prepost,.prebutton,prebutlabel,butlabel{pointer:cursor} prebutlabel,prebutdislabel,butlabel,butdislabel{margin-top:2px} 
             startdistxt,butdislabel,dislabel,butdislabel{align-items:center;color:var(--gray);text-shadow:var(--distextshadow)}startdistxt{margin-left: 26px;margin-top:3px;position:absolute}
-            
+            .win98button,.win98buttonabutton:focus{outline:0px dotted var(--black);outline-offset:-4px}
 /* window preview handling ------------------------------------------------------------------------------*/
             .prepost,.pretitlebarbutton,.prescroll,.prebutton{box-shadow: var(--preboxshadowraised);background:var(--presilver);color: var(--prefont);padding:3px;}
             .pretitlebarbutton{margin:2px 2px 0px 0px}.prescroll,.prepost{position:absolute}.pretitlebarbutton {width:10px; height:8px; float:right; margin:2px 2px 2px 2px; cursor: pointer}
@@ -320,7 +320,7 @@
     </style></head>
 
 <!-- Page rendering ------------------------------------------------------------------------------>
-    <script> function defaultpageload() {fillitem();dsheetpetra();desktopiconchange();evangelionmode();themechange();wallpaperupdate()} </script>
+    <script> function defaultpageload() {fillitem();desktopsheetcall();desktopiconchange();evangelionmode();themechange();wallpaperupdate();relativedesk();fillitem()} </script>
     <body class="win98 {block:PermalinkPage}permalink_page{/block:PermalinkPage} infinite_scrolling two_column masonry_enabled" id="body" 
           onload="latestupdate();defaultpageload();{block:HomePage}messageopen();vunnytask();{/block:HomePage}disktask(); tabreset(); appearancetab(); curtask = 3; minimizewindow(); promptrestart();tumblractive()">
      <title>𝖁𝖍𝖊𝖗𝟗𝟖</title>
@@ -616,13 +616,15 @@
         </script>
 
 <!-- Latest updates message box ------------------------------------------------------------------------------>
-        <div class="win98post" style="height: 50px; width:306px; top: 62%; left: 1465px; margin-left: -20000px" onmousedown="messageactive();" id="message">
+        <div class="win98post" style="height: 78px; width:306px; top: 62%; left: 1465px; margin-left: -20000px" onmousedown="messageactive();" id="message">
              <div class="win98titlebarc" title="Close" onclick="messageclose()"><div class="close"></div></div>
-             <div class="win98titlebarh" title="Maximize" onclick="notestask()"><div class="maximize"></div></div>
              <div class="win98titlebarh" title="Help" onclick="twilightload()"> <div class="help"></div></div>
              <div class="title-bar-98" id="messagewindow" style="width: 306px"> <div class="title-bar-text" id="messagetitle">🧮 brain go brrrrr</div></div>
              <div class="window-body" style="margin-right: 4px; margin-top: 5px; margin-bottom: 3px; padding:2px">
-                <p style="color: var(--blue); margin-top:3px; margin-left: 5px"> <label>Page last updated;</label> <label style="color: var(--curcolsch[13])" id="lastupdate"></label></p></div>
+                <p style="color: var(--blue); margin-top:3px; margin-left: 5px; margin-bottom:9px"> <label>Page last updated;</label><label style="color: var(--curcolsch[13])" id="lastupdate"></label></p>
+                <div class="win98button" style="float:right; margin-right:4px; width:73px; text-align: center" onclick="notestask()"><butlabel>Patch Notes</butlabel></div>
+                <div class="win98button" style="float:right; margin-right:8px; width:73px; text-align: center" onclick=""><butlabel>Bug Notes</butlabel></div>
+            </div>
         </div>
 
         <!-- Patchnotes update  ------------------------------------------------------------------------------>
@@ -630,7 +632,7 @@
             <div class="win98titlebarc" title="Close" onclick="curtask = 5; inactivewindow()"><div class="close"></div></div>
             <div class="win98titlebarh" title="Restore down" onclick="curtask = 5; inactivewindow(); messageopen()"><div class="restore"></div></div>
             <div class="win98titlebarh" title="Minimize" onclick="curtask = 5; minimizewindow()"> <div class="minimize"></div></div>
-            <div class="win98titlebarh" title="Help" onclick="twilightload()"> <div class="help"></div></div>
+            <div class="win98titlebarh" title="Help" onclick="twilightload()"><div class="help"></div></div>
             <div class="title-bar-98" id="notewindow"> <div class="title-bar-text" id="notetitle">🧮 𝖁𝖍𝖊𝖗𝟗𝟖 Patchnotes</div></div>
             
             <div class="post-header" style="height: 24px; width: 467px; margin-top:-2px">
@@ -649,19 +651,64 @@
                 <ul class="tree-view" style="margin-left:-7px; margin-top:-2px; width: 471px; padding:0px; padding-bottom:5px; padding-top:1px; margin-right:-7px"> 
                     <div style="width:451px; margin-left: -2.2px; margin-top:-7px"><patchnotes></div></ul>
                 
-                <div style="margin-right: -6px; margin-left: -7px; width:457px; height:18px; margin-top:2px;"> 
+                <div style="margin-right: -6px; margin-left: -7px; width:457px; height:18px; margin-top:2px"> 
                     <fieldset style="position: absolute; width:358px; height:11px; padding:4px;">
-                        <div class="menufind4" style="margin-top:-4px; margin-left:-2px; margin-right:1.7px;"></div> 
+                        <div class="menufind4" style="margin-top:-4px; margin-left:-2px; margin-right:1.7px"></div> 
                             Last updated by <a href="https://twitter.com/TheaVanherst" target="_blank" style="color:var(--blue); font-weight: bold;" id="updatedby"></a>
                     </fieldset>
                     <fieldset style="position: absolute; width: 36px; height: 1px; margin-left: 369px"></fieldset>
                     <fieldset style="position: absolute; width: 23px; height: 1px; margin-left: 428px"></fieldset>
             </div></div>
         </div>
-
-        <script> function messageactive(){calupdate(); message.style.zIndex = cal; messagewindow.style.background = "linear-gradient(90deg, " + curcolsch[6] + "," + curcolsch[7] + ")"; messagetitle.style.color = curcolsch[2]}; 
-            function messageclose(){message.style.marginLeft = "-20000px"} function messageopen(){calupdate(); message.style.marginLeft = "0px"; message.left = "77%"; message.top = "62%"; message.style.zIndex = cal}
-            var patchlogs = "https://raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/patch%20logs"; function notesupdate(){$.get(patchlogs, function(data) { $( "patchnotes" ).last().html( data ); }, 'text')}</script>
+        
+        <script> 
+            function messageactive(){ //called when 🧮 brain go brrrrr window is clicked on
+                calupdate(); message.style.zIndex = cal //updates window to be infront of everything, required because it's not treated as an actual task
+                messagewindow.style.background="linear-gradient(90deg,"+curcolsch[6]+","+curcolsch[7]+")" //because this window isn't a task, this needs to be here
+                messagetitle.style.color = curcolsch[2]}                                                  //in order for it to act as an active task.
+            function messageclose(){message.style.marginLeft = "-20000px"} //moves the window offscreen, required because it's not treated as an actual task
+            function messageopen(){ //used to reopen 🧮 brain go brrrrr window.
+                calupdate(); message.style.zIndex = cal //updates message window to be infront, required because it's not treated as an actual task
+                message.style.marginLeft = "0px"; message.left = "77%"; message.top = "62%"} //sets it back to the default position relative to the screen resolution.
+                
+            var patchlogs = "https://raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/patch%20logs" //patchnoes URL to bring data from.
+            function notesupdate(){ //updates patchnotes on window startup
+                $.get(patchlogs, function(data) { $( "patchnotes" ).last().html( data ); }, 'text')} //fetches the text from patchlogs var.
+        </script>
+        
+        <!-- Bugnotes update  ------------------------------------------------------------------------------>
+        <div class="win98post" style="margin-left: -20000px" onmousedown="curtask = 5; currentwindow()" id="note">
+            <div class="win98titlebarc" title="Close" onclick="curtask = 5; inactivewindow()"><div class="close"></div></div>
+            <div class="win98titlebarh" title="Restore down" onclick="curtask = 5; inactivewindow(); messageopen()"><div class="restore"></div></div>
+            <div class="win98titlebarh" title="Minimize" onclick="curtask = 5; minimizewindow()"> <div class="minimize"></div></div>
+            <div class="win98titlebarh" title="Help" onclick="twilightload()"><div class="help"></div></div>
+            <div class="title-bar-98" id="notewindow"> <div class="title-bar-text" id="notetitle">🕸️ 𝖁𝖍𝖊𝖗𝟗𝟖 Bug-Notes</div></div>
+            
+            <div class="post-header" style="height: 24px; width: 467px; margin-top:-2px">
+                <fieldset style="position:absolute; height: 21px; width: 465px; margin-top:4px; margin-left:2px; padding:2px; display: inline;"> 
+                
+                    <div class="small_seperator17"></div>
+                    <div class="container" style="margin-left:12px; margin-top:5px; width:400px;">A<udl>d</udl>dress</div>
+                    
+                    <ul class="tree-view" style="position:absolute; width:350px; height:9px; margin-left:55px; margin-top:-17px;">
+                    <div class="dropbutton" style="margin:-4px;"><div class="arrowdisdown"></div></div>
+                        <div class="menufind1" style="margin:-5px;"></div><div style="margin-top:-1px; margin-left:16px;">https://thealonic.tumblr.com/bug-notes</div></ul>
+                    <div style="margin-left:418px; margin-top:-12px; width:49px;"><div class="explorergo" style="margin-left:5px; margin-top:-5px"></div> <div class="reflinkblack">Go</div></div>
+            </fieldset></div>
+            
+            <div class="window-body" style="margin-bottom:2px;">
+                <ul class="tree-view" style="margin-left:-7px; margin-top:-2px; width: 471px; padding:0px; padding-bottom:5px; padding-top:1px; margin-right:-7px"> 
+                    <div style="width:451px; margin-left: -2.2px; margin-top:-7px"><patchnotes></div></ul>
+                
+                <div style="margin-right: -6px; margin-left: -7px; width:457px; height:18px; margin-top:2px"> 
+                    <fieldset style="position: absolute; width:358px; height:11px; padding:4px;">
+                        <div class="menufind4" style="margin-top:-4px; margin-left:-2px; margin-right:1.7px"></div> 
+                            Last updated by <a href="https://twitter.com/TheaVanherst" target="_blank" style="color:var(--blue); font-weight: bold;" id="updatedby"></a>
+                    </fieldset>
+                    <fieldset style="position: absolute; width: 36px; height: 1px; margin-left: 369px"></fieldset>
+                    <fieldset style="position: absolute; width: 23px; height: 1px; margin-left: 428px"></fieldset>
+            </div></div>
+        </div>
 
 <!-- Internet Explorer rendering ------------------------------------------------------------------------------------->
         <div class="win98post" style="margin-left: -20000px" onmousedown="curtask = 8; currentwindow()" id="internet">
@@ -1048,17 +1095,14 @@
                 function wallpaperupdate(){
                     abody.backgroundImage = curwp; CSGOsidebar1.backgroundImage = curwp; CSGOsidebar2.backgroundImage = curwp //desktop body and CSGOmode sidebar
                     dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp} //wallpaper previews
-                    
                 function wwpno(){
                     wps = wpstorage[wpn] //grabs the short URL for the wallpaper
                     wpcr() //resets the currently active wallpaper hover colour to the background colour.
                     bgu() //sets the current active wallpaper based on currently active scheme, and then updates it with new scheme's colours.
                     curwp = github + wps //updates the current short wallpaper url to the github link to generate the full URL to then be used as a reference var.
                     wpp()} //updates the wallpaper previews with the current active wallpaper.
-                    
                 function bgu(){
                     wpo[wpn].backgroundColor = curcolsch[26]} //sets the current active wallpaper based on currently active scheme, and then updates it with new scheme's colours.
-                    
                 function wpp(){ //this has to be seperate so it can update every time the theme is applied.
                     ap.backgroundImage = curwp; iconpre.backgroundImage = curwp 
                     dcb1.backgroundImage = curwp; dcb2.backgroundImage = curwp; dcb3.backgroundImage = curwp}//scheme appearance preview + icon preview
@@ -1142,9 +1186,7 @@
                             <div class="droptext" onclick="contrastmodescheme2()" id="contrastmodescheme2">High Contrast Mode 2     </div></div></ul>
                             
                     <script>
-                        var ctoggle = false, themecurrent = 2, desktopleft;
-                        function wallpapercust() {currentsch.textContent="(Custom)"} 
-                        var varinvert,shuffleflop,currentcolour,prewallpaper,gradient;
+                        var ctoggle = false, themecurrent = 2, desktopleft, varinvert,shuffleflop,currentcolour,prewallpaper,gradient;
                         var deskico = [document.getElementById("desktopico1").style, document.getElementById("desktopico2").style, document.getElementById("desktopico3").style, document.getElementById("desktopico4").style, 
                             document.getElementById("desktopico5").style, document.getElementById("desktopico6").style, document.getElementById("desktopico7").style, document.getElementById("desktopico8").style] //stores desktop icon data
 
@@ -1158,22 +1200,22 @@
                         function vapourwave(){currentscheme.textContent="Aesthetic"; ctoggle = false; copi = 20; cpick(); wpn = 8; wwpno(); themecurrent = 3; themepreviewchange()}
                         function contrastmodescheme1(){currentscheme.textContent="High Contrast Mode 1"; ctoggle = true; copi = 2; cpick(); wpn = 0; wwpno(); themecurrent = 4; highcontrast(); themepreviewchange()}
                         function contrastmodescheme2(){currentscheme.textContent="High Contrast Mode 2"; ctoggle = true; copi = 2; cpick(); wpn = 0; wwpno(); themecurrent = 5; highcontrast(); themepreviewchange()}
-                                        
-                                        //0       //1       //2       //3       //4       //5       //6       //7       //8       //9       //10      //11
+                        
+                                      //0       //1       //2       //3       //4       //5       //6       //7       //8       //9       //10      //11
                                 //12      //13      //14      //15      //16      //17      //18      //19      //20     //21-25           //26      //27
-                        var darkmode = ["#9f9f9f","#ffffff","#ffffff","#ffffff","#323232","#151515","#202020","#676767","#545454","#9f9f9f","#3f3f3f","#ababab",
+                        var darkmode=["#9f9f9f","#ffffff","#ffffff","#ffffff","#323232","#151515","#202020","#676767","#545454","#9f9f9f","#3f3f3f","#ababab",
                                 "#292929","#000000","#fccc39","#da3624","#008080","#c0c0c0","#c0c0c0","#ffffff","#ffffff",1,1,0.4,0.8,0.65,"#292929"],
-                            tankmode = ["#000000","#000000","#ffffff","#607060","#483038","#483038","#404840","#404840","#7d8f7d","#607060","#607060","#404840",
+                            tankmode=["#000000","#000000","#ffffff","#607060","#483038","#483038","#404840","#404840","#7d8f7d","#607060","#607060","#404840",
                                 "#404840","#0a0a0a","#ffffff","#481212","#008080","#ffff00","#000000","#ffffff","#000000",0,0,0.4,0.8,0.65,"#607060"],
-                           lightmode = ["#000000","#000000","#ffffff","#ffffff","#878787","#a2a2a2","#00087f","#0884ce","#ffffff","#dfdfdf","#c0c0c0","#ababab",
+                           lightmode=["#000000","#000000","#ffffff","#ffffff","#878787","#a2a2a2","#00087f","#0884ce","#ffffff","#dfdfdf","#c0c0c0","#ababab",
                                 "#808080","#0a0a0a","#0000FF","#00207c","#008080","#ffff00","#000000","#ffffff","#000000",0,0,0.6,0.2,0.35,"#c0c0c0"],
-                            neonmode = ["#000000","#000000","#ffffff","#00554d","#00bfbc","#ec91a2","#01bfbc","#ca9cb9","#f7dbd7","#fae0e4","#f4c1ca","#e08998",
+                            neonmode=["#000000","#000000","#ffffff","#00554d","#00bfbc","#ec91a2","#01bfbc","#ca9cb9","#f7dbd7","#fae0e4","#f4c1ca","#e08998",
                                 "#de4560","#0a0a0a","#00bfbc","#a2dbd2","#008080","#ffff00","#000000","#ffffff","#000000",0,0,0.6,0.2,0.35,"#a2dbd2"],
-                            contras1 = ["#ffffff","#0000ff","#ffffff","#000000","#00ffff","#0000ff","#0000ff","#00ffff","#000000","#dfdfdf","#000000","#ababab",
+                            contras1=["#ffffff","#0000ff","#ffffff","#000000","#00ffff","#0000ff","#0000ff","#00ffff","#000000","#dfdfdf","#000000","#ababab",
                                 "#808080","#ffffff","#00ffff","#0000ff","#008080","#ffff00","#ffff00","#ffffff","#ffffff",1,1,0.6,0.2,0.35,"#0000ff"],
-                            contras2 = ["#ffffff","#0000ff","#000000","#000000","#ffff00","#ffff00","#00ff00","#00ff00","#000000","#dfdfdf","#000000","#ababab",          
+                            contras2=["#ffffff","#0000ff","#000000","#000000","#ffff00","#ffff00","#00ff00","#00ff00","#000000","#dfdfdf","#000000","#ababab",          
                                 "#808080","#ffffff","#00ff00","#00ff00","#008080","#ffff00","#ffff00","#ffffff","#00ff00",1,1,0.6,0.2,0.35,"#00ff00"]; 
-                        var schemes = [darkmode,tankmode,lightmode,neonmode,contras1,contras2],curcolsch=schemes[0],precolsch=schemes[0];           //scheme theme names, stored to refernce the theme arrays.
+                        var schemes=[darkmode,tankmode,lightmode,neonmode,contras1,contras2],curcolsch=schemes[0],precolsch=schemes[0] //scheme theme names, stored to refernce the theme arrays.
                         
                                          //1       //2       //3                //4                  //5       //6       /7        //8       //9          //10          //11          //12           //13
                                 //14         //15        //16            //17      //18          //19        //20         //21      //22          //23      //24      //25      //26      
@@ -1185,7 +1227,8 @@
                                 '--black','--blue','--prussian','--wincyan','--yellow','--font','--hover','--atext','--invert',undefined,'--discheckinv','--enacheckinv','--invcheckinv']
                         var discheckinv,enacheckinv,invcheckinv
                         
-                        function highcontrast(){wpp(); wpcr()}
+                        function wallpapercust(){currentsch.textContent="(Custom)"} //changes the scheme type to custom is a different wallpaper / colour is applied.
+                        function highcontrast(){wpp();wpcr()} //applies black background and updates to a blank wallpaper.
                         
                         function themepreviewchange(){
                             precolsch=schemes[themecurrent]; cpup()//confirms the current active scheme.
@@ -1279,44 +1322,40 @@
                                     <div class="big_seperator14" style="position: absolute; margin-top:1px; margin-left: 28px"></div>
                                     <div class="smallarrowdown" style="position:absolute; margin-left: 31px; margin-top:7px"></div>
                                     <div style="width:20px; height:11px; margin-top: 2px; margin-left: 3px; border:1px solid #000; background: #008080;" id="currentpickedo"></div></div>
-                                <div class="colourselect" style="background: #fff" onclick="copi = 1"></div> <div class="colourselect" style="background: #000" onclick="copi = 2"></div> 
-                                <div class="colourselect" style="background: #c2c6ca" onclick="copi = 3"></div> <div class="colourselect" style="background: #85898d" onclick="copi = 4"></div> <br>
-                                <div class="colourselect" style="background: #ff0000" onclick="copi = 5"></div> <div class="colourselect" style="background: #aa0055" onclick="copi = 6"></div> 
-                                <div class="colourselect" style="background: #ffff00" onclick="copi = 7"></div> <div class="colourselect" style="background: #aaaa55" onclick="copi = 8"></div> <br>
-                                <div class="colourselect" style="background: #00ff00" onclick="copi = 9"></div> <div class="colourselect" style="background: #00aa55" onclick="copi = 10"></div> 
-                                <div class="colourselect" style="background: #00ffff" onclick="copi = 11"></div> <div class="colourselect" style="background: #008080" onclick="copi = 12"></div> <br>
-                                <div class="colourselect" style="background: #0000ff" onclick="copi = 13"></div> <div class="colourselect" style="background: #0000aa" onclick="copi = 14"></div> 
-                                <div class="colourselect" style="background: #ff00ff" onclick="copi = 15"></div> <div class="colourselect" style="background: #aa55aa" onclick="copi = 16"></div> <br>
+                                <div class="colourselect" style="background: #fff" onclick="copi = 1;wallpapercust()"></div> <div class="colourselect" style="background: #000" onclick="copi = 2;wallpapercust()"></div> 
+                                <div class="colourselect" style="background: #c2c6ca" onclick="copi = 3;wallpapercust()"></div> <div class="colourselect" style="background: #85898d" onclick="copi = 4;wallpapercust()"></div> <br>
+                                <div class="colourselect" style="background: #ff0000" onclick="copi = 5;wallpapercust()"></div> <div class="colourselect" style="background: #aa0055" onclick="copi = 6;wallpapercust()"></div> 
+                                <div class="colourselect" style="background: #ffff00" onclick="copi = 7;wallpapercust()"></div> <div class="colourselect" style="background: #aaaa55" onclick="copi = 8;wallpapercust()"></div> <br>
+                                <div class="colourselect" style="background: #00ff00" onclick="copi = 9;wallpapercust()"></div> <div class="colourselect" style="background: #00aa55" onclick="copi = 10;wallpapercust()"></div> 
+                                <div class="colourselect" style="background: #00ffff" onclick="copi = 11;wallpapercust()"></div> <div class="colourselect" style="background: #008080" onclick="copi = 12;wallpapercust()"></div> <br>
+                                <div class="colourselect" style="background: #0000ff" onclick="copi = 13;wallpapercust()"></div> <div class="colourselect" style="background: #0000aa" onclick="copi = 14;wallpapercust()"></div> 
+                                <div class="colourselect" style="background: #ff00ff" onclick="copi = 15;wallpapercust()"></div> <div class="colourselect" style="background: #aa55aa" onclick="copi = 16;wallpapercust()"></div> <br>
                                 <div class="menuapplicationsplit" style="width:100%; margin-bottom:3px;"> </div>
-                                <div class="colourselect" style="background: #a03762" onclick="copi = 17"></div> <div class="colourselect" style="background: #001224" onclick="copi = 18"></div> 
-                                <div class="colourselect" style="background: #483038" onclick="copi = 19"></div> <div class="colourselect" style="background: #ccffff" onclick="copi = 20"></div> <br>
+                                <div class="colourselect" style="background: #a03762" onclick="copi = 17;wallpapercust()"></div> <div class="colourselect" style="background: #001224" onclick="copi = 18;wallpapercust()"></div> 
+                                <div class="colourselect" style="background: #483038" onclick="copi = 19;wallpapercust()"></div> <div class="colourselect" style="background: #ccffff" onclick="copi = 20;wallpapercust()"></div> <br>
                         </div></div> 
                         
                         <script> 
-                            var colourpicked = false, fontcolour = "#fff", copi = "", coloursampler = document.getElementById("coloursampler").style //colour sampler defaults
+                            var colourpicked = false, fontcolour = "#fff", copi = "", ccs = "#008080", coloursampler = document.getElementById("coloursampler").style //colour sampler defaults
                             var cpo = document.getElementById("currentpickedo").style, cpc = document.getElementById("currentpickedc").style, ap = document.getElementById("apperancepreview").style // scheme preview
-
+                            
                             function colourpicker(){
                                 if (colourpicked==false){coloursampler.marginLeft="-2px"; colourpicked = true //colour selector UI is focused
                                 } else if (colourpicked==true){coloursampler.marginLeft="-20000px"; colourpicked = false}} //colour selector UI is closed
                             function colourpickerexit(){coloursampler.marginLeft="-20000px";colourpicked = false} //enforces the colour selector UI to close
                             
                             function fcw(){fontcolour = "#fff"} function fcb(){fontcolour = "#000"} //changes the text colour of icon previews based on background.
-                            function cpick(){
-                                console.log("backgroundcolourset:",curcolsch[27], copi)
-                                      if(copi== 1){curcolsch[27]="#ffffff";fcb()}else if(copi== 2){curcolsch[27]="#000000";fcw()}else if(copi== 3){curcolsch[27]="#c2c6ca";fcb()
-                                }else if(copi== 4){curcolsch[27]="#85898d";fcw()}else if(copi== 5){curcolsch[27]="#ff0000";fcw()}else if(copi== 6){curcolsch[27]="#aa0055";fcw()
-                                }else if(copi== 7){curcolsch[27]="#ffff00";fcb()}else if(copi== 8){curcolsch[27]="#aaaa55";fcw()}else if(copi== 9){curcolsch[27]="#00ff00";fcb()
-                                }else if(copi==10){curcolsch[27]="#00aa55";fcw()}else if(copi==11){curcolsch[27]="#00ffff";fcb()}else if(copi==12){curcolsch[27]="#008080";fcw()
-                                }else if(copi==13){curcolsch[27]="#0000ff";fcw()}else if(copi==14){curcolsch[27]="#0000aa";fcw()}else if(copi==15){curcolsch[27]="#ff00ff";fcb()
-                                }else if(copi==16){curcolsch[27]="#aa55aa";fcw()}else if(copi==17){curcolsch[27]="#a03762";fcw()}else if(copi==18){curcolsch[27]="#001224";fcw()
-                                }else if(copi==19){curcolsch[27]="#483038";fcw()}else if(copi==20){curcolsch[27]="#ccffff";fcb()} //changes the background colours of icon colours and font colour of selected text.
-                            }
-                            function cpup(){
-                                docelem.style.setProperty('--predesktopicon', curcolsch[27]); docelem.style.setProperty('--preicotext', fontcolour) //changes the root variable for the current active colour.
-                                cpc.backgroundColor = curcolsch[27]; cpo.backgroundColor = curcolsch[27] //changes the current active colour preview.
-                                iconpre.backgroundColor = curcolsch[27]; ap.backgroundColor = curcolsch[27] //icon preview and windows preview updater
-                                dcb1.backgroundColor = curcolsch[27]; dcb2.backgroundColor = curcolsch[27]; dcb3.backgroundColor = curcolsch[27]} //desktop previews updater
+                            function cpick(){//changes the background colours of icon colours and font colour of selected text.
+                                      if(copi== 1){ccs="#ffffff";fcb()}else if(copi== 2){ccs="#000000";fcw()}else if(copi== 3){ccs="#c2c6ca";fcb()}else if(copi== 4){ccs="#85898d";fcw()
+                                }else if(copi== 5){ccs="#ff0000";fcw()}else if(copi== 6){ccs="#aa0055";fcw()}else if(copi== 7){ccs="#ffff00";fcb()}else if(copi== 8){ccs="#aaaa55";fcw()
+                                }else if(copi== 9){ccs="#00ff00";fcb()}else if(copi==10){ccs="#00aa55";fcw()}else if(copi==11){ccs="#00ffff";fcb()}else if(copi==12){ccs="#008080";fcw()
+                                }else if(copi==13){ccs="#0000ff";fcw()}else if(copi==14){ccs="#0000aa";fcw()}else if(copi==15){ccs="#ff00ff";fcb()}else if(copi==16){ccs="#aa55aa";fcw()
+                                }else if(copi==17){ccs="#a03762";fcw()}else if(copi==18){ccs="#001224";fcw()}else if(copi==19){ccs="#483038";fcw()}else if(copi==20){ccs="#ccffff";fcb()}
+                                curcolsch[27] = ccs}
+                            function cpup(){ //stores colour selected from cpick into a short form.
+                                docelem.style.setProperty('--predesktopicon', ccs); docelem.style.setProperty('--preicotext', fontcolour) //changes the root variable for the current active colour.
+                                cpc.backgroundColor = ccs; cpo.backgroundColor = ccs; iconpre.backgroundColor = ccs; ap.backgroundColor = ccs //changes the current active colour preview and icon preview and windows preview updater
+                                dcb1.backgroundColor = ccs; dcb2.backgroundColor = ccs; dcb3.backgroundColor = ccs} //desktop previews updater
                         </script>
 
                         <div class="win98buttondisa" style="margin-left:312px; width:38px; height:17px; margin-top:0px; padding: 2px;"> 
@@ -1379,34 +1418,28 @@
                             <div style="padding: 3px 3px 2px 2px" id="currentdsheet"></div><div class="dropbutton"><div class="arrowdown"></div></div>
                             <div class="dropmenu" style="width: 142px; margin-left: -20000px" id="dsheet">
                                 <div class="dropbutton-pres" style="margin-left:129px"><div class="arrowdown"></div></div>
-                                <div class="droptext" onclick="dsheetpetraOG()">Petra Classic</div>  
-                                <div class="droptext" onclick="dsheetpetra()">Petra Revisit</div>   
-                                <div class="droptext" onclick="dsheetcaddyog()">Thealonic</div>
-                                <div class="droptext" onclick="dsheetcaddycl()">Thealonic Oldschool</div>
-                                <div class="droptext" onclick="dsheetprat()">Prat</div></div></ul>
+                                <div class="droptext" onclick="cico=1;desktopsheetcall()">Petra Classic</div>  
+                                <div class="droptext" onclick="cico=0;desktopsheetcall()">Petra Revisit</div>   
+                                <div class="droptext" onclick="cico=2;desktopsheetcall()">Thealonic</div>
+                                <div class="droptext" onclick="cico=3;desktopsheetcall()">Thealonic Oldschool</div>
+                                <div class="droptext" onclick="cico=4;desktopsheetcall()">Prat</div></div></ul>
                         
-                        <div class="win98button" style="float:right; width:78px; margin-top: -21px; margin-right:4.5px;" onclick="dsheetpetra(); desktopiconchange()"><center><butlabel>Default Icon</butlabel></center></div>
+                        <div class="win98button" style="float:right; width:78px; margin-top: -21px; margin-right:4.5px;" onclick="cico=0;desktopsheetcall() desktopiconchange()"><center><butlabel>Default Icon</butlabel></center></div>
                         <div class="win98button" style="float:right; width:78px; margin-top: -21px; margin-right:8px;" onclick="desktopiconchange()"><center><butlabel>Change Icon...</butlabel></center></div></div>
                 </fieldset>
                     
                 <script> 
-                    let previewico = [document.getElementById("previewi1").style, document.getElementById("previewi2").style, document.getElementById("previewi3").style, document.getElementById("previewi4").style,
-                                      document.getElementById("previewi5").style, document.getElementById("previewi6").style, document.getElementById("previewi7").style, document.getElementById("previewi8").style];
-                    var predesktopsheet, curdesktopsheet;
-                    function dsheetpetra(){currentdsheet.textContent="Petra Revisit"; predesktopsheet = github + "img/desktopspritesheet2.png')"; desktopiconpreview()}   
-                    function dsheetpetraOG(){currentdsheet.textContent="Petra Classic"; predesktopsheet = github + "img/desktopspritesheet.png')"; desktopiconpreview()} 
-                    function dsheetcaddyog(){currentdsheet.textContent="Caddy OG"; predesktopsheet = github + "img/desktopspritesheet3.png')"; desktopiconpreview()} 
-                    function dsheetcaddycl(){currentdsheet.textContent="Caddy Classic"; predesktopsheet = github + "img/desktopspritesheet4.png')"; desktopiconpreview()} 
-                    function dsheetprat(){currentdsheet.textContent="Prat"; predesktopsheet = github + "img/desktopspritesheet5.png')"; desktopiconpreview()} //changes the current active icon scheme.
-                    function desktopiconpreview(){docelem.style.setProperty('--predesktopsheet', predesktopsheet); curdesktopsheet = predesktopsheet} //changes the root reference link for icon previews.
-                    function desktopiconchange(){docelem.style.setProperty('--curdesktopsheet', curdesktopsheet)} //changes the root referance link for the currently active desktop icons.
+                    var predesktopsheet,curdesktopsheet,cico=0,icos=["2","","3","4","5"],icou="img/desktopspritesheet",icoe=".png')",icosn=["Petra Revisit","Petra Classic","Caddy OG","Caddy Classic","Prat"]
+                    function desktopsheetcall(){currentdsheet.textContent=icosn[cico];predesktopsheet=github+icou+icos[cico]+icoe
+                        docelem.style.setProperty('--predesktopsheet',predesktopsheet);curdesktopsheet=predesktopsheet} //changes the root reference link for icon previews.
+                    function desktopiconchange(){docelem.style.setProperty('--curdesktopsheet',curdesktopsheet)} //changes the root referance link for the currently active desktop icons.
                 </script> 
                         
                 <fieldset style="width:336px; height:118px; margin-left: 12px; margin-top: 20px;"><inboxlabel> Visual Effects </inboxlabel>
                     <div style="margin-top:-58px; position:absolute">
                     <ul class="tick-box" id="effectstick0">
-                        <div class="invisibtickbox" style="background-image: url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/img/tickbox.png')" id="effect0"onclick="largepicotoggle()"></div></ul>
-                    <ticklabel for="effectstick0" onclick="largepicotoggle()">Preview desktop icons as smaller icons</ticklabel></div>
+                        <div class="invisibtickbox" id="effect0"onclick="largepicotoggle()"></div></ul>
+                    <ticklabel for="effectstick0" onclick="largepicotoggle()">Preview desktop icons as larger icons</ticklabel></div>
                     
                     <ul class="tick-box" id="effectstick1">
                         <div class="invisibtickbox" style="background-image: url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/img/tickbox.png')" id="effect1" onclick="largedicotoggle()"></div></ul>
@@ -1433,9 +1466,11 @@
                 var picotoggle = false, dicotoggle = true, nsfwtoggle = false, csgotoggle = false, dragtoggle = true //default floptoggle values
                 var nsfwoptions = document.getElementById("nsfwoptions").style, iconscont = document.getElementById("iconscont").style
                 var CSGOsidebar1 = document.getElementById("CSGOsidebar1").style, CSGOsidebar2 = document.getElementById("CSGOsidebar2").style, CSGOsidebar3 = document.getElementById("CSGOsidebar3").style //CSGO sidebar on the desktop
+                let previewico=[document.getElementById("previewi1").style, document.getElementById("previewi2").style, document.getElementById("previewi3").style, document.getElementById("previewi4").style,
+                    document.getElementById("previewi5").style, document.getElementById("previewi6").style, document.getElementById("previewi7").style, document.getElementById("previewi8").style];
                 var effect = [document.getElementById("effect0").style, document.getElementById("effect1").style, document.getElementById("effect2").style, document.getElementById("effect3").style, 
                     document.getElementById("effect4").style, document.getElementById("effect5").style, document.getElementById("effect6").style]; //array storage for tickboxes.
-
+                
                 function largepicotoggle(){ 
                     var dtil = 0; //current pixel placement reset + var creation.
                     
@@ -1523,9 +1558,9 @@
             
             <!-- --------------------------------------- footer --------------------------------------- -->
             <div style="margin-top: 395px">
-                <div class="win98buttona" style="margin-left:316px;" onclick="wallpaperupdate(); themechange(); bgu()"><center><butlabel>Apply</butlabel></center></div>
+                <div class="win98buttona" style="margin-left:316px;" onclick="wallpaperupdate(); desktopiconchange(); themechange(); bgu()"><center><butlabel>Apply</butlabel></center></div>
                 <div class="win98buttona" style="margin-left:234px;" onclick="curtask = 3; inactivewindow()"><center><butlabel>Cancel</butlabel></center></div>
-                <div class="win98buttona" style="margin-left:152px;" onclick="wallpaperupdate(); themechange(); bgu(); curtask = 3; inactivewindow()"><center><butlabel>Okay</butlabel></center></div></div>
+                <div class="win98buttona" style="margin-left:152px;" onclick="wallpaperupdate(); desktopiconchange(); themechange(); bgu(); curtask = 3; inactivewindow()"><center><butlabel>Okay</butlabel></center></div></div>
         </div>
         
         <script> 
@@ -1562,8 +1597,15 @@
                 <div class="win98button" style="display:inline-block" onclick="logoffno()"><butlabel>No</butlabel></div></center>
         </div></div></div>
         
-        <script>function logonactive(){calupdate(); logoff.style.zIndex = cal; logoff.style.left = "40%"; logoff.style.top = "40%"; logoff.style.marginLeft = "0px"; logofftext.style.color = curcolsch[2]; logoff.style.marginLeft = "0px";
-            logoffwindow.style.background = "linear-gradient(90deg, " + curcolsch[6] + "," + curcolsch[7] + ")"} function logoffno() {logoff.style.marginLeft = "-20000px"; logoff.style.zIndex = "1"} </script>
+        <script>
+            function logonactive(){
+                calupdate(); logoff.style.zIndex = cal; 
+                logoff.style.left = "40%"; logoff.style.top = "40%"; logoff.style.marginLeft = "0px"; 
+                logofftext.style.color = curcolsch[2]; logoff.style.marginLeft = "0px";
+                logoffwindow.style.background = "linear-gradient(90deg, " + curcolsch[6] + "," + curcolsch[7] + ")"} 
+            function logoffno() {
+                logoff.style.marginLeft = "-20000px"; logoff.style.zIndex = "1"} 
+        </script>
         
 <!-- Tumblr Post handler ------------------------------------------------------------------------------>
         {block:Pagination}<div class="navigation cf" id="i_nav">{block:NextPage}<a href="{NextPage}"></a>{/block:NextPage}{block:PreviousPage}<a href="{PreviousPage}"></a>{/block:PreviousPage}</div>{/block:Pagination}
@@ -1747,8 +1789,11 @@
             $(".plinks-con").click(function(){if (plinksdrop == false){$(this).find("postdrop").css("margin-left", "49px"); plinksdrop = true 
                 } else if (plinksdrop == true){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false}})
             $(".plinks-con").mouseleave(function(){$(this).find("postdrop").css("margin-left", "-20000px"); plinksdrop = false})
-            $(".window").click(function(){calupdate(); desktop.left = desktopleft; document.body.style.overflowY = "scroll"; $(this).css("z-index", cal);
-                $(this).find(".title-bar-98").css("background", "linear-gradient(90deg, " + curcolsch[6] + "," + curcolsch[7] + ")"); $(this).find(".title-bar-text").css("color", curcolsch[2])});
+            $(".window").click(function(){
+                calupdate(); desktop.left = desktopleft; 
+                document.body.style.overflowY = "scroll"; $(this).css("z-index", cal);
+                $(this).find(".title-bar-98").css("background", "linear-gradient(90deg, " + curcolsch[6] + "," + curcolsch[7] + ")"); 
+                $(this).find(".title-bar-text").css("color", curcolsch[2])});
             
             function tumblractive() {calupdate(); curtask = 1; activatetask(); desktop.left = desktopleft; document.body.style.overflowY = "scroll"}
             function tumblrminimize() {inactiveall(); desktop.left = "-20000px"; document.body.style.position = "hidden"}
@@ -1985,7 +2030,8 @@
             </div></div>
             
 <!-- startmenu scripts + end ------------------------------------------------------------------------------>
-            <script>var startButtonOpen = false, startmenu = document.getElementById("startmenu").style;
+            <script>
+                var startButtonOpen = false, startmenu = document.getElementById("startmenu").style;
                 function startpress() {if (startButtonOpen == true) {menuclosed()
                     } else if(startButtonOpen == false) { startmenu.marginLeft = "0px"; startButtonOpen = true; 
                         docelem.style.setProperty('--taskbarstarttop1', curcolsch[8]); docelem.style.setProperty('--taskbarstarttop2', curcolsch[9]);
@@ -1998,9 +2044,18 @@
                     'menufind','vherstymenu'],sms=['programsmenu','menuaccessoriessubmenu','menucommunicationssubmenu','menuentertainmentsubmenu','gamessubmenu','internettoolssubmenu','systemtoolssubmenu','onlineservicessubmenu', 'startupsubmenu',
                     'favouritesmenu', 'channelssubmenu','linkssubmenu','mediasubmenu','documentsmenu','settingsmenu','activedesktopsubmenu','findmenu','vherstysubmenu'],marr=['menuarrow1','menuarrow6','menuarrow9','menuarrow10','menuarrow18',
                     'menuarrow11','menuarrow12','menuarrow7','menuarrow8','menuarrow2','menuarrow13','menuarrow14','menuarrow15','menuarrow3','menuarrow4','menuarrow17','menuarrow5','menuarrow16'],
-                    sbn=['130px','133px','148px','158px','161px','163px','200000px'],sbm='margin-left',scf=0,sbc,geb,sma,cac;sbp=[sbn[4],sbn[0],sbn[0],sbn[0],sbn[0],sbn[0],sbn[0],sbn[1],sbn[1],sbn[4],sbn[2],sbn[2],sbn[2],sbn[4],sbn[4],sbn[3],sbn[4],sbn[4]]
-                function starttemp(){document.getElementById(smu[scf]).style.backgroundColor=cac[0];document.getElementById(smu[scf]).style.color=cac[1];document.getElementById(marr[scf]).style.filter="invert("+cac[2]+")"}
-                function startsubmenuo(){sbc='#'+sms[scf];cac=[curcolsch[15],curcolsch[19],varinvert];starttemp();$(sbc).css(sbm,sbp[scf])};function startsubmenuc(){sbc='#'+sms[scf];cac=[curcolsch[10],curcolsch[18],curcolsch[21]];starttemp();$(sbc).css(sbm,sbn[6])}</script>
+                    sbn=['130px','133px','148px','158px','161px','163px','200000px'],sbm='margin-left',scf=0,sbc,geb,sma,cac;
+                    sbp=[sbn[4],sbn[0],sbn[0],sbn[0],sbn[0],sbn[0],sbn[0],sbn[1],sbn[1],sbn[4],sbn[2],sbn[2],sbn[2],sbn[4],sbn[4],sbn[3],sbn[4],sbn[4]]
+                function starttemp(){
+                    document.getElementById(smu[scf]).style.backgroundColor=cac[0];
+                    document.getElementById(smu[scf]).style.color=cac[1];
+                    document.getElementById(marr[scf]).style.filter="invert("+cac[2]+")"}
+                function startsubmenuo(){
+                    sbc='#'+sms[scf];cac=[curcolsch[15],curcolsch[19],varinvert];
+                    starttemp();$(sbc).css(sbm,sbp[scf])};
+                function startsubmenuc(){
+                    sbc='#'+sms[scf];cac=[curcolsch[10],curcolsch[18],curcolsch[21]];
+                    starttemp();$(sbc).css(sbm,sbn[6])}</script>
      
 <!-- Taskbar Rendering  ------------------------------------------------------------------------------>
             <div style="margin-top: -24px">
@@ -2032,21 +2087,29 @@
                 <div class="taskbartask8" onmousedown="curtask = 8; tasktoggle()" id="taskapp8"> 
                     <div class="title-bar-text" id="taskapp8font">🌍 Internet Explorer</div></div>
                 
-                <script>var task=0,funccall=0,taskpos=[undefined,0,0,0,0,0,0,0,0],ButtonOpen=[undefined, true, false, false, false, false, false, false, false],
+                <script>
+                    var task=0,funccall=0,taskpos=[undefined,0,0,0,0,0,0,0,0],ButtonOpen=[undefined, true, false, false, false, false, false, false, false],
                         taskon=[undefined,true,false,false,false,false,false,false,false],tasktrue=[undefined, true, false, false, false, false, false, false, false],
                         taskbar=[undefined,document.getElementById("taskapp1").style,document.getElementById("taskapp2").style,document.getElementById("taskapp3").style,document.getElementById("taskapp4").style, 
-                        document.getElementById("taskapp5").style,document.getElementById("taskapp6").style,document.getElementById("taskapp7").style,document.getElementById("taskapp8").style],
+                            document.getElementById("taskapp5").style,document.getElementById("taskapp6").style,document.getElementById("taskapp7").style,document.getElementById("taskapp8").style],
                         taskbarfont=[undefined,document.getElementById("taskapp1font").style,document.getElementById("taskapp2font").style, document.getElementById("taskapp3font").style,document.getElementById("taskapp4font").style,
-                        document.getElementById("taskapp5font").style,document.getElementById("taskapp6font").style,document.getElementById("taskapp7font").style,document.getElementById("taskapp8font").style] //leave this as js, dipshit.
+                            document.getElementById("taskapp5font").style,document.getElementById("taskapp6font").style,document.getElementById("taskapp7font").style,document.getElementById("taskapp8font").style] //leave this as js, dipshit.
                         
-                    function tasktoggle() { if(ButtonOpen[curtask]==false){if(curtask==1){tumblrminimize()
-                        }else if(curtask==2){minimizewindow();curtask=1;minimizewindow()}else{minimizewindow()}
-                        }else if(ButtonOpen[curtask]==true){if(curtask==1){tumblractive()}else if(curtask==2){
+                    function tasktoggle() { 
+                        if(ButtonOpen[curtask]==false){
+                            if(curtask==1){tumblrminimize()
+                            }else if(curtask==2){minimizewindow();curtask=1;minimizewindow()
+                            }else{minimizewindow()}
+                        }else if(ButtonOpen[curtask]==true){
+                            if(curtask==1){tumblractive()
+                            }else if(curtask==2){
                               if(window2==true){curtask=2;currentwindow();cat.marginLeft="0px";cat.zIndex=cal}
                               if(window1==true){curtask=1;currentwindow();pyro.marginLeft="0px";pyro.zIndex=cal}
-                        }else{currentwindow()}ButtonOpen[curtask]=false} curtask=0;menuclosed()}
+                            }else{currentwindow()}
+                        ButtonOpen[curtask]=false} 
+                        curtask=0;menuclosed()}
+                        
                     function taskposupdate(){currentwindow(); taskposopen()}
-                    
                     function vunnytask(){   cat.style.left="4%";        cat.style.top="68%";       
                                             pyro.style.left="12%";      pyro.style.top="58%";      curtask = 2; currentwindow(); taskposopen(); vunnywindowreset();} 
                     function disktask(){    disk.left="1465px";         disk.top="13%";            curtask = 3; currentwindow(); taskposopen()}
@@ -2056,10 +2119,25 @@
                     function notepadtask(){ notepad.style.left="375px"; notepad.style.top="217px"; curtask = 7; currentwindow(); taskposopen()}
                     function internettask(){internet.style.left="375px";internet.style.top="117px";curtask = 8; currentwindow(); taskposopen()}
                     
-                     function taskreset(){currenttask=currenttask- 1;for(var v=1;v<tasktrue.length;v++){if(v!==curtask){if(taskpos[v]>taskpos[curtask]){if(taskon[v]==true){
-                        taskpos[v]=taskpos[v]- 168;taskbar[v].marginLeft=taskpos[v]+"px"}}}}inprompt=inprompt+"current tasks active: "+currenttask;println()}
-                    function taskposopen(){if(taskon[curtask]==false){if(ButtonOpen[curtask]==false){currenttask=currenttask+ 1};taskbar[curtask].marginLeft=(currenttask*168)+"px";
-                        taskpos[curtask]=(currenttask*168);taskon[curtask]=true;inprompt=inprompt+"current tasks active: "+currenttask;println()}}</script>
+                     function taskreset(){
+                         currenttask=currenttask- 1;
+                         for(var v=1;v<tasktrue.length;v++){
+                             if(v!==curtask){
+                                 if(taskpos[v]>taskpos[curtask]){
+                                     if(taskon[v]==true){
+                                        taskpos[v]=taskpos[v]- 168;taskbar[v].marginLeft=taskpos[v]+"px"}}}}
+                        inprompt=inprompt+"current tasks active: "+currenttask;
+                        println()}
+                    function taskposopen(){
+                        if(taskon[curtask]==false){
+                            if(ButtonOpen[curtask]==false){
+                                currenttask=currenttask+ 1};
+                            taskbar[curtask].marginLeft=(currenttask*168)+"px";
+                            taskpos[curtask]=(currenttask*168);
+                            taskon[curtask]=true;
+                            inprompt=inprompt+"current tasks active: "+currenttask;
+                            println()}}
+                </script>
                  
                 <div class="clock"> <div class="calendar" style="cursor: pointer;" onclick="clockopen();"> </div>
                     <div class="menuentertainment3" style="margin-top:-1px; margin-left:1px;"></div>
