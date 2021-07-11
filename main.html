@@ -21,7 +21,7 @@
     <script src="//static.tumblr.com/fpdiq1j/GV9n0wdlc/jquery.infinitescroll.min.js"></script>
     <script> 
         var github = "url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/", readme = "//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/README.md";
-        var updateon = "21:48am on July 4th, 2021. [GMT]", updatedfrom = "Thea Vanherst"; function calupdate(){inactiveall(); cal = cal + 1};
+        var updateon = "10:42am on July 11th, 2021. [GMT]", updatedfrom = "Thea Vanherst"; function calupdate(){inactiveall(); cal = cal + 1};
         var curtask = undefined, currenttask = 1, cal = 5, docelem = document.documentElement, plinksdrop = false, schemedrop = false;
         function latestupdate() {document.getElementById("lastupdate").textContent = updateon; document.getElementById("updatedby").textContent = updatedfrom} //"Pixelated MS Sans Serif"
         function defaultpageload() {desktopsheetcall();desktopiconchange();theme=1;copi=18;cpick();wpn=4;wwpno();themepreviewchange();themechange();wallpaperupdate();relativedesk();fillitem()} 
@@ -708,7 +708,7 @@
                 calupdate();message.style.zIndex=cal //updates message window to be infront, required because it's not treated as an actual task
                 message.style.marginLeft="0px";message.left="77%";message.top="62%"} //sets it back to the default position relative to the screen resolution.
                 
-            var patchlogs="https://raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/patch%20logs" //patchnoes URL to bring data from.
+            var patchlogs="https://raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/patch%20logs.html" //patchnoes URL to bring data from.
             function notesupdate(){ //updates patchnotes on window startup
                 $.get(patchlogs,function(data){$("patchnotes").last().html(data);},'text')} //fetches the text from patchlogs var.
         </script>
@@ -1258,8 +1258,10 @@
                             gradient="linear-gradient(90deg, "+precolsch[6]+","+precolsch[7]+")"; gradient="linear-gradient(90deg, "+precolsch[4]+","+precolsch[5]+")" //titlebar gradients previews
                             $("#previewwin1").css("background",gradient); $("#previewwin2").css("background",gradient); $("#previewwin3").css("background",gradient)
                             inprompt = inprompt+"Theme Preview Loaded.";println()} //updates command prompt
-                        
+
                         function themechange(){ //runs everytime you press "apply" or "ok" in the display properties.
+
+                            //scheme updater
                             curcolsch = precolsch; cpick()//needs this to change the preview colours to the actual colours.
                             document.body.style.backgroundColor = precolsch[27]; //enforces the background colour to change based on selected colour from the colour selector UI
                             docelem.style.setProperty('--desktopicon', precolsch[27]); docelem.style.setProperty('--desktoptext', fontcolour) //changes desktop icon colours to change according to selected colour
@@ -1278,17 +1280,19 @@
                             
                             if(curcolsch[21] == 1){varinvert = 0;}else{varinvert = 1} //start menu inverter, DON'T REMOVE THE SEMI COLON
                             
-                            var dtil = 0
+                            var dtil; dtil = 0 //for some reaosn this HAS to be like this, otherwise it doesn't work.
+                            //effects properties toggle menus
                             if(dicotoggle==true){
                                 for(var i = 0; deskico.length > i; i++){
                                     deskico[i].width = "72px"; deskico[i].height="72px" //loops through preview icons, fixes the current
-                                    var temp1 = dtil + "px", temp2 = "-0px" //sets current background placement variables
+                                    var temp1 = dtil + "px"; var temp2 = "-0px" //sets current background placement variables
                                     deskico[i].backgroundPosition = temp1 + " " + temp2 //sets the background position of the icon
                                     dtil = dtil - 72} //horizontal displacement on the image map for large icons
-                            }else if(dicotoggle == false){
+                            }else{
                                 for(var i = 0; deskico.length > i; i++){
-                                    deskico[i].width = "36px"; deskico[i].height = "36px" //loops through preview icons, fixes the current
-                                    var temp1 = dtil + "px", temp2 = "-72px" //sets current background placement variables
+                                    console.log(dtil)
+                                    deskico[i].width="36px"; deskico[i].height="36px" //loops through preview icons, fixes the current
+                                    var temp1 = dtil + "px"; var temp2 = "-72px" //sets current background placement variables
                                     deskico[i].backgroundPosition = temp1 + " " + temp2 //sets the background position of the icon
                                     dtil = dtil - 36}} //horizontal displacement on the image map for small icons
                                     
@@ -1503,25 +1507,25 @@
                     document.getElementById("effect4").style, document.getElementById("effect5").style, document.getElementById("effect6").style]; //array storage for tickboxes.
                 
                 function largepicotoggle(){ 
-                    var dtil = 0; //current pixel placement reset + var creation.
+                    var ctil = 0; //current pixel placement reset + var creation.
                     
                     if(picotoggle == false){ picotoggle = true //switches flop to on
                         effect[0].backgroundImage = "url('//raw.githubusercontent.com/TheaVanherst/Vher98-2021/main/img/tickbox.png')"; //changes the tickbox background to a tick
                         docelem.style.setProperty('--smicow', '78px'); docelem.style.setProperty('--smicoh', '72px') //changes icon size storage to large.
                         iconscont.width = "766px"; //this fixes the scrollbar by changing the container width, because.
                         for(var i = 0; previewico.length > i; i++){ //loops through preview icons, fixes the current
-                            var temp1 = dtil + "px", temp2 = "-0px" //placement of the icons due to everything having
+                            var temp1 = ctil + "px", temp2 = "-0px" //placement of the icons due to everything having
                             previewico[i].backgroundPosition = temp1 + " " + temp2 //to be fixed relative to the left, 
-                            dtil = dtil - 72} //rather than margin left, because reasons lol.
+                            ctil = ctil - 72} //rather than margin left, because reasons lol.
                             
                     } else {picotoggle = false; //switches flop to on
                         effect[0].backgroundImage = ""; //changes the tickbox background to a blank background
                         docelem.style.setProperty('--smicow', '42px'); docelem.style.setProperty('--smicoh', '36px') //changes icon size storage to small.
                         iconscont.width = "480px" //this fixes the scrollbar by changing the container width, because.
                         for(var i = "0"; previewico.length > i; i++){ //loops through preview icons, fixes the current
-                            var temp1 = dtil + "px", temp2 = "-72px" //placement of the icons due to everything having
+                            var temp1 = ctil + "px", temp2 = "-72px" //placement of the icons due to everything having
                             previewico[i].backgroundPosition = temp1 + " " + temp2 //to be fixed relative to the left, 
-                            dtil = dtil - 36}}} //rather than margin left, because reasons lol.
+                           ctil = ctil - 36}}} //rather than margin left, because reasons lol.
                        
                 function largedicotoggle(){
                     if(dicotoggle == false){ dicotoggle = true //switches flop to on
